@@ -64,7 +64,7 @@ public final class DlgStokOpname extends javax.swing.JDialog {
         setSize(628,674);
 
         Object[] row={
-            "Kode Barang","Nama Barang","Harga Beli","Satuan","Tanggal","Stok","Real","Selisih","Lebih","Total Real",
+            "Kode Barang","Nama Barang","Jenis","Harga Beli","Satuan","Tanggal","Stok","Real","Selisih","Lebih","Total Real",
             "Nominal Hilang(Rp)","Nominal Lebih(Rp)","Keterangan","Kode Lokasi","Nama Lokasi","No.Batch","No.Faktur"};
         tabMode=new DefaultTableModel(null,row){
               @Override public boolean isCellEditable(int rowIndex, int colIndex){return false;}
@@ -77,25 +77,25 @@ public final class DlgStokOpname extends javax.swing.JDialog {
         for (int i = 0; i < 17; i++) {
             TableColumn column = tbKamar.getColumnModel().getColumn(i);
             if(i==0){
-                column.setPreferredWidth(80);
-            }else if(i==1){
-                column.setPreferredWidth(170);
-            }else if(i==2){
                 column.setPreferredWidth(90);
+            }else if(i==1){
+                column.setPreferredWidth(180);
+            }else if(i==2){
+                column.setPreferredWidth(100);
             }else if(i==3){
-                column.setPreferredWidth(50);
+                column.setPreferredWidth(60);
             }else if(i==4){
-                column.setPreferredWidth(80);
+                column.setPreferredWidth(42);
             }else if(i==5){
-                column.setPreferredWidth(35);
+                column.setPreferredWidth(65);
             }else if(i==6){
                 column.setPreferredWidth(35);
             }else if(i==7){
-                column.setPreferredWidth(40);
+                column.setPreferredWidth(35);
             }else if(i==8){
                 column.setPreferredWidth(40);
             }else if(i==9){
-                column.setPreferredWidth(100);
+                column.setPreferredWidth(60);
             }else if(i==10){
                 column.setPreferredWidth(100);
             }else if(i==11){
@@ -109,6 +109,8 @@ public final class DlgStokOpname extends javax.swing.JDialog {
             }else if(i==15){
                 column.setPreferredWidth(70);
             }else if(i==16){
+                column.setPreferredWidth(100);
+            }else if(i==17){
                 column.setPreferredWidth(100);
             }
         }
@@ -1242,7 +1244,7 @@ private void StokKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Stok
             if(nmjns.getText().equals("")&&nmkategori.getText().equals("")&&nmgolongan.getText().equals("")&&NmGudang.getText().equals("")&&TCari.getText().equals("")){
                 pstampil=koneksi.prepareStatement("select opname.kode_brng, databarang.nama_brng,opname.h_beli, databarang.kode_sat, opname.tanggal, opname.stok, "+
                      "opname.real, opname.selisih, opname.lebih, (opname.real*opname.h_beli) as totalreal,opname.nomihilang,opname.nomilebih, opname.keterangan, bangsal.kd_bangsal, bangsal.nm_bangsal, "+
-                     "opname.no_batch,opname.no_faktur from opname inner join databarang on opname.kode_brng=databarang.kode_brng "+
+                     "opname.no_batch,opname.no_faktur,jenis.nama from opname inner join databarang on opname.kode_brng=databarang.kode_brng "+
                      "inner join bangsal on opname.kd_bangsal=bangsal.kd_bangsal "+
                      "inner join jenis on databarang.kdjns=jenis.kdjns "+
                      "inner join kategori_barang on databarang.kode_kategori=kategori_barang.kode "+
@@ -1251,7 +1253,7 @@ private void StokKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Stok
             }else{
                 pstampil=koneksi.prepareStatement("select opname.kode_brng, databarang.nama_brng,opname.h_beli, databarang.kode_sat, opname.tanggal, opname.stok, "+
                      "opname.real, opname.selisih, opname.lebih, (opname.real*opname.h_beli) as totalreal,opname.nomihilang,opname.nomilebih, opname.keterangan, bangsal.kd_bangsal, bangsal.nm_bangsal, "+
-                     "opname.no_batch,opname.no_faktur from opname inner join databarang on opname.kode_brng=databarang.kode_brng "+
+                     "opname.no_batch,opname.no_faktur,jenis.nama from opname inner join databarang on opname.kode_brng=databarang.kode_brng "+
                      "inner join bangsal on opname.kd_bangsal=bangsal.kd_bangsal "+
                      "inner join jenis on databarang.kdjns=jenis.kdjns "+
                      "inner join kategori_barang on databarang.kode_kategori=kategori_barang.kode "+
@@ -1286,7 +1288,7 @@ private void StokKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Stok
                     total=total+rstampil.getDouble(11);
                     totallebih=totallebih+rstampil.getDouble(12);
                     tabMode.addRow(new Object[]{
-                        rstampil.getString(1),rstampil.getString(2),df2.format(rstampil.getDouble(3)),
+                        rstampil.getString(1),rstampil.getString(2),rstampil.getString(18),df2.format(rstampil.getDouble(3)),
                         rstampil.getString(4),rstampil.getString(5),rstampil.getString(6),rstampil.getString(7),                              
                         rstampil.getString(8),rstampil.getString(9),df2.format(rstampil.getDouble(10)),df2.format(rstampil.getDouble(11)),
                         df2.format(rstampil.getDouble(12)),rstampil.getString(13),rstampil.getString(14),rstampil.getString(15),

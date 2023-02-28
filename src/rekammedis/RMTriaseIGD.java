@@ -1122,7 +1122,7 @@ public final class RMTriaseIGD extends javax.swing.JDialog {
         tbSkala1.setSelectionForeground(new java.awt.Color(0, 255, 0));
         Scroll3.setViewportView(tbSkala1);
 
-        TabSkala1dan2.addTab("Skala 1", Scroll3);
+        TabSkala1dan2.addTab("ATS 1", Scroll3);
 
         Scroll4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 253)));
         Scroll4.setName("Scroll4"); // NOI18N
@@ -1133,7 +1133,7 @@ public final class RMTriaseIGD extends javax.swing.JDialog {
         tbSkala2.setSelectionForeground(new java.awt.Color(0, 255, 0));
         Scroll4.setViewportView(tbSkala2);
 
-        TabSkala1dan2.addTab("Skala 2", Scroll4);
+        TabSkala1dan2.addTab("ATS 2", Scroll4);
 
         jPanel4.add(TabSkala1dan2, java.awt.BorderLayout.CENTER);
 
@@ -1143,7 +1143,7 @@ public final class RMTriaseIGD extends javax.swing.JDialog {
 
         internalFrame5.add(internalFrame3, java.awt.BorderLayout.CENTER);
 
-        TabTriase.addTab("Triase Primer", internalFrame5);
+        TabTriase.addTab("Triase 1, 2", internalFrame5);
 
         internalFrame10.setBorder(null);
         internalFrame10.setName("internalFrame10"); // NOI18N
@@ -1546,7 +1546,7 @@ public final class RMTriaseIGD extends javax.swing.JDialog {
         tbSkala3.setSelectionForeground(new java.awt.Color(0, 255, 0));
         Scroll6.setViewportView(tbSkala3);
 
-        TabSkala3dan4dan5.addTab("Skala 3", Scroll6);
+        TabSkala3dan4dan5.addTab("ATS 3", Scroll6);
 
         Scroll7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 253)));
         Scroll7.setName("Scroll7"); // NOI18N
@@ -1557,7 +1557,7 @@ public final class RMTriaseIGD extends javax.swing.JDialog {
         tbSkala4.setSelectionForeground(new java.awt.Color(0, 255, 0));
         Scroll7.setViewportView(tbSkala4);
 
-        TabSkala3dan4dan5.addTab("Skala 4", Scroll7);
+        TabSkala3dan4dan5.addTab("ATS 4", Scroll7);
 
         Scroll8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 253)));
         Scroll8.setName("Scroll8"); // NOI18N
@@ -1568,7 +1568,7 @@ public final class RMTriaseIGD extends javax.swing.JDialog {
         tbSkala5.setSelectionForeground(new java.awt.Color(0, 255, 0));
         Scroll8.setViewportView(tbSkala5);
 
-        TabSkala3dan4dan5.addTab("Skala 5", Scroll8);
+        TabSkala3dan4dan5.addTab("ATS 5", Scroll8);
 
         jPanel6.add(TabSkala3dan4dan5, java.awt.BorderLayout.CENTER);
 
@@ -1578,7 +1578,7 @@ public final class RMTriaseIGD extends javax.swing.JDialog {
 
         internalFrame10.add(internalFrame13, java.awt.BorderLayout.CENTER);
 
-        TabTriase.addTab("Triase Sekunder", internalFrame10);
+        TabTriase.addTab("Triase 3, 4, 5", internalFrame10);
 
         FormTriase.add(TabTriase, java.awt.BorderLayout.CENTER);
 
