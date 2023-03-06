@@ -8,6 +8,13 @@
 
   Informasi dan panduan bisa dicek di halaman https://github.com/mas-elkhanza/SIMRS-Khanza/wiki
   
-  Hasil build/Software jadi bisa di download di https://drive.google.com/drive/folders/0ByL--Jg6bdF7RG1NSlVTT2ZPODg 
+   telah DI MODIFIKASI Oleh IT RSU BANYUMANIK 2 untuk menyesuaikan Kebutuhan yang ada di RSU BANYUMANIK 2 
+  atas seizin pemilik/developer SIMRS Khanza Indonesia
 
-  Bagi yang ingin berdonasi untuk pengembangan SIMRS Khanza bisa lewat BSI 1015369872 atas nama Windiarto
+  Team IT :
+  - Chasan Ali Mujahid, S.Kom (Head Developer)
+  Contact: 
+   ig       : https://instagram.com/chasanss
+   Telegram : @chasanss
+  - Adyaksa Imam Fahrezi (Developer)
+   Telegram : @adyaksaa
