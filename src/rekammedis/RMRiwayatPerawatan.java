@@ -2249,10 +2249,10 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
 
                     htmlContent.append(
                       "<tr class='isi'>"+ 
-                        "<td valign='top' width='2%'>"+urut+"</td>"+
-                        "<td valign='top' width='18%'>No.Rawat</td>"+
-                        "<td valign='top' width='1%' align='center'>:</td>"+
-                        "<td valign='top' width='79%'>"+rs.getString("no_rawat")+"</td>"+
+                        "<td style='font-weight:bold;' valign='top' width='2%'>"+urut+"</td>"+
+                        "<td style='font-weight:bold;' valign='top' width='18%'>No.Rawat</td>"+
+                        "<td style='font-weight:bold;' valign='top' width='1%' align='center'>:</td>"+
+                        "<td style='font-weight:bold;' valign='top' width='79%'>"+rs.getString("no_rawat")+"</td>"+
                       "</tr>"+
                       "<tr class='isi'>"+ 
                         "<td valign='top' width='2%'></td>"+
@@ -4012,10 +4012,10 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
             htmlContent = new StringBuilder();
             htmlContent.append(                             
                 "<tr class='isi'>"+
-                    "<td valign='middle' bgcolor='#FFFAF8' align='center' width='5%'>Tgl.Reg</td>"+
-                    "<td valign='middle' bgcolor='#FFFAF8' align='center' width='8%'>No.Rawat</td>"+
-                    "<td valign='middle' bgcolor='#FFFAF8' align='center' width='3%'>Status</td>"+
-                    "<td valign='middle' bgcolor='#FFFAF8' align='center' width='84%'>S.O.A.P.I.E</td>"+
+                    "<td style='font-weight:bold;' valign='middle' bgcolor='#FFFAF8' align='center' width='5%'>Tgl.Reg</td>"+
+                    "<td style='font-weight:bold;' valign='middle' bgcolor='#FFFAF8' align='center' width='8%'>No.Rawat</td>"+
+                    "<td style='font-weight:bold;' valign='middle' bgcolor='#FFFAF8' align='center' width='3%'>Status</td>"+
+                    "<td style='font-weight:bold;' valign='middle' bgcolor='#FFFAF8' align='center' width='84%'>S.O.A.P.I.E</td>"+
                 "</tr>"
             );     
             if(R1.isSelected()==true){
@@ -4069,14 +4069,14 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                         if(rs2.next()){
                             htmlContent.append(
                                     "<tr class='isi'>"+
-                                        "<td valign='middle' bgcolor='#FFFFF8' align='center' width='7%'>Tanggal</td>"+
-                                        "<td valign='middle' bgcolor='#FFFFF8' align='center' width='13%'>Dokter/Paramedis</td>"+
-                                        "<td valign='middle' bgcolor='#FFFFF8' align='center' width='14%'>Subjek</td>"+
-                                        "<td valign='middle' bgcolor='#FFFFF8' align='center' width='13%'>Objek</td>"+
-                                        "<td valign='middle' bgcolor='#FFFFF8' align='center' width='13%'>Asesmen</td>"+
-                                        "<td valign='middle' bgcolor='#FFFFF8' align='center' width='14%'>Plan</td>"+
-                                        "<td valign='middle' bgcolor='#FFFFF8' align='center' width='14%'>Instruksi</td>"+
-                                        "<td valign='middle' bgcolor='#FFFFF8' align='center' width='14%'>Evaluasi</td>"+
+                                        "<td style='font-weight:bold;' valign='middle' bgcolor='#FFFFF8' align='center' width='7%'>Tanggal</td>"+
+                                        "<td style='font-weight:bold;' valign='middle' bgcolor='#FFFFF8' align='center' width='13%'>Dokter/Paramedis</td>"+
+                                        "<td style='font-weight:bold;' valign='middle' bgcolor='#FFFFF8' align='center' width='14%'>Subjek</td>"+
+                                        "<td style='font-weight:bold;' valign='middle' bgcolor='#FFFFF8' align='center' width='13%'>Objek</td>"+
+                                        "<td style='font-weight:bold;' valign='middle' bgcolor='#FFFFF8' align='center' width='13%'>Asesmen</td>"+
+                                        "<td style='font-weight:bold;' valign='middle' bgcolor='#FFFFF8' align='center' width='14%'>Plan</td>"+
+                                        "<td style='font-weight:bold;' valign='middle' bgcolor='#FFFFF8' align='center' width='14%'>Instruksi</td>"+
+                                        "<td style='font-weight:bold;' valign='middle' bgcolor='#FFFFF8' align='center' width='14%'>Evaluasi</td>"+
                                     "</tr>");
                             rs2.beforeFirst();
                             while(rs2.next()){
@@ -14888,10 +14888,10 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
             htmlContent = new StringBuilder();
             htmlContent.append(                             
                 "<tr class='isi'>"+
-                    "<td valign='middle' bgcolor='#FFFAF8' align='center' width='5%'>Tgl.Reg</td>"+
-                    "<td valign='middle' bgcolor='#FFFAF8' align='center' width='8%'>No.Rawat</td>"+
-                    "<td valign='middle' bgcolor='#FFFAF8' align='center' width='3%'>Status</td>"+
-                    "<td valign='middle' bgcolor='#FFFAF8' align='center' width='84%'>PRMRJ (Profil Ringkas Medis Rawat Jalan)</td>"+
+                    "<td style='font-weight:bold;' valign='middle' bgcolor='#FFFAF8' align='center' width='5%'>Tgl.Reg</td>"+
+                    "<td style='font-weight:bold;' valign='middle' bgcolor='#FFFAF8' align='center' width='8%'>No.Rawat</td>"+
+                    "<td style='font-weight:bold;' valign='middle' bgcolor='#FFFAF8' align='center' width='3%'>Status</td>"+
+                    "<td style='font-weight:bold;' valign='middle' bgcolor='#FFFAF8' align='center' width='84%'>PRMRJ (Profil Ringkas Medis Rawat Jalan)</td>"+
                 "</tr>"
             );     
             if(R1.isSelected()==true){
@@ -14937,20 +14937,21 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                     try {
                         rs2=koneksi.prepareStatement(
                                 "SELECT prmrj.no_rawat,prmrj.tgl_perawatan,prmrj.jam_rawat,prmrj.riwayat_alergi,prmrj.riwayat_penyakit,prmrj.riwayat_operasi,prmrj.terapi,"+
-                                "prmrj.nip,diagnosa_pasien.kd_penyakit,pegawai.nama,pegawai.jbtn "+
-                                "FROM prmrj JOIN pegawai ON prmrj.nip = pegawai.nik JOIN diagnosa_pasien on prmrj.no_rawat = diagnosa_pasien.no_rawat "+
+                                "prmrj.nip,diagnosa_pasien.kd_penyakit,pegawai.nama,pegawai.jbtn,penyakit.nm_penyakit "+
+                                "FROM prmrj JOIN pegawai ON prmrj.nip = pegawai.nik JOIN diagnosa_pasien on prmrj.no_rawat = diagnosa_pasien.no_rawat JOIN penyakit on diagnosa_pasien.kd_penyakit=penyakit.kd_penyakit "+
                                 "WHERE prmrj.no_rawat = '"+rs.getString("no_rawat")+"' "+
                                 "ORDER BY prmrj.tgl_perawatan, prmrj.jam_rawat").executeQuery();
                         if(rs2.next()){
                             htmlContent.append(
                                     "<tr class='isi'>"+
-                                        "<td valign='middle' bgcolor='#FFFFF8' align='center' width='7%'>Tanggal</td>"+
-                                        "<td valign='middle' bgcolor='#FFFFF8' align='center' width='13%'>Dokter</td>"+
-                                        "<td valign='middle' bgcolor='#FFFFF8' align='center' width='16%'>Riwayat Alergi</td>"+
-                                        "<td valign='middle' bgcolor='#FFFFF8' align='center' width='16%'>Riwayat Penyakit</td>"+
-                                        "<td valign='middle' bgcolor='#FFFFF8' align='center' width='16%'>Riwayat Operasi</td>"+
-                                        "<td valign='middle' bgcolor='#FFFFF8' align='center' width='16%'>Diagnosa</td>"+
-                                        "<td valign='middle' bgcolor='#FFFFF8' align='center' width='16%'>Terapi</td>"+
+                                        "<td style='font-weight:bold;' valign='middle' bgcolor='#FFFFF8' align='center' width='7%'>Tanggal</td>"+
+                                        "<td style='font-weight:bold;' valign='middle' bgcolor='#FFFFF8' align='center' width='15%'>Dokter</td>"+
+                                        "<td style='font-weight:bold;' valign='middle' bgcolor='#FFFFF8' align='center' width='14%'>Riwayat Alergi</td>"+
+                                        "<td style='font-weight:bold;' valign='middle' bgcolor='#FFFFF8' align='center' width='14%'>Riwayat Penyakit</td>"+
+                                        "<td style='font-weight:bold;' valign='middle' bgcolor='#FFFFF8' align='center' width='14%'>Riwayat Operasi</td>"+
+                                        "<td style='font-weight:bold;' valign='middle' bgcolor='#FFFFF8' align='center' width='8%'>ICD 10</td>"+
+                                        "<td style='font-weight:bold;' valign='middle' bgcolor='#FFFFF8' align='center' width='14%'>Diagnosa</td>"+
+                                        "<td style='font-weight:bold;' valign='middle' bgcolor='#FFFFF8' align='center' width='14%'>Terapi</td>"+
                                     "</tr>");
                             rs2.beforeFirst();
                             while(rs2.next()){
@@ -14962,6 +14963,7 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                                         "<td align='left'>"+rs2.getString("riwayat_penyakit").replaceAll("(\r\n|\r|\n|\n\r)","<br>")+"</td>"+   
                                         "<td align='left'>"+rs2.getString("riwayat_operasi").replaceAll("(\r\n|\r|\n|\n\r)","<br>")+"</td>"+
                                         "<td align='left'>"+rs2.getString("kd_penyakit").replaceAll("(\r\n|\r|\n|\n\r)","<br>")+"</td>"+
+                                        "<td align='left'>"+rs2.getString("nm_penyakit").replaceAll("(\r\n|\r|\n|\n\r)","<br>")+"</td>"+
                                         "<td align='left'>"+rs2.getString("terapi").replaceAll("(\r\n|\r|\n|\n\r)","<br>")+"</td>"+
                                     "</tr>"
                                  );
