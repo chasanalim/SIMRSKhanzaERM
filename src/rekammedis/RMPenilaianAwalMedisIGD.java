@@ -2394,6 +2394,18 @@ public final class RMPenilaianAwalMedisIGD extends javax.swing.JDialog {
         Anamnesis.requestFocus();
     } 
 
+    public void setNoRm(String norwt,Date tgl1,Date tgl2) {
+        TNoRw.setText(norwt);
+        TCari.setText("");
+        DTPCari1.setDate(tgl1);
+        DTPCari2.setDate(tgl2);
+        isRawat();
+     
+     
+        TabRawatMouseClicked(null);
+    }
+    
+    
     private void getData() {
         if(tbObat.getSelectedRow()!= -1){
             TNoRw.setText(tbObat.getValueAt(tbObat.getSelectedRow(),0).toString()); 
@@ -2476,6 +2488,26 @@ public final class RMPenilaianAwalMedisIGD extends javax.swing.JDialog {
         TCari.setText(norwt);
         DTPCari2.setDate(tgl2);    
         isRawat(); 
+        
+
+//        if(Sequel.cariIsi("select plan from data_triase_igdprimer where no_rawat='"+TNoRw.getText()+"'").equals("Ruang Kritis")){
+//            Sequel.cariIsi("select keluhan_utama from data_triase_igdprimer where no_rawat=?",KeluhanUtama,TNoRw.getText());
+//        }else if(Sequel.cariIsi("select plan from data_triase_igdprimer where no_rawat='"+TNoRw.getText()+"'").equals("Ruang Resusitasi")){
+//            Sequel.cariIsi("select keluhan_utama from data_triase_igdprimer where no_rawat=?",KeluhanUtama,TNoRw.getText());
+//        }else if(Sequel.cariIsi("select plan from data_triase_igdprimer where no_rawat='"+TNoRw.getText()+"'").equals("Ruang Resusitasi")){
+//            Sequel.cariIsi("select anamnesa_singkat from data_triase_igdsekunder where no_rawat=?",KeluhanUtama,TNoRw.getText());
+//        }else if(Sequel.cariIsi("select plan from data_triase_igdprimer where no_rawat='"+TNoRw.getText()+"'").equals("Ruang Resusitasi")){
+//            Sequel.cariIsi("select anamnesa_singkat from data_triase_igdsekunder where no_rawat=?",KeluhanUtama,TNoRw.getText());
+//        }
+
+        Sequel.cariIsi("select keluhan_utama from data_triase_igdprimer where no_rawat=?",KeluhanUtama,TNoRw.getText());
+        Sequel.cariIsi("select tekanan_darah from data_triase_igd where no_rawat=?",TD,TNoRw.getText());
+        Sequel.cariIsi("select nadi from data_triase_igd where no_rawat=?",Nadi,TNoRw.getText());
+        Sequel.cariIsi("select tekanan_darah from data_triase_igd where no_rawat=?",TD,TNoRw.getText());
+        Sequel.cariIsi("select pernapasan from data_triase_igd where no_rawat=?",RR,TNoRw.getText());
+        Sequel.cariIsi("select suhu from data_triase_igd where no_rawat=?",Suhu,TNoRw.getText());
+        Sequel.cariIsi("select saturasi_o2 from data_triase_igd where no_rawat=?",SPO,TNoRw.getText());
+      
     }
     
     public void isCek(){

@@ -901,7 +901,7 @@ public final class RMTriaseIGD extends javax.swing.JDialog {
         jLabel28.setBounds(362, 10, 90, 23);
 
         PrimerTanggalTriase.setForeground(new java.awt.Color(50, 70, 50));
-        PrimerTanggalTriase.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "16-01-2023 10:08:51" }));
+        PrimerTanggalTriase.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "06-03-2023 15:01:15" }));
         PrimerTanggalTriase.setDisplayFormat("dd-MM-yyyy HH:mm:ss");
         PrimerTanggalTriase.setName("PrimerTanggalTriase"); // NOI18N
         PrimerTanggalTriase.setOpaque(false);
@@ -1169,7 +1169,7 @@ public final class RMTriaseIGD extends javax.swing.JDialog {
         scrollPane2.setViewportView(SekunderAnamnesa);
 
         internalFrame11.add(scrollPane2);
-        scrollPane2.setBounds(114, 10, 440, 53);
+        scrollPane2.setBounds(114, 10, 300, 53);
 
         jLabel13.setText("Anamnesa Singkat :");
         jLabel13.setName("jLabel13"); // NOI18N
@@ -1179,7 +1179,7 @@ public final class RMTriaseIGD extends javax.swing.JDialog {
         jLabel14.setText("Suhu (C) :");
         jLabel14.setName("jLabel14"); // NOI18N
         internalFrame11.add(jLabel14);
-        jLabel14.setBounds(547, 10, 79, 23);
+        jLabel14.setBounds(420, 10, 60, 23);
 
         SekunderSuhu.setFocusTraversalPolicyProvider(true);
         SekunderSuhu.setName("SekunderSuhu"); // NOI18N
@@ -1189,7 +1189,7 @@ public final class RMTriaseIGD extends javax.swing.JDialog {
             }
         });
         internalFrame11.add(SekunderSuhu);
-        SekunderSuhu.setBounds(630, 10, 55, 23);
+        SekunderSuhu.setBounds(480, 10, 55, 23);
 
         jLabel17.setText("Saturasi O²(%) :");
         jLabel17.setName("jLabel17"); // NOI18N
@@ -1209,7 +1209,7 @@ public final class RMTriaseIGD extends javax.swing.JDialog {
         jLabel31.setText("Nyeri :");
         jLabel31.setName("jLabel31"); // NOI18N
         internalFrame11.add(jLabel31);
-        jLabel31.setBounds(547, 40, 79, 23);
+        jLabel31.setBounds(550, 10, 79, 23);
 
         SekunderNyeri.setHighlighter(null);
         SekunderNyeri.setName("SekunderNyeri"); // NOI18N
@@ -1219,7 +1219,7 @@ public final class RMTriaseIGD extends javax.swing.JDialog {
             }
         });
         internalFrame11.add(SekunderNyeri);
-        SekunderNyeri.setBounds(630, 40, 55, 23);
+        SekunderNyeri.setBounds(630, 10, 55, 23);
 
         SekunderNadi.setFocusTraversalPolicyProvider(true);
         SekunderNadi.setName("SekunderNadi"); // NOI18N
@@ -1234,12 +1234,12 @@ public final class RMTriaseIGD extends javax.swing.JDialog {
             }
         });
         internalFrame11.add(SekunderNadi);
-        SekunderNadi.setBounds(630, 70, 55, 23);
+        SekunderNadi.setBounds(630, 40, 55, 23);
 
         jLabel32.setText("Nadi(/menit) :");
         jLabel32.setName("jLabel32"); // NOI18N
         internalFrame11.add(jLabel32);
-        jLabel32.setBounds(547, 70, 79, 23);
+        jLabel32.setBounds(550, 40, 79, 23);
 
         SekunderRespirasi.setHighlighter(null);
         SekunderRespirasi.setName("SekunderRespirasi"); // NOI18N
@@ -1264,12 +1264,12 @@ public final class RMTriaseIGD extends javax.swing.JDialog {
             }
         });
         internalFrame11.add(SekunderTensi);
-        SekunderTensi.setBounds(458, 70, 55, 23);
+        SekunderTensi.setBounds(480, 40, 55, 23);
 
         jLabel15.setText("Tensi :");
         jLabel15.setName("jLabel15"); // NOI18N
         internalFrame11.add(jLabel15);
-        jLabel15.setBounds(395, 70, 59, 23);
+        jLabel15.setBounds(420, 40, 59, 23);
 
         internalFrame10.add(internalFrame11, java.awt.BorderLayout.PAGE_START);
 
@@ -1327,7 +1327,7 @@ public final class RMTriaseIGD extends javax.swing.JDialog {
         jLabel37.setBounds(362, 10, 90, 23);
 
         SekunderTanggalTriase.setForeground(new java.awt.Color(50, 70, 50));
-        SekunderTanggalTriase.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "16-01-2023 10:08:53" }));
+        SekunderTanggalTriase.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "06-03-2023 15:01:18" }));
         SekunderTanggalTriase.setDisplayFormat("dd-MM-yyyy HH:mm:ss");
         SekunderTanggalTriase.setName("SekunderTanggalTriase"); // NOI18N
         SekunderTanggalTriase.setOpaque(false);
@@ -1620,7 +1620,7 @@ public final class RMTriaseIGD extends javax.swing.JDialog {
         jLabel18.setBounds(0, 40, 89, 23);
 
         TanggalKunjungan.setForeground(new java.awt.Color(50, 70, 50));
-        TanggalKunjungan.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "16-01-2023 10:08:53" }));
+        TanggalKunjungan.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "06-03-2023 15:01:18" }));
         TanggalKunjungan.setDisplayFormat("dd-MM-yyyy HH:mm:ss");
         TanggalKunjungan.setName("TanggalKunjungan"); // NOI18N
         TanggalKunjungan.setOpaque(false);
@@ -1779,7 +1779,7 @@ public final class RMTriaseIGD extends javax.swing.JDialog {
         panelGlass9.add(jLabel19);
 
         DTPCari1.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "16-01-2023" }));
+        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "06-03-2023" }));
         DTPCari1.setDisplayFormat("dd-MM-yyyy");
         DTPCari1.setName("DTPCari1"); // NOI18N
         DTPCari1.setOpaque(false);
@@ -1793,7 +1793,7 @@ public final class RMTriaseIGD extends javax.swing.JDialog {
         panelGlass9.add(jLabel21);
 
         DTPCari2.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "16-01-2023" }));
+        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "06-03-2023" }));
         DTPCari2.setDisplayFormat("dd-MM-yyyy");
         DTPCari2.setName("DTPCari2"); // NOI18N
         DTPCari2.setOpaque(false);
