@@ -62,7 +62,7 @@ public final class RMDataAsuhanGizi extends javax.swing.JDialog {
             "No.Rawat","No.RM","Nama Pasien","J.K.","Tgl.Lahir","Tgl.Asuhan","BB(Kg)","TB(Cm)","IMT(Kg/Cm)","LiLA(Cm)","TL(Cm)",
             "ULNA(Cm)","BB Ideal(Kg)","BB/U(%)","TB/U(%)","BB/TB(%)","LiLA/U(%)","Biokimia","Fisik/Klinis","Telur","Susu Sapi",
             "Kacang","Gluten","Udang","Ikan","Hazelnut","Pola Makan","Riwayat Personal","Diagnosis Gizi","Intervensi Gizi",
-            "Monitoring & Evaluasi","NIP","Nama Petugas"
+            "Monitoring & Evaluasi","NIP","Nama Petugas","Kamar Perawatan","Cara Bayar"
         }){
               @Override public boolean isCellEditable(int rowIndex, int colIndex){return false;}
         };
@@ -140,6 +140,10 @@ public final class RMDataAsuhanGizi extends javax.swing.JDialog {
                 column.setPreferredWidth(80);
             }else if(i==32){
                 column.setPreferredWidth(150);
+            }else if(i==33){
+                column.setPreferredWidth(190);
+            }else if(i==34){
+                column.setPreferredWidth(60);
             }
         }
         tbObat.setDefaultRenderer(Object.class, new WarnaTable());
@@ -599,6 +603,11 @@ public final class RMDataAsuhanGizi extends javax.swing.JDialog {
 
         TCari.setName("TCari"); // NOI18N
         TCari.setPreferredSize(new java.awt.Dimension(310, 23));
+        TCari.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TCariActionPerformed(evt);
+            }
+        });
         TCari.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 TCariKeyPressed(evt);
@@ -1790,6 +1799,10 @@ public final class RMDataAsuhanGizi extends javax.swing.JDialog {
         Valid.pindah2(evt,RiwayatPersonal,IntervensiGizi);
     }//GEN-LAST:event_DiagnosisGiziKeyPressed
 
+    private void TCariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TCariActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TCariActionPerformed
+
     /**
     * @param args the command line arguments
     */
@@ -1951,10 +1964,12 @@ public final class RMDataAsuhanGizi extends javax.swing.JDialog {
                         "asuhan_gizi.antropometri_tbperu,asuhan_gizi.antropometri_bbpertb,asuhan_gizi.antropometri_llaperu,asuhan_gizi.biokimia,"+
                         "asuhan_gizi.fisik_klinis,asuhan_gizi.alergi_telur,asuhan_gizi.alergi_susu_sapi,asuhan_gizi.alergi_kacang,asuhan_gizi.alergi_gluten,"+
                         "asuhan_gizi.alergi_udang,asuhan_gizi.alergi_ikan,asuhan_gizi.alergi_hazelnut,asuhan_gizi.pola_makan,asuhan_gizi.riwayat_personal,"+
-                        "asuhan_gizi.diagnosis,asuhan_gizi.intervensi_gizi,asuhan_gizi.monitoring_evaluasi,asuhan_gizi.nip,petugas.nama "+
+                        "asuhan_gizi.diagnosis,asuhan_gizi.intervensi_gizi,asuhan_gizi.monitoring_evaluasi,asuhan_gizi.nip,petugas.nama,kamar_inap.kd_kamar,penjab.png_jawab "+
                         "from reg_periksa inner join pasien on reg_periksa.no_rkm_medis=pasien.no_rkm_medis "+
                         "inner join asuhan_gizi on reg_periksa.no_rawat=asuhan_gizi.no_rawat "+
-                        "inner join petugas on asuhan_gizi.nip=petugas.nip where "+
+                        "inner join petugas on asuhan_gizi.nip=petugas.nip "+
+                        "inner join kamar_inap ON reg_periksa.no_rawat = kamar_inap.no_rawat "+
+                        "inner join penjab ON reg_periksa.kd_pj = penjab.kd_pj where "+
                         "asuhan_gizi.tanggal between ? and ? order by asuhan_gizi.tanggal");
             }else{
                 ps=koneksi.prepareStatement(
@@ -1964,10 +1979,12 @@ public final class RMDataAsuhanGizi extends javax.swing.JDialog {
                         "asuhan_gizi.antropometri_tbperu,asuhan_gizi.antropometri_bbpertb,asuhan_gizi.antropometri_llaperu,asuhan_gizi.biokimia,"+
                         "asuhan_gizi.fisik_klinis,asuhan_gizi.alergi_telur,asuhan_gizi.alergi_susu_sapi,asuhan_gizi.alergi_kacang,asuhan_gizi.alergi_gluten,"+
                         "asuhan_gizi.alergi_udang,asuhan_gizi.alergi_ikan,asuhan_gizi.alergi_hazelnut,asuhan_gizi.pola_makan,asuhan_gizi.riwayat_personal,"+
-                        "asuhan_gizi.diagnosis,asuhan_gizi.intervensi_gizi,asuhan_gizi.monitoring_evaluasi,asuhan_gizi.nip,petugas.nama "+
+                        "asuhan_gizi.diagnosis,asuhan_gizi.intervensi_gizi,asuhan_gizi.monitoring_evaluasi,asuhan_gizi.nip,petugas.nama,kamar_inap.kd_kamar,penjab.png_jawab "+
                         "from reg_periksa inner join pasien on reg_periksa.no_rkm_medis=pasien.no_rkm_medis "+
                         "inner join asuhan_gizi on reg_periksa.no_rawat=asuhan_gizi.no_rawat "+
-                        "inner join petugas on asuhan_gizi.nip=petugas.nip where "+
+                        "inner join petugas on asuhan_gizi.nip=petugas.nip "+
+                        "inner join kamar_inap ON reg_periksa.no_rawat = kamar_inap.no_rawat "+
+                        "inner join penjab ON reg_periksa.kd_pj = penjab.kd_pj where "+
                         "asuhan_gizi.tanggal between ? and ? and reg_periksa.no_rawat like ? or "+
                         "asuhan_gizi.tanggal between ? and ? and pasien.no_rkm_medis like ? or "+
                         "asuhan_gizi.tanggal between ? and ? and pasien.nm_pasien like ? or "+
@@ -2010,7 +2027,7 @@ public final class RMDataAsuhanGizi extends javax.swing.JDialog {
                         rs.getString("biokimia"),rs.getString("fisik_klinis"),rs.getString("alergi_telur"),rs.getString("alergi_susu_sapi"),
                         rs.getString("alergi_kacang"),rs.getString("alergi_gluten"),rs.getString("alergi_udang"),rs.getString("alergi_ikan"),
                         rs.getString("alergi_hazelnut"),rs.getString("pola_makan"),rs.getString("riwayat_personal"),rs.getString("diagnosis"),
-                        rs.getString("intervensi_gizi"),rs.getString("monitoring_evaluasi"),rs.getString("nip"),rs.getString("nama")
+                        rs.getString("intervensi_gizi"),rs.getString("monitoring_evaluasi"),rs.getString("nip"),rs.getString("nama"),rs.getString("kd_kamar"),rs.getString("png_jawab")
                     });
                 }
             } catch (Exception e) {
