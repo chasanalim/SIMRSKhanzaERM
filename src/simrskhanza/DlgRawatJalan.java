@@ -8566,6 +8566,7 @@ private void BtnEditKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
         Sequel.cariIsi("select gcs from penilaian_awal_keperawatan_ralan where no_rawat=?",TGCS,TNoRw.getText());
         Sequel.cariIsi("select bb from penilaian_awal_keperawatan_ralan where no_rawat=?",TBerat,TNoRw.getText());
         Sequel.cariIsi("select tb from penilaian_awal_keperawatan_ralan where no_rawat=?",TTinggi,TNoRw.getText());
+        Sequel.cariIsi("select spo2 from penilaian_awal_keperawatan_ralan where no_rawat=?",SpO2,TNoRw.getText());
         }
         ChkInput.setSelected(true);
         isForm();
