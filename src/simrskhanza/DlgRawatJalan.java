@@ -1099,10 +1099,10 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
                         TPegawai.setText(pegawai.getTable().getValueAt(pegawai.getTable().getSelectedRow(),1).toString());
                         Jabatan.setText(pegawai.getTable().getValueAt(pegawai.getTable().getSelectedRow(),3).toString());
                         KdPeg.requestFocus();
-                        KdPeg1.setText(pegawai.getTable().getValueAt(pegawai.getTable().getSelectedRow(),0).toString());
-                        TPegawai1.setText(pegawai.getTable().getValueAt(pegawai.getTable().getSelectedRow(),1).toString());
-                        Jabatan1.setText(pegawai.getTable().getValueAt(pegawai.getTable().getSelectedRow(),3).toString());
-                        KdPeg1.requestFocus(); 
+                        KdPegPRMRJ.setText(pegawai.getTable().getValueAt(pegawai.getTable().getSelectedRow(),0).toString());
+                        TPegawaiPRMRJ.setText(pegawai.getTable().getValueAt(pegawai.getTable().getSelectedRow(),1).toString());
+                        JabatanPRMRJ.setText(pegawai.getTable().getValueAt(pegawai.getTable().getSelectedRow(),3).toString());
+                        KdPegPRMRJ.requestFocus(); 
                     }        
                 }
             }
@@ -1562,10 +1562,10 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
         scrollPane10 = new widget.ScrollPane();
         TBTerapi = new widget.TextArea();
         jLabel89 = new widget.Label();
-        KdPeg1 = new widget.TextBox();
-        TPegawai1 = new widget.TextBox();
+        KdPegPRMRJ = new widget.TextBox();
+        TPegawaiPRMRJ = new widget.TextBox();
         BtnSeekPegawai1 = new widget.Button();
-        Jabatan1 = new widget.TextBox();
+        JabatanPRMRJ = new widget.TextBox();
         jLabel90 = new widget.Label();
         Btn5Soap1 = new widget.Button();
         scrollPane14 = new widget.ScrollPane();
@@ -1812,7 +1812,7 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
         panelGlass9.add(jLabel19);
 
         DTPCari1.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "18-01-2023" }));
+        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "07-03-2023" }));
         DTPCari1.setDisplayFormat("dd-MM-yyyy");
         DTPCari1.setName("DTPCari1"); // NOI18N
         DTPCari1.setOpaque(false);
@@ -1826,7 +1826,7 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
         panelGlass9.add(jLabel21);
 
         DTPCari2.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "18-01-2023" }));
+        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "07-03-2023" }));
         DTPCari2.setDisplayFormat("dd-MM-yyyy");
         DTPCari2.setName("DTPCari2"); // NOI18N
         DTPCari2.setOpaque(false);
@@ -3632,21 +3632,21 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
         panelGlass16.add(jLabel89);
         jLabel89.setBounds(0, 10, 70, 23);
 
-        KdPeg1.setHighlighter(null);
-        KdPeg1.setName("KdPeg1"); // NOI18N
-        KdPeg1.addKeyListener(new java.awt.event.KeyAdapter() {
+        KdPegPRMRJ.setHighlighter(null);
+        KdPegPRMRJ.setName("KdPegPRMRJ"); // NOI18N
+        KdPegPRMRJ.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                KdPeg1KeyPressed(evt);
+                KdPegPRMRJKeyPressed(evt);
             }
         });
-        panelGlass16.add(KdPeg1);
-        KdPeg1.setBounds(73, 10, 115, 23);
+        panelGlass16.add(KdPegPRMRJ);
+        KdPegPRMRJ.setBounds(73, 10, 115, 23);
 
-        TPegawai1.setEditable(false);
-        TPegawai1.setHighlighter(null);
-        TPegawai1.setName("TPegawai1"); // NOI18N
-        panelGlass16.add(TPegawai1);
-        TPegawai1.setBounds(190, 10, 212, 23);
+        TPegawaiPRMRJ.setEditable(false);
+        TPegawaiPRMRJ.setHighlighter(null);
+        TPegawaiPRMRJ.setName("TPegawaiPRMRJ"); // NOI18N
+        panelGlass16.add(TPegawaiPRMRJ);
+        TPegawaiPRMRJ.setBounds(190, 10, 212, 23);
 
         BtnSeekPegawai1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/190.png"))); // NOI18N
         BtnSeekPegawai1.setMnemonic('4');
@@ -3660,11 +3660,11 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
         panelGlass16.add(BtnSeekPegawai1);
         BtnSeekPegawai1.setBounds(405, 10, 28, 23);
 
-        Jabatan1.setEditable(false);
-        Jabatan1.setHighlighter(null);
-        Jabatan1.setName("Jabatan1"); // NOI18N
-        panelGlass16.add(Jabatan1);
-        Jabatan1.setBounds(640, 10, 209, 23);
+        JabatanPRMRJ.setEditable(false);
+        JabatanPRMRJ.setHighlighter(null);
+        JabatanPRMRJ.setName("JabatanPRMRJ"); // NOI18N
+        panelGlass16.add(JabatanPRMRJ);
+        JabatanPRMRJ.setBounds(640, 10, 209, 23);
 
         jLabel90.setText("Profesi / Jabatan / Departemen :");
         jLabel90.setName("jLabel90"); // NOI18N
@@ -3755,7 +3755,7 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
         jLabel23.setBounds(554, 10, 60, 23);
 
         DTPTgl.setForeground(new java.awt.Color(50, 70, 50));
-        DTPTgl.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "18-01-2023" }));
+        DTPTgl.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "07-03-2023" }));
         DTPTgl.setDisplayFormat("dd-MM-yyyy");
         DTPTgl.setName("DTPTgl"); // NOI18N
         DTPTgl.setOpaque(false);
@@ -7859,15 +7859,15 @@ private void BtnEditKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
         // TODO add your handling code here:
     }//GEN-LAST:event_TBTerapiKeyPressed
 
-    private void KdPeg1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_KdPeg1KeyPressed
+    private void KdPegPRMRJKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_KdPegPRMRJKeyPressed
            if(evt.getKeyCode()==KeyEvent.VK_PAGE_DOWN){
-            Sequel.cariIsi("select pegawai.nama from pegawai where pegawai.nik=?",TPegawai1,KdPeg1.getText());
+            Sequel.cariIsi("select pegawai.nama from pegawai where pegawai.nik=?",TPegawaiPRMRJ,KdPegPRMRJ.getText());
         }else if(evt.getKeyCode()==KeyEvent.VK_UP){
             BtnSeekPegawaiActionPerformed(null);
         }else{
             Valid.pindah(evt,TNoRw,TKeluhan);
         }
-    }//GEN-LAST:event_KdPeg1KeyPressed
+    }//GEN-LAST:event_KdPegPRMRJKeyPressed
 
     private void BtnSeekPegawai1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnSeekPegawai1ActionPerformed
         akses.setform("DlgRawatJalan");
@@ -7993,12 +7993,12 @@ private void BtnEditKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
     private widget.PanelBiasa FormInput;
     private widget.PanelBiasa FormMenu;
     private widget.TextBox Jabatan;
-    private widget.TextBox Jabatan1;
+    private widget.TextBox JabatanPRMRJ;
     private widget.TextBox KdDok;
     private widget.TextBox KdDok2;
     private widget.TextBox KdDok3;
     private widget.TextBox KdPeg;
-    private widget.TextBox KdPeg1;
+    private widget.TextBox KdPegPRMRJ;
     private widget.Label LCount;
     private widget.TextBox LingkarPerut;
     private widget.PanelBiasa PanelAccor;
@@ -8053,7 +8053,7 @@ private void BtnEditKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
     private widget.TextBox TNoRw;
     private widget.TextBox TPasien;
     private widget.TextBox TPegawai;
-    private widget.TextBox TPegawai1;
+    private widget.TextBox TPegawaiPRMRJ;
     private widget.TextBox TPembukaan;
     private widget.TextArea TPemeriksaan;
     private widget.TextArea TPenilaian;
@@ -8522,6 +8522,8 @@ private void BtnEditKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
         KdDok3.setText(KdDok.getText());
         TDokter2.setText(TDokter.getText()); 
         TDokter3.setText(TDokter.getText());
+        
+        //Otomatis SOAP
         if(Jabatan.getText().trim().contains("Kandungan")){
         Sequel.cariIsi("select keluhan_utama from penilaian_awal_keperawatan_kebidanan where no_rawat=?",TKeluhan,TNoRw.getText());
         Sequel.cariIsi("select td from penilaian_awal_keperawatan_kebidanan where no_rawat=?",TTensi,TNoRw.getText());
@@ -8568,6 +8570,53 @@ private void BtnEditKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
         Sequel.cariIsi("select tb from penilaian_awal_keperawatan_ralan where no_rawat=?",TTinggi,TNoRw.getText());
         Sequel.cariIsi("select spo2 from penilaian_awal_keperawatan_ralan where no_rawat=?",SpO2,TNoRw.getText());
         }
+       //Akhir Otomatis SOAP
+        
+       //PRMRJ
+        if(JabatanPRMRJ.getText().trim().contains("Kandungan")){
+        Sequel.cariIsi("select alergi from penilaian_medis_ralan_kandungan where no_rawat=?",TBAlergi,TNoRw.getText());
+        Sequel.cariIsi("select rpd from penilaian_medis_ralan_kandungan where no_rawat=?",TBRPenyakit,TNoRw.getText());
+        Sequel.cariIsi("select rpo from penilaian_medis_ralan_kandungan where no_rawat=?",TBTerapi,TNoRw.getText());
+        }else if(JabatanPRMRJ.getText().trim().contains("Anak")){
+        Sequel.cariIsi("select alergi from penilaian_medis_ralan_anak where no_rawat=?",TBAlergi,TNoRw.getText());
+        Sequel.cariIsi("select rpd from penilaian_medis_ralan_anak where no_rawat=?",TBRPenyakit,TNoRw.getText());
+        Sequel.cariIsi("select rpo from penilaian_medis_ralan_anak where no_rawat=?",TBTerapi,TNoRw.getText());
+        }else if(JabatanPRMRJ.getText().trim().contains("Bedah")){
+        Sequel.cariIsi("select alergi from penilaian_medis_ralan_bedah where no_rawat=?",TBAlergi,TNoRw.getText());
+        Sequel.cariIsi("select rpd from penilaian_medis_ralan_bedah where no_rawat=?",TBRPenyakit,TNoRw.getText());
+        Sequel.cariIsi("select rpo from penilaian_medis_ralan_bedah where no_rawat=?",TBTerapi,TNoRw.getText());
+        }else if(JabatanPRMRJ.getText().trim().contains("Penyakit Dalam")){
+        Sequel.cariIsi("select alergi from penilaian_medis_ralan_penyakit_dalam where no_rawat=?",TBAlergi,TNoRw.getText());
+        Sequel.cariIsi("select rpd from penilaian_medis_ralan_penyakit_dalam where no_rawat=?",TBRPenyakit,TNoRw.getText());
+        Sequel.cariIsi("select rpo from penilaian_medis_ralan_penyakit_dalam where no_rawat=?",TBTerapi,TNoRw.getText());
+        }else if(JabatanPRMRJ.getText().trim().contains("Mata")){
+        Sequel.cariIsi("select alergi from penilaian_medis_ralan_mata where no_rawat=?",TBAlergi,TNoRw.getText());
+        Sequel.cariIsi("select rpd from penilaian_medis_ralan_mata where no_rawat=?",TBRPenyakit,TNoRw.getText());
+        Sequel.cariIsi("select rpo from penilaian_medis_ralan_mata where no_rawat=?",TBTerapi,TNoRw.getText());
+        }else if(JabatanPRMRJ.getText().trim().contains("Orthophedi")){
+        Sequel.cariIsi("select alergi from penilaian_medis_ralan_orthopedi where no_rawat=?",TBAlergi,TNoRw.getText());
+        Sequel.cariIsi("select rpd from penilaian_medis_ralan_orthopedi where no_rawat=?",TBRPenyakit,TNoRw.getText());
+        Sequel.cariIsi("select rpo from penilaian_medis_ralan_orthopedi where no_rawat=?",TBTerapi,TNoRw.getText());
+        }else if(JabatanPRMRJ.getText().trim().contains("Jiwa")){
+        Sequel.cariIsi("select alergi from penilaian_medis_ralan_psikiatrik where no_rawat=?",TBAlergi,TNoRw.getText());
+        Sequel.cariIsi("select rpd from penilaian_medis_ralan_psikiatrik where no_rawat=?",TBRPenyakit,TNoRw.getText());
+        Sequel.cariIsi("select rpo from penilaian_medis_ralan_psikiatrik where no_rawat=?",TBTerapi,TNoRw.getText());
+        }else if(JabatanPRMRJ.getText().trim().contains("THT")){
+        Sequel.cariIsi("select alergi from penilaian_medis_ralan_tht where no_rawat=?",TBAlergi,TNoRw.getText());
+        Sequel.cariIsi("select rpd from penilaian_medis_ralan_tht where no_rawat=?",TBRPenyakit,TNoRw.getText());
+        Sequel.cariIsi("select rpo from penilaian_medis_ralan_tht where no_rawat=?",TBTerapi,TNoRw.getText());
+        }else if(JabatanPRMRJ.getText().trim().contains("Saraf")){
+        Sequel.cariIsi("select alergi from penilaian_medis_ralan_neurologi where no_rawat=?",TBAlergi,TNoRw.getText());
+        Sequel.cariIsi("select rpd from penilaian_medis_ralan_neurologi where no_rawat=?",TBRPenyakit,TNoRw.getText());
+        Sequel.cariIsi("select rpo from penilaian_medis_ralan_neurologi where no_rawat=?",TBTerapi,TNoRw.getText());
+        }else{
+        Sequel.cariIsi("select alergi from penilaian_medis_ralan where no_rawat=?",TBAlergi,TNoRw.getText());
+        Sequel.cariIsi("select rpd from penilaian_medis_ralan where no_rawat=?",TBRPenyakit,TNoRw.getText());
+        Sequel.cariIsi("select rpo from penilaian_medis_ralan where no_rawat=?",TBTerapi,TNoRw.getText());
+        }
+        
+        //Akhir PRMRJ
+      
         ChkInput.setSelected(true);
         isForm();
         ChkInput1.setSelected(true);
@@ -8867,6 +8916,9 @@ private void BtnEditKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
             KdPeg.setText(akses.getkode());
             Sequel.cariIsi("select pegawai.nama from pegawai where pegawai.nik=?",TPegawai,KdPeg.getText()); 
             Sequel.cariIsi("select pegawai.jbtn from pegawai where pegawai.nik=?",Jabatan,KdPeg.getText());
+            KdPegPRMRJ.setText(akses.getkode());
+            Sequel.cariIsi("select pegawai.nama from pegawai where pegawai.nik=?",TPegawaiPRMRJ,KdPegPRMRJ.getText()); 
+            Sequel.cariIsi("select pegawai.jbtn from pegawai where pegawai.nik=?",JabatanPRMRJ,KdPegPRMRJ.getText());
         }
     }
 
