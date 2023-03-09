@@ -5765,6 +5765,8 @@ public class DlgKamarInap extends javax.swing.JDialog {
                     }
                 }else if(i==7){
                     MnGelang2ActionPerformed(null);
+                }else if(i==6){
+                    MnSEPActionPerformed(null);
                 }
             }
         }
