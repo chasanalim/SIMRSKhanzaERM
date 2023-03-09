@@ -2796,6 +2796,20 @@ public final class RMPenilaianAwalMedisRalanKandungan extends javax.swing.JDialo
         TCari.setText(norwt);
         DTPCari2.setDate(tgl2);    
         isRawat(); 
+        
+        Sequel.cariIsi("select keluhan_utama from penilaian_awal_keperawatan_kebidanan where no_rawat=?",KeluhanUtama,TNoRw.getText());
+        Sequel.cariIsi("select td from penilaian_awal_keperawatan_kebidanan where no_rawat=?",TD,TNoRw.getText());
+        Sequel.cariIsi("select nadi from penilaian_awal_keperawatan_kebidanan where no_rawat=?",Nadi,TNoRw.getText());
+        Sequel.cariIsi("select rr from penilaian_awal_keperawatan_kebidanan where no_rawat=?",RR,TNoRw.getText());
+        Sequel.cariIsi("select suhu from penilaian_awal_keperawatan_kebidanan where no_rawat=?",Suhu,TNoRw.getText());
+        Sequel.cariIsi("select gcs from penilaian_awal_keperawatan_kebidanan where no_rawat=?",GCS,TNoRw.getText());
+        Sequel.cariIsi("select bb from penilaian_awal_keperawatan_kebidanan where no_rawat=?",BB,TNoRw.getText());
+        Sequel.cariIsi("select tb from penilaian_awal_keperawatan_kebidanan where no_rawat=?",TB,TNoRw.getText());
+        Sequel.cariIsi("select tfu from penilaian_awal_keperawatan_kebidanan where no_rawat=?",TFU,TNoRw.getText());
+        Sequel.cariIsi("select tbj from penilaian_awal_keperawatan_kebidanan where no_rawat=?",TBJ,TNoRw.getText());
+        Sequel.cariIsi("select his from penilaian_awal_keperawatan_kebidanan where no_rawat=?",His,TNoRw.getText());
+        Sequel.cariIsi("select bjj from penilaian_awal_keperawatan_kebidanan where no_rawat=?",DJJ,TNoRw.getText());
+        
     }
     
     public void isCek(){
