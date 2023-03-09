@@ -2387,6 +2387,17 @@ public final class RMPenilaianAwalMedisRalanDewasa extends javax.swing.JDialog {
         TCari.setText(norwt);
         DTPCari2.setDate(tgl2);    
         isRawat(); 
+        
+        //Umum Dewasa
+        Sequel.cariIsi("select keluhan_utama from penilaian_awal_keperawatan_ralan where no_rawat=?",KeluhanUtama,TNoRw.getText());
+        Sequel.cariIsi("select alergi from penilaian_awal_keperawatan_ralan where no_rawat=?",Alergi,TNoRw.getText());
+        Sequel.cariIsi("select td from penilaian_awal_keperawatan_ralan where no_rawat=?",TD,TNoRw.getText());
+        Sequel.cariIsi("select nadi from penilaian_awal_keperawatan_ralan where no_rawat=?",Nadi,TNoRw.getText());
+        Sequel.cariIsi("select rr from penilaian_awal_keperawatan_ralan where no_rawat=?",RR,TNoRw.getText());
+        Sequel.cariIsi("select suhu from penilaian_awal_keperawatan_ralan where no_rawat=?",Suhu,TNoRw.getText());
+        Sequel.cariIsi("select gcs from penilaian_awal_keperawatan_ralan where no_rawat=?",GCS,TNoRw.getText());
+        Sequel.cariIsi("select bb from penilaian_awal_keperawatan_ralan where no_rawat=?",BB,TNoRw.getText());
+        Sequel.cariIsi("select spo2 from penilaian_awal_keperawatan_ralan where no_rawat=?",SPO,TNoRw.getText());
     }
     
     public void isCek(){
