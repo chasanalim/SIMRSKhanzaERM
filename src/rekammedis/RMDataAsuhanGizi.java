@@ -121,7 +121,7 @@ public final class RMDataAsuhanGizi extends javax.swing.JDialog {
             }else if(i==22){
                 column.setPreferredWidth(42);
             }else if(i==23){
-                column.setPreferredWidth(42);
+                column.setPreferredWidth(42); 
             }else if(i==24){
                 column.setPreferredWidth(38);
             }else if(i==25){
