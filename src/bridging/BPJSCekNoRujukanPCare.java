@@ -1710,7 +1710,7 @@ public final class BPJSCekNoRujukanPCare extends javax.swing.JDialog {
 
         DTPLahir.setEditable(false);
         DTPLahir.setForeground(new java.awt.Color(50, 70, 50));
-        DTPLahir.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "24-11-2021" }));
+        DTPLahir.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "31-05-2022" }));
         DTPLahir.setDisplayFormat("dd-MM-yyyy");
         DTPLahir.setName("DTPLahir"); // NOI18N
         DTPLahir.setOpaque(false);
@@ -2238,7 +2238,7 @@ public final class BPJSCekNoRujukanPCare extends javax.swing.JDialog {
         FormKelengkapanPasien.add(TNo);
         TNo.setBounds(107, 25, 160, 23);
 
-        DTPDaftar.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "24-11-2021" }));
+        DTPDaftar.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "31-05-2022" }));
         DTPDaftar.setDisplayFormat("dd-MM-yyyy");
         DTPDaftar.setName("DTPDaftar"); // NOI18N
         DTPDaftar.setOpaque(false);
@@ -3297,7 +3297,7 @@ public final class BPJSCekNoRujukanPCare extends javax.swing.JDialog {
         FormKelengkapanSEP.add(jLabel31);
         jLabel31.setBounds(239, 355, 100, 23);
 
-        TanggalSEP.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "24-11-2021 16:01:44" }));
+        TanggalSEP.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "31-05-2022 08:02:21" }));
         TanggalSEP.setDisplayFormat("dd-MM-yyyy HH:mm:ss");
         TanggalSEP.setName("TanggalSEP"); // NOI18N
         TanggalSEP.setOpaque(false);
@@ -3316,7 +3316,7 @@ public final class BPJSCekNoRujukanPCare extends javax.swing.JDialog {
         FormKelengkapanSEP.add(jLabel30);
         jLabel30.setBounds(3, 355, 100, 23);
 
-        TanggalRujuk.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "24-11-2021" }));
+        TanggalRujuk.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "31-05-2022" }));
         TanggalRujuk.setDisplayFormat("dd-MM-yyyy");
         TanggalRujuk.setName("TanggalRujuk"); // NOI18N
         TanggalRujuk.setOpaque(false);
@@ -3785,7 +3785,7 @@ public final class BPJSCekNoRujukanPCare extends javax.swing.JDialog {
             }
         });
         FormKelengkapanSEP.add(LakaLantas);
-        LakaLantas.setBounds(589, 25, 131, 23);
+        LakaLantas.setBounds(589, 25, 102, 23);
 
         jLabel47.setText("Tgl.Kecelakaan :");
         jLabel47.setName("jLabel47"); // NOI18N
@@ -3794,7 +3794,7 @@ public final class BPJSCekNoRujukanPCare extends javax.swing.JDialog {
         jLabel47.setBounds(724, 25, 90, 23);
 
         TanggalKKL.setForeground(new java.awt.Color(50, 70, 50));
-        TanggalKKL.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "24-11-2021" }));
+        TanggalKKL.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "31-05-2022" }));
         TanggalKKL.setDisplayFormat("dd-MM-yyyy");
         TanggalKKL.setEnabled(false);
         TanggalKKL.setName("TanggalKKL"); // NOI18N

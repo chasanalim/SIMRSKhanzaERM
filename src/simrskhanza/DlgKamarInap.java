@@ -5676,7 +5676,7 @@ public class DlgKamarInap extends javax.swing.JDialog {
                     if(akses.gettindakan_ranap()==true){
                         MnRawatInapActionPerformed(null);
                     }                    
-                }else if(i==6){
+                }else if(i==5){
                      if(akses.getberi_obat()==true){
                         //MnPemberianObatActionPerformed(null);
                         if(tabMode.getRowCount()==0){
@@ -5766,7 +5766,7 @@ public class DlgKamarInap extends javax.swing.JDialog {
                 }else if(i==7){
                     MnGelang2ActionPerformed(null);
                 }else if(i==6){
-                    MnSEPActionPerformed(null);
+                    MnDataSEPActionPerformed(null);
                 }
             }
         }

@@ -6814,7 +6814,7 @@ public final class DlgKasirRalan extends javax.swing.JDialog {
                         MnSudahActionPerformed(null);
                     }                    
                 }else if(i==9){
-                    MnSEPActionPerformed(null);
+                    MnDataSEPActionPerformed(null);
                 }
                 
             }

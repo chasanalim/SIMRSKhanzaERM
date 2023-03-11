@@ -12551,6 +12551,7 @@ private void MnLaporanRekapKunjunganBulananPoliActionPerformed(java.awt.event.Ac
 
     private void BtnResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnResetActionPerformed
         Sequel.queryu("delete from mlite_antrian_loket where mlite_antrian_loket.postdate = current_date()");
+        JOptionPane.showMessageDialog(null,"No Antrian hari ini Telah di reset dari 0, Silahkan tutup dan buka ulang antrian APM");
     }//GEN-LAST:event_BtnResetActionPerformed
 
     private void BtnResetKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BtnResetKeyPressed
