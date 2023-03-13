@@ -206,9 +206,9 @@ public final class DlgIGD extends javax.swing.JDialog {
         this.setLocation(8,1);
         setSize(885,674);
 
-        Object[] row={"P","No.Reg","No.Rawat","Tanggal","Jam","Kd.Dokter","Dokter Dituju","Nomer RM",
-            "Pasien","J.K.","Umur","Poliklinik","Penanggung Jawab","Alamat P.J.","Hubungan dg P.J.",
-            "Biaya Regristrasi","Status","Jenis Bayar","Stts Rawat","Kd PJ","Status Bayar"};
+        Object[] row={"P","No.Reg","No.Rawat","Tanggal","Jam","Kd.Dokter","Dokter Dituju","No RM",
+            "Pasien","J.K.","Umur","Poliklinik","P.J","Alamat P.J.","Hub dg P.J.",
+            "Biaya Regristrasi","Status","Jenis Bayar","Stts Rawat","Kd PJ","Status Bayar","Stts Lanjut"};
         tabMode=new DefaultTableModel(null,row){
              @Override public boolean isCellEditable(int rowIndex, int colIndex){
                 boolean a = false;
@@ -223,7 +223,7 @@ public final class DlgIGD extends javax.swing.JDialog {
                  java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, 
                  java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, 
                  java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, 
-                 java.lang.Object.class
+                 java.lang.Object.class, java.lang.Object.class
              };
              @Override
              public Class getColumnClass(int columnIndex) {
@@ -235,51 +235,58 @@ public final class DlgIGD extends javax.swing.JDialog {
         tbPetugas.setPreferredScrollableViewportSize(new Dimension(800,800));
         tbPetugas.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
 
-        for (i = 0; i < 21; i++) {
+        for (i = 0; i < 22; i++) {
             TableColumn column = tbPetugas.getColumnModel().getColumn(i);
             if(i==0){
                 column.setPreferredWidth(20);
-            }else if(i==1){
+            }else if(i==1){//Noreg
                 column.setPreferredWidth(45);
-            }else if(i==2){
+            }else if(i==2){//norawat
                 column.setPreferredWidth(110);
-            }else if(i==3){
+            }else if(i==3){//tgl
                 column.setPreferredWidth(70);
-            }else if(i==4){
+            }else if(i==4){//jam
                 column.setPreferredWidth(50);   
-            }else if(i==5){
-                column.setPreferredWidth(70);
-            }else if(i==6){
-                column.setPreferredWidth(200);
-            }else if(i==7){
-                column.setPreferredWidth(70);
-            }else if(i==8){
-                column.setPreferredWidth(200);
-            }else if(i==9){
-                column.setPreferredWidth(30);
-            }else if(i==10){
-                column.setPreferredWidth(50);
-            }else if(i==11){
-                column.setPreferredWidth(140);
-            }else if(i==12){
-                column.setPreferredWidth(140);
-            }else if(i==13){
-                column.setPreferredWidth(200);
-            }else if(i==14){
-                column.setPreferredWidth(90);
-            }else if(i==15){
-                column.setPreferredWidth(90);
-            }else if(i==16){
-                column.setPreferredWidth(50);
-            }else if(i==17){
-                column.setPreferredWidth(80);
-            }else if(i==18){
-                column.setPreferredWidth(70);
-            }else if(i==19){
+            }else if(i==5){//kddokter
                 column.setMinWidth(0);
                 column.setMaxWidth(0);
-            }else if(i==20){
-                column.setPreferredWidth(70);
+            }else if(i==6){//dokter
+                column.setPreferredWidth(130);
+            }else if(i==7){//norm
+                column.setPreferredWidth(50);
+            }else if(i==8){//pasien
+                column.setPreferredWidth(200);
+            }else if(i==9){//jk
+                column.setPreferredWidth(20);
+            }else if(i==10){//umur
+                column.setPreferredWidth(40);
+            }else if(i==11){//poliklinik
+                column.setPreferredWidth(125);
+            }else if(i==12){//pj
+                column.setPreferredWidth(120);
+            }else if(i==13){//alamat pj
+                column.setPreferredWidth(180);
+            }else if(i==14){//hubppj
+                column.setMinWidth(0);
+                column.setMaxWidth(0);
+            }else if(i==15){//biayareg
+                column.setMinWidth(0);
+                column.setMaxWidth(0);
+            }else if(i==16){//status
+                 column.setMinWidth(0);
+                column.setMaxWidth(0);
+            }else if(i==17){//jenisbayar
+                column.setPreferredWidth(90);
+            }else if(i==18){//statusrawat
+                column.setPreferredWidth(50);
+            }else if(i==19){//kdpj
+                column.setMinWidth(0);
+                column.setMaxWidth(0);
+            }else if(i==20){//statusbayr
+                column.setMinWidth(0);
+                column.setMaxWidth(0);
+            }else if(i==21){//lanjut
+                column.setPreferredWidth(50);
             }
         }
         tbPetugas.setDefaultRenderer(Object.class, new WarnaTable());
@@ -4751,6 +4758,8 @@ public final class DlgIGD extends javax.swing.JDialog {
                     if(akses.getrujukan_masuk()==true){
                         MnRujukMasukActionPerformed(null);
                     }                    
+                }else if(i==17){
+                   MnSEPActionPerformed(null);
                 }
             }
             
@@ -8597,7 +8606,7 @@ private void MnLaporanRekapKunjunganBulananPoliActionPerformed(java.awt.event.Ac
         try{  
             ps=koneksi.prepareStatement("select reg_periksa.no_reg,reg_periksa.no_rawat,reg_periksa.tgl_registrasi,reg_periksa.jam_reg,"+
                    "reg_periksa.kd_dokter,dokter.nm_dokter,reg_periksa.no_rkm_medis,pasien.nm_pasien,pasien.jk,concat(reg_periksa.umurdaftar,' ',reg_periksa.sttsumur)as umur,poliklinik.nm_poli,"+
-                   "reg_periksa.p_jawab,reg_periksa.almt_pj,reg_periksa.hubunganpj,reg_periksa.biaya_reg,reg_periksa.stts_daftar,penjab.png_jawab,reg_periksa.stts,reg_periksa.kd_pj,reg_periksa.status_bayar "+
+                   "reg_periksa.p_jawab,reg_periksa.almt_pj,reg_periksa.hubunganpj,reg_periksa.biaya_reg,reg_periksa.stts_daftar,penjab.png_jawab,reg_periksa.stts,reg_periksa.kd_pj,reg_periksa.status_bayar,reg_periksa.status_lanjut "+
                    "from reg_periksa inner join dokter inner join pasien inner join poliklinik inner join penjab "+
                    "on reg_periksa.kd_dokter=dokter.kd_dokter and reg_periksa.no_rkm_medis=pasien.no_rkm_medis "+
                    "and reg_periksa.kd_pj=penjab.kd_pj and reg_periksa.kd_poli=poliklinik.kd_poli  where  "+
@@ -8613,7 +8622,9 @@ private void MnLaporanRekapKunjunganBulananPoliActionPerformed(java.awt.event.Ac
                 "  poliklinik.kd_poli='IGDK' and reg_periksa.tgl_registrasi between ? and ? and  reg_periksa.p_jawab like ? or "+
                 "  poliklinik.kd_poli='IGDK' and reg_periksa.tgl_registrasi between ? and ? and  reg_periksa.almt_pj like ? or "+
                 "  poliklinik.kd_poli='IGDK' and reg_periksa.tgl_registrasi between ? and ? and  reg_periksa.hubunganpj like ? or "+
-                "  poliklinik.kd_poli='IGDK' and reg_periksa.tgl_registrasi between ? and ? and  penjab.png_jawab like ? order by reg_periksa.no_rawat "); 
+                "  poliklinik.kd_poli='IGDK' and reg_periksa.tgl_registrasi between ? and ? and  penjab.png_jawab like ? or " +
+                "  poliklinik.kd_poli='IGDK' and reg_periksa.tgl_registrasi between ? and ? and  reg_periksa.status_lanjut like ? " +
+                "  order by reg_periksa.no_rawat "); 
             try {
                 ps.setString(1,Valid.SetTgl(DTPCari1.getSelectedItem()+""));
                 ps.setString(2,Valid.SetTgl(DTPCari2.getSelectedItem()+""));
@@ -8654,6 +8665,9 @@ private void MnLaporanRekapKunjunganBulananPoliActionPerformed(java.awt.event.Ac
                 ps.setString(37,Valid.SetTgl(DTPCari1.getSelectedItem()+""));
                 ps.setString(38,Valid.SetTgl(DTPCari2.getSelectedItem()+""));
                 ps.setString(39,"%"+TCari.getText().trim()+"%");
+                ps.setString(40,Valid.SetTgl(DTPCari1.getSelectedItem()+""));
+                ps.setString(41,Valid.SetTgl(DTPCari2.getSelectedItem()+""));
+                ps.setString(42,"%"+TCari.getText().trim()+"%");
                 rs=ps.executeQuery();
                 while(rs.next()){
                     tabMode.addRow(new Object[] {
@@ -8661,7 +8675,7 @@ private void MnLaporanRekapKunjunganBulananPoliActionPerformed(java.awt.event.Ac
                         rs.getString(5),rs.getString(6),rs.getString(7),rs.getString(8),rs.getString(9),
                         rs.getString(10),rs.getString(11),rs.getString(12),rs.getString(13),rs.getString(14),
                         Valid.SetAngka(rs.getDouble(15)),rs.getString(16),rs.getString(17),rs.getString(18),
-                        rs.getString("kd_pj"),rs.getString("status_bayar")
+                        rs.getString("kd_pj"),rs.getString("status_bayar"),rs.getString("status_lanjut")
                     });
                 } 
             } catch (Exception e) {

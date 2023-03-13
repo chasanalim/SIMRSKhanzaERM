@@ -7376,6 +7376,13 @@ public final class DlgReg extends javax.swing.JDialog {
                 } else if(i==11){
                    MnIdentitas3ActionPerformed(null);
                 }  
+                else if(i==12){
+                   MnSEPActionPerformed(null);
+                }
+                else if(i==14){
+                   MnCetakRegister1ActionPerformed(null);
+                }
+               
             }
             
         }
@@ -9418,7 +9425,7 @@ private void MnLaporanRekapKunjunganBulananPoliActionPerformed(java.awt.event.Ac
         if(TPasien.getText().trim().equals("")){
             JOptionPane.showMessageDialog(null,"Maaf, Silahkan anda pilih dulu pasien...!!!");
         }else{
-             this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+            this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
             Map<String, Object> param = new HashMap<>();
             param.put("namars",akses.getnamars());
             param.put("alamatrs",akses.getalamatrs());
@@ -9426,9 +9433,14 @@ private void MnLaporanRekapKunjunganBulananPoliActionPerformed(java.awt.event.Ac
             param.put("propinsirs",akses.getpropinsirs());
             param.put("kontakrs",akses.getkontakrs());
             param.put("emailrs",akses.getemailrs());
-            param.put("norawat",TNoRw.getText());
             param.put("logo",Sequel.cariGambar("select setting.logo from setting"));
-            Valid.MyReport("rptBuktiRegister3.jasper",param,"::[ Bukti Register ]::");
+            Valid.MyReportqry("rptBuktiRegister3.jasper","report","::[ Bukti Register ]::",
+                   "select reg_periksa.no_reg,reg_periksa.no_rawat,reg_periksa.tgl_registrasi,reg_periksa.jam_reg,pasien.no_tlp,"+
+                   "reg_periksa.kd_dokter,dokter.nm_dokter,reg_periksa.no_rkm_medis,pasien.nm_pasien,pasien.jk,pasien.umur as umur,poliklinik.nm_poli,"+
+                   "reg_periksa.p_jawab,reg_periksa.almt_pj,reg_periksa.hubunganpj,reg_periksa.biaya_reg,reg_periksa.stts_daftar,penjab.png_jawab,pasien.no_peserta,bridging_sep.no_sep "+
+                   "from reg_periksa inner join dokter inner join pasien inner join poliklinik inner join penjab inner join bridging_sep "+
+                   "on reg_periksa.kd_dokter=dokter.kd_dokter and reg_periksa.no_rkm_medis=pasien.no_rkm_medis "+
+                   "and reg_periksa.kd_pj=penjab.kd_pj and reg_periksa.kd_poli=poliklinik.kd_poli and reg_periksa.no_rawat=bridging_sep.no_rawat where reg_periksa.no_rawat='"+TNoRw.getText()+"' ",param);
             this.setCursor(Cursor.getDefaultCursor());
         }
     }//GEN-LAST:event_MnCetakRegister1ActionPerformed
@@ -12539,6 +12551,7 @@ private void MnLaporanRekapKunjunganBulananPoliActionPerformed(java.awt.event.Ac
 
     private void BtnResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnResetActionPerformed
         Sequel.queryu("delete from mlite_antrian_loket where mlite_antrian_loket.postdate = current_date()");
+        JOptionPane.showMessageDialog(null,"No Antrian hari ini Telah di reset dari 0, Silahkan tutup dan buka ulang antrian APM");
     }//GEN-LAST:event_BtnResetActionPerformed
 
     private void BtnResetKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BtnResetKeyPressed

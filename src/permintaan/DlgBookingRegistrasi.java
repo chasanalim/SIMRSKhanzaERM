@@ -1688,7 +1688,7 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
                         rs.getString("namakeluarga"),rs.getString("alamatpj"),rs.getString("kelurahanpj"),
                         rs.getString("kecamatanpj"),rs.getString("kabupatenpj"),rs.getString("propinsipj"),
                         rs.getString("keluarga"),rs.getString("kd_pj"),rs.getString("tahun"),rs.getString("bulan"),
-                        rs.getString("hari"),rs.getString("limit_reg").replaceAll("0","Offline").replace("1","Online"),
+                        rs.getString("hari"),rs.getString("limit_reg").replaceAll("0","Offline").replace("1","Online").replace("2","Mobile JKN"),
                         rs.getString("status"),rs.getString("kd_pj"),rs.getString("png_jawab"),rs.getString("no_tlp")
                     });                    
                 }

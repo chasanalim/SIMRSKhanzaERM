@@ -270,7 +270,7 @@
                     </Property>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                       <StringArray count="1">
-                        <StringItem index="0" value="18-01-2023"/>
+                        <StringItem index="0" value="08-03-2023"/>
                       </StringArray>
                     </Property>
                     <Property name="displayFormat" type="java.lang.String" value="dd-MM-yyyy"/>
@@ -298,7 +298,7 @@
                     </Property>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                       <StringArray count="1">
-                        <StringItem index="0" value="18-01-2023"/>
+                        <StringItem index="0" value="08-03-2023"/>
                       </StringArray>
                     </Property>
                     <Property name="displayFormat" type="java.lang.String" value="dd-MM-yyyy"/>
@@ -3825,15 +3825,15 @@
                             </Constraint>
                           </Constraints>
                         </Component>
-                        <Component class="widget.TextBox" name="KdPeg1">
+                        <Component class="widget.TextBox" name="KdPegPRMRJ">
                           <Properties>
                             <Property name="highlighter" type="javax.swing.text.Highlighter" editor="org.netbeans.modules.form.ComponentChooserEditor">
                               <ComponentRef name="null"/>
                             </Property>
-                            <Property name="name" type="java.lang.String" value="KdPeg1" noResource="true"/>
+                            <Property name="name" type="java.lang.String" value="KdPegPRMRJ" noResource="true"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="KdPeg1KeyPressed"/>
+                            <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="KdPegPRMRJKeyPressed"/>
                           </Events>
                           <Constraints>
                             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -3841,13 +3841,13 @@
                             </Constraint>
                           </Constraints>
                         </Component>
-                        <Component class="widget.TextBox" name="TPegawai1">
+                        <Component class="widget.TextBox" name="TPegawaiPRMRJ">
                           <Properties>
                             <Property name="editable" type="boolean" value="false"/>
                             <Property name="highlighter" type="javax.swing.text.Highlighter" editor="org.netbeans.modules.form.ComponentChooserEditor">
                               <ComponentRef name="null"/>
                             </Property>
-                            <Property name="name" type="java.lang.String" value="TPegawai1" noResource="true"/>
+                            <Property name="name" type="java.lang.String" value="TPegawaiPRMRJ" noResource="true"/>
                           </Properties>
                           <Constraints>
                             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -3873,13 +3873,13 @@
                             </Constraint>
                           </Constraints>
                         </Component>
-                        <Component class="widget.TextBox" name="Jabatan1">
+                        <Component class="widget.TextBox" name="JabatanPRMRJ">
                           <Properties>
                             <Property name="editable" type="boolean" value="false"/>
                             <Property name="highlighter" type="javax.swing.text.Highlighter" editor="org.netbeans.modules.form.ComponentChooserEditor">
                               <ComponentRef name="null"/>
                             </Property>
-                            <Property name="name" type="java.lang.String" value="Jabatan1" noResource="true"/>
+                            <Property name="name" type="java.lang.String" value="JabatanPRMRJ" noResource="true"/>
                           </Properties>
                           <Constraints>
                             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -4060,7 +4060,7 @@
                 </Property>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="1">
-                    <StringItem index="0" value="18-01-2023"/>
+                    <StringItem index="0" value="08-03-2023"/>
                   </StringArray>
                 </Property>
                 <Property name="displayFormat" type="java.lang.String" value="dd-MM-yyyy"/>

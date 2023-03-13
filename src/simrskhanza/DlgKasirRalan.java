@@ -6813,7 +6813,10 @@ public final class DlgKasirRalan extends javax.swing.JDialog {
                     if(akses.getkasir_ralan()==true){
                         MnSudahActionPerformed(null);
                     }                    
+                }else if(i==9){
+                    MnDataSEPActionPerformed(null);
                 }
+                
             }
         }
 }//GEN-LAST:event_tbKasirRalanMouseClicked

@@ -2,17 +2,17 @@
 <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
 <properties>
     <comment>KhanzaHMS</comment> 
-<!--   <entry key="HOST">5YYMOo+qiAnInyXQDHDz/A==</entry>
+   <entry key="HOST">5YYMOo+qiAnInyXQDHDz/A==</entry>
     <entry key="DATABASE">0spObObXvohAsIno55lgIg==</entry>
     <entry key="PORT">nioxtijcpDaKSUiUiP5FAg==</entry>
     <entry key="USER">3fsjwvKJn8IpzysMeNu3bA==</entry>
-    <entry key="PAS">xTvTgyN0VUeXKqD9koVkCg==</entry>-->
+    <entry key="PAS">xTvTgyN0VUeXKqD9koVkCg==</entry>
 <!--    Server Latihan-->
-     <entry key="HOST">5YYMOo+qiAnInyXQDHDz/A==</entry>
+<!--     <entry key="HOST">5YYMOo+qiAnInyXQDHDz/A==</entry>
     <entry key="DATABASE">zxcaW9ZtUopjnRSNtIPtnA==</entry>
     <entry key="PORT">nioxtijcpDaKSUiUiP5FAg==</entry>
     <entry key="USER">3fsjwvKJn8IpzysMeNu3bA==</entry>
-    <entry key="PAS">xTvTgyN0VUeXKqD9koVkCg==</entry> 
+    <entry key="PAS">xTvTgyN0VUeXKqD9koVkCg==</entry> -->
 <!--    local-->
 <!--    <entry key="HOST">5k7+C7EnUw9nUv2Nix+DBA==</entry>
     <entry key="DATABASE">AZHNccBwSmSho84f+X8GyQ==</entry>
@@ -44,18 +44,18 @@
     <entry key="ALARMPERMINTAANRANAP">yes</entry>
     <entry key="MENUTRANSPARAN">yes</entry>
     <entry key="URLAPIBPJS">https://apijkn.bpjs-kesehatan.go.id/vclaim-rest</entry>
-    <entry key="SECRETKEYAPIBPJS">l4nh5eVYrLAER/I2A4b3Tw==</entry>
-    <entry key="CONSIDAPIBPJS">l4nh5eVYrLAER/I2A4b3Tw==</entry>
-    <entry key="USERKEYAPIBPJS">l4nh5eVYrLAER/I2A4b3Tw==</entry>
+    <entry key="SECRETKEYAPIBPJS">bqqWowp7sCb400uz5w42mg==</entry>
+    <entry key="CONSIDAPIBPJS">N+RmXqjCh+CseKm0m4ayrA==</entry>
+    <entry key="USERKEYAPIBPJS">ntwDXNpgjhAVkj16AnTrv80n9Q2dSTJIg5jzTFzsKPcvjwl8xa+A4AO7ctDY5RwG</entry>
     <entry key="DIAGNOSARUJUKANMASUKAPIBPJS">no</entry>
     <entry key="URLAPIAPLICARE">https://new-api.bpjs-kesehatan.go.id/aplicaresws</entry>
-    <entry key="SECRETKEYAPIAPLICARE">l4nh5eVYrLAER/I2A4b3Tw==</entry>
-    <entry key="CONSIDAPIAPLICARE">l4nh5eVYrLAER/I2A4b3Tw==</entry>
-    <entry key="USERKEYAPIAPLICARE">l4nh5eVYrLAER/I2A4b3Tw==</entry>
-    <entry key="URLAPIMOBILEJKN">https://apijkn-dev.bpjs-kesehatan.go.id/antreanrs_dev</entry>
-    <entry key="SECRETKEYAPIMOBILEJKN">l4nh5eVYrLAER/I2A4b3Tw==</entry>
-    <entry key="CONSIDAPIMOBILEJKN">l4nh5eVYrLAER/I2A4b3Tw==</entry>
-    <entry key="USERKEYAPIMOBILEJKN">l4nh5eVYrLAER/I2A4b3Tw==</entry>
+    <entry key="SECRETKEYAPIAPLICARE">bqqWowp7sCb400uz5w42mg==</entry>
+    <entry key="CONSIDAPIAPLICARE">N+RmXqjCh+CseKm0m4ayrA==</entry>
+    <entry key="USERKEYAPIAPLICARE">qQBGQZPehacfRrGUV77VZENrRD+472QutC5Xa7Tymv3sUUD34H4jbvtu1ViDj03f</entry>
+    <entry key="URLAPIMOBILEJKN">https://apijkn.bpjs-kesehatan.go.id/antreanrs</entry>
+    <entry key="SECRETKEYAPIMOBILEJKN">bqqWowp7sCb400uz5w42mg==</entry>
+    <entry key="CONSIDAPIMOBILEJKN">N+RmXqjCh+CseKm0m4ayrA==</entry>
+    <entry key="USERKEYAPIMOBILEJKN">qQBGQZPehacfRrGUV77VZENrRD+472QutC5Xa7Tymv3sUUD34H4jbvtu1ViDj03f</entry>
     <entry key="URLAPIAPOTEKBPJS">https://dev-soa.bpjs-kesehatan.go.id/apotek-rest</entry>
     <entry key="SECRETKEYAPIAPOTEKBPJS">l4nh5eVYrLAER/I2A4b3Tw==</entry>
     <entry key="CONSIDAPIAPOTEKBPJS">l4nh5eVYrLAER/I2A4b3Tw==</entry>
