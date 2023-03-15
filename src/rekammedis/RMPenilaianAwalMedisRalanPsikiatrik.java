@@ -617,7 +617,6 @@ public final class RMPenilaianAwalMedisRalanPsikiatrik extends javax.swing.JDial
 
         TabRawat.setBackground(new java.awt.Color(254, 255, 254));
         TabRawat.setForeground(new java.awt.Color(50, 50, 50));
-        TabRawat.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
         TabRawat.setName("TabRawat"); // NOI18N
         TabRawat.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -1102,7 +1101,7 @@ public final class RMPenilaianAwalMedisRalanPsikiatrik extends javax.swing.JDial
         label11.setBounds(380, 40, 52, 23);
 
         TglAsuhan.setForeground(new java.awt.Color(50, 70, 50));
-        TglAsuhan.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "09-07-2022 17:46:10" }));
+        TglAsuhan.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "05-11-2022 08:14:02" }));
         TglAsuhan.setDisplayFormat("dd-MM-yyyy HH:mm:ss");
         TglAsuhan.setName("TglAsuhan"); // NOI18N
         TglAsuhan.setOpaque(false);
@@ -1670,7 +1669,7 @@ public final class RMPenilaianAwalMedisRalanPsikiatrik extends javax.swing.JDial
         panelGlass9.add(jLabel19);
 
         DTPCari1.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "09-07-2022" }));
+        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "05-11-2022" }));
         DTPCari1.setDisplayFormat("dd-MM-yyyy");
         DTPCari1.setName("DTPCari1"); // NOI18N
         DTPCari1.setOpaque(false);
@@ -1684,7 +1683,7 @@ public final class RMPenilaianAwalMedisRalanPsikiatrik extends javax.swing.JDial
         panelGlass9.add(jLabel21);
 
         DTPCari2.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "09-07-2022" }));
+        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "05-11-2022" }));
         DTPCari2.setDisplayFormat("dd-MM-yyyy");
         DTPCari2.setName("DTPCari2"); // NOI18N
         DTPCari2.setOpaque(false);
@@ -2909,6 +2908,18 @@ public final class RMPenilaianAwalMedisRalanPsikiatrik extends javax.swing.JDial
         TCari.setText(norwt);
         DTPCari2.setDate(tgl2);    
         isRawat(); 
+        
+        //Psikiatrik
+        Sequel.cariIsi("select keluhan_utama from penilaian_awal_keperawatan_ralan where no_rawat=?",KeluhanUtama,TNoRw.getText());
+        Sequel.cariIsi("select alergi from penilaian_awal_keperawatan_ralan where no_rawat=?",Alergi,TNoRw.getText());
+        Sequel.cariIsi("select td from penilaian_awal_keperawatan_ralan where no_rawat=?",TD,TNoRw.getText());
+        Sequel.cariIsi("select nadi from penilaian_awal_keperawatan_ralan where no_rawat=?",Nadi,TNoRw.getText());
+        Sequel.cariIsi("select rr from penilaian_awal_keperawatan_ralan where no_rawat=?",RR,TNoRw.getText());
+        Sequel.cariIsi("select suhu from penilaian_awal_keperawatan_ralan where no_rawat=?",Suhu,TNoRw.getText());
+        Sequel.cariIsi("select bb from penilaian_awal_keperawatan_ralan where no_rawat=?",BB,TNoRw.getText());
+        Sequel.cariIsi("select tb from penilaian_awal_keperawatan_ralan where no_rawat=?",TB,TNoRw.getText());
+        Sequel.cariIsi("select spo2 from penilaian_awal_keperawatan_ralan where no_rawat=?",SPO,TNoRw.getText());
+        Sequel.cariIsi("select gcs from penilaian_awal_keperawatan_ralan where no_rawat=?",GCS,TNoRw.getText());
     }
     
     public void isCek(){
