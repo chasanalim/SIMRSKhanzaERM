@@ -2920,6 +2920,7 @@ public final class RMPenilaianAwalMedisRalanPsikiatrik extends javax.swing.JDial
         Sequel.cariIsi("select tb from penilaian_awal_keperawatan_ralan where no_rawat=?",TB,TNoRw.getText());
         Sequel.cariIsi("select spo2 from penilaian_awal_keperawatan_ralan where no_rawat=?",SPO,TNoRw.getText());
         Sequel.cariIsi("select gcs from penilaian_awal_keperawatan_ralan where no_rawat=?",GCS,TNoRw.getText());
+        
     }
     
     public void isCek(){
