@@ -600,7 +600,6 @@ public final class RMPenilaianAwalMedisRalanGeriatri extends javax.swing.JDialog
 
         TabRawat.setBackground(new java.awt.Color(254, 255, 254));
         TabRawat.setForeground(new java.awt.Color(50, 50, 50));
-        TabRawat.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
         TabRawat.setName("TabRawat"); // NOI18N
         TabRawat.setPreferredSize(new java.awt.Dimension(457, 480));
         TabRawat.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -952,7 +951,7 @@ public final class RMPenilaianAwalMedisRalanGeriatri extends javax.swing.JDialog
         label11.setBounds(380, 40, 52, 23);
 
         TglAsuhan.setForeground(new java.awt.Color(50, 70, 50));
-        TglAsuhan.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "04-11-2022 11:25:51" }));
+        TglAsuhan.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "04-11-2022 21:00:04" }));
         TglAsuhan.setDisplayFormat("dd-MM-yyyy HH:mm:ss");
         TglAsuhan.setName("TglAsuhan"); // NOI18N
         TglAsuhan.setOpaque(false);
@@ -2701,6 +2700,14 @@ public final class RMPenilaianAwalMedisRalanGeriatri extends javax.swing.JDialog
         TCari.setText(norwt);
         DTPCari2.setDate(tgl2);    
         isRawat(); 
+        
+        //Geriatri
+        Sequel.cariIsi("select keluhan_utama from penilaian_awal_keperawatan_ralan where no_rawat=?",KeluhanUtama,TNoRw.getText());
+        Sequel.cariIsi("select alergi from penilaian_awal_keperawatan_ralan where no_rawat=?",Alergi,TNoRw.getText());
+        Sequel.cariIsi("select td from penilaian_awal_keperawatan_ralan where no_rawat=?",TD,TNoRw.getText());
+        Sequel.cariIsi("select nadi from penilaian_awal_keperawatan_ralan where no_rawat=?",Nadi,TNoRw.getText());
+        Sequel.cariIsi("select rr from penilaian_awal_keperawatan_ralan where no_rawat=?",RR,TNoRw.getText());
+        Sequel.cariIsi("select suhu from penilaian_awal_keperawatan_ralan where no_rawat=?",Suhu,TNoRw.getText());
     }
     
     public void isCek(){

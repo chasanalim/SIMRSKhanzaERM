@@ -3525,7 +3525,7 @@ public final class BPJSDataSEP extends javax.swing.JDialog {
                 if(i==0){
                     TabRawat.setSelectedIndex(0);
                 }else if(i==1){
-                    ppSEP5BtnPrintActionPerformed(null);
+                    ppSEP4BtnPrintActionPerformed(null);
                 }else if(i==2){
                     ppPulangBtnPrintActionPerformed(null);
                 }else if(i==3){
@@ -4192,9 +4192,27 @@ public final class BPJSDataSEP extends javax.swing.JDialog {
                 param.put("prb",Sequel.cariIsi("select bpjs_prb.prb from bpjs_prb where bpjs_prb.no_sep=?",tbDataSEP.getValueAt(tbDataSEP.getSelectedRow(),0).toString()));
                 param.put("parameter",tbDataSEP.getValueAt(tbDataSEP.getSelectedRow(),0).toString());
                 if(JenisPelayanan.getSelectedIndex()==0){
-                    Valid.MyReport("rptBridgingSEP3.jasper","report","::[ Cetak SEP ]::",param);
+                     Valid.MyReportqry("rptBridgingSEP3.jasper","report","::[ Cetak SEP SBPK ]::",
+                   "select bridging_sep.no_sep,bridging_sep.nomr,bridging_sep.tglsep,bridging_sep.no_kartu,bridging_sep.nama_pasien,bridging_sep.tanggal_lahir," +
+                   "bridging_sep.notelep,bridging_sep.nmdpdjp,bridging_sep.nmppkrujukan,bridging_sep.nmdiagnosaawal,bridging_sep.catatan,bridging_sep.peserta,bridging_sep.jnspelayanan,bridging_sep.flagprosedur,bridging_sep.tujuankunjungan,bridging_sep.klsrawat,bridging_sep.klsnaik,bridging_sep.pembiayaan," +
+                   "reg_periksa.no_reg,reg_periksa.no_rawat,reg_periksa.tgl_registrasi,"+
+                   "reg_periksa.jam_reg, reg_periksa.kd_dokter,dokter.nm_dokter,reg_periksa.no_rkm_medis,pasien.nm_pasien,pasien.jk,concat(reg_periksa.umurdaftar,' ',reg_periksa.sttsumur)as umur,poliklinik.nm_poli," +
+                   "reg_periksa.p_jawab,reg_periksa.almt_pj,reg_periksa.hubunganpj,reg_periksa.biaya_reg," +
+                   "reg_periksa.stts_daftar,penjab.png_jawab,pasien.no_peserta,pasien.tgl_lahir " +
+                   "from reg_periksa inner join dokter inner join pasien inner join poliklinik inner join penjab inner join bridging_sep " +
+                   "on reg_periksa.kd_dokter=dokter.kd_dokter and reg_periksa.no_rkm_medis=pasien.no_rkm_medis and reg_periksa.kd_pj=penjab.kd_pj and reg_periksa.kd_poli=poliklinik.kd_poli and reg_periksa.no_rawat=bridging_sep.no_rawat "+
+                   "where reg_periksa.no_rawat='"+TNoRw.getText()+"'",param); 
                 }else{
-                    Valid.MyReport("rptBridgingSEP4.jasper","report","::[ Cetak SEP ]::",param);
+                     Valid.MyReportqry("rptBridgingSEP4.jasper","report","::[ Cetak SEP SBPK ]::",
+                   "select bridging_sep.no_sep,bridging_sep.nomr,bridging_sep.tglsep,bridging_sep.no_kartu,bridging_sep.nama_pasien,bridging_sep.tanggal_lahir," +
+                   "bridging_sep.notelep,bridging_sep.nmdpdjp,bridging_sep.nmppkrujukan,bridging_sep.nmdiagnosaawal,bridging_sep.catatan,bridging_sep.peserta,bridging_sep.jnspelayanan,bridging_sep.flagprosedur,bridging_sep.tujuankunjungan,bridging_sep.klsrawat,bridging_sep.klsnaik,bridging_sep.pembiayaan," +
+                   "reg_periksa.no_reg,reg_periksa.no_rawat,reg_periksa.tgl_registrasi,"+
+                   "reg_periksa.jam_reg, reg_periksa.kd_dokter,dokter.nm_dokter,reg_periksa.no_rkm_medis,pasien.nm_pasien,pasien.jk,concat(reg_periksa.umurdaftar,' ',reg_periksa.sttsumur)as umur,poliklinik.nm_poli," +
+                   "reg_periksa.p_jawab,reg_periksa.almt_pj,reg_periksa.hubunganpj,reg_periksa.biaya_reg," +
+                   "reg_periksa.stts_daftar,penjab.png_jawab,pasien.no_peserta,pasien.tgl_lahir " +
+                   "from reg_periksa inner join dokter inner join pasien inner join poliklinik inner join penjab inner join bridging_sep " +
+                   "on reg_periksa.kd_dokter=dokter.kd_dokter and reg_periksa.no_rkm_medis=pasien.no_rkm_medis and reg_periksa.kd_pj=penjab.kd_pj and reg_periksa.kd_poli=poliklinik.kd_poli and reg_periksa.no_rawat=bridging_sep.no_rawat "+
+                   "where reg_periksa.no_rawat='"+TNoRw.getText()+"'",param); 
                 }                
                 this.setCursor(Cursor.getDefaultCursor());
             }else{
