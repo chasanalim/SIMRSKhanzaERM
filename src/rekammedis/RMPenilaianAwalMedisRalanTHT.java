@@ -2382,6 +2382,7 @@ public final class RMPenilaianAwalMedisRalanTHT extends javax.swing.JDialog {
         Sequel.cariIsi("select bb from penilaian_awal_keperawatan_ralan where no_rawat=?",BB,TNoRw.getText());
         Sequel.cariIsi("select nyeri from penilaian_awal_keperawatan_ralan where no_rawat=?",Nyeri,TNoRw.getText());
         Sequel.cariIsi("select tb from penilaian_awal_keperawatan_ralan where no_rawat=?",TB,TNoRw.getText());
+        
     }
     
     public void isCek(){
