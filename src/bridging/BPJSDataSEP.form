@@ -25,7 +25,7 @@
             <Property name="icon" type="javax.swing.Icon" noResource="true" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/picture/category.png"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Print SEP Model 1"/>
+            <Property name="text" type="java.lang.String" value="Print SEP "/>
             <Property name="horizontalAlignment" type="int" value="2"/>
             <Property name="horizontalTextPosition" type="int" value="4"/>
             <Property name="name" type="java.lang.String" value="ppSEP" noResource="true"/>
@@ -51,7 +51,7 @@
             <Property name="icon" type="javax.swing.Icon" noResource="true" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/picture/category.png"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Print SEP Model 2"/>
+            <Property name="text" type="java.lang.String" value="Print SEP SBPK"/>
             <Property name="horizontalAlignment" type="int" value="2"/>
             <Property name="horizontalTextPosition" type="int" value="4"/>
             <Property name="name" type="java.lang.String" value="ppSEP1" noResource="true"/>
@@ -77,7 +77,7 @@
             <Property name="icon" type="javax.swing.Icon" noResource="true" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/picture/category.png"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Print SEP Model 3"/>
+            <Property name="text" type="java.lang.String" value="Print SEP COB"/>
             <Property name="horizontalAlignment" type="int" value="2"/>
             <Property name="horizontalTextPosition" type="int" value="4"/>
             <Property name="name" type="java.lang.String" value="ppSEP2" noResource="true"/>
@@ -103,7 +103,7 @@
             <Property name="icon" type="javax.swing.Icon" noResource="true" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/picture/category.png"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Print SEP Model 4"/>
+            <Property name="text" type="java.lang.String" value="Print SEP COB SBPK"/>
             <Property name="horizontalAlignment" type="int" value="2"/>
             <Property name="horizontalTextPosition" type="int" value="4"/>
             <Property name="name" type="java.lang.String" value="ppSEP3" noResource="true"/>
@@ -129,7 +129,7 @@
             <Property name="icon" type="javax.swing.Icon" noResource="true" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/picture/category.png"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Print SEP Model 1 PDF"/>
+            <Property name="text" type="java.lang.String" value="Simpan PDF SEP"/>
             <Property name="horizontalAlignment" type="int" value="2"/>
             <Property name="horizontalTextPosition" type="int" value="4"/>
             <Property name="name" type="java.lang.String" value="ppSEP4" noResource="true"/>
@@ -155,7 +155,7 @@
             <Property name="icon" type="javax.swing.Icon" noResource="true" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/picture/category.png"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Print SEP Model 2 PDF"/>
+            <Property name="text" type="java.lang.String" value="Simpan PDF SEP SBPK"/>
             <Property name="horizontalAlignment" type="int" value="2"/>
             <Property name="horizontalTextPosition" type="int" value="4"/>
             <Property name="name" type="java.lang.String" value="ppSEP5" noResource="true"/>
@@ -181,7 +181,7 @@
             <Property name="icon" type="javax.swing.Icon" noResource="true" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/picture/category.png"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Print SEP Model 3 PDF"/>
+            <Property name="text" type="java.lang.String" value="Simpan PDF SEP COB"/>
             <Property name="horizontalAlignment" type="int" value="2"/>
             <Property name="horizontalTextPosition" type="int" value="4"/>
             <Property name="name" type="java.lang.String" value="ppSEP6" noResource="true"/>
@@ -207,7 +207,7 @@
             <Property name="icon" type="javax.swing.Icon" noResource="true" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/picture/category.png"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Print SEP Model 4 PDF"/>
+            <Property name="text" type="java.lang.String" value="Simpan SEP COB SBPK"/>
             <Property name="horizontalAlignment" type="int" value="2"/>
             <Property name="horizontalTextPosition" type="int" value="4"/>
             <Property name="name" type="java.lang.String" value="ppSEP7" noResource="true"/>
@@ -672,7 +672,7 @@
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="1">
-                    <StringItem index="0" value="10-03-2023 11:12:41"/>
+                    <StringItem index="0" value="14-03-2023 17:17:44"/>
                   </StringArray>
                 </Property>
                 <Property name="displayFormat" type="java.lang.String" value="dd-MM-yyyy HH:mm:ss"/>
@@ -767,7 +767,7 @@
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="1">
-                    <StringItem index="0" value="10-03-2023"/>
+                    <StringItem index="0" value="14-03-2023"/>
                   </StringArray>
                 </Property>
                 <Property name="displayFormat" type="java.lang.String" value="dd-MM-yyyy"/>
@@ -919,7 +919,7 @@
                 </Property>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="1">
-                    <StringItem index="0" value="10-03-2023"/>
+                    <StringItem index="0" value="14-03-2023"/>
                   </StringArray>
                 </Property>
                 <Property name="displayFormat" type="java.lang.String" value="dd-MM-yyyy"/>
@@ -1237,7 +1237,7 @@
                 </Property>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="1">
-                    <StringItem index="0" value="10-03-2023"/>
+                    <StringItem index="0" value="14-03-2023"/>
                   </StringArray>
                 </Property>
                 <Property name="displayFormat" type="java.lang.String" value="dd-MM-yyyy"/>
@@ -1822,7 +1822,7 @@
                             </Property>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                               <StringArray count="1">
-                                <StringItem index="0" value="10-03-2023"/>
+                                <StringItem index="0" value="14-03-2023"/>
                               </StringArray>
                             </Property>
                             <Property name="displayFormat" type="java.lang.String" value="dd-MM-yyyy"/>
@@ -1862,7 +1862,7 @@
                             </Property>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                               <StringArray count="1">
-                                <StringItem index="0" value="10-03-2023"/>
+                                <StringItem index="0" value="14-03-2023"/>
                               </StringArray>
                             </Property>
                             <Property name="displayFormat" type="java.lang.String" value="dd-MM-yyyy"/>
@@ -2561,7 +2561,7 @@
                             </Property>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                               <StringArray count="1">
-                                <StringItem index="0" value="10-03-2023"/>
+                                <StringItem index="0" value="14-03-2023"/>
                               </StringArray>
                             </Property>
                             <Property name="displayFormat" type="java.lang.String" value="dd-MM-yyyy"/>
@@ -3405,7 +3405,7 @@
                         </Property>
                         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                           <StringArray count="1">
-                            <StringItem index="0" value="10-03-2023"/>
+                            <StringItem index="0" value="14-03-2023"/>
                           </StringArray>
                         </Property>
                         <Property name="displayFormat" type="java.lang.String" value="dd-MM-yyyy"/>
@@ -3433,7 +3433,7 @@
                         </Property>
                         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                           <StringArray count="1">
-                            <StringItem index="0" value="10-03-2023"/>
+                            <StringItem index="0" value="14-03-2023"/>
                           </StringArray>
                         </Property>
                         <Property name="displayFormat" type="java.lang.String" value="dd-MM-yyyy"/>
@@ -3600,7 +3600,7 @@
                         </Property>
                         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                           <StringArray count="1">
-                            <StringItem index="0" value="10-03-2023"/>
+                            <StringItem index="0" value="14-03-2023"/>
                           </StringArray>
                         </Property>
                         <Property name="displayFormat" type="java.lang.String" value="dd-MM-yyyy"/>
@@ -3628,7 +3628,7 @@
                         </Property>
                         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                           <StringArray count="1">
-                            <StringItem index="0" value="10-03-2023"/>
+                            <StringItem index="0" value="14-03-2023"/>
                           </StringArray>
                         </Property>
                         <Property name="displayFormat" type="java.lang.String" value="dd-MM-yyyy"/>

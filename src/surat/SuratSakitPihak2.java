@@ -1078,7 +1078,7 @@ public final class SuratSakitPihak2 extends javax.swing.JDialog {
                 Valid.MyReportqry("rptSuratSakitPihakKe2.jasper","report","::[ Surat Sakit untuk Penunggu ]::",
                               " select suratsakitpihak2.no_surat,DATE_FORMAT(suratsakitpihak2.tanggalawal,'%d-%m-%Y')as tanggalawal,DATE_FORMAT(suratsakitpihak2.tanggalakhir,'%d-%m-%Y')as tanggalakhir,suratsakitpihak2.lamasakit,suratsakitpihak2.nama2,"+
                               " DATE_FORMAT(suratsakitpihak2.tgl_lahir,'%d-%m-%Y')as tgl_lahirpj,"+
-                              " suratsakitpihak2.hubungan,suratsakitpihak2.instansi,perusahaan_pasien.nama_perusahaan,dokter.nm_dokter,pasien.tgl_lahir,suratsakitpihak2.diagnosa," +
+                              " suratsakitpihak2.hubungan,suratsakitpihak2.instansi,perusahaan_pasien.nama_perusahaan,dokter.nm_dokter,pasien.tgl_lahir," +
                               " DATE_FORMAT(reg_periksa.tgl_registrasi,'%d-%m-%Y')as tgl_registrasi,pasien.nm_pasien,pasien.jk,concat(reg_periksa.umurdaftar,' ',reg_periksa.sttsumur)as umur,pasien.pekerjaan,concat(pasien.alamat,', ',kelurahan.nm_kel,', ',kecamatan.nm_kec,', ',kabupaten.nm_kab) as alamat" +
                               " from suratsakitpihak2 inner join perusahaan_pasien inner join reg_periksa inner join pasien inner join dokter inner join kelurahan inner join kecamatan inner join kabupaten" +
                               " on pasien.perusahaan_pasien=perusahaan_pasien.kode_perusahaan and reg_periksa.no_rkm_medis=pasien.no_rkm_medis and reg_periksa.kd_dokter=dokter.kd_dokter and pasien.kd_kel=kelurahan.kd_kel "+
@@ -1185,7 +1185,7 @@ public final class SuratSakitPihak2 extends javax.swing.JDialog {
                 Valid.MyReportqry("rptSuratSakitPihakKe2Ranap.jasper","report","::[ Surat Sakit untuk Penunggu ]::",
                               " select suratsakitpihak2.no_surat,DATE_FORMAT(suratsakitpihak2.tanggalawal,'%d-%m-%Y')as tanggalawal,DATE_FORMAT(suratsakitpihak2.tanggalakhir,'%d-%m-%Y')as tanggalakhir,suratsakitpihak2.lamasakit,suratsakitpihak2.nama2,"+
                               " DATE_FORMAT(suratsakitpihak2.tgl_lahir,'%d-%m-%Y')as tgl_lahirpj,"+
-                              " suratsakitpihak2.hubungan,suratsakitpihak2.instansi,perusahaan_pasien.nama_perusahaan,dokter.nm_dokter,pasien.tgl_lahir,suratsakitpihak2.diagnosa," +
+                              " suratsakitpihak2.hubungan,suratsakitpihak2.instansi,perusahaan_pasien.nama_perusahaan,dokter.nm_dokter,pasien.tgl_lahir," +
                               " DATE_FORMAT(reg_periksa.tgl_registrasi,'%d-%m-%Y')as tgl_registrasi,pasien.nm_pasien,pasien.jk,concat(reg_periksa.umurdaftar,' ',reg_periksa.sttsumur)as umur,pasien.pekerjaan,concat(pasien.alamat,', ',kelurahan.nm_kel,', ',kecamatan.nm_kec,', ',kabupaten.nm_kab) as alamat" +
                               " from suratsakitpihak2 inner join perusahaan_pasien inner join reg_periksa inner join pasien inner join dokter inner join kelurahan inner join kecamatan inner join kabupaten" +
                               " on pasien.perusahaan_pasien=perusahaan_pasien.kode_perusahaan and reg_periksa.no_rkm_medis=pasien.no_rkm_medis and reg_periksa.kd_dokter=dokter.kd_dokter and pasien.kd_kel=kelurahan.kd_kel "+
