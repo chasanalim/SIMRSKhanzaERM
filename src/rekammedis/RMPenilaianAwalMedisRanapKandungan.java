@@ -2855,6 +2855,18 @@ public final class RMPenilaianAwalMedisRanapKandungan extends javax.swing.JDialo
         TCari.setText(norwt);
         DTPCari2.setDate(tgl2);    
         isRawat(); 
+        
+        //Umum Ranap Kandungan
+        Sequel.cariIsi("select rps from penilaian_awal_keperawatan_ranap where no_rawat=?",KeluhanUtama,TNoRw.getText());
+        Sequel.cariIsi("select riwayat_alergi from penilaian_awal_keperawatan_ranap where no_rawat=?",Alergi,TNoRw.getText());
+        Sequel.cariIsi("select pemeriksaan_td from penilaian_awal_keperawatan_ranap where no_rawat=?",TD,TNoRw.getText());
+        Sequel.cariIsi("select pemeriksaan_nadi from penilaian_awal_keperawatan_ranap where no_rawat=?",Nadi,TNoRw.getText());
+        Sequel.cariIsi("select pemeriksaan_rr from penilaian_awal_keperawatan_ranap where no_rawat=?",RR,TNoRw.getText());
+        Sequel.cariIsi("select pemeriksaan_suhu from penilaian_awal_keperawatan_ranap where no_rawat=?",Suhu,TNoRw.getText());
+        Sequel.cariIsi("select pemeriksaan_gcs from penilaian_awal_keperawatan_ranap where no_rawat=?",GCS,TNoRw.getText());
+        Sequel.cariIsi("select pemeriksaan_bb from penilaian_awal_keperawatan_ranap where no_rawat=?",BB,TNoRw.getText());
+        Sequel.cariIsi("select pemeriksaan_spo2 from penilaian_awal_keperawatan_ranap where no_rawat=?",SPO,TNoRw.getText());
+        Sequel.cariIsi("select pemeriksaan_tb from penilaian_awal_keperawatan_ranap where no_rawat=?",TB,TNoRw.getText());
     }
     
     public void isCek(){
