@@ -74,13 +74,13 @@ public final class RMPenilaianAwalMedisIGD extends javax.swing.JDialog {
 
         for (i = 0; i < 41; i++) {
             TableColumn column = tbObat.getColumnModel().getColumn(i);
-            if(i==0){
+            if(i==0){ //Norawat
                 column.setPreferredWidth(105);
-            }else if(i==1){
+            }else if(i==1){ //NoRM
                 column.setPreferredWidth(70);
-            }else if(i==2){
+            }else if(i==2){ //Nama Pasien
                 column.setPreferredWidth(150);
-            }else if(i==3){
+            }else if(i==3){ //TglLahir
                 column.setPreferredWidth(65);
             }else if(i==4){
                 column.setPreferredWidth(55);
