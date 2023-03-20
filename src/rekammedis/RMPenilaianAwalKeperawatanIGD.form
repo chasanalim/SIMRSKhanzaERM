@@ -1033,10 +1033,11 @@
                         <Component class="widget.ComboBox" name="Provokes">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="3">
-                                <StringItem index="0" value="Proses Penyakit"/>
-                                <StringItem index="1" value="Benturan"/>
-                                <StringItem index="2" value="Lain-lain"/>
+                              <StringArray count="4">
+                                <StringItem index="0" value="-"/>
+                                <StringItem index="1" value="Proses Penyakit"/>
+                                <StringItem index="2" value="Benturan"/>
+                                <StringItem index="3" value="Lain-lain"/>
                               </StringArray>
                             </Property>
                             <Property name="name" type="java.lang.String" value="Provokes" noResource="true"/>
@@ -1079,17 +1080,18 @@
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                               <StringArray count="6">
-                                <StringItem index="0" value="Seperti Tertusuk"/>
-                                <StringItem index="1" value="Berdenyut"/>
-                                <StringItem index="2" value="Teriris"/>
-                                <StringItem index="3" value="Tertindih"/>
-                                <StringItem index="4" value="Tertiban"/>
+                                <StringItem index="0" value="Tajam"/>
+                                <StringItem index="1" value="Rasa Terbakar"/>
+                                <StringItem index="2" value="Tertekan"/>
+                                <StringItem index="3" value="Kram"/>
+                                <StringItem index="4" value="Tumpul"/>
                                 <StringItem index="5" value="Lain-lain"/>
                               </StringArray>
                             </Property>
                             <Property name="name" type="java.lang.String" value="Quality" noResource="true"/>
                           </Properties>
                           <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="QualityActionPerformed"/>
                             <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="QualityKeyPressed"/>
                           </Events>
                           <Constraints>
@@ -1162,9 +1164,10 @@
                         <Component class="widget.ComboBox" name="Menyebar">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="2">
-                                <StringItem index="0" value="Tidak"/>
-                                <StringItem index="1" value="Ya"/>
+                              <StringArray count="3">
+                                <StringItem index="0" value="-"/>
+                                <StringItem index="1" value="Tidak"/>
+                                <StringItem index="2" value="Ya"/>
                               </StringArray>
                             </Property>
                             <Property name="name" type="java.lang.String" value="Menyebar" noResource="true"/>
@@ -1254,10 +1257,11 @@
                         <Component class="widget.ComboBox" name="NyeriHilang">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="3">
-                                <StringItem index="0" value="Istirahat"/>
-                                <StringItem index="1" value="Medengar Musik"/>
-                                <StringItem index="2" value="Minum Obat"/>
+                              <StringArray count="4">
+                                <StringItem index="0" value="-"/>
+                                <StringItem index="1" value="Istirahat"/>
+                                <StringItem index="2" value="Medengar Musik"/>
+                                <StringItem index="3" value="Minum Obat"/>
                               </StringArray>
                             </Property>
                             <Property name="name" type="java.lang.String" value="NyeriHilang" noResource="true"/>
@@ -1336,7 +1340,7 @@
                             </Property>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                               <StringArray count="1">
-                                <StringItem index="0" value="06-03-2023 11:41:07"/>
+                                <StringItem index="0" value="17-03-2023 14:40:03"/>
                               </StringArray>
                             </Property>
                             <Property name="displayFormat" type="java.lang.String" value="dd-MM-yyyy HH:mm:ss"/>
@@ -3208,9 +3212,10 @@
                         <Component class="widget.ComboBox" name="Durasi">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="2">
-                                <StringItem index="0" value="Termiten"/>
-                                <StringItem index="1" value="Intermiten"/>
+                              <StringArray count="3">
+                                <StringItem index="0" value="-"/>
+                                <StringItem index="1" value="Termiten"/>
+                                <StringItem index="2" value="Intermiten"/>
                               </StringArray>
                             </Property>
                             <Property name="name" type="java.lang.String" value="Durasi" noResource="true"/>
@@ -3312,7 +3317,7 @@
                         </Property>
                         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                           <StringArray count="1">
-                            <StringItem index="0" value="06-03-2023"/>
+                            <StringItem index="0" value="17-03-2023"/>
                           </StringArray>
                         </Property>
                         <Property name="displayFormat" type="java.lang.String" value="dd-MM-yyyy"/>
@@ -3340,7 +3345,7 @@
                         </Property>
                         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                           <StringArray count="1">
-                            <StringItem index="0" value="06-03-2023"/>
+                            <StringItem index="0" value="17-03-2023"/>
                           </StringArray>
                         </Property>
                         <Property name="displayFormat" type="java.lang.String" value="dd-MM-yyyy"/>
