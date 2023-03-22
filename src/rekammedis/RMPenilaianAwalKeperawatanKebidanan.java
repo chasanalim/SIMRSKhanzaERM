@@ -5072,7 +5072,7 @@ public final class RMPenilaianAwalKeperawatanKebidanan extends javax.swing.JDial
     }//GEN-LAST:event_KetEdukasiKeyPressed
 
     private void AgamaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_AgamaKeyPressed
-        // TODO add your handling code here:
+        Valid.pindah(evt,KetBudaya,Edukasi);
     }//GEN-LAST:event_AgamaKeyPressed
 
     private void RJa1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_RJa1KeyPressed
