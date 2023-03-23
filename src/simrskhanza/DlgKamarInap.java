@@ -5767,7 +5767,7 @@ public class DlgKamarInap extends javax.swing.JDialog {
                     MnGelang2ActionPerformed(null);
                 }else if(i==6){
                     MnDataSEPActionPerformed(null);
-                }else if(i==11){
+                }else if(i==11){//Upload Berkas Digital
                     ppBerkasDigitalBtnPrintActionPerformed(null);
                 }
             }
