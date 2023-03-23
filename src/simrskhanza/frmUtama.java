@@ -8111,7 +8111,7 @@ public class frmUtama extends javax.swing.JFrame {
                     BtnLog.setText("Log Out");
                     MnLogin.setText("Log Out");
                     lblStts.setText("Admin : ");
-                    lblUser.setText(akses.getkdbangsal());
+                    lblUser.setText(akses.getnamauser());
                     MnGantiPassword.setEnabled(true);
                     MnPengajuanCutiPegawai.setEnabled(true);
                     BtnToolReg.setEnabled(akses.getregistrasi());
