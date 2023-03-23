@@ -2582,6 +2582,22 @@ public final class RMPenilaianAwalMedisRanapDewasa extends javax.swing.JDialog {
         Sequel.cariIsi("select pemeriksaan_bb from penilaian_awal_keperawatan_ranap where no_rawat=?",BB,TNoRw.getText());
         Sequel.cariIsi("select pemeriksaan_spo2 from penilaian_awal_keperawatan_ranap where no_rawat=?",SPO,TNoRw.getText());
         Sequel.cariIsi("select pemeriksaan_tb from penilaian_awal_keperawatan_ranap where no_rawat=?",TB,TNoRw.getText());
+        
+        //Umum Ranap Dewasa dari awal medis IGD
+        Sequel.cariIsi("select keluhan_utama from penilaian_medis_igd where no_rawat=?",KeluhanUtama,TNoRw.getText());
+        Sequel.cariIsi("select rps from penilaian_medis_igd where no_rawat=?",RPS,TNoRw.getText());
+        Sequel.cariIsi("select rpd from penilaian_medis_igd where no_rawat=?",RPD,TNoRw.getText());
+        Sequel.cariIsi("select rpo from penilaian_medis_igd where no_rawat=?",RPO,TNoRw.getText());
+        Sequel.cariIsi("select rpk from penilaian_medis_igd where no_rawat=?",RPK,TNoRw.getText());
+        Sequel.cariIsi("select alergi from penilaian_medis_igd where no_rawat=?",Alergi,TNoRw.getText());
+        Sequel.cariIsi("select td from penilaian_medis_igd where no_rawat=?",TD,TNoRw.getText());
+        Sequel.cariIsi("select nadi from penilaian_medis_igd where no_rawat=?",Nadi,TNoRw.getText());
+        Sequel.cariIsi("select rr from penilaian_medis_igd where no_rawat=?",RR,TNoRw.getText());
+        Sequel.cariIsi("select suhu from penilaian_medis_igd where no_rawat=?",Suhu,TNoRw.getText());
+        Sequel.cariIsi("select spo from penilaian_medis_igd where no_rawat=?",SPO,TNoRw.getText());
+        Sequel.cariIsi("select gcs from penilaian_medis_igd where no_rawat=?",GCS,TNoRw.getText());
+        Sequel.cariIsi("select bb from penilaian_medis_igd where no_rawat=?",BB,TNoRw.getText());
+        Sequel.cariIsi("select tb from penilaian_medis_igd where no_rawat=?",TB,TNoRw.getText());
     }
     
     public void isCek(){

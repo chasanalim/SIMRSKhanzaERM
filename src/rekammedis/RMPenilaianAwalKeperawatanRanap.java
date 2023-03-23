@@ -1385,7 +1385,6 @@ public final class RMPenilaianAwalKeperawatanRanap extends javax.swing.JDialog {
 
         TabRawat.setBackground(new java.awt.Color(254, 255, 254));
         TabRawat.setForeground(new java.awt.Color(50, 50, 50));
-        TabRawat.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
         TabRawat.setName("TabRawat"); // NOI18N
         TabRawat.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -2192,7 +2191,7 @@ public final class RMPenilaianAwalKeperawatanRanap extends javax.swing.JDialog {
             }
         });
         FormInput.add(SistemSarafKepala);
-        SistemSarafKepala.setBounds(113, 490, 103, 23);
+        SistemSarafKepala.setBounds(113, 490, 97, 23);
 
         KetSistemSarafKepala.setFocusTraversalPolicyProvider(true);
         KetSistemSarafKepala.setName("KetSistemSarafKepala"); // NOI18N
@@ -4781,7 +4780,6 @@ public final class RMPenilaianAwalKeperawatanRanap extends javax.swing.JDialog {
         TabRencanaKeperawatan.setBackground(new java.awt.Color(255, 255, 254));
         TabRencanaKeperawatan.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         TabRencanaKeperawatan.setForeground(new java.awt.Color(50, 50, 50));
-        TabRencanaKeperawatan.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
         TabRencanaKeperawatan.setName("TabRencanaKeperawatan"); // NOI18N
 
         panelBiasa1.setName("panelBiasa1"); // NOI18N

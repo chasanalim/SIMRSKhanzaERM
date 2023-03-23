@@ -684,6 +684,11 @@ public final class RMPenilaianAwalMedisIGD extends javax.swing.JDialog {
 
         BB.setFocusTraversalPolicyProvider(true);
         BB.setName("BB"); // NOI18N
+        BB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BBActionPerformed(evt);
+            }
+        });
         BB.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 BBKeyPressed(evt);
@@ -741,6 +746,11 @@ public final class RMPenilaianAwalMedisIGD extends javax.swing.JDialog {
 
         Suhu.setFocusTraversalPolicyProvider(true);
         Suhu.setName("Suhu"); // NOI18N
+        Suhu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SuhuActionPerformed(evt);
+            }
+        });
         Suhu.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 SuhuKeyPressed(evt);
@@ -1307,7 +1317,7 @@ public final class RMPenilaianAwalMedisIGD extends javax.swing.JDialog {
         label11.setBounds(380, 40, 52, 23);
 
         TglAsuhan.setForeground(new java.awt.Color(50, 70, 50));
-        TglAsuhan.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "06-03-2023 10:22:20" }));
+        TglAsuhan.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "17-03-2023 08:39:48" }));
         TglAsuhan.setDisplayFormat("dd-MM-yyyy HH:mm:ss");
         TglAsuhan.setName("TglAsuhan"); // NOI18N
         TglAsuhan.setOpaque(false);
@@ -1461,7 +1471,7 @@ public final class RMPenilaianAwalMedisIGD extends javax.swing.JDialog {
         panelGlass9.add(jLabel19);
 
         DTPCari1.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "06-03-2023" }));
+        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "17-03-2023" }));
         DTPCari1.setDisplayFormat("dd-MM-yyyy");
         DTPCari1.setName("DTPCari1"); // NOI18N
         DTPCari1.setOpaque(false);
@@ -1475,7 +1485,7 @@ public final class RMPenilaianAwalMedisIGD extends javax.swing.JDialog {
         panelGlass9.add(jLabel21);
 
         DTPCari2.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "06-03-2023" }));
+        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "17-03-2023" }));
         DTPCari2.setDisplayFormat("dd-MM-yyyy");
         DTPCari2.setName("DTPCari2"); // NOI18N
         DTPCari2.setOpaque(false);
@@ -2125,6 +2135,14 @@ public final class RMPenilaianAwalMedisIGD extends javax.swing.JDialog {
     private void CaraKeluarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_CaraKeluarKeyPressed
         Valid.pindah(evt,Tatalaksana,RTL);
     }//GEN-LAST:event_CaraKeluarKeyPressed
+
+    private void BBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BBActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BBActionPerformed
+
+    private void SuhuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SuhuActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SuhuActionPerformed
 
     /**
     * @param args the command line arguments
