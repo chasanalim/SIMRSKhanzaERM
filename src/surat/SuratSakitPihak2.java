@@ -837,7 +837,7 @@ public final class SuratSakitPihak2 extends javax.swing.JDialog {
         }else if(AlamatPj.getText().trim().equals("")){
             Valid.textKosong(AlamatPj,"Alamat Pihak Ke 2");
         }else{
-            if(Sequel.menyimpantf("suratsakitpihak2","?,?,?,?,?,?,?,?,?,?,?,?,?,?","No.Surat Sakit",13,new String[]{
+            if(Sequel.menyimpantf("suratsakitpihak2","?,?,?,?,?,?,?,?,?,?,?,?,?","No.Surat Sakit",13,new String[]{
                     NoSurat.getText(),TNoRw.getText(),Valid.SetTgl(TanggalAwal.getSelectedItem()+""),Valid.SetTgl(TanggalAkhir.getSelectedItem()+""),LamaSakit.getText(),
                     NamaPihak2.getText(),Valid.SetTgl(TglLahir.getSelectedItem()+""),TUmurTh.getText()+" Th "+TUmurBl.getText()+" Bl "+TUmurHr.getText()+" Hr",cmbJk.getSelectedItem()+"",AlamatPj.getText(),
                     cmbHubungan.getSelectedItem()+"",cmbPekerjaan.getSelectedItem()+"",Instansi.getText()
