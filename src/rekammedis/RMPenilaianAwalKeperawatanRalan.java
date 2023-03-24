@@ -355,7 +355,7 @@ public final class RMPenilaianAwalKeperawatanRalan extends javax.swing.JDialog {
         BB.setDocument(new batasInput((byte)5).getKata(BB));
         TB.setDocument(new batasInput((byte)5).getKata(TB));
         BMI.setDocument(new batasInput((byte)5).getKata(BMI));
-        KeluhanUtama.setDocument(new batasInput((int)150).getKata(KeluhanUtama));
+        KeluhanUtama.setDocument(new batasInput((int)500).getKata(KeluhanUtama));//Keluhanutama
         RPD.setDocument(new batasInput((int)100).getKata(RPD));
         RPK.setDocument(new batasInput((int)100).getKata(RPK));
         RPO.setDocument(new batasInput((int)100).getKata(RPO));
