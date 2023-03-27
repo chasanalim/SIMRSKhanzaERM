@@ -3939,7 +3939,7 @@ public final class RMPenilaianAwalKeperawatanKebidanan extends javax.swing.JDial
                 if(akses.getkode().equals("Admin Utama")){
                     ganti();
                 }else{
-                    if(KdPetugas.getText().equals(tbObat.getValueAt(tbObat.getSelectedRow(),124).toString())){
+                    if(KdPetugas.getText().equals(tbObat.getValueAt(tbObat.getSelectedRow(),123).toString())){
                         ganti();
                     }else{
                         JOptionPane.showMessageDialog(null,"Hanya bisa diganti oleh petugas yang bersangkutan..!!");
@@ -6064,8 +6064,8 @@ public final class RMPenilaianAwalKeperawatanKebidanan extends javax.swing.JDial
         if(tbObat.getSelectedRow()!= -1){
             TNoRM1.setText(tbObat.getValueAt(tbObat.getSelectedRow(),1).toString());
             TPasien1.setText(tbObat.getValueAt(tbObat.getSelectedRow(),2).toString());
-            MasalahKebidanan.setText(tbObat.getValueAt(tbObat.getSelectedRow(),122).toString());
-            TindakanKebidanan.setText(tbObat.getValueAt(tbObat.getSelectedRow(),123).toString());
+            MasalahKebidanan.setText(tbObat.getValueAt(tbObat.getSelectedRow(),121).toString());
+            TindakanKebidanan.setText(tbObat.getValueAt(tbObat.getSelectedRow(),122).toString());
             Valid.tabelKosong(tabModeRiwayatKehamilan2);
             try {
                 ps=koneksi.prepareStatement("select * from riwayat_persalinan_pasien where riwayat_persalinan_pasien.no_rkm_medis=? order by riwayat_persalinan_pasien.tgl_thn");
@@ -6075,8 +6075,8 @@ public final class RMPenilaianAwalKeperawatanKebidanan extends javax.swing.JDial
                     i=1;
                     while(rs.next()){
                         tabModeRiwayatKehamilan2.addRow(new String[]{
-                            i+"",rs.getString("tgl_thn"),rs.getString("tempat_persalinan"),rs.getString("usia_hamil"),rs.getString("jenis_persalinan"),
-                            rs.getString("penolong"),rs.getString("penyulit"),rs.getString("jk"),rs.getString("bbpb"),rs.getString("keadaan")
+                            i+"",rs.getString("jk"),rs.getString("usia_anak"),rs.getString("usia_hamil"),rs.getString("jenis_persalinan"),
+                            rs.getString("bbpb"),rs.getString("penolong"),rs.getString("tempat_persalinan"),rs.getString("penyulit"),rs.getString("keadaan_ibu"),rs.getString("keadaan_bayi")
                         });
                         i++;
                     }
