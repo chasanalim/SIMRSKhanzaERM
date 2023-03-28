@@ -347,29 +347,29 @@ public final class RMPenilaianAwalKeperawatanKebidanan extends javax.swing.JDial
 
         for (i = 0; i < 12; i++) {
             TableColumn column = tbRiwayatKehamilan.getColumnModel().getColumn(i);
-            if(i==0){
+            if(i==0){ //No
                 column.setPreferredWidth(30);
-            }else if(i==1){
+            }else if(i==1){ //Tgl Lahir
                 column.setPreferredWidth(75);
-            }else if(i==2){
+            }else if(i==2){ //JK
                 column.setPreferredWidth(35);
-            }else if(i==3){
+            }else if(i==3){ //Umur Anak
                 column.setPreferredWidth(65);
-            }else if(i==4){
+            }else if(i==4){ //Umur Kehamilan
                 column.setPreferredWidth(65);
-            }else if(i==5){
+            }else if(i==5){ //JenisPersalinan
                 column.setPreferredWidth(100);
-            }else if(i==6){
+            }else if(i==6){ //BB
                 column.setPreferredWidth(50);
-            }else if(i==7){
+            }else if(i==7){ //Tempat Persalinan
                 column.setPreferredWidth(150);
-            }else if(i==8){
+            }else if(i==8){ //Penolong
                 column.setPreferredWidth(60);
-            }else if(i==9){
+            }else if(i==9){ //Penyulit
                 column.setPreferredWidth(60);
-            }else if(i==10){
+            }else if(i==10){ //Keadaan Ibu
                 column.setPreferredWidth(100);
-            }else if(i==11){
+            }else if(i==11){ //Keadaan bayi
                 column.setPreferredWidth(100);
             }
         }
