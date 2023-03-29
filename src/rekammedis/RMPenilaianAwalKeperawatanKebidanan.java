@@ -3934,7 +3934,7 @@ public final class RMPenilaianAwalKeperawatanKebidanan extends javax.swing.JDial
         }else if(Suhu.getText().trim().equals("")){
             Valid.textKosong(Suhu,"Suhu(C)");
         }else if(GCS.getText().trim().equals("")){
-            Valid.textKosong(GCS,"GCS");
+            Valid.textKosong(GCS,"GCS ");
         }else if(BB.getText().trim().equals("")){
             Valid.textKosong(BB,"BB(Kg)");
         }else if(TB.getText().trim().equals("")){
@@ -3944,13 +3944,13 @@ public final class RMPenilaianAwalKeperawatanKebidanan extends javax.swing.JDial
         }else if(LILA.getText().trim().equals("")){
             Valid.textKosong(LILA,"LILA(cm)");
         }else if(KeluhanUtama.getText().trim().equals("")){
-            Valid.textKosong(KeluhanUtama,"Keluhan Utama");
+            Valid.textKosong(KeluhanUtama,"Keluhan Utama / Anamnesa");
         }else if(TotalHasil.getText().trim().equals("")){
             Valid.textKosong(TotalHasil,"Total Hasil");
         }else if(Masalah.getText().trim().equals("")){
-            Valid.textKosong(Masalah,"Masalah Kebidanan");
+            Valid.textKosong(Masalah,"Diagnosa Kebidanan");
         }else if(Tindakan.getText().trim().equals("")){
-            Valid.textKosong(Tindakan,"Tindakan");
+            Valid.textKosong(Tindakan,"Tindakan Kebidanan");
         }else if(NmPetugas.getText().trim().equals("")){
             Valid.textKosong(BtnDokter,"Petugas");
         }else{
@@ -4659,7 +4659,7 @@ public final class RMPenilaianAwalKeperawatanKebidanan extends javax.swing.JDial
                 "inner join bahasa_pasien on bahasa_pasien.id=pasien.bahasa_pasien "+
                 "inner join cacat_fisik on cacat_fisik.id=pasien.cacat_fisik where reg_periksa.no_rawat='"+tbObat.getValueAt(tbObat.getSelectedRow(),0).toString()+"'",param);
         }else{
-            JOptionPane.showMessageDialog(null,"Maaf, silahkan pilih data terlebih dahulu..!!!!");
+            JOptionPane.showMessageDialog(null,"Maaf, silahkan pilih data pasien terlebih dahulu..!!!!");
         }  
     }//GEN-LAST:event_BtnPrint1ActionPerformed
 
@@ -4943,6 +4943,8 @@ public final class RMPenilaianAwalKeperawatanKebidanan extends javax.swing.JDial
             Valid.textKosong(KeadaanIbu,"Keadaan Persalinan");
         }else if(UsiaHamil.getText().trim().equals("")){
             Valid.textKosong(UsiaHamil,"Usia Hamil");
+        }else if(UsiaAnak.getText().trim().equals("")){
+            Valid.textKosong(UsiaAnak,"Usia Anak");
         }else if(BBPB.getText().trim().equals("")){
             Valid.textKosong(BBPB,"BB/PB");
         }else{
