@@ -54,7 +54,7 @@ public final class RMPenilaianAwalKeperawatanKebidananRanap extends javax.swing.
         super(parent, modal);
         initComponents();
         
-        DlgRiwayatPersalinan.setSize(650,192);
+        DlgRiwayatPersalinan.setSize(650,222);
         
         tabMode=new DefaultTableModel(null,new Object[]{
             "No.Rawat","No.RM","Nama Pasien","Tgl.Lahir","J.K.","NIP Pengkaji 1","Nama Pengkaji 1","NIP Pengkaji 2","Nama Pengkaji 2","Kode DPJP","Nama DPJP",
