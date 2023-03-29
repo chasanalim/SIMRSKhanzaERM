@@ -4573,14 +4573,16 @@ public final class RMPenilaianAwalKeperawatanKebidanan extends javax.swing.JDial
                     while(rs.next()){
                         param.put("no"+i,i+"");  
                         param.put("tgl"+i,rs.getString("tgl_thn"));
-                        param.put("tempatpersalinan"+i,rs.getString("tempat_persalinan"));
+                        param.put("jk"+i,rs.getString("jk"));
+                        param.put("usiaanak"+i,rs.getString("usia_anak"));
                         param.put("usiahamil"+i,rs.getString("usia_hamil"));
                         param.put("jenispersalinan"+i,rs.getString("jenis_persalinan"));
-                        param.put("penolong"+i,rs.getString("penolong"));
-                        param.put("penyulit"+i,rs.getString("penyulit"));
-                        param.put("jk"+i,rs.getString("jk"));
                         param.put("bbpb"+i,rs.getString("bbpb"));
-                        param.put("keadaan"+i,rs.getString("keadaan"));
+                        param.put("penolong"+i,rs.getString("penolong"));
+                        param.put("tempatpersalinan"+i,rs.getString("tempat_persalinan"));
+                        param.put("penyulit"+i,rs.getString("penyulit"));                    
+                        param.put("keadaanibu"+i,rs.getString("keadaan_ibu"));
+                        param.put("keadaanbayi"+i,rs.getString("keadaan_bayi"));
                         i++;
                     }
                 } catch (Exception e) {
@@ -4597,7 +4599,7 @@ public final class RMPenilaianAwalKeperawatanKebidanan extends javax.swing.JDial
                 System.out.println("Notif : "+e);
             }
             
-            Valid.MyReportqry("rptCetakPenilaianAwalKebidananRalan.jasper","report","::[ Laporan Penilaian Awal Ralan Kebidanan & Kandungan ]::",
+            Valid.MyReportqry("rptCetakPenilaianAwalKebidananRalan2.jasper","report","::[ Laporan Penilaian Awal Ralan Kebidanan & Kandungan ]::",
                 "select reg_periksa.no_rawat,pasien.no_rkm_medis,pasien.nm_pasien,if(pasien.jk='L','Laki-Laki','Perempuan') as jk,pasien.tgl_lahir,pasien.agama,bahasa_pasien.nama_bahasa,cacat_fisik.nama_cacat,penilaian_awal_keperawatan_kebidanan.tanggal,"+
                 "penilaian_awal_keperawatan_kebidanan.informasi,penilaian_awal_keperawatan_kebidanan.td,penilaian_awal_keperawatan_kebidanan.nadi,penilaian_awal_keperawatan_kebidanan.rr,penilaian_awal_keperawatan_kebidanan.suhu,penilaian_awal_keperawatan_kebidanan.bb,"+
                 "penilaian_awal_keperawatan_kebidanan.tb,penilaian_awal_keperawatan_kebidanan.nadi,penilaian_awal_keperawatan_kebidanan.rr,penilaian_awal_keperawatan_kebidanan.suhu,penilaian_awal_keperawatan_kebidanan.gcs,penilaian_awal_keperawatan_kebidanan.bb,"+
@@ -4627,7 +4629,7 @@ public final class RMPenilaianAwalKeperawatanKebidanan extends javax.swing.JDial
                 "inner join bahasa_pasien on bahasa_pasien.id=pasien.bahasa_pasien "+
                 "inner join cacat_fisik on cacat_fisik.id=pasien.cacat_fisik where reg_periksa.no_rawat='"+tbObat.getValueAt(tbObat.getSelectedRow(),0).toString()+"'",param);
             
-            Valid.MyReportqry("rptCetakPenilaianAwalKebidananRalan2.jasper","report","::[ Laporan Penilaian Awal Ralan Kebidanan & Kandungan ]::",
+            Valid.MyReportqry("rptCetakPenilaianAwalKebidananRalan.jasper","report","::[ Laporan Penilaian Awal Ralan Kebidanan & Kandungan ]::",
                  "select reg_periksa.no_rawat,pasien.no_rkm_medis,pasien.nm_pasien,if(pasien.jk='L','Laki-Laki','Perempuan') as jk,pasien.tgl_lahir,pasien.agama,bahasa_pasien.nama_bahasa,cacat_fisik.nama_cacat,penilaian_awal_keperawatan_kebidanan.tanggal,"+
                 "penilaian_awal_keperawatan_kebidanan.informasi,penilaian_awal_keperawatan_kebidanan.td,penilaian_awal_keperawatan_kebidanan.nadi,penilaian_awal_keperawatan_kebidanan.rr,penilaian_awal_keperawatan_kebidanan.suhu,penilaian_awal_keperawatan_kebidanan.bb,"+
                 "penilaian_awal_keperawatan_kebidanan.tb,penilaian_awal_keperawatan_kebidanan.nadi,penilaian_awal_keperawatan_kebidanan.rr,penilaian_awal_keperawatan_kebidanan.suhu,penilaian_awal_keperawatan_kebidanan.gcs,penilaian_awal_keperawatan_kebidanan.bb,"+
@@ -6096,8 +6098,8 @@ public final class RMPenilaianAwalKeperawatanKebidanan extends javax.swing.JDial
                     i=1;
                     while(rs.next()){
                         tabModeRiwayatKehamilan2.addRow(new String[]{
-                            i+"",rs.getString("jk"),rs.getString("usia_anak"),rs.getString("usia_hamil"),rs.getString("jenis_persalinan"),
-                            rs.getString("bbpb"),rs.getString("penolong"),rs.getString("tempat_persalinan"),rs.getString("penyulit"),rs.getString("keadaan_ibu"),rs.getString("keadaan_bayi")
+                        i+"",rs.getString("tgl_thn"),rs.getString("jk"),rs.getString("usia_anak"),rs.getString("usia_hamil"),rs.getString("jenis_persalinan"),rs.getString("bbpb"),
+                        rs.getString("penolong"),rs.getString("tempat_persalinan"),rs.getString("penyulit"),rs.getString("keadaan_ibu"),rs.getString("keadaan_bayi")
                         });
                         i++;
                     }
