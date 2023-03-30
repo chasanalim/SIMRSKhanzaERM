@@ -56,7 +56,7 @@ public class DlgCariTagihanOperasi extends javax.swing.JDialog {
         initComponents();
 
         tabMode=new DefaultTableModel(null,new Object[]{
-                "Tgl.Operasi","No.Rawat","Pasien","Jns.Ans","","","","","","","","","","","","","","","","","","","","","","","","","","",
+                "Tgl.Operasi","No.Rawat","Pasien","Jenis Bayar","Jns.Ans","","","","","","","","","","","","","","","","","","","","","","","","","","",
                 "","","","","Diagnosa Pre-operatif","Diagnosa Post-operatif","Jaringan Yang di-Eksisi/-Insisi","Kirim PA","Selesai Operasi",
                 "Laporan Operasi"
             }){
@@ -67,7 +67,7 @@ public class DlgCariTagihanOperasi extends javax.swing.JDialog {
         tbDokter.setPreferredScrollableViewportSize(new Dimension(800,800));
         tbDokter.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
 
-        for (int i = 0; i < 40; i++) {
+        for (int i = 0; i < 41; i++) {
             TableColumn column = tbDokter.getColumnModel().getColumn(i);
             if(i==0){
                 column.setPreferredWidth(120);
@@ -78,18 +78,20 @@ public class DlgCariTagihanOperasi extends javax.swing.JDialog {
             }else if(i==3){
                 column.setPreferredWidth(70);
             }else if(i==4){
+                column.setPreferredWidth(120);
+            }else if(i==5){
                 column.setPreferredWidth(200);
-            }else if(i==34){
-                column.setPreferredWidth(150);
             }else if(i==35){
                 column.setPreferredWidth(150);
             }else if(i==36){
-                column.setPreferredWidth(170);
+                column.setPreferredWidth(150);
             }else if(i==37){
-                column.setPreferredWidth(50);
+                column.setPreferredWidth(170);
             }else if(i==38){
-                column.setPreferredWidth(120);
+                column.setPreferredWidth(50);
             }else if(i==39){
+                column.setPreferredWidth(120);
+            }else if(i==40){
                 column.setPreferredWidth(400);
             }else{
                 column.setPreferredWidth(130);
@@ -3252,17 +3254,18 @@ private void MnHapusObatOperasiActionPerformed(java.awt.event.ActionEvent evt) {
         }
         
         if(TCari.getText().trim().equals("")&&kdmem.getText().trim().equals("")&&NoRawat.getText().trim().equals("")){
-            sql="select operasi.no_rawat,reg_periksa.no_rkm_medis,pasien.nm_pasien,operasi.jenis_anasthesi,"+
+            sql="select operasi.no_rawat,reg_periksa.no_rkm_medis,pasien.nm_pasien,penjab.png_jawab,operasi.jenis_anasthesi,"+
                 "operasi.tgl_operasi from operasi inner join reg_periksa on operasi.no_rawat=reg_periksa.no_rawat "+
-                "inner join pasien on reg_periksa.no_rkm_medis=pasien.no_rkm_medis "+
-                " where "+tanggal+" group by operasi.no_rawat,operasi.tgl_operasi order by operasi.tgl_operasi,operasi.no_rawat ";
+                "inner join pasien on reg_periksa.no_rkm_medis=pasien.no_rkm_medis inner join penjab on reg_periksa.kd_pj=penjab.kd_pj "+
+                "where "+tanggal+" group by operasi.no_rawat,operasi.tgl_operasi order by operasi.tgl_operasi,operasi.no_rawat ";
         }else{
-            sql="select operasi.no_rawat,reg_periksa.no_rkm_medis,pasien.nm_pasien,operasi.jenis_anasthesi,"+
+            sql="select operasi.no_rawat,reg_periksa.no_rkm_medis,pasien.nm_pasien,penjab.png_jawab,operasi.jenis_anasthesi,"+
                 "operasi.tgl_operasi from operasi inner join reg_periksa on operasi.no_rawat=reg_periksa.no_rawat "+
-                "inner join pasien on reg_periksa.no_rkm_medis=pasien.no_rkm_medis "+
+                "inner join pasien on reg_periksa.no_rkm_medis=pasien.no_rkm_medis inner join penjab on reg_periksa.kd_pj=penjab.kd_pj "+
                 " where "+tanggal+mem+norawat+" and operasi.no_rawat like '%"+TCari.getText()+"%' or "+
                 tanggal+mem+norawat+" and reg_periksa.no_rkm_medis like '%"+TCari.getText()+"%' or "+
                 tanggal+mem+norawat+" and pasien.nm_pasien like '%"+TCari.getText()+"%' or "+
+                tanggal+mem+norawat+" and penjab.png_jawab like '%"+TCari.getText()+"%' or "+
                 tanggal+mem+norawat+" and operasi.tgl_operasi like '%"+TCari.getText()+"%' or "+
                 tanggal+mem+norawat+" and operasi.jenis_anasthesi like '%"+TCari.getText()+"%'  "+                   
                 " group by operasi.no_rawat,operasi.tgl_operasi order by operasi.tgl_operasi,operasi.no_rawat ";
