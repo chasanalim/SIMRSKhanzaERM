@@ -7789,6 +7789,30 @@ public final class RMPenilaianAwalKeperawatanKebidananRanap extends javax.swing.
         DTPCari2.setDate(tgl2);    
         isRawat(); 
         tampilPersalinan();
+        
+        //Link dari Asessment Kebidanan Ralan/IGD\
+        //1. Riwayat Kesehatan
+        Sequel.cariIsi("select umur from penilaian_awal_keperawatan_kebidanan where no_rawat=?",UmurMinarche,TNoRw.getText());
+        Sequel.cariIsi("select lama from penilaian_awal_keperawatan_kebidanan where no_rawat=?",LamaMenstruasi,TNoRw.getText());
+        Sequel.cariIsi("select banyaknya from penilaian_awal_keperawatan_kebidanan where no_rawat=?",BanyaknyaPembalut,TNoRw.getText());
+        Sequel.cariIsi("select siklus from penilaian_awal_keperawatan_kebidanan where no_rawat=?",SiklusMenstruasi,TNoRw.getText());
+        Sequel.cariIsi("select kali from penilaian_awal_keperawatan_kebidanan where no_rawat=?",KaliMenikah,TNoRw.getText());
+        Sequel.cariIsi("select usia1 from penilaian_awal_keperawatan_kebidanan where no_rawat=?",UsiaKawin1,TNoRw.getText());
+        Sequel.cariIsi("select usia2 from penilaian_awal_keperawatan_kebidanan where no_rawat=?",UsiaKawin2,TNoRw.getText());
+        Sequel.cariIsi("select usia3 from penilaian_awal_keperawatan_kebidanan where no_rawat=?",UsiaKawin3,TNoRw.getText());
+        Sequel.cariIsi("select g from penilaian_awal_keperawatan_kebidanan where no_rawat=?",G,TNoRw.getText());
+        Sequel.cariIsi("select p from penilaian_awal_keperawatan_kebidanan where no_rawat=?",P,TNoRw.getText());
+        Sequel.cariIsi("select a from penilaian_awal_keperawatan_kebidanan where no_rawat=?",A,TNoRw.getText());
+        Sequel.cariIsi("select hidup from penilaian_awal_keperawatan_kebidanan where no_rawat=?",Hidup,TNoRw.getText());
+        Sequel.cariIsi("select usia_kehamilan from penilaian_awal_keperawatan_kebidanan where no_rawat=?",UsiaKehamilan,TNoRw.getText());
+        
+        
+        
+        
+        
+        
+        
+        
     }
     
     
