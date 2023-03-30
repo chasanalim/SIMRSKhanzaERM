@@ -76,9 +76,9 @@ public class DlgCariTagihanOperasi extends javax.swing.JDialog {
             }else if(i==2){
                 column.setPreferredWidth(200);
             }else if(i==3){
-                column.setPreferredWidth(70);
-            }else if(i==4){
                 column.setPreferredWidth(120);
+            }else if(i==4){
+                column.setPreferredWidth(70);
             }else if(i==5){
                 column.setPreferredWidth(200);
             }else if(i==35){
@@ -3296,7 +3296,7 @@ private void MnHapusObatOperasiActionPerformed(java.awt.event.ActionEvent evt) {
                     rs2.close();
                 }
                 tabMode.addRow(new Object[]{
-                    rs.getString("tgl_operasi"),rs.getString("no_rawat"),rs.getString("no_rkm_medis")+", "+rs.getString("nm_pasien"),rs.getString("jenis_anasthesi"),
+                    rs.getString("tgl_operasi"),rs.getString("no_rawat"),rs.getString("no_rkm_medis")+", "+rs.getString("nm_pasien"),rs.getString("png_jawab"),rs.getString("jenis_anasthesi"),
                     "Perawatan","Operator 1","Operator 2","Operator 3","Asisten Operator 1","Asisten Operator 2","Asisten Operator 3","Instrumen","Dokter Anak",
                     "Perawat Resusitas","Dokter Anestesi","Asisten Anestesi 1","Asisten Anestesi 2","Bidan 1","Bidan 2","Bidan 3","Perawat Luar","Onloop 1",
                     "Onloop 2","Onloop 3","Onloop 4","Onloop 5","Sewa OK/VK","Alat","Akomodasi","N.M.S.","Sarpras","Dokter PJ Anak","Dokter Umum","Biaya Perawatan",
@@ -3322,7 +3322,7 @@ private void MnHapusObatOperasiActionPerformed(java.awt.event.ActionEvent evt) {
                         "on operasi.kode_paket=paket_operasi.kode_paket where operasi.no_rawat='"+rs.getString("no_rawat")+"' and operasi.tgl_operasi='"+rs.getString("tgl_operasi")+"'").executeQuery();
                 no=1;
                 while(rs2.next()){
-                    tabMode.addRow(new Object[]{"","","","",no+". "+rs2.getString("nm_perawatan"),
+                    tabMode.addRow(new Object[]{"","","","","",no+". "+rs2.getString("nm_perawatan"),
                            Sequel.cariIsi("select dokter.nm_dokter from dokter where dokter.kd_dokter=?",rs2.getString("operator1")),
                            Sequel.cariIsi("select dokter.nm_dokter from dokter where dokter.kd_dokter=?",rs2.getString("operator2")),
                            Sequel.cariIsi("select dokter.nm_dokter from dokter where dokter.kd_dokter=?",rs2.getString("operator3")),
@@ -3353,7 +3353,7 @@ private void MnHapusObatOperasiActionPerformed(java.awt.event.ActionEvent evt) {
                            Sequel.cariIsi("select dokter.nm_dokter from dokter where dokter.kd_dokter=?",rs2.getString("dokter_umum")),
                            "","","","","","",""
                     });  
-                    tabMode.addRow(new Object[]{"","","","","",Valid.SetAngka(rs2.getDouble("biayaoperator1")),
+                    tabMode.addRow(new Object[]{"","","","","","",Valid.SetAngka(rs2.getDouble("biayaoperator1")),
                            Valid.SetAngka(rs2.getDouble("biayaoperator2")),
                            Valid.SetAngka(rs2.getDouble("biayaoperator3")),
                            Valid.SetAngka(rs2.getDouble("biayaasisten_operator1")),
