@@ -7805,7 +7805,26 @@ public final class RMPenilaianAwalKeperawatanKebidananRanap extends javax.swing.
         Sequel.cariIsi("select a from penilaian_awal_keperawatan_kebidanan where no_rawat=?",A,TNoRw.getText());
         Sequel.cariIsi("select hidup from penilaian_awal_keperawatan_kebidanan where no_rawat=?",Hidup,TNoRw.getText());
         Sequel.cariIsi("select usia_kehamilan from penilaian_awal_keperawatan_kebidanan where no_rawat=?",UsiaKehamilan,TNoRw.getText());
-        
+        //2. Pemeriksaan Kebidanan
+        Sequel.cariIsi("select gcs from penilaian_awal_keperawatan_kebidanan where no_rawat=?",GCS,TNoRw.getText());
+        Sequel.cariIsi("select td from penilaian_awal_keperawatan_kebidanan where no_rawat=?",TD,TNoRw.getText());
+        Sequel.cariIsi("select nadi from penilaian_awal_keperawatan_kebidanan where no_rawat=?",Nadi,TNoRw.getText());
+        Sequel.cariIsi("select rr from penilaian_awal_keperawatan_kebidanan where no_rawat=?",RR,TNoRw.getText());
+        Sequel.cariIsi("select suhu from penilaian_awal_keperawatan_kebidanan where no_rawat=?",Suhu,TNoRw.getText());
+        Sequel.cariIsi("select bb from penilaian_awal_keperawatan_kebidanan where no_rawat=?",BB,TNoRw.getText());
+        Sequel.cariIsi("select tb from penilaian_awal_keperawatan_kebidanan where no_rawat=?",TB,TNoRw.getText());
+        Sequel.cariIsi("select lila from penilaian_awal_keperawatan_kebidanan where no_rawat=?",LILA,TNoRw.getText());
+        Sequel.cariIsi("select tfu from penilaian_awal_keperawatan_kebidanan where no_rawat=?",TFU,TNoRw.getText());
+        Sequel.cariIsi("select tbj from penilaian_awal_keperawatan_kebidanan where no_rawat=?",TBJ,TNoRw.getText());
+        Sequel.cariIsi("select penurunan from penilaian_awal_keperawatan_kebidanan where no_rawat=?",Penurunan,TNoRw.getText());
+        Sequel.cariIsi("select his from penilaian_awal_keperawatan_kebidanan where no_rawat=?",Kontraksi,TNoRw.getText());
+        Sequel.cariIsi("select lamanya from penilaian_awal_keperawatan_kebidanan where no_rawat=?",LamanyaKontraksi,TNoRw.getText());
+        Sequel.cariIsi("select kekuatan from penilaian_awal_keperawatan_kebidanan where no_rawat=?",Kekuatan,TNoRw.getText());
+        Sequel.cariIsi("select djj from penilaian_awal_keperawatan_kebidanan where no_rawat=?",DJJ,TNoRw.getText());
+        Sequel.cariIsi("select portio from penilaian_awal_keperawatan_kebidanan where no_rawat=?",Portio,TNoRw.getText());
+        Sequel.cariIsi("select serviks from penilaian_awal_keperawatan_kebidanan where no_rawat=?",PembukaanServiks,TNoRw.getText());
+        Sequel.cariIsi("select ketuban from penilaian_awal_keperawatan_kebidanan where no_rawat=?",Ketuban,TNoRw.getText());
+        Sequel.cariIsi("select hodge from penilaian_awal_keperawatan_kebidanan where no_rawat=?",Hodge,TNoRw.getText());
         
         
         
