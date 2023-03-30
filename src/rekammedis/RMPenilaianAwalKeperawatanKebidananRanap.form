@@ -883,9 +883,12 @@
                         <Component class="widget.ComboBox" name="Anamnesis">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="2">
-                                <StringItem index="0" value="Autoanamnesis"/>
-                                <StringItem index="1" value="Alloanamnesis"/>
+                              <StringArray count="5">
+                                <StringItem index="0" value="Pasien"/>
+                                <StringItem index="1" value="Suami"/>
+                                <StringItem index="2" value="Keluarga"/>
+                                <StringItem index="3" value="Lainnya"/>
+                                <StringItem index="4" value=" "/>
                               </StringArray>
                             </Property>
                             <Property name="name" type="java.lang.String" value="Anamnesis" noResource="true"/>
@@ -906,7 +909,7 @@
                             </Property>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                               <StringArray count="1">
-                                <StringItem index="0" value="30-03-2023 09:45:53"/>
+                                <StringItem index="0" value="30-03-2023 13:29:43"/>
                               </StringArray>
                             </Property>
                             <Property name="displayFormat" type="java.lang.String" value="dd-MM-yyyy HH:mm:ss"/>
@@ -2174,7 +2177,7 @@
                         </Component>
                         <Component class="widget.Label" name="jLabel96">
                           <Properties>
-                            <Property name="text" type="java.lang.String" value="TP :"/>
+                            <Property name="text" type="java.lang.String" value="HPL"/>
                             <Property name="name" type="java.lang.String" value="jLabel96" noResource="true"/>
                           </Properties>
                           <Constraints>

@@ -1234,6 +1234,34 @@ public final class sekuel {
             System.out.println("Notifikasi : "+e);
         }   
     }
+    
+    public void cariIsi(String sql,JComboBox cmb,String kunci){
+        try {
+            ps=connect.prepareStatement(sql);
+            try{  
+                ps.setString(1,kunci);
+                rs=ps.executeQuery();
+                if(rs.next()){
+                    String dicari=rs.getString(1);
+                    cmb.setSelectedItem(dicari);
+                }else{
+                    cmb.setSelectedItem("");
+                }    
+            }catch(Exception e){
+                System.out.println("Notifikasi : "+e);
+            }finally{
+                if(rs != null){
+                    rs.close();
+                }
+                
+                if(ps != null){
+                    ps.close();
+                }
+            }
+        } catch (Exception e) {
+            System.out.println("Notifikasi : "+e);
+        }   
+    }
 
     public void cariIsi(String sql,JDateTimePicker dtp){
         try {
@@ -1308,7 +1336,7 @@ public final class sekuel {
                     txt.setText(rs.getString(1));
                 }else{
                     txt.setText("");
-                }   
+                }
             }catch(SQLException e){
                 System.out.println("Notifikasi : "+e);
             }finally{

@@ -1340,7 +1340,7 @@ public final class RMPenilaianAwalKeperawatanKebidananRanap extends javax.swing.
         jLabel212.setBounds(300, 130, 110, 23);
 
         TanggalPersalinan.setForeground(new java.awt.Color(50, 70, 50));
-        TanggalPersalinan.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "29-03-2023" }));
+        TanggalPersalinan.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "30-03-2023" }));
         TanggalPersalinan.setDisplayFormat("dd-MM-yyyy");
         TanggalPersalinan.setName("TanggalPersalinan"); // NOI18N
         TanggalPersalinan.setOpaque(false);
@@ -1625,7 +1625,7 @@ public final class RMPenilaianAwalKeperawatanKebidananRanap extends javax.swing.
         FormInput.add(jLabel36);
         jLabel36.setBounds(0, 100, 70, 23);
 
-        Anamnesis.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Autoanamnesis", "Alloanamnesis" }));
+        Anamnesis.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Pasien", "Suami", "Keluarga", "Lainnya", " " }));
         Anamnesis.setName("Anamnesis"); // NOI18N
         Anamnesis.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
@@ -1636,7 +1636,7 @@ public final class RMPenilaianAwalKeperawatanKebidananRanap extends javax.swing.
         Anamnesis.setBounds(74, 100, 150, 23);
 
         TglAsuhan.setForeground(new java.awt.Color(50, 70, 50));
-        TglAsuhan.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "31-07-2022 00:12:35" }));
+        TglAsuhan.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "30-03-2023 13:29:43" }));
         TglAsuhan.setDisplayFormat("dd-MM-yyyy HH:mm:ss");
         TglAsuhan.setName("TglAsuhan"); // NOI18N
         TglAsuhan.setOpaque(false);
@@ -2281,7 +2281,7 @@ public final class RMPenilaianAwalKeperawatanKebidananRanap extends javax.swing.
         jLabel92.setBounds(0, 610, 110, 23);
 
         HPHT.setForeground(new java.awt.Color(50, 70, 50));
-        HPHT.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "31-07-2022" }));
+        HPHT.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "30-03-2023" }));
         HPHT.setDisplayFormat("dd-MM-yyyy");
         HPHT.setName("HPHT"); // NOI18N
         HPHT.setOpaque(false);
@@ -2314,13 +2314,13 @@ public final class RMPenilaianAwalKeperawatanKebidananRanap extends javax.swing.
         FormInput.add(jLabel95);
         jLabel95.setBounds(380, 610, 60, 23);
 
-        jLabel96.setText("TP :");
+        jLabel96.setText("HPL");
         jLabel96.setName("jLabel96"); // NOI18N
         FormInput.add(jLabel96);
         jLabel96.setBounds(452, 610, 40, 23);
 
         TP.setForeground(new java.awt.Color(50, 70, 50));
-        TP.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "31-07-2022" }));
+        TP.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "30-03-2023" }));
         TP.setDisplayFormat("dd-MM-yyyy");
         TP.setName("TP"); // NOI18N
         TP.setOpaque(false);
@@ -4527,7 +4527,7 @@ public final class RMPenilaianAwalKeperawatanKebidananRanap extends javax.swing.
         panelGlass9.add(jLabel19);
 
         DTPCari1.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "31-07-2022" }));
+        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "30-03-2023" }));
         DTPCari1.setDisplayFormat("dd-MM-yyyy");
         DTPCari1.setName("DTPCari1"); // NOI18N
         DTPCari1.setOpaque(false);
@@ -4541,7 +4541,7 @@ public final class RMPenilaianAwalKeperawatanKebidananRanap extends javax.swing.
         panelGlass9.add(jLabel21);
 
         DTPCari2.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "31-07-2022" }));
+        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "30-03-2023" }));
         DTPCari2.setDisplayFormat("dd-MM-yyyy");
         DTPCari2.setName("DTPCari2"); // NOI18N
         DTPCari2.setOpaque(false);
@@ -7792,6 +7792,7 @@ public final class RMPenilaianAwalKeperawatanKebidananRanap extends javax.swing.
         
         //Link dari Asessment Kebidanan Ralan/IGD\
         //1. Riwayat Kesehatan
+        Sequel.cariIsi("select keluhan_utama from penilaian_awal_keperawatan_kebidanan where no_rawat=?",KeluhanUtama,TNoRw.getText());
         Sequel.cariIsi("select umur from penilaian_awal_keperawatan_kebidanan where no_rawat=?",UmurMinarche,TNoRw.getText());
         Sequel.cariIsi("select lama from penilaian_awal_keperawatan_kebidanan where no_rawat=?",LamaMenstruasi,TNoRw.getText());
         Sequel.cariIsi("select banyaknya from penilaian_awal_keperawatan_kebidanan where no_rawat=?",BanyaknyaPembalut,TNoRw.getText());
@@ -7805,6 +7806,31 @@ public final class RMPenilaianAwalKeperawatanKebidananRanap extends javax.swing.
         Sequel.cariIsi("select a from penilaian_awal_keperawatan_kebidanan where no_rawat=?",A,TNoRw.getText());
         Sequel.cariIsi("select hidup from penilaian_awal_keperawatan_kebidanan where no_rawat=?",Hidup,TNoRw.getText());
         Sequel.cariIsi("select usia_kehamilan from penilaian_awal_keperawatan_kebidanan where no_rawat=?",UsiaKehamilan,TNoRw.getText());
+        Sequel.cariIsi("select status from penilaian_awal_keperawatan_kebidanan where no_rawat=?",StatusMenikah,TNoRw.getText());
+        Sequel.cariIsi("select ket_siklus from penilaian_awal_keperawatan_kebidanan where no_rawat=?",KetSiklusMenstruasi,TNoRw.getText());
+        Sequel.cariIsi("select ket_siklus1 from penilaian_awal_keperawatan_kebidanan where no_rawat=?",DirasakanMenstruasi,TNoRw.getText());
+        Sequel.cariIsi("select ket1 from penilaian_awal_keperawatan_kebidanan where no_rawat=?",StatusKawin1,TNoRw.getText());
+        Sequel.cariIsi("select ket2 from penilaian_awal_keperawatan_kebidanan where no_rawat=?",StatusKawin2,TNoRw.getText());
+        Sequel.cariIsi("select ket3 from penilaian_awal_keperawatan_kebidanan where no_rawat=?",StatusKawin3,TNoRw.getText());
+//        Sequel.cariIsi("select informasi from penilaian_awal_keperawatan_kebidanan where no_rawat=?",Anamnesis,TNoRw.getText());
+        Sequel.cariIsi("select hpht from penilaian_awal_keperawatan_kebidanan where no_rawat=?",HPHT,TNoRw.getText());
+        Sequel.cariIsi("select tp from penilaian_awal_keperawatan_kebidanan where no_rawat=?",TP,TNoRw.getText());
+        Sequel.cariIsi("select kb from penilaian_awal_keperawatan_kebidanan where no_rawat=?",RiwayatKB,TNoRw.getText());
+        Sequel.cariIsi("select ket_kb from penilaian_awal_keperawatan_kebidanan where no_rawat=?",LamanyaKB,TNoRw.getText());
+        Sequel.cariIsi("select komplikasi from penilaian_awal_keperawatan_kebidanan where no_rawat=?",KomplikasiKB,TNoRw.getText());
+        Sequel.cariIsi("select ket_komplikasi from penilaian_awal_keperawatan_kebidanan where no_rawat=?",KeteranganKomplikasiKB,TNoRw.getText());
+        Sequel.cariIsi("select berhenti from penilaian_awal_keperawatan_kebidanan where no_rawat=?",BerhentiKB,TNoRw.getText());
+        Sequel.cariIsi("select alasan from penilaian_awal_keperawatan_kebidanan where no_rawat=?",AlasanBerhentiKB,TNoRw.getText());
+        Sequel.cariIsi("select ginekologi from penilaian_awal_keperawatan_kebidanan where no_rawat=?",RiwayatGenekologi,TNoRw.getText());
+        Sequel.cariIsi("select kebiasaan from penilaian_awal_keperawatan_kebidanan where no_rawat=?",KebiasaanObat,TNoRw.getText());
+        Sequel.cariIsi("select ket_kebiasaan from penilaian_awal_keperawatan_kebidanan where no_rawat=?",KebiasaanObatDiminum,TNoRw.getText());
+        Sequel.cariIsi("select kebiasaan1 from penilaian_awal_keperawatan_kebidanan where no_rawat=?",KebiasaanMerokok,TNoRw.getText());
+        Sequel.cariIsi("select ket_kebiasaan1 from penilaian_awal_keperawatan_kebidanan where no_rawat=?",KebiasaanJumlahRokok,TNoRw.getText());
+        Sequel.cariIsi("select kebiasaan2 from penilaian_awal_keperawatan_kebidanan where no_rawat=?",KebiasaanAlkohol,TNoRw.getText());
+        Sequel.cariIsi("select ket_kebiasaan2 from penilaian_awal_keperawatan_kebidanan where no_rawat=?",KebiasaanJumlahAlkohol,TNoRw.getText());
+        
+        
+        
         //2. Pemeriksaan Kebidanan
         Sequel.cariIsi("select gcs from penilaian_awal_keperawatan_kebidanan where no_rawat=?",GCS,TNoRw.getText());
         Sequel.cariIsi("select td from penilaian_awal_keperawatan_kebidanan where no_rawat=?",TD,TNoRw.getText());
