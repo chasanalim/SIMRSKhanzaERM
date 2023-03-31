@@ -4442,7 +4442,7 @@ public final class RMPenilaianAwalKeperawatanKebidananRanap extends javax.swing.
         jSeparator12.setBounds(0, 2020, 880, 1);
 
         jLabel210.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel210.setText("ASESMEN/PENILAIAN KEBIDANAN :");
+        jLabel210.setText("DIAGNOSA KEBIDANAN :");
         jLabel210.setName("jLabel210"); // NOI18N
         FormInput.add(jLabel210);
         jLabel210.setBounds(10, 2030, 200, 23);
@@ -7852,7 +7852,16 @@ public final class RMPenilaianAwalKeperawatanKebidananRanap extends javax.swing.
         Sequel.cariIsi("select ketuban from penilaian_awal_keperawatan_kebidanan where no_rawat=?",Ketuban,TNoRw.getText());
         Sequel.cariIsi("select hodge from penilaian_awal_keperawatan_kebidanan where no_rawat=?",Hodge,TNoRw.getText());
         
-        
+        //VIII. SKRINING GIZI
+        Sequel.cariIsi("select sg1 from penilaian_awal_keperawatan_kebidanan where no_rawat=?",SkalaGizi1,TNoRw.getText());
+        Sequel.cariIsi("select nilai1 from penilaian_awal_keperawatan_kebidanan where no_rawat=?",NilaiGizi1,TNoRw.getText());
+        Sequel.cariIsi("select sg2 from penilaian_awal_keperawatan_kebidanan where no_rawat=?",SkalaGizi2,TNoRw.getText());
+        Sequel.cariIsi("select nilai2 from penilaian_awal_keperawatan_kebidanan where no_rawat=?",NilaiGizi2,TNoRw.getText());
+        Sequel.cariIsi("select total_hasil from penilaian_awal_keperawatan_kebidanan where no_rawat=?",NilaiGiziTotal,TNoRw.getText());
+         
+        // DIAGNOSA MASALAH KEBIDANAN
+        Sequel.cariIsi("select masalah from penilaian_awal_keperawatan_kebidanan where no_rawat=?",Masalah,TNoRw.getText());
+        Sequel.cariIsi("select tindakan from penilaian_awal_keperawatan_kebidanan where no_rawat=?",Tindakan,TNoRw.getText());
         
         
         
