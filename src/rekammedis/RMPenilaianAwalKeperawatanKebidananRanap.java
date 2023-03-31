@@ -7829,8 +7829,6 @@ public final class RMPenilaianAwalKeperawatanKebidananRanap extends javax.swing.
         Sequel.cariIsi("select kebiasaan2 from penilaian_awal_keperawatan_kebidanan where no_rawat=?",KebiasaanAlkohol,TNoRw.getText());
         Sequel.cariIsi("select ket_kebiasaan2 from penilaian_awal_keperawatan_kebidanan where no_rawat=?",KebiasaanJumlahAlkohol,TNoRw.getText());
         
-        
-        
         //2. Pemeriksaan Kebidanan
         Sequel.cariIsi("select gcs from penilaian_awal_keperawatan_kebidanan where no_rawat=?",GCS,TNoRw.getText());
         Sequel.cariIsi("select td from penilaian_awal_keperawatan_kebidanan where no_rawat=?",TD,TNoRw.getText());
@@ -7851,6 +7849,21 @@ public final class RMPenilaianAwalKeperawatanKebidananRanap extends javax.swing.
         Sequel.cariIsi("select serviks from penilaian_awal_keperawatan_kebidanan where no_rawat=?",PembukaanServiks,TNoRw.getText());
         Sequel.cariIsi("select ketuban from penilaian_awal_keperawatan_kebidanan where no_rawat=?",Ketuban,TNoRw.getText());
         Sequel.cariIsi("select hodge from penilaian_awal_keperawatan_kebidanan where no_rawat=?",Hodge,TNoRw.getText());
+        
+         //VII. SKALA NYERI
+        Sequel.cariIsi("select nyeri from penilaian_awal_keperawatan_kebidanan where no_rawat=?",Nyeri,TNoRw.getText());
+        Sequel.cariIsi("select provokes from penilaian_awal_keperawatan_kebidanan where no_rawat=?",Provokes,TNoRw.getText());
+        Sequel.cariIsi("select ket_provokes from penilaian_awal_keperawatan_kebidanan where no_rawat=?",KetProvokes,TNoRw.getText());
+        Sequel.cariIsi("select quality from penilaian_awal_keperawatan_kebidanan where no_rawat=?",Quality,TNoRw.getText());
+        Sequel.cariIsi("select ket_quality from penilaian_awal_keperawatan_kebidanan where no_rawat=?",KetQuality,TNoRw.getText());
+        Sequel.cariIsi("select lokasi from penilaian_awal_keperawatan_kebidanan where no_rawat=?",Lokasi,TNoRw.getText());
+        Sequel.cariIsi("select menyebar from penilaian_awal_keperawatan_kebidanan where no_rawat=?",Menyebar,TNoRw.getText());
+        Sequel.cariIsi("select skala_nyeri from penilaian_awal_keperawatan_kebidanan where no_rawat=?",SkalaNyeri,TNoRw.getText());
+        Sequel.cariIsi("select durasi from penilaian_awal_keperawatan_kebidanan where no_rawat=?",Durasi,TNoRw.getText());
+        Sequel.cariIsi("select nyeri_hilang from penilaian_awal_keperawatan_kebidanan where no_rawat=?",NyeriHilang,TNoRw.getText());
+        Sequel.cariIsi("select ket_nyeri from penilaian_awal_keperawatan_kebidanan where no_rawat=?",KetNyeri,TNoRw.getText());
+        Sequel.cariIsi("select pada_dokter from penilaian_awal_keperawatan_kebidanan where no_rawat=?",PadaDokter,TNoRw.getText());
+        Sequel.cariIsi("select ket_dokter from penilaian_awal_keperawatan_kebidanan where no_rawat=?",KetPadaDokter,TNoRw.getText());
         
         //VIII. SKRINING GIZI
         Sequel.cariIsi("select sg1 from penilaian_awal_keperawatan_kebidanan where no_rawat=?",SkalaGizi1,TNoRw.getText());
