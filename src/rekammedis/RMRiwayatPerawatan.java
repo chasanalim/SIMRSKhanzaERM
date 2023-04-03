@@ -6504,31 +6504,47 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                                        "II. PEMERIKSAAN KEBIDANAN"+  
                                        "<table width='100%' border='0' align='center' cellpadding='3px' cellspacing='0px' class='tbl_form'>"+
                                           "<tr>"+
-                                              "<td width='20%' border='0'>TFU : "+rs2.getString("tfu")+" cm</td>"+
-                                              "<td width='20%' border='0'>TBJ : "+rs2.getString("tbj")+"</td>"+
-                                              "<td width='20%' border='0'>Letak : </td>"+
-                                              "<td width='20%' border='0'>Presentasi : </td>"+
-                                              "<td width='20%' border='0'>Penurunan : "+rs2.getString("penurunan")+"</td>"+
+                                              "<td border='0' colspan='4'>A. Palpasi :</td>"+
                                           "</tr>"+
-                                       "</table>"+
-                                       "<table width='100%' border='0' align='center' cellpadding='3px' cellspacing='0px' class='tbl_form'>"+
+                                          "<tr>"+
+                                              "<td width='25%' border='0'>Leopoid 1: "+rs2.getString("leopoid1")+"</td>"+
+                                              "<td width='25%' border='0'>TFU : "+rs2.getString("tfu")+" cm</td>"+
+                                              "<td width='25%' border='0'>TBJ : "+rs2.getString("tbj")+"</td>"+
+                                          "</tr>"+
+                                          "<tr>"+
+                                              "<td width='100%' border='0'>Leopoid 2: "+rs2.getString("leopoid2")+"</td>"+
+                                          "</tr>"+
+                                          "<tr>"+
+                                              "<td width='100%' border='0'>Leopoid 3: "+rs2.getString("leopoid3")+"</td>"+
+                                          "</tr>"+
+                                          "<tr>"+
+                                              "<td width='100%' border='0'>Leopoid 4: "+rs2.getString("leopoid4")+"</td>"+
+                                          "</tr>"+
                                           "<tr>"+
                                               "<td width='25%' border='0'>Kontraksi/HIS : "+rs2.getString("his")+" x/10’</td>"+
+                                              "<td width='25%' border='0'>Lamanya : "+rs2.getString("lamanya")+" detik</td>"+
                                               "<td width='25%' border='0'>Kekuatan : "+rs2.getString("kekuatan")+"</td>"+
-                                              "<td width='25%' border='0'>Lamanya : "+rs2.getString("lamanya")+"</td>"+
-                                              "<td width='25%' border='0'>Gerak janin x/30 menit, BJJ : "+rs2.getString("djj")+" "+rs2.getString("irama")+"</td>"+
                                           "</tr>"+
                                        "</table>"+
                                        "<table width='100%' border='0' align='center' cellpadding='3px' cellspacing='0px' class='tbl_form'>"+
                                           "<tr>"+
-                                              "<td border='0' colspan='4'>C. Pemeriksaan Dalam / VT:</td>"+
+                                              "<td border='0' colspan='4'>B. Aukultasi :</td>"+
                                           "</tr>"+
                                           "<tr>"+
-                                              "<td width='25%' border='0'>Pembukaan Serviks : "+rs2.getString("serviks")+" cm</td>"+
+                                              "<td width='25%' border='0'>Gerak janin x/30 menit, DJJ : "+rs2.getString("djj")+" x/menit </td>"+
+                                              "<td width='25%' border='0'>Irama : "+rs2.getString("irama")+"</td>"+
+                                          "</tr>"+
+                                       "</table>"+
+                                       "<table width='100%' border='0' align='center' cellpadding='3px' cellspacing='0px' class='tbl_form'>"+
+                                          "<tr>"+
+                                              "<td border='0' colspan='4'>C. Pemeriksaan Dalam / VT :</td>"+
+                                          "</tr>"+
+                                          "<tr>"+
+                                              "<td width='20%' border='0'>Pembukaan Serviks : "+rs2.getString("serviks")+" cm</td>"+
                                               "<td width='20%' border='0'>Bagian Bawah: "+rs2.getString("penurunan")+"</td>"+
-                                              "<td width='25%' border='0'>Portio : "+rs2.getString("portio")+"</td>"+
-                                              "<td width='25%' border='0'>Ketuban : "+rs2.getString("ketuban")+" kep/bok</td>"+
-                                              "<td width='25%' border='0'>Hodge : "+rs2.getString("hodge")+"</td>"+
+                                              "<td width='20%' border='0'>Portio : "+rs2.getString("portio")+"</td>"+
+                                              "<td width='20%' border='0'>Ketuban : "+rs2.getString("ketuban")+" kep/bok</td>"+
+                                              "<td width='20%' border='0'>Hodge : "+rs2.getString("hodge")+"</td>"+
                                           "</tr>"+
                                        "</table>"+
                                        "<table width='100%' border='0' align='center' cellpadding='3px' cellspacing='0px' class='tbl_form'>"+
