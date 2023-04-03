@@ -6521,20 +6521,23 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                                        "</table>"+
                                        "<table width='100%' border='0' align='center' cellpadding='3px' cellspacing='0px' class='tbl_form'>"+
                                           "<tr>"+
-                                              "<td width='25%' border='0'>Portio : "+rs2.getString("portio")+"</td>"+
+                                              "<td border='0' colspan='4'>C. Pemeriksaan Dalam / VT:</td>"+
+                                          "</tr>"+
+                                          "<tr>"+
                                               "<td width='25%' border='0'>Pembukaan Serviks : "+rs2.getString("serviks")+" cm</td>"+
+                                              "<td width='20%' border='0'>Bagian Bawah: "+rs2.getString("penurunan")+"</td>"+
+                                              "<td width='25%' border='0'>Portio : "+rs2.getString("portio")+"</td>"+
                                               "<td width='25%' border='0'>Ketuban : "+rs2.getString("ketuban")+" kep/bok</td>"+
                                               "<td width='25%' border='0'>Hodge : "+rs2.getString("hodge")+"</td>"+
                                           "</tr>"+
                                        "</table>"+
                                        "<table width='100%' border='0' align='center' cellpadding='3px' cellspacing='0px' class='tbl_form'>"+
                                           "<tr>"+
-                                              "<td border='0' colspan='4'>Pemeriksaan Penunjang :</td>"+
+                                              "<td border='0' colspan='4'>D. Pemeriksaan Penunjang :</td>"+
                                           "</tr>"+
                                           "<tr>"+
                                               "<td width='10%' border='0' align='right'>Inspekulo</td>"+
                                               "<td width='40%' border='0'>: "+rs2.getString("inspekulo")+", Hasil : "+rs2.getString("ket_inspekulo")+"</td>"+
-                                              "<td colspan='2' border='0' >Laboratorium : , Hasil : </td>"+
                                           "</tr>"+
                                           "<tr>"+
                                               "<td width='10%' border='0' align='right'>CTG</td>"+
