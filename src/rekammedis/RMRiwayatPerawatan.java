@@ -6512,13 +6512,13 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                                               "<td width='25%' border='0'>TBJ : "+rs2.getString("tbj")+"</td>"+
                                           "</tr>"+
                                           "<tr>"+
-                                              "<td width='100%' border='0'>Leopoid 2: "+rs2.getString("leopoid2")+"</td>"+
+                                              "<td width='25%' border='0'>Leopoid 2: "+rs2.getString("leopoid2")+"</td>"+
                                           "</tr>"+
                                           "<tr>"+
-                                              "<td width='100%' border='0'>Leopoid 3: "+rs2.getString("leopoid3")+"</td>"+
+                                              "<td width='25%' border='0'>Leopoid 3: "+rs2.getString("leopoid3")+"</td>"+
                                           "</tr>"+
                                           "<tr>"+
-                                              "<td width='100%' border='0'>Leopoid 4: "+rs2.getString("leopoid4")+"</td>"+
+                                              "<td width='25%' border='0'>Leopoid 4: "+rs2.getString("leopoid4")+"</td>"+
                                           "</tr>"+
                                           "<tr>"+
                                               "<td width='25%' border='0'>Kontraksi/HIS : "+rs2.getString("his")+" x/10’</td>"+
