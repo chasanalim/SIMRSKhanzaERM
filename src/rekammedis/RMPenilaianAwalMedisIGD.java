@@ -1420,7 +1420,7 @@ public final class RMPenilaianAwalMedisIGD extends javax.swing.JDialog {
         FormInput.add(jLabel27);
         jLabel27.setBounds(40, 1400, 120, 23);
 
-        CaraKeluar.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Dipulangkan", "Kontrol Poliklinik", "APS / Menolak Tindakan", "Pindah RS ke", "Dirujuk ke", "Rawat Inap di", "D.O.E (Death On Emergency)" }));
+        CaraKeluar.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Dipulangkan", "Kontrol Poliklinik", "APS / Menolak Tindakan", "Pindah RS ke", "Dirujuk ke", "Rawat Inap di", "D.O.E (Death On Emergency)", "D.O.A (Death On Arrival)", "Observasi" }));
         CaraKeluar.setName("CaraKeluar"); // NOI18N
         CaraKeluar.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {

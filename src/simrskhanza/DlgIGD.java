@@ -4783,9 +4783,9 @@ public final class DlgIGD extends javax.swing.JDialog {
                         MnRawatJalanActionPerformed(null);
                     }                    
                 }else if(i==3){
-                    if(akses.getberi_obat()==true){
-                        MnPemberianObatActionPerformed(null);
-                    }                   
+//                    if(akses.getberi_obat()==true){
+                        ppBerkasDigitalBtnPrintActionPerformed(null);
+//                    }                   
                 }else if(i==4){
                     if(akses.getperiksa_lab()==true){
                         MnPeriksaLabActionPerformed(null);
