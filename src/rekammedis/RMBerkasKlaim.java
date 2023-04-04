@@ -2195,39 +2195,32 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
     private void menampilkanSEP(String norawat) {
         try {
             if(chkSEP.isSelected()==true){
-                //triase primer
+                //SEP Ralan
                 try {
                     rs2=koneksi.prepareStatement(
-                            "select data_triase_igdprimer.keluhan_utama,data_triase_igdprimer.kebutuhan_khusus,data_triase_igdprimer.catatan,"+
-                            "data_triase_igdprimer.plan,data_triase_igdprimer.tanggaltriase,data_triase_igdprimer.nik,data_triase_igd.tekanan_darah,"+
-                            "data_triase_igd.nadi,data_triase_igd.pernapasan,data_triase_igd.suhu,data_triase_igd.saturasi_o2,data_triase_igd.nyeri,"+
-                            "data_triase_igd.cara_masuk,data_triase_igd.alat_transportasi,data_triase_igd.alasan_kedatangan,"+
-                            "data_triase_igd.keterangan_kedatangan,data_triase_igd.kode_kasus,master_triase_macam_kasus.macam_kasus,pegawai.nama "+
-                            "from data_triase_igdprimer inner join data_triase_igd on data_triase_igd.no_rawat=data_triase_igdprimer.no_rawat "+
-                            "inner join master_triase_macam_kasus on data_triase_igd.kode_kasus=master_triase_macam_kasus.kode_kasus "+
-                            "inner join pegawai on data_triase_igdprimer.nik=data_triase_igdprimer.nik where data_triase_igd.no_rawat='"+norawat+"'").executeQuery();
+                            "select bridging_sep.* from bridging_sep where bridging_sep.jnspelayanan=2 and bridging_sep.no_rawat='"+norawat+"'").executeQuery();
                     if(rs2.next()){
                         htmlContent.append(
                             "<tr class='isi'>"+ 
                             "<td valign='top' width='2%'></td>"+        
-                            "<td valign='top' style='font-weight:bold;' width='18%'>Triase Gawat Darurat</td>"+
+                            "<td valign='top' style='font-weight:bold;' width='18%'> SEP RAWAT JALAN </td>"+
                               "<td valign='top' width='1%' align='center'>:</td>"+
                               "<td valign='top' width='79%'>"+
                                 "<table width='100%' border='0' align='center' cellpadding='3px' cellspacing='0' class='tbl_form'>"+
                                   "<tr class='isi'>"+
-                                      "<td valign='top'>Cara Masuk</td><td valign='top'>: "+rs2.getString("cara_masuk")+"</td>"+
+                                      "<td valign='top'>Cara Masuk</td><td valign='top'>: "+rs2.getString("no_sep")+"</td>"+
                                   "</tr>"+
                                   "<tr class='isi'>"+            
-                                      "<td valign='top'>Transportasi</td><td valign='top'>: "+rs2.getString("alat_transportasi")+"</td>"+
+                                      "<td valign='top'>Transportasi</td><td valign='top'>: "+rs2.getString("no_kartu")+"</td>"+
                                   "</tr>"+
                                   "<tr class='isi'>"+
-                                      "<td valign='top'>Alasan Kedatangan</td><td valign='top'>: "+rs2.getString("alasan_kedatangan")+"</td>"+
+                                      "<td valign='top'>Alasan Kedatangan</td><td valign='top'>: "+rs2.getString("nomr")+"</td>"+
                                   "</tr>"+
                                   "<tr class='isi'>"+
-                                      "<td valign='top'>Keterangan Kedatangan</td><td valign='top'>: "+rs2.getString("keterangan_kedatangan")+"</td>"+
+                                      "<td valign='top'>Keterangan Kedatangan</td><td valign='top'>: "+rs2.getString("nama_pasien")+"</td>"+
                                   "</tr>"+
                                   "<tr class='isi'>"+
-                                      "<td valign='top'>Macam Kasus</td><td valign='top'>: "+rs2.getString("macam_kasus")+"</td>"+
+                                      "<td valign='top'>Macam Kasus</td><td valign='top'>: "+rs2.getString("tanggal_lahir")+"</td>"+
                                   "</tr>"+
                                   "<tr class='isi'>"+
                                       "<td valign='middle' bgcolor='#FFFAF8' align='center' width='35%'>Keterangan</td>"+
@@ -2235,154 +2228,18 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                                   "</tr>"+
                                   "<tr class='isi'>"+
                                       "<td valign='middle'>Keluhan Utama</td>"+
-                                      "<td valign='middle'>"+rs2.getString("keluhan_utama").replaceAll("(\r\n|\r|\n|\n\r)","<br>")+"</td>"+
+                                      "<td valign='middle'>"+rs2.getString("nmdpdjp").replaceAll("(\r\n|\r|\n|\n\r)","<br>")+"</td>"+
                                   "</tr>"+
                                   "<tr class='isi'>"+
                                       "<td valign='middle'>Tanda Vital</td>"+
-                                      "<td valign='middle'>Suhu (C) : "+rs2.getString("suhu")+", Nyeri : "+rs2.getString("nyeri")+", Tensi : "+rs2.getString("tekanan_darah")+", Nadi(/menit) : "+rs2.getString("nadi")+", Saturasi O²(%) : "+rs2.getString("saturasi_o2")+", Respirasi(/menit) : "+rs2.getString("pernapasan")+"</td>"+
+                                      "<td valign='middle'>Suhu (C) : "+rs2.getString("klsrawat")+", Nyeri : "+rs2.getString("jnspelayanan")+", Tensi : "+rs2.getString("nmdiagnosaawal")+", Nadi(/menit) : "+rs2.getString("asal_rujukan")+", Saturasi O²(%) : "+rs2.getString("jkel")+", Respirasi(/menit) : "+rs2.getString("peserta")+"</td>"+
                                   "</tr>"+
                                   "<tr class='isi'>"+
                                       "<td valign='middle'>Kebutuhan Khusus</td>"+
-                                      "<td valign='middle'>"+rs2.getString("kebutuhan_khusus")+"</td>"+
+                                      "<td valign='middle'>"+rs2.getString("notelep")+"</td>"+
                                   "</tr>"
                         );
-
-                        try {
-                            rs3=koneksi.prepareStatement(
-                                "select master_triase_pemeriksaan.kode_pemeriksaan,master_triase_pemeriksaan.nama_pemeriksaan "+
-                                "from master_triase_pemeriksaan inner join master_triase_skala1 on master_triase_pemeriksaan.kode_pemeriksaan=master_triase_skala1.kode_pemeriksaan "+
-                                "inner join data_triase_igddetail_skala1 on master_triase_skala1.kode_skala1=data_triase_igddetail_skala1.kode_skala1 "+
-                                "where data_triase_igddetail_skala1.no_rawat='"+norawat+"' "+
-                                "group by master_triase_pemeriksaan.kode_pemeriksaan order by master_triase_pemeriksaan.kode_pemeriksaan").executeQuery();
-                            if(rs3.next()){
-                                htmlContent.append(                             
-                                    "<tr class='isi'>"+
-                                        "<td valign='middle' bgcolor='#FFFAF8' align='center'>Pemeriksaan</td>"+
-                                        "<td valign='middle' bgcolor='#AA0000' color='ffffff' align='center'>Immediate/Segera</td>"+
-                                    "</tr>"
-                                );
-                                rs3.beforeFirst();
-                                while(rs3.next()){
-                                    htmlContent.append(                             
-                                        "<tr class='isi'>"+
-                                            "<td valign='middle'>"+rs3.getString("nama_pemeriksaan")+"</td>"+
-                                            "<td valign='middle' bgcolor='#AA0000' color='ffffff'>"+
-                                                "<table width='100%' border='0' align='center' cellpadding='3px' cellspacing='0'>"
-                                    );
-                                    try {
-                                        rs4=koneksi.prepareStatement(
-                                            "select master_triase_skala1.pengkajian_skala1 from master_triase_skala1 inner join data_triase_igddetail_skala1 "+
-                                            "on master_triase_skala1.kode_skala1=data_triase_igddetail_skala1.kode_skala1 where "+
-                                            "master_triase_skala1.kode_pemeriksaan='"+rs3.getString("kode_pemeriksaan")+"' and data_triase_igddetail_skala1.no_rawat='"+norawat+"' "+
-                                            "order by data_triase_igddetail_skala1.kode_skala1").executeQuery();
-                                        while(rs4.next()){
-                                            htmlContent.append(                             
-                                                "<tr class='isi'>"+
-                                                    "<td border='0' valign='middle' bgcolor='#AA0000' color='ffffff' width='100%'>"+rs4.getString("pengkajian_skala1")+"</td>"+
-                                                "</tr>"
-                                            );
-                                        }
-                                    } catch (Exception e) {
-                                        System.out.println("Notif Master Triase Skala1 : "+e);
-                                    } finally{
-                                        if(rs4!=null){
-                                            rs4.close();
-                                        }
-                                    }
-                                    htmlContent.append(
-                                                "</table>"+
-                                            "</td>"+
-                                        "</tr>"
-                                    );
-                                }
-                                keputusan="#AA0000";
-                            }
-                        } catch (Exception e) {
-                            System.out.println("Data Triase IGD Skala 1 : "+e);
-                        } finally{
-                            if(rs3!=null){
-                                rs3.close();
-                            }
-                        }
-
-                        try {
-                            rs3=koneksi.prepareStatement(
-                                "select master_triase_pemeriksaan.kode_pemeriksaan,master_triase_pemeriksaan.nama_pemeriksaan "+
-                                "from master_triase_pemeriksaan inner join master_triase_skala2 on master_triase_pemeriksaan.kode_pemeriksaan=master_triase_skala2.kode_pemeriksaan "+
-                                "inner join data_triase_igddetail_skala2 on master_triase_skala2.kode_skala2=data_triase_igddetail_skala2.kode_skala2 where data_triase_igddetail_skala2.no_rawat='"+norawat+"' "+
-                                "group by master_triase_pemeriksaan.kode_pemeriksaan order by master_triase_pemeriksaan.kode_pemeriksaan").executeQuery();
-                            if(rs3.next()){
-                                htmlContent.append(                             
-                                    "<tr class='isi'>"+
-                                        "<td valign='middle' bgcolor='#FFFAF8' align='center'>Pemeriksaan</td>"+
-                                        "<td valign='middle' bgcolor='#FF0000' color='ffffff' align='center'>Emergensi</td>"+
-                                    "</tr>"
-                                );
-                                rs3.beforeFirst();
-                                while(rs3.next()){
-                                    htmlContent.append(                             
-                                        "<tr class='isi'>"+
-                                            "<td valign='middle'>"+rs3.getString("nama_pemeriksaan")+"</td>"+
-                                            "<td valign='middle' bgcolor='#FF0000' color='ffffff'>"+
-                                                "<table width='100%' border='0' align='center' cellpadding='3px' cellspacing='0'>"
-                                    );
-                                    try {
-                                        rs4=koneksi.prepareStatement(
-                                            "select master_triase_skala2.pengkajian_skala2 from master_triase_skala2 inner join data_triase_igddetail_skala2 "+
-                                            "on master_triase_skala2.kode_skala2=data_triase_igddetail_skala2.kode_skala2 where "+
-                                            "master_triase_skala2.kode_pemeriksaan='"+rs3.getString("kode_pemeriksaan")+"' and data_triase_igddetail_skala2.no_rawat='"+norawat+"' "+
-                                            "order by data_triase_igddetail_skala2.kode_skala2").executeQuery();
-                                        while(rs4.next()){
-                                            htmlContent.append(                             
-                                                "<tr class='isi'>"+
-                                                    "<td border='0' valign='middle' bgcolor='#FF0000' color='ffffff' width='100%'>"+rs4.getString("pengkajian_skala2")+"</td>"+
-                                                "</tr>"
-                                            );
-                                        }
-                                    } catch (Exception e) {
-                                        System.out.println("Notif Master Triase Skala 2 : "+e);
-                                    } finally{
-                                        if(rs4!=null){
-                                            rs4.close();
-                                        }
-                                    }
-                                    htmlContent.append(
-                                                "</table>"+
-                                            "</td>"+
-                                        "</tr>"
-                                    );
-                                }
-                                keputusan="#FF0000";
-                            }
-                        } catch (Exception e) {
-                            System.out.println("Data Triase IGD Skala 2 : "+e);
-                        } finally{
-                            if(rs3!=null){
-                                rs3.close();
-                            }
-                        }
-
                         htmlContent.append(
-                                "<tr class='isi'>"+
-                                    "<td valign='middle'>Plan/Keputusan</td>"+
-                                    "<td valign='middle' bgcolor='"+keputusan+"' color='ffffff'>Zona Merah "+rs2.getString("plan")+"</td>"+
-                                "</tr>"+                       
-                                "<tr class='isi'>"+
-                                    "<td valign='middle'>&nbsp;</td>"+
-                                    "<td valign='middle' bgcolor='#FFFAF8' align='center'>Petugas Triase Primer</td>"+
-                                "</tr>"+
-                                "<tr class='isi'>"+
-                                    "<td valign='middle'>Tanggal & Jam</td>"+
-                                    "<td valign='middle'>"+rs2.getString("tanggaltriase")+"</td>"+
-                                "</tr>"+
-                                "<tr class='isi'>"+
-                                    "<td valign='middle'>Catatan</td>"+
-                                    "<td valign='middle'>"+rs2.getString("catatan")+"</td>"+
-                                "</tr>"+
-                                "<tr class='isi'>"+
-                                    "<td valign='middle'>Dokter/Petugas IGD</td>"+
-                                    "<td valign='middle'>"+rs2.getString("nik")+" "+rs2.getString("nama")+"</td>"+
-                                "</tr>"+
                               "</table>"+
                             "</td>"+
                           "</tr>");
@@ -2395,250 +2252,55 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                     }
                 }
 
-                //triase sekunder
+                //SEP INAP
                 try {
                     rs2=koneksi.prepareStatement(
-                            "select data_triase_igdsekunder.anamnesa_singkat,data_triase_igdsekunder.catatan,"+
-                            "data_triase_igdsekunder.plan,data_triase_igdsekunder.tanggaltriase,data_triase_igdsekunder.nik,data_triase_igd.tekanan_darah,"+
-                            "data_triase_igd.nadi,data_triase_igd.pernapasan,data_triase_igd.suhu,data_triase_igd.saturasi_o2,data_triase_igd.nyeri,"+
-                            "data_triase_igd.cara_masuk,data_triase_igd.alat_transportasi,data_triase_igd.alasan_kedatangan,"+
-                            "data_triase_igd.keterangan_kedatangan,data_triase_igd.kode_kasus,master_triase_macam_kasus.macam_kasus,pegawai.nama "+
-                            "from data_triase_igdsekunder inner join data_triase_igd on data_triase_igd.no_rawat=data_triase_igdsekunder.no_rawat "+
-                            "inner join master_triase_macam_kasus on data_triase_igd.kode_kasus=master_triase_macam_kasus.kode_kasus "+
-                            "inner join pegawai on data_triase_igdsekunder.nik=pegawai.nik where data_triase_igd.no_rawat='"+norawat+"'").executeQuery();
+                            "select bridging_sep.* from bridging_sep where bridging_sep.jnspelayanan=1 and bridging_sep.no_rawat='"+norawat+"'").executeQuery();
                     if(rs2.next()){
                         htmlContent.append(
-                          "<tr class='isi'>"+ 
+                            "<tr class='isi'>"+ 
                             "<td valign='top' width='2%'></td>"+        
-                            "<td valign='top' style='font-weight:bold;' width='18%'>Triase Gawat Darurat</td>"+
-                            "<td valign='top' width='1%' align='center'>:</td>"+
-                            "<td valign='top' width='79%'>"+
-                              "<table width='100%' border='0' align='center' cellpadding='3px' cellspacing='0' class='tbl_form'>"+
-                                "<tr class='isi'>"+
-                                    "<td valign='top'>Cara Masuk</td><td valign='top'>: "+rs2.getString("cara_masuk")+"</td>"+
-                                "</tr>"+
-                                "<tr class='isi'>"+            
-                                    "<td valign='top'>Transportasi</td><td valign='top'>: "+rs2.getString("alat_transportasi")+"</td>"+
-                                "</tr>"+
-                                "<tr class='isi'>"+
-                                    "<td valign='top'>Alasan Kedatangan</td><td valign='top'>: "+rs2.getString("alasan_kedatangan")+"</td>"+
-                                "</tr>"+
-                                "<tr class='isi'>"+
-                                    "<td valign='top'>Keterangan Kedatangan</td><td valign='top'>: "+rs2.getString("keterangan_kedatangan")+"</td>"+
-                                "</tr>"+
-                                "<tr class='isi'>"+
-                                    "<td valign='top'>Macam Kasus</td><td valign='top'>: "+rs2.getString("macam_kasus")+"</td>"+
-                                "</tr>"+
-                                "<tr class='isi'>"+
-                                    "<td valign='middle' bgcolor='#FFFAF8' align='center' width='35%'>Keterangan</td>"+
-                                    "<td valign='middle' bgcolor='#FFFAF8' align='center' width='65%'>Triase Sekunder</td>"+
-                                "</tr>"+
-                                "<tr class='isi'>"+
-                                    "<td valign='middle'>Anamnesa Singkat</td>"+
-                                    "<td valign='middle'>"+rs2.getString("anamnesa_singkat").replaceAll("(\r\n|\r|\n|\n\r)","<br>")+"</td>"+
-                                "</tr>"+
-                                "<tr class='isi'>"+
-                                    "<td valign='middle'>Tanda Vital</td>"+
-                                    "<td valign='middle'>Suhu (C) : "+rs2.getString("suhu")+", Nyeri : "+rs2.getString("nyeri")+", Tensi : "+rs2.getString("tekanan_darah")+", Nadi(/menit) : "+rs2.getString("nadi")+", Saturasi O²(%) : "+rs2.getString("saturasi_o2")+", Respirasi(/menit) : "+rs2.getString("pernapasan")+"</td>"+
-                                "</tr>"
+                            "<td valign='top' style='font-weight:bold;' width='18%'> SEP RAWAT INAP </td>"+
+                              "<td valign='top' width='1%' align='center'>:</td>"+
+                              "<td valign='top' width='79%'>"+
+                                "<table width='100%' border='0' align='center' cellpadding='3px' cellspacing='0' class='tbl_form'>"+
+                                  "<tr class='isi'>"+
+                                      "<td valign='top'>Cara Masuk</td><td valign='top'>: "+rs2.getString("no_sep")+"</td>"+
+                                  "</tr>"+
+                                  "<tr class='isi'>"+            
+                                      "<td valign='top'>Transportasi</td><td valign='top'>: "+rs2.getString("no_kartu")+"</td>"+
+                                  "</tr>"+
+                                  "<tr class='isi'>"+
+                                      "<td valign='top'>Alasan Kedatangan</td><td valign='top'>: "+rs2.getString("nomr")+"</td>"+
+                                  "</tr>"+
+                                  "<tr class='isi'>"+
+                                      "<td valign='top'>Keterangan Kedatangan</td><td valign='top'>: "+rs2.getString("nama_pasien")+"</td>"+
+                                  "</tr>"+
+                                  "<tr class='isi'>"+
+                                      "<td valign='top'>Macam Kasus</td><td valign='top'>: "+rs2.getString("tanggal_lahir")+"</td>"+
+                                  "</tr>"+
+                                  "<tr class='isi'>"+
+                                      "<td valign='middle' bgcolor='#FFFAF8' align='center' width='35%'>Keterangan</td>"+
+                                      "<td valign='middle' bgcolor='#FFFAF8' align='center' width='65%'>Triase Primer</td>"+
+                                  "</tr>"+
+                                  "<tr class='isi'>"+
+                                      "<td valign='middle'>Keluhan Utama</td>"+
+                                      "<td valign='middle'>"+rs2.getString("nmdpdjp").replaceAll("(\r\n|\r|\n|\n\r)","<br>")+"</td>"+
+                                  "</tr>"+
+                                  "<tr class='isi'>"+
+                                      "<td valign='middle'>Tanda Vital</td>"+
+                                      "<td valign='middle'>Suhu (C) : "+rs2.getString("klsrawat")+", Nyeri : "+rs2.getString("jnspelayanan")+", Tensi : "+rs2.getString("nmdiagnosaawal")+", Nadi(/menit) : "+rs2.getString("asal_rujukan")+", Saturasi O²(%) : "+rs2.getString("jkel")+", Respirasi(/menit) : "+rs2.getString("peserta")+"</td>"+
+                                  "</tr>"+
+                                  "<tr class='isi'>"+
+                                      "<td valign='middle'>Kebutuhan Khusus</td>"+
+                                      "<td valign='middle'>"+rs2.getString("notelep")+"</td>"+
+                                  "</tr>"
                         );
-
-                        try {
-                            rs3=koneksi.prepareStatement(
-                                "select master_triase_pemeriksaan.kode_pemeriksaan,master_triase_pemeriksaan.nama_pemeriksaan "+
-                                "from master_triase_pemeriksaan inner join master_triase_skala3 on master_triase_pemeriksaan.kode_pemeriksaan=master_triase_skala3.kode_pemeriksaan "+
-                                "inner join data_triase_igddetail_skala3 on master_triase_skala3.kode_skala3=data_triase_igddetail_skala3.kode_skala3 where data_triase_igddetail_skala3.no_rawat='"+norawat+"' "+
-                                "group by master_triase_pemeriksaan.kode_pemeriksaan order by master_triase_pemeriksaan.kode_pemeriksaan").executeQuery();
-                            if(rs3.next()){
-                                htmlContent.append(                             
-                                    "<tr class='isi'>"+
-                                        "<td valign='middle' bgcolor='#FFFAF8' align='center'>Pemeriksaan</td>"+
-                                        "<td valign='middle' bgcolor='#C8C800' color='ffffff' align='center'>Urgensi</td>"+
-                                    "</tr>"
-                                );
-                                rs3.beforeFirst();
-                                while(rs3.next()){
-                                    htmlContent.append(                             
-                                        "<tr class='isi'>"+
-                                            "<td valign='middle'>"+rs3.getString("nama_pemeriksaan")+"</td>"+
-                                            "<td valign='middle' bgcolor='#C8C800' color='ffffff'>"+
-                                                "<table width='100%' border='0' align='center' cellpadding='3px' cellspacing='0'>"
-                                    );
-                                    try {
-                                        rs4=koneksi.prepareStatement(
-                                            "select master_triase_skala3.pengkajian_skala3 from master_triase_skala3 inner join data_triase_igddetail_skala3 "+
-                                            "on master_triase_skala3.kode_skala3=data_triase_igddetail_skala3.kode_skala3 where "+
-                                            "master_triase_skala3.kode_pemeriksaan='"+rs3.getString("kode_pemeriksaan")+"' and data_triase_igddetail_skala3.no_rawat='"+norawat+"' "+
-                                            "order by data_triase_igddetail_skala3.kode_skala3").executeQuery();
-                                        while(rs4.next()){
-                                            htmlContent.append(                             
-                                                "<tr class='isi'>"+
-                                                    "<td border='0' valign='middle' bgcolor='#C8C800' color='ffffff' width='100%'>"+rs4.getString("pengkajian_skala3")+"</td>"+
-                                                "</tr>"
-                                            );
-                                        }
-                                    } catch (Exception e) {
-                                        System.out.println("Notif Master Skala 3: "+e);
-                                    } finally{
-                                        if(rs4!=null){
-                                            rs4.close();
-                                        }
-                                    }
-                                    htmlContent.append(
-                                                "</table>"+
-                                            "</td>"+
-                                        "</tr>"
-                                    );
-                                }
-                                keputusan="#C8C800";
-                            }
-                        } catch (Exception e) {
-                            System.out.println("Data Triase IGD Skala 3 : "+e);
-                        } finally{
-                            if(rs3!=null){
-                                rs3.close();
-                            }
-                        }
-
-                        try {
-                            rs3=koneksi.prepareStatement(
-                                "select master_triase_pemeriksaan.kode_pemeriksaan,master_triase_pemeriksaan.nama_pemeriksaan "+
-                                "from master_triase_pemeriksaan inner join master_triase_skala4 on master_triase_pemeriksaan.kode_pemeriksaan=master_triase_skala4.kode_pemeriksaan "+
-                                "inner join data_triase_igddetail_skala4 on master_triase_skala4.kode_skala4=data_triase_igddetail_skala4.kode_skala4 where data_triase_igddetail_skala4.no_rawat='"+norawat+"' "+
-                                "group by master_triase_pemeriksaan.kode_pemeriksaan order by master_triase_pemeriksaan.kode_pemeriksaan").executeQuery();
-                            if(rs3.next()){
-                                htmlContent.append(                             
-                                    "<tr class='isi'>"+
-                                        "<td valign='middle' bgcolor='#FFFAF8' align='center'>Pemeriksaan</td>"+
-                                        "<td valign='middle' bgcolor='#00AA00' color='ffffff' align='center'>Semi Urgensi/Urgensi Rendah</td>"+
-                                    "</tr>"
-                                );
-                                rs3.beforeFirst();
-                                while(rs3.next()){
-                                    htmlContent.append(                             
-                                        "<tr class='isi'>"+
-                                            "<td valign='middle'>"+rs3.getString("nama_pemeriksaan")+"</td>"+
-                                            "<td valign='middle' bgcolor='#00AA00' color='ffffff'>"+
-                                                "<table width='100%' border='0' align='center' cellpadding='3px' cellspacing='0'>"
-                                    );
-                                    try {
-                                        rs4=koneksi.prepareStatement(
-                                            "select master_triase_skala4.pengkajian_skala4 from master_triase_skala4 inner join data_triase_igddetail_skala4 "+
-                                            "on master_triase_skala4.kode_skala4=data_triase_igddetail_skala4.kode_skala4 where "+
-                                            "master_triase_skala4.kode_pemeriksaan='"+rs3.getString("kode_pemeriksaan")+"' and data_triase_igddetail_skala4.no_rawat='"+norawat+"' "+
-                                            "order by data_triase_igddetail_skala4.kode_skala4").executeQuery();
-                                        while(rs4.next()){
-                                            htmlContent.append(                             
-                                                "<tr class='isi'>"+
-                                                    "<td border='0' valign='middle' bgcolor='#00AA00' color='ffffff' width='100%'>"+rs4.getString("pengkajian_skala4")+"</td>"+
-                                                "</tr>"
-                                            );
-                                        }
-                                    } catch (Exception e) {
-                                        System.out.println("Notif Master Triase Skala 4: "+e);
-                                    } finally{
-                                        if(rs4!=null){
-                                            rs4.close();
-                                        }
-                                    }
-                                    htmlContent.append(
-                                                "</table>"+
-                                            "</td>"+
-                                        "</tr>"
-                                    );
-                                }
-                                keputusan="#00AA00";
-                            }
-                        } catch (Exception e) {
-                            System.out.println("Data Triase IGD Skala 4 : "+e);
-                        } finally{
-                            if(rs3!=null){
-                                rs3.close();
-                            }
-                        }
-
-                        try {
-                            rs3=koneksi.prepareStatement(
-                                "select master_triase_pemeriksaan.kode_pemeriksaan,master_triase_pemeriksaan.nama_pemeriksaan "+
-                                "from master_triase_pemeriksaan inner join master_triase_skala5 on master_triase_pemeriksaan.kode_pemeriksaan=master_triase_skala5.kode_pemeriksaan "+
-                                "inner join data_triase_igddetail_skala5 on master_triase_skala5.kode_skala5=data_triase_igddetail_skala5.kode_skala5 where data_triase_igddetail_skala5.no_rawat='"+norawat+"' "+
-                                "group by master_triase_pemeriksaan.kode_pemeriksaan order by master_triase_pemeriksaan.kode_pemeriksaan").executeQuery();
-                            if(rs3.next()){
-                                htmlContent.append(                             
-                                    "<tr class='isi'>"+
-                                        "<td valign='middle' bgcolor='#FFFAF8' align='center'>Pemeriksaan</td>"+
-                                        "<td valign='middle' bgcolor='#969696' color='ffffff' align='center'>Non Urgensi</td>"+
-                                    "</tr>"
-                                );
-                                rs3.beforeFirst();
-                                while(rs3.next()){
-                                    htmlContent.append(                             
-                                        "<tr class='isi'>"+
-                                            "<td valign='middle'>"+rs3.getString("nama_pemeriksaan")+"</td>"+
-                                            "<td valign='middle' bgcolor='#969696' color='ffffff'>"+
-                                                "<table width='100%' border='0' align='center' cellpadding='3px' cellspacing='0'>"
-                                    );
-                                    try {
-                                        rs4=koneksi.prepareStatement(
-                                            "select master_triase_skala5.pengkajian_skala5 from master_triase_skala5 inner join data_triase_igddetail_skala5 "+
-                                            "on master_triase_skala5.kode_skala5=data_triase_igddetail_skala5.kode_skala5 where "+
-                                            "master_triase_skala5.kode_pemeriksaan='"+rs3.getString("kode_pemeriksaan")+"' and data_triase_igddetail_skala5.no_rawat='"+norawat+"' "+
-                                            "order by data_triase_igddetail_skala5.kode_skala5").executeQuery();
-                                        while(rs4.next()){
-                                            htmlContent.append(                             
-                                                "<tr class='isi'>"+
-                                                    "<td border='0' valign='middle' bgcolor='#969696' color='ffffff' width='100%'>"+rs4.getString("pengkajian_skala5")+"</td>"+
-                                                "</tr>"
-                                            );
-                                        }
-                                    } catch (Exception e) {
-                                        System.out.println("Notif Master Triase Skala 5 : "+e);
-                                    } finally{
-                                        if(rs4!=null){
-                                            rs4.close();
-                                        }
-                                    }
-                                    htmlContent.append(
-                                                "</table>"+
-                                            "</td>"+
-                                        "</tr>"
-                                    );
-                                }
-                                keputusan="#969696";
-                            }
-                        } catch (Exception e) {
-                            System.out.println("Data Triase IGD Skala 5 : "+e);
-                        } finally{
-                            if(rs3!=null){
-                                rs3.close();
-                            }
-                        }
-
                         htmlContent.append(
-                                "<tr class='isi'>"+
-                                    "<td valign='middle'>Plan/Keputusan</td>"+
-                                    "<td valign='middle' bgcolor='"+keputusan+"' color='ffffff'>"+rs2.getString("plan")+"</td>"+
-                                "</tr>"+                       
-                                "<tr class='isi'>"+
-                                    "<td valign='middle'>&nbsp;</td>"+
-                                    "<td valign='middle' bgcolor='#FFFAF8' align='center'>Petugas Triase Sekunder</td>"+
-                                "</tr>"+
-                                "<tr class='isi'>"+
-                                    "<td valign='middle'>Tanggal & Jam</td>"+
-                                    "<td valign='middle'>"+rs2.getString("tanggaltriase")+"</td>"+
-                                "</tr>"+
-                                "<tr class='isi'>"+
-                                    "<td valign='middle'>Catatan</td>"+
-                                    "<td valign='middle'>"+rs2.getString("catatan")+"</td>"+
-                                "</tr>"+
-                                "<tr class='isi'>"+
-                                    "<td valign='middle'>Dokter/Petugas IGD</td>"+
-                                    "<td valign='middle'>"+rs2.getString("nik")+" "+rs2.getString("nama")+"</td>"+
-                                "</tr>"+
                               "</table>"+
                             "</td>"+
                           "</tr>");
-                    }                                    
+                    }
                 } catch (Exception e) {
                     System.out.println("Notifikasi Triase Sekuder : "+e);
                 } finally{
