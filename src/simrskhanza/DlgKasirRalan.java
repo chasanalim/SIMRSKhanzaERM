@@ -2,6 +2,7 @@ package simrskhanza;
 import bridging.BPJSCekDataIndukKecelakaan;
 import bridging.BPJSCekSuplesiJasaRaharja;
 import rekammedis.RMRiwayatPerawatan;
+import rekammedis.RMBerkasKlaim;
 import bridging.BPJSDataSEP;
 import bridging.BPJSProgramPRB;
 import bridging.BPJSSPRI;
@@ -626,6 +627,7 @@ public final class DlgKasirRalan extends javax.swing.JDialog {
         MnTransferAntarRuang = new javax.swing.JMenuItem();
         ppResume = new javax.swing.JMenuItem();
         ppRiwayat = new javax.swing.JMenuItem();
+        ppBerkasKlaim = new javax.swing.JMenuItem();
         ppDeteksiDIniCorona = new javax.swing.JMenuItem();
         MnPermintaan = new javax.swing.JMenu();
         MnJadwalOperasi = new javax.swing.JMenuItem();
@@ -1753,6 +1755,22 @@ public final class DlgKasirRalan extends javax.swing.JDialog {
             }
         });
         MnDataRM.add(ppRiwayat);
+
+        ppBerkasKlaim.setBackground(new java.awt.Color(255, 255, 254));
+        ppBerkasKlaim.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        ppBerkasKlaim.setForeground(new java.awt.Color(50, 50, 50));
+        ppBerkasKlaim.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/category.png"))); // NOI18N
+        ppBerkasKlaim.setText("Berkas Klaim");
+        ppBerkasKlaim.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        ppBerkasKlaim.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        ppBerkasKlaim.setName("ppBerkasKlaim"); // NOI18N
+        ppBerkasKlaim.setPreferredSize(new java.awt.Dimension(250, 26));
+        ppBerkasKlaim.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ppBerkasKlaimBtnPrintActionPerformed(evt);
+            }
+        });
+        MnDataRM.add(ppBerkasKlaim);
 
         ppDeteksiDIniCorona.setBackground(new java.awt.Color(255, 255, 254));
         ppDeteksiDIniCorona.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
@@ -5395,7 +5413,7 @@ public final class DlgKasirRalan extends javax.swing.JDialog {
         panelBiasa2.setLayout(null);
 
         TglSakit1.setForeground(new java.awt.Color(50, 70, 50));
-        TglSakit1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "01-01-2023" }));
+        TglSakit1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "04-04-2023" }));
         TglSakit1.setDisplayFormat("dd-MM-yyyy");
         TglSakit1.setName("TglSakit1"); // NOI18N
         TglSakit1.setOpaque(false);
@@ -5442,7 +5460,7 @@ public final class DlgKasirRalan extends javax.swing.JDialog {
         jLabel32.setBounds(176, 10, 20, 23);
 
         TglSakit2.setForeground(new java.awt.Color(50, 70, 50));
-        TglSakit2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "01-01-2023" }));
+        TglSakit2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "04-04-2023" }));
         TglSakit2.setDisplayFormat("dd-MM-yyyy");
         TglSakit2.setName("TglSakit2"); // NOI18N
         TglSakit2.setOpaque(false);
@@ -5714,7 +5732,7 @@ public final class DlgKasirRalan extends javax.swing.JDialog {
         jLabel15.setPreferredSize(new java.awt.Dimension(70, 23));
         panelGlass8.add(jLabel15);
 
-        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "01-01-2023" }));
+        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "04-04-2023" }));
         DTPCari1.setDisplayFormat("dd-MM-yyyy");
         DTPCari1.setName("DTPCari1"); // NOI18N
         DTPCari1.setOpaque(false);
@@ -5727,7 +5745,7 @@ public final class DlgKasirRalan extends javax.swing.JDialog {
         jLabel17.setPreferredSize(new java.awt.Dimension(23, 23));
         panelGlass8.add(jLabel17);
 
-        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "01-01-2023" }));
+        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "04-04-2023" }));
         DTPCari2.setDisplayFormat("dd-MM-yyyy");
         DTPCari2.setName("DTPCari2"); // NOI18N
         DTPCari2.setOpaque(false);
@@ -11987,6 +12005,24 @@ private void MnDataPemberianObatActionPerformed(java.awt.event.ActionEvent evt) 
         }
     }//GEN-LAST:event_MnSignInSebelumAnestesiActionPerformed
 
+    private void ppBerkasKlaimBtnPrintActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ppBerkasKlaimBtnPrintActionPerformed
+        if(tabModekasir.getRowCount()==0){
+            JOptionPane.showMessageDialog(null,"Maaf, table masih kosong...!!!!");
+            //TNoReg.requestFocus();
+        }else if(TNoRw.getText().trim().equals("")){
+            JOptionPane.showMessageDialog(null,"Maaf, Silahkan anda pilih dulu dengan menklik data pada table...!!!");
+            tbKasirRalan.requestFocus();
+        }else{
+            this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+            RMBerkasKlaim resume=new RMBerkasKlaim(null,true);
+            resume.setNoRm(TNoRMCari.getText(),TPasienCari.getText());
+            resume.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
+            resume.setLocationRelativeTo(internalFrame1);
+            resume.setVisible(true);
+            this.setCursor(Cursor.getDefaultCursor());
+        }
+    }//GEN-LAST:event_ppBerkasKlaimBtnPrintActionPerformed
+
     /**
     * @param args the command line arguments
     */
@@ -12347,6 +12383,7 @@ private void MnDataPemberianObatActionPerformed(java.awt.event.ActionEvent evt) 
     private javax.swing.JMenuItem ppBerkasDIterima;
     private javax.swing.JMenuItem ppBerkasDigital;
     private javax.swing.JMenuItem ppBerkasDigital1;
+    private javax.swing.JMenuItem ppBerkasKlaim;
     private javax.swing.JMenuItem ppBerkasRanap;
     private javax.swing.JMenuItem ppCatatanPasien;
     private javax.swing.JMenuItem ppDataIndukKecelakaan;
