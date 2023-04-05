@@ -212,7 +212,7 @@ public final class DlgCariObat2 extends javax.swing.JDialog {
             }else if(i==5){
                 column.setPreferredWidth(200);
             }else if(i==6){
-                column.setPreferredWidth(250);
+                column.setPreferredWidth(1000);
             }
         }
 

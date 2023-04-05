@@ -137,7 +137,7 @@ public final class DlgPeresepanDokter extends javax.swing.JDialog {
         
         tabModeResepRacikan=new DefaultTableModel(null,new Object[]{
                 "No","Nama Racikan","Kode Racik","Metode Racik","Jml.Racik",
-                "Aturan Pakai","Keterangan"
+                "Aturan Pakai","Keterangan Obat Racikan"
             }){
              @Override public boolean isCellEditable(int rowIndex, int colIndex){
                 boolean a = true;
@@ -176,7 +176,7 @@ public final class DlgPeresepanDokter extends javax.swing.JDialog {
             }else if(i==5){
                 column.setPreferredWidth(200);
             }else if(i==6){
-                column.setPreferredWidth(250);
+                column.setPreferredWidth(1000);
             }
         }
 
