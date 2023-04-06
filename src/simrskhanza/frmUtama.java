@@ -8218,13 +8218,14 @@ public class frmUtama extends javax.swing.JFrame {
     }//GEN-LAST:event_BtnLoginActionPerformed
 
     private void BtnToolKamnapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnToolKamnapActionPerformed
-        isTutup();
         this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+        isTutup();
         kasirralan.kamarinap.isCek();
         kasirralan.kamarinap.emptTeks();  
         kasirralan.kamarinap.setSize(PanelUtama.getWidth(),PanelUtama.getHeight());
         kasirralan.kamarinap.setLocationRelativeTo(PanelUtama);
         kasirralan.kamarinap.setVisible(true);
+        kasirralan.kamarinap.tampil();
         DlgHome.dispose();
         this.setCursor(Cursor.getDefaultCursor());
     }//GEN-LAST:event_BtnToolKamnapActionPerformed

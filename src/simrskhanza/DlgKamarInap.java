@@ -14101,7 +14101,7 @@ private void MnRujukMasukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-
     private widget.TextBox ttlbiayapindah;
     // End of variables declaration//GEN-END:variables
 
-    private void tampil() {
+    public void tampil() {
         if(R1.isSelected()==true){
             kmr=" stts_pulang='-' and reg_periksa.status_bayar like '%"+cmbStatusBayar.getSelectedItem().toString().replaceAll("Semua","")+"%' ";
             if(!BangsalCari.getText().equals("")){
