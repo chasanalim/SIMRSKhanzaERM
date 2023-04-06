@@ -1293,7 +1293,7 @@
                     <Component class="widget.Label" name="TingkatResiko">
                       <Properties>
                         <Property name="horizontalAlignment" type="int" value="2"/>
-                        <Property name="text" type="java.lang.String" value="Tingkat Resiko : Risiko Rendah (0-24), Tindakan : Intervensi pencegahan risiko jatuh standar"/>
+                        <Property name="text" type="java.lang.String" value="Tingkat Resiko : Risiko Rendah (skala 0-24), Tindakan : Intervensi setiap  shift."/>
                         <Property name="toolTipText" type="java.lang.String" value=""/>
                         <Property name="name" type="java.lang.String" value="TingkatResiko" noResource="true"/>
                       </Properties>
@@ -1509,7 +1509,7 @@
                       </Properties>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                          <AbsoluteConstraints x="0" y="440" width="810" height="-1"/>
+                          <AbsoluteConstraints x="0" y="440" width="950" height="-1"/>
                         </Constraint>
                       </Constraints>
                     </Component>
