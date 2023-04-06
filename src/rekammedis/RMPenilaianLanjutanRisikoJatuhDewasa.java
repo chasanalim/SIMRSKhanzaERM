@@ -1153,74 +1153,74 @@ public final class RMPenilaianLanjutanRisikoJatuhDewasa extends javax.swing.JDia
         jLabel33.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel33.setName("jLabel33"); // NOI18N
         FormInput.add(jLabel33);
-        jLabel33.setBounds(30, 610, 130, 23);
+        jLabel33.setBounds(30, 620, 130, 23);
 
         jLabel248.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel248.setText("4. Pastikan tempat tidur dalam posisi rendah atau roda terkunci");
         jLabel248.setName("jLabel248"); // NOI18N
         FormInput.add(jLabel248);
-        jLabel248.setBounds(30, 690, 260, 23);
+        jLabel248.setBounds(30, 700, 330, 23);
 
         jLabel249.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel249.setText("3. Tempatkan benda-benda milik pasien di dekat pasien");
         jLabel249.setName("jLabel249"); // NOI18N
         FormInput.add(jLabel249);
-        jLabel249.setBounds(30, 670, 260, 23);
+        jLabel249.setBounds(30, 680, 310, 23);
 
         jLabel250.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel250.setText("2. Tempatkan bel panggilan dalam jangkauan tangan pasien");
         jLabel250.setName("jLabel250"); // NOI18N
         FormInput.add(jLabel250);
-        jLabel250.setBounds(30, 650, 260, 23);
+        jLabel250.setBounds(30, 660, 320, 23);
 
         jLabel251.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel251.setText("1. Sarankan untuk minta bantuan");
         jLabel251.setName("jLabel251"); // NOI18N
         FormInput.add(jLabel251);
-        jLabel251.setBounds(30, 630, 260, 23);
+        jLabel251.setBounds(30, 640, 260, 23);
 
         jLabel34.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel34.setText("Resiko Jatuh Rendah :");
         jLabel34.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel34.setName("jLabel34"); // NOI18N
         FormInput.add(jLabel34);
-        jLabel34.setBounds(30, 720, 130, 23);
+        jLabel34.setBounds(30, 730, 130, 23);
 
         jLabel253.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel253.setText("1. Monitor kondisi umum pasien dan tanda vital / 8 jam");
         jLabel253.setName("jLabel253"); // NOI18N
         FormInput.add(jLabel253);
-        jLabel253.setBounds(30, 740, 260, 23);
+        jLabel253.setBounds(30, 750, 260, 23);
 
         jLabel255.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel255.setText("2. Pastikan pengaman tempat tidur selalu tertutup saat pasien tidur ");
         jLabel255.setName("jLabel255"); // NOI18N
         FormInput.add(jLabel255);
-        jLabel255.setBounds(30, 760, 340, 23);
+        jLabel255.setBounds(30, 770, 340, 23);
 
         jLabel252.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel252.setText("8. Pastikan label pasien resiko jatuh terpasang di gelang pasien, RM, dan bed pasien");
         jLabel252.setName("jLabel252"); // NOI18N
         FormInput.add(jLabel252);
-        jLabel252.setBounds(470, 690, 440, 23);
+        jLabel252.setBounds(470, 700, 440, 23);
 
         jLabel254.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel254.setText("5. Pastikan celana panjang atau sarung pasien siatas mata kaki");
         jLabel254.setName("jLabel254"); // NOI18N
         FormInput.add(jLabel254);
-        jLabel254.setBounds(470, 630, 260, 23);
+        jLabel254.setBounds(470, 640, 260, 23);
 
         jLabel256.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel256.setText("6. Bantu pasien saat transfer / ambulasi / berpindah");
         jLabel256.setName("jLabel256"); // NOI18N
         FormInput.add(jLabel256);
-        jLabel256.setBounds(470, 650, 260, 23);
+        jLabel256.setBounds(470, 660, 260, 23);
 
         jLabel257.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel257.setText("7. Pasangkan penganman sisi tempat tidur");
         jLabel257.setName("jLabel257"); // NOI18N
         FormInput.add(jLabel257);
-        jLabel257.setBounds(470, 670, 260, 23);
+        jLabel257.setBounds(470, 680, 260, 23);
 
         scrollInput.setViewportView(FormInput);
 

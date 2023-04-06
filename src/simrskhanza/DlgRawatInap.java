@@ -4961,6 +4961,7 @@ public final class DlgRawatInap extends javax.swing.JDialog {
 }//GEN-LAST:event_BtnPrintKeyPressed
 
     private void BtnKeluarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnKeluarActionPerformed
+        emptTeks();
         dispose();
 }//GEN-LAST:event_BtnKeluarActionPerformed
 
@@ -6113,6 +6114,26 @@ private void BtnEditKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
         isMenu();
     }//GEN-LAST:event_ChkAccorActionPerformed
 
+    public void emptTeks() {
+        TKeluhan.setText("");
+        TPemeriksaan.setText("");
+        TPenilaian.setText("");
+        TindakLanjut.setText("");
+        TAlergi.setText("");
+        TInstruksi.setText("");
+        TEvaluasi.setText("");
+        TSuhu.setText("");
+        TNadi.setText("");
+        TTensi.setText("");
+        TBerat.setText("");
+        TEvaluasi.setText("");
+        TTinggi.setText("");
+        TRespirasi.setText("");
+        TGCS.setText("");
+        SpO2.setText("");
+     
+    }
+    
     private void BtnResepObatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnResepObatActionPerformed
         if(TNoRw.getText().trim().equals("")){
             JOptionPane.showMessageDialog(null,"Maaf, Silahkan anda pilih dulu dengan menklik data pada table...!!!");
