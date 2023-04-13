@@ -4053,10 +4053,10 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                 while(rs.next()){
                     htmlContent.append(
                         "<tr class='isi'>"+
-                            "<td valign='top' align='center'>"+rs.getString("tgl_registrasi")+"</td>"+
-                            "<td valign='top' align='center'>"+rs.getString("no_rawat")+"</td>"+
-                            "<td valign='top' align='center'>"+rs.getString("status_lanjut")+"</td>"+
-                            "<td valign='top' align='center'>"+
+                            "<td style='font-weight:bold;' valign='top' align='center'>"+rs.getString("tgl_registrasi")+"</td>"+
+                            "<td style='font-weight:bold;' valign='top' align='center'>"+rs.getString("no_rawat")+"</td>"+
+                            "<td style='font-weight:bold;' valign='top' align='center'>"+rs.getString("status_lanjut")+"</td>"+
+                            "<td style='font-weight:bold;' valign='top' align='center'>"+
                                 "<table width='100%' border='0' align='center' cellpadding='2px' cellspacing='0'>");
                     try {
                         rs2=koneksi.prepareStatement(
@@ -4129,14 +4129,14 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                         if(rs2.next()){
                             htmlContent.append(
                                     "<tr class='isi'>"+
-                                        "<td valign='middle' bgcolor='#FFFFF8' align='center' width='7%'>Tanggal</td>"+
-                                        "<td valign='middle' bgcolor='#FFFFF8' align='center' width='13%'>Dokter/Paramedis</td>"+
-                                        "<td valign='middle' bgcolor='#FFFFF8' align='center' width='14%'>Subjek</td>"+
-                                        "<td valign='middle' bgcolor='#FFFFF8' align='center' width='13%'>Objek</td>"+
-                                        "<td valign='middle' bgcolor='#FFFFF8' align='center' width='13%'>Asesmen</td>"+
-                                        "<td valign='middle' bgcolor='#FFFFF8' align='center' width='14%'>Plan</td>"+
-                                        "<td valign='middle' bgcolor='#FFFFF8' align='center' width='14%'>Instruksi</td>"+
-                                        "<td valign='middle' bgcolor='#FFFFF8' align='center' width='14%'>Evaluasi</td>"+
+                                        "<td style='font-weight:bold;' valign='middle' bgcolor='#FFFFF8' align='center' width='7%'>Tanggal</td>"+
+                                        "<td style='font-weight:bold;' valign='middle' bgcolor='#FFFFF8' align='center' width='13%'>Dokter/Paramedis</td>"+
+                                        "<td style='font-weight:bold;' valign='middle' bgcolor='#FFFFF8' align='center' width='14%'>Subjek</td>"+
+                                        "<td style='font-weight:bold;' valign='middle' bgcolor='#FFFFF8' align='center' width='13%'>Objek</td>"+
+                                        "<td style='font-weight:bold;' valign='middle' bgcolor='#FFFFF8' align='center' width='13%'>Asesmen</td>"+
+                                        "<td style='font-weight:bold;' valign='middle' bgcolor='#FFFFF8' align='center' width='14%'>Plan</td>"+
+                                        "<td style='font-weight:bold;' valign='middle' bgcolor='#FFFFF8' align='center' width='14%'>Instruksi</td>"+
+                                        "<td style='font-weight:bold;' valign='middle' bgcolor='#FFFFF8' align='center' width='14%'>Evaluasi</td>"+
                                     "</tr>");
                             rs2.beforeFirst();
                             while(rs2.next()){
