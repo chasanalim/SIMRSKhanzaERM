@@ -1502,7 +1502,7 @@ public final class DlgRawatInap extends javax.swing.JDialog {
         panelGlass10.add(jLabel19);
 
         DTPCari1.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "01-01-2023" }));
+        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "05-04-2023" }));
         DTPCari1.setDisplayFormat("dd-MM-yyyy");
         DTPCari1.setName("DTPCari1"); // NOI18N
         DTPCari1.setOpaque(false);
@@ -1516,7 +1516,7 @@ public final class DlgRawatInap extends javax.swing.JDialog {
         panelGlass10.add(jLabel21);
 
         DTPCari2.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "01-01-2023" }));
+        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "05-04-2023" }));
         DTPCari2.setDisplayFormat("dd-MM-yyyy");
         DTPCari2.setName("DTPCari2"); // NOI18N
         DTPCari2.setOpaque(false);
@@ -1594,7 +1594,6 @@ public final class DlgRawatInap extends javax.swing.JDialog {
 
         TabRawat.setBackground(new java.awt.Color(255, 255, 253));
         TabRawat.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(241, 246, 236)));
-        TabRawat.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
         TabRawat.setName("TabRawat"); // NOI18N
         TabRawat.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -2397,7 +2396,7 @@ public final class DlgRawatInap extends javax.swing.JDialog {
 
         internalFrame5.add(PanelInput1, java.awt.BorderLayout.PAGE_START);
 
-        TabRawat.addTab("Pemeriksaan", internalFrame5);
+        TabRawat.addTab("SOAP/CPPT", internalFrame5);
 
         internalFrame6.setBackground(new java.awt.Color(235, 255, 235));
         internalFrame6.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
@@ -3169,7 +3168,7 @@ public final class DlgRawatInap extends javax.swing.JDialog {
         TPasien.setBounds(283, 10, 260, 23);
 
         DTPTgl.setForeground(new java.awt.Color(50, 70, 50));
-        DTPTgl.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "01-01-2023" }));
+        DTPTgl.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "05-04-2023" }));
         DTPTgl.setDisplayFormat("dd-MM-yyyy");
         DTPTgl.setName("DTPTgl"); // NOI18N
         DTPTgl.setOpaque(false);
@@ -7725,6 +7724,12 @@ private void BtnEditKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
         KdDok2.setText(KdDok.getText());
         TDokter2.setText(TDokter.getText()); 
         
+        //SOAP RANAP
+        Sequel.cariIsi("select rps from penilaian_medis_ranap where no_rawat=?",TKeluhan,TNoRw.getText());
+        Sequel.cariIsi("select ket_fisik from penilaian_medis_ranap where no_rawat=?",TPemeriksaan,TNoRw.getText());
+        Sequel.cariIsi("select diagnosis from penilaian_medis_ranap where no_rawat=?",TPenilaian,TNoRw.getText());
+        Sequel.cariIsi("select tata from penilaian_medis_ranap where no_rawat=?",TindakLanjut,TNoRw.getText());
+
         isRawat();
         isPsien();
         DTPCari1.setDate(awal);
@@ -8008,7 +8013,7 @@ private void BtnEditKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
         new Timer(1000, taskPerformer).start();
     }
 
-    private void tampilPemeriksaan() {
+     private void tampilPemeriksaan() {
         Valid.tabelKosong(tabModePemeriksaan);
         try{  
             ps4=koneksi.prepareStatement("select pemeriksaan_ranap.no_rawat,reg_periksa.no_rkm_medis,pasien.nm_pasien,"+
