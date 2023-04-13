@@ -8575,8 +8575,11 @@ private void BtnEditKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
         
         if(akses.getjml2()>=1){
             KdPeg.setText(akses.getkode());
+            KdPeg2.setText(akses.getkode());
             Sequel.cariIsi("select pegawai.nama from pegawai where pegawai.nik=?",TPegawai,KdPeg.getText()); 
             Sequel.cariIsi("select pegawai.jbtn from pegawai where pegawai.nik=?",Jabatan,KdPeg.getText());
+            Sequel.cariIsi("select pegawai.nama from pegawai where pegawai.nik=?",TPegawai2,KdPeg2.getText()); 
+            Sequel.cariIsi("select pegawai.jbtn from pegawai where pegawai.nik=?",Jabatan1,KdPeg2.getText());
         }
     }
     
