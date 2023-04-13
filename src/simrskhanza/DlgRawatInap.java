@@ -7510,19 +7510,19 @@ private void BtnEditKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
     }//GEN-LAST:event_ChkInput3ActionPerformed
 
     private void TSituationKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TSituationKeyPressed
-        // TODO add your handling code here:
+        Valid.pindah2(evt,KdPeg2,TBackground);
     }//GEN-LAST:event_TSituationKeyPressed
 
     private void TBackgroundKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TBackgroundKeyPressed
-        // TODO add your handling code here:
+        Valid.pindah2(evt,TSituation,TAssesment);
     }//GEN-LAST:event_TBackgroundKeyPressed
 
     private void TAssesmentKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TAssesmentKeyPressed
-        // TODO add your handling code here:
+        Valid.pindah2(evt,TBackground,TRecommendation);
     }//GEN-LAST:event_TAssesmentKeyPressed
 
     private void TRecommendationKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TRecommendationKeyPressed
-        // TODO add your handling code here:
+        Valid.pindah2(evt,TAssesment,BtnSimpan);
     }//GEN-LAST:event_TRecommendationKeyPressed
 
     private void KdPeg2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_KdPeg2ActionPerformed
