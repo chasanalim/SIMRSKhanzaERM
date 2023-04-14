@@ -7,6 +7,7 @@ import fungsi.batasInput;
 import fungsi.koneksiDB;
 import fungsi.validasi;
 import fungsi.akses;
+import fungsi.sekuel;
 import java.awt.Cursor;
 import java.awt.Dimension;
 import java.awt.event.KeyEvent;
@@ -29,6 +30,7 @@ public final class DlgCariPetugas extends javax.swing.JDialog {
     private final DefaultTableModel tabMode;
     private validasi Valid=new validasi();
     private Connection koneksi=koneksiDB.condb();
+    private sekuel Sequel=new sekuel();
     private PreparedStatement ps;
     private ResultSet rs;
     private File file;
@@ -452,5 +454,39 @@ public final class DlgCariPetugas extends javax.swing.JDialog {
         } catch (Exception ex) {
             System.out.println("Notifikasi : "+ex);
         }
-    } 
+    }
+    
+    public String tampil3(String kode) {
+        try {
+            if(Valid.daysOld("./cache/petugas.iyem")>7){
+                tampil();
+            }
+        } catch (Exception e) {
+            if(e.toString().contains("No such file or directory")){
+                tampil();
+            }
+        }
+        
+        iyem="";
+        try {
+            myObj = new FileReader("./cache/petugas.iyem");
+            root = mapper.readTree(myObj);
+            Valid.tabelKosong(tabMode);
+            response = root.path("petugas");
+            if(response.isArray()){
+                for(JsonNode list:response){
+                    if(list.path("NIP").asText().toLowerCase().contains(kode)){
+                        iyem=list.path("NamaPetugas").asText();
+                    }
+                }
+            }
+            myObj.close();
+        } catch (Exception ex) {
+            System.out.println("Notifikasi : "+ex);
+        }
+        if(iyem.equals("")){
+            iyem=Sequel.cariIsi("select petugas.nama from petugas where petugas.nip=?",kode);
+        }
+        return iyem;
+    }
 }
