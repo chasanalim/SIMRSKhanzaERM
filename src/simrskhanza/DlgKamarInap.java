@@ -5855,19 +5855,19 @@ public class DlgKamarInap extends javax.swing.JDialog {
                         MnInputResepActionPerformed(null);
                     }
                 }else if(i==1){
-                    if(validasicatatan.equals("Yes")){
-                            this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
-                            LabelCatatan.setText(Sequel.cariIsi("select catatan_pasien.catatan from catatan_pasien where catatan_pasien.no_rkm_medis=?",TNoRMCari.getText()));
-                            if(!LabelCatatan.getText().equals("")){
-                                DlgCatatan.setLocationRelativeTo(null);
-                                DlgCatatan.setVisible(true);
-                            }else{
-                                DlgCatatan.setLocationRelativeTo(null);
-                                DlgCatatan.setVisible(true);
-                            }                            
-                            this.setCursor(Cursor.getDefaultCursor());
-                        } 
-//                    MnBarcodeRM9ActionPerformed(null);
+//                    if(validasicatatan.equals("Yes")){
+//                            this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+//                            LabelCatatan.setText(Sequel.cariIsi("select catatan_pasien.catatan from catatan_pasien where catatan_pasien.no_rkm_medis=?",TNoRMCari.getText()));
+//                            if(!LabelCatatan.getText().equals("")){
+//                                DlgCatatan.setLocationRelativeTo(null);
+//                                DlgCatatan.setVisible(true);
+//                            }else{
+//                                DlgCatatan.setLocationRelativeTo(null);
+//                                DlgCatatan.setVisible(true);
+//                            }                            
+//                            this.setCursor(Cursor.getDefaultCursor());
+//                        } 
+                    MnBarcodeRM9ActionPerformed(null);
                 }else if(i==16){
                     MnDPJPRanapActionPerformed(null);
                 }else if(i==18){
