@@ -1866,7 +1866,7 @@ public final class RMSkriningMPPFormA extends javax.swing.JDialog {
     }//GEN-LAST:event_btnDokter2KeyPressed
 
     private void TDiagnosisKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TDiagnosisKeyPressed
-        Valid.pindah2(evt,btnDokter1,TKelompok);
+        Valid.pindah(evt,btnDokter1,TKelompok);
     }//GEN-LAST:event_TDiagnosisKeyPressed
 
     private void TKelompokKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TKelompokKeyPressed

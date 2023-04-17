@@ -1363,7 +1363,7 @@ public final class RMPenilaianPasienPenyakitMenular extends javax.swing.JDialog 
     }//GEN-LAST:event_MengetahuiKondisiKeyPressed
 
     private void TglAsuhanKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TglAsuhanKeyPressed
-        Valid.pindah2(evt,BtnDokter,Anamnesis);
+        Valid.pindah(evt,BtnDokter,Anamnesis);
     }//GEN-LAST:event_TglAsuhanKeyPressed
 
     private void HubunganKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_HubunganKeyPressed

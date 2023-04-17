@@ -1461,7 +1461,7 @@ public final class RMPenilaianPasienTerminal extends javax.swing.JDialog {
     }//GEN-LAST:event_KebutuhanSpiritualKeyPressed
 
     private void RPSKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_RPSKeyPressed
-        Valid.pindah2(evt,btnPetugas,RPD);
+        Valid.pindah(evt,btnPetugas,RPD);
     }//GEN-LAST:event_RPSKeyPressed
 
     private void RPDKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_RPDKeyPressed

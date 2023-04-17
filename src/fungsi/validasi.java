@@ -70,6 +70,7 @@ public final class validasi {
     private PreparedStatement ps;
     private ResultSet rs;
     private File file;
+    private boolean status=true;
     private final Calendar now = Calendar.getInstance();
     private final int year=(now.get(Calendar.YEAR));
     private String[] nomina={"","satu","dua","tiga","empat","lima","enam",
@@ -474,6 +475,21 @@ public final class validasi {
         } catch (Exception e) {
             System.out.println("Notifikasi : "+e);
         }
+    }
+    
+    public boolean hapusTabletf(DefaultTableModel tabMode,JTextField nilai_field,String table,String field) {
+        status=true;
+        if(tabMode.getRowCount()==0){
+            status=false;
+            JOptionPane.showMessageDialog(null,"Maaf, data sudah habis...!!!!");
+            nilai_field.requestFocus();
+        }else if(nilai_field.getText().trim().equals("")){
+            status=false;
+            JOptionPane.showMessageDialog(null,"Maaf, Gagal menghapus. Pilih dulu data yang mau dihapus.\nKlik data pada table untuk memilih...!!!!");
+        }else if(! nilai_field.getText().trim().equals("")){            
+            status=sek.meghapustf(table,field,nilai_field.getText());   
+        }
+        return status;
     }
     
     public int hariAkhad(int month,int year){ 
