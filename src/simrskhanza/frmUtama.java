@@ -7197,7 +7197,7 @@ public class frmUtama extends javax.swing.JFrame {
         lblUser.setText("Log Out");
         lblUser.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         lblUser.setName("lblUser"); // NOI18N
-        lblUser.setPreferredSize(new java.awt.Dimension(170, 23));
+        lblUser.setPreferredSize(new java.awt.Dimension(220, 23));
         internalFrame4.add(lblUser);
 
         jSeparator2.setBackground(new java.awt.Color(255, 81, 102));
