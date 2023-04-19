@@ -1981,7 +1981,12 @@ public final class RMPenilaianLanjutanRisikoJatuhDewasa extends javax.swing.JDia
     }//GEN-LAST:event_SaranKeyPressed
 
     private void SkalaResiko1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_SkalaResiko1ItemStateChanged
-        // TODO add your handling code here:
+        if(SkalaResiko1.getSelectedIndex()==0){
+            NilaiResiko1.setText("0");
+        }else{
+            NilaiResiko1.setText("25");
+        }
+        isTotalResikoJatuh();
     }//GEN-LAST:event_SkalaResiko1ItemStateChanged
 
     private void SkalaResiko1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SkalaResiko1KeyPressed
