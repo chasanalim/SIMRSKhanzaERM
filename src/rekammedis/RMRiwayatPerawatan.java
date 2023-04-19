@@ -281,6 +281,7 @@ public final class RMRiwayatPerawatan extends javax.swing.JDialog {
         ScrollMenu = new widget.ScrollPane();
         FormMenu = new widget.PanelBiasa();
         chkSemua = new widget.CekBox();
+        chkSBPK = new widget.CekBox();
         chkDiagnosaPenyakit = new widget.CekBox();
         chkProsedurTindakan = new widget.CekBox();
         chkTriase = new widget.CekBox();
@@ -619,7 +620,30 @@ public final class RMRiwayatPerawatan extends javax.swing.JDialog {
                 chkSemuaItemStateChanged(evt);
             }
         });
+        chkSemua.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chkSemuaActionPerformed(evt);
+            }
+        });
         FormMenu.add(chkSemua);
+
+        chkSBPK.setSelected(true);
+        chkSBPK.setText("Berkas Klaim SBPK Rawat Jalan");
+        chkSBPK.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        chkSBPK.setName("chkSBPK"); // NOI18N
+        chkSBPK.setOpaque(false);
+        chkSBPK.setPreferredSize(new java.awt.Dimension(245, 22));
+        chkSBPK.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                chkSBPKItemStateChanged(evt);
+            }
+        });
+        chkSBPK.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chkSBPKActionPerformed(evt);
+            }
+        });
+        FormMenu.add(chkSBPK);
 
         chkDiagnosaPenyakit.setSelected(true);
         chkDiagnosaPenyakit.setText("Diagnosa/Penyakit (ICD 10)");
@@ -1719,6 +1743,7 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
             chkCatatanCekGDS.setSelected(true);
             chkChecklistPreOperasi.setSelected(true);
         }else{
+            chkSBPK.setSelected(false);
             chkTriase.setSelected(false);
             chkAsuhanKeperawatanRalan.setSelected(false);
             chkAsuhanKeperawatanRalanGigi.setSelected(false);
@@ -1808,6 +1833,106 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
             BtnCari1ActionPerformed(null);
         }
     }//GEN-LAST:event_NoRawatKeyPressed
+
+    private void chkSemuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkSemuaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_chkSemuaActionPerformed
+
+    private void chkSBPKItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_chkSBPKItemStateChanged
+        if(chkSBPK.isSelected()==true){
+            chkDiagnosaPenyakit.setSelected(true);
+            chkProsedurTindakan.setSelected(true);
+            chkPemeriksaanRalan.setSelected(true);
+            chkPemeriksaanRadiologi.setSelected(true);
+            chkPemeriksaanLaborat.setSelected(true);
+            chkTindakanRalanDokter.setSelected(true);
+            chkTindakanRalanParamedis.setSelected(true);
+            chkTindakanRalanDokterParamedis.setSelected(true);
+        }else{
+            chkSBPK.setSelected(false);
+            chkTriase.setSelected(false);
+            chkAsuhanKeperawatanRalan.setSelected(false);
+            chkAsuhanKeperawatanRalanGigi.setSelected(false);
+            chkAsuhanKeperawatanRalanBayi.setSelected(false);
+            chkAsuhanKeperawatanRalanKandungan.setSelected(false);
+            chkAsuhanKeperawatanRanap.setSelected(false);
+            chkAsuhanKeperawatanRanapKandungan.setSelected(false);
+            chkAsuhanKeperawatanRalanPsikiatri.setSelected(false);
+            chkAsuhanMedisRalan.setSelected(false);
+            chkAsuhanMedisIGD.setSelected(false);
+            chkAsuhanMedisRalanKandungan.setSelected(false);
+            chkAsuhanMedisRalanBayi.setSelected(false);
+            chkAsuhanMedisRalanTHT.setSelected(false);
+            chkAsuhanMedisRalanPenyakitDalam.setSelected(false);
+            chkAsuhanMedisRalanMata.setSelected(false);
+            chkAsuhanMedisRalanNeurologi.setSelected(false);
+            chkAsuhanMedisRalanOrthopedi.setSelected(false);
+            chkAsuhanMedisRalanBedah.setSelected(false);
+            chkAsuhanMedisRanap.setSelected(false);
+            chkAsuhanMedisRanapKandungan.setSelected(false);
+            chkDiagnosaPenyakit.setSelected(false);
+            chkProsedurTindakan.setSelected(false);
+            chkCatatanDokter.setSelected(false);
+            chkHemodialisa.setSelected(false);
+            chkPemeriksaanRalan.setSelected(false);
+            chkPemeriksaanObstetriRalan.setSelected(false);
+            chkPemeriksaanGenekologiRalan.setSelected(false);
+            chkPemeriksaanRanap.setSelected(false);
+            chkPemeriksaanObstetriRanap.setSelected(false);
+            chkPemeriksaanGenekologiRanap.setSelected(false);
+            chkSkriningGiziLanjut.setSelected(false);
+            chkAsuhanGizi.setSelected(false);
+            chkMonitoringGizi.setSelected(false);
+            chkTindakanRalanDokter.setSelected(false);
+            chkTindakanRalanParamedis.setSelected(false);
+            chkTindakanRalanDokterParamedis.setSelected(false);
+            chkTindakanRanapDokter.setSelected(false);
+            chkTindakanRanapParamedis.setSelected(false);
+            chkTindakanRanapDokterParamedis.setSelected(false);
+            chkPenggunaanKamar.setSelected(false);
+            chkOperasiVK.setSelected(false);
+            chkPemeriksaanRadiologi.setSelected(false);
+            chkPemeriksaanLaborat.setSelected(false);
+            chkPemberianObat.setSelected(false);
+            chkPenggunaanObatOperasi.setSelected(false);
+            chkResepPulang.setSelected(false);
+            chkTambahanBiaya.setSelected(false);
+            chkPotonganBiaya.setSelected(false);
+            chkResume.setSelected(false);
+            chkBerkasDigital.setSelected(false);
+            chkUjiFungsiKFR.setSelected(false);
+            chkAsuhanKeperawatanIGD.setSelected(false);
+            chkCatatanObservasiIGD.setSelected(false);
+            chkCatatanObservasiRanap.setSelected(false);
+            chkCatatanObservasiRanapKebidanan.setSelected(false);
+            chkCatatanObservasiRanapPostPartum.setSelected(false);
+            chkCatatanKeperawatanRanap.setSelected(false);
+            chkPemantauanPEWSAnak.setSelected(false);
+            chkAsuhanFisioterapi.setSelected(false);
+            chkAsuhanPsikolog.setSelected(false);
+            chkAsuhanMedisRalanPsikiatri.setSelected(false);
+            chkAsuhanPreOperasi.setSelected(false);
+            chkAsuhanPreAnestesi.setSelected(false);
+            chkPerencanaanPemulangan.setSelected(false);
+            chkAsuhanLanjutanRisikoJatuhDewasa.setSelected(false);
+            chkAsuhanLanjutanRisikoJatuhAnak.setSelected(false);
+            chkAsuhanMedisRalanGeriatri.setSelected(false);
+            chkAsuhanTambahanGeriatri.setSelected(false);
+            chkSkriningNutrisiDewasa.setSelected(false);
+            chkHasilPemeriksaanUSG.setSelected(false);
+            chkSkriningNutrisiLansia.setSelected(false);
+            chkSkriningNutrisiAnak.setSelected(false);
+            chkKonselingFarmasi.setSelected(false);
+            chkPelayananInformasiObat.setSelected(false);
+            chkTransferAntarRuang.setSelected(false);
+            chkCatatanCekGDS.setSelected(false);
+            chkChecklistPreOperasi.setSelected(false);
+        }
+    }//GEN-LAST:event_chkSBPKItemStateChanged
+
+    private void chkSBPKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkSBPKActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_chkSBPKActionPerformed
 
     /**
     * @param args the command line arguments
@@ -1936,6 +2061,7 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
     private widget.CekBox chkProsedurTindakan;
     private widget.CekBox chkResepPulang;
     private widget.CekBox chkResume;
+    private widget.CekBox chkSBPK;
     private widget.CekBox chkSemua;
     private widget.CekBox chkSkriningGiziLanjut;
     private widget.CekBox chkSkriningNutrisiAnak;
