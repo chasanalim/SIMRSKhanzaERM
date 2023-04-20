@@ -3373,7 +3373,7 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                                                                "<td valign='top'></td>"+
                                                                "<td valign='top'></td>"+
                                                                "<td valign='top'>"+rs3.getString("Pemeriksaan")+"</td>"+
-                                                               "<td valign='top'>"+rs3.getString("nilai")+" "+rs3.getString("satuan")+"</td>"+
+                                                               "<td valign='top'>"+rs3.getString("nilai")+"  ("+rs3.getString("satuan")+") "+"</td>"+
                                                                "<td valign='top'>"+rs3.getString("nilai_rujukan")+"</td>"+
                                                                "<td valign='top' align='right'>"+Valid.SetAngka(rs3.getDouble("biaya_item"))+"</td>"+
                                                             "</tr>"); 
