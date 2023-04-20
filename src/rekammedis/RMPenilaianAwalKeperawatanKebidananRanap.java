@@ -5856,14 +5856,16 @@ public final class RMPenilaianAwalKeperawatanKebidananRanap extends javax.swing.
                     while(rs.next()){
                         param.put("no"+i,i+"");  
                         param.put("tgl"+i,rs.getString("tgl_thn"));
-                        param.put("tempatpersalinan"+i,rs.getString("tempat_persalinan"));
+                        param.put("jk"+i,rs.getString("jk"));
+                        param.put("usiaanak"+i,rs.getString("usia_anak"));
                         param.put("usiahamil"+i,rs.getString("usia_hamil"));
                         param.put("jenispersalinan"+i,rs.getString("jenis_persalinan"));
-                        param.put("penolong"+i,rs.getString("penolong"));
-                        param.put("penyulit"+i,rs.getString("penyulit"));
-                        param.put("jk"+i,rs.getString("jk"));
                         param.put("bbpb"+i,rs.getString("bbpb"));
-                        param.put("keadaan"+i,rs.getString("keadaan"));
+                        param.put("penolong"+i,rs.getString("penolong"));
+                        param.put("tempatpersalinan"+i,rs.getString("tempat_persalinan"));
+                        param.put("penyulit"+i,rs.getString("penyulit"));                    
+                        param.put("keadaanibu"+i,rs.getString("keadaan_ibu"));
+                        param.put("keadaanbayi"+i,rs.getString("keadaan_bayi"));
                         i++;
                     }
                 } catch (Exception e) {
@@ -7862,8 +7864,8 @@ public final class RMPenilaianAwalKeperawatanKebidananRanap extends javax.swing.
         Sequel.cariIsi("select ket2 from penilaian_awal_keperawatan_kebidanan where no_rawat=?",StatusKawin2,TNoRw.getText());
         Sequel.cariIsi("select ket3 from penilaian_awal_keperawatan_kebidanan where no_rawat=?",StatusKawin3,TNoRw.getText());
 //        Sequel.cariIsi("select informasi from penilaian_awal_keperawatan_kebidanan where no_rawat=?",Anamnesis,TNoRw.getText());
-        Sequel.cariIsi("select hpht from penilaian_awal_keperawatan_kebidanan where no_rawat=?",HPHT,TNoRw.getText());
-        Sequel.cariIsi("select tp from penilaian_awal_keperawatan_kebidanan where no_rawat=?",TP,TNoRw.getText());
+//        Sequel.cariIsi("select hpht from penilaian_awal_keperawatan_kebidanan where no_rawat=?",HPHT,TNoRw.getText());
+//        Sequel.cariIsi("select tp from penilaian_awal_keperawatan_kebidanan where no_rawat=?",TP,TNoRw.getText());
         Sequel.cariIsi("select kb from penilaian_awal_keperawatan_kebidanan where no_rawat=?",RiwayatKB,TNoRw.getText());
         Sequel.cariIsi("select ket_kb from penilaian_awal_keperawatan_kebidanan where no_rawat=?",LamanyaKB,TNoRw.getText());
         Sequel.cariIsi("select komplikasi from penilaian_awal_keperawatan_kebidanan where no_rawat=?",KomplikasiKB,TNoRw.getText());
