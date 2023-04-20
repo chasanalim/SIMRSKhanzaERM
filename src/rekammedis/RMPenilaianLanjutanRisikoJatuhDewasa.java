@@ -1933,7 +1933,7 @@ public final class RMPenilaianLanjutanRisikoJatuhDewasa extends javax.swing.JDia
 
     private void SkalaResiko4ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_SkalaResiko4ItemStateChanged
         if(SkalaResiko4.getSelectedIndex()==0){
-            NilaiResiko4.setText("0");
+            NilaiResiko4.setText("20");
         }else{
             NilaiResiko4.setText("20");
         }
