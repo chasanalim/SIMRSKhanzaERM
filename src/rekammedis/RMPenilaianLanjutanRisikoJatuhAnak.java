@@ -460,7 +460,7 @@ public final class RMPenilaianLanjutanRisikoJatuhAnak extends javax.swing.JDialo
         panelGlass9.add(jLabel19);
 
         DTPCari1.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "10-04-2023" }));
+        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "20-04-2023" }));
         DTPCari1.setDisplayFormat("dd-MM-yyyy");
         DTPCari1.setName("DTPCari1"); // NOI18N
         DTPCari1.setOpaque(false);
@@ -474,7 +474,7 @@ public final class RMPenilaianLanjutanRisikoJatuhAnak extends javax.swing.JDialo
         panelGlass9.add(jLabel21);
 
         DTPCari2.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "10-04-2023" }));
+        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "20-04-2023" }));
         DTPCari2.setDisplayFormat("dd-MM-yyyy");
         DTPCari2.setName("DTPCari2"); // NOI18N
         DTPCari2.setOpaque(false);
@@ -595,7 +595,7 @@ public final class RMPenilaianLanjutanRisikoJatuhAnak extends javax.swing.JDialo
         TPasien.setBounds(336, 10, 285, 23);
 
         Tanggal.setForeground(new java.awt.Color(50, 70, 50));
-        Tanggal.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "10-04-2023" }));
+        Tanggal.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "20-04-2023" }));
         Tanggal.setDisplayFormat("dd-MM-yyyy");
         Tanggal.setName("Tanggal"); // NOI18N
         Tanggal.setOpaque(false);
@@ -880,7 +880,7 @@ public final class RMPenilaianLanjutanRisikoJatuhAnak extends javax.swing.JDialo
         NilaiResiko6.setBounds(749, 240, 40, 23);
 
         TingkatResiko.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        TingkatResiko.setText("Tingkat Resiko : Risiko Tinggi (>=12), Tindakan : Intervensi risiko jatuh tinggi(pasang gelang warna kuning)");
+        TingkatResiko.setText("Tingkat Resiko : Risiko Rendah (7-11), Tindakan : Intervensi setiap 8 Jam");
         TingkatResiko.setToolTipText("");
         TingkatResiko.setName("TingkatResiko"); // NOI18N
         FormInput.add(TingkatResiko);
@@ -1809,14 +1809,14 @@ public final class RMPenilaianLanjutanRisikoJatuhAnak extends javax.swing.JDialo
     private void isTotalResikoJatuh(){
         try {
             NilaiResikoTotal.setText((Integer.parseInt(NilaiResiko1.getText())+Integer.parseInt(NilaiResiko2.getText())+Integer.parseInt(NilaiResiko3.getText())+Integer.parseInt(NilaiResiko4.getText())+Integer.parseInt(NilaiResiko5.getText())+Integer.parseInt(NilaiResiko6.getText())+Integer.parseInt(NilaiResiko7.getText()))+"");
-            if(Integer.parseInt(NilaiResikoTotal.getText())<12){
-                TingkatResiko.setText("Tingkat Resiko : Risiko Rendah (7-11), Tindakan : Intervensi pencegahan risiko jatuh standar");
-            }else if(Integer.parseInt(NilaiResikoTotal.getText())<7){
-                TingkatResiko.setText("Tingkat Resiko : Risiko Rendah (0-7), Tindakan : Intervensi pencegahan risiko jatuh standar");
+            if(Integer.parseInt(NilaiResikoTotal.getText())>=12){
+                TingkatResiko.setText("Tingkat Resiko : Risiko Tinggi (12-23), Tindakan : Intervensi setiap 4 Jam");
+            }else if(Integer.parseInt(NilaiResikoTotal.getText())<=11){
+                TingkatResiko.setText("Tingkat Resiko : Risiko Rendah (7-11), Tindakan : Intervensi setiap 8 Jam");
             }
         } catch (Exception e) {
             NilaiResikoTotal.setText("0");
-            TingkatResiko.setText("Tingkat Resiko : Risiko Rendah (0-7), Tindakan : Intervensi pencegahan risiko jatuh standar");
+            TingkatResiko.setText("Tingkat Resiko : Risiko Rendah (7-11), Tindakan : Intervensi setiap 8 Jam");
         }
     }
 }

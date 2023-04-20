@@ -72,7 +72,6 @@
                   <Color PropertyName="color" blue="eb" green="f5" red="f0" type="rgb"/>
                 </LineBorder>
               </Border>
-              <Font PropertyName="font" name="Tahoma" size="11" style="0"/>
               <Color PropertyName="color" blue="32" green="32" red="32" type="rgb"/>
             </TitledBorder>
           </Border>
@@ -324,7 +323,7 @@
                     </Property>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                       <StringArray count="1">
-                        <StringItem index="0" value="02-11-2022"/>
+                        <StringItem index="0" value="20-04-2023"/>
                       </StringArray>
                     </Property>
                     <Property name="displayFormat" type="java.lang.String" value="dd-MM-yyyy"/>
@@ -352,7 +351,7 @@
                     </Property>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                       <StringArray count="1">
-                        <StringItem index="0" value="02-11-2022"/>
+                        <StringItem index="0" value="20-04-2023"/>
                       </StringArray>
                     </Property>
                     <Property name="displayFormat" type="java.lang.String" value="dd-MM-yyyy"/>
@@ -560,7 +559,7 @@
                         </Property>
                         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                           <StringArray count="1">
-                            <StringItem index="0" value="02-11-2022"/>
+                            <StringItem index="0" value="20-04-2023"/>
                           </StringArray>
                         </Property>
                         <Property name="displayFormat" type="java.lang.String" value="dd-MM-yyyy"/>
@@ -930,8 +929,8 @@
                         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                           <StringArray count="4">
                             <StringItem index="0" value="0 - 3 Tahun"/>
-                            <StringItem index="1" value="3 - 7 Tahun"/>
-                            <StringItem index="2" value="7 - 13 Tahun"/>
+                            <StringItem index="1" value="4 - 7 Tahun"/>
+                            <StringItem index="2" value="8 - 12 Tahun"/>
                             <StringItem index="3" value="&gt; 13 Tahun"/>
                           </StringArray>
                         </Property>
@@ -1188,7 +1187,7 @@
                     <Component class="widget.Label" name="TingkatResiko">
                       <Properties>
                         <Property name="horizontalAlignment" type="int" value="2"/>
-                        <Property name="text" type="java.lang.String" value="Tingkat Resiko : Risiko Tinggi (&gt;=12), Tindakan : Intervensi risiko jatuh tinggi(pasang gelang warna kuning)"/>
+                        <Property name="text" type="java.lang.String" value="Tingkat Resiko : Risiko Rendah (7-11), Tindakan : Intervensi setiap 8 Jam"/>
                         <Property name="toolTipText" type="java.lang.String" value=""/>
                         <Property name="name" type="java.lang.String" value="TingkatResiko" noResource="true"/>
                       </Properties>
