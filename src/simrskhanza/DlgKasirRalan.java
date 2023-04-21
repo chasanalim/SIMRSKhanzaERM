@@ -7033,6 +7033,9 @@ private void MnDataRalanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-F
                 if(Sequel.cariInteger("select count(kamar_inap.no_rawat) from kamar_inap where kamar_inap.no_rawat=?",TNoRw.getText())>0){
                     JOptionPane.showMessageDialog(null,"Maaf, Pasien sudah masuk Kamar Inap. Gunakan billing Ranap..!!!");
                 }else {
+//                    if(Sequel.cariIsi("select mutasi_berkas.diterima from mutasi_berkas where mutasi_berkas.no_rawat=?",TNoRw.getText())==){
+//                    JOptionPane.showMessageDialog(null,"Maaf, Task id 4 Belum di Klik !!!");
+//                    }
                     dlgrwjl2.isCek();
                     dlgrwjl2.emptTeks();
                     dlgrwjl2.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
