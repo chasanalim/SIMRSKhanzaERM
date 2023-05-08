@@ -627,7 +627,7 @@ public class SuratKontrolUmum extends javax.swing.JDialog {
         R2.setPreferredSize(new java.awt.Dimension(90, 23));
         panelCari.add(R2);
 
-        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "10-01-2022" }));
+        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "19-04-2023" }));
         DTPCari1.setDisplayFormat("dd-MM-yyyy");
         DTPCari1.setName("DTPCari1"); // NOI18N
         DTPCari1.setOpaque(false);
@@ -649,7 +649,7 @@ public class SuratKontrolUmum extends javax.swing.JDialog {
         jLabel22.setPreferredSize(new java.awt.Dimension(25, 23));
         panelCari.add(jLabel22);
 
-        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "10-01-2022" }));
+        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "19-04-2023" }));
         DTPCari2.setDisplayFormat("dd-MM-yyyy");
         DTPCari2.setName("DTPCari2"); // NOI18N
         DTPCari2.setOpaque(false);
@@ -670,7 +670,7 @@ public class SuratKontrolUmum extends javax.swing.JDialog {
         R3.setPreferredSize(new java.awt.Dimension(85, 23));
         panelCari.add(R3);
 
-        DTPCari3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "10-01-2022" }));
+        DTPCari3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "19-04-2023" }));
         DTPCari3.setDisplayFormat("dd-MM-yyyy");
         DTPCari3.setName("DTPCari3"); // NOI18N
         DTPCari3.setOpaque(false);
@@ -692,7 +692,7 @@ public class SuratKontrolUmum extends javax.swing.JDialog {
         jLabel25.setPreferredSize(new java.awt.Dimension(25, 23));
         panelCari.add(jLabel25);
 
-        DTPCari4.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "10-01-2022" }));
+        DTPCari4.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "19-04-2023" }));
         DTPCari4.setDisplayFormat("dd-MM-yyyy");
         DTPCari4.setName("DTPCari4"); // NOI18N
         DTPCari4.setOpaque(false);
@@ -775,7 +775,7 @@ public class SuratKontrolUmum extends javax.swing.JDialog {
         TPasien.setBounds(190, 40, 190, 23);
 
         TanggalSurat.setForeground(new java.awt.Color(50, 70, 50));
-        TanggalSurat.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "10-01-2022 07:48:49" }));
+        TanggalSurat.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "19-04-2023 10:37:33" }));
         TanggalSurat.setDisplayFormat("dd-MM-yyyy HH:mm:ss");
         TanggalSurat.setDoubleBuffered(true);
         TanggalSurat.setName("TanggalSurat"); // NOI18N
@@ -871,7 +871,7 @@ public class SuratKontrolUmum extends javax.swing.JDialog {
         jLabel5.setBounds(0, 120, 90, 23);
 
         TanggalPeriksa.setForeground(new java.awt.Color(50, 70, 50));
-        TanggalPeriksa.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "10-01-2022 07:48:49" }));
+        TanggalPeriksa.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "19-04-2023 10:37:34" }));
         TanggalPeriksa.setDisplayFormat("dd-MM-yyyy HH:mm:ss");
         TanggalPeriksa.setName("TanggalPeriksa"); // NOI18N
         TanggalPeriksa.setOpaque(false);
@@ -1675,9 +1675,9 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
                     "select surat_kontrol_umum.tahun,surat_kontrol_umum.no_surat,surat_kontrol_umum.no_rkm_medis,pasien.nm_pasien,"+
                     "surat_kontrol_umum.diagnosa,surat_kontrol_umum.terapi,surat_kontrol_umum.diet, "+
                     "surat_kontrol_umum.luka,surat_kontrol_umum.ngt,surat_kontrol_umum.lain,surat_kontrol_umum.tunda,surat_kontrol_umum.tanggal_datang,surat_kontrol_umum.tanggal_rujukan,"+
-                    "surat_kontrol_umum.no_antrian,surat_kontrol_umum.kd_dokter,dokter.nm_dokter,surat_kontrol_umum.status "+
-                    "from surat_kontrol_umum inner join pasien inner join dokter on "+
-                    "surat_kontrol_umum.no_rkm_medis=pasien.no_rkm_medis and surat_kontrol_umum.kd_dokter=dokter.kd_dokter "+
+                    "surat_kontrol_umum.no_antrian,surat_kontrol_umum.kd_dokter,dokter.nm_dokter,surat_kontrol_umum.status,poliklinik.nm_poli "+
+                    "from surat_kontrol_umum inner join pasien inner join dokter inner join poliklinik on "+
+                    "surat_kontrol_umum.no_rkm_medis=pasien.no_rkm_medis and surat_kontrol_umum.kd_dokter=dokter.kd_dokter and surat_kontrol_umum.kd_poli=poliklinik.kd_poli "+
                     "where "+status+" and surat_kontrol_umum.no_rkm_medis like ? or "+
                     status+" and pasien.nm_pasien like ? or "+
                     status+" and surat_kontrol_umum.diagnosa like ? or "+
@@ -1723,7 +1723,7 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
                         rs.getString("diagnosa"),rs.getString("terapi"),rs.getString("diet"),rs.getString("luka"),rs.getString("ngt"),                       
                         rs.getString("lain"),rs.getString("tunda"),rs.getString("tanggal_datang"),rs.getString("tanggal_rujukan"),rs.getString("no_antrian"),
                         noantri,rs.getString("kd_dokter"),rs.getString("nm_dokter"),kdpoli,
-                        nmpoli,rs.getString("status")
+                        rs.getString("nm_poli"),rs.getString("status")
                     });                    
                 }
             } catch (Exception e) {
@@ -1901,10 +1901,10 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     
 
     private void isBooking(){
-        if(Sequel.menyimpantf("surat_kontrol_umum","?,?,?,?,?,?,?,?,?,?,?,?,?,?,?","Tahun dan nomor surat",15,new String[]{
+        if(Sequel.menyimpantf("surat_kontrol_umum","?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?","Tahun dan nomor surat",16,new String[]{
              NoSurat.getText(),TanggalPeriksa.getSelectedItem().toString().substring(6,10),TNoRM.getText(),Diagnosa.getText(),Terapi.getText(),
              Diet.getText(),Luka.getText(),Ngt.getText(),Lain.getText(),Tunda.getText(),Valid.SetTgl(TanggalPeriksa.getSelectedItem()+"")+" "+TanggalPeriksa.getSelectedItem().toString().substring(11,19),
-             Valid.SetTgl(TanggalSurat.getSelectedItem()+"")+" "+TanggalSurat.getSelectedItem().toString().substring(11,19),NoAntrian.getText(),KdDokter.getText(),Status.getSelectedItem().toString()
+             Valid.SetTgl(TanggalSurat.getSelectedItem()+"")+" "+TanggalSurat.getSelectedItem().toString().substring(11,19),NoAntrian.getText(),KdDokter.getText(),Status.getSelectedItem().toString(),KdPoli.getText()
          })==true){
 //             Sequel.menyimpan2("booking_registrasi","?,?,?,?,?,?,?,?,?,?,?","Pasien dan Tanggal",11,new String[]{
 //                Valid.SetTgl(TanggalPeriksa.getSelectedItem()+""),TanggalPeriksa.getSelectedItem().toString().substring(11,19),TNoRM.getText(),
