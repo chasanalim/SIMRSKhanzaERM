@@ -5976,7 +5976,25 @@ private void BtnEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST
                             JOptionPane.showMessageDialog(rootPane,"Silahkan pilih data yang mau diganti..!!");
                             TCari.requestFocus();
                         }
-                    }   break; 
+                    }   break;
+                case 6:
+                   if((!TSituation.getText().trim().equals(""))||(!TBackground.getText().trim().equals(""))||
+                            (!TAssesment.getText().trim().equals(""))||(!TRecommendation.getText().trim().equals(""))){
+                        if(tbPemeriksaanSbar.getSelectedRow()>-1){
+                            Sequel.mengedit("pemeriksaan_ranap_sbar","no_rawat='"+tbPemeriksaanSbar.getValueAt(tbPemeriksaanSbar.getSelectedRow(),1)+
+                                    "' and tgl_perawatan='"+tbPemeriksaanSbar.getValueAt(tbPemeriksaanSbar.getSelectedRow(),4)+
+                                    "' and jam_rawat='"+tbPemeriksaanSbar.getValueAt(tbPemeriksaanSbar.getSelectedRow(),5)+"'",
+                                    "no_rawat='"+TNoRw.getText()+"', tgl_perawatan='"+Valid.SetTgl(DTPTgl.getSelectedItem()+"")+"', "+
+                                    "jam_rawat='"+cmbJam.getSelectedItem()+":"+cmbMnt.getSelectedItem()+":"+cmbDtk.getSelectedItem()+"', "+
+                                    "situation='"+TSituation.getText()+"', background='"+TBackground.getText()+"', assesment='"+TAssesment.getText()+"', "+
+                                    "recommendation='"+TRecommendation.getText()+"', nip='"+KdPeg2.getText()+"'");
+                            tampilPemeriksaanSbar();
+                            BtnBatalActionPerformed(evt);
+                        }else{
+                            JOptionPane.showMessageDialog(rootPane,"Silahkan pilih data yang mau diganti..!!");
+                            TCari.requestFocus();
+                        }
+                    }   break;
                 default:
                     break;                
             }
