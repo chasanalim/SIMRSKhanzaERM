@@ -5763,10 +5763,10 @@ public class DlgKamarInap extends javax.swing.JDialog {
 }//GEN-LAST:event_BtnCariKeyPressed
 
     private void BtnAllActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAllActionPerformed
-        if(namadokter.equals("")){
-            CrDokter.setText("");               
-        }
-        
+//        if(namadokter.equals("")){
+//            CrDokter.setText("");               
+//        }
+        CrDokter.setText("");
         TCari.setText("");
         if(namakamar.equals("")){
             BangsalCari.setText("");
@@ -15373,15 +15373,15 @@ private void MnRujukMasukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-
                 CrDokter.setEditable(true);
             }else{
                 CrDokter.setText(namadokter);
-                btnDokterCari.setEnabled(false);
-                CrDokter.setEditable(false);
+                btnDokterCari.setEnabled(true);
+                CrDokter.setEditable(true);
             }                
         }else{
             namadokter=Sequel.cariIsi("select dokter.nm_dokter from dokter where dokter.kd_dokter=?",akses.getkode());
             if(!namadokter.equals("")){
                 CrDokter.setText(namadokter);
-                btnDokterCari.setEnabled(false);
-                CrDokter.setEditable(false);
+                btnDokterCari.setEnabled(true);
+                CrDokter.setEditable(true);
             }else{
                 CrDokter.setText("");
                 btnDokterCari.setEnabled(true);
