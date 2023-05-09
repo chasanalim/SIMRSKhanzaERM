@@ -4902,6 +4902,10 @@ public final class DlgRawatInap extends javax.swing.JDialog {
         TAdnexaKanan.setText("");
         TAdnexaKiri.setText("");
         TCavumDouglas.setText("");
+        TSituation.setText("");
+        TBackground.setText("");
+        TRecommendation.setText("");
+        TAssesment.setText("");
         cmbKesadaran.setSelectedIndex(0);
         TNoRw.requestFocus();
 }//GEN-LAST:event_BtnBatalActionPerformed
@@ -5494,6 +5498,9 @@ public final class DlgRawatInap extends javax.swing.JDialog {
             case 5:
                 tampilPemeriksaanGinekologi();
                 break;
+            case 6:
+                tampilPemeriksaanSbar();
+                break;
             default:
                 break;
         }
@@ -5527,6 +5534,9 @@ public final class DlgRawatInap extends javax.swing.JDialog {
                 break;
             case 5:
                 tampilPemeriksaanGinekologi();
+                break;
+            case 6:
+                tampilPemeriksaanSbar();
                 break;
             default:
                 break;
