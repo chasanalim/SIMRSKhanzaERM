@@ -194,8 +194,7 @@ public class DlgKamarInap extends javax.swing.JDialog {
             }else if(i==7){ //Kamar
                 column.setPreferredWidth(120);
             }else if(i==8){ // Tarif kamar
-                column.setMinWidth(0);
-                column.setMaxWidth(0);
+                column.setPreferredWidth(55);
             }else if(i==9){ //Diagnosa Awal
                 column.setPreferredWidth(75);
             }else if(i==10){ //Diagnosa Akhir
