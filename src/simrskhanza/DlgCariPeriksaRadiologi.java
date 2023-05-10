@@ -66,7 +66,7 @@ public class DlgCariPeriksaRadiologi extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
 
-        Object[] row={"No.Rawat","Pasien","Petugas","Tgl.Periksa","Jam Periksa","Dokter Perujuk","Penanggung Jawab"};
+        Object[] row={"No.Rawat","Pasien","Petugas","Tgl.Periksa","Jam Periksa","Dokter Perujuk","Penanggung Jawab","Diagnosa Klinis"};
         tabMode=new DefaultTableModel(null,row){
               @Override public boolean isCellEditable(int rowIndex, int colIndex){return false;}
         };
@@ -75,7 +75,7 @@ public class DlgCariPeriksaRadiologi extends javax.swing.JDialog {
         tbDokter.setPreferredScrollableViewportSize(new Dimension(800,800));
         tbDokter.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
 
-        for (i = 0; i < 7; i++) {
+        for (i = 0; i < 8; i++) {
             TableColumn column = tbDokter.getColumnModel().getColumn(i);
             if(i==0){
                 column.setPreferredWidth(110);
@@ -91,7 +91,10 @@ public class DlgCariPeriksaRadiologi extends javax.swing.JDialog {
                 column.setPreferredWidth(170);
             }else if(i==6){
                 column.setPreferredWidth(170);
+            }else if(i==7){
+                column.setPreferredWidth(150);
             }
+            
         }
         tbDokter.setDefaultRenderer(Object.class, new WarnaTable());
 
@@ -1942,23 +1945,25 @@ private void tbDokterKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_
             if(NoRawat.getText().equals("")&&kdmem.getText().equals("")&&kdptg.getText().equals("")&&TCari.getText().equals("")){
                 ps=koneksi.prepareStatement(
                         "select periksa_radiologi.no_rawat,reg_periksa.no_rkm_medis,pasien.nm_pasien,petugas.nama,periksa_radiologi.tgl_periksa,"+
-                        "periksa_radiologi.jam,periksa_radiologi.dokter_perujuk,periksa_radiologi.kd_dokter,penjab.png_jawab,dokter.nm_dokter "+
+                        "periksa_radiologi.jam,periksa_radiologi.dokter_perujuk,periksa_radiologi.kd_dokter,penjab.png_jawab,dokter.nm_dokter,permintaan_radiologi.diagnosa_klinis "+
                         "from periksa_radiologi inner join reg_periksa on periksa_radiologi.no_rawat=reg_periksa.no_rawat "+
                         "inner join pasien on reg_periksa.no_rkm_medis=pasien.no_rkm_medis "+
                         "inner join petugas on periksa_radiologi.nip=petugas.nip "+
                         "inner join penjab on reg_periksa.kd_pj=penjab.kd_pj "+
-                        "inner join dokter on periksa_radiologi.kd_dokter=dokter.kd_dokter where "+
+                        "inner join dokter on periksa_radiologi.kd_dokter=dokter.kd_dokter " + 
+                        "inner join permintaan_radiologi on periksa_radiologi.no_rawat=permintaan_radiologi.no_rawat where "+
                         "periksa_radiologi.tgl_periksa between ? and ? group by concat(periksa_radiologi.no_rawat,periksa_radiologi.tgl_periksa,periksa_radiologi.jam) "+
                         "order by periksa_radiologi.tgl_periksa desc,periksa_radiologi.jam desc");
             }else{
                 ps=koneksi.prepareStatement(
                         "select periksa_radiologi.no_rawat,reg_periksa.no_rkm_medis,pasien.nm_pasien,petugas.nama,periksa_radiologi.tgl_periksa,"+
-                        "periksa_radiologi.jam,periksa_radiologi.dokter_perujuk,periksa_radiologi.kd_dokter,penjab.png_jawab,dokter.nm_dokter "+
+                        "periksa_radiologi.jam,periksa_radiologi.dokter_perujuk,periksa_radiologi.kd_dokter,penjab.png_jawab,dokter.nm_dokter,permintaan_radiologi.diagnosa_klinis  "+
                         "from periksa_radiologi inner join reg_periksa on periksa_radiologi.no_rawat=reg_periksa.no_rawat "+
                         "inner join pasien on reg_periksa.no_rkm_medis=pasien.no_rkm_medis "+
                         "inner join petugas on periksa_radiologi.nip=petugas.nip "+
                         "inner join penjab on reg_periksa.kd_pj=penjab.kd_pj "+
-                        "inner join dokter on periksa_radiologi.kd_dokter=dokter.kd_dokter where "+
+                        "inner join dokter on periksa_radiologi.kd_dokter=dokter.kd_dokter "+
+                        "inner join permintaan_radiologi on periksa_radiologi.no_rawat=permintaan_radiologi.no_rawat where "+
                         "periksa_radiologi.tgl_periksa between ? and ? and periksa_radiologi.no_rawat like ? and reg_periksa.no_rkm_medis like ? "+
                         "and petugas.nip like ? and (pasien.nm_pasien like ? or petugas.nama like ? or reg_periksa.no_rkm_medis like ? or penjab.png_jawab like ? ) "+
                         "group by concat(periksa_radiologi.no_rawat,periksa_radiologi.tgl_periksa,periksa_radiologi.jam) "+
@@ -1996,7 +2001,7 @@ private void tbDokterKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_
                     }
                     tabMode.addRow(new Object[]{
                         rs.getString("no_rawat"),rs.getString("no_rkm_medis")+" "+rs.getString("nm_pasien")+" ("+kamar+" : "+namakamar+")",rs.getString("nama"),
-                        rs.getString("tgl_periksa"),rs.getString("jam"),Sequel.cariIsi("select dokter.nm_dokter from dokter where dokter.kd_dokter=?",rs.getString("dokter_perujuk")),rs.getString("nm_dokter")
+                        rs.getString("tgl_periksa"),rs.getString("jam"),Sequel.cariIsi("select dokter.nm_dokter from dokter where dokter.kd_dokter=?",rs.getString("dokter_perujuk")),rs.getString("nm_dokter"),rs.getString("diagnosa_klinis")
                     });
                     tabMode.addRow(new Object[]{"","Proyeksi & Dosis Radiasi","Kode Periksa","Nama Pemeriksaan","Biaya","Cara Bayar : "+rs.getString("png_jawab"),""});
                     ps2=koneksi.prepareStatement(
@@ -2174,7 +2179,7 @@ private void tbDokterKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_
                             rs=ps.executeQuery();
                             htmlContent = new StringBuilder();
                             while(rs.next()){
-                                htmlContent.append("<tr><td border='0' align='center'><a href='http://"+koneksiDB.HOSTHYBRIDWEB()+":"+koneksiDB.PORTWEB()+"/"+koneksiDB.HYBRIDWEB()+"/radiologi/"+rs.getString("lokasi_gambar")+"'><img src='http://"+koneksiDB.HOSTHYBRIDWEB()+":"+koneksiDB.PORTWEB()+"/"+koneksiDB.HYBRIDWEB()+"/radiologi/"+rs.getString("lokasi_gambar")+"' alt='photo' width='"+(internalFrame1.getWidth()-370)+"' height='"+(internalFrame1.getWidth()-370)+"'/></a></td></tr>");
+                                htmlContent.append("<tr><td border='0' align='center'><a href='http://"+koneksiDB.HOSTHYBRIDWEB()+":"+koneksiDB.PORTWEB()+"/"+koneksiDB.HYBRIDWEB()+"/radiologi/"+rs.getString("lokasi_gambar")+"'><img src='http://"+koneksiDB.HOSTHYBRIDWEB()+":"+koneksiDB.PORTWEB()+"/"+koneksiDB.HYBRIDWEB()+"/radiologi/"+rs.getString("lokasi_gambar")+"' alt='photo' width='"+(internalFrame1.getWidth()-770)+"' height='"+(internalFrame1.getWidth()-770)+"'/></a></td></tr>");
                             }
                             LoadHTML.setText(
                                 "<html>"+
