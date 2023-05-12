@@ -8614,7 +8614,7 @@ private void BtnEditKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
         if(akses.getsignin_sebelum_anestesi()==true){
             tinggi=tinggi+24;
         }
-        FormMenu.setPreferredSize(new Dimension(150,(tinggi+10)));
+        FormMenu.setPreferredSize(new Dimension(160,(tinggi+20)));
         
         if(akses.getjml2()>=1){
             KdPeg.setText(akses.getkode());
