@@ -332,7 +332,7 @@ public final class RMCariPemeriksaan extends javax.swing.JDialog {
         Valid.tabelKosong(tabMode);
         try{
             ps=koneksi.prepareStatement(
-                    "select pemeriksaan_ralan.tgl_perawatan,pemeriksaan_ralan.jam_rawat,pemeriksaan_ralan.pemeriksaan "+
+                    "select pemeriksaan_ralan.tgl_perawatan,pemeriksaan_ralan.jam_rawat,pemeriksaan_ralan.pemeriksaan,pemeriksaan_ralan.tensi,pemeriksaan_ralan.suhu_tubuh,pemeriksaan_ralan.respirasi,pemeriksaan_ralan.nadi,pemeriksaan_ralan.spo2,pemeriksaan_ralan.gcs "+
                     "from pemeriksaan_ralan where pemeriksaan_ralan.no_rawat=? and "+
                     "(pemeriksaan_ralan.tgl_perawatan like ? or pemeriksaan_ralan.pemeriksaan like ?) "+
                     "order by pemeriksaan_ralan.tgl_perawatan,pemeriksaan_ralan.jam_rawat");
@@ -343,7 +343,7 @@ public final class RMCariPemeriksaan extends javax.swing.JDialog {
                 rs=ps.executeQuery();
                 while(rs.next()){
                     tabMode.addRow(new String[] {
-                        rs.getString(1),rs.getString(2),rs.getString(3)
+                        rs.getString(1),rs.getString(2),rs.getString(3)+", tensi:"+rs.getString(4)+", suhu:"+rs.getString(5)+", rr:"+rs.getString(6)+", nadi:"+rs.getString(7)+", spo2:"+rs.getString(7)+", gcs:"+rs.getString(8)
                     });
                 }
             }catch(Exception ex){
@@ -362,7 +362,7 @@ public final class RMCariPemeriksaan extends javax.swing.JDialog {
         
         try{
             ps=koneksi.prepareStatement(
-                    "select pemeriksaan_ranap.tgl_perawatan,pemeriksaan_ranap.jam_rawat,pemeriksaan_ranap.pemeriksaan "+
+                    "select pemeriksaan_ranap.tgl_perawatan,pemeriksaan_ranap.jam_rawat,pemeriksaan_ranap.pemeriksaan,pemeriksaan_ranap.tensi,pemeriksaan_ranap.suhu_tubuh,pemeriksaan_ranap.respirasi,pemeriksaan_ranap.nadi,pemeriksaan_ranap.spo2,pemeriksaan_ranap.gcs "+
                     "from pemeriksaan_ranap where pemeriksaan_ranap.no_rawat=? and "+
                     "(pemeriksaan_ranap.tgl_perawatan like ? or pemeriksaan_ranap.pemeriksaan like ?) "+
                     "order by pemeriksaan_ranap.tgl_perawatan,pemeriksaan_ranap.jam_rawat");
@@ -373,7 +373,7 @@ public final class RMCariPemeriksaan extends javax.swing.JDialog {
                 rs=ps.executeQuery();
                 while(rs.next()){
                     tabMode.addRow(new String[] {
-                        rs.getString(1),rs.getString(2),rs.getString(3)
+                         rs.getString(1),rs.getString(2),rs.getString(3)+", tensi:"+rs.getString(4)+", suhu:"+rs.getString(5)+", rr:"+rs.getString(6)+", nadi:"+rs.getString(7)+", spo2:"+rs.getString(7)+", gcs:"+rs.getString(8)
                     });
                 }
             }catch(Exception ex){
