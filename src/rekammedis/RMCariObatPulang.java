@@ -332,9 +332,9 @@ public final class RMCariObatPulang extends javax.swing.JDialog {
         Valid.tabelKosong(tabMode);
         try{
             ps=koneksi.prepareStatement(
-                    "select resep_pulang.tanggal,resep_pulang.jam,databarang.nama_brng,resep_pulang.jml_barang,resep_pulang.dosis "+
-                    "from resep_pulang inner join databarang on databarang.kode_brng=resep_pulang.kode_brng where resep_pulang.no_rawat=? "+
-                    "and (resep_pulang.tanggal like ? or databarang.nama_brng like ?) order by resep_pulang.tanggal,resep_pulang.jam");
+                    "select permintaan_resep_pulang.tgl_permintaan,permintaan_resep_pulang.jam,databarang.nama_brng,detail_permintaan_resep_pulang.jml,detail_permintaan_resep_pulang.dosis "+
+                    "from permintaan_resep_pulang inner join detail_permintaan_resep_pulang on permintaan_resep_pulang.no_permintaan=detail_permintaan_resep_pulang.no_permintaan INNER JOIN databarang ON databarang.kode_brng = detail_permintaan_resep_pulang.kode_brng where permintaan_resep_pulang.no_rawat=? "+
+                    "and (permintaan_resep_pulang.tgl_permintaan like ? or databarang.nama_brng like ?) order by permintaan_resep_pulang.tgl_permintaan,permintaan_resep_pulang.jam");
             try{
                 ps.setString(1,norawat);
                 ps.setString(2,"%"+TCari.getText().trim()+"%");
