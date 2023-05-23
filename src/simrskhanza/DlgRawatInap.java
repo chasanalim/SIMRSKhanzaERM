@@ -6638,6 +6638,10 @@ private void BtnEditKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
         TRespirasi.setText("");
         TGCS.setText("");
         SpO2.setText("");
+        TSituation.setText("");
+        TBackground.setText("");
+        TAssesment.setText("");
+        TRecommendation.setText("");
      
     }
     
