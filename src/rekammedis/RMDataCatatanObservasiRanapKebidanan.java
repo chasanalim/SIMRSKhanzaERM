@@ -60,7 +60,7 @@ public final class RMDataCatatanObservasiRanapKebidanan extends javax.swing.JDia
 
         tabMode=new DefaultTableModel(null,new Object[]{
             "No.Rawat","No.R.M.","Nama Pasien","Umur","JK","Tgl.Lahir","Tgl.Obser","Jam Obser","GCS (E,V,M)","TD(mmHg)",
-            "HR(x/menit)","RR(x/menit)","Suhu(°C)","SpO2(%)","Kontraksi/HIS","BJJ","PPV","VT","NIP","Nama Petugas"
+            "HR(x/menit)","RR(x/menit)","Suhu(°C)","SpO2(%)","Kontraksi/HIS","DJJ","PPV","VT","NIP","Nama Petugas"
         }){
               @Override public boolean isCellEditable(int rowIndex, int colIndex){return false;}
         };
@@ -243,7 +243,6 @@ public final class RMDataCatatanObservasiRanapKebidanan extends javax.swing.JDia
         jLabel23 = new widget.Label();
         TD = new widget.TextBox();
         jLabel26 = new widget.Label();
-        jLabel27 = new widget.Label();
         jLabel25 = new widget.Label();
         RR = new widget.TextBox();
         jLabel28 = new widget.Label();
@@ -258,6 +257,8 @@ public final class RMDataCatatanObservasiRanapKebidanan extends javax.swing.JDia
         jLabel30 = new widget.Label();
         jLabel31 = new widget.Label();
         VT = new widget.TextBox();
+        jLabel32 = new widget.Label();
+        jLabel33 = new widget.Label();
         ChkInput = new widget.CekBox();
 
         jPopupMenu1.setName("jPopupMenu1"); // NOI18N
@@ -446,7 +447,7 @@ public final class RMDataCatatanObservasiRanapKebidanan extends javax.swing.JDia
         panelGlass9.add(jLabel19);
 
         DTPCari1.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "26-05-2022" }));
+        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "31-10-2022" }));
         DTPCari1.setDisplayFormat("dd-MM-yyyy");
         DTPCari1.setName("DTPCari1"); // NOI18N
         DTPCari1.setOpaque(false);
@@ -460,7 +461,7 @@ public final class RMDataCatatanObservasiRanapKebidanan extends javax.swing.JDia
         panelGlass9.add(jLabel21);
 
         DTPCari2.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "26-05-2022" }));
+        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "31-10-2022" }));
         DTPCari2.setDisplayFormat("dd-MM-yyyy");
         DTPCari2.setName("DTPCari2"); // NOI18N
         DTPCari2.setOpaque(false);
@@ -556,7 +557,7 @@ public final class RMDataCatatanObservasiRanapKebidanan extends javax.swing.JDia
         TPasien.setBounds(336, 10, 285, 23);
 
         Tanggal.setForeground(new java.awt.Color(50, 70, 50));
-        Tanggal.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "26-05-2022" }));
+        Tanggal.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "31-10-2022" }));
         Tanggal.setDisplayFormat("dd-MM-yyyy");
         Tanggal.setName("Tanggal"); // NOI18N
         Tanggal.setOpaque(false);
@@ -691,7 +692,7 @@ public final class RMDataCatatanObservasiRanapKebidanan extends javax.swing.JDia
         jLabel17.setText("x/menit");
         jLabel17.setName("jLabel17"); // NOI18N
         FormInput.add(jLabel17);
-        jLabel17.setBounds(382, 70, 50, 23);
+        jLabel17.setBounds(360, 100, 50, 23);
 
         HR.setFocusTraversalPolicyProvider(true);
         HR.setName("HR"); // NOI18N
@@ -743,12 +744,6 @@ public final class RMDataCatatanObservasiRanapKebidanan extends javax.swing.JDia
         jLabel26.setName("jLabel26"); // NOI18N
         FormInput.add(jLabel26);
         jLabel26.setBounds(657, 70, 30, 23);
-
-        jLabel27.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel27.setText("mmHg");
-        jLabel27.setName("jLabel27"); // NOI18N
-        FormInput.add(jLabel27);
-        jLabel27.setBounds(255, 70, 40, 23);
 
         jLabel25.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel25.setText("x/menit");
@@ -807,20 +802,25 @@ public final class RMDataCatatanObservasiRanapKebidanan extends javax.swing.JDia
         FormInput.add(Kontraksi);
         Kontraksi.setBounds(84, 100, 168, 23);
 
-        jLabel24.setText("BJJ :");
+        jLabel24.setText("DJJ :");
         jLabel24.setName("jLabel24"); // NOI18N
         FormInput.add(jLabel24);
-        jLabel24.setBounds(267, 100, 40, 23);
+        jLabel24.setBounds(250, 100, 40, 23);
 
         BJJ.setFocusTraversalPolicyProvider(true);
         BJJ.setName("BJJ"); // NOI18N
+        BJJ.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BJJActionPerformed(evt);
+            }
+        });
         BJJ.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 BJJKeyPressed(evt);
             }
         });
         FormInput.add(BJJ);
-        BJJ.setBounds(311, 100, 60, 23);
+        BJJ.setBounds(292, 100, 60, 23);
 
         PPV.setFocusTraversalPolicyProvider(true);
         PPV.setName("PPV"); // NOI18N
@@ -830,17 +830,17 @@ public final class RMDataCatatanObservasiRanapKebidanan extends javax.swing.JDia
             }
         });
         FormInput.add(PPV);
-        PPV.setBounds(430, 100, 100, 23);
+        PPV.setBounds(470, 100, 100, 23);
 
         jLabel30.setText("PPV :");
         jLabel30.setName("jLabel30"); // NOI18N
         FormInput.add(jLabel30);
-        jLabel30.setBounds(386, 100, 40, 23);
+        jLabel30.setBounds(420, 100, 40, 23);
 
         jLabel31.setText("VT :");
         jLabel31.setName("jLabel31"); // NOI18N
         FormInput.add(jLabel31);
-        jLabel31.setBounds(536, 100, 40, 23);
+        jLabel31.setBounds(570, 100, 40, 23);
 
         VT.setFocusTraversalPolicyProvider(true);
         VT.setName("VT"); // NOI18N
@@ -850,7 +850,19 @@ public final class RMDataCatatanObservasiRanapKebidanan extends javax.swing.JDia
             }
         });
         FormInput.add(VT);
-        VT.setBounds(580, 100, 209, 23);
+        VT.setBounds(619, 100, 170, 23);
+
+        jLabel32.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel32.setText("mmHg");
+        jLabel32.setName("jLabel32"); // NOI18N
+        FormInput.add(jLabel32);
+        jLabel32.setBounds(255, 70, 40, 23);
+
+        jLabel33.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel33.setText("x/menit");
+        jLabel33.setName("jLabel33"); // NOI18N
+        FormInput.add(jLabel33);
+        jLabel33.setBounds(382, 70, 50, 23);
 
         PanelInput.add(FormInput, java.awt.BorderLayout.CENTER);
 
@@ -1217,6 +1229,10 @@ public final class RMDataCatatanObservasiRanapKebidanan extends javax.swing.JDia
         Valid.pindah(evt,PPV,BtnSimpan);
     }//GEN-LAST:event_VTKeyPressed
 
+    private void BJJActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BJJActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BJJActionPerformed
+
     /**
     * @param args the command line arguments
     */
@@ -1287,11 +1303,12 @@ public final class RMDataCatatanObservasiRanapKebidanan extends javax.swing.JDia
     private widget.Label jLabel24;
     private widget.Label jLabel25;
     private widget.Label jLabel26;
-    private widget.Label jLabel27;
     private widget.Label jLabel28;
     private widget.Label jLabel29;
     private widget.Label jLabel30;
     private widget.Label jLabel31;
+    private widget.Label jLabel32;
+    private widget.Label jLabel33;
     private widget.Label jLabel35;
     private widget.Label jLabel4;
     private widget.Label jLabel6;
