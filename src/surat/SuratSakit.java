@@ -855,7 +855,7 @@ public final class SuratSakit extends javax.swing.JDialog {
                 param.put("hari",LamaSakit.getText());
                 param.put("TanggalAwal",TanggalAwal.getSelectedItem().toString());
                 param.put("TanggalAkhir",TanggalAkhir.getSelectedItem().toString());
-                param.put("dokter",Sequel.cariIsi("select nm_dokter from dokter inner join dpjp_ranap on dpjp_ranap.kd_dokter=dokter.kd_dokter where dpjp_ranap.no_rawat=?",TNoRw.getText()));
+                param.put("dokter",Sequel.cariIsi("select nm_dokter from dokter inner join dpjp_ranap on dpjp_ranap.kd_dokter=dokter.kd_dokter where dpjp_ranap.prioritas = 1 and dpjp_ranap.no_rawat=?",TNoRw.getText()));
                 param.put("nosakit",NoSurat.getText());
                 param.put("namars",akses.getnamars());
                 param.put("alamatrs",akses.getalamatrs());
