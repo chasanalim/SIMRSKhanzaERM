@@ -4779,8 +4779,12 @@ public final class DlgRawatInap extends javax.swing.JDialog {
                 "pemeriksaan_ranap_sbar.assesment,pemeriksaan_ranap_sbar.recommendation,pemeriksaan_ranap_sbar.nip,pegawai.nama,pegawai.jbtn " +
                 "from pasien inner join reg_periksa on reg_periksa.no_rkm_medis=pasien.no_rkm_medis "+
                 "inner join pemeriksaan_ranap_sbar on pemeriksaan_ranap_sbar.no_rawat=reg_periksa.no_rawat "+
-                "inner join pegawai on pemeriksaan_ranap_sbar.nip=pegawai.nik where "+
+                "inner join pegawai on pemeriksaan_ranap_sbar.nip=pegawai.nik "+
+                "LEFT JOIN validasi_pemeriksaan_sbar ON validasi_pemeriksaan_sbar.no_rawat = pemeriksaan_ranap_sbar.no_rawat "+ 
+                "AND validasi_pemeriksaan_sbar.tgl_perawatan = pemeriksaan_ranap_sbar.tgl_perawatan "+ 
+                "AND validasi_pemeriksaan_sbar.jam_rawat = pemeriksaan_ranap_sbar.jam_rawat where "+ 
                 "pemeriksaan_ranap_sbar.tgl_perawatan between ? and ? and reg_periksa.no_rkm_medis like ? "+
+                "AND ISNULL( validasi_pemeriksaan_sbar.status_validasi ) "+
                 (TCari.getText().trim().equals("")?"":"and (pemeriksaan_ranap_sbar.no_rawat like ? or reg_periksa.no_rkm_medis like ? or pasien.nm_pasien like ? or "+
                 "pemeriksaan_ranap_sbar.situation like ? or pemeriksaan_ranap_sbar.background like ? or pemeriksaan_ranap_sbar.assesment like ? or "+
                 "pemeriksaan_ranap_sbar.recommendation like ?)")+
