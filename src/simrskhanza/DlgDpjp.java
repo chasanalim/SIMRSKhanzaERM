@@ -1041,7 +1041,7 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
                     "reg_periksa.tgl_registrasi between ? and ? and reg_periksa.no_rkm_medis like ? and pasien.nm_pasien like ? or "+
                     "reg_periksa.tgl_registrasi between ? and ? and reg_periksa.no_rkm_medis like ? and dokter.kd_dokter like ? or "+
                     "reg_periksa.tgl_registrasi between ? and ? and reg_periksa.no_rkm_medis like ? and dokter.nm_dokter like ? "+
-                    "order by reg_periksa.tgl_registrasi ");
+                    "order by dpjp_ranap.prioritas ");
             try {
                 ps2.setString(1,Valid.SetTgl(DTPCari1.getSelectedItem()+""));
                 ps2.setString(2,Valid.SetTgl(DTPCari2.getSelectedItem()+""));
