@@ -47,7 +47,7 @@ public final class InformasiTarifOperasi extends javax.swing.JDialog {
         this.setLocation(8,1);
         setSize(628,674);
 
-        Object[] row={"Kode Paket","Nama Operasi","Tarif Operasi","Jenis Bayar"};
+        Object[] row={"Kode Paket","Nama Operasi","Tarif Operasi","Jenis Bayar","kelas"};
         tabMode=new DefaultTableModel(null,row){
               @Override public boolean isCellEditable(int rowIndex, int colIndex){return false;}
         };
@@ -62,9 +62,9 @@ public final class InformasiTarifOperasi extends javax.swing.JDialog {
             if(i==0){
                 column.setPreferredWidth(100);
             }else if(i==1){
-                column.setPreferredWidth(490);
+                column.setPreferredWidth(400);
             }else{
-                column.setPreferredWidth(130);
+                column.setPreferredWidth(150);
             }
         }
         tbJnsPerawatan.setDefaultRenderer(Object.class, new WarnaTable());        
@@ -312,7 +312,7 @@ public final class InformasiTarifOperasi extends javax.swing.JDialog {
                            "paket_operasi.sewa_ok+paket_operasi.akomodasi+paket_operasi.bagian_rs+"+
                            "paket_operasi.omloop+paket_operasi.omloop2+paket_operasi.omloop3+"+
                            "paket_operasi.sarpras+paket_operasi.dokter_pjanak+paket_operasi.dokter_umum) as jumlah, "+
-                           "penjab.png_jawab from paket_operasi inner join penjab on penjab.kd_pj=paket_operasi.kd_pj "+
+                           "penjab.png_jawab from paket_operasi inner join penjab on penjab.kd_pj=paket_operasi.kd_pj,paket_operasi.kelas "+
                            "where paket_operasi.status='1' and paket_operasi.kode_paket like ? or "+
                            "paket_operasi.status='1' and paket_operasi.nm_perawatan like ? or "+
                            "paket_operasi.status='1' and penjab.png_jawab like ? order by paket_operasi.kode_paket ");
@@ -325,7 +325,7 @@ public final class InformasiTarifOperasi extends javax.swing.JDialog {
                     tabMode.addRow(new String[]{rs.getString("kode_paket"),
                                    rs.getString("nm_perawatan"),
                                    Valid.SetAngka(rs.getDouble("jumlah")),
-                                   rs.getString("png_jawab")
+                                   rs.getString("png_jawab"),rs.getString("kelas")
                     });
                 }
             }catch(Exception e){
