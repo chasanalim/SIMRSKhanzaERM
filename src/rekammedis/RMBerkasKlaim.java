@@ -213,14 +213,14 @@ public final class RMBerkasKlaim extends javax.swing.JDialog {
         ScrollMenu = new widget.ScrollPane();
         FormMenu = new widget.PanelBiasa();
         chkSemua = new widget.CekBox();
-        chkDiagnosaPenyakit = new widget.CekBox();
-        chkProsedurTindakan = new widget.CekBox();
-        chkSEP = new widget.CekBox();
         chkAsuhanFisioterapi = new widget.CekBox();
         chkBerkasDigital = new widget.CekBox();
-        chkResume = new widget.CekBox();
-        chkPemeriksaanRadiologi = new widget.CekBox();
+        chkDiagnosaPenyakit = new widget.CekBox();
+        chkProsedurTindakan = new widget.CekBox();
         chkPemeriksaanLaborat = new widget.CekBox();
+        chkPemeriksaanRadiologi = new widget.CekBox();
+        chkResume = new widget.CekBox();
+        chkSEP = new widget.CekBox();
         PanelInput = new javax.swing.JPanel();
         ChkInput = new widget.CekBox();
         FormInput = new widget.panelisi();
@@ -466,35 +466,6 @@ public final class RMBerkasKlaim extends javax.swing.JDialog {
         });
         FormMenu.add(chkSemua);
 
-        chkDiagnosaPenyakit.setSelected(true);
-        chkDiagnosaPenyakit.setText("Diagnosa/Penyakit (ICD 10)");
-        chkDiagnosaPenyakit.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        chkDiagnosaPenyakit.setName("chkDiagnosaPenyakit"); // NOI18N
-        chkDiagnosaPenyakit.setOpaque(false);
-        chkDiagnosaPenyakit.setPreferredSize(new java.awt.Dimension(245, 22));
-        FormMenu.add(chkDiagnosaPenyakit);
-
-        chkProsedurTindakan.setSelected(true);
-        chkProsedurTindakan.setText("Prosedur/Tidakan (ICD 9)");
-        chkProsedurTindakan.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        chkProsedurTindakan.setName("chkProsedurTindakan"); // NOI18N
-        chkProsedurTindakan.setOpaque(false);
-        chkProsedurTindakan.setPreferredSize(new java.awt.Dimension(245, 22));
-        FormMenu.add(chkProsedurTindakan);
-
-        chkSEP.setSelected(true);
-        chkSEP.setText("SEP");
-        chkSEP.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        chkSEP.setName("chkSEP"); // NOI18N
-        chkSEP.setOpaque(false);
-        chkSEP.setPreferredSize(new java.awt.Dimension(245, 22));
-        chkSEP.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                chkSEPActionPerformed(evt);
-            }
-        });
-        FormMenu.add(chkSEP);
-
         chkAsuhanFisioterapi.setSelected(true);
         chkAsuhanFisioterapi.setText("Awal Fisioterapi");
         chkAsuhanFisioterapi.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -511,13 +482,29 @@ public final class RMBerkasKlaim extends javax.swing.JDialog {
         chkBerkasDigital.setPreferredSize(new java.awt.Dimension(245, 22));
         FormMenu.add(chkBerkasDigital);
 
-        chkResume.setSelected(true);
-        chkResume.setText("Resume");
-        chkResume.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        chkResume.setName("chkResume"); // NOI18N
-        chkResume.setOpaque(false);
-        chkResume.setPreferredSize(new java.awt.Dimension(245, 22));
-        FormMenu.add(chkResume);
+        chkDiagnosaPenyakit.setSelected(true);
+        chkDiagnosaPenyakit.setText("Diagnosa/Penyakit (ICD 10)");
+        chkDiagnosaPenyakit.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        chkDiagnosaPenyakit.setName("chkDiagnosaPenyakit"); // NOI18N
+        chkDiagnosaPenyakit.setOpaque(false);
+        chkDiagnosaPenyakit.setPreferredSize(new java.awt.Dimension(245, 22));
+        FormMenu.add(chkDiagnosaPenyakit);
+
+        chkProsedurTindakan.setSelected(true);
+        chkProsedurTindakan.setText("Prosedur/Tidakan (ICD 9)");
+        chkProsedurTindakan.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        chkProsedurTindakan.setName("chkProsedurTindakan"); // NOI18N
+        chkProsedurTindakan.setOpaque(false);
+        chkProsedurTindakan.setPreferredSize(new java.awt.Dimension(245, 22));
+        FormMenu.add(chkProsedurTindakan);
+
+        chkPemeriksaanLaborat.setSelected(true);
+        chkPemeriksaanLaborat.setText("Pemeriksaan Laborat");
+        chkPemeriksaanLaborat.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        chkPemeriksaanLaborat.setName("chkPemeriksaanLaborat"); // NOI18N
+        chkPemeriksaanLaborat.setOpaque(false);
+        chkPemeriksaanLaborat.setPreferredSize(new java.awt.Dimension(245, 22));
+        FormMenu.add(chkPemeriksaanLaborat);
 
         chkPemeriksaanRadiologi.setSelected(true);
         chkPemeriksaanRadiologi.setText("Pemeriksaan Radiologi");
@@ -527,13 +514,26 @@ public final class RMBerkasKlaim extends javax.swing.JDialog {
         chkPemeriksaanRadiologi.setPreferredSize(new java.awt.Dimension(245, 22));
         FormMenu.add(chkPemeriksaanRadiologi);
 
-        chkPemeriksaanLaborat.setSelected(true);
-        chkPemeriksaanLaborat.setText("Pemeriksaan Laborat");
-        chkPemeriksaanLaborat.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        chkPemeriksaanLaborat.setName("chkPemeriksaanLaborat"); // NOI18N
-        chkPemeriksaanLaborat.setOpaque(false);
-        chkPemeriksaanLaborat.setPreferredSize(new java.awt.Dimension(245, 22));
-        FormMenu.add(chkPemeriksaanLaborat);
+        chkResume.setSelected(true);
+        chkResume.setText("Resume");
+        chkResume.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        chkResume.setName("chkResume"); // NOI18N
+        chkResume.setOpaque(false);
+        chkResume.setPreferredSize(new java.awt.Dimension(245, 22));
+        FormMenu.add(chkResume);
+
+        chkSEP.setSelected(true);
+        chkSEP.setText("SEP");
+        chkSEP.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        chkSEP.setName("chkSEP"); // NOI18N
+        chkSEP.setOpaque(false);
+        chkSEP.setPreferredSize(new java.awt.Dimension(245, 22));
+        chkSEP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chkSEPActionPerformed(evt);
+            }
+        });
+        FormMenu.add(chkSEP);
 
         ScrollMenu.setViewportView(FormMenu);
 

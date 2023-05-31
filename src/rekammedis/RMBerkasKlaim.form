@@ -492,45 +492,6 @@
                                 <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="chkSemuaItemStateChanged"/>
                               </Events>
                             </Component>
-                            <Component class="widget.CekBox" name="chkDiagnosaPenyakit">
-                              <Properties>
-                                <Property name="selected" type="boolean" value="true"/>
-                                <Property name="text" type="java.lang.String" value="Diagnosa/Penyakit (ICD 10)"/>
-                                <Property name="horizontalAlignment" type="int" value="2"/>
-                                <Property name="name" type="java.lang.String" value="chkDiagnosaPenyakit" noResource="true"/>
-                                <Property name="opaque" type="boolean" value="false"/>
-                                <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-                                  <Dimension value="[245, 22]"/>
-                                </Property>
-                              </Properties>
-                            </Component>
-                            <Component class="widget.CekBox" name="chkProsedurTindakan">
-                              <Properties>
-                                <Property name="selected" type="boolean" value="true"/>
-                                <Property name="text" type="java.lang.String" value="Prosedur/Tidakan (ICD 9)"/>
-                                <Property name="horizontalAlignment" type="int" value="2"/>
-                                <Property name="name" type="java.lang.String" value="chkProsedurTindakan" noResource="true"/>
-                                <Property name="opaque" type="boolean" value="false"/>
-                                <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-                                  <Dimension value="[245, 22]"/>
-                                </Property>
-                              </Properties>
-                            </Component>
-                            <Component class="widget.CekBox" name="chkSEP">
-                              <Properties>
-                                <Property name="selected" type="boolean" value="true"/>
-                                <Property name="text" type="java.lang.String" value="SEP"/>
-                                <Property name="horizontalAlignment" type="int" value="2"/>
-                                <Property name="name" type="java.lang.String" value="chkSEP" noResource="true"/>
-                                <Property name="opaque" type="boolean" value="false"/>
-                                <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-                                  <Dimension value="[245, 22]"/>
-                                </Property>
-                              </Properties>
-                              <Events>
-                                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="chkSEPActionPerformed"/>
-                              </Events>
-                            </Component>
                             <Component class="widget.CekBox" name="chkAsuhanFisioterapi">
                               <Properties>
                                 <Property name="selected" type="boolean" value="true"/>
@@ -555,12 +516,36 @@
                                 </Property>
                               </Properties>
                             </Component>
-                            <Component class="widget.CekBox" name="chkResume">
+                            <Component class="widget.CekBox" name="chkDiagnosaPenyakit">
                               <Properties>
                                 <Property name="selected" type="boolean" value="true"/>
-                                <Property name="text" type="java.lang.String" value="Resume"/>
+                                <Property name="text" type="java.lang.String" value="Diagnosa/Penyakit (ICD 10)"/>
                                 <Property name="horizontalAlignment" type="int" value="2"/>
-                                <Property name="name" type="java.lang.String" value="chkResume" noResource="true"/>
+                                <Property name="name" type="java.lang.String" value="chkDiagnosaPenyakit" noResource="true"/>
+                                <Property name="opaque" type="boolean" value="false"/>
+                                <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                                  <Dimension value="[245, 22]"/>
+                                </Property>
+                              </Properties>
+                            </Component>
+                            <Component class="widget.CekBox" name="chkProsedurTindakan">
+                              <Properties>
+                                <Property name="selected" type="boolean" value="true"/>
+                                <Property name="text" type="java.lang.String" value="Prosedur/Tidakan (ICD 9)"/>
+                                <Property name="horizontalAlignment" type="int" value="2"/>
+                                <Property name="name" type="java.lang.String" value="chkProsedurTindakan" noResource="true"/>
+                                <Property name="opaque" type="boolean" value="false"/>
+                                <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                                  <Dimension value="[245, 22]"/>
+                                </Property>
+                              </Properties>
+                            </Component>
+                            <Component class="widget.CekBox" name="chkPemeriksaanLaborat">
+                              <Properties>
+                                <Property name="selected" type="boolean" value="true"/>
+                                <Property name="text" type="java.lang.String" value="Pemeriksaan Laborat"/>
+                                <Property name="horizontalAlignment" type="int" value="2"/>
+                                <Property name="name" type="java.lang.String" value="chkPemeriksaanLaborat" noResource="true"/>
                                 <Property name="opaque" type="boolean" value="false"/>
                                 <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                                   <Dimension value="[245, 22]"/>
@@ -579,17 +564,32 @@
                                 </Property>
                               </Properties>
                             </Component>
-                            <Component class="widget.CekBox" name="chkPemeriksaanLaborat">
+                            <Component class="widget.CekBox" name="chkResume">
                               <Properties>
                                 <Property name="selected" type="boolean" value="true"/>
-                                <Property name="text" type="java.lang.String" value="Pemeriksaan Laborat"/>
+                                <Property name="text" type="java.lang.String" value="Resume"/>
                                 <Property name="horizontalAlignment" type="int" value="2"/>
-                                <Property name="name" type="java.lang.String" value="chkPemeriksaanLaborat" noResource="true"/>
+                                <Property name="name" type="java.lang.String" value="chkResume" noResource="true"/>
                                 <Property name="opaque" type="boolean" value="false"/>
                                 <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                                   <Dimension value="[245, 22]"/>
                                 </Property>
                               </Properties>
+                            </Component>
+                            <Component class="widget.CekBox" name="chkSEP">
+                              <Properties>
+                                <Property name="selected" type="boolean" value="true"/>
+                                <Property name="text" type="java.lang.String" value="SEP"/>
+                                <Property name="horizontalAlignment" type="int" value="2"/>
+                                <Property name="name" type="java.lang.String" value="chkSEP" noResource="true"/>
+                                <Property name="opaque" type="boolean" value="false"/>
+                                <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                                  <Dimension value="[245, 22]"/>
+                                </Property>
+                              </Properties>
+                              <Events>
+                                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="chkSEPActionPerformed"/>
+                              </Events>
                             </Component>
                           </SubComponents>
                         </Container>
