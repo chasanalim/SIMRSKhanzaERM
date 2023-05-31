@@ -53,7 +53,7 @@ public final class InformasiTarifRanap extends javax.swing.JDialog {
 
         Object[] row={
             "Kode","Nama Tindakan/Perawatan/Tagihan",
-            "Kategori","Tarif","Jenis Bayar","Kamar/Bangsal"
+            "Kategori","Tarif","Jenis Bayar","Kamar/Bangsal","Kelas"
         };
         tabMode=new DefaultTableModel(null,row){
               @Override public boolean isCellEditable(int rowIndex, int colIndex){return false;}
@@ -414,8 +414,8 @@ public final class InformasiTarifRanap extends javax.swing.JDialog {
         Valid.tabelKosong(tabMode);
         try{    
             ps=koneksi.prepareStatement("select jns_perawatan_inap.kd_jenis_prw,jns_perawatan_inap.nm_perawatan,kategori_perawatan.nm_kategori,"+
-                       "jns_perawatan_inap.total_byrdr,penjab.png_jawab,bangsal.nm_bangsal "+
-                       "from jns_perawatan_inap inner join kategori_perawatan inner join penjab inner join bangsal  "+
+                       "jns_perawatan_inap.total_byrdr,penjab.png_jawab,bangsal.nm_bangsal,jns_perawatan_inap.kelas "+
+                       "from jns_perawatan_inap inner join kategori_perawatan inner join penjab inner join bangsal "+
                        "on jns_perawatan_inap.kd_kategori=kategori_perawatan.kd_kategori "+
                        "and bangsal.kd_bangsal=jns_perawatan_inap.kd_bangsal "+
                        "and penjab.kd_pj=jns_perawatan_inap.kd_pj where "+
@@ -438,7 +438,8 @@ public final class InformasiTarifRanap extends javax.swing.JDialog {
                                    rs.getString(3),
                                    Valid.SetAngka(rs.getDouble(4)),
                                    rs.getString(5),
-                                   rs.getString(6)});
+                                   rs.getString(6),
+                                   rs.getString(7)});
                 }
             } catch (Exception e) {
                 System.out.println(e);
@@ -460,7 +461,7 @@ public final class InformasiTarifRanap extends javax.swing.JDialog {
         Valid.tabelKosong(tabMode2);
         try{    
             ps=koneksi.prepareStatement("select jns_perawatan_inap.kd_jenis_prw,jns_perawatan_inap.nm_perawatan,kategori_perawatan.nm_kategori,"+
-                       "jns_perawatan_inap.total_byrpr,penjab.png_jawab,bangsal.nm_bangsal "+
+                       "jns_perawatan_inap.total_byrpr,penjab.png_jawab,bangsal.nm_bangsal,jns_perawatan_inap.kelas "+
                        "from jns_perawatan_inap inner join kategori_perawatan inner join penjab inner join bangsal  "+
                        "on jns_perawatan_inap.kd_kategori=kategori_perawatan.kd_kategori "+
                        "and bangsal.kd_bangsal=jns_perawatan_inap.kd_bangsal "+
@@ -484,7 +485,8 @@ public final class InformasiTarifRanap extends javax.swing.JDialog {
                                    rs.getString(3),
                                    Valid.SetAngka(rs.getDouble(4)),
                                    rs.getString(5),
-                                   rs.getString(6)});
+                                   rs.getString(6),
+                                   rs.getString(7)});
                 }
             } catch (Exception e) {
                 System.out.println(e);
@@ -506,7 +508,7 @@ public final class InformasiTarifRanap extends javax.swing.JDialog {
         Valid.tabelKosong(tabMode3);
         try{    
             ps=koneksi.prepareStatement("select jns_perawatan_inap.kd_jenis_prw,jns_perawatan_inap.nm_perawatan,kategori_perawatan.nm_kategori,"+
-                       "jns_perawatan_inap.total_byrdrpr,penjab.png_jawab,bangsal.nm_bangsal "+
+                       "jns_perawatan_inap.total_byrdrpr,penjab.png_jawab,bangsal.nm_bangsal,jns_perawatan_inap.kelas "+
                        "from jns_perawatan_inap inner join kategori_perawatan inner join penjab inner join bangsal  "+
                        "on jns_perawatan_inap.kd_kategori=kategori_perawatan.kd_kategori "+
                        "and bangsal.kd_bangsal=jns_perawatan_inap.kd_bangsal "+
@@ -530,7 +532,8 @@ public final class InformasiTarifRanap extends javax.swing.JDialog {
                                    rs.getString(3),
                                    Valid.SetAngka(rs.getDouble(4)),
                                    rs.getString(5),
-                                   rs.getString(6)});
+                                   rs.getString(6),
+                                   rs.getString(7)});
                 }
             } catch (Exception e) {
                 System.out.println(e);
