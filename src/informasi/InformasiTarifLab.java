@@ -34,7 +34,7 @@ public final class InformasiTarifLab extends javax.swing.JDialog {
         this.setLocation(8,1);
         setSize(628,674);
 
-        Object[] row={"Kode Periksa","Nama Pemeriksaan","Total Biaya Periksa","Jenis Bayar"};
+        Object[] row={"Kode Periksa","Nama Pemeriksaan","Total Biaya Periksa","Jenis Bayar","Kelas"};
         tabMode=new DefaultTableModel(null,row){
               @Override public boolean isCellEditable(int rowIndex, int colIndex){return false;}
         };
@@ -44,14 +44,14 @@ public final class InformasiTarifLab extends javax.swing.JDialog {
         tbJnsPerawatan.setPreferredScrollableViewportSize(new Dimension(500,500));
         tbJnsPerawatan.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
 
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < 5; i++) {
             TableColumn column = tbJnsPerawatan.getColumnModel().getColumn(i);
             if(i==0){
                 column.setPreferredWidth(100);
             }else if(i==1){
-                column.setPreferredWidth(400);
+                column.setPreferredWidth(300);
             }else{
-                column.setPreferredWidth(120);
+                column.setPreferredWidth(150);
             }
         }
         tbJnsPerawatan.setDefaultRenderer(Object.class, new WarnaTable());
@@ -293,7 +293,7 @@ public final class InformasiTarifLab extends javax.swing.JDialog {
         Valid.tabelKosong(tabMode);
         try{
             ps=koneksi.prepareStatement(
-                    "select jns_perawatan_lab.kd_jenis_prw,jns_perawatan_lab.nm_perawatan,jns_perawatan_lab.total_byr,penjab.png_jawab "+
+                    "select jns_perawatan_lab.kd_jenis_prw,jns_perawatan_lab.nm_perawatan,jns_perawatan_lab.total_byr,penjab.png_jawab,jns_perawatan_lab.kelas "+
                     "from jns_perawatan_lab inner join penjab on penjab.kd_pj=jns_perawatan_lab.kd_pj where jns_perawatan_lab.status='1' and "+
                     " (jns_perawatan_lab.kd_jenis_prw like ? or  jns_perawatan_lab.nm_perawatan like ? or "+
                     " penjab.png_jawab like ? or jns_perawatan_lab.total_byr like ?)  "+
@@ -306,7 +306,7 @@ public final class InformasiTarifLab extends javax.swing.JDialog {
                 rs=ps.executeQuery();
                 while(rs.next()){
                     tabMode.addRow(new String[]{
-                        rs.getString(1),rs.getString(2),Valid.SetAngka(rs.getDouble(3)),rs.getString(4)
+                        rs.getString(1),rs.getString(2),Valid.SetAngka(rs.getDouble(3)),rs.getString(4),rs.getString(5)
                     });
                     ps2=koneksi.prepareStatement(
                             "select template_laboratorium.Pemeriksaan,template_laboratorium.biaya_item from template_laboratorium "+
@@ -316,7 +316,7 @@ public final class InformasiTarifLab extends javax.swing.JDialog {
                         rs2=ps2.executeQuery();
                         while(rs2.next()){
                             tabMode.addRow(new String[]{
-                                "","   "+rs2.getString(1),Valid.SetAngka(rs2.getDouble(2)),rs.getString(4)
+                                "","   "+rs2.getString(1),Valid.SetAngka(rs2.getDouble(2)),rs.getString(4),rs.getString(5)
                             });
                         }
                     } catch (Exception e) {
