@@ -36,7 +36,7 @@ public final class InformasiTarifRadiologi extends javax.swing.JDialog {
         this.setLocation(8,1);
         setSize(628,674);
 
-        Object[] row={"Kode Periksa","Nama Pemeriksaan","Total Biaya Periksa","Jenis Bayar"};
+        Object[] row={"Kode Periksa","Nama Pemeriksaan","Total Biaya Periksa","Jenis Bayar","Kelas"};
         tabMode=new DefaultTableModel(null,row){
               @Override public boolean isCellEditable(int rowIndex, int colIndex){return false;}
         };
@@ -51,9 +51,9 @@ public final class InformasiTarifRadiologi extends javax.swing.JDialog {
             if(i==0){
                 column.setPreferredWidth(100);
             }else if(i==1){
-                column.setPreferredWidth(400);
+                column.setPreferredWidth(300);
             }else{
-                column.setPreferredWidth(120);
+                column.setPreferredWidth(150);
             }
         }
         tbJnsPerawatan.setDefaultRenderer(Object.class, new WarnaTable());
@@ -296,7 +296,7 @@ public final class InformasiTarifRadiologi extends javax.swing.JDialog {
         try{
             ps=koneksi.prepareStatement(
                         "select jns_perawatan_radiologi.kd_jenis_prw,jns_perawatan_radiologi.nm_perawatan,jns_perawatan_radiologi.total_byr,penjab.png_jawab "+
-                        "from jns_perawatan_radiologi inner join penjab on penjab.kd_pj=jns_perawatan_radiologi.kd_pj where jns_perawatan_radiologi.status='1' and "+
+                        "from jns_perawatan_radiologi inner join penjab on penjab.kd_pj=jns_perawatan_radiologi.kd_pj,jns_perawatan_radiologi.kelas where jns_perawatan_radiologi.status='1' and "+
                         " (jns_perawatan_radiologi.kd_jenis_prw like ? or  jns_perawatan_radiologi.nm_perawatan like ? or "+
                         " penjab.png_jawab like ? or jns_perawatan_radiologi.total_byr like ?)  "+
                         "order by jns_perawatan_radiologi.kd_jenis_prw");
@@ -310,7 +310,7 @@ public final class InformasiTarifRadiologi extends javax.swing.JDialog {
                     tabMode.addRow(new String[]{rs.getString(1),
                                    rs.getString(2),
                                    Valid.SetAngka(rs.getDouble(3)),
-                                   rs.getString(4)});
+                                   rs.getString(4),rs.getString(5)});
                 }
             } catch (Exception e) {
                 System.out.println(e);
