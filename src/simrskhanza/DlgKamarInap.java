@@ -12273,7 +12273,7 @@ private void MnRujukMasukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-
                 if(tbKamIn.getValueAt(tbKamIn.getSelectedRow(),0).toString().equals("")){
                     try {
                         psanak=koneksi.prepareStatement(
-                            "select pasien.no_rkm_medis,pasien.nm_pasien,ranap_gabung.no_rawat2,concat(reg_periksa.umurdaftar,' ',reg_periksa.sttsumur)as umur,pasien.no_peserta, "+
+                            "select reg_periksa.no_rawat,pasien.no_rkm_medis,pasien.nm_pasien,ranap_gabung.no_rawat2,concat(reg_periksa.umurdaftar,' ',reg_periksa.sttsumur)as umur,pasien.no_peserta, "+
                             "concat(pasien.alamatpj,', ',pasien.kelurahanpj,', ',pasien.kecamatanpj,', ',pasien.kabupatenpj) as alamat "+
                             "from reg_periksa inner join pasien inner join ranap_gabung on "+
                             "pasien.no_rkm_medis=reg_periksa.no_rkm_medis and ranap_gabung.no_rawat2=reg_periksa.no_rawat where ranap_gabung.no_rawat=?");
@@ -12286,7 +12286,7 @@ private void MnRujukMasukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-
                                 form.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
                                 form.setLocationRelativeTo(internalFrame1);
                                 form.emptTeks();
-                                form.setNoRm(rs2.getString("no_rkm_medis"),rs2.getString("nm_pasien"));
+                                form.setNoRm(rs2.getString("no_rawat"),rs2.getString("no_rkm_medis"),rs2.getString("nm_pasien"));
                                 form.setVisible(true);
                             }else{
                                 JOptionPane.showMessageDialog(null,"Maaf, Silahkan anda pilih dulu pasien...!!!");
@@ -12311,7 +12311,7 @@ private void MnRujukMasukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-
                     form.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
                     form.setLocationRelativeTo(internalFrame1);
                     form.emptTeks();
-                    form.setNoRm(TNoRM.getText(),TPasien.getText());
+                    form.setNoRm(TNoRwCari.getText(),TNoRM.getText(),TPasien.getText());
                     form.setVisible(true);
                 }
             }
@@ -15108,7 +15108,7 @@ private void MnRujukMasukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-
         
         key=kmr+" ";
         if(!TCari.getText().equals("")){
-            key= kmr+"dpjp_ranap.prioritas = 1 and (kamar_inap.no_rawat like '%"+TCari.getText().trim()+"%' or reg_periksa.no_rkm_medis like '%"+TCari.getText().trim()+"%' or pasien.nm_pasien like '%"+TCari.getText().trim()+"%' or "+
+            key= kmr+" and (kamar_inap.no_rawat like '%"+TCari.getText().trim()+"%' or reg_periksa.no_rkm_medis like '%"+TCari.getText().trim()+"%' or pasien.nm_pasien like '%"+TCari.getText().trim()+"%' or "+
                "concat(pasien.alamat,', ',kelurahan.nm_kel,', ',kecamatan.nm_kec,', ',kabupaten.nm_kab) like '%"+TCari.getText().trim()+"%' or kamar_inap.kd_kamar like '%"+TCari.getText().trim()+"%' or "+
                "bangsal.nm_bangsal like '%"+TCari.getText().trim()+"%' or kamar_inap.diagnosa_awal like '%"+TCari.getText().trim()+"%' or kamar_inap.diagnosa_akhir like '%"+TCari.getText().trim()+"%' or "+
                "kamar_inap.tgl_masuk like '%"+TCari.getText().trim()+"%' or dokter.nm_dokter like '%"+TCari.getText().trim()+"%' or kamar_inap.stts_pulang like '%"+TCari.getText().trim()+"%' or "+
