@@ -1174,7 +1174,7 @@ public final class SuratSakitPihak2 extends javax.swing.JDialog {
                 param.put("propinsirs",akses.getpropinsirs());
                 param.put("kontakrs",akses.getkontakrs());
                 param.put("emailrs",akses.getemailrs());
-                param.put("dokter",Sequel.cariIsi("select nm_dokter from dokter inner join dpjp_ranap on dpjp_ranap.kd_dokter=dokter.kd_dokter where dpjp_ranap.prioritas = 1 dpjp_ranap.no_rawat=?",TNoRw.getText()));
+                param.put("dokter",Sequel.cariIsi("select nm_dokter from dokter inner join dpjp_ranap on dpjp_ranap.kd_dokter=dokter.kd_dokter where dpjp_ranap.prioritas = 1 and dpjp_ranap.no_rawat=?",TNoRw.getText()));
                 param.put("umurpj",Sequel.cariIsi("select umur from suratsakitpihak2 where no_rawat=?",TNoRw.getText()));               
                 param.put("alamatpj",Sequel.cariIsi("select alamat from suratsakitpihak2 where no_rawat=?",TNoRw.getText()));               
                 param.put("pekerjaanpj",Sequel.cariIsi("select pekerjaan from suratsakitpihak2 where no_rawat=?",TNoRw.getText()));              
