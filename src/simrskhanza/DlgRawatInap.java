@@ -4789,6 +4789,8 @@ public final class DlgRawatInap extends javax.swing.JDialog {
                             (!TRecommendation.getText().trim().equals(""))){
                         if(KdPeg2.getText().trim().equals("")||TPegawai2.getText().trim().equals("")){
                             Valid.textKosong(KdPeg2,"Dokter/Paramedis masih kosong...!!");
+                        }else if(KdPeg3.getText().trim().equals("")||TPegawai3.getText().trim().equals("")){
+                            Valid.textKosong(KdPeg3,"Dokter DPJP masih kosong...!!");
                         }else{
                             if(akses.getkode().equals("Admin Utama")){
                                 Sequel.menyimpan("pemeriksaan_ranap_sbar","?,?,?,?,?,?,?,?,?","Data",9,new String[]{
@@ -4850,7 +4852,7 @@ public final class DlgRawatInap extends javax.swing.JDialog {
                 "LEFT JOIN validasi_pemeriksaan_sbar ON validasi_pemeriksaan_sbar.no_rawat = pemeriksaan_ranap_sbar.no_rawat "+ 
                 "AND validasi_pemeriksaan_sbar.tgl_perawatan = pemeriksaan_ranap_sbar.tgl_perawatan "+ 
                 "AND validasi_pemeriksaan_sbar.jam_rawat = pemeriksaan_ranap_sbar.jam_rawat where "+ 
-                "dokter.nm_dokter='"+TPegawai3.getText()+"' and pemeriksaan_ranap_sbar.tgl_perawatan between ? and ? and reg_periksa.no_rkm_medis like ? "+
+                "dokter.nm_dokter='"+TPegawai2.getText()+"' and pemeriksaan_ranap_sbar.tgl_perawatan between ? and ? and reg_periksa.no_rkm_medis like ? "+
                 "AND ISNULL( validasi_pemeriksaan_sbar.status_validasi ) "+
                 (TCari.getText().trim().equals("")?"":"and (pemeriksaan_ranap_sbar.no_rawat like ? or reg_periksa.no_rkm_medis like ? or pasien.nm_pasien like ? or "+
                 "pemeriksaan_ranap_sbar.situation like ? or pemeriksaan_ranap_sbar.background like ? or pemeriksaan_ranap_sbar.assesment like ? or "+
@@ -8714,11 +8716,11 @@ private void BtnEditKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
         if(akses.getjml2()>=1){
             KdPeg.setText(akses.getkode());
             KdPeg2.setText(akses.getkode());
-            KdPeg3.setText(akses.getkode());
+//            KdPeg3.setText(akses.getkode());
             Sequel.cariIsi("select pegawai.nama from pegawai where pegawai.nik=?",TPegawai,KdPeg.getText()); 
             Sequel.cariIsi("select pegawai.jbtn from pegawai where pegawai.nik=?",Jabatan,KdPeg.getText());
             Sequel.cariIsi("select pegawai.nama from pegawai where pegawai.nik=?",TPegawai2,KdPeg2.getText());
-            Sequel.cariIsi("select pegawai.nama from pegawai where pegawai.nik=?",TPegawai3,KdPeg3.getText()); 
+//            Sequel.cariIsi("select pegawai.nama from pegawai where pegawai.nik=?",TPegawai3,KdPeg3.getText()); 
             Sequel.cariIsi("select pegawai.jbtn from pegawai where pegawai.nik=?",Jabatan1,KdPeg2.getText());
         }
     }
