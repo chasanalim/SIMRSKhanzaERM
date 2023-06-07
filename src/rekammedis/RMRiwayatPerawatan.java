@@ -13430,7 +13430,15 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                         while(rs2.next()){
                               String bagian="",stylee="",gbrverif="";
 
-                                
+                                                                
+//                                bagian=Sequel.cariIsi("SELECT bidang FROM pegawai WHERE nik='"+rs2.getString("nip")+"'");
+//                                
+//                                if(bagian.equals("Medis")){
+//                                    stylee=" style=' background-color:#f7d4e8 '";
+//                                }else{
+//                                    stylee=" style=' background-color:#ccffcc '";
+//                                }
+
                                 if(Sequel.cariInteger("select count(validasi_pemeriksaan_sbar.nik_validator) " +
                                         "from pemeriksaan_ranap_sbar LEFT JOIN validasi_pemeriksaan_sbar ON validasi_pemeriksaan_sbar.no_rawat = pemeriksaan_ranap_sbar.no_rawat AND validasi_pemeriksaan_sbar.tgl_perawatan = pemeriksaan_ranap_sbar.tgl_perawatan AND validasi_pemeriksaan_sbar.jam_rawat = pemeriksaan_ranap_sbar.jam_rawat inner join pegawai on pemeriksaan_ranap_sbar.nip=pegawai.nik inner join departemen on pegawai.departemen=departemen.dep_id LEFT JOIN pegawai AS namavalidator ON validasi_pemeriksaan_sbar.nik_validator=namavalidator.nik where pemeriksaan_ranap_sbar.no_rawat='"+rs.getString("no_rawat")+"' AND validasi_pemeriksaan_sbar.nik_validator='"+rs2.getString("nik_validator")+"'" +
                                         "order by pemeriksaan_ranap_sbar.tgl_perawatan,pemeriksaan_ranap_sbar.jam_rawat")>0){
