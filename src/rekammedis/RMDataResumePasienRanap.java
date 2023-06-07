@@ -875,7 +875,7 @@ public final class RMDataResumePasienRanap extends javax.swing.JDialog {
         panelGlass9.add(jLabel19);
 
         DTPCari1.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "17-05-2023" }));
+        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "29-05-2023" }));
         DTPCari1.setDisplayFormat("dd-MM-yyyy");
         DTPCari1.setName("DTPCari1"); // NOI18N
         DTPCari1.setOpaque(false);
@@ -889,7 +889,7 @@ public final class RMDataResumePasienRanap extends javax.swing.JDialog {
         panelGlass9.add(jLabel21);
 
         DTPCari2.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "17-05-2023" }));
+        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "29-05-2023" }));
         DTPCari2.setDisplayFormat("dd-MM-yyyy");
         DTPCari2.setName("DTPCari2"); // NOI18N
         DTPCari2.setOpaque(false);
@@ -1742,7 +1742,7 @@ public final class RMDataResumePasienRanap extends javax.swing.JDialog {
         KetDilanjutkan.setBounds(236, 1081, 270, 23);
 
         Kontrol.setForeground(new java.awt.Color(50, 70, 50));
-        Kontrol.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "17-05-2023 08:31:20" }));
+        Kontrol.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "29-05-2023 08:11:48" }));
         Kontrol.setDisplayFormat("dd-MM-yyyy HH:mm:ss");
         Kontrol.setName("Kontrol"); // NOI18N
         Kontrol.setOpaque(false);
@@ -2773,6 +2773,32 @@ public final class RMDataResumePasienRanap extends javax.swing.JDialog {
                         }
                     }
                     
+                    ps2=koneksi.prepareStatement(
+                        "select if(kamar_inap.tgl_keluar='0000-00-00',current_date(),kamar_inap.tgl_keluar) as tgl_keluar,"+
+                        "if(kamar_inap.jam_keluar='00:00:00',current_time(),kamar_inap.jam_keluar) as jam_keluar,kamar_inap.kd_kamar,bangsal.nm_bangsal "+
+                        "from reg_periksa INNER JOIN ranap_gabung ON ranap_gabung.no_rawat2 = reg_periksa.no_rawat "+
+                        "INNER JOIN kamar_inap ON kamar_inap.no_rawat = ranap_gabung.no_rawat INNER JOIN kamar ON kamar_inap.kd_kamar = kamar.kd_kamar INNER JOIN bangsal ON kamar.kd_bangsal = bangsal.kd_bangsal "+
+                        "where reg_periksa.no_rawat=? order by kamar_inap.tgl_keluar desc,kamar_inap.jam_keluar desc limit 1");
+                    try {
+                        ps2.setString(1,rs.getString("no_rawat"));
+                        rs2=ps2.executeQuery();
+                        if(rs2.next()){
+                            kodekamar=rs2.getString("kd_kamar");
+                            namakamar=rs2.getString("nm_bangsal");
+                            tglkeluar=rs2.getString("tgl_keluar");
+                            jamkeluar=rs2.getString("jam_keluar");
+                        }
+                    } catch (Exception e) {
+                        System.out.println("Notif : "+e);
+                    } finally{
+                        if(rs2!=null){
+                            rs2.close();
+                        }
+                        if(ps2!=null){
+                            ps2.close();
+                        }
+                    }
+                    
                     tabMode.addRow(new String[]{
                         rs.getString("no_rawat"),rs.getString("no_rkm_medis"),rs.getString("nm_pasien"),rs.getString("kd_dokter"),rs.getString("nm_dokter"),
                         rs.getString("kodepengirim"),rs.getString("pengirim"),kodekamar,namakamar,rs.getString("tgl_registrasi"),rs.getString("jam_reg"),tglkeluar,
@@ -2953,11 +2979,63 @@ public final class RMDataResumePasienRanap extends javax.swing.JDialog {
         }
     }
     
+    private void isRawat2() {
+        try {
+            ps=koneksi.prepareStatement(
+                    "select reg_periksa.no_rkm_medis,pasien.nm_pasien,reg_periksa.tgl_registrasi,reg_periksa.jam_reg,"+
+                    "reg_periksa.kd_dokter,dokter.nm_dokter,reg_periksa.kd_pj,penjab.png_jawab,"+
+                    "if(kamar_inap.tgl_keluar='0000-00-00',current_date(),kamar_inap.tgl_keluar) as tgl_keluar,"+
+                    "if(kamar_inap.jam_keluar='00:00:00',current_time(),kamar_inap.jam_keluar) as jam_keluar,"+
+                    "kamar_inap.diagnosa_awal,kamar_inap.kd_kamar,bangsal.nm_bangsal from reg_periksa "+
+                    "inner join pasien on pasien.no_rkm_medis=reg_periksa.no_rkm_medis "+
+                    "inner join dokter on dokter.kd_dokter=reg_periksa.kd_dokter "+
+                    "inner join penjab on penjab.kd_pj=reg_periksa.kd_pj "+
+                    "inner join ranap_gabung ON pasien.no_rkm_medis = reg_periksa.no_rkm_medis "+
+                    "and ranap_gabung.no_rawat2 = reg_periksa.no_rawat "+
+                    "inner join kamar_inap ON kamar_inap.no_rawat = ranap_gabung.no_rawat "+
+                    "inner join kamar on kamar_inap.kd_kamar=kamar.kd_kamar "+
+                    "inner join bangsal on kamar.kd_bangsal=bangsal.kd_bangsal "+
+                    "where reg_periksa.no_rawat=? order by kamar_inap.tgl_keluar desc,kamar_inap.jam_keluar desc limit 1");
+            try {
+                ps.setString(1,TNoRw.getText());
+                rs=ps.executeQuery();
+                if(rs.next()){
+                    DTPCari1.setDate(rs.getDate("tgl_registrasi"));
+                    TNoRM.setText(rs.getString("no_rkm_medis"));
+                    TPasien.setText(rs.getString("nm_pasien"));
+                    Masuk.setText(rs.getString("tgl_registrasi"));
+                    JamMasuk.setText(rs.getString("jam_reg"));
+                    Keluar.setText(rs.getString("tgl_keluar"));
+                    JamKeluar.setText(rs.getString("jam_keluar"));
+                    DiagnosaAwal.setText(rs.getString("diagnosa_awal"));
+                    KdPj.setText(rs.getString("kd_pj"));
+                    CaraBayar.setText(rs.getString("png_jawab"));
+                    KdRuang.setText(rs.getString("kd_kamar"));
+                    NmRuang.setText(rs.getString("nm_bangsal"));
+                    KodeDokterPengirim.setText(rs.getString("kd_dokter"));
+                    NamaDokterPengirim.setText(rs.getString("nm_dokter"));
+                }
+            } catch (Exception e) {
+                System.out.println("Notif : "+e);
+            } finally{
+                if(rs!=null){
+                    rs.close();
+                }
+                if(ps!=null){
+                    ps.close();
+                }
+            }
+        } catch (Exception e) {
+            System.out.println("Notif : "+e);
+        }
+    }
+    
     public void setNoRm(String norwt, Date tgl2) {
         TNoRw.setText(norwt);
         TCari.setText(norwt);
         DTPCari2.setDate(tgl2);    
-        isRawat();              
+        isRawat();  
+        isRawat2(); 
         ChkInput.setSelected(true);
         isForm();
         CaraKeluar.requestFocus();
