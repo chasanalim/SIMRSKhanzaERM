@@ -270,6 +270,8 @@ public final class RMSkriningNutrisiDewasa extends javax.swing.JDialog {
         jLabel73 = new widget.Label();
         TotalHasil = new widget.TextBox();
         jLabel44 = new widget.Label();
+        jLabel45 = new widget.Label();
+        SG3 = new widget.ComboBox();
         ChkInput = new widget.CekBox();
 
         jPopupMenu1.setName("jPopupMenu1"); // NOI18N
@@ -299,7 +301,7 @@ public final class RMSkriningNutrisiDewasa extends javax.swing.JDialog {
 
         Scroll.setName("Scroll"); // NOI18N
         Scroll.setOpaque(true);
-        Scroll.setPreferredSize(new java.awt.Dimension(452, 200));
+        Scroll.setPreferredSize(new java.awt.Dimension(452, 150));
 
         tbObat.setToolTipText("Silahkan klik untuk memilih data yang mau diedit ataupun dihapus");
         tbObat.setComponentPopupMenu(jPopupMenu1);
@@ -458,7 +460,7 @@ public final class RMSkriningNutrisiDewasa extends javax.swing.JDialog {
         panelGlass9.add(jLabel19);
 
         DTPCari1.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "07-11-2022" }));
+        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "14-11-2022" }));
         DTPCari1.setDisplayFormat("dd-MM-yyyy");
         DTPCari1.setName("DTPCari1"); // NOI18N
         DTPCari1.setOpaque(false);
@@ -472,7 +474,7 @@ public final class RMSkriningNutrisiDewasa extends javax.swing.JDialog {
         panelGlass9.add(jLabel21);
 
         DTPCari2.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "07-11-2022" }));
+        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "14-11-2022" }));
         DTPCari2.setDisplayFormat("dd-MM-yyyy");
         DTPCari2.setName("DTPCari2"); // NOI18N
         DTPCari2.setOpaque(false);
@@ -538,7 +540,7 @@ public final class RMSkriningNutrisiDewasa extends javax.swing.JDialog {
 
         FormInput.setBackground(new java.awt.Color(250, 255, 245));
         FormInput.setName("FormInput"); // NOI18N
-        FormInput.setPreferredSize(new java.awt.Dimension(100, 225));
+        FormInput.setPreferredSize(new java.awt.Dimension(100, 250));
         FormInput.setLayout(null);
 
         jLabel4.setText("No.Rawat :");
@@ -568,7 +570,7 @@ public final class RMSkriningNutrisiDewasa extends javax.swing.JDialog {
         TPasien.setBounds(336, 10, 285, 23);
 
         Tanggal.setForeground(new java.awt.Color(50, 70, 50));
-        Tanggal.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "07-11-2022" }));
+        Tanggal.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "14-11-2022" }));
         Tanggal.setDisplayFormat("dd-MM-yyyy");
         Tanggal.setName("Tanggal"); // NOI18N
         Tanggal.setOpaque(false);
@@ -942,11 +944,32 @@ public final class RMSkriningNutrisiDewasa extends javax.swing.JDialog {
         TotalHasil.setBounds(729, 210, 60, 23);
 
         jLabel44.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel44.setText("Bila Skor >= 2, Pasien Beresiko Malnutrisi, Konsul Ke Ahli Gizi");
+        jLabel44.setText("Bila Skor >= 2 dan atau Pasien dengan diagnosis / kondisi khusus dilakukan pengkajian lanjut oleh Ahli Gizi");
         jLabel44.setFont(new java.awt.Font("Tahoma", 2, 11)); // NOI18N
         jLabel44.setName("jLabel44"); // NOI18N
         FormInput.add(jLabel44);
-        jLabel44.setBounds(69, 210, 440, 23);
+        jLabel44.setBounds(70, 270, 560, 23);
+
+        jLabel45.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel45.setText("3. Pasien dengan diagnosa Khusus : penyakit DM / Ginjal / Hati / Jantung / Paru dll.");
+        jLabel45.setName("jLabel45"); // NOI18N
+        FormInput.add(jLabel45);
+        jLabel45.setBounds(70, 240, 440, 23);
+
+        SG3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Tidak", "Ya" }));
+        SG3.setName("SG3"); // NOI18N
+        SG3.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                SG3ItemStateChanged(evt);
+            }
+        });
+        SG3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                SG3KeyPressed(evt);
+            }
+        });
+        FormInput.add(SG3);
+        SG3.setBounds(530, 240, 130, 23);
 
         PanelInput.add(FormInput, java.awt.BorderLayout.CENTER);
 
@@ -1011,10 +1034,10 @@ public final class RMSkriningNutrisiDewasa extends javax.swing.JDialog {
         }else if(SpO2.getText().trim().equals("")){
             Valid.textKosong(SpO2,"SpO2");
         }else{
-            if(Sequel.menyimpantf("skrining_nutrisi_dewasa","?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?","Data",16,new String[]{
+            if(Sequel.menyimpantf("skrining_nutrisi_dewasa","?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?","Data",17,new String[]{
                 TNoRw.getText(),Valid.SetTgl(Tanggal.getSelectedItem()+"")+" "+Jam.getSelectedItem()+":"+Menit.getSelectedItem()+":"+Detik.getSelectedItem(),
                 TD.getText(),HR.getText(),RR.getText(),Suhu.getText(),BB.getText(),TBPB.getText(),SpO2.getText(),Alergi.getText(),SG1.getSelectedItem().toString(),
-                Nilai1.getSelectedItem().toString(),SG2.getSelectedItem().toString(),Nilai2.getSelectedItem().toString(),TotalHasil.getText(),KdPetugas.getText()
+                Nilai1.getSelectedItem().toString(),SG2.getSelectedItem().toString(),Nilai2.getSelectedItem().toString(),SG3.getSelectedItem().toString(),TotalHasil.getText(),KdPetugas.getText()
             })==true){
                 tampil();
                 emptTeks();
@@ -1365,6 +1388,14 @@ public final class RMSkriningNutrisiDewasa extends javax.swing.JDialog {
         Valid.pindah(evt,Suhu,Alergi);
     }//GEN-LAST:event_SpO2KeyPressed
 
+    private void SG3ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_SG3ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SG3ItemStateChanged
+
+    private void SG3KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SG3KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SG3KeyPressed
+
     /**
     * @param args the command line arguments
     */
@@ -1411,6 +1442,7 @@ public final class RMSkriningNutrisiDewasa extends javax.swing.JDialog {
     private widget.TextBox RR;
     private widget.ComboBox SG1;
     private widget.ComboBox SG2;
+    private widget.ComboBox SG3;
     private widget.ScrollPane Scroll;
     private widget.TextBox SpO2;
     private widget.TextBox Suhu;
@@ -1448,6 +1480,7 @@ public final class RMSkriningNutrisiDewasa extends javax.swing.JDialog {
     private widget.Label jLabel4;
     private widget.Label jLabel43;
     private widget.Label jLabel44;
+    private widget.Label jLabel45;
     private widget.Label jLabel6;
     private widget.Label jLabel69;
     private widget.Label jLabel7;
@@ -1597,7 +1630,7 @@ public final class RMSkriningNutrisiDewasa extends javax.swing.JDialog {
     private void isForm(){
         if(ChkInput.isSelected()==true){
             ChkInput.setVisible(false);
-            PanelInput.setPreferredSize(new Dimension(WIDTH,263));
+            PanelInput.setPreferredSize(new Dimension(WIDTH,313));
             FormInput.setVisible(true);      
             ChkInput.setVisible(true);
         }else if(ChkInput.isSelected()==false){           
