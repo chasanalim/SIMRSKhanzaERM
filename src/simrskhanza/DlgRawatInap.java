@@ -7709,6 +7709,7 @@ private void BtnEditKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
         }else{
             this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
             DlgSBAR soap=new DlgSBAR(null,false);
+            soap.isRawat(TNoRw.getText());
             soap.setNoRawat(TNoRw.getText(),TNoRw.getText());
             soap.setSize(internalFrame1.getWidth(),internalFrame1.getHeight());
             soap.setLocationRelativeTo(internalFrame1);
@@ -8417,8 +8418,33 @@ private void BtnEditKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
         }
     }
 
-    private void isRawat(){
+    public void isRawat(){
         Sequel.cariIsi("select reg_periksa.no_rkm_medis from reg_periksa where reg_periksa.no_rawat=? ",TNoRM,TNoRw.getText());
+        try {
+            ps=koneksi.prepareStatement(
+                    "select reg_periksa.no_rkm_medis,pasien.nm_pasien,reg_periksa.tgl_registrasi "+
+                    "from reg_periksa "+
+                    "inner join pasien on pasien.no_rkm_medis=reg_periksa.no_rkm_medis "+
+                    "where reg_periksa.no_rawat=? limit 1");
+            try {
+                ps.setString(1,TNoRw.getText());
+                rs=ps.executeQuery();
+                if(rs.next()){
+                    DTPCari1.setDate(rs.getDate("tgl_registrasi"));
+                }
+            } catch (Exception e) {
+                System.out.println("Notif : "+e);
+            } finally{
+                if(rs!=null){
+                    rs.close();
+                }
+                if(ps!=null){
+                    ps.close();
+                }
+            }
+        } catch (Exception e) {
+            System.out.println("Notif : "+e);
+        }
     }
 
     private void isPsien(){
@@ -8494,8 +8520,8 @@ private void BtnEditKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
 
         isRawat();
         isPsien();
-        DTPCari1.setDate(awal);
-        DTPCari2.setDate(akhir);
+//        DTPCari1.setDate(awal);
+//        DTPCari2.setDate(akhir);
         TCari.setText(norwt);
         ChkInput.setSelected(true);
         isForm();
