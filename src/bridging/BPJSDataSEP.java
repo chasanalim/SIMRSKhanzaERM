@@ -5961,6 +5961,31 @@ public final class BPJSDataSEP extends javax.swing.JDialog {
     private void isRawat() {
         Sequel.cariIsi("select reg_periksa.no_rkm_medis from reg_periksa where reg_periksa.no_rawat=? ",TNoRM,TNoRw.getText());  
         Catatan.setText("-");
+        try {
+            ps=koneksi.prepareStatement(
+                    "select reg_periksa.no_rkm_medis,pasien.nm_pasien,reg_periksa.tgl_registrasi "+
+                    "from reg_periksa "+
+                    "inner join pasien on pasien.no_rkm_medis=reg_periksa.no_rkm_medis "+
+                    "where reg_periksa.no_rawat=? limit 1");
+            try {
+                ps.setString(1,TNoRw.getText());
+                rs=ps.executeQuery();
+                if(rs.next()){
+                    DTPCari1.setDate(rs.getDate("tgl_registrasi"));
+                }
+            } catch (Exception e) {
+                System.out.println("Notif : "+e);
+            } finally{
+                if(rs!=null){
+                    rs.close();
+                }
+                if(ps!=null){
+                    ps.close();
+                }
+            }
+        } catch (Exception e) {
+            System.out.println("Notif : "+e);
+        }
     }
     
     private void emptTeks(){
