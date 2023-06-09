@@ -6016,23 +6016,25 @@ public class DlgKamarInap extends javax.swing.JDialog {
                 getData();
             } catch (java.lang.NullPointerException e) {
             }
-            
             if(evt.getClickCount()==1){
+//                norawatdipilih=tbKamIn.getValueAt(tbKamIn.getSelectedRow(),0).toString();
+//                if(norawatdipilih.equals("")){
 //                i=tbKamIn.getSelectedColumn();
 //                    if(i==2){
 //                        if(validasicatatan.equals("Yes")){
 //                            this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
-//                            LabelCatatan.setText(Sequel.cariIsi("select catatan_pasien.catatan from catatan_pasien where catatan_pasien.no_rkm_medis=?",TNoRMCari.getText()));
+//                             LabelCatatan.setText(Sequel.cariIsi("select catatan_pasien.catatan from catatan_pasien where catatan_pasien.no_rkm_medis=?",TNoRMCari.getText()));
 //                            if(!LabelCatatan.getText().equals("")){
-//                                DlgCatatan.setLocationRelativeTo(Scroll);
+////                                DlgCatatan.setLocationRelativeTo(Scroll);
+//                                DlgCatatan.setLocation(200,100);
 //                                DlgCatatan.setVisible(true);
 //                            }else{
-//                                DlgCatatan.setLocationRelativeTo(Scroll);
-//                                DlgCatatan.setVisible(true);
+//                                DlgCatatan.setVisible(false);
 //                            }                            
 //                            this.setCursor(Cursor.getDefaultCursor());
 //                        }  
 //                    }      
+//                }
             }
             if(evt.getClickCount()==2){
                 i=tbKamIn.getSelectedColumn();
@@ -6320,6 +6322,7 @@ private void MnRawatInapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-F
                                         }else{
                                             akses.setkdbangsal(bangsal);
                                         }
+                                      billing.rawatinap.isRawat();
                                       billing.rawatinap.isCek();
                                       billing.rawatinap.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
                                       billing.rawatinap.setLocationRelativeTo(internalFrame1);  
@@ -6363,6 +6366,7 @@ private void MnRawatInapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-F
                     }else{
                         akses.setkdbangsal(bangsal);
                     }
+                    billing.rawatinap.isRawat();
                     billing.rawatinap.isCek();
                     billing.rawatinap.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
                     billing.rawatinap.setLocationRelativeTo(internalFrame1);  
