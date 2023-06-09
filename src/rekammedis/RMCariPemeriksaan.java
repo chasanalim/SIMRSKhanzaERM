@@ -343,7 +343,7 @@ public final class RMCariPemeriksaan extends javax.swing.JDialog {
                 rs=ps.executeQuery();
                 while(rs.next()){
                     tabMode.addRow(new String[] {
-                        rs.getString(1),rs.getString(2),rs.getString(3)+", tensi:"+rs.getString(4)+", suhu:"+rs.getString(5)+", rr:"+rs.getString(6)+", nadi:"+rs.getString(7)+", spo2:"+rs.getString(7)+", gcs:"+rs.getString(8)
+                        rs.getString(1),rs.getString(2),rs.getString(3)+", tensi:"+rs.getString(4)+", suhu:"+rs.getString(5)+", rr:"+rs.getString(6)+", nadi:"+rs.getString(7)+", spo2:"+rs.getString(8)+", gcs:"+rs.getString(9)
                     });
                 }
             }catch(Exception ex){
@@ -373,7 +373,7 @@ public final class RMCariPemeriksaan extends javax.swing.JDialog {
                 rs=ps.executeQuery();
                 while(rs.next()){
                     tabMode.addRow(new String[] {
-                         rs.getString(1),rs.getString(2),rs.getString(3)+", tensi:"+rs.getString(4)+", suhu:"+rs.getString(5)+", rr:"+rs.getString(6)+", nadi:"+rs.getString(7)+", spo2:"+rs.getString(7)+", gcs:"+rs.getString(8)
+                         rs.getString(1),rs.getString(2),rs.getString(3)+", tensi:"+rs.getString(4)+", suhu:"+rs.getString(5)+", rr:"+rs.getString(6)+", nadi:"+rs.getString(7)+", spo2:"+rs.getString(8)+", gcs:"+rs.getString(9)
                     });
                 }
             }catch(Exception ex){
