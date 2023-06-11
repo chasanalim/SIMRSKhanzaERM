@@ -944,6 +944,7 @@ public final class DlgKamar extends javax.swing.JDialog {
                 TCari.requestFocus();
             }else if(evt.getKeyCode()==KeyEvent.VK_SPACE){
                 akses.setform(asalform);
+                dispose();
             }
         }
 }//GEN-LAST:event_tbKamarKeyPressed
