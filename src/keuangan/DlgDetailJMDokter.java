@@ -1325,7 +1325,7 @@ private void BtnCariKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
                                         "sum(rawat_jl_drpr.biaya_rawat) as total "+
                                         "from rawat_jl_drpr inner join jns_perawatan on jns_perawatan.kd_jenis_prw=rawat_jl_drpr.kd_jenis_prw "+
                                         "inner join reg_periksa on rawat_jl_drpr.no_rawat=reg_periksa.no_rawat where "+
-                                        "rawat_jl_drpr.tarif_tindakandr>0 and rawat_jl_drpr.kd_dokter=? and reg_periksa.tgl_registrasi between ? and ? and rawat_jl_drpr.no_rawat=? "+
+                                        "rawat_jl_drpr.kd_dokter=? and reg_periksa.tgl_registrasi between ? and ? and rawat_jl_drpr.no_rawat=? "+
                                         "group by rawat_jl_drpr.kd_jenis_prw order by jns_perawatan.nm_perawatan");   
                                 try {
                                     pstindakanralandrpr.setString(1,rs.getString("kd_dokter"));
@@ -2967,7 +2967,7 @@ private void BtnCariKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
                                         "sum(rawat_jl_drpr.biaya_rawat) as total "+
                                         "from rawat_jl_drpr inner join jns_perawatan on jns_perawatan.kd_jenis_prw=rawat_jl_drpr.kd_jenis_prw "+
                                         "inner join reg_periksa on rawat_jl_drpr.no_rawat=reg_periksa.no_rawat where "+
-                                        "rawat_jl_drpr.tarif_tindakandr>0 and rawat_jl_drpr.kd_dokter=? and reg_periksa.tgl_registrasi between ? and ? and rawat_jl_drpr.no_rawat=? "+
+                                        "rawat_jl_drpr.kd_dokter=? and reg_periksa.tgl_registrasi between ? and ? and rawat_jl_drpr.no_rawat=? "+
                                         "group by rawat_jl_drpr.kd_jenis_prw order by jns_perawatan.nm_perawatan");   
                                 try {
                                     pstindakanralandrpr.setString(1,rs.getString("kd_dokter"));
@@ -5224,7 +5224,7 @@ private void BtnCariKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
                                         "sum(rawat_jl_drpr.biaya_rawat) as total "+
                                         "from rawat_jl_drpr inner join jns_perawatan on jns_perawatan.kd_jenis_prw=rawat_jl_drpr.kd_jenis_prw "+
                                         "inner join reg_periksa on rawat_jl_drpr.no_rawat=reg_periksa.no_rawat where "+
-                                        "rawat_jl_drpr.tarif_tindakandr>0 and rawat_jl_drpr.kd_dokter=? and reg_periksa.tgl_registrasi between ? and ? and rawat_jl_drpr.no_rawat=? "+
+                                        "rawat_jl_drpr.kd_dokter=? and reg_periksa.tgl_registrasi between ? and ? and rawat_jl_drpr.no_rawat=? "+
                                         "group by rawat_jl_drpr.kd_jenis_prw order by jns_perawatan.nm_perawatan");   
                                 try {
                                     pstindakanralandrpr.setString(1,rs.getString("kd_dokter"));
