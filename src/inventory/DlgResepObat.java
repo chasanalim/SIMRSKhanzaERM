@@ -1492,7 +1492,8 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
             param.put("kotars",akses.getkabupatenrs());
             param.put("propinsirs",akses.getpropinsirs());
             param.put("kontakrs",akses.getkontakrs());
-            param.put("emailrs",akses.getemailrs());   
+            param.put("emailrs",akses.getemailrs());
+            param.put("penanggung",Sequel.cariIsi("select png_jawab from penjab where kd_pj=?",Sequel.cariIsi("select kd_pj from reg_periksa where no_rawat=?",TNoRw.getText())));
             param.put("logo",Sequel.cariGambar("select setting.logo from setting")); 
             if(Sequel.cariInteger(
                     "select count(*) from resep_obat inner join "+
@@ -1705,7 +1706,8 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
             param.put("kotars",akses.getkabupatenrs());
             param.put("propinsirs",akses.getpropinsirs());
             param.put("kontakrs",akses.getkontakrs());
-            param.put("emailrs",akses.getemailrs());   
+            param.put("emailrs",akses.getemailrs());
+            param.put("penanggung",Sequel.cariIsi("select png_jawab from penjab where kd_pj=?",Sequel.cariIsi("select kd_pj from reg_periksa where no_rawat=?",TNoRw.getText())));
             param.put("logo",Sequel.cariGambar("select setting.logo from setting")); 
             if(Sequel.cariInteger(
                     "select count(*) from resep_obat inner join "+
@@ -1766,7 +1768,8 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
             param.put("kotars",akses.getkabupatenrs());
             param.put("propinsirs",akses.getpropinsirs());
             param.put("kontakrs",akses.getkontakrs());
-            param.put("emailrs",akses.getemailrs());   
+            param.put("emailrs",akses.getemailrs()); 
+            param.put("penanggung",Sequel.cariIsi("select png_jawab from penjab where kd_pj=?",Sequel.cariIsi("select kd_pj from reg_periksa where no_rawat=?",TNoRw.getText())));
             param.put("logo",Sequel.cariGambar("select setting.logo from setting")); 
             if(Sequel.cariInteger(
                     "select count(*) from resep_obat inner join "+
