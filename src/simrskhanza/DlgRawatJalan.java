@@ -1191,7 +1191,7 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
             public void windowClosed(WindowEvent e) {
                 if(akses.getform().equals("DlgRawatJalan")){
                     if(pegawai2.getTable().getSelectedRow()!= -1){  
-                        if(TabRawat.getSelectedIndex()==6){
+                        if(TabRawat.getSelectedIndex()==9){
                         KdPeg2.setText(pegawai2.getTable().getValueAt(pegawai2.getTable().getSelectedRow(),0).toString());
                         TPegawai2.setText(pegawai2.getTable().getValueAt(pegawai2.getTable().getSelectedRow(),1).toString());
                         Jabatan1.setText(pegawai2.getTable().getValueAt(pegawai2.getTable().getSelectedRow(),3).toString());
@@ -1218,9 +1218,9 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
             public void windowClosing(WindowEvent e) {}
             @Override
             public void windowClosed(WindowEvent e) {
-                if(akses.getform().equals("DlgRawatInap")){
+                if(akses.getform().equals("DlgRawatJalan")){
                     if(pegawai3.getTable().getSelectedRow()!= -1){  
-                        if(TabRawat.getSelectedIndex()==6){
+                        if(TabRawat.getSelectedIndex()==9){
                         KdPeg3.setText(pegawai3.getTable().getValueAt(pegawai3.getTable().getSelectedRow(),0).toString());
                         TPegawai3.setText(pegawai3.getTable().getValueAt(pegawai3.getTable().getSelectedRow(),1).toString());
                         KdPeg3.requestFocus();                    
@@ -6658,7 +6658,7 @@ private void BtnEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST
                             TCari.requestFocus();
                         }
                     }   break;
-                case 8:
+                case 9:
                    if((!TSituation.getText().trim().equals(""))||(!TBackground.getText().trim().equals(""))||
                             (!TAssesment.getText().trim().equals(""))||(!TRecommendation.getText().trim().equals(""))){
                         if(tbPemeriksaanSbar.getSelectedRow()>-1){
@@ -7442,7 +7442,7 @@ private void BtnEditKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
     private void BtnSeekDokter3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnSeekDokter3ActionPerformed
         akses.setform("DlgRawatJalan");
         dokter.emptTeks();
-        dokter.isCek();
+//        dokter.isCek();
         dokter.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
         dokter.setLocationRelativeTo(internalFrame1);
         dokter.setVisible(true);
@@ -8479,7 +8479,7 @@ private void BtnEditKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
     }//GEN-LAST:event_TPegawai2ActionPerformed
 
     private void BtnSeekPegawai2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnSeekPegawai2ActionPerformed
-        akses.setform("DlgRawatInap");
+        akses.setform("DlgRawatJalan");
         pegawai2.emptTeks();
         pegawai2.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
         pegawai2.setLocationRelativeTo(internalFrame1);
@@ -8507,7 +8507,7 @@ private void BtnEditKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
     }//GEN-LAST:event_BtnVerifSbarActionPerformed
 
     private void BtnSeekPegawai3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnSeekPegawai3ActionPerformed
-        akses.setform("DlgRawatInap");
+        akses.setform("DlgRawatJalan");
         pegawai3.emptTeks();
         pegawai3.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
         pegawai3.setLocationRelativeTo(internalFrame1);
@@ -9573,11 +9573,14 @@ private void BtnEditKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
         
         if(akses.getjml2()>=1){
             KdPeg.setText(akses.getkode());
+            KdPeg2.setText(akses.getkode());
             Sequel.cariIsi("select pegawai.nama from pegawai where pegawai.nik=?",TPegawai,KdPeg.getText()); 
             Sequel.cariIsi("select pegawai.jbtn from pegawai where pegawai.nik=?",Jabatan,KdPeg.getText());
             KdPegPRMRJ.setText(akses.getkode());
             Sequel.cariIsi("select pegawai.nama from pegawai where pegawai.nik=?",TPegawaiPRMRJ,KdPegPRMRJ.getText()); 
             Sequel.cariIsi("select pegawai.jbtn from pegawai where pegawai.nik=?",JabatanPRMRJ,KdPegPRMRJ.getText());
+            Sequel.cariIsi("select pegawai.nama from pegawai where pegawai.nik=?",TPegawai2,KdPeg2.getText());
+            Sequel.cariIsi("select pegawai.jbtn from pegawai where pegawai.nik=?",Jabatan1,KdPeg2.getText());
         }
     }
 
