@@ -5990,6 +5990,21 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
                     }
                     tampilCatatan();
                 }   break;
+            case 9:
+                if(tabModePemeriksaanSbar.getRowCount()==0){
+                    JOptionPane.showMessageDialog(null, "Maaf, data sudah habis...!!!");
+                    TNoRw.requestFocus();
+                    
+                }else {
+                    for(i=0;i<tbPemeriksaanSbar.getRowCount();i++){
+                        if(tbPemeriksaanSbar.getValueAt(i,0).toString().equals("true")){
+                            Sequel.queryu("delete from pemeriksaan_ranap_sbar where no_rawat='"+tbPemeriksaanSbar.getValueAt(i,1).toString()+
+                                    "' and tgl_perawatan='"+tbPemeriksaanSbar.getValueAt(i,4).toString()+
+                                    "' and jam_rawat='"+tbPemeriksaanSbar.getValueAt(i,5).toString()+"' ");
+                        }
+                    }
+                    tampilPemeriksaanSbar();
+                }   break;
             default:
                 break;
         }
@@ -6443,6 +6458,18 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
                 if(akses.getcatatan_perawatan()==true){
                     tampilCatatan();
                 } 
+                break;
+            case 8:
+                TCari.setPreferredSize(new Dimension(240,23));
+                TCariPasien.setText(TNoRM.getText());
+                    tampilPRMRJ();
+                break;
+            case 9:
+                TCari.setPreferredSize(new Dimension(240,23));
+                TCariPasien.setText(TNoRM.getText());
+               
+                    tampilPemeriksaanSbar();
+                
                 break;
             default:
                 break;
