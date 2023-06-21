@@ -5990,6 +5990,21 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
                     }
                     tampilCatatan();
                 }   break;
+            case 8:
+                if(TabModePRMRJ.getRowCount()==0){
+                    JOptionPane.showMessageDialog(null, "Maaf, data sudah habis...!!!");
+                    TNoRw.requestFocus();
+                    
+                }else {
+                    for(i=0;i<tbPRMRJ.getRowCount();i++){
+                        if(tbPRMRJ.getValueAt(i,0).toString().equals("true")){
+                            Sequel.queryu("delete from prmrj where no_rawat='"+tbPRMRJ.getValueAt(i,1).toString()+
+                                    "' and tgl_perawatan='"+tbPRMRJ.getValueAt(i,4).toString()+
+                                    "' and jam_rawat='"+tbPRMRJ.getValueAt(i,5).toString()+"' ");
+                        }
+                    }
+                    tampilPRMRJ();
+                }   break;
             case 9:
                 if(tabModePemeriksaanSbar.getRowCount()==0){
                     JOptionPane.showMessageDialog(null, "Maaf, data sudah habis...!!!");
@@ -9189,6 +9204,32 @@ private void BtnEditKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
     private void isRawat(){
         Sequel.cariIsi("select reg_periksa.no_rkm_medis from reg_periksa where reg_periksa.no_rawat=? ",TNoRM,TNoRw.getText());
         TCariPasien.setText(TNoRM.getText());
+        Sequel.cariIsi("select reg_periksa.no_rkm_medis from reg_periksa where reg_periksa.no_rawat=? ",TNoRM,TNoRw.getText());
+        try {
+            ps=koneksi.prepareStatement(
+                    "select reg_periksa.no_rkm_medis,pasien.nm_pasien,reg_periksa.tgl_registrasi "+
+                    "from reg_periksa "+
+                    "inner join pasien on pasien.no_rkm_medis=reg_periksa.no_rkm_medis "+
+                    "where reg_periksa.no_rawat=? limit 1");
+            try {
+                ps.setString(1,TNoRw.getText());
+                rs=ps.executeQuery();
+                if(rs.next()){
+                    DTPCari1.setDate(rs.getDate("tgl_registrasi"));
+                }
+            } catch (Exception e) {
+                System.out.println("Notif : "+e);
+            } finally{
+                if(rs!=null){
+                    rs.close();
+                }
+                if(ps!=null){
+                    ps.close();
+                }
+            }
+        } catch (Exception e) {
+            System.out.println("Notif : "+e);
+        }
     }
 
     private void isPsien(){
@@ -10611,6 +10652,12 @@ private void BtnEditKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
                     tampilCatatan();
                 }  
                 break;
+            case 8:
+                tampilPRMRJ();
+                break;
+            case 9:
+                tampilPemeriksaanSbar();
+                break;    
             default:
                 break;
         }
