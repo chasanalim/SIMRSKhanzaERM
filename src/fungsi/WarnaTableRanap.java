@@ -36,14 +36,16 @@ public class WarnaTableRanap extends DefaultTableCellRenderer {
 //            component.setForeground(new Color(255,255,255));
         }
         
-        if (table.getValueAt(row, statbayar).toString().equals("Sudah Bayar")){
-            component.setBackground(new Color(129, 217, 252));
-//            component.setForeground(new Color(255,255,255));
-        }
         if (table.getValueAt(row, 22).toString().contains(".")){
             component.setBackground(new Color(255,153,204));
 //            component.setForeground(new Color(255,255,255));
         }
+        
+        if (table.getValueAt(row, statbayar).toString().equals("Sudah Bayar")){
+            component.setBackground(new Color(129, 217, 252));
+//            component.setForeground(new Color(255,255,255));
+        }
+        
         
        
         return component;
