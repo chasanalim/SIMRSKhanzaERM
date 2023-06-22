@@ -1951,6 +1951,8 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
             param.put("norawat",TNoRw.getText());
             param.put("pasien",TPasien.getText());
             param.put("norm",TNoRm.getText());
+            param.put("alamat",Sequel.cariIsi("select pasien.alamat from pasien inner join reg_periksa on pasien.no_rkm_medis=reg_periksa.no_rkm_medis where reg_periksa.no_rawat=?",Sequel.cariIsi("select no_rawat from reg_periksa where no_rawat=?",TNoRw.getText())));
+            param.put("no_tlp",Sequel.cariIsi("select pasien.no_tlp from pasien inner join reg_periksa on pasien.no_rkm_medis=reg_periksa.no_rkm_medis where reg_periksa.no_rawat=?",Sequel.cariIsi("select no_rawat from reg_periksa where no_rawat=?",TNoRw.getText())));
             param.put("peresep",NmDokter.getText());
             param.put("noresep",NoResep.getText());
             finger=Sequel.cariIsi("select sha1(sidikjari) from sidikjari inner join pegawai on pegawai.id=sidikjari.id where pegawai.nik=?",KdDokter.getText());
