@@ -323,7 +323,7 @@
                     </Property>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                       <StringArray count="1">
-                        <StringItem index="0" value="20-04-2023"/>
+                        <StringItem index="0" value="23-06-2023"/>
                       </StringArray>
                     </Property>
                     <Property name="displayFormat" type="java.lang.String" value="dd-MM-yyyy"/>
@@ -351,7 +351,7 @@
                     </Property>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                       <StringArray count="1">
-                        <StringItem index="0" value="20-04-2023"/>
+                        <StringItem index="0" value="23-06-2023"/>
                       </StringArray>
                     </Property>
                     <Property name="displayFormat" type="java.lang.String" value="dd-MM-yyyy"/>
@@ -559,7 +559,7 @@
                         </Property>
                         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                           <StringArray count="1">
-                            <StringItem index="0" value="20-04-2023"/>
+                            <StringItem index="0" value="23-06-2023"/>
                           </StringArray>
                         </Property>
                         <Property name="displayFormat" type="java.lang.String" value="dd-MM-yyyy"/>
@@ -1851,32 +1851,12 @@
                         </Constraint>
                       </Constraints>
                     </Component>
-                    <Component class="widget.ComboBox" name="SkalaResiko9">
-                      <Properties>
-                        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                          <StringArray count="2">
-                            <StringItem index="0" value="Ya"/>
-                            <StringItem index="1" value="Tidak"/>
-                          </StringArray>
-                        </Property>
-                        <Property name="name" type="java.lang.String" value="SkalaResiko9" noResource="true"/>
-                      </Properties>
-                      <Events>
-                        <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="SkalaResiko9ItemStateChanged"/>
-                        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="SkalaResiko9KeyPressed"/>
-                      </Events>
-                      <Constraints>
-                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                          <AbsoluteConstraints x="360" y="510" width="60" height="18"/>
-                        </Constraint>
-                      </Constraints>
-                    </Component>
                     <Component class="widget.ComboBox" name="SkalaResiko30">
                       <Properties>
                         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                           <StringArray count="2">
-                            <StringItem index="0" value="Ya"/>
-                            <StringItem index="1" value="Tidak"/>
+                            <StringItem index="0" value="Tidak"/>
+                            <StringItem index="1" value="Ya"/>
                           </StringArray>
                         </Property>
                         <Property name="name" type="java.lang.String" value="SkalaResiko30" noResource="true"/>
@@ -1887,43 +1867,43 @@
                       </Events>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                          <AbsoluteConstraints x="360" y="510" width="60" height="18"/>
+                        </Constraint>
+                      </Constraints>
+                    </Component>
+                    <Component class="widget.ComboBox" name="SkalaResiko51">
+                      <Properties>
+                        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                          <StringArray count="2">
+                            <StringItem index="0" value="Tidak"/>
+                            <StringItem index="1" value="Ya"/>
+                          </StringArray>
+                        </Property>
+                        <Property name="name" type="java.lang.String" value="SkalaResiko51" noResource="true"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="SkalaResiko51ItemStateChanged"/>
+                        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="SkalaResiko51KeyPressed"/>
+                      </Events>
+                      <Constraints>
+                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                           <AbsoluteConstraints x="360" y="490" width="60" height="18"/>
                         </Constraint>
                       </Constraints>
                     </Component>
-                    <Component class="widget.ComboBox" name="SkalaResiko31">
+                    <Component class="widget.ComboBox" name="SkalaResiko52">
                       <Properties>
                         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                           <StringArray count="2">
-                            <StringItem index="0" value="Ya"/>
-                            <StringItem index="1" value="Tidak"/>
+                            <StringItem index="0" value="Tidak"/>
+                            <StringItem index="1" value="Ya"/>
                           </StringArray>
                         </Property>
-                        <Property name="name" type="java.lang.String" value="SkalaResiko31" noResource="true"/>
+                        <Property name="name" type="java.lang.String" value="SkalaResiko52" noResource="true"/>
                       </Properties>
                       <Events>
-                        <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="SkalaResiko31ItemStateChanged"/>
-                        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="SkalaResiko31KeyPressed"/>
-                      </Events>
-                      <Constraints>
-                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                          <AbsoluteConstraints x="360" y="530" width="60" height="18"/>
-                        </Constraint>
-                      </Constraints>
-                    </Component>
-                    <Component class="widget.ComboBox" name="SkalaResiko32">
-                      <Properties>
-                        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                          <StringArray count="2">
-                            <StringItem index="0" value="Ya"/>
-                            <StringItem index="1" value="Tidak"/>
-                          </StringArray>
-                        </Property>
-                        <Property name="name" type="java.lang.String" value="SkalaResiko32" noResource="true"/>
-                      </Properties>
-                      <Events>
-                        <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="SkalaResiko32ItemStateChanged"/>
-                        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="SkalaResiko32KeyPressed"/>
+                        <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="SkalaResiko52ItemStateChanged"/>
+                        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="SkalaResiko52KeyPressed"/>
                       </Events>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -1931,39 +1911,39 @@
                         </Constraint>
                       </Constraints>
                     </Component>
-                    <Component class="widget.ComboBox" name="SkalaResiko33">
+                    <Component class="widget.ComboBox" name="SkalaResiko53">
                       <Properties>
                         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                           <StringArray count="2">
-                            <StringItem index="0" value="Ya"/>
-                            <StringItem index="1" value="Tidak"/>
+                            <StringItem index="0" value="Tidak"/>
+                            <StringItem index="1" value="Ya"/>
                           </StringArray>
                         </Property>
-                        <Property name="name" type="java.lang.String" value="SkalaResiko33" noResource="true"/>
+                        <Property name="name" type="java.lang.String" value="SkalaResiko53" noResource="true"/>
                       </Properties>
                       <Events>
-                        <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="SkalaResiko33ItemStateChanged"/>
-                        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="SkalaResiko33KeyPressed"/>
+                        <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="SkalaResiko53ItemStateChanged"/>
+                        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="SkalaResiko53KeyPressed"/>
                       </Events>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                          <AbsoluteConstraints x="360" y="570" width="60" height="18"/>
+                          <AbsoluteConstraints x="360" y="530" width="60" height="18"/>
                         </Constraint>
                       </Constraints>
                     </Component>
-                    <Component class="widget.ComboBox" name="SkalaResiko34">
+                    <Component class="widget.ComboBox" name="SkalaResiko54">
                       <Properties>
                         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                           <StringArray count="2">
-                            <StringItem index="0" value="Ya"/>
-                            <StringItem index="1" value="Tidak"/>
+                            <StringItem index="0" value="Tidak"/>
+                            <StringItem index="1" value="Ya"/>
                           </StringArray>
                         </Property>
-                        <Property name="name" type="java.lang.String" value="SkalaResiko34" noResource="true"/>
+                        <Property name="name" type="java.lang.String" value="SkalaResiko54" noResource="true"/>
                       </Properties>
                       <Events>
-                        <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="SkalaResiko34ItemStateChanged"/>
-                        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="SkalaResiko34KeyPressed"/>
+                        <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="SkalaResiko54ItemStateChanged"/>
+                        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="SkalaResiko54KeyPressed"/>
                       </Events>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -1971,79 +1951,39 @@
                         </Constraint>
                       </Constraints>
                     </Component>
-                    <Component class="widget.ComboBox" name="SkalaResiko35">
+                    <Component class="widget.ComboBox" name="SkalaResiko55">
                       <Properties>
                         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                           <StringArray count="2">
-                            <StringItem index="0" value="Ya"/>
-                            <StringItem index="1" value="Tidak"/>
+                            <StringItem index="0" value="Tidak"/>
+                            <StringItem index="1" value="Ya"/>
                           </StringArray>
                         </Property>
-                        <Property name="name" type="java.lang.String" value="SkalaResiko35" noResource="true"/>
+                        <Property name="name" type="java.lang.String" value="SkalaResiko55" noResource="true"/>
                       </Properties>
                       <Events>
-                        <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="SkalaResiko35ItemStateChanged"/>
-                        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="SkalaResiko35KeyPressed"/>
+                        <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="SkalaResiko55ItemStateChanged"/>
+                        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="SkalaResiko55KeyPressed"/>
                       </Events>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                          <AbsoluteConstraints x="880" y="590" width="60" height="18"/>
+                          <AbsoluteConstraints x="360" y="570" width="60" height="18"/>
                         </Constraint>
                       </Constraints>
                     </Component>
-                    <Component class="widget.ComboBox" name="SkalaResiko36">
+                    <Component class="widget.ComboBox" name="SkalaResiko56">
                       <Properties>
                         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                           <StringArray count="2">
-                            <StringItem index="0" value="Ya"/>
-                            <StringItem index="1" value="Tidak"/>
+                            <StringItem index="0" value="Tidak"/>
+                            <StringItem index="1" value="Ya"/>
                           </StringArray>
                         </Property>
-                        <Property name="name" type="java.lang.String" value="SkalaResiko36" noResource="true"/>
+                        <Property name="name" type="java.lang.String" value="SkalaResiko56" noResource="true"/>
                       </Properties>
                       <Events>
-                        <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="SkalaResiko36ItemStateChanged"/>
-                        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="SkalaResiko36KeyPressed"/>
-                      </Events>
-                      <Constraints>
-                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                          <AbsoluteConstraints x="880" y="570" width="60" height="18"/>
-                        </Constraint>
-                      </Constraints>
-                    </Component>
-                    <Component class="widget.ComboBox" name="SkalaResiko37">
-                      <Properties>
-                        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                          <StringArray count="2">
-                            <StringItem index="0" value="Ya"/>
-                            <StringItem index="1" value="Tidak"/>
-                          </StringArray>
-                        </Property>
-                        <Property name="name" type="java.lang.String" value="SkalaResiko37" noResource="true"/>
-                      </Properties>
-                      <Events>
-                        <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="SkalaResiko37ItemStateChanged"/>
-                        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="SkalaResiko37KeyPressed"/>
-                      </Events>
-                      <Constraints>
-                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                          <AbsoluteConstraints x="880" y="490" width="60" height="18"/>
-                        </Constraint>
-                      </Constraints>
-                    </Component>
-                    <Component class="widget.ComboBox" name="SkalaResiko38">
-                      <Properties>
-                        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                          <StringArray count="2">
-                            <StringItem index="0" value="Ya"/>
-                            <StringItem index="1" value="Tidak"/>
-                          </StringArray>
-                        </Property>
-                        <Property name="name" type="java.lang.String" value="SkalaResiko38" noResource="true"/>
-                      </Properties>
-                      <Events>
-                        <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="SkalaResiko38ItemStateChanged"/>
-                        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="SkalaResiko38KeyPressed"/>
+                        <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="SkalaResiko56ItemStateChanged"/>
+                        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="SkalaResiko56KeyPressed"/>
                       </Events>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -2051,39 +1991,39 @@
                         </Constraint>
                       </Constraints>
                     </Component>
-                    <Component class="widget.ComboBox" name="SkalaResiko39">
+                    <Component class="widget.ComboBox" name="SkalaResiko57">
                       <Properties>
                         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                           <StringArray count="2">
-                            <StringItem index="0" value="Ya"/>
-                            <StringItem index="1" value="Tidak"/>
+                            <StringItem index="0" value="Tidak"/>
+                            <StringItem index="1" value="Ya"/>
                           </StringArray>
                         </Property>
-                        <Property name="name" type="java.lang.String" value="SkalaResiko39" noResource="true"/>
+                        <Property name="name" type="java.lang.String" value="SkalaResiko57" noResource="true"/>
                       </Properties>
                       <Events>
-                        <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="SkalaResiko39ItemStateChanged"/>
-                        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="SkalaResiko39KeyPressed"/>
+                        <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="SkalaResiko57ItemStateChanged"/>
+                        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="SkalaResiko57KeyPressed"/>
                       </Events>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                          <AbsoluteConstraints x="880" y="530" width="60" height="18"/>
+                          <AbsoluteConstraints x="880" y="490" width="60" height="18"/>
                         </Constraint>
                       </Constraints>
                     </Component>
-                    <Component class="widget.ComboBox" name="SkalaResiko40">
+                    <Component class="widget.ComboBox" name="SkalaResiko58">
                       <Properties>
                         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                           <StringArray count="2">
-                            <StringItem index="0" value="Ya"/>
-                            <StringItem index="1" value="Tidak"/>
+                            <StringItem index="0" value="Tidak"/>
+                            <StringItem index="1" value="Ya"/>
                           </StringArray>
                         </Property>
-                        <Property name="name" type="java.lang.String" value="SkalaResiko40" noResource="true"/>
+                        <Property name="name" type="java.lang.String" value="SkalaResiko58" noResource="true"/>
                       </Properties>
                       <Events>
-                        <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="SkalaResiko40ItemStateChanged"/>
-                        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="SkalaResiko40KeyPressed"/>
+                        <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="SkalaResiko58ItemStateChanged"/>
+                        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="SkalaResiko58KeyPressed"/>
                       </Events>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -2091,59 +2031,79 @@
                         </Constraint>
                       </Constraints>
                     </Component>
-                    <Component class="widget.ComboBox" name="SkalaResiko41">
+                    <Component class="widget.ComboBox" name="SkalaResiko59">
                       <Properties>
                         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                           <StringArray count="2">
-                            <StringItem index="0" value="Ya"/>
-                            <StringItem index="1" value="Tidak"/>
+                            <StringItem index="0" value="Tidak"/>
+                            <StringItem index="1" value="Ya"/>
                           </StringArray>
                         </Property>
-                        <Property name="name" type="java.lang.String" value="SkalaResiko41" noResource="true"/>
+                        <Property name="name" type="java.lang.String" value="SkalaResiko59" noResource="true"/>
                       </Properties>
                       <Events>
-                        <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="SkalaResiko41ItemStateChanged"/>
-                        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="SkalaResiko41KeyPressed"/>
+                        <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="SkalaResiko59ItemStateChanged"/>
+                        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="SkalaResiko59KeyPressed"/>
                       </Events>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                          <AbsoluteConstraints x="360" y="700" width="60" height="18"/>
+                          <AbsoluteConstraints x="880" y="530" width="60" height="18"/>
                         </Constraint>
                       </Constraints>
                     </Component>
-                    <Component class="widget.ComboBox" name="SkalaResiko42">
+                    <Component class="widget.ComboBox" name="SkalaResiko60">
                       <Properties>
                         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                           <StringArray count="2">
-                            <StringItem index="0" value="Ya"/>
-                            <StringItem index="1" value="Tidak"/>
+                            <StringItem index="0" value="Tidak"/>
+                            <StringItem index="1" value="Ya"/>
                           </StringArray>
                         </Property>
-                        <Property name="name" type="java.lang.String" value="SkalaResiko42" noResource="true"/>
+                        <Property name="name" type="java.lang.String" value="SkalaResiko60" noResource="true"/>
                       </Properties>
                       <Events>
-                        <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="SkalaResiko42ItemStateChanged"/>
-                        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="SkalaResiko42KeyPressed"/>
+                        <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="SkalaResiko60ItemStateChanged"/>
+                        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="SkalaResiko60KeyPressed"/>
                       </Events>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                          <AbsoluteConstraints x="360" y="640" width="60" height="18"/>
+                          <AbsoluteConstraints x="880" y="590" width="60" height="18"/>
                         </Constraint>
                       </Constraints>
                     </Component>
-                    <Component class="widget.ComboBox" name="SkalaResiko43">
+                    <Component class="widget.ComboBox" name="SkalaResiko61">
                       <Properties>
                         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                           <StringArray count="2">
-                            <StringItem index="0" value="Ya"/>
-                            <StringItem index="1" value="Tidak"/>
+                            <StringItem index="0" value="Tidak"/>
+                            <StringItem index="1" value="Ya"/>
                           </StringArray>
                         </Property>
-                        <Property name="name" type="java.lang.String" value="SkalaResiko43" noResource="true"/>
+                        <Property name="name" type="java.lang.String" value="SkalaResiko61" noResource="true"/>
                       </Properties>
                       <Events>
-                        <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="SkalaResiko43ItemStateChanged"/>
-                        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="SkalaResiko43KeyPressed"/>
+                        <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="SkalaResiko61ItemStateChanged"/>
+                        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="SkalaResiko61KeyPressed"/>
+                      </Events>
+                      <Constraints>
+                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                          <AbsoluteConstraints x="880" y="570" width="60" height="18"/>
+                        </Constraint>
+                      </Constraints>
+                    </Component>
+                    <Component class="widget.ComboBox" name="SkalaResiko62">
+                      <Properties>
+                        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                          <StringArray count="2">
+                            <StringItem index="0" value="Tidak"/>
+                            <StringItem index="1" value="Ya"/>
+                          </StringArray>
+                        </Property>
+                        <Property name="name" type="java.lang.String" value="SkalaResiko62" noResource="true"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="SkalaResiko62ItemStateChanged"/>
+                        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="SkalaResiko62KeyPressed"/>
                       </Events>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -2151,19 +2111,59 @@
                         </Constraint>
                       </Constraints>
                     </Component>
-                    <Component class="widget.ComboBox" name="SkalaResiko44">
+                    <Component class="widget.ComboBox" name="SkalaResiko63">
                       <Properties>
                         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                           <StringArray count="2">
-                            <StringItem index="0" value="Ya"/>
-                            <StringItem index="1" value="Tidak"/>
+                            <StringItem index="0" value="Tidak"/>
+                            <StringItem index="1" value="Ya"/>
                           </StringArray>
                         </Property>
-                        <Property name="name" type="java.lang.String" value="SkalaResiko44" noResource="true"/>
+                        <Property name="name" type="java.lang.String" value="SkalaResiko63" noResource="true"/>
                       </Properties>
                       <Events>
-                        <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="SkalaResiko44ItemStateChanged"/>
-                        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="SkalaResiko44KeyPressed"/>
+                        <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="SkalaResiko63ItemStateChanged"/>
+                        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="SkalaResiko63KeyPressed"/>
+                      </Events>
+                      <Constraints>
+                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                          <AbsoluteConstraints x="360" y="640" width="60" height="18"/>
+                        </Constraint>
+                      </Constraints>
+                    </Component>
+                    <Component class="widget.ComboBox" name="SkalaResiko64">
+                      <Properties>
+                        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                          <StringArray count="2">
+                            <StringItem index="0" value="Tidak"/>
+                            <StringItem index="1" value="Ya"/>
+                          </StringArray>
+                        </Property>
+                        <Property name="name" type="java.lang.String" value="SkalaResiko64" noResource="true"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="SkalaResiko64ItemStateChanged"/>
+                        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="SkalaResiko64KeyPressed"/>
+                      </Events>
+                      <Constraints>
+                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                          <AbsoluteConstraints x="360" y="700" width="60" height="18"/>
+                        </Constraint>
+                      </Constraints>
+                    </Component>
+                    <Component class="widget.ComboBox" name="SkalaResiko65">
+                      <Properties>
+                        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                          <StringArray count="2">
+                            <StringItem index="0" value="Tidak"/>
+                            <StringItem index="1" value="Ya"/>
+                          </StringArray>
+                        </Property>
+                        <Property name="name" type="java.lang.String" value="SkalaResiko65" noResource="true"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="SkalaResiko65ItemStateChanged"/>
+                        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="SkalaResiko65KeyPressed"/>
                       </Events>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -2171,59 +2171,19 @@
                         </Constraint>
                       </Constraints>
                     </Component>
-                    <Component class="widget.ComboBox" name="SkalaResiko45">
+                    <Component class="widget.ComboBox" name="SkalaResiko66">
                       <Properties>
                         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                           <StringArray count="2">
-                            <StringItem index="0" value="Ya"/>
-                            <StringItem index="1" value="Tidak"/>
+                            <StringItem index="0" value="Tidak"/>
+                            <StringItem index="1" value="Ya"/>
                           </StringArray>
                         </Property>
-                        <Property name="name" type="java.lang.String" value="SkalaResiko45" noResource="true"/>
+                        <Property name="name" type="java.lang.String" value="SkalaResiko66" noResource="true"/>
                       </Properties>
                       <Events>
-                        <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="SkalaResiko45ItemStateChanged"/>
-                        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="SkalaResiko45KeyPressed"/>
-                      </Events>
-                      <Constraints>
-                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                          <AbsoluteConstraints x="880" y="700" width="60" height="18"/>
-                        </Constraint>
-                      </Constraints>
-                    </Component>
-                    <Component class="widget.ComboBox" name="SkalaResiko46">
-                      <Properties>
-                        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                          <StringArray count="2">
-                            <StringItem index="0" value="Ya"/>
-                            <StringItem index="1" value="Tidak"/>
-                          </StringArray>
-                        </Property>
-                        <Property name="name" type="java.lang.String" value="SkalaResiko46" noResource="true"/>
-                      </Properties>
-                      <Events>
-                        <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="SkalaResiko46ItemStateChanged"/>
-                        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="SkalaResiko46KeyPressed"/>
-                      </Events>
-                      <Constraints>
-                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                          <AbsoluteConstraints x="880" y="640" width="60" height="18"/>
-                        </Constraint>
-                      </Constraints>
-                    </Component>
-                    <Component class="widget.ComboBox" name="SkalaResiko47">
-                      <Properties>
-                        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                          <StringArray count="2">
-                            <StringItem index="0" value="Ya"/>
-                            <StringItem index="1" value="Tidak"/>
-                          </StringArray>
-                        </Property>
-                        <Property name="name" type="java.lang.String" value="SkalaResiko47" noResource="true"/>
-                      </Properties>
-                      <Events>
-                        <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="SkalaResiko47ItemStateChanged"/>
-                        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="SkalaResiko47KeyPressed"/>
+                        <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="SkalaResiko66ItemStateChanged"/>
+                        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="SkalaResiko66KeyPressed"/>
                       </Events>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -2231,19 +2191,59 @@
                         </Constraint>
                       </Constraints>
                     </Component>
-                    <Component class="widget.ComboBox" name="SkalaResiko48">
+                    <Component class="widget.ComboBox" name="SkalaResiko67">
                       <Properties>
                         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                           <StringArray count="2">
-                            <StringItem index="0" value="Ya"/>
-                            <StringItem index="1" value="Tidak"/>
+                            <StringItem index="0" value="Tidak"/>
+                            <StringItem index="1" value="Ya"/>
                           </StringArray>
                         </Property>
-                        <Property name="name" type="java.lang.String" value="SkalaResiko48" noResource="true"/>
+                        <Property name="name" type="java.lang.String" value="SkalaResiko67" noResource="true"/>
                       </Properties>
                       <Events>
-                        <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="SkalaResiko48ItemStateChanged"/>
-                        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="SkalaResiko48KeyPressed"/>
+                        <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="SkalaResiko67ItemStateChanged"/>
+                        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="SkalaResiko67KeyPressed"/>
+                      </Events>
+                      <Constraints>
+                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                          <AbsoluteConstraints x="880" y="640" width="60" height="18"/>
+                        </Constraint>
+                      </Constraints>
+                    </Component>
+                    <Component class="widget.ComboBox" name="SkalaResiko68">
+                      <Properties>
+                        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                          <StringArray count="2">
+                            <StringItem index="0" value="Tidak"/>
+                            <StringItem index="1" value="Ya"/>
+                          </StringArray>
+                        </Property>
+                        <Property name="name" type="java.lang.String" value="SkalaResiko68" noResource="true"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="SkalaResiko68ItemStateChanged"/>
+                        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="SkalaResiko68KeyPressed"/>
+                      </Events>
+                      <Constraints>
+                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                          <AbsoluteConstraints x="880" y="700" width="60" height="18"/>
+                        </Constraint>
+                      </Constraints>
+                    </Component>
+                    <Component class="widget.ComboBox" name="SkalaResiko69">
+                      <Properties>
+                        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                          <StringArray count="2">
+                            <StringItem index="0" value="Tidak"/>
+                            <StringItem index="1" value="Ya"/>
+                          </StringArray>
+                        </Property>
+                        <Property name="name" type="java.lang.String" value="SkalaResiko69" noResource="true"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="SkalaResiko69ItemStateChanged"/>
+                        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="SkalaResiko69KeyPressed"/>
                       </Events>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -2251,19 +2251,19 @@
                         </Constraint>
                       </Constraints>
                     </Component>
-                    <Component class="widget.ComboBox" name="SkalaResiko49">
+                    <Component class="widget.ComboBox" name="SkalaResiko70">
                       <Properties>
                         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                           <StringArray count="2">
-                            <StringItem index="0" value="Ya"/>
-                            <StringItem index="1" value="Tidak"/>
+                            <StringItem index="0" value="Tidak"/>
+                            <StringItem index="1" value="Ya"/>
                           </StringArray>
                         </Property>
-                        <Property name="name" type="java.lang.String" value="SkalaResiko49" noResource="true"/>
+                        <Property name="name" type="java.lang.String" value="SkalaResiko70" noResource="true"/>
                       </Properties>
                       <Events>
-                        <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="SkalaResiko49ItemStateChanged"/>
-                        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="SkalaResiko49KeyPressed"/>
+                        <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="SkalaResiko70ItemStateChanged"/>
+                        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="SkalaResiko70KeyPressed"/>
                       </Events>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -2271,19 +2271,19 @@
                         </Constraint>
                       </Constraints>
                     </Component>
-                    <Component class="widget.ComboBox" name="SkalaResiko50">
+                    <Component class="widget.ComboBox" name="SkalaResiko71">
                       <Properties>
                         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                           <StringArray count="2">
-                            <StringItem index="0" value="Ya"/>
-                            <StringItem index="1" value="Tidak"/>
+                            <StringItem index="0" value="Tidak"/>
+                            <StringItem index="1" value="Ya"/>
                           </StringArray>
                         </Property>
-                        <Property name="name" type="java.lang.String" value="SkalaResiko50" noResource="true"/>
+                        <Property name="name" type="java.lang.String" value="SkalaResiko71" noResource="true"/>
                       </Properties>
                       <Events>
-                        <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="SkalaResiko50ItemStateChanged"/>
-                        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="SkalaResiko50KeyPressed"/>
+                        <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="SkalaResiko71ItemStateChanged"/>
+                        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="SkalaResiko71KeyPressed"/>
                       </Events>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
