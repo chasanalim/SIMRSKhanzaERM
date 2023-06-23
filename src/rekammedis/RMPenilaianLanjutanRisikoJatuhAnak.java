@@ -273,6 +273,52 @@ public final class RMPenilaianLanjutanRisikoJatuhAnak extends javax.swing.JDialo
         jLabel233 = new widget.Label();
         SkalaResiko7 = new widget.ComboBox();
         NilaiResiko7 = new widget.TextBox();
+        jLabel58 = new widget.Label();
+        jLabel218 = new widget.Label();
+        jLabel32 = new widget.Label();
+        jSeparator5 = new javax.swing.JSeparator();
+        jLabel237 = new widget.Label();
+        jLabel238 = new widget.Label();
+        jLabel239 = new widget.Label();
+        jLabel240 = new widget.Label();
+        jLabel241 = new widget.Label();
+        jLabel242 = new widget.Label();
+        jLabel243 = new widget.Label();
+        jLabel244 = new widget.Label();
+        jLabel245 = new widget.Label();
+        jLabel246 = new widget.Label();
+        jLabel247 = new widget.Label();
+        jLabel33 = new widget.Label();
+        jLabel248 = new widget.Label();
+        jLabel249 = new widget.Label();
+        jLabel250 = new widget.Label();
+        jLabel251 = new widget.Label();
+        jLabel252 = new widget.Label();
+        jLabel254 = new widget.Label();
+        jLabel256 = new widget.Label();
+        jLabel257 = new widget.Label();
+        SkalaResiko30 = new widget.ComboBox();
+        SkalaResiko51 = new widget.ComboBox();
+        SkalaResiko52 = new widget.ComboBox();
+        SkalaResiko53 = new widget.ComboBox();
+        SkalaResiko54 = new widget.ComboBox();
+        SkalaResiko55 = new widget.ComboBox();
+        SkalaResiko56 = new widget.ComboBox();
+        SkalaResiko57 = new widget.ComboBox();
+        SkalaResiko58 = new widget.ComboBox();
+        SkalaResiko59 = new widget.ComboBox();
+        SkalaResiko60 = new widget.ComboBox();
+        SkalaResiko61 = new widget.ComboBox();
+        SkalaResiko62 = new widget.ComboBox();
+        SkalaResiko63 = new widget.ComboBox();
+        SkalaResiko64 = new widget.ComboBox();
+        SkalaResiko65 = new widget.ComboBox();
+        SkalaResiko66 = new widget.ComboBox();
+        SkalaResiko67 = new widget.ComboBox();
+        SkalaResiko68 = new widget.ComboBox();
+        SkalaResiko69 = new widget.ComboBox();
+        SkalaResiko70 = new widget.ComboBox();
+        jLabel253 = new widget.Label();
 
         jPopupMenu1.setName("jPopupMenu1"); // NOI18N
 
@@ -294,7 +340,7 @@ public final class RMPenilaianLanjutanRisikoJatuhAnak extends javax.swing.JDialo
         setUndecorated(true);
         setResizable(false);
 
-        internalFrame1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(240, 245, 235)), "::[ Penilaian Lanjutan Risiko Jatuh Pasien Anak ]::", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(50, 50, 50))); // NOI18N
+        internalFrame1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(240, 245, 235)), "::[ Penilaian Lanjutan Risiko Jatuh Pasien Anak ]::", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 0, 12), new java.awt.Color(50, 50, 50))); // NOI18N
         internalFrame1.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
         internalFrame1.setName("internalFrame1"); // NOI18N
         internalFrame1.setLayout(new java.awt.BorderLayout(1, 1));
@@ -460,7 +506,7 @@ public final class RMPenilaianLanjutanRisikoJatuhAnak extends javax.swing.JDialo
         panelGlass9.add(jLabel19);
 
         DTPCari1.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "20-04-2023" }));
+        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "23-06-2023" }));
         DTPCari1.setDisplayFormat("dd-MM-yyyy");
         DTPCari1.setName("DTPCari1"); // NOI18N
         DTPCari1.setOpaque(false);
@@ -474,7 +520,7 @@ public final class RMPenilaianLanjutanRisikoJatuhAnak extends javax.swing.JDialo
         panelGlass9.add(jLabel21);
 
         DTPCari2.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "20-04-2023" }));
+        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "23-06-2023" }));
         DTPCari2.setDisplayFormat("dd-MM-yyyy");
         DTPCari2.setName("DTPCari2"); // NOI18N
         DTPCari2.setOpaque(false);
@@ -565,7 +611,7 @@ public final class RMPenilaianLanjutanRisikoJatuhAnak extends javax.swing.JDialo
         FormInput.setBackground(new java.awt.Color(250, 255, 245));
         FormInput.setBorder(null);
         FormInput.setName("FormInput"); // NOI18N
-        FormInput.setPreferredSize(new java.awt.Dimension(100, 443));
+        FormInput.setPreferredSize(new java.awt.Dimension(100, 800));
         FormInput.setLayout(null);
 
         jLabel4.setText("No.Rawat :");
@@ -595,7 +641,7 @@ public final class RMPenilaianLanjutanRisikoJatuhAnak extends javax.swing.JDialo
         TPasien.setBounds(336, 10, 285, 23);
 
         Tanggal.setForeground(new java.awt.Color(50, 70, 50));
-        Tanggal.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "20-04-2023" }));
+        Tanggal.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "23-06-2023" }));
         Tanggal.setDisplayFormat("dd-MM-yyyy");
         Tanggal.setName("Tanggal"); // NOI18N
         Tanggal.setOpaque(false);
@@ -990,6 +1036,474 @@ public final class RMPenilaianLanjutanRisikoJatuhAnak extends javax.swing.JDialo
         NilaiResiko7.setName("NilaiResiko7"); // NOI18N
         FormInput.add(NilaiResiko7);
         NilaiResiko7.setBounds(749, 270, 40, 23);
+
+        jLabel58.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel58.setText("Intervensi Pencegahan Pasien Jatuh :");
+        jLabel58.setName("jLabel58"); // NOI18N
+        FormInput.add(jLabel58);
+        jLabel58.setBounds(20, 480, 300, 23);
+
+        jLabel218.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel218.setText("2. Tempatkan bel panggilan dalam jangkauan tangan pasien");
+        jLabel218.setName("jLabel218"); // NOI18N
+        FormInput.add(jLabel218);
+        jLabel218.setBounds(30, 540, 310, 23);
+
+        jLabel32.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel32.setText("Resiko Jatuh Tinggi :");
+        jLabel32.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel32.setName("jLabel32"); // NOI18N
+        FormInput.add(jLabel32);
+        jLabel32.setBounds(30, 500, 130, 23);
+
+        jSeparator5.setBackground(new java.awt.Color(239, 244, 234));
+        jSeparator5.setForeground(new java.awt.Color(239, 244, 234));
+        jSeparator5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(239, 244, 234)));
+        jSeparator5.setName("jSeparator5"); // NOI18N
+        FormInput.add(jSeparator5);
+        jSeparator5.setBounds(0, 470, 950, 2);
+
+        jLabel237.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel237.setText("1. Sarankan untuk minta bantuan");
+        jLabel237.setName("jLabel237"); // NOI18N
+        FormInput.add(jLabel237);
+        jLabel237.setBounds(30, 520, 310, 23);
+
+        jLabel238.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel238.setText("4. Pastikan tempat tidur dalam posisi rendah atau roda terkunci");
+        jLabel238.setName("jLabel238"); // NOI18N
+        FormInput.add(jLabel238);
+        jLabel238.setBounds(30, 580, 310, 23);
+
+        jLabel239.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel239.setText("3. Tempatkan benda-benda milik pasien di dekat pasien");
+        jLabel239.setName("jLabel239"); // NOI18N
+        FormInput.add(jLabel239);
+        jLabel239.setBounds(30, 560, 310, 23);
+
+        jLabel240.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel240.setText("5. Pastikan celana panjang atau sarung pasien siatas mata kaki");
+        jLabel240.setName("jLabel240"); // NOI18N
+        FormInput.add(jLabel240);
+        jLabel240.setBounds(30, 600, 310, 23);
+
+        jLabel241.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel241.setText("6. Bantu pasien saat transfer / ambulasi / berpindah");
+        jLabel241.setName("jLabel241"); // NOI18N
+        FormInput.add(jLabel241);
+        jLabel241.setBounds(30, 620, 310, 23);
+
+        jLabel242.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel242.setText("13. Berikan orientasi ruangan sekitar kepada pasien / penunggu pasien ");
+        jLabel242.setName("jLabel242"); // NOI18N
+        FormInput.add(jLabel242);
+        jLabel242.setBounds(470, 620, 360, 23);
+
+        jLabel243.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel243.setText("8. Pasangkan penganman sisi tempat tidur");
+        jLabel243.setName("jLabel243"); // NOI18N
+        FormInput.add(jLabel243);
+        jLabel243.setBounds(470, 520, 260, 23);
+
+        jLabel244.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel244.setText("9. Pastikan label pasien resiko jatuh terpasang di gelang pasien, RM, dan bed pasien");
+        jLabel244.setName("jLabel244"); // NOI18N
+        FormInput.add(jLabel244);
+        jLabel244.setBounds(470, 540, 460, 23);
+
+        jLabel245.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel245.setText("10. Tawarkan ke pasien untuk ke toiilet setiap 4 jam ");
+        jLabel245.setName("jLabel245"); // NOI18N
+        FormInput.add(jLabel245);
+        jLabel245.setBounds(470, 560, 260, 23);
+
+        jLabel246.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel246.setText("11. Pasangkan tali pengaman bila perlu");
+        jLabel246.setName("jLabel246"); // NOI18N
+        FormInput.add(jLabel246);
+        jLabel246.setBounds(470, 580, 260, 23);
+
+        jLabel247.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel247.setText("12. Beritahukan efek dari obat / anestesi kepasa pasien / keluarga");
+        jLabel247.setName("jLabel247"); // NOI18N
+        FormInput.add(jLabel247);
+        jLabel247.setBounds(470, 600, 260, 23);
+
+        jLabel33.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel33.setText("Resiko Jatuh Rendah :");
+        jLabel33.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel33.setName("jLabel33"); // NOI18N
+        FormInput.add(jLabel33);
+        jLabel33.setBounds(30, 670, 130, 23);
+
+        jLabel248.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel248.setText("4.Kaji kebutuhan eliminasi pasien");
+        jLabel248.setName("jLabel248"); // NOI18N
+        FormInput.add(jLabel248);
+        jLabel248.setBounds(30, 750, 330, 23);
+
+        jLabel249.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel249.setText("3. Anjurkan Pasien menggunakan sandal saat turun");
+        jLabel249.setName("jLabel249"); // NOI18N
+        FormInput.add(jLabel249);
+        jLabel249.setBounds(30, 730, 310, 23);
+
+        jLabel250.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel250.setText("2. Dekatkan bell ke pasien dan ajarkan keluarga cara penggunaanya");
+        jLabel250.setName("jLabel250"); // NOI18N
+        FormInput.add(jLabel250);
+        jLabel250.setBounds(30, 710, 330, 23);
+
+        jLabel251.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel251.setText("1. Monitor pasien dan keluarga tentang kamar pasien");
+        jLabel251.setName("jLabel251"); // NOI18N
+        FormInput.add(jLabel251);
+        jLabel251.setBounds(30, 690, 260, 23);
+
+        jLabel252.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel252.setText("8. Dokumentasukan tindakan perawat dan tindakan lanjutan");
+        jLabel252.setName("jLabel252"); // NOI18N
+        FormInput.add(jLabel252);
+        jLabel252.setBounds(470, 750, 440, 23);
+
+        jLabel254.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel254.setText("5. Hindarkan barang yang berbahaya didekat pasien");
+        jLabel254.setName("jLabel254"); // NOI18N
+        FormInput.add(jLabel254);
+        jLabel254.setBounds(470, 690, 260, 23);
+
+        jLabel256.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel256.setText("6. Ajarkan keluarga / penunggu pasien untuk mencegah risiko jatuh");
+        jLabel256.setName("jLabel256"); // NOI18N
+        FormInput.add(jLabel256);
+        jLabel256.setBounds(470, 710, 390, 23);
+
+        jLabel257.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel257.setText("7. Usahakan penerangan cukup pada pagi dan siang hari");
+        jLabel257.setName("jLabel257"); // NOI18N
+        FormInput.add(jLabel257);
+        jLabel257.setBounds(470, 730, 360, 23);
+
+        SkalaResiko30.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Tidak", "Ya" }));
+        SkalaResiko30.setName("SkalaResiko30"); // NOI18N
+        SkalaResiko30.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                SkalaResiko30ItemStateChanged(evt);
+            }
+        });
+        SkalaResiko30.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                SkalaResiko30KeyPressed(evt);
+            }
+        });
+        FormInput.add(SkalaResiko30);
+        SkalaResiko30.setBounds(360, 540, 60, 18);
+
+        SkalaResiko51.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Tidak", "Ya" }));
+        SkalaResiko51.setName("SkalaResiko51"); // NOI18N
+        SkalaResiko51.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                SkalaResiko51ItemStateChanged(evt);
+            }
+        });
+        SkalaResiko51.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                SkalaResiko51KeyPressed(evt);
+            }
+        });
+        FormInput.add(SkalaResiko51);
+        SkalaResiko51.setBounds(360, 520, 60, 18);
+
+        SkalaResiko52.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Tidak", "Ya" }));
+        SkalaResiko52.setName("SkalaResiko52"); // NOI18N
+        SkalaResiko52.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                SkalaResiko52ItemStateChanged(evt);
+            }
+        });
+        SkalaResiko52.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                SkalaResiko52KeyPressed(evt);
+            }
+        });
+        FormInput.add(SkalaResiko52);
+        SkalaResiko52.setBounds(360, 580, 60, 18);
+
+        SkalaResiko53.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Tidak", "Ya" }));
+        SkalaResiko53.setName("SkalaResiko53"); // NOI18N
+        SkalaResiko53.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                SkalaResiko53ItemStateChanged(evt);
+            }
+        });
+        SkalaResiko53.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                SkalaResiko53KeyPressed(evt);
+            }
+        });
+        FormInput.add(SkalaResiko53);
+        SkalaResiko53.setBounds(360, 560, 60, 18);
+
+        SkalaResiko54.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Tidak", "Ya" }));
+        SkalaResiko54.setName("SkalaResiko54"); // NOI18N
+        SkalaResiko54.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                SkalaResiko54ItemStateChanged(evt);
+            }
+        });
+        SkalaResiko54.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                SkalaResiko54KeyPressed(evt);
+            }
+        });
+        FormInput.add(SkalaResiko54);
+        SkalaResiko54.setBounds(360, 620, 60, 18);
+
+        SkalaResiko55.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Tidak", "Ya" }));
+        SkalaResiko55.setName("SkalaResiko55"); // NOI18N
+        SkalaResiko55.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                SkalaResiko55ItemStateChanged(evt);
+            }
+        });
+        SkalaResiko55.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                SkalaResiko55KeyPressed(evt);
+            }
+        });
+        FormInput.add(SkalaResiko55);
+        SkalaResiko55.setBounds(360, 600, 60, 18);
+
+        SkalaResiko56.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Tidak", "Ya" }));
+        SkalaResiko56.setName("SkalaResiko56"); // NOI18N
+        SkalaResiko56.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                SkalaResiko56ItemStateChanged(evt);
+            }
+        });
+        SkalaResiko56.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                SkalaResiko56KeyPressed(evt);
+            }
+        });
+        FormInput.add(SkalaResiko56);
+        SkalaResiko56.setBounds(880, 540, 60, 18);
+
+        SkalaResiko57.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Tidak", "Ya" }));
+        SkalaResiko57.setName("SkalaResiko57"); // NOI18N
+        SkalaResiko57.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                SkalaResiko57ItemStateChanged(evt);
+            }
+        });
+        SkalaResiko57.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                SkalaResiko57KeyPressed(evt);
+            }
+        });
+        FormInput.add(SkalaResiko57);
+        SkalaResiko57.setBounds(880, 520, 60, 18);
+
+        SkalaResiko58.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Tidak", "Ya" }));
+        SkalaResiko58.setName("SkalaResiko58"); // NOI18N
+        SkalaResiko58.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                SkalaResiko58ItemStateChanged(evt);
+            }
+        });
+        SkalaResiko58.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                SkalaResiko58KeyPressed(evt);
+            }
+        });
+        FormInput.add(SkalaResiko58);
+        SkalaResiko58.setBounds(880, 580, 60, 18);
+
+        SkalaResiko59.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Tidak", "Ya" }));
+        SkalaResiko59.setName("SkalaResiko59"); // NOI18N
+        SkalaResiko59.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                SkalaResiko59ItemStateChanged(evt);
+            }
+        });
+        SkalaResiko59.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                SkalaResiko59KeyPressed(evt);
+            }
+        });
+        FormInput.add(SkalaResiko59);
+        SkalaResiko59.setBounds(880, 560, 60, 18);
+
+        SkalaResiko60.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Tidak", "Ya" }));
+        SkalaResiko60.setName("SkalaResiko60"); // NOI18N
+        SkalaResiko60.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                SkalaResiko60ItemStateChanged(evt);
+            }
+        });
+        SkalaResiko60.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                SkalaResiko60KeyPressed(evt);
+            }
+        });
+        FormInput.add(SkalaResiko60);
+        SkalaResiko60.setBounds(880, 620, 60, 18);
+
+        SkalaResiko61.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Tidak", "Ya" }));
+        SkalaResiko61.setName("SkalaResiko61"); // NOI18N
+        SkalaResiko61.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                SkalaResiko61ItemStateChanged(evt);
+            }
+        });
+        SkalaResiko61.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                SkalaResiko61KeyPressed(evt);
+            }
+        });
+        FormInput.add(SkalaResiko61);
+        SkalaResiko61.setBounds(880, 600, 60, 18);
+
+        SkalaResiko62.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Tidak", "Ya" }));
+        SkalaResiko62.setName("SkalaResiko62"); // NOI18N
+        SkalaResiko62.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                SkalaResiko62ItemStateChanged(evt);
+            }
+        });
+        SkalaResiko62.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                SkalaResiko62KeyPressed(evt);
+            }
+        });
+        FormInput.add(SkalaResiko62);
+        SkalaResiko62.setBounds(360, 710, 60, 18);
+
+        SkalaResiko63.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Tidak", "Ya" }));
+        SkalaResiko63.setName("SkalaResiko63"); // NOI18N
+        SkalaResiko63.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                SkalaResiko63ItemStateChanged(evt);
+            }
+        });
+        SkalaResiko63.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                SkalaResiko63KeyPressed(evt);
+            }
+        });
+        FormInput.add(SkalaResiko63);
+        SkalaResiko63.setBounds(360, 690, 60, 18);
+
+        SkalaResiko64.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Tidak", "Ya" }));
+        SkalaResiko64.setName("SkalaResiko64"); // NOI18N
+        SkalaResiko64.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                SkalaResiko64ItemStateChanged(evt);
+            }
+        });
+        SkalaResiko64.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                SkalaResiko64KeyPressed(evt);
+            }
+        });
+        FormInput.add(SkalaResiko64);
+        SkalaResiko64.setBounds(360, 750, 60, 18);
+
+        SkalaResiko65.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Tidak", "Ya" }));
+        SkalaResiko65.setName("SkalaResiko65"); // NOI18N
+        SkalaResiko65.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                SkalaResiko65ItemStateChanged(evt);
+            }
+        });
+        SkalaResiko65.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                SkalaResiko65KeyPressed(evt);
+            }
+        });
+        FormInput.add(SkalaResiko65);
+        SkalaResiko65.setBounds(360, 730, 60, 18);
+
+        SkalaResiko66.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Tidak", "Ya" }));
+        SkalaResiko66.setName("SkalaResiko66"); // NOI18N
+        SkalaResiko66.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                SkalaResiko66ItemStateChanged(evt);
+            }
+        });
+        SkalaResiko66.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                SkalaResiko66KeyPressed(evt);
+            }
+        });
+        FormInput.add(SkalaResiko66);
+        SkalaResiko66.setBounds(880, 710, 60, 18);
+
+        SkalaResiko67.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Tidak", "Ya" }));
+        SkalaResiko67.setName("SkalaResiko67"); // NOI18N
+        SkalaResiko67.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                SkalaResiko67ItemStateChanged(evt);
+            }
+        });
+        SkalaResiko67.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                SkalaResiko67KeyPressed(evt);
+            }
+        });
+        FormInput.add(SkalaResiko67);
+        SkalaResiko67.setBounds(880, 690, 60, 18);
+
+        SkalaResiko68.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Tidak", "Ya" }));
+        SkalaResiko68.setName("SkalaResiko68"); // NOI18N
+        SkalaResiko68.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                SkalaResiko68ItemStateChanged(evt);
+            }
+        });
+        SkalaResiko68.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                SkalaResiko68KeyPressed(evt);
+            }
+        });
+        FormInput.add(SkalaResiko68);
+        SkalaResiko68.setBounds(880, 750, 60, 18);
+
+        SkalaResiko69.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Tidak", "Ya" }));
+        SkalaResiko69.setName("SkalaResiko69"); // NOI18N
+        SkalaResiko69.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                SkalaResiko69ItemStateChanged(evt);
+            }
+        });
+        SkalaResiko69.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                SkalaResiko69KeyPressed(evt);
+            }
+        });
+        FormInput.add(SkalaResiko69);
+        SkalaResiko69.setBounds(880, 730, 60, 18);
+
+        SkalaResiko70.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Tidak", "Ya" }));
+        SkalaResiko70.setName("SkalaResiko70"); // NOI18N
+        SkalaResiko70.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                SkalaResiko70ItemStateChanged(evt);
+            }
+        });
+        SkalaResiko70.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                SkalaResiko70KeyPressed(evt);
+            }
+        });
+        FormInput.add(SkalaResiko70);
+        SkalaResiko70.setBounds(360, 640, 60, 18);
+
+        jLabel253.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel253.setText("7. Pasangkan pengaman sisi tempat tidur");
+        jLabel253.setName("jLabel253"); // NOI18N
+        FormInput.add(jLabel253);
+        jLabel253.setBounds(30, 640, 310, 23);
 
         scrollInput.setViewportView(FormInput);
 
@@ -1441,6 +1955,174 @@ public final class RMPenilaianLanjutanRisikoJatuhAnak extends javax.swing.JDialo
         Valid.pindah(evt,SkalaResiko6,HasilSkrining);
     }//GEN-LAST:event_SkalaResiko7KeyPressed
 
+    private void SkalaResiko30ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_SkalaResiko30ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SkalaResiko30ItemStateChanged
+
+    private void SkalaResiko30KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SkalaResiko30KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SkalaResiko30KeyPressed
+
+    private void SkalaResiko51ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_SkalaResiko51ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SkalaResiko51ItemStateChanged
+
+    private void SkalaResiko51KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SkalaResiko51KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SkalaResiko51KeyPressed
+
+    private void SkalaResiko52ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_SkalaResiko52ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SkalaResiko52ItemStateChanged
+
+    private void SkalaResiko52KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SkalaResiko52KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SkalaResiko52KeyPressed
+
+    private void SkalaResiko53ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_SkalaResiko53ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SkalaResiko53ItemStateChanged
+
+    private void SkalaResiko53KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SkalaResiko53KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SkalaResiko53KeyPressed
+
+    private void SkalaResiko54ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_SkalaResiko54ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SkalaResiko54ItemStateChanged
+
+    private void SkalaResiko54KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SkalaResiko54KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SkalaResiko54KeyPressed
+
+    private void SkalaResiko55ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_SkalaResiko55ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SkalaResiko55ItemStateChanged
+
+    private void SkalaResiko55KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SkalaResiko55KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SkalaResiko55KeyPressed
+
+    private void SkalaResiko56ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_SkalaResiko56ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SkalaResiko56ItemStateChanged
+
+    private void SkalaResiko56KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SkalaResiko56KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SkalaResiko56KeyPressed
+
+    private void SkalaResiko57ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_SkalaResiko57ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SkalaResiko57ItemStateChanged
+
+    private void SkalaResiko57KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SkalaResiko57KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SkalaResiko57KeyPressed
+
+    private void SkalaResiko58ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_SkalaResiko58ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SkalaResiko58ItemStateChanged
+
+    private void SkalaResiko58KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SkalaResiko58KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SkalaResiko58KeyPressed
+
+    private void SkalaResiko59ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_SkalaResiko59ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SkalaResiko59ItemStateChanged
+
+    private void SkalaResiko59KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SkalaResiko59KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SkalaResiko59KeyPressed
+
+    private void SkalaResiko60ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_SkalaResiko60ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SkalaResiko60ItemStateChanged
+
+    private void SkalaResiko60KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SkalaResiko60KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SkalaResiko60KeyPressed
+
+    private void SkalaResiko61ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_SkalaResiko61ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SkalaResiko61ItemStateChanged
+
+    private void SkalaResiko61KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SkalaResiko61KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SkalaResiko61KeyPressed
+
+    private void SkalaResiko62ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_SkalaResiko62ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SkalaResiko62ItemStateChanged
+
+    private void SkalaResiko62KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SkalaResiko62KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SkalaResiko62KeyPressed
+
+    private void SkalaResiko63ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_SkalaResiko63ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SkalaResiko63ItemStateChanged
+
+    private void SkalaResiko63KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SkalaResiko63KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SkalaResiko63KeyPressed
+
+    private void SkalaResiko64ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_SkalaResiko64ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SkalaResiko64ItemStateChanged
+
+    private void SkalaResiko64KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SkalaResiko64KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SkalaResiko64KeyPressed
+
+    private void SkalaResiko65ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_SkalaResiko65ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SkalaResiko65ItemStateChanged
+
+    private void SkalaResiko65KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SkalaResiko65KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SkalaResiko65KeyPressed
+
+    private void SkalaResiko66ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_SkalaResiko66ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SkalaResiko66ItemStateChanged
+
+    private void SkalaResiko66KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SkalaResiko66KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SkalaResiko66KeyPressed
+
+    private void SkalaResiko67ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_SkalaResiko67ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SkalaResiko67ItemStateChanged
+
+    private void SkalaResiko67KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SkalaResiko67KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SkalaResiko67KeyPressed
+
+    private void SkalaResiko68ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_SkalaResiko68ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SkalaResiko68ItemStateChanged
+
+    private void SkalaResiko68KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SkalaResiko68KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SkalaResiko68KeyPressed
+
+    private void SkalaResiko69ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_SkalaResiko69ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SkalaResiko69ItemStateChanged
+
+    private void SkalaResiko69KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SkalaResiko69KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SkalaResiko69KeyPressed
+
+    private void SkalaResiko70ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_SkalaResiko70ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SkalaResiko70ItemStateChanged
+
+    private void SkalaResiko70KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SkalaResiko70KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SkalaResiko70KeyPressed
+
     /**
     * @param args the command line arguments
     */
@@ -1493,10 +2175,31 @@ public final class RMPenilaianLanjutanRisikoJatuhAnak extends javax.swing.JDialo
     private widget.ComboBox SkalaResiko1;
     private widget.ComboBox SkalaResiko2;
     private widget.ComboBox SkalaResiko3;
+    private widget.ComboBox SkalaResiko30;
     private widget.ComboBox SkalaResiko4;
     private widget.ComboBox SkalaResiko5;
+    private widget.ComboBox SkalaResiko51;
+    private widget.ComboBox SkalaResiko52;
+    private widget.ComboBox SkalaResiko53;
+    private widget.ComboBox SkalaResiko54;
+    private widget.ComboBox SkalaResiko55;
+    private widget.ComboBox SkalaResiko56;
+    private widget.ComboBox SkalaResiko57;
+    private widget.ComboBox SkalaResiko58;
+    private widget.ComboBox SkalaResiko59;
     private widget.ComboBox SkalaResiko6;
+    private widget.ComboBox SkalaResiko60;
+    private widget.ComboBox SkalaResiko61;
+    private widget.ComboBox SkalaResiko62;
+    private widget.ComboBox SkalaResiko63;
+    private widget.ComboBox SkalaResiko64;
+    private widget.ComboBox SkalaResiko65;
+    private widget.ComboBox SkalaResiko66;
+    private widget.ComboBox SkalaResiko67;
+    private widget.ComboBox SkalaResiko68;
+    private widget.ComboBox SkalaResiko69;
     private widget.ComboBox SkalaResiko7;
+    private widget.ComboBox SkalaResiko70;
     private widget.TextBox TCari;
     private widget.TextBox TNoRM;
     private widget.TextBox TNoRw;
@@ -1511,6 +2214,7 @@ public final class RMPenilaianLanjutanRisikoJatuhAnak extends javax.swing.JDialo
     private widget.Label jLabel19;
     private widget.Label jLabel21;
     private widget.Label jLabel217;
+    private widget.Label jLabel218;
     private widget.Label jLabel220;
     private widget.Label jLabel223;
     private widget.Label jLabel226;
@@ -1518,10 +2222,33 @@ public final class RMPenilaianLanjutanRisikoJatuhAnak extends javax.swing.JDialo
     private widget.Label jLabel232;
     private widget.Label jLabel233;
     private widget.Label jLabel235;
+    private widget.Label jLabel237;
+    private widget.Label jLabel238;
+    private widget.Label jLabel239;
+    private widget.Label jLabel240;
+    private widget.Label jLabel241;
+    private widget.Label jLabel242;
+    private widget.Label jLabel243;
+    private widget.Label jLabel244;
+    private widget.Label jLabel245;
+    private widget.Label jLabel246;
+    private widget.Label jLabel247;
+    private widget.Label jLabel248;
+    private widget.Label jLabel249;
+    private widget.Label jLabel250;
+    private widget.Label jLabel251;
+    private widget.Label jLabel252;
+    private widget.Label jLabel253;
+    private widget.Label jLabel254;
+    private widget.Label jLabel256;
+    private widget.Label jLabel257;
     private widget.Label jLabel30;
     private widget.Label jLabel31;
+    private widget.Label jLabel32;
+    private widget.Label jLabel33;
     private widget.Label jLabel4;
     private widget.Label jLabel57;
+    private widget.Label jLabel58;
     private widget.Label jLabel6;
     private widget.Label jLabel7;
     private widget.Label jLabel8;
@@ -1530,6 +2257,7 @@ public final class RMPenilaianLanjutanRisikoJatuhAnak extends javax.swing.JDialo
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
+    private javax.swing.JSeparator jSeparator5;
     private widget.panelisi panelGlass8;
     private widget.panelisi panelGlass9;
     private widget.ScrollPane scrollInput;
@@ -1692,7 +2420,7 @@ public final class RMPenilaianLanjutanRisikoJatuhAnak extends javax.swing.JDialo
         if(ChkInput.isSelected()==true){
             if(internalFrame1.getHeight()>668){
                 ChkInput.setVisible(false);
-                PanelInput.setPreferredSize(new Dimension(WIDTH,496));
+                PanelInput.setPreferredSize(new Dimension(WIDTH,466));
                 FormInput.setVisible(true);      
                 ChkInput.setVisible(true);
             }else{
