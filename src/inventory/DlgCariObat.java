@@ -1630,6 +1630,8 @@ private void BtnSimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
                             }
                             resep.tampil();
                             resep.setVisible(true);
+                            
+                            
                         }
                         dispose();
                     }

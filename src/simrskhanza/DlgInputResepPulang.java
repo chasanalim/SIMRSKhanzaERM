@@ -512,7 +512,7 @@ public final class DlgInputResepPulang extends javax.swing.JDialog {
     }//GEN-LAST:event_BtnKeluarActionPerformed
 
 private void BtnSimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnSimpanActionPerformed
-    if(aktifkanbatch.equals("yes")){
+     if(aktifkanbatch.equals("yes")){
         index=0;
         jml=tbKamar.getRowCount();
         for(i=0;i<jml;i++){
@@ -571,62 +571,63 @@ private void BtnSimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
             param.put("propinsirs",akses.getpropinsirs());
             param.put("kontakrs",akses.getkontakrs());
             param.put("emailrs",akses.getemailrs());
-            pilihanetiket = (String)JOptionPane.showInputDialog(null,"Silahkan pilih cetak aturan pakai..!!","Cetak Aturan Pakai",JOptionPane.QUESTION_MESSAGE,null,new Object[]{"Cetak Aturan Pakai Model 1","Cetak Aturan Pakai Model 2","Cetak Aturan Pakai Model 3","Cetak Label Obat","Cetak Aturan Pakai Model 1 & Cetak Label Obat","Cetak Aturan Pakai Model 2 & Cetak Label Obat","Cetak Aturan Pakai Model 3 & Cetak Label Obat"},"Cetak Aturan Pakai Model 1");
-            switch (pilihanetiket) {
-                case "Cetak Aturan Pakai Model 1": 
+            param.put("penanggung",Sequel.cariIsi("select png_jawab from penjab where kd_pj=?",Sequel.cariIsi("select kd_pj from reg_periksa where no_rawat=?",TNoRw.getText())));
+//            pilihanetiket = (String)JOptionPane.showInputDialog(null,"Silahkan pilih cetak aturan pakai..!!","Cetak Aturan Pakai",JOptionPane.QUESTION_MESSAGE,null,new Object[]{"Cetak Aturan Pakai Model 1","Cetak Aturan Pakai Model 2","Cetak Aturan Pakai Model 3","Cetak Label Obat","Cetak Aturan Pakai Model 1 & Cetak Label Obat","Cetak Aturan Pakai Model 2 & Cetak Label Obat","Cetak Aturan Pakai Model 3 & Cetak Label Obat"},"Cetak Aturan Pakai Model 1");
+//            switch (pilihanetiket) {
+//                case "Cetak Aturan Pakai Model 1": 
                     this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
                     if(Sequel.cariInteger(
                             "select count(*) from resep_pulang where resep_pulang.no_rawat=? and resep_pulang.dosis<>''",TNoRw.getText())>0){
                         param.put("logo",Sequel.cariGambar("select setting.logo from setting")); 
                         Valid.MyReportqry("rptItemResepPulang.jasper","report","::[ Aturan Pakai Obat ]::",
-                            "select resep_pulang.no_rawat,resep_pulang.tanggal, "+
-                            "reg_periksa.no_rkm_medis,pasien.nm_pasien,databarang.nama_brng,"+
+                            "SELECT resep_pulang.tanggal,permintaan_resep_pulang.no_permintaan,resep_pulang.no_rawat,permintaan_resep_pulang.tgl_permintaan, "+
+                            "permintaan_resep_pulang.jam,reg_periksa.no_rkm_medis,pasien.nm_pasien,pasien.no_rkm_medis, "+
+                            "pasien.nm_pasien,pasien.no_ktp,pasien.jk,reg_periksa.umurdaftar,reg_periksa.sttsumur,databarang.nama_brng, "+
                             "resep_pulang.dosis,resep_pulang.jml_barang,kodesatuan.satuan "+
-                            "from resep_pulang inner join reg_periksa on resep_pulang.no_rawat=reg_periksa.no_rawat "+
-                            "inner join databarang on resep_pulang.kode_brng=databarang.kode_brng "+
-                            "inner join kodesatuan on databarang.kode_sat=kodesatuan.kode_sat "+
-                            "inner join pasien on reg_periksa.no_rkm_medis=pasien.no_rkm_medis "+
+                            "FROM resep_pulang INNER JOIN reg_periksa ON resep_pulang.no_rawat = reg_periksa.no_rawat "+
+                            "INNER JOIN databarang ON resep_pulang.kode_brng = databarang.kode_brng INNER JOIN kodesatuan ON databarang.kode_sat = kodesatuan.kode_sat "+
+                            "INNER JOIN pasien ON reg_periksa.no_rkm_medis = pasien.no_rkm_medis INNER JOIN permintaan_resep_pulang ON permintaan_resep_pulang.no_rawat = resep_pulang.no_rawat "+
                             "where resep_pulang.no_rawat='"+TNoRw.getText()+"' and resep_pulang.dosis<>''",param);
-                    }            
+//                    }            
                     this.setCursor(Cursor.getDefaultCursor());
-                    break;
-                case "Cetak Aturan Pakai Model 2": 
-                    this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
-                    if(Sequel.cariInteger(
-                            "select count(*) from resep_pulang where resep_pulang.no_rawat=? and resep_pulang.dosis<>''",TNoRw.getText())>0){
-                        param.put("logo",Sequel.cariGambar("select setting.logo from setting")); 
-                        Valid.MyReportqry("rptItemResepPulang2.jasper","report","::[ Aturan Pakai Obat ]::",
-                            "select resep_pulang.no_rawat,resep_pulang.tanggal,jenis.nama,"+
-                            "reg_periksa.no_rkm_medis,pasien.nm_pasien,databarang.nama_brng,"+
-                            "resep_pulang.dosis,resep_pulang.jml_barang,kodesatuan.satuan "+
-                            "from resep_pulang inner join reg_periksa on resep_pulang.no_rawat=reg_periksa.no_rawat "+
-                            "inner join databarang on resep_pulang.kode_brng=databarang.kode_brng "+
-                            "inner join kodesatuan on databarang.kode_sat=kodesatuan.kode_sat "+
-                            "inner join jenis on databarang.kdjns= jenis.kdjns "+
-                            "inner join pasien on reg_periksa.no_rkm_medis=pasien.no_rkm_medis "+
-                            "where resep_pulang.no_rawat='"+TNoRw.getText()+"' and resep_pulang.dosis<>''",param);
-                    }           
-                    this.setCursor(Cursor.getDefaultCursor());
-                    break;
-                case "Cetak Aturan Pakai Model 3": 
-                    this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
-                    if(Sequel.cariInteger(
-                            "select count(*) from resep_pulang where resep_pulang.no_rawat=? and resep_pulang.dosis<>''",TNoRw.getText())>0){
-                        param.put("logo",Sequel.cariGambar("select setting.logo from setting")); 
-                        Valid.MyReportqry("rptItemResepPulang3.jasper","report","::[ Aturan Pakai Obat ]::",
-                            "select resep_pulang.no_rawat,resep_pulang.tanggal, "+
-                            "reg_periksa.no_rkm_medis,pasien.nm_pasien,databarang.nama_brng,"+
-                            "resep_pulang.dosis,resep_pulang.jml_barang,kodesatuan.satuan "+
-                            "from resep_pulang inner join reg_periksa on resep_pulang.no_rawat=reg_periksa.no_rawat "+
-                            "inner join databarang on resep_pulang.kode_brng=databarang.kode_brng "+
-                            "inner join kodesatuan on databarang.kode_sat=kodesatuan.kode_sat "+
-                            "inner join pasien on reg_periksa.no_rkm_medis=pasien.no_rkm_medis "+
-                            "where resep_pulang.no_rawat='"+TNoRw.getText()+"' and resep_pulang.dosis<>''",param);
-                    }             
-                    this.setCursor(Cursor.getDefaultCursor());
-                    break;
-                default:
-                    break;
+//                    break;
+//                case "Cetak Aturan Pakai Model 2": 
+//                    this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+//                    if(Sequel.cariInteger(
+//                            "select count(*) from resep_pulang where resep_pulang.no_rawat=? and resep_pulang.dosis<>''",TNoRw.getText())>0){
+//                        param.put("logo",Sequel.cariGambar("select setting.logo from setting")); 
+//                        Valid.MyReportqry("rptItemResepPulang2.jasper","report","::[ Aturan Pakai Obat ]::",
+//                            "select resep_pulang.no_rawat,resep_pulang.tanggal,jenis.nama,"+
+//                            "reg_periksa.no_rkm_medis,pasien.nm_pasien,databarang.nama_brng,"+
+//                            "resep_pulang.dosis,resep_pulang.jml_barang,kodesatuan.satuan "+
+//                            "from resep_pulang inner join reg_periksa on resep_pulang.no_rawat=reg_periksa.no_rawat "+
+//                            "inner join databarang on resep_pulang.kode_brng=databarang.kode_brng "+
+//                            "inner join kodesatuan on databarang.kode_sat=kodesatuan.kode_sat "+
+//                            "inner join jenis on databarang.kdjns= jenis.kdjns "+
+//                            "inner join pasien on reg_periksa.no_rkm_medis=pasien.no_rkm_medis "+
+//                            "where resep_pulang.no_rawat='"+TNoRw.getText()+"' and resep_pulang.dosis<>''",param);
+//                    }           
+//                    this.setCursor(Cursor.getDefaultCursor());
+//                    break;
+//                case "Cetak Aturan Pakai Model 3": 
+//                    this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+//                    if(Sequel.cariInteger(
+//                            "select count(*) from resep_pulang where resep_pulang.no_rawat=? and resep_pulang.dosis<>''",TNoRw.getText())>0){
+//                        param.put("logo",Sequel.cariGambar("select setting.logo from setting")); 
+//                        Valid.MyReportqry("rptItemResepPulang3.jasper","report","::[ Aturan Pakai Obat ]::",
+//                            "select resep_pulang.no_rawat,resep_pulang.tanggal, "+
+//                            "reg_periksa.no_rkm_medis,pasien.nm_pasien,databarang.nama_brng,"+
+//                            "resep_pulang.dosis,resep_pulang.jml_barang,kodesatuan.satuan "+
+//                            "from resep_pulang inner join reg_periksa on resep_pulang.no_rawat=reg_periksa.no_rawat "+
+//                            "inner join databarang on resep_pulang.kode_brng=databarang.kode_brng "+
+//                            "inner join kodesatuan on databarang.kode_sat=kodesatuan.kode_sat "+
+//                            "inner join pasien on reg_periksa.no_rkm_medis=pasien.no_rkm_medis "+
+//                            "where resep_pulang.no_rawat='"+TNoRw.getText()+"' and resep_pulang.dosis<>''",param);
+//                    }             
+//                    this.setCursor(Cursor.getDefaultCursor());
+//                    break;
+//                default:
+//                    break;
             }
         }else{
             sukses=false;
