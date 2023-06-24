@@ -585,10 +585,20 @@ private void BtnSimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
 //            param.put("jam",cmbJam.getSelectedItem()+":"+cmbMnt.getSelectedItem()+":"+cmbDtk.getSelectedItem());
             param.put("logo",Sequel.cariGambar("select setting.logo from setting"));
 
+            param.put("alamat",Sequel.cariIsi("select pasien.alamat from pasien inner join reg_periksa on pasien.no_rkm_medis=reg_periksa.no_rkm_medis where reg_periksa.no_rawat=?",Sequel.cariIsi("select no_rawat from reg_periksa where no_rawat=?",TNoRw.getText())));
+            param.put("no_tlp",Sequel.cariIsi("select pasien.no_tlp from pasien inner join reg_periksa on pasien.no_rkm_medis=reg_periksa.no_rkm_medis where reg_periksa.no_rawat=?",Sequel.cariIsi("select no_rawat from reg_periksa where no_rawat=?",TNoRw.getText())));
+            param.put("tgl_lahir",Sequel.cariIsi("select pasien.tgl_lahir from pasien inner join reg_periksa on pasien.no_rkm_medis=reg_periksa.no_rkm_medis where reg_periksa.no_rawat=?",Sequel.cariIsi("select no_rawat from reg_periksa where no_rawat=?",TNoRw.getText())));
+            param.put("no_ktp",Sequel.cariIsi("select pasien.no_ktp from pasien inner join reg_periksa on pasien.no_rkm_medis=reg_periksa.no_rkm_medis where reg_periksa.no_rawat=?",Sequel.cariIsi("select no_rawat from reg_periksa where no_rawat=?",TNoRw.getText())));
+            if(akses.getkode().equals("Admin Utama")){
+                param.put("diserahkanoleh","Petugas Farmasi");
+            }else{
+                param.put("diserahkanoleh",Sequel.cariIsi("select petugas.petugas from petugas where petugas.nip=?",akses.getkode()));
+            }
 
 //            pilihanetiket = (String)JOptionPane.showInputDialog(null,"Silahkan pilih cetak aturan pakai..!!","Cetak Aturan Pakai",JOptionPane.QUESTION_MESSAGE,null,new Object[]{"Cetak Aturan Pakai Model 1","Cetak Aturan Pakai Model 2","Cetak Aturan Pakai Model 3","Cetak Label Obat","Cetak Aturan Pakai Model 1 & Cetak Label Obat","Cetak Aturan Pakai Model 2 & Cetak Label Obat","Cetak Aturan Pakai Model 3 & Cetak Label Obat"},"Cetak Aturan Pakai Model 1");
 //            switch (pilihanetiket) {
 //                case "Cetak Aturan Pakai Model 1": 
+                    //Label Etikat
                     this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
                     if(Sequel.cariInteger(
                             "select count(*) from resep_pulang where resep_pulang.no_rawat=? and resep_pulang.dosis<>''",TNoRw.getText())>0){
@@ -605,6 +615,7 @@ private void BtnSimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
 //                    }            
                     this.setCursor(Cursor.getDefaultCursor());
                     
+                    //Label Daftar Obat
                     this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
                     Sequel.queryu("delete from temporary_resep where temp37='"+akses.getalamatip()+"'");
                     try {
@@ -638,6 +649,44 @@ private void BtnSimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
                     }
 
                     Valid.MyReportqry("rptLabelDaftarObat.jasper","report","::[ Label Daftar Obat ]::","select * from temporary_resep where temporary_resep.temp37='"+akses.getalamatip()+"' order by temporary_resep.no",param);
+                    this.setCursor(Cursor.getDefaultCursor());
+                    
+                    //Lembar Obat 2
+                    this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+                    Sequel.queryu("delete from temporary_resep where temp37='"+akses.getalamatip()+"'");
+                    try {
+                        i=0;
+                        ps=koneksi.prepareStatement(
+                            "SELECT databarang.nama_brng,resep_pulang.dosis,resep_pulang.jml_barang,kodesatuan.satuan "+
+                            "FROM permintaan_resep_pulang INNER JOIN reg_periksa INNER JOIN databarang "+
+                            "INNER JOIN resep_pulang INNER JOIN kodesatuan ON permintaan_resep_pulang.no_rawat = reg_periksa.no_rawat "+
+                            "AND resep_pulang.kode_brng = databarang.kode_brng AND permintaan_resep_pulang.no_rawat = resep_pulang.no_rawat "+
+                            "AND kodesatuan.kode_sat = databarang.kode_sat "+
+                            "where permintaan_resep_pulang.no_rawat=? ");
+                        try {
+                            ps.setString(1,TNoRw.getText());
+                            rs=ps.executeQuery();
+                            while(rs.next()){
+                                Sequel.menyimpan("temporary_resep","?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?",38,new String[]{
+                                    ""+i,rs.getString("nama_brng"),rs.getString("dosis"),rs.getString("jml_barang"),rs.getString("satuan"),"","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","",akses.getalamatip()
+                                });
+                                i++;
+                            }
+                        } catch (Exception e) {
+                            System.out.println("Notif 1 : "+e);
+                        } finally{
+                            if(rs!=null){
+                                rs.close();
+                            }
+                            if(ps!=null){
+                                ps.close();
+                            }
+                        }
+                    } catch (Exception e) {
+                        System.out.println("Notif : "+e);
+                    }
+                    
+                    Valid.MyReportqry("rptLembarObat2.jasper","report","::[ Lembar Pemberian Obat ]::","select * from temporary_resep where temporary_resep.temp37='"+akses.getalamatip()+"' order by temporary_resep.no",param);
                     this.setCursor(Cursor.getDefaultCursor());
 //                    break;
 //                case "Cetak Aturan Pakai Model 2": 
