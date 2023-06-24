@@ -47,7 +47,7 @@ public final class DlgInputResepPulang extends javax.swing.JDialog {
     private validasi Valid=new validasi();
     private Connection koneksi=koneksiDB.condb();
     private riwayatobat Trackobat=new riwayatobat();
-    private PreparedStatement psobat;
+    private PreparedStatement psobat, ps;
     private ResultSet rs;
     private WarnaTable2 warna=new WarnaTable2();
     private String aktifkanbatch="no",pilihanetiket="",nopermintaan="";
@@ -572,6 +572,20 @@ private void BtnSimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
             param.put("kontakrs",akses.getkontakrs());
             param.put("emailrs",akses.getemailrs());
             param.put("penanggung",Sequel.cariIsi("select png_jawab from penjab where kd_pj=?",Sequel.cariIsi("select kd_pj from reg_periksa where no_rawat=?",TNoRw.getText())));
+
+
+            param.put("propinsirs",akses.getpropinsirs());
+            param.put("tanggal",Sequel.cariIsi("select tgl_permintaan from permintaan_resep_pulang where no_rawat=?",TNoRw.getText()));
+            param.put("norawat",TNoRw.getText());
+            param.put("pasien",TPasien.getText());
+            param.put("norm",TNoRM.getText());
+            param.put("peresep",Sequel.cariIsi("select nm_dokter from dokter where kd_dokter=?",Sequel.cariIsi("select kd_dokter from permintaan_resep_pulang where no_rawat=?",TNoRw.getText())));
+            param.put("noresep",Sequel.cariIsi("select no_permintaan from permintaan_resep_pulang where no_rawat=?",TNoRw.getText()));
+            param.put("poli",Sequel.cariIsi("select kamar_inap.kd_kamar from kamar_inap where kamar_inap.stts_pulang = '-' and kamar_inap.no_rawat=?",TNoRw.getText()));
+//            param.put("jam",cmbJam.getSelectedItem()+":"+cmbMnt.getSelectedItem()+":"+cmbDtk.getSelectedItem());
+            param.put("logo",Sequel.cariGambar("select setting.logo from setting"));
+
+
 //            pilihanetiket = (String)JOptionPane.showInputDialog(null,"Silahkan pilih cetak aturan pakai..!!","Cetak Aturan Pakai",JOptionPane.QUESTION_MESSAGE,null,new Object[]{"Cetak Aturan Pakai Model 1","Cetak Aturan Pakai Model 2","Cetak Aturan Pakai Model 3","Cetak Label Obat","Cetak Aturan Pakai Model 1 & Cetak Label Obat","Cetak Aturan Pakai Model 2 & Cetak Label Obat","Cetak Aturan Pakai Model 3 & Cetak Label Obat"},"Cetak Aturan Pakai Model 1");
 //            switch (pilihanetiket) {
 //                case "Cetak Aturan Pakai Model 1": 
@@ -589,6 +603,41 @@ private void BtnSimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
                             "INNER JOIN pasien ON reg_periksa.no_rkm_medis = pasien.no_rkm_medis INNER JOIN permintaan_resep_pulang ON permintaan_resep_pulang.no_rawat = resep_pulang.no_rawat "+
                             "where resep_pulang.no_rawat='"+TNoRw.getText()+"' and resep_pulang.dosis<>''",param);
 //                    }            
+                    this.setCursor(Cursor.getDefaultCursor());
+                    
+                    this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+                    Sequel.queryu("delete from temporary_resep where temp37='"+akses.getalamatip()+"'");
+                    try {
+                        i=0;
+                        ps=koneksi.prepareStatement(
+                            "select resep_pulang.tanggal,resep_pulang.jam,databarang.kode_sat,resep_pulang.kode_brng, "+
+                            "resep_pulang.jml_barang,resep_pulang.total,databarang.nama_brng,resep_pulang.no_rawat,resep_pulang.dosis "+
+                            "FROM resep_pulang INNER JOIN databarang ON resep_pulang.kode_brng = databarang.kode_brng "+
+                            "where resep_pulang.no_rawat=?");
+                        try {
+                            ps.setString(1,TNoRw.getText());
+                            rs=ps.executeQuery();
+                            while(rs.next()){
+                                Sequel.menyimpan("temporary_resep","?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?",38,new String[]{
+                                    ""+i,rs.getString("nama_brng"),rs.getString("dosis"),rs.getString("jml_barang"),Valid.SetAngka(rs.getDouble("total")),"","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","",akses.getalamatip()
+                                });
+                                i++;
+                            }
+                        } catch (Exception e) {
+                            System.out.println("Notif 2 : "+e);
+                        } finally{
+                            if(rs!=null){
+                                rs.close();
+                            }
+                            if(ps!=null){
+                                ps.close();
+                            }
+                        }
+                    } catch (Exception e) {
+                        System.out.println("Notif : "+e);
+                    }
+
+                    Valid.MyReportqry("rptLabelDaftarObat.jasper","report","::[ Label Daftar Obat ]::","select * from temporary_resep where temporary_resep.temp37='"+akses.getalamatip()+"' order by temporary_resep.no",param);
                     this.setCursor(Cursor.getDefaultCursor());
 //                    break;
 //                case "Cetak Aturan Pakai Model 2": 
