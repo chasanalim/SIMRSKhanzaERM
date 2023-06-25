@@ -6494,6 +6494,8 @@ public final class BPJSDataSEP extends javax.swing.JDialog {
                         (FlagProsedur.getSelectedIndex()>0?FlagProsedur.getSelectedItem().toString().substring(0,1):""),(Penunjang.getSelectedIndex()>0?Penunjang.getSelectedIndex()+"":""),
                         (AsesmenPoli.getSelectedIndex()>0?AsesmenPoli.getSelectedItem().toString().substring(0,1):""),KdDPJPLayanan.getText(),NmDPJPLayanan.getText()
                     })==true){
+                        Sequel.menyimpan("mutasi_berkas","'"+TNoRw.getText()+"','Sudah Dikirim',now(),'0000-00-00 00:00:00','0000-00-00 00:00:00','0000-00-00 00:00:00','0000-00-00 00:00:00'","status='Sudah Dikirim',dikirim=now()","no_rawat='"+TNoRw.getText()+"'");
+                        Valid.editTable(tabMode,"reg_periksa","no_rawat",TNoRw,"stts='Berkas Terkirim'");
                         Sequel.menyimpan("rujuk_masuk","?,?,?,?,?,?,?,?,?,?",10,new String[]{
                             TNoRw.getText(),NmPpkRujukan.getText(),"-",NoRujukan.getText(),"0",NmPpkRujukan.getText(),KdPenyakit.getText(),"-",
                             "-",NoBalasan.getText()
