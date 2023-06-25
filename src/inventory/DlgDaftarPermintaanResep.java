@@ -3207,7 +3207,7 @@ private void KdKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TKdKey
     }
 
     private void panggilform() {
-        dlgobt.setNoRm(NoRawat,NoRM,Pasien,TglPeresepan,JamPeresepan);
+        dlgobt.setNoRm2(NoRawat,NoRM,Pasien,TglPeresepan,JamPeresepan, NoResep);
         dlgobt.isCek();
         dlgobt.tampilobat2(NoResep);
         dlgobt.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
@@ -3242,7 +3242,7 @@ private void KdKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TKdKey
         }else{
             akses.setkdbangsal(bangsal);
         }
-        dlgobt2.setNoRm(NoRawat,NoRM,Pasien,Valid.SetTgl2(TglPeresepan));
+        dlgobt2.setNoRm2(NoRawat,NoRM,Pasien,Valid.SetTgl2(TglPeresepan),NoResep);
         dlgobt2.isCek();
         dlgobt2.tampilobat2(NoResep);
         dlgobt2.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
