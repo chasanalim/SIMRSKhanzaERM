@@ -814,17 +814,22 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
             param.put("propinsirs",akses.getpropinsirs());
             param.put("kontakrs",akses.getkontakrs());
             param.put("emailrs",akses.getemailrs());
+            param.put("penanggung",Sequel.cariIsi("select png_jawab from penjab where kd_pj=?",Sequel.cariIsi("select kd_pj from reg_periksa where no_rawat=?",TNoRw.getText())));
+            param.put("peresep",Sequel.cariIsi("select nm_dokter from dokter where kd_dokter=?",Sequel.cariIsi("select kd_dokter from permintaan_resep_pulang where no_rawat=?",TNoRw.getText())));
+            param.put("noresep",Sequel.cariIsi("select no_permintaan from permintaan_resep_pulang where no_rawat=?",TNoRw.getText()));
+            
+
             if(Sequel.cariInteger(
                     "select count(*) from resep_pulang where resep_pulang.no_rawat=? and resep_pulang.dosis<>''",TNoRw.getText())>0){
                 param.put("logo",Sequel.cariGambar("select setting.logo from setting")); 
                 Valid.MyReportqry("rptItemResepPulang.jasper","report","::[ Aturan Pakai Obat ]::",
-                    "select resep_pulang.no_rawat,resep_pulang.tanggal, "+
-                    "reg_periksa.no_rkm_medis,pasien.nm_pasien,databarang.nama_brng,"+
+                    "SELECT resep_pulang.tanggal,permintaan_resep_pulang.no_permintaan,resep_pulang.no_rawat,permintaan_resep_pulang.tgl_permintaan, "+
+                    "permintaan_resep_pulang.jam,reg_periksa.no_rkm_medis,pasien.nm_pasien, "+
+                    "pasien.no_ktp,pasien.jk,pasien.tgl_lahir,reg_periksa.umurdaftar,reg_periksa.sttsumur,databarang.nama_brng, "+
                     "resep_pulang.dosis,resep_pulang.jml_barang,kodesatuan.satuan "+
-                    "from resep_pulang inner join reg_periksa on resep_pulang.no_rawat=reg_periksa.no_rawat "+
-                    "inner join databarang on resep_pulang.kode_brng=databarang.kode_brng "+
-                    "inner join kodesatuan on databarang.kode_sat=kodesatuan.kode_sat "+
-                    "inner join pasien on reg_periksa.no_rkm_medis=pasien.no_rkm_medis "+
+                    "FROM resep_pulang INNER JOIN reg_periksa ON resep_pulang.no_rawat = reg_periksa.no_rawat "+
+                    "INNER JOIN databarang ON resep_pulang.kode_brng = databarang.kode_brng INNER JOIN kodesatuan ON databarang.kode_sat = kodesatuan.kode_sat "+
+                    "INNER JOIN pasien ON reg_periksa.no_rkm_medis = pasien.no_rkm_medis INNER JOIN permintaan_resep_pulang ON permintaan_resep_pulang.no_rawat = resep_pulang.no_rawat "+
                     "where resep_pulang.no_rawat='"+TNoRw.getText()+"' and resep_pulang.dosis<>''",param);
             }  
             this.setCursor(Cursor.getDefaultCursor());
