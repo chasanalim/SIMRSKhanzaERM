@@ -483,14 +483,14 @@
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                       <StringArray count="1">
-                        <StringItem index="0" value="22-06-2023"/>
+                        <StringItem index="0" value="25-06-2023"/>
                       </StringArray>
                     </Property>
                     <Property name="displayFormat" type="java.lang.String" value="dd-MM-yyyy"/>
                     <Property name="name" type="java.lang.String" value="DTPCari1" noResource="true"/>
                     <Property name="opaque" type="boolean" value="false"/>
                     <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-                      <Dimension value="[100, 23]"/>
+                      <Dimension value="[90, 23]"/>
                     </Property>
                   </Properties>
                   <Events>
@@ -512,14 +512,14 @@
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                       <StringArray count="1">
-                        <StringItem index="0" value="22-06-2023"/>
+                        <StringItem index="0" value="25-06-2023"/>
                       </StringArray>
                     </Property>
                     <Property name="displayFormat" type="java.lang.String" value="dd-MM-yyyy"/>
                     <Property name="name" type="java.lang.String" value="DTPCari2" noResource="true"/>
                     <Property name="opaque" type="boolean" value="false"/>
                     <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-                      <Dimension value="[100, 23]"/>
+                      <Dimension value="[90, 23]"/>
                     </Property>
                   </Properties>
                   <Events>
@@ -544,7 +544,7 @@
                     <Property name="name" type="java.lang.String" value="R3" noResource="true"/>
                     <Property name="opaque" type="boolean" value="true"/>
                     <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-                      <Dimension value="[135, 23]"/>
+                      <Dimension value="[130, 23]"/>
                     </Property>
                   </Properties>
                 </Component>
@@ -552,14 +552,14 @@
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                       <StringArray count="1">
-                        <StringItem index="0" value="22-06-2023"/>
+                        <StringItem index="0" value="25-06-2023"/>
                       </StringArray>
                     </Property>
                     <Property name="displayFormat" type="java.lang.String" value="dd-MM-yyyy"/>
                     <Property name="name" type="java.lang.String" value="DTPCari3" noResource="true"/>
                     <Property name="opaque" type="boolean" value="false"/>
                     <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-                      <Dimension value="[100, 23]"/>
+                      <Dimension value="[90, 23]"/>
                     </Property>
                   </Properties>
                   <Events>
@@ -581,14 +581,14 @@
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                       <StringArray count="1">
-                        <StringItem index="0" value="22-06-2023"/>
+                        <StringItem index="0" value="25-06-2023"/>
                       </StringArray>
                     </Property>
                     <Property name="displayFormat" type="java.lang.String" value="dd-MM-yyyy"/>
                     <Property name="name" type="java.lang.String" value="DTPCari4" noResource="true"/>
                     <Property name="opaque" type="boolean" value="false"/>
                     <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-                      <Dimension value="[100, 23]"/>
+                      <Dimension value="[90, 23]"/>
                     </Property>
                   </Properties>
                   <Events>
@@ -596,40 +596,54 @@
                     <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="DTPCari4KeyPressed"/>
                   </Events>
                 </Component>
-                <Component class="widget.Label" name="jLabel12">
+                <Component class="widget.Label" name="jLabel13">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="Dokter :"/>
-                    <Property name="name" type="java.lang.String" value="jLabel12" noResource="true"/>
+                    <Property name="text" type="java.lang.String" value="Asal Booking :"/>
+                    <Property name="name" type="java.lang.String" value="jLabel13" noResource="true"/>
                     <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-                      <Dimension value="[80, 14]"/>
+                      <Dimension value="[100, 23]"/>
                     </Property>
                   </Properties>
                 </Component>
-                <Component class="widget.TextBox" name="TCariDokter">
+                <Component class="widget.ComboBox" name="cmbAsalBooking">
                   <Properties>
-                    <Property name="editable" type="boolean" value="false"/>
-                    <Property name="highlighter" type="javax.swing.text.Highlighter" editor="org.netbeans.modules.form.ComponentChooserEditor">
-                      <ComponentRef name="null"/>
+                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                      <StringArray count="4">
+                        <StringItem index="0" value="Semua"/>
+                        <StringItem index="1" value="Offline"/>
+                        <StringItem index="2" value="Online"/>
+                        <StringItem index="3" value="Mobile JKN"/>
+                      </StringArray>
                     </Property>
-                    <Property name="name" type="java.lang.String" value="TCariDokter" noResource="true"/>
+                    <Property name="name" type="java.lang.String" value="cmbAsalBooking" noResource="true"/>
                     <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-                      <Dimension value="[230, 24]"/>
+                      <Dimension value="[130, 23]"/>
                     </Property>
                   </Properties>
                 </Component>
-                <Component class="widget.Button" name="BtnCariDokter">
+                <Component class="widget.Label" name="jLabel21">
                   <Properties>
-                    <Property name="icon" type="javax.swing.Icon" noResource="true" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/picture/190.png"/>
+                    <Property name="text" type="java.lang.String" value="Status Daftar:"/>
+                    <Property name="name" type="java.lang.String" value="jLabel21" noResource="true"/>
+                    <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                      <Dimension value="[100, 23]"/>
                     </Property>
-                    <Property name="mnemonic" type="int" value="88"/>
-                    <Property name="toolTipText" type="java.lang.String" value="Alt+X"/>
-                    <Property name="name" type="java.lang.String" value="BtnCariDokter" noResource="true"/>
                   </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnCariDokterActionPerformed"/>
-                    <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="BtnCariDokterKeyPressed"/>
-                  </Events>
+                </Component>
+                <Component class="widget.ComboBox" name="cmbStatusDaftar">
+                  <Properties>
+                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                      <StringArray count="3">
+                        <StringItem index="0" value="Semua"/>
+                        <StringItem index="1" value="Terdaftar"/>
+                        <StringItem index="2" value="Belum"/>
+                      </StringArray>
+                    </Property>
+                    <Property name="name" type="java.lang.String" value="cmbStatusDaftar" noResource="true"/>
+                    <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                      <Dimension value="[130, 23]"/>
+                    </Property>
+                  </Properties>
                 </Component>
               </SubComponents>
             </Container>
@@ -780,7 +794,7 @@
                     </Property>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                       <StringArray count="1">
-                        <StringItem index="0" value="22-06-2023 08:47:46"/>
+                        <StringItem index="0" value="25-06-2023 11:02:18"/>
                       </StringArray>
                     </Property>
                     <Property name="displayFormat" type="java.lang.String" value="dd-MM-yyyy HH:mm:ss"/>
@@ -916,7 +930,7 @@
                     </Property>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                       <StringArray count="1">
-                        <StringItem index="0" value="22-06-2023 08:47:46"/>
+                        <StringItem index="0" value="25-06-2023 11:02:18"/>
                       </StringArray>
                     </Property>
                     <Property name="displayFormat" type="java.lang.String" value="dd-MM-yyyy HH:mm:ss"/>

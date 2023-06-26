@@ -52,7 +52,7 @@ public class DlgBookingRegistrasi extends javax.swing.JDialog {
     private DlgCariPoli poli=new DlgCariPoli(null,false);
     private DlgCariPoli2 poli2=new DlgCariPoli2(null,false);
     private DlgPasien pasien=new DlgPasien(null,false);
-    private String aktifjadwal="",URUTNOREG="",status="",no_rawat="",umur="",sttsumur="",nohp="";
+    private String aktifjadwal="",URUTNOREG="",status="",no_rawat="",umur="",sttsumur="",nohp="",filter="",dok="";
     private StringBuilder htmlContent;
     private int noreg, nobooking,pilihan;
     
@@ -223,8 +223,8 @@ public class DlgBookingRegistrasi extends javax.swing.JDialog {
                     NmDokter.setText(dokter.getTable().getValueAt(dokter.getTable().getSelectedRow(),1).toString());
                     isNomer();}
                 else{
-                    TCariDokter.setText(dokter.getTable().getValueAt(dokter.getTable().getSelectedRow(),1).toString());
-                    TCariDokter.requestFocus();
+//                    TCariDokter.setText(dokter.getTable().getValueAt(dokter.getTable().getSelectedRow(),1).toString());
+//                    TCariDokter.requestFocus();
                     tampil();
                     }
                 }
@@ -474,9 +474,10 @@ public class DlgBookingRegistrasi extends javax.swing.JDialog {
         DTPCari3 = new widget.Tanggal();
         jLabel25 = new widget.Label();
         DTPCari4 = new widget.Tanggal();
-        jLabel12 = new widget.Label();
-        TCariDokter = new widget.TextBox();
-        BtnCariDokter = new widget.Button();
+        jLabel13 = new widget.Label();
+        cmbAsalBooking = new widget.ComboBox();
+        jLabel21 = new widget.Label();
+        cmbStatusDaftar = new widget.ComboBox();
         PanelInput = new javax.swing.JPanel();
         ChkInput = new widget.CekBox();
         FormInput = new widget.PanelBiasa();
@@ -806,11 +807,11 @@ public class DlgBookingRegistrasi extends javax.swing.JDialog {
         R2.setPreferredSize(new java.awt.Dimension(125, 23));
         panelCari.add(R2);
 
-        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "22-06-2023" }));
+        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "25-06-2023" }));
         DTPCari1.setDisplayFormat("dd-MM-yyyy");
         DTPCari1.setName("DTPCari1"); // NOI18N
         DTPCari1.setOpaque(false);
-        DTPCari1.setPreferredSize(new java.awt.Dimension(100, 23));
+        DTPCari1.setPreferredSize(new java.awt.Dimension(90, 23));
         DTPCari1.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 DTPCari1ItemStateChanged(evt);
@@ -829,11 +830,11 @@ public class DlgBookingRegistrasi extends javax.swing.JDialog {
         jLabel22.setPreferredSize(new java.awt.Dimension(25, 23));
         panelCari.add(jLabel22);
 
-        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "22-06-2023" }));
+        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "25-06-2023" }));
         DTPCari2.setDisplayFormat("dd-MM-yyyy");
         DTPCari2.setName("DTPCari2"); // NOI18N
         DTPCari2.setOpaque(false);
-        DTPCari2.setPreferredSize(new java.awt.Dimension(100, 23));
+        DTPCari2.setPreferredSize(new java.awt.Dimension(90, 23));
         DTPCari2.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 DTPCari2KeyPressed(evt);
@@ -848,14 +849,14 @@ public class DlgBookingRegistrasi extends javax.swing.JDialog {
         R3.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         R3.setName("R3"); // NOI18N
         R3.setOpaque(true);
-        R3.setPreferredSize(new java.awt.Dimension(135, 23));
+        R3.setPreferredSize(new java.awt.Dimension(130, 23));
         panelCari.add(R3);
 
-        DTPCari3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "22-06-2023" }));
+        DTPCari3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "25-06-2023" }));
         DTPCari3.setDisplayFormat("dd-MM-yyyy");
         DTPCari3.setName("DTPCari3"); // NOI18N
         DTPCari3.setOpaque(false);
-        DTPCari3.setPreferredSize(new java.awt.Dimension(100, 23));
+        DTPCari3.setPreferredSize(new java.awt.Dimension(90, 23));
         DTPCari3.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 DTPCari3ItemStateChanged(evt);
@@ -874,11 +875,11 @@ public class DlgBookingRegistrasi extends javax.swing.JDialog {
         jLabel25.setPreferredSize(new java.awt.Dimension(25, 23));
         panelCari.add(jLabel25);
 
-        DTPCari4.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "22-06-2023" }));
+        DTPCari4.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "25-06-2023" }));
         DTPCari4.setDisplayFormat("dd-MM-yyyy");
         DTPCari4.setName("DTPCari4"); // NOI18N
         DTPCari4.setOpaque(false);
-        DTPCari4.setPreferredSize(new java.awt.Dimension(100, 23));
+        DTPCari4.setPreferredSize(new java.awt.Dimension(90, 23));
         DTPCari4.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 DTPCari4ItemStateChanged(evt);
@@ -891,32 +892,25 @@ public class DlgBookingRegistrasi extends javax.swing.JDialog {
         });
         panelCari.add(DTPCari4);
 
-        jLabel12.setText("Dokter :");
-        jLabel12.setName("jLabel12"); // NOI18N
-        jLabel12.setPreferredSize(new java.awt.Dimension(80, 14));
-        panelCari.add(jLabel12);
+        jLabel13.setText("Asal Booking :");
+        jLabel13.setName("jLabel13"); // NOI18N
+        jLabel13.setPreferredSize(new java.awt.Dimension(100, 23));
+        panelCari.add(jLabel13);
 
-        TCariDokter.setEditable(false);
-        TCariDokter.setHighlighter(null);
-        TCariDokter.setName("TCariDokter"); // NOI18N
-        TCariDokter.setPreferredSize(new java.awt.Dimension(230, 24));
-        panelCari.add(TCariDokter);
+        cmbAsalBooking.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Semua", "Offline", "Online", "Mobile JKN" }));
+        cmbAsalBooking.setName("cmbAsalBooking"); // NOI18N
+        cmbAsalBooking.setPreferredSize(new java.awt.Dimension(130, 23));
+        panelCari.add(cmbAsalBooking);
 
-        BtnCariDokter.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/190.png"))); // NOI18N
-        BtnCariDokter.setMnemonic('X');
-        BtnCariDokter.setToolTipText("Alt+X");
-        BtnCariDokter.setName("BtnCariDokter"); // NOI18N
-        BtnCariDokter.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnCariDokterActionPerformed(evt);
-            }
-        });
-        BtnCariDokter.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                BtnCariDokterKeyPressed(evt);
-            }
-        });
-        panelCari.add(BtnCariDokter);
+        jLabel21.setText("Status Daftar:");
+        jLabel21.setName("jLabel21"); // NOI18N
+        jLabel21.setPreferredSize(new java.awt.Dimension(100, 23));
+        panelCari.add(jLabel21);
+
+        cmbStatusDaftar.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Semua", "Terdaftar", "Belum" }));
+        cmbStatusDaftar.setName("cmbStatusDaftar"); // NOI18N
+        cmbStatusDaftar.setPreferredSize(new java.awt.Dimension(130, 23));
+        panelCari.add(cmbStatusDaftar);
 
         jPanel3.add(panelCari, java.awt.BorderLayout.PAGE_START);
 
@@ -985,7 +979,7 @@ public class DlgBookingRegistrasi extends javax.swing.JDialog {
         TPasien.setBounds(151, 10, 311, 23);
 
         TanggalBooking.setForeground(new java.awt.Color(50, 70, 50));
-        TanggalBooking.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "22-06-2023 08:47:46" }));
+        TanggalBooking.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "25-06-2023 11:02:18" }));
         TanggalBooking.setDisplayFormat("dd-MM-yyyy HH:mm:ss");
         TanggalBooking.setName("TanggalBooking"); // NOI18N
         TanggalBooking.setOpaque(false);
@@ -1065,7 +1059,7 @@ public class DlgBookingRegistrasi extends javax.swing.JDialog {
         jLabel14.setBounds(506, 40, 70, 23);
 
         TanggalPeriksa.setForeground(new java.awt.Color(50, 70, 50));
-        TanggalPeriksa.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "22-06-2023 08:47:46" }));
+        TanggalPeriksa.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "25-06-2023 11:02:18" }));
         TanggalPeriksa.setDisplayFormat("dd-MM-yyyy HH:mm:ss");
         TanggalPeriksa.setName("TanggalPeriksa"); // NOI18N
         TanggalPeriksa.setOpaque(false);
@@ -1633,22 +1627,10 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
         }
     }//GEN-LAST:event_ppCSVWARocketActionPerformed
 
-    private void BtnCariDokterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCariDokterActionPerformed
-        pilihan=2;
-        dokter.isCek();
-        dokter.TCari.requestFocus();
-        dokter.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
-        dokter.setLocationRelativeTo(internalFrame1);
-        dokter.setVisible(true);
-    }//GEN-LAST:event_BtnCariDokterActionPerformed
-
-    private void BtnCariDokterKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BtnCariDokterKeyPressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_BtnCariDokterKeyPressed
-
     private void BtnAll1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAll1ActionPerformed
-
-        TCariDokter.setText("");
+        cmbAsalBooking.setSelectedItem("Semua");
+        cmbStatusDaftar.setSelectedItem("Semua");
+//        TCariDokter.setText("");
         TCari.setText("");
         tampil();
         
@@ -1683,7 +1665,6 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     private widget.Button BtnAll1;
     private widget.Button BtnBatal;
     private widget.Button BtnCari;
-    private widget.Button BtnCariDokter;
     private widget.Button BtnDokter;
     private widget.Button BtnEdit;
     private widget.Button BtnHapus;
@@ -1711,21 +1692,23 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     private widget.RadioButton R3;
     private widget.ScrollPane Scroll;
     private widget.TextBox TCari;
-    private widget.TextBox TCariDokter;
     private widget.TextBox TNoRM;
     private widget.TextBox TPasien;
     private widget.Tanggal TanggalBooking;
     private widget.Tanggal TanggalPeriksa;
     private widget.Button btnPenjab;
     private javax.swing.ButtonGroup buttonGroup1;
+    private widget.ComboBox cmbAsalBooking;
+    private widget.ComboBox cmbStatusDaftar;
     private widget.InternalFrame internalFrame1;
     private widget.Label jLabel10;
     private widget.Label jLabel11;
-    private widget.Label jLabel12;
+    private widget.Label jLabel13;
     private widget.Label jLabel14;
     private widget.Label jLabel18;
     private widget.Label jLabel19;
     private widget.Label jLabel20;
+    private widget.Label jLabel21;
     private widget.Label jLabel22;
     private widget.Label jLabel25;
     private widget.Label jLabel4;
@@ -1746,13 +1729,39 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
 
     private void tampil() {     
         if(R2.isSelected()==true){
-            status=" booking_registrasi.tanggal_booking between '"+Valid.SetTgl(DTPCari1.getSelectedItem()+"")+"' and '"+Valid.SetTgl(DTPCari2.getSelectedItem()+"")+"' ";
+             status=" booking_registrasi.tanggal_booking between '"+Valid.SetTgl(DTPCari1.getSelectedItem()+"")+"' and '"+Valid.SetTgl(DTPCari2.getSelectedItem()+"")+"' ";
+            if(!cmbStatusDaftar.getSelectedItem().equals("Semua")){
+                status=" booking_registrasi.tanggal_booking between '"+Valid.SetTgl(DTPCari1.getSelectedItem()+"")+"' and '"+Valid.SetTgl(DTPCari2.getSelectedItem()+"")+"' and booking_registrasi.status like '%"+cmbStatusDaftar.getSelectedItem().toString().replaceAll("Semua","").replaceAll("Terdaftar", "Terdaftar").replaceAll("Belum", "Belum")+"%' ";
+            }else if(!cmbAsalBooking.getSelectedItem().equals("Semua")){
+                status=" booking_registrasi.tanggal_booking between '"+Valid.SetTgl(DTPCari1.getSelectedItem()+"")+"' and '"+Valid.SetTgl(DTPCari2.getSelectedItem()+"")+"' and booking_registrasi.limit_reg like '%"+cmbAsalBooking.getSelectedItem().toString().replaceAll("Semua","").replaceAll("Offline", "0").replaceAll("Online", "1").replaceAll("Mobile JKN", "2")+"%' ";
+            }else if((!cmbStatusDaftar.getSelectedItem().equals("Semua")) && (!cmbAsalBooking.getSelectedItem().equals("Semua"))){
+                status=" booking_registrasi.tanggal_booking between '"+Valid.SetTgl(DTPCari1.getSelectedItem()+"")+"' and '"+Valid.SetTgl(DTPCari2.getSelectedItem()+"")+"' and booking_registrasi.limit_reg like '%"+cmbAsalBooking.getSelectedItem().toString().replaceAll("Semua","").replaceAll("Offline", "0").replaceAll("Online", "1").replaceAll("Mobile JKN", "2")+"%' "+
+                       " and booking_registrasi.status like '%"+cmbStatusDaftar.getSelectedItem().toString().replaceAll("Semua","")+"%' ";
+            }
         }else if(R3.isSelected()==true){
-            status=" booking_registrasi.tanggal_periksa between '"+Valid.SetTgl(DTPCari3.getSelectedItem()+"")+"' and '"+Valid.SetTgl(DTPCari4.getSelectedItem()+"")+"' ";           
+//            status=" booking_registrasi.tanggal_periksa between '"+Valid.SetTgl(DTPCari3.getSelectedItem()+"")+"' and '"+Valid.SetTgl(DTPCari4.getSelectedItem()+"")+"' ";           
+            if(!cmbStatusDaftar.getSelectedItem().equals("Semua")){
+                status=" booking_registrasi.tanggal_periksa between '"+Valid.SetTgl(DTPCari3.getSelectedItem()+"")+"' and '"+Valid.SetTgl(DTPCari4.getSelectedItem()+"")+"' and booking_registrasi.status like '%"+cmbStatusDaftar.getSelectedItem().toString().replaceAll("Semua","").replaceAll("Terdaftar", "Terdaftar").replaceAll("Belum", "Belum")+"%' ";
+            }else if(!cmbAsalBooking.getSelectedItem().equals("Semua")){
+                status=" booking_registrasi.tanggal_periksa between '"+Valid.SetTgl(DTPCari3.getSelectedItem()+"")+"' and '"+Valid.SetTgl(DTPCari4.getSelectedItem()+"")+"' and booking_registrasi.limit_reg like '%"+cmbAsalBooking.getSelectedItem().toString().replaceAll("Semua","").replaceAll("Offline", "0").replaceAll("Online", "1").replaceAll("Mobile JKN", "2")+"%' ";
+            }else{
+                status=" booking_registrasi.tanggal_periksa between '"+Valid.SetTgl(DTPCari3.getSelectedItem()+"")+"' and '"+Valid.SetTgl(DTPCari4.getSelectedItem()+"")+"' and booking_registrasi.limit_reg like '%"+cmbAsalBooking.getSelectedItem().toString().replaceAll("Semua","").replaceAll("Offline", "0").replaceAll("Online", "1").replaceAll("Mobile JKN", "2")+"%' "+
+                       " and booking_registrasi.status like '%"+cmbStatusDaftar.getSelectedItem().toString().replaceAll("Semua","")+"%' ";
+            }
         }
+        
+        
+        filter=status+" ";
+        if(!TCari.getText().equals("")){
+            filter=status+" and (booking_registrasi.no_rkm_medis like '%"+TCari.getText().trim()+"%' or "+
+                    "pasien.nm_pasien like '%"+TCari.getText().trim()+"%' or poliklinik.nm_poli like '%"+TCari.getText().trim()+"%' or "+      
+                    "dokter.nm_dokter like '%"+TCari.getText().trim()+"%')";
+          
+        }
+        
         Valid.tabelKosong(tabMode);
         try {
-            if(TCariDokter.getText().equals("")){
+//            if(TCariDokter.getText().equals("")){
             ps=koneksi.prepareStatement(
                     "select booking_registrasi.tanggal_booking,booking_registrasi.jam_booking,booking_registrasi.no_rkm_medis, "+
                     "pasien.nm_pasien,booking_registrasi.tanggal_periksa,booking_registrasi.kd_dokter,"+
@@ -1771,47 +1780,45 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
                     "inner join kecamatan on pasien.kd_kec=kecamatan.kd_kec "+
                     "inner join kabupaten on pasien.kd_kab=kabupaten.kd_kab "+
                     "left join referensi_mobilejkn_bpjs on referensi_mobilejkn_bpjs.norm=booking_registrasi.no_rkm_medis and referensi_mobilejkn_bpjs.tanggalperiksa=booking_registrasi.tanggal_periksa "+
-                    "where "+status+" and booking_registrasi.no_rkm_medis like ? or "+
-                    status+" and pasien.nm_pasien like ? or "+
-                    status+" and poliklinik.nm_poli like ? or "+
-                    status+" and dokter.nm_dokter like ? order by booking_registrasi.tanggal_booking,dokter.nm_dokter");
-            }else{
-             ps=koneksi.prepareStatement(
-                    "select booking_registrasi.tanggal_booking,booking_registrasi.jam_booking,booking_registrasi.no_rkm_medis, "+
-                    "pasien.nm_pasien,booking_registrasi.tanggal_periksa,booking_registrasi.kd_dokter,"+
-                    "dokter.nm_dokter,booking_registrasi.kd_poli,poliklinik.nm_poli,booking_registrasi.no_reg, "+
-                    "pasien.namakeluarga,concat(pasien.alamat,', ',kelurahan.nm_kel,', ',kecamatan.nm_kec,', ',kabupaten.nm_kab) as alamatpj,pasien.kelurahanpj,pasien.kecamatanpj,pasien.no_tlp,"+
-                    "pasien.kabupatenpj,pasien.propinsipj,pasien.keluarga,TIMESTAMPDIFF(YEAR, pasien.tgl_lahir, CURDATE()) as tahun, "+
-                    "(TIMESTAMPDIFF(MONTH, pasien.tgl_lahir, CURDATE()) - ((TIMESTAMPDIFF(MONTH, pasien.tgl_lahir, CURDATE()) div 12) * 12)) as bulan, "+
-                    "TIMESTAMPDIFF(DAY, DATE_ADD(DATE_ADD(pasien.tgl_lahir,INTERVAL TIMESTAMPDIFF(YEAR, pasien.tgl_lahir, CURDATE()) YEAR), INTERVAL TIMESTAMPDIFF(MONTH, pasien.tgl_lahir, CURDATE()) - ((TIMESTAMPDIFF(MONTH, pasien.tgl_lahir, CURDATE()) div 12) * 12) MONTH), CURDATE()) as hari, "+
-                    "booking_registrasi.limit_reg,booking_registrasi.status,booking_registrasi.kd_pj,penjab.png_jawab "+
-                    "referensi_mobilejkn_bpjs.jeniskunjungan,referensi_mobilejkn_bpjs.nomorreferensi "+
-                    "from booking_registrasi inner join pasien on booking_registrasi.no_rkm_medis=pasien.no_rkm_medis "+
-                    "inner join dokter on booking_registrasi.kd_dokter=dokter.kd_dokter "+
-                    "inner join poliklinik on booking_registrasi.kd_poli=poliklinik.kd_poli "+
-                    "inner join penjab on booking_registrasi.kd_pj=penjab.kd_pj "+
-                    "inner join kelurahan on pasien.kd_kel=kelurahan.kd_kel "+
-                    "inner join kecamatan on pasien.kd_kec=kecamatan.kd_kec "+
-                    "inner join kabupaten on pasien.kd_kab=kabupaten.kd_kab "+
-                    "left join referensi_mobilejkn_bpjs on referensi_mobilejkn_bpjs.norm=booking_registrasi.no_rkm_medis and referensi_mobilejkn_bpjs.tanggalperiksa=booking_registrasi.tanggal_periksa "+
-                    "where "+status+" and  dokter.nm_dokter like ? and (booking_registrasi.no_rkm_medis like ? or "+
-                    status+" and pasien.nm_pasien like ? or "+
-                    status+" and poliklinik.nm_poli like ? or "+
-                    status+" and dokter.nm_dokter like ?) order by booking_registrasi.tanggal_booking,dokter.nm_dokter");
-             }
+                    "where "+filter+" order by booking_registrasi.tanggal_booking,dokter.nm_dokter");
+//            }
+//            else{
+//             ps=koneksi.prepareStatement(
+//                    "select booking_registrasi.tanggal_booking,booking_registrasi.jam_booking,booking_registrasi.no_rkm_medis, "+
+//                    "pasien.nm_pasien,booking_registrasi.tanggal_periksa,booking_registrasi.kd_dokter,"+
+//                    "dokter.nm_dokter,booking_registrasi.kd_poli,poliklinik.nm_poli,booking_registrasi.no_reg, "+
+//                    "pasien.namakeluarga,concat(pasien.alamat,', ',kelurahan.nm_kel,', ',kecamatan.nm_kec,', ',kabupaten.nm_kab) as alamatpj,pasien.kelurahanpj,pasien.kecamatanpj,pasien.no_tlp,"+
+//                    "pasien.kabupatenpj,pasien.propinsipj,pasien.keluarga,TIMESTAMPDIFF(YEAR, pasien.tgl_lahir, CURDATE()) as tahun, "+
+//                    "(TIMESTAMPDIFF(MONTH, pasien.tgl_lahir, CURDATE()) - ((TIMESTAMPDIFF(MONTH, pasien.tgl_lahir, CURDATE()) div 12) * 12)) as bulan, "+
+//                    "TIMESTAMPDIFF(DAY, DATE_ADD(DATE_ADD(pasien.tgl_lahir,INTERVAL TIMESTAMPDIFF(YEAR, pasien.tgl_lahir, CURDATE()) YEAR), INTERVAL TIMESTAMPDIFF(MONTH, pasien.tgl_lahir, CURDATE()) - ((TIMESTAMPDIFF(MONTH, pasien.tgl_lahir, CURDATE()) div 12) * 12) MONTH), CURDATE()) as hari, "+
+//                    "booking_registrasi.limit_reg,booking_registrasi.status,booking_registrasi.kd_pj,penjab.png_jawab "+
+//                    "referensi_mobilejkn_bpjs.jeniskunjungan,referensi_mobilejkn_bpjs.nomorreferensi "+
+//                    "from booking_registrasi inner join pasien on booking_registrasi.no_rkm_medis=pasien.no_rkm_medis "+
+//                    "inner join dokter on booking_registrasi.kd_dokter=dokter.kd_dokter "+
+//                    "inner join poliklinik on booking_registrasi.kd_poli=poliklinik.kd_poli "+
+//                    "inner join penjab on booking_registrasi.kd_pj=penjab.kd_pj "+
+//                    "inner join kelurahan on pasien.kd_kel=kelurahan.kd_kel "+
+//                    "inner join kecamatan on pasien.kd_kec=kecamatan.kd_kec "+
+//                    "inner join kabupaten on pasien.kd_kab=kabupaten.kd_kab "+
+//                    "left join referensi_mobilejkn_bpjs on referensi_mobilejkn_bpjs.norm=booking_registrasi.no_rkm_medis and referensi_mobilejkn_bpjs.tanggalperiksa=booking_registrasi.tanggal_periksa "+
+//                    "where "+status+" and  dokter.nm_dokter like ? and (booking_registrasi.no_rkm_medis like ? or "+
+//                    status+" and pasien.nm_pasien like ? or "+
+//                    status+" and poliklinik.nm_poli like ? or "+
+//                    status+" and dokter.nm_dokter like ?) order by booking_registrasi.tanggal_booking,dokter.nm_dokter");
+//             }
             try {
-                if(TCariDokter.getText().equals("")){
-                    ps.setString(1,"%"+TCari.getText().trim()+"%");
-                    ps.setString(2,"%"+TCari.getText().trim()+"%");
-                    ps.setString(3,"%"+TCari.getText().trim()+"%");
-                    ps.setString(4,"%"+TCari.getText().trim()+"%");
-                }else{
-                    ps.setString(1,"%"+TCariDokter.getText().trim()+"%");
-                    ps.setString(2,"%"+TCari.getText().trim()+"%");
-                    ps.setString(3,"%"+TCari.getText().trim()+"%");
-                    ps.setString(4,"%"+TCari.getText().trim()+"%");
-                    ps.setString(5,"%"+TCari.getText().trim()+"%");
-                }
+//                if(TCariDokter.getText().equals("")){
+//                    ps.setString(1,"%"+TCari.getText().trim()+"%");
+//                    ps.setString(2,"%"+TCari.getText().trim()+"%");
+//                    ps.setString(3,"%"+TCari.getText().trim()+"%");
+//                    ps.setString(4,"%"+TCari.getText().trim()+"%");
+//                }else{
+//                    ps.setString(1,"%"+TCariDokter.getText().trim()+"%");
+//                    ps.setString(2,"%"+TCari.getText().trim()+"%");
+//                    ps.setString(3,"%"+TCari.getText().trim()+"%");
+//                    ps.setString(4,"%"+TCari.getText().trim()+"%");
+//                    ps.setString(5,"%"+TCari.getText().trim()+"%");
+//                }
                
                 
                 rs=ps.executeQuery();
