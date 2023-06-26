@@ -606,7 +606,7 @@ private void BtnSimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
                         Valid.MyReportqry("rptItemResepPulang.jasper","report","::[ Aturan Pakai Obat ]::",
                             "SELECT resep_pulang.tanggal,permintaan_resep_pulang.no_permintaan,resep_pulang.no_rawat,permintaan_resep_pulang.tgl_permintaan, "+
                             "permintaan_resep_pulang.jam,reg_periksa.no_rkm_medis,pasien.nm_pasien,pasien.no_rkm_medis, "+
-                            "pasien.nm_pasien,pasien.no_ktp,pasien.jk,reg_periksa.umurdaftar,reg_periksa.sttsumur,databarang.nama_brng, "+
+                            "pasien.nm_pasien,pasien.no_ktp,pasien.jk,pasien.tgl_lahir,reg_periksa.umurdaftar,reg_periksa.sttsumur,databarang.nama_brng, "+
                             "resep_pulang.dosis,resep_pulang.jml_barang,kodesatuan.satuan "+
                             "FROM resep_pulang INNER JOIN reg_periksa ON resep_pulang.no_rawat = reg_periksa.no_rawat "+
                             "INNER JOIN databarang ON resep_pulang.kode_brng = databarang.kode_brng INNER JOIN kodesatuan ON databarang.kode_sat = kodesatuan.kode_sat "+
