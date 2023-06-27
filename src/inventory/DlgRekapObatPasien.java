@@ -1076,7 +1076,8 @@ private void BtnCariKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
                             "inner join bangsal on detail_pemberian_obat.kd_bangsal=bangsal.kd_bangsal "+
                             "where detail_pemberian_obat.no_rawat=? and detail_pemberian_obat.status like ? "+
                             "and concat(databarang.kdjns,jenis.nama) like ? and concat(databarang.kode_kategori,kategori_barang.nama) like ? "+
-                            "and concat(databarang.kode_golongan,golongan_barang.nama) like ? and concat(detail_pemberian_obat.kd_bangsal,bangsal.nm_bangsal) like ? "+
+                            "and concat(databarang.kode_golongan,golongan_barang.nama) like ? and concat(detail_pemberian_obat.kd_bangsal,bangsal.nm_bangsal) like ? "+ 
+                            "and (databarang.nama_brng like ? or detail_pemberian_obat.kode_brng like ?) "+
                             "group by detail_pemberian_obat.kode_brng order by databarang.nama_brng");   
                     }
                     try {
@@ -1089,6 +1090,8 @@ private void BtnCariKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
                             psobat.setString(4,"%"+kdkategori.getText()+nmkategori.getText()+"%");
                             psobat.setString(5,"%"+kdgolongan.getText()+nmgolongan.getText()+"%");
                             psobat.setString(6,"%"+kdasal.getText()+nmasal.getText()+"%");
+                            psobat.setString(7,"%"+TCari.getText().trim()+"%");
+                            psobat.setString(8,"%"+TCari.getText().trim()+"%");
                         }
                         rsobat=psobat.executeQuery();
                         if(rsobat.next()){
