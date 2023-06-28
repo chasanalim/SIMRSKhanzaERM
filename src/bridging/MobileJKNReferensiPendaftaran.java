@@ -82,9 +82,9 @@ public final class MobileJKNReferensiPendaftaran extends javax.swing.JDialog {
             }else if(i==7){
                 column.setPreferredWidth(140);
             }else if(i==8){
-                column.setPreferredWidth(160);
+                column.setPreferredWidth(60);
             }else if(i==9){
-                column.setPreferredWidth(70);
+                column.setPreferredWidth(90);
             }else if(i==10){
                 column.setPreferredWidth(110);
             }else if(i==11){
@@ -499,9 +499,9 @@ public final class MobileJKNReferensiPendaftaran extends javax.swing.JDialog {
 
     private void BtnCheckinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCheckinActionPerformed
         if(Sequel.mengedittf("referensi_mobilejkn_bpjs","nobooking=?","status='Checkin',validasi=now()",1,new String[]{
-            tbJnsPerawatan.getValueAt(tbJnsPerawatan.getSelectedRow(),14).toString()
+            tbJnsPerawatan.getValueAt(tbJnsPerawatan.getSelectedRow(),16).toString()
         })==true){
-            Sequel.meghapus("referensi_mobilejkn_bpjs_batal","nobooking",tbJnsPerawatan.getValueAt(tbJnsPerawatan.getSelectedRow(),14).toString());
+            Sequel.meghapus("referensi_mobilejkn_bpjs_batal","nobooking",tbJnsPerawatan.getValueAt(tbJnsPerawatan.getSelectedRow(),16).toString());
             tampil();
         }
     }//GEN-LAST:event_BtnCheckinActionPerformed
