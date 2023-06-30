@@ -22,7 +22,7 @@ public class WarnaTableRajal extends DefaultTableCellRenderer {
     public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column){
         Component component = super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
         if (row % 2 == 1){
-            component.setBackground(new Color(225,240,230));
+            component.setBackground(new Color(245,255,250));
 //            component.setForeground(new Color(40,40,40));
         }else{
             component.setBackground(new Color(255,255,255));
@@ -33,10 +33,10 @@ public class WarnaTableRajal extends DefaultTableCellRenderer {
             component.setBackground(new Color(155, 155, 155));
 //            component.setForeground(new Color(245, 240, 240));
         }
-        else if (table.getValueAt(row, statbayar).toString().equals("Sudah Bayar")&&table.getValueAt(row,9).toString().equals("UMUM")){
-            component.setBackground(new Color(245, 235, 110));
-//            component.setForeground(new Color(245, 240, 240));
-        }
+//        else if (table.getValueAt(row, statbayar).toString().equals("Sudah Bayar")&&table.getValueAt(row,9).toString().equals("UMUM")){
+//            component.setBackground(new Color(245, 235, 110));
+////            component.setForeground(new Color(245, 240, 240));
+//        }
         else if (table.getValueAt(row, statbayar).toString().equals("Sudah Bayar")){
             component.setBackground(new Color(130, 215, 250));
 //            component.setForeground(new Color(245, 240, 240));
