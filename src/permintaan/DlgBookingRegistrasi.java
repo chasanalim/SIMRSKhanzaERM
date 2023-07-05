@@ -1612,7 +1612,18 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
                         nohp=tabMode.getValueAt(i,26).toString();
                     }
                     htmlContent.append(
-                        "\" "+nohp+"\";\""+"Mengingatkan kembali kepada saudara "+tabMode.getValueAt(i,4)+" dengan No.RM "+tabMode.getValueAt(i,3)+", berdasarkan booking pada tanggal "+tabMode.getValueAt(i,1)+" "+tabMode.getValueAt(i,2)+" dengan tujuan pemeriksaan di "+tabMode.getValueAt(i,9)+" pada tanggal "+tabMode.getValueAt(i,5)+" agar bisa datang dengan nomor antrian "+tabMode.getValueAt(i,10)+". Customer Service "+akses.getnamars()+"\"\n"
+                        "\" "+nohp+"\";\""+"Assalamualaikum Wr. Wb \n"
+                                + "Mengingatkan kembali jadwal Periksa RSU BANYUMANIK 2 kepada:\n"
+                                + " Bapak/Ibu/Saudara : "+tabMode.getValueAt(i,4)+"\n"
+                                + " No.RM             : "+tabMode.getValueAt(i,3)+"\n \n"
+                                + "berdasarkan booking pada tanggal "+tabMode.getValueAt(i,1)+", saudara terdaftar periksa pada: \n"
+                                + " Asal Booking    : "+tabMode.getValueAt(i,22)+"\n"       
+                                + " Tanggal Periksa : "+tabMode.getValueAt(i,5)+"\n"
+                                + " Poliklinik      : "+tabMode.getValueAt(i,9)+"\n"
+                                + " Dokter          : "+tabMode.getValueAt(i,7)+"\n"
+                                + " Nomor Antrian   : "+tabMode.getValueAt(i,10)+".\n "
+                                + "Kesembuhan Anda Harapan Kami. \n \n Customer Service \n"
+                                + ""+akses.getnamars()+"\"\n"
                     );
                 } catch (Exception e) {
                 }
