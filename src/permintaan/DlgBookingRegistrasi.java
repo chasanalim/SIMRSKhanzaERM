@@ -47,6 +47,8 @@ public class DlgBookingRegistrasi extends javax.swing.JDialog {
     private PreparedStatement ps;
     private ResultSet rs;
     private int i=0,kuota=0;
+    private Calendar cal = Calendar.getInstance();
+    private int day = cal.get(Calendar.DAY_OF_WEEK);
     private DlgCariDokter dokter=new DlgCariDokter(null,false);
     private DlgCariDokter2 dokter2=new DlgCariDokter2(null,false);
     private DlgCariPoli poli=new DlgCariPoli(null,false);
@@ -1612,16 +1614,16 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
                         nohp=tabMode.getValueAt(i,26).toString();
                     }
                     htmlContent.append(
-                        "\" "+nohp+"\";\""+"Assalamualaikum Wr. Wb \n"
+                        "\" "+nohp+"\";\""+"Salam Sehat\n"
                                 + "Mengingatkan kembali jadwal Periksa RSU BANYUMANIK 2 kepada:\n"
                                 + " Bapak/Ibu/Saudara : "+tabMode.getValueAt(i,4)+"\n"
-                                + " No.RM             : "+tabMode.getValueAt(i,3)+"\n \n"
+                                + " No.RM                     : "+tabMode.getValueAt(i,3)+"\n \n"
                                 + "berdasarkan booking pada tanggal "+tabMode.getValueAt(i,1)+", saudara terdaftar periksa pada: \n"
-                                + " Asal Booking    : "+tabMode.getValueAt(i,22)+"\n"       
-                                + " Tanggal Periksa : "+tabMode.getValueAt(i,5)+"\n"
-                                + " Poliklinik      : "+tabMode.getValueAt(i,9)+"\n"
-                                + " Dokter          : "+tabMode.getValueAt(i,7)+"\n"
-                                + " Nomor Antrian   : "+tabMode.getValueAt(i,10)+".\n "
+                                + " Tanggal Periksa : "+tabMode.getValueAt(i,5)+"\n"       
+                                + " Poliklinik            : "+tabMode.getValueAt(i,9)+"\n"
+                                + " Dokter               : "+tabMode.getValueAt(i,7)+"\n"
+                                + " Nomor Antrian  : "+tabMode.getValueAt(i,10)+".\n"
+                                + " Asal Booking     : "+tabMode.getValueAt(i,22)+"\n" 
                                 + "Kesembuhan Anda Harapan Kami. \n \n Customer Service \n"
                                 + ""+akses.getnamars()+"\"\n"
                     );
@@ -1750,7 +1752,7 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
                        " and booking_registrasi.status like '%"+cmbStatusDaftar.getSelectedItem().toString().replaceAll("Semua","")+"%' ";
             }
         }else if(R3.isSelected()==true){
-//            status=" booking_registrasi.tanggal_periksa between '"+Valid.SetTgl(DTPCari3.getSelectedItem()+"")+"' and '"+Valid.SetTgl(DTPCari4.getSelectedItem()+"")+"' ";           
+            status=" booking_registrasi.tanggal_periksa between '"+Valid.SetTgl(DTPCari3.getSelectedItem()+"")+"' and '"+Valid.SetTgl(DTPCari4.getSelectedItem()+"")+"' ";           
             if(!cmbStatusDaftar.getSelectedItem().equals("Semua")){
                 status=" booking_registrasi.tanggal_periksa between '"+Valid.SetTgl(DTPCari3.getSelectedItem()+"")+"' and '"+Valid.SetTgl(DTPCari4.getSelectedItem()+"")+"' and booking_registrasi.status like '%"+cmbStatusDaftar.getSelectedItem().toString().replaceAll("Semua","").replaceAll("Terdaftar", "Terdaftar").replaceAll("Belum", "Belum")+"%' ";
             }else if(!cmbAsalBooking.getSelectedItem().equals("Semua")){
