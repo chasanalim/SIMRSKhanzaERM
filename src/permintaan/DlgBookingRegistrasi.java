@@ -1621,7 +1621,7 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
                     }
                     htmlContent.append(
                         "\" "+nohp+"\";\""+"Salam Sehat\n"
-                                + "Mengingatkan kembali jadwal Periksa RSU BANYUMANIK 2 kepada:\n"
+                                + "*Reminder Periksa Dokter*\nMengingatkan kembali jadwal Periksa RSU BANYUMANIK 2 kepada:\n"
                                 + " Bapak/Ibu/Saudara : "+tabMode.getValueAt(i,4)+"\n"
                                 + " No.RM                     : "+tabMode.getValueAt(i,3)+"\n \n"
                                 + "berdasarkan booking pada tanggal "+tabMode.getValueAt(i,1)+", saudara terdaftar periksa pada: \n"
