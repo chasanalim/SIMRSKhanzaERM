@@ -402,6 +402,20 @@ public final class validasi {
         }
     }
     
+    public boolean editTabletf(DefaultTableModel tabMode,String table,String field_acuan,String nilai_field,String update,int i, String[] a) {
+        status=true;
+        if(tabMode.getRowCount()==0){
+            status=false;
+            JOptionPane.showMessageDialog(null,"Maaf, data sudah habis...!!!!");
+        }else if(nilai_field.trim().equals("")){
+            status=false;
+            JOptionPane.showMessageDialog(null,"Maaf, Gagal mengedit. Pilih dulu data yang mau diedit.\nKlik data pada table untuk memilih...!!!!");
+        }else if(! nilai_field.trim().equals("")){            
+            status=sek.mengedittf(table,field_acuan+"="+nilai_field, update,i,a);                 
+        }
+        return status;
+    }
+    
     public void fillData(DefaultTableModel model,JTable table, File file) {
         try {
             WritableWorkbook workbook1 = Workbook.createWorkbook(file);
@@ -964,6 +978,22 @@ public final class validasi {
     
     public void pindah2(java.awt.event.KeyEvent evt,JTextField kiri,JButton kanan){
         if(evt.getKeyCode()==KeyEvent.VK_TAB){
+            kanan.requestFocus();
+        }else if(evt.getKeyCode()==KeyEvent.VK_PAGE_UP){
+            kiri.requestFocus();
+        }
+    }
+    
+    public void pindah2(KeyEvent evt, ComboBox kiri, Button kanan) {
+        if(evt.getKeyCode()==KeyEvent.VK_TAB){
+            kanan.requestFocus();
+        }else if(evt.getKeyCode()==KeyEvent.VK_PAGE_UP){
+            kiri.requestFocus();
+        }
+    }
+    
+    public void pindah2(KeyEvent evt, Button kiri, ComboBox kanan) {
+        if(evt.getKeyCode()==KeyEvent.VK_ENTER){
             kanan.requestFocus();
         }else if(evt.getKeyCode()==KeyEvent.VK_PAGE_UP){
             kiri.requestFocus();
