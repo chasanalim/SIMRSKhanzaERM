@@ -2542,16 +2542,15 @@
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                               <StringArray count="7">
-                                <StringItem index="0" value="Perilaku Kekerasan"/>
-                                <StringItem index="1" value="Gangguan Efek"/>
-                                <StringItem index="2" value="Gangguan Memori"/>
-                                <StringItem index="3" value="Halusinasi"/>
-                                <StringItem index="4" value="Kecenderungan Percobaan Bunuh Diri"/>
-                                <StringItem index="5" value="Lainnya"/>
-                                <StringItem index="6" value="-"/>
+                                <StringItem index="0" value="-"/>
+                                <StringItem index="1" value="Perilaku Kekerasan"/>
+                                <StringItem index="2" value="Gangguan Efek"/>
+                                <StringItem index="3" value="Gangguan Memori"/>
+                                <StringItem index="4" value="Halusinasi"/>
+                                <StringItem index="5" value="Kecenderungan Percobaan Bunuh Diri"/>
+                                <StringItem index="6" value="Lainnya"/>
                               </StringArray>
                             </Property>
-                            <Property name="selectedIndex" type="int" value="6"/>
                             <Property name="name" type="java.lang.String" value="Perilaku" noResource="true"/>
                           </Properties>
                           <Events>
