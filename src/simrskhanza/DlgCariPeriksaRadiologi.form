@@ -763,7 +763,7 @@
               <Properties>
                 <Property name="name" type="java.lang.String" value="TCari" noResource="true"/>
                 <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-                  <Dimension value="[170, 23]"/>
+                  <Dimension value="[230, 23]"/>
                 </Property>
               </Properties>
               <Events>
