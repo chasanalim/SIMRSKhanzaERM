@@ -1520,6 +1520,72 @@ public final class sekuel {
         return dicari;
     }
     
+    public String cariIsi3(String sql,String data,String data2){
+        dicari="";
+        try {
+            ps=connect.prepareStatement(sql);
+            try{                            
+                ps.setString(1,data);
+                ps.setString(2,data2);
+                rs=ps.executeQuery();            
+                if(rs.next()){
+                    dicari=rs.getString(1);
+                }else{
+                    dicari="";
+                }   
+            }catch(Exception e){
+                dicari="";
+                System.out.println("Notifikasi : "+e);
+            }finally{
+                if(rs != null ){
+                    rs.close();
+                }
+
+                if(ps != null){
+                    ps.close();
+                }
+            }
+        } catch (Exception e) {
+            System.out.println("Notifikasi : "+e);
+        }
+            
+        return dicari;
+    }
+    
+    public String cariIsi4(String sql,String data,String data2,String data3,String data4){
+        dicari="";
+        try {
+            ps=connect.prepareStatement(sql);
+            try{                            
+                ps.setString(1,data);
+                ps.setString(2,data2);
+                ps.setString(1,data3);
+                ps.setString(2,data4);
+                rs=ps.executeQuery();            
+                if(rs.next()){
+                    dicari=rs.getString(1);
+                }else{
+                    dicari="";
+                }   
+            }catch(Exception e){
+                dicari="";
+                System.out.println("Notifikasi : "+e);
+            }finally{
+                if(rs != null ){
+                    rs.close();
+                }
+
+                if(ps != null){
+                    ps.close();
+                }
+            }
+        } catch (Exception e) {
+            System.out.println("Notifikasi : "+e);
+        }
+            
+        return dicari;
+    }
+    
     public Date cariIsi2(String sql){
         try {
             ps=connect.prepareStatement(sql);
