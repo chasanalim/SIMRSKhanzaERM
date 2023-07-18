@@ -1621,7 +1621,7 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
                     }
                     htmlContent.append(
                         "\" "+nohp+"\";\""+"Salam Sehat\n"
-                                + "*Reminder Periksa Dokter*\nMengingatkan kembali jadwal Periksa RSU BANYUMANIK 2 kepada:\n"
+                                + "*Reminder Periksa Dokter*\n\nMengingatkan kembali jadwal Periksa RSU BANYUMANIK 2 kepada:\n"
                                 + " Bapak/Ibu/Saudara : "+tabMode.getValueAt(i,4)+"\n"
                                 + " No.RM                     : "+tabMode.getValueAt(i,3)+"\n \n"
                                 + "berdasarkan booking pada tanggal "+tabMode.getValueAt(i,1)+", saudara terdaftar periksa pada: \n"
@@ -1790,7 +1790,7 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
                     "(TIMESTAMPDIFF(MONTH, pasien.tgl_lahir, CURDATE()) - ((TIMESTAMPDIFF(MONTH, pasien.tgl_lahir, CURDATE()) div 12) * 12)) as bulan, "+
                     "TIMESTAMPDIFF(DAY, DATE_ADD(DATE_ADD(pasien.tgl_lahir,INTERVAL TIMESTAMPDIFF(YEAR, pasien.tgl_lahir, CURDATE()) YEAR), INTERVAL TIMESTAMPDIFF(MONTH, pasien.tgl_lahir, CURDATE()) - ((TIMESTAMPDIFF(MONTH, pasien.tgl_lahir, CURDATE()) div 12) * 12) MONTH), CURDATE()) as hari, "+
                     "booking_registrasi.limit_reg,booking_registrasi.status,booking_registrasi.kd_pj,penjab.png_jawab, "+
-                    "referensi_mobilejkn_bpjs.jeniskunjungan,referensi_mobilejkn_bpjs.nomorreferensi,jadwal.jam_mulai "+
+                    "referensi_mobilejkn_bpjs.jeniskunjungan,referensi_mobilejkn_bpjs.nomorreferensi "+
                     "from booking_registrasi inner join pasien on booking_registrasi.no_rkm_medis=pasien.no_rkm_medis "+
                     "inner join dokter on booking_registrasi.kd_dokter=dokter.kd_dokter "+
                     "inner join poliklinik on booking_registrasi.kd_poli=poliklinik.kd_poli "+
@@ -1798,7 +1798,7 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
                     "inner join kelurahan on pasien.kd_kel=kelurahan.kd_kel "+
                     "inner join kecamatan on pasien.kd_kec=kecamatan.kd_kec "+
                     "inner join kabupaten on pasien.kd_kab=kabupaten.kd_kab "+
-                    "inner join jadwal on jadwal.kd_dokter=booking_registrasi.kd_dokter and jadwal.kd_poli=booking_registrasi.kd_poli "+
+//                    "inner join jadwal on jadwal.kd_dokter=booking_registrasi.kd_dokter and jadwal.kd_poli=booking_registrasi.kd_poli "+
                     "left join referensi_mobilejkn_bpjs on referensi_mobilejkn_bpjs.norm=booking_registrasi.no_rkm_medis and referensi_mobilejkn_bpjs.tanggalperiksa=booking_registrasi.tanggal_periksa "+
                     "where "+filter+" order by booking_registrasi.tanggal_booking,dokter.nm_dokter");
 //            }
