@@ -2619,7 +2619,7 @@ public final class DlgIGD extends javax.swing.JDialog {
         MnPersetujuanPenolakanTindakan.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
         MnPersetujuanPenolakanTindakan.setForeground(new java.awt.Color(50, 50, 50));
         MnPersetujuanPenolakanTindakan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/category.png"))); // NOI18N
-        MnPersetujuanPenolakanTindakan.setText("Persetujuan/Penolakan Tindakan");
+        MnPersetujuanPenolakanTindakan.setText("Pemberian Informasi Tindakan Kedokteran");
         MnPersetujuanPenolakanTindakan.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         MnPersetujuanPenolakanTindakan.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         MnPersetujuanPenolakanTindakan.setName("MnPersetujuanPenolakanTindakan"); // NOI18N
@@ -7070,7 +7070,7 @@ private void MnLaporanRekapKunjunganBulananPoliActionPerformed(java.awt.event.Ac
                 form.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
                 form.setLocationRelativeTo(internalFrame1);      
                 form.emptTeks();      
-                form.setNoRm(TNoRM.getText(),TPasien.getText()); 
+                form.setNoRm(TNoRw.getText(),TNoRM.getText(),TPasien.getText()); 
                 form.setVisible(true);
             }                
         }
