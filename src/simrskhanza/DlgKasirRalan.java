@@ -959,6 +959,10 @@ public final class DlgKasirRalan extends javax.swing.JDialog {
         BtnSeek5 = new widget.Button();
         CrDokter3 = new widget.TextBox();
         jLabel24 = new widget.Label();
+        TKdPoli = new widget.TextBox();
+        TPoli = new widget.TextBox();
+        TKdDokter = new widget.TextBox();
+        TNmDokter = new widget.TextBox();
         internalFrame1 = new widget.InternalFrame();
         jPanel2 = new javax.swing.JPanel();
         panelGlass6 = new widget.panelisi();
@@ -5949,7 +5953,7 @@ public final class DlgKasirRalan extends javax.swing.JDialog {
         panelBiasa2.setLayout(null);
 
         TglSakit1.setForeground(new java.awt.Color(50, 70, 50));
-        TglSakit1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "13-07-2023" }));
+        TglSakit1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "20-07-2023" }));
         TglSakit1.setDisplayFormat("dd-MM-yyyy");
         TglSakit1.setName("TglSakit1"); // NOI18N
         TglSakit1.setOpaque(false);
@@ -5996,7 +6000,7 @@ public final class DlgKasirRalan extends javax.swing.JDialog {
         jLabel32.setBounds(176, 10, 20, 23);
 
         TglSakit2.setForeground(new java.awt.Color(50, 70, 50));
-        TglSakit2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "13-07-2023" }));
+        TglSakit2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "20-07-2023" }));
         TglSakit2.setDisplayFormat("dd-MM-yyyy");
         TglSakit2.setName("TglSakit2"); // NOI18N
         TglSakit2.setOpaque(false);
@@ -6095,6 +6099,18 @@ public final class DlgKasirRalan extends javax.swing.JDialog {
         internalFrame8.add(panelBiasa4, java.awt.BorderLayout.CENTER);
 
         DlgSakit2.getContentPane().add(internalFrame8, java.awt.BorderLayout.CENTER);
+
+        TKdPoli.setHighlighter(null);
+        TKdPoli.setName("TKdPoli"); // NOI18N
+
+        TPoli.setHighlighter(null);
+        TPoli.setName("TPoli"); // NOI18N
+
+        TKdDokter.setHighlighter(null);
+        TKdDokter.setName("TKdDokter"); // NOI18N
+
+        TNmDokter.setHighlighter(null);
+        TNmDokter.setName("TNmDokter"); // NOI18N
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setUndecorated(true);
@@ -6268,7 +6284,7 @@ public final class DlgKasirRalan extends javax.swing.JDialog {
         jLabel15.setPreferredSize(new java.awt.Dimension(70, 23));
         panelGlass8.add(jLabel15);
 
-        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "13-07-2023" }));
+        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "20-07-2023" }));
         DTPCari1.setDisplayFormat("dd-MM-yyyy");
         DTPCari1.setName("DTPCari1"); // NOI18N
         DTPCari1.setOpaque(false);
@@ -6281,7 +6297,7 @@ public final class DlgKasirRalan extends javax.swing.JDialog {
         jLabel17.setPreferredSize(new java.awt.Dimension(23, 23));
         panelGlass8.add(jLabel17);
 
-        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "13-07-2023" }));
+        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "20-07-2023" }));
         DTPCari2.setDisplayFormat("dd-MM-yyyy");
         DTPCari2.setName("DTPCari2"); // NOI18N
         DTPCari2.setOpaque(false);
@@ -7370,6 +7386,8 @@ public final class DlgKasirRalan extends javax.swing.JDialog {
                     }                    
                 }else if(i==9){
                     MnDataSEPActionPerformed(null);
+                }else if(i==10){//Surat Kontrol
+                    MnSuratKontrolActionPerformed(null);
                 }else if(i==12){//UppoudBerkasDigital
                     ppBerkasDigitalBtnPrintActionPerformed(null);
                 }
@@ -9939,13 +9957,15 @@ private void MnDataPemberianObatActionPerformed(java.awt.event.ActionEvent evt) 
                 if(Sequel.cariInteger("select count(kamar_inap.no_rawat) from kamar_inap where kamar_inap.no_rawat=?",TNoRw.getText())>0){
                     JOptionPane.showMessageDialog(null,"Maaf, Pasien sudah masuk Kamar Inap. Gunakan billing Ranap..!!!");
                 }else {
+                    this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
                     SuratKontrol form=new SuratKontrol(null,false);
                     form.isCek();
                     form.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
                     form.setLocationRelativeTo(internalFrame1);      
                     form.emptTeks();      
-                    form.setNoRm(TNoRwCari.getText(),TNoRMCari.getText(),TPasienCari.getText()); 
+                    form.setNoRm(TNoRwCari.getText(),TNoRMCari.getText(),TPasienCari.getText(),TKdPoli.getText(),TPoli.getText(),TKdDokter.getText(),TNmDokter.getText()); 
                     form.setVisible(true);
+                    this.setCursor(Cursor.getDefaultCursor());
                 }   
             }             
         }
@@ -13482,12 +13502,16 @@ private void MnDataPemberianObatActionPerformed(java.awt.event.ActionEvent evt) 
     private widget.ScrollPane Scroll2;
     private widget.TextBox TCari;
     private widget.TextBox TDokter;
+    private widget.TextBox TKdDokter;
     private widget.TextBox TKdPny;
+    private widget.TextBox TKdPoli;
+    private widget.TextBox TNmDokter;
     private widget.TextBox TNoRMCari;
     private widget.TextBox TNoReg;
     private widget.TextBox TNoRw;
     private widget.TextBox TNoRwCari;
     private widget.TextBox TPasienCari;
+    private widget.TextBox TPoli;
     private javax.swing.JTabbedPane TabRawat;
     private widget.TextBox Tanggal;
     private widget.Tanggal TglSakit1;
@@ -13725,6 +13749,11 @@ private void MnDataPemberianObatActionPerformed(java.awt.event.ActionEvent evt) 
             TNoReg.setText(tbKasirRalan.getValueAt(tbKasirRalan.getSelectedRow(),14).toString());
             TNoRMCari.setText(tbKasirRalan.getValueAt(tbKasirRalan.getSelectedRow(),2).toString());
             TPasienCari.setText(tbKasirRalan.getValueAt(tbKasirRalan.getSelectedRow(),3).toString());
+            TKdPoli.setText(tbKasirRalan.getValueAt(tbKasirRalan.getSelectedRow(),17).toString());
+            TPoli.setText(tbKasirRalan.getValueAt(tbKasirRalan.getSelectedRow(),4).toString());
+            TKdDokter.setText(tbKasirRalan.getValueAt(tbKasirRalan.getSelectedRow(),0).toString());
+            TNmDokter.setText(tbKasirRalan.getValueAt(tbKasirRalan.getSelectedRow(),1).toString());
+            
         }
     }
 
