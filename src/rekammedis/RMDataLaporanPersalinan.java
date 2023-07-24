@@ -909,26 +909,26 @@ public final class RMDataLaporanPersalinan extends javax.swing.JDialog {
             if(TCari.getText().trim().equals("")){
                 Valid.MyReportqry("rptDataCatatanObservasiRanapKebidanan.jasper","report","::[ Data Catatan Observasi Rawat Inap Kebidanan ]::",
                     "select reg_periksa.no_rawat,pasien.no_rkm_medis,pasien.nm_pasien,reg_periksa.umurdaftar,reg_periksa.sttsumur,"+
-                    "pasien.jk,pasien.tgl_lahir,catatan_observasi_ranap_kebidanan.tgl_perawatan,catatan_observasi_ranap_kebidanan.jam_rawat,catatan_observasi_ranap_kebidanan.gcs,"+
-                    "catatan_observasi_ranap_kebidanan.td,catatan_observasi_ranap_kebidanan.hr,catatan_observasi_ranap_kebidanan.rr,catatan_observasi_ranap_kebidanan.suhu,catatan_observasi_ranap_kebidanan.spo2,"+
-                    "catatan_observasi_ranap_kebidanan.kontraksi,catatan_observasi_ranap_kebidanan.bjj,catatan_observasi_ranap_kebidanan.ppv,catatan_observasi_ranap_kebidanan.vt,"+
-                    "catatan_observasi_ranap_kebidanan.nip,petugas.nama from catatan_observasi_ranap_kebidanan inner join reg_periksa on catatan_observasi_ranap_kebidanan.no_rawat=reg_periksa.no_rawat "+
+                    "pasien.jk,pasien.tgl_lahir,laporan_persalinan.tgl_perawatan,laporan_persalinan.jam_rawat,laporan_persalinan.gcs,"+
+                    "laporan_persalinan.td,laporan_persalinan.hr,laporan_persalinan.rr,laporan_persalinan.suhu,laporan_persalinan.spo2,"+
+                    "laporan_persalinan.kontraksi,laporan_persalinan.bjj,laporan_persalinan.ppv,laporan_persalinan.vt,"+
+                    "laporan_persalinan.nip,petugas.nama from laporan_persalinan inner join reg_periksa on laporan_persalinan.no_rawat=reg_periksa.no_rawat "+
                     "inner join pasien on reg_periksa.no_rkm_medis=pasien.no_rkm_medis "+
-                    "inner join petugas on catatan_observasi_ranap_kebidanan.nip=petugas.nip where "+
-                    "catatan_observasi_ranap_kebidanan.tgl_perawatan between '"+Valid.SetTgl(DTPCari1.getSelectedItem()+"")+"' and '"+Valid.SetTgl(DTPCari2.getSelectedItem()+"")+"' order by catatan_observasi_ranap_kebidanan.tgl_perawatan",param);
+                    "inner join petugas on laporan_persalinan.nip=petugas.nip where "+
+                    "laporan_persalinan.tgl_perawatan between '"+Valid.SetTgl(DTPCari1.getSelectedItem()+"")+"' and '"+Valid.SetTgl(DTPCari2.getSelectedItem()+"")+"' order by laporan_persalinan.tgl_perawatan",param);
             }else{
                 Valid.MyReportqry("rptDataCatatanObservasiRanapKebidanan.jasper","report","::[ Data Catatan Observasi Rawat Inap Kebidanan ]::",
                     "select reg_periksa.no_rawat,pasien.no_rkm_medis,pasien.nm_pasien,reg_periksa.umurdaftar,reg_periksa.sttsumur,"+
-                    "pasien.jk,pasien.tgl_lahir,catatan_observasi_ranap_kebidanan.tgl_perawatan,catatan_observasi_ranap_kebidanan.jam_rawat,catatan_observasi_ranap_kebidanan.gcs,"+
-                    "catatan_observasi_ranap_kebidanan.td,catatan_observasi_ranap_kebidanan.hr,catatan_observasi_ranap_kebidanan.rr,catatan_observasi_ranap_kebidanan.suhu,catatan_observasi_ranap_kebidanan.spo2,"+
-                    "catatan_observasi_ranap_kebidanan.kontraksi,catatan_observasi_ranap_kebidanan.bjj,catatan_observasi_ranap_kebidanan.ppv,catatan_observasi_ranap_kebidanan.vt,"+
-                    "catatan_observasi_ranap_kebidanan.nip,petugas.nama from catatan_observasi_ranap_kebidanan inner join reg_periksa on catatan_observasi_ranap_kebidanan.no_rawat=reg_periksa.no_rawat "+
+                    "pasien.jk,pasien.tgl_lahir,laporan_persalinan.tgl_perawatan,laporan_persalinan.jam_rawat,laporan_persalinan.gcs,"+
+                    "laporan_persalinan.td,laporan_persalinan.hr,laporan_persalinan.rr,laporan_persalinan.suhu,laporan_persalinan.spo2,"+
+                    "laporan_persalinan.kontraksi,laporan_persalinan.bjj,laporan_persalinan.ppv,laporan_persalinan.vt,"+
+                    "laporan_persalinan.nip,petugas.nama from laporan_persalinan inner join reg_periksa on laporan_persalinan.no_rawat=reg_periksa.no_rawat "+
                     "inner join pasien on reg_periksa.no_rkm_medis=pasien.no_rkm_medis "+
-                    "inner join petugas on catatan_observasi_ranap_kebidanan.nip=petugas.nip where "+
-                    "catatan_observasi_ranap_kebidanan.tgl_perawatan between '"+Valid.SetTgl(DTPCari1.getSelectedItem()+"")+"' and '"+Valid.SetTgl(DTPCari2.getSelectedItem()+"")+"' and "+
+                    "inner join petugas on laporan_persalinan.nip=petugas.nip where "+
+                    "laporan_persalinan.tgl_perawatan between '"+Valid.SetTgl(DTPCari1.getSelectedItem()+"")+"' and '"+Valid.SetTgl(DTPCari2.getSelectedItem()+"")+"' and "+
                     "(reg_periksa.no_rawat like '%"+TCari.getText().trim()+"%' or pasien.no_rkm_medis like '%"+TCari.getText().trim()+"%' or "+
-                    "pasien.nm_pasien like '%"+TCari.getText().trim()+"%' or catatan_observasi_ranap_kebidanan.nip like '%"+TCari.getText().trim()+"%' or petugas.nama like '%"+TCari.getText().trim()+"%') "+
-                    "order by catatan_observasi_ranap_kebidanan.tgl_perawatan ",param);
+                    "pasien.nm_pasien like '%"+TCari.getText().trim()+"%' or laporan_persalinan.nip like '%"+TCari.getText().trim()+"%' or petugas.nama like '%"+TCari.getText().trim()+"%') "+
+                    "order by laporan_persalinan.tgl_perawatan ",param);
             }  
         }
         this.setCursor(Cursor.getDefaultCursor());
@@ -1214,7 +1214,7 @@ public final class RMDataLaporanPersalinan extends javax.swing.JDialog {
                         rs.getString("no_rawat"),rs.getString("no_rkm_medis"),rs.getString("nm_pasien"),
                         rs.getString("umurdaftar")+" "+rs.getString("sttsumur"),rs.getString("jk"),rs.getString("tgl_lahir"),
                         rs.getString("tgl_perawatan"),rs.getString("jam_rawat"),rs.getString("nadi"),rs.getString("tensi"),
-                        rs.getString("suhu"),rs.getString("djj"),rs.getString("keadaan_umum"),rs.getString("nip"),rs.getString("nama")
+                        rs.getString("suhu"),rs.getString("his"),rs.getString("djj"),rs.getString("keadaan_umum"),rs.getString("nip"),rs.getString("nama")
                     });
                 }
             } catch (Exception e) {
@@ -1260,7 +1260,7 @@ public final class RMDataLaporanPersalinan extends javax.swing.JDialog {
             Suhu.setText(tbObat.getValueAt(tbObat.getSelectedRow(),10).toString());
             His.setText(tbObat.getValueAt(tbObat.getSelectedRow(),11).toString());
             DJJ.setText(tbObat.getValueAt(tbObat.getSelectedRow(),12).toString());
-//            KeadaanUmum.setText(tbObat.getValueAt(tbObat.getSelectedRow(),14).toString());
+            KeadaanUmum.setText(tbObat.getValueAt(tbObat.getSelectedRow(),13).toString());
 
             Valid.SetTgl(Tanggal,tbObat.getValueAt(tbObat.getSelectedRow(),6).toString());  
         }
@@ -1381,7 +1381,7 @@ public final class RMDataLaporanPersalinan extends javax.swing.JDialog {
     }
 
     private void hapus() {
-        if(Sequel.queryu2tf("delete from catatan_observasi_ranap_kebidanan where tgl_perawatan=? and jam_rawat=? and no_rawat=?",3,new String[]{
+        if(Sequel.queryu2tf("delete from laporan_persalinan where tgl_perawatan=? and jam_rawat=? and no_rawat=?",3,new String[]{
             tbObat.getValueAt(tbObat.getSelectedRow(),6).toString(),tbObat.getValueAt(tbObat.getSelectedRow(),7).toString(),tbObat.getValueAt(tbObat.getSelectedRow(),0).toString()
         })==true){
             tampil();
