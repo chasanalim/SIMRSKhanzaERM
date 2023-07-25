@@ -59,7 +59,7 @@ public final class RMDataLaporanPersalinan extends javax.swing.JDialog {
         setSize(628,674);
 
         tabMode=new DefaultTableModel(null,new Object[]{
-            "No.Rawat","No.R.M.","Nama Pasien","Umur","JK","Tgl.Lahir","Tgl.Obser","Jam Obser","Nadi","Tensi",
+            "No.Rawat","No.R.M.","Nama Pasien","Umur","JK","Tgl.Lahir","Tgl.Persalinan","Jam persalinan","Nadi","Tensi",
             "Suhu(°C)","His","DJJ","Keadaan Umum,dll","NIP","Nama Petugas"
         }){
               @Override public boolean isCellEditable(int rowIndex, int colIndex){return false;}
@@ -72,40 +72,38 @@ public final class RMDataLaporanPersalinan extends javax.swing.JDialog {
 
         for (i = 0; i < 16; i++) {
             TableColumn column = tbObat.getColumnModel().getColumn(i);
-            if(i==0){
+            if(i==0){//norawat
                 column.setPreferredWidth(105);
-            }else if(i==1){
+            }else if(i==1){//norm
                 column.setPreferredWidth(65);
-            }else if(i==2){
+            }else if(i==2){//nama pasien
                 column.setPreferredWidth(160);
-            }else if(i==3){
+            }else if(i==3){//umur
                 column.setPreferredWidth(35);
-            }else if(i==4){
+            }else if(i==4){//jk
                 column.setPreferredWidth(20);
-            }else if(i==5){
+            }else if(i==5){//tgllahir
                 column.setPreferredWidth(65);
-            }else if(i==6){
+            }else if(i==6){//tgl persalinan
                 column.setPreferredWidth(65);
-            }else if(i==7){
+            }else if(i==7){ //jam persalinan
                 column.setPreferredWidth(60);
-            }else if(i==8){
-                column.setPreferredWidth(65);
-            }else if(i==9){
-                column.setPreferredWidth(65);
-            }else if(i==10){
-                column.setPreferredWidth(65);
-            }else if(i==11){
-                column.setPreferredWidth(65);
-            }else if(i==12){
+            }else if(i==8){ //nadi
+                column.setPreferredWidth(55);
+            }else if(i==9){ //tensi
+                column.setPreferredWidth(55);
+            }else if(i==10){//suhu
+                column.setPreferredWidth(55);
+            }else if(i==11){//his
+                column.setPreferredWidth(55);
+            }else if(i==12){//djj
                 column.setPreferredWidth(50);
-            }else if(i==13){
-                column.setPreferredWidth(55);
-            }else if(i==14){
-                column.setPreferredWidth(90);
-            }else if(i==15){
-                column.setPreferredWidth(55);
-            }else{
-                column.setPreferredWidth(200);
+            }else if(i==13){//keadaan umum
+                column.setPreferredWidth(500);
+            }else if(i==14){//nip
+                column.setPreferredWidth(60);
+            }else if(i==15){//namapetugas
+                column.setPreferredWidth(125);
             }
         }
         tbObat.setDefaultRenderer(Object.class, new WarnaTable());
@@ -1261,6 +1259,8 @@ public final class RMDataLaporanPersalinan extends javax.swing.JDialog {
             His.setText(tbObat.getValueAt(tbObat.getSelectedRow(),11).toString());
             DJJ.setText(tbObat.getValueAt(tbObat.getSelectedRow(),12).toString());
             KeadaanUmum.setText(tbObat.getValueAt(tbObat.getSelectedRow(),13).toString());
+            NIP.setText(tbObat.getValueAt(tbObat.getSelectedRow(),14).toString());
+            NamaPetugas.setText(tbObat.getValueAt(tbObat.getSelectedRow(),15).toString());
 
             Valid.SetTgl(Tanggal,tbObat.getValueAt(tbObat.getSelectedRow(),6).toString());  
         }
@@ -1371,7 +1371,7 @@ public final class RMDataLaporanPersalinan extends javax.swing.JDialog {
 
     private void ganti() {
         Sequel.mengedit("laporan_persalinan","tgl_perawatan=? and jam_rawat=? and no_rawat=?","no_rawat=?,tgl_perawatan=?,jam_rawat=?,nadi=?,tensi=?,"+
-            "suhu=?,his=?,djj=?,keadaan_umum=?,nip=?",11,new String[]{
+            "suhu=?,his=?,djj=?,keadaan_umum=?,nip=?",13,new String[]{
             TNoRw.getText(),Valid.SetTgl(Tanggal.getSelectedItem()+""),Jam.getSelectedItem()+":"+Menit.getSelectedItem()+":"+Detik.getSelectedItem(),Nadi.getText(),
             Tensi.getText(),Suhu.getText(),His.getText(),DJJ.getText(),KeadaanUmum.getText(),NIP.getText(),
             tbObat.getValueAt(tbObat.getSelectedRow(),6).toString(),tbObat.getValueAt(tbObat.getSelectedRow(),7).toString(),tbObat.getValueAt(tbObat.getSelectedRow(),0).toString()
