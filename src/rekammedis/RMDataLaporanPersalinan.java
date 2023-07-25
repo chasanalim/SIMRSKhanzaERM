@@ -182,7 +182,7 @@ public final class RMDataLaporanPersalinan extends javax.swing.JDialog {
     private void initComponents() {
 
         jPopupMenu1 = new javax.swing.JPopupMenu();
-        MnCatatanObservasiRanapKebidanan = new javax.swing.JMenuItem();
+        MnCetakLaporanPersalinan = new javax.swing.JMenuItem();
         internalFrame1 = new widget.InternalFrame();
         Scroll = new widget.ScrollPane();
         tbObat = new widget.Table();
@@ -240,19 +240,19 @@ public final class RMDataLaporanPersalinan extends javax.swing.JDialog {
 
         jPopupMenu1.setName("jPopupMenu1"); // NOI18N
 
-        MnCatatanObservasiRanapKebidanan.setBackground(new java.awt.Color(255, 255, 254));
-        MnCatatanObservasiRanapKebidanan.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
-        MnCatatanObservasiRanapKebidanan.setForeground(new java.awt.Color(50, 50, 50));
-        MnCatatanObservasiRanapKebidanan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/category.png"))); // NOI18N
-        MnCatatanObservasiRanapKebidanan.setText("Formulir Catatan Observasi Rawat Inap Kebidanan");
-        MnCatatanObservasiRanapKebidanan.setName("MnCatatanObservasiRanapKebidanan"); // NOI18N
-        MnCatatanObservasiRanapKebidanan.setPreferredSize(new java.awt.Dimension(310, 26));
-        MnCatatanObservasiRanapKebidanan.addActionListener(new java.awt.event.ActionListener() {
+        MnCetakLaporanPersalinan.setBackground(new java.awt.Color(255, 255, 254));
+        MnCetakLaporanPersalinan.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        MnCetakLaporanPersalinan.setForeground(new java.awt.Color(50, 50, 50));
+        MnCetakLaporanPersalinan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/category.png"))); // NOI18N
+        MnCetakLaporanPersalinan.setText("Cetak Laporan Persalinan");
+        MnCetakLaporanPersalinan.setName("MnCetakLaporanPersalinan"); // NOI18N
+        MnCetakLaporanPersalinan.setPreferredSize(new java.awt.Dimension(310, 26));
+        MnCetakLaporanPersalinan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MnCatatanObservasiRanapKebidananActionPerformed(evt);
+                MnCetakLaporanPersalinanActionPerformed(evt);
             }
         });
-        jPopupMenu1.add(MnCatatanObservasiRanapKebidanan);
+        jPopupMenu1.add(MnCetakLaporanPersalinan);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setUndecorated(true);
@@ -1046,7 +1046,7 @@ public final class RMDataLaporanPersalinan extends javax.swing.JDialog {
         Valid.pindah(evt,Detik,Nadi);
     }//GEN-LAST:event_btnPetugasKeyPressed
 
-    private void MnCatatanObservasiRanapKebidananActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MnCatatanObservasiRanapKebidananActionPerformed
+    private void MnCetakLaporanPersalinanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MnCetakLaporanPersalinanActionPerformed
         if(tbObat.getSelectedRow()>-1){
             Map<String, Object> param = new HashMap<>();
             param.put("namars",akses.getnamars());
@@ -1061,7 +1061,7 @@ public final class RMDataLaporanPersalinan extends javax.swing.JDialog {
             }
             param.put("dpjp",dpjp);   
             param.put("logo",Sequel.cariGambar("select setting.logo from setting")); 
-            Valid.MyReportqry("rptFormulirCatatanObservasiRanapKebidanan.jasper","report","::[ Formulir Catatan Observasi Rawat Inap Kebidanan ]::",
+            Valid.MyReportqry("rptLaporanPersalinan.jasper","report","::[ Laporan Persalinan ]::",
                     "select reg_periksa.no_rawat,pasien.no_rkm_medis,pasien.nm_pasien,reg_periksa.umurdaftar,reg_periksa.sttsumur,reg_periksa.tgl_registrasi,reg_periksa.jam_reg,"+
                     "pasien.jk,pasien.tgl_lahir,laporan_persalinan.tgl_perawatan,laporan_persalinan.jam_rawat,laporan_persalinan.nadi,"+
                     "laporan_persalinan.tensi,laporan_persalinan.suhu,laporan_persalinan.his,laporan_persalinan.djj,laporan_persalinan.keadaan_umum,"+
@@ -1069,7 +1069,7 @@ public final class RMDataLaporanPersalinan extends javax.swing.JDialog {
                     "inner join pasien on reg_periksa.no_rkm_medis=pasien.no_rkm_medis "+
                     "inner join petugas on laporan_persalinan.nip=petugas.nip where reg_periksa.no_rawat='"+tbObat.getValueAt(tbObat.getSelectedRow(),0).toString()+"'",param);
         }
-    }//GEN-LAST:event_MnCatatanObservasiRanapKebidananActionPerformed
+    }//GEN-LAST:event_MnCetakLaporanPersalinanActionPerformed
 
     private void NadiKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NadiKeyPressed
         Valid.pindah(evt,btnPetugas,Tensi);
@@ -1132,7 +1132,7 @@ public final class RMDataLaporanPersalinan extends javax.swing.JDialog {
     private widget.TextArea KeadaanUmum;
     private widget.Label LCount;
     private widget.ComboBox Menit;
-    private javax.swing.JMenuItem MnCatatanObservasiRanapKebidanan;
+    private javax.swing.JMenuItem MnCetakLaporanPersalinan;
     private widget.TextBox NIP;
     private widget.TextBox Nadi;
     private widget.TextBox NamaPetugas;
