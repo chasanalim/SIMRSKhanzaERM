@@ -34,7 +34,7 @@ public class DlgCariTagihanOperasi extends javax.swing.JDialog {
     private validasi Valid=new validasi();
     private Jurnal jur=new Jurnal();
     private Connection  koneksi=koneksiDB.condb();
-    private PreparedStatement psrekening;
+    private PreparedStatement psrekening,ps;
     private DlgCariPetugas petugas=new DlgCariPetugas( null,false);
     private DlgCariDokter dokter=new DlgCariDokter(null,false);
     private ResultSet rsrekening,rs,rs2;
@@ -2887,30 +2887,33 @@ private void MnHapusObatOperasiActionPerformed(java.awt.event.ActionEvent evt) {
                 kodeoperator=Sequel.cariIsi("select operasi.operator1 from operasi where operasi.no_rawat='"+tbDokter.getValueAt(tbDokter.getSelectedRow(),1).toString()+"' and tgl_operasi='"+tbDokter.getValueAt(tbDokter.getSelectedRow(),0).toString()+"'");
                 finger=Sequel.cariIsi("select sha1(sidikjari.sidikjari) from sidikjari inner join pegawai on pegawai.id=sidikjari.id where pegawai.nik=?",kodeoperator);
                 param.put("finger","Dikeluarkan di "+akses.getnamars()+", Kabupaten/Kota "+akses.getkabupatenrs()+"\nDitandatangani secara elektronik oleh "+tbDokter.getValueAt(tbDokter.getSelectedRow()+1,5).toString()+"\nID "+(finger.equals("")?kodeoperator:finger)+"\n"+Valid.SetTgl3(tbDokter.getValueAt(tbDokter.getSelectedRow(),0).toString()));  
-            
-                if(Sequel.cariIsi("select reg_periksa.status_lanjut from reg_periksa where reg_periksa.no_rawat=?",tbDokter.getValueAt(tbDokter.getSelectedRow(),1).toString()).equals("Ralan")){
+          
                     try {
                         try {
                             rs=koneksi.prepareStatement(
-                                    "select no_rawat, tgl_perawatan, jam_rawat, suhu_tubuh, tensi, nadi, respirasi, tinggi, berat, gcs, keluhan, pemeriksaan, alergi, "+
-                                    "rtl, penilaian from pemeriksaan_ralan where no_rawat='"+tbDokter.getValueAt(tbDokter.getSelectedRow(),1).toString()+"' "+
-                                    "order by tgl_perawatan, jam_rawat desc limit 1").executeQuery();
+                                    "SELECT penilaian_pre_operasi.no_rawat,penilaian_pre_operasi.tanggal,penilaian_pre_anestesi.riwayat_penyakit_alergiobat,penilaian_pre_operasi.ringkasan_klinik, "+
+                                    "concat( penilaian_pre_operasi.pemeriksaan_fisik,', ', penilaian_pre_operasi.pemeriksaan_diagnostik ) AS pemeriksaan,penilaian_pre_operasi.diagnosa_pre_operasi, "+
+                                    "penilaian_pre_operasi.rencana_tindakan_bedah,penilaian_pre_anestesi.suhu,penilaian_pre_anestesi.td, "+
+                                    "penilaian_pre_anestesi.tb,penilaian_pre_anestesi.bb,penilaian_pre_anestesi.nadi,penilaian_pre_anestesi.pernapasan,penilaian_pre_anestesi.io2 "+
+                                    "FROM penilaian_pre_operasi INNER JOIN penilaian_pre_anestesi ON penilaian_pre_operasi.no_rawat = penilaian_pre_anestesi.no_rawat where "+
+                                    "penilaian_pre_operasi.no_rawat='"+tbDokter.getValueAt(tbDokter.getSelectedRow(),1).toString()+"' "+
+                                    "ORDER BY penilaian_pre_operasi.tanggal DESC LIMIT 1").executeQuery();
                             if(rs.next()){
-                                param.put("tgl_perawatan",rs.getDate("tgl_perawatan"));
-                                param.put("jam_rawat",rs.getString("jam_rawat"));
-                                param.put("alergi",rs.getString("alergi"));
-                                param.put("keluhan",rs.getString("keluhan"));
+                                param.put("tgl_perawatan",rs.getDate("tanggal"));
+                                param.put("jam_rawat",rs.getString("tanggal"));
+                                param.put("alergi",rs.getString("riwayat_penyakit_alergiobat"));
+                                param.put("keluhan",rs.getString("ringkasan_klinik"));
                                 param.put("pemeriksaan",rs.getString("pemeriksaan"));
-                                param.put("penilaian",rs.getString("penilaian"));
-                                param.put("rtl",rs.getString("rtl"));
+                                param.put("penilaian",rs.getString("diagnosa_pre_operasi"));
+                                param.put("rtl",rs.getString("rencana_tindakan_bedah"));
                                 param.put("ruang",Sequel.cariIsi("select poliklinik.nm_poli from poliklinik inner join reg_periksa on reg_periksa.kd_poli=poliklinik.kd_poli where reg_periksa.no_rawat=?",rs.getString("no_rawat")));
-                                param.put("suhu_tubuh",rs.getString("suhu_tubuh"));
-                                param.put("tensi",rs.getString("tensi"));
-                                param.put("tinggi",rs.getString("tinggi"));
-                                param.put("berat",rs.getString("berat"));
+                                param.put("suhu_tubuh",rs.getString("suhu"));
+                                param.put("tensi",rs.getString("td"));
+                                param.put("tinggi",rs.getString("tb"));
+                                param.put("berat",rs.getString("bb"));
                                 param.put("nadi",rs.getString("nadi"));
-                                param.put("respirasi",rs.getString("respirasi"));
-                                param.put("gcs",rs.getString("gcs"));
+                                param.put("respirasi",rs.getString("pernapasan"));
+                                param.put("gcs",rs.getString("io2"));
                             }
                         } catch (Exception e) {
                             System.out.println("Notif : "+e);
@@ -2922,41 +2925,7 @@ private void MnHapusObatOperasiActionPerformed(java.awt.event.ActionEvent evt) {
                     } catch (Exception e) {
                         System.out.println("Notif : "+e);
                     }
-                }else{
-                    try {
-                        try {
-                            rs=koneksi.prepareStatement(
-                                    "select no_rawat, tgl_perawatan, jam_rawat, suhu_tubuh, tensi, nadi, respirasi, tinggi, berat, gcs, keluhan, pemeriksaan, alergi, "+
-                                    "rtl, penilaian from pemeriksaan_ranap where no_rawat='"+tbDokter.getValueAt(tbDokter.getSelectedRow(),1).toString()+"' "+
-                                    "order by tgl_perawatan, jam_rawat desc limit 1").executeQuery();
-                            if(rs.next()){
-                                param.put("tgl_perawatan",rs.getDate("tgl_perawatan"));
-                                param.put("jam_rawat",rs.getString("jam_rawat"));
-                                param.put("alergi",rs.getString("alergi"));
-                                param.put("keluhan",rs.getString("keluhan"));
-                                param.put("pemeriksaan",rs.getString("pemeriksaan"));
-                                param.put("penilaian",rs.getString("penilaian"));
-                                param.put("rtl",rs.getString("rtl"));
-                                param.put("ruang",Sequel.cariIsi("select nm_bangsal from bangsal inner join kamar inner join kamar_inap on bangsal.kd_bangsal=kamar.kd_bangsal and kamar_inap.kd_kamar=kamar.kd_kamar where no_rawat=? order by tgl_masuk desc limit 1 ",rs.getString("no_rawat")));
-                                param.put("suhu_tubuh",rs.getString("suhu_tubuh"));
-                                param.put("tensi",rs.getString("tensi"));
-                                param.put("tinggi",rs.getString("tinggi"));
-                                param.put("berat",rs.getString("berat"));
-                                param.put("nadi",rs.getString("nadi"));
-                                param.put("respirasi",rs.getString("respirasi"));
-                                param.put("gcs",rs.getString("gcs"));
-                            }
-                        } catch (Exception e) {
-                            System.out.println("Notif : "+e);
-                        } finally{
-                            if(rs!=null){
-                                rs.close();
-                            }
-                        }
-                    } catch (Exception e) {
-                        System.out.println("Notif : "+e);
-                    }
-                }
+                
                 Valid.MyReport("rptLaporanOperasi.jasper","report","::[ Laporan Operasi ]::",param);
             }else{
                 JOptionPane.showMessageDialog(rootPane,"Silahkan pilih data, klik pada No.Rawat ..!!");
@@ -3444,8 +3413,38 @@ private void MnHapusObatOperasiActionPerformed(java.awt.event.ActionEvent evt) {
         return BtnKeluar;
     }
     
+    private void isRawat() {
+        Sequel.cariIsi("select reg_periksa.no_rawat from reg_periksa where reg_periksa.no_rawat=? ",NoRawat,NoRawat.getText());  
+        try {
+            ps=koneksi.prepareStatement(
+                    "select reg_periksa.no_rkm_medis,pasien.nm_pasien,reg_periksa.tgl_registrasi "+
+                    "from reg_periksa "+
+                    "inner join pasien on pasien.no_rkm_medis=reg_periksa.no_rkm_medis "+
+                    "where reg_periksa.no_rawat=? limit 1");
+            try {
+                ps.setString(1,NoRawat.getText());
+                rs=ps.executeQuery();
+                if(rs.next()){
+                    Tgl1.setDate(rs.getDate("tgl_registrasi"));
+                }
+            } catch (Exception e) {
+                System.out.println("Notif : "+e);
+            } finally{
+                if(rs!=null){
+                    rs.close();
+                }
+                if(ps!=null){
+                    ps.close();
+                }
+            }
+        } catch (Exception e) {
+            System.out.println("Notif : "+e);
+        }
+    }
+    
     public void setPasien(String pasien){
         NoRawat.setText(pasien);
+        isRawat();
     }
  
 }
