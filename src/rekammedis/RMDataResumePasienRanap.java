@@ -2152,6 +2152,8 @@ public final class RMDataResumePasienRanap extends javax.swing.JDialog {
             Valid.textKosong(JalannyaPenyakit,"Jalannya penyakit selama perawatan");
         }else if(DiagnosaUtama.getText().equals("")){
             Valid.textKosong(DiagnosaUtama,"Diagnosa Utama");
+        }else if(NoSurat.getText().equals("")){
+            Valid.textKosong(DiagnosaUtama,"No Surat");
         }else{
             if(Sequel.menyimpantf("resume_pasien_ranap","?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?","No.Rawat",46,new String[]{
                     TNoRw.getText(),KodeDokter.getText(),DiagnosaAwal.getText(),Alasan.getText(),KeluhanUtama.getText(),PemeriksaanFisik.getText(),JalannyaPenyakit.getText(),
