@@ -110,12 +110,12 @@ public final class RMChecklistDuranteOperasi extends javax.swing.JDialog {
 
         TNoRw.setDocument(new batasInput((byte)17).getKata(TNoRw));
         NIP.setDocument(new batasInput((byte)20).getKata(NIP));
-        GCS.setDocument(new batasInput((byte)10).getKata(GCS));
-        TD.setDocument(new batasInput((byte)8).getKata(TD));
-        HR.setDocument(new batasInput((byte)5).getKata(HR));
-        RR.setDocument(new batasInput((byte)5).getKata(RR));
-        Suhu.setDocument(new batasInput((byte)5).getKata(Suhu));
-        SPO.setDocument(new batasInput((byte)3).getKata(SPO));
+//        J1T1.setDocument(new batasInput((byte)10).getKata(J1T1));
+//        J1h3.setDocument(new batasInput((byte)8).getKata(J1h3));
+//        J1T2.setDocument(new batasInput((byte)5).getKata(J1T2));
+//        J1JH1.setDocument(new batasInput((byte)5).getKata(J1JH1));
+//        J1T3.setDocument(new batasInput((byte)5).getKata(J1T3));
+//        J1H2.setDocument(new batasInput((byte)3).getKata(J1H2));
         TCari.setDocument(new batasInput((int)100).getKata(TCari));
         
         if(koneksiDB.CARICEPAT().equals("aktif")){
@@ -167,6 +167,51 @@ public final class RMChecklistDuranteOperasi extends javax.swing.JDialog {
         ChkInput.setSelected(false);
         isForm();
         jam();
+        
+        J1T1.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                isHitung();
+            }
+        });
+        
+        J1T2.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                isHitung();
+            }
+        });
+        
+        J1T3.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                isHitung();
+            }
+        });
     }
 
 
@@ -224,7 +269,6 @@ public final class RMChecklistDuranteOperasi extends javax.swing.JDialog {
         jLabel8 = new widget.Label();
         TglLahir = new widget.TextBox();
         jLabel12 = new widget.Label();
-        TD = new widget.TextBox();
         jLabel53 = new widget.Label();
         jLabel58 = new widget.Label();
         Kardiologi5 = new widget.ComboBox();
@@ -250,108 +294,109 @@ public final class RMChecklistDuranteOperasi extends javax.swing.JDialog {
         jLabel69 = new widget.Label();
         jLabel70 = new widget.Label();
         jLabel71 = new widget.Label();
-        J1HP1 = new widget.TextBox();
-        GCS = new widget.TextBox();
-        HR = new widget.TextBox();
-        Suhu = new widget.TextBox();
-        RR = new widget.TextBox();
-        SPO = new widget.TextBox();
+        J1H1 = new widget.TextBox();
+        J2H1 = new widget.TextBox();
+        J3H1 = new widget.TextBox();
+        J4H1 = new widget.TextBox();
+        J5H1 = new widget.TextBox();
+        J6H1 = new widget.TextBox();
+        J7H1 = new widget.TextBox();
+        J8H1 = new widget.TextBox();
+        J9H1 = new widget.TextBox();
+        J10H1 = new widget.TextBox();
+        J11H1 = new widget.TextBox();
+        J12H1 = new widget.TextBox();
+        J13H1 = new widget.TextBox();
         jLabel13 = new widget.Label();
-        TD7 = new widget.TextBox();
-        J2HP1 = new widget.TextBox();
-        TD9 = new widget.TextBox();
-        TD10 = new widget.TextBox();
-        TD11 = new widget.TextBox();
-        TD12 = new widget.TextBox();
-        TD13 = new widget.TextBox();
+        J2H3 = new widget.TextBox();
+        J2T1 = new widget.TextBox();
+        J2T2 = new widget.TextBox();
+        J2T3 = new widget.TextBox();
+        J2JH1 = new widget.TextBox();
+        J2H2 = new widget.TextBox();
         jLabel14 = new widget.Label();
-        TD14 = new widget.TextBox();
-        TD15 = new widget.TextBox();
-        TD16 = new widget.TextBox();
-        TD17 = new widget.TextBox();
-        TD18 = new widget.TextBox();
-        TD19 = new widget.TextBox();
-        TD20 = new widget.TextBox();
+        J3H3 = new widget.TextBox();
+        J3T1 = new widget.TextBox();
+        J3T2 = new widget.TextBox();
+        J3T3 = new widget.TextBox();
+        J3JH1 = new widget.TextBox();
+        J3H2 = new widget.TextBox();
         jLabel15 = new widget.Label();
-        TD21 = new widget.TextBox();
-        TD22 = new widget.TextBox();
-        TD23 = new widget.TextBox();
-        TD24 = new widget.TextBox();
-        TD25 = new widget.TextBox();
-        TD26 = new widget.TextBox();
-        TD27 = new widget.TextBox();
-        TD28 = new widget.TextBox();
-        TD29 = new widget.TextBox();
-        TD30 = new widget.TextBox();
-        TD31 = new widget.TextBox();
-        TD32 = new widget.TextBox();
-        TD33 = new widget.TextBox();
-        TD34 = new widget.TextBox();
+        J4H3 = new widget.TextBox();
+        J4T1 = new widget.TextBox();
+        J4T2 = new widget.TextBox();
+        J4T3 = new widget.TextBox();
+        J4JH1 = new widget.TextBox();
+        J4H2 = new widget.TextBox();
+        J5T3 = new widget.TextBox();
+        J5H3 = new widget.TextBox();
+        J5T2 = new widget.TextBox();
+        J5JH1 = new widget.TextBox();
+        J5H2 = new widget.TextBox();
+        J5T1 = new widget.TextBox();
         jLabel24 = new widget.Label();
-        TD35 = new widget.TextBox();
-        TD36 = new widget.TextBox();
-        TD37 = new widget.TextBox();
-        TD38 = new widget.TextBox();
-        TD39 = new widget.TextBox();
-        TD40 = new widget.TextBox();
+        J6T1 = new widget.TextBox();
+        J6JH1 = new widget.TextBox();
+        J6H3 = new widget.TextBox();
+        J6T3 = new widget.TextBox();
+        J6H2 = new widget.TextBox();
         jLabel30 = new widget.Label();
-        TD41 = new widget.TextBox();
+        J6T2 = new widget.TextBox();
         jLabel31 = new widget.Label();
-        TD42 = new widget.TextBox();
-        TD43 = new widget.TextBox();
-        TD44 = new widget.TextBox();
-        TD45 = new widget.TextBox();
-        TD46 = new widget.TextBox();
-        TD47 = new widget.TextBox();
-        TD48 = new widget.TextBox();
+        J7JH1 = new widget.TextBox();
+        J7T3 = new widget.TextBox();
+        J7T1 = new widget.TextBox();
+        J7H3 = new widget.TextBox();
+        J7T2 = new widget.TextBox();
+        J7H2 = new widget.TextBox();
         jLabel32 = new widget.Label();
-        TD49 = new widget.TextBox();
-        TD50 = new widget.TextBox();
-        TD51 = new widget.TextBox();
-        TD52 = new widget.TextBox();
-        TD53 = new widget.TextBox();
-        TD54 = new widget.TextBox();
-        TD55 = new widget.TextBox();
-        TD56 = new widget.TextBox();
-        TD57 = new widget.TextBox();
-        TD58 = new widget.TextBox();
+        J8H2 = new widget.TextBox();
+        J8T1 = new widget.TextBox();
+        J8T2 = new widget.TextBox();
+        J8H3 = new widget.TextBox();
+        J8T3 = new widget.TextBox();
+        J8JH1 = new widget.TextBox();
+        J9H2 = new widget.TextBox();
+        J9T2 = new widget.TextBox();
         jLabel33 = new widget.Label();
-        TD59 = new widget.TextBox();
-        TD60 = new widget.TextBox();
-        TD61 = new widget.TextBox();
-        TD62 = new widget.TextBox();
-        TD63 = new widget.TextBox();
-        TD64 = new widget.TextBox();
-        TD65 = new widget.TextBox();
-        TD66 = new widget.TextBox();
-        TD67 = new widget.TextBox();
-        TD68 = new widget.TextBox();
-        TD69 = new widget.TextBox();
+        J9T1 = new widget.TextBox();
+        J9H3 = new widget.TextBox();
+        J9T3 = new widget.TextBox();
+        J9JH1 = new widget.TextBox();
+        J10T1 = new widget.TextBox();
+        J10H2 = new widget.TextBox();
+        J10T2 = new widget.TextBox();
+        J10H3 = new widget.TextBox();
+        J10T3 = new widget.TextBox();
+        J10JH1 = new widget.TextBox();
         jLabel34 = new widget.Label();
         jLabel36 = new widget.Label();
-        TD70 = new widget.TextBox();
-        TD71 = new widget.TextBox();
-        TD72 = new widget.TextBox();
-        TD73 = new widget.TextBox();
-        TD74 = new widget.TextBox();
-        TD75 = new widget.TextBox();
-        TD76 = new widget.TextBox();
-        TD77 = new widget.TextBox();
-        TD78 = new widget.TextBox();
-        TD79 = new widget.TextBox();
+        J11H2 = new widget.TextBox();
+        J11T1 = new widget.TextBox();
+        J11T2 = new widget.TextBox();
+        J11H3 = new widget.TextBox();
+        J11T3 = new widget.TextBox();
+        J11JH1 = new widget.TextBox();
+        J12H2 = new widget.TextBox();
+        J12T2 = new widget.TextBox();
         jLabel37 = new widget.Label();
-        TD80 = new widget.TextBox();
-        TD81 = new widget.TextBox();
-        TD82 = new widget.TextBox();
-        TD83 = new widget.TextBox();
-        TD84 = new widget.TextBox();
-        TD85 = new widget.TextBox();
-        TD86 = new widget.TextBox();
-        TD87 = new widget.TextBox();
-        TD88 = new widget.TextBox();
-        TD89 = new widget.TextBox();
-        TD90 = new widget.TextBox();
+        J12T1 = new widget.TextBox();
+        J12H3 = new widget.TextBox();
+        J12T3 = new widget.TextBox();
+        J12JH1 = new widget.TextBox();
+        J13T1 = new widget.TextBox();
+        J13H2 = new widget.TextBox();
+        J13T2 = new widget.TextBox();
+        J13H3 = new widget.TextBox();
+        J13T3 = new widget.TextBox();
+        J13JH1 = new widget.TextBox();
         jLabel38 = new widget.Label();
+        J1H3 = new widget.TextBox();
+        J1T1 = new widget.TextBox();
+        J1T2 = new widget.TextBox();
+        J1T3 = new widget.TextBox();
+        J1JH1 = new widget.TextBox();
+        J1H2 = new widget.TextBox();
 
         jPopupMenu1.setName("jPopupMenu1"); // NOI18N
 
@@ -744,11 +789,6 @@ public final class RMChecklistDuranteOperasi extends javax.swing.JDialog {
         FormInput.add(jLabel12);
         jLabel12.setBounds(30, 260, 130, 23);
 
-        TD.setFocusTraversalPolicyProvider(true);
-        TD.setName("TD"); // NOI18N
-        FormInput.add(TD);
-        TD.setBounds(710, 260, 100, 23);
-
         jLabel53.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel53.setText("3. Perhitungan Instrumen Dasar");
         jLabel53.setName("jLabel53"); // NOI18N
@@ -903,390 +943,514 @@ public final class RMChecklistDuranteOperasi extends javax.swing.JDialog {
         FormInput.add(jLabel71);
         jLabel71.setBounds(600, 230, 100, 23);
 
-        J1HP1.setFocusTraversalPolicyProvider(true);
-        J1HP1.setName("J1HP1"); // NOI18N
-        FormInput.add(J1HP1);
-        J1HP1.setBounds(180, 260, 100, 23);
+        J1H1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        J1H1.setText("0");
+        J1H1.setFocusTraversalPolicyProvider(true);
+        J1H1.setName("J1H1"); // NOI18N
+        FormInput.add(J1H1);
+        J1H1.setBounds(180, 260, 100, 23);
 
-        GCS.setFocusTraversalPolicyProvider(true);
-        GCS.setName("GCS"); // NOI18N
-        FormInput.add(GCS);
-        GCS.setBounds(290, 260, 70, 23);
+        J2H1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        J2H1.setText("0");
+        J2H1.setFocusTraversalPolicyProvider(true);
+        J2H1.setName("J2H1"); // NOI18N
+        FormInput.add(J2H1);
+        J2H1.setBounds(180, 290, 100, 23);
 
-        HR.setFocusTraversalPolicyProvider(true);
-        HR.setName("HR"); // NOI18N
-        FormInput.add(HR);
-        HR.setBounds(370, 260, 70, 23);
+        J3H1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        J3H1.setText("0");
+        J3H1.setFocusTraversalPolicyProvider(true);
+        J3H1.setName("J3H1"); // NOI18N
+        FormInput.add(J3H1);
+        J3H1.setBounds(180, 320, 100, 23);
 
-        Suhu.setFocusTraversalPolicyProvider(true);
-        Suhu.setName("Suhu"); // NOI18N
-        FormInput.add(Suhu);
-        Suhu.setBounds(450, 260, 70, 23);
+        J4H1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        J4H1.setText("0");
+        J4H1.setFocusTraversalPolicyProvider(true);
+        J4H1.setName("J4H1"); // NOI18N
+        FormInput.add(J4H1);
+        J4H1.setBounds(180, 350, 100, 23);
 
-        RR.setFocusTraversalPolicyProvider(true);
-        RR.setName("RR"); // NOI18N
-        FormInput.add(RR);
-        RR.setBounds(530, 260, 60, 23);
+        J5H1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        J5H1.setText("0");
+        J5H1.setFocusTraversalPolicyProvider(true);
+        J5H1.setName("J5H1"); // NOI18N
+        FormInput.add(J5H1);
+        J5H1.setBounds(180, 380, 100, 23);
 
-        SPO.setFocusTraversalPolicyProvider(true);
-        SPO.setName("SPO"); // NOI18N
-        FormInput.add(SPO);
-        SPO.setBounds(600, 260, 100, 23);
+        J6H1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        J6H1.setText("0");
+        J6H1.setFocusTraversalPolicyProvider(true);
+        J6H1.setName("J6H1"); // NOI18N
+        FormInput.add(J6H1);
+        J6H1.setBounds(180, 410, 100, 23);
+
+        J7H1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        J7H1.setText("0");
+        J7H1.setFocusTraversalPolicyProvider(true);
+        J7H1.setName("J7H1"); // NOI18N
+        FormInput.add(J7H1);
+        J7H1.setBounds(180, 440, 100, 23);
+
+        J8H1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        J8H1.setText("0");
+        J8H1.setFocusTraversalPolicyProvider(true);
+        J8H1.setName("J8H1"); // NOI18N
+        FormInput.add(J8H1);
+        J8H1.setBounds(180, 470, 100, 23);
+
+        J9H1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        J9H1.setText("0");
+        J9H1.setFocusTraversalPolicyProvider(true);
+        J9H1.setName("J9H1"); // NOI18N
+        FormInput.add(J9H1);
+        J9H1.setBounds(180, 500, 100, 23);
+
+        J10H1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        J10H1.setText("0");
+        J10H1.setFocusTraversalPolicyProvider(true);
+        J10H1.setName("J10H1"); // NOI18N
+        FormInput.add(J10H1);
+        J10H1.setBounds(180, 530, 100, 23);
+
+        J11H1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        J11H1.setText("0");
+        J11H1.setFocusTraversalPolicyProvider(true);
+        J11H1.setName("J11H1"); // NOI18N
+        FormInput.add(J11H1);
+        J11H1.setBounds(180, 560, 100, 23);
+
+        J12H1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        J12H1.setText("0");
+        J12H1.setFocusTraversalPolicyProvider(true);
+        J12H1.setName("J12H1"); // NOI18N
+        FormInput.add(J12H1);
+        J12H1.setBounds(180, 590, 100, 23);
+
+        J13H1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        J13H1.setText("0");
+        J13H1.setFocusTraversalPolicyProvider(true);
+        J13H1.setName("J13H1"); // NOI18N
+        FormInput.add(J13H1);
+        J13H1.setBounds(180, 620, 100, 23);
 
         jLabel13.setText("Pean Kecil");
         jLabel13.setName("jLabel13"); // NOI18N
         FormInput.add(jLabel13);
         jLabel13.setBounds(30, 290, 130, 23);
 
-        TD7.setFocusTraversalPolicyProvider(true);
-        TD7.setName("TD7"); // NOI18N
-        FormInput.add(TD7);
-        TD7.setBounds(710, 290, 100, 23);
+        J2H3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        J2H3.setText("0");
+        J2H3.setFocusTraversalPolicyProvider(true);
+        J2H3.setName("J2H3"); // NOI18N
+        FormInput.add(J2H3);
+        J2H3.setBounds(710, 290, 100, 23);
 
-        J2HP1.setFocusTraversalPolicyProvider(true);
-        J2HP1.setName("J2HP1"); // NOI18N
-        FormInput.add(J2HP1);
-        J2HP1.setBounds(180, 290, 100, 23);
+        J2T1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        J2T1.setText("0");
+        J2T1.setFocusTraversalPolicyProvider(true);
+        J2T1.setName("J2T1"); // NOI18N
+        FormInput.add(J2T1);
+        J2T1.setBounds(290, 290, 70, 23);
 
-        TD9.setFocusTraversalPolicyProvider(true);
-        TD9.setName("TD9"); // NOI18N
-        FormInput.add(TD9);
-        TD9.setBounds(290, 290, 70, 23);
+        J2T2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        J2T2.setText("0");
+        J2T2.setFocusTraversalPolicyProvider(true);
+        J2T2.setName("J2T2"); // NOI18N
+        FormInput.add(J2T2);
+        J2T2.setBounds(370, 290, 70, 23);
 
-        TD10.setFocusTraversalPolicyProvider(true);
-        TD10.setName("TD10"); // NOI18N
-        FormInput.add(TD10);
-        TD10.setBounds(370, 290, 70, 23);
+        J2T3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        J2T3.setText("0");
+        J2T3.setFocusTraversalPolicyProvider(true);
+        J2T3.setName("J2T3"); // NOI18N
+        FormInput.add(J2T3);
+        J2T3.setBounds(450, 290, 70, 23);
 
-        TD11.setFocusTraversalPolicyProvider(true);
-        TD11.setName("TD11"); // NOI18N
-        FormInput.add(TD11);
-        TD11.setBounds(450, 290, 70, 23);
+        J2JH1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        J2JH1.setText("0");
+        J2JH1.setFocusTraversalPolicyProvider(true);
+        J2JH1.setName("J2JH1"); // NOI18N
+        FormInput.add(J2JH1);
+        J2JH1.setBounds(530, 290, 60, 23);
 
-        TD12.setFocusTraversalPolicyProvider(true);
-        TD12.setName("TD12"); // NOI18N
-        FormInput.add(TD12);
-        TD12.setBounds(530, 290, 60, 23);
-
-        TD13.setFocusTraversalPolicyProvider(true);
-        TD13.setName("TD13"); // NOI18N
-        FormInput.add(TD13);
-        TD13.setBounds(600, 290, 100, 23);
+        J2H2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        J2H2.setText("0");
+        J2H2.setFocusTraversalPolicyProvider(true);
+        J2H2.setName("J2H2"); // NOI18N
+        FormInput.add(J2H2);
+        J2H2.setBounds(600, 290, 100, 23);
 
         jLabel14.setText("Pean Besar");
         jLabel14.setName("jLabel14"); // NOI18N
         FormInput.add(jLabel14);
         jLabel14.setBounds(30, 320, 130, 23);
 
-        TD14.setFocusTraversalPolicyProvider(true);
-        TD14.setName("TD14"); // NOI18N
-        FormInput.add(TD14);
-        TD14.setBounds(710, 320, 100, 23);
+        J3H3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        J3H3.setText("0");
+        J3H3.setFocusTraversalPolicyProvider(true);
+        J3H3.setName("J3H3"); // NOI18N
+        FormInput.add(J3H3);
+        J3H3.setBounds(710, 320, 100, 23);
 
-        TD15.setFocusTraversalPolicyProvider(true);
-        TD15.setName("TD15"); // NOI18N
-        FormInput.add(TD15);
-        TD15.setBounds(180, 320, 100, 23);
+        J3T1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        J3T1.setText("0");
+        J3T1.setFocusTraversalPolicyProvider(true);
+        J3T1.setName("J3T1"); // NOI18N
+        FormInput.add(J3T1);
+        J3T1.setBounds(290, 320, 70, 23);
 
-        TD16.setFocusTraversalPolicyProvider(true);
-        TD16.setName("TD16"); // NOI18N
-        FormInput.add(TD16);
-        TD16.setBounds(290, 320, 70, 23);
+        J3T2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        J3T2.setText("0");
+        J3T2.setFocusTraversalPolicyProvider(true);
+        J3T2.setName("J3T2"); // NOI18N
+        FormInput.add(J3T2);
+        J3T2.setBounds(370, 320, 70, 23);
 
-        TD17.setFocusTraversalPolicyProvider(true);
-        TD17.setName("TD17"); // NOI18N
-        FormInput.add(TD17);
-        TD17.setBounds(370, 320, 70, 23);
+        J3T3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        J3T3.setText("0");
+        J3T3.setFocusTraversalPolicyProvider(true);
+        J3T3.setName("J3T3"); // NOI18N
+        FormInput.add(J3T3);
+        J3T3.setBounds(450, 320, 70, 23);
 
-        TD18.setFocusTraversalPolicyProvider(true);
-        TD18.setName("TD18"); // NOI18N
-        FormInput.add(TD18);
-        TD18.setBounds(450, 320, 70, 23);
+        J3JH1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        J3JH1.setText("0");
+        J3JH1.setFocusTraversalPolicyProvider(true);
+        J3JH1.setName("J3JH1"); // NOI18N
+        FormInput.add(J3JH1);
+        J3JH1.setBounds(530, 320, 60, 23);
 
-        TD19.setFocusTraversalPolicyProvider(true);
-        TD19.setName("TD19"); // NOI18N
-        FormInput.add(TD19);
-        TD19.setBounds(530, 320, 60, 23);
-
-        TD20.setFocusTraversalPolicyProvider(true);
-        TD20.setName("TD20"); // NOI18N
-        FormInput.add(TD20);
-        TD20.setBounds(600, 320, 100, 23);
+        J3H2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        J3H2.setText("0");
+        J3H2.setFocusTraversalPolicyProvider(true);
+        J3H2.setName("J3H2"); // NOI18N
+        FormInput.add(J3H2);
+        J3H2.setBounds(600, 320, 100, 23);
 
         jLabel15.setText("Kocher");
         jLabel15.setName("jLabel15"); // NOI18N
         FormInput.add(jLabel15);
         jLabel15.setBounds(30, 350, 130, 23);
 
-        TD21.setFocusTraversalPolicyProvider(true);
-        TD21.setName("TD21"); // NOI18N
-        FormInput.add(TD21);
-        TD21.setBounds(710, 350, 100, 23);
+        J4H3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        J4H3.setText("0");
+        J4H3.setFocusTraversalPolicyProvider(true);
+        J4H3.setName("J4H3"); // NOI18N
+        FormInput.add(J4H3);
+        J4H3.setBounds(710, 350, 100, 23);
 
-        TD22.setFocusTraversalPolicyProvider(true);
-        TD22.setName("TD22"); // NOI18N
-        FormInput.add(TD22);
-        TD22.setBounds(180, 350, 100, 23);
+        J4T1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        J4T1.setText("0");
+        J4T1.setFocusTraversalPolicyProvider(true);
+        J4T1.setName("J4T1"); // NOI18N
+        FormInput.add(J4T1);
+        J4T1.setBounds(290, 350, 70, 23);
 
-        TD23.setFocusTraversalPolicyProvider(true);
-        TD23.setName("TD23"); // NOI18N
-        FormInput.add(TD23);
-        TD23.setBounds(290, 350, 70, 23);
+        J4T2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        J4T2.setText("0");
+        J4T2.setFocusTraversalPolicyProvider(true);
+        J4T2.setName("J4T2"); // NOI18N
+        FormInput.add(J4T2);
+        J4T2.setBounds(370, 350, 70, 23);
 
-        TD24.setFocusTraversalPolicyProvider(true);
-        TD24.setName("TD24"); // NOI18N
-        FormInput.add(TD24);
-        TD24.setBounds(370, 350, 70, 23);
+        J4T3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        J4T3.setText("0");
+        J4T3.setFocusTraversalPolicyProvider(true);
+        J4T3.setName("J4T3"); // NOI18N
+        FormInput.add(J4T3);
+        J4T3.setBounds(450, 350, 70, 23);
 
-        TD25.setFocusTraversalPolicyProvider(true);
-        TD25.setName("TD25"); // NOI18N
-        FormInput.add(TD25);
-        TD25.setBounds(450, 350, 70, 23);
+        J4JH1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        J4JH1.setText("0");
+        J4JH1.setFocusTraversalPolicyProvider(true);
+        J4JH1.setName("J4JH1"); // NOI18N
+        FormInput.add(J4JH1);
+        J4JH1.setBounds(530, 350, 60, 23);
 
-        TD26.setFocusTraversalPolicyProvider(true);
-        TD26.setName("TD26"); // NOI18N
-        FormInput.add(TD26);
-        TD26.setBounds(530, 350, 60, 23);
+        J4H2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        J4H2.setText("0");
+        J4H2.setFocusTraversalPolicyProvider(true);
+        J4H2.setName("J4H2"); // NOI18N
+        FormInput.add(J4H2);
+        J4H2.setBounds(600, 350, 100, 23);
 
-        TD27.setFocusTraversalPolicyProvider(true);
-        TD27.setName("TD27"); // NOI18N
-        FormInput.add(TD27);
-        TD27.setBounds(600, 350, 100, 23);
+        J5T3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        J5T3.setText("0");
+        J5T3.setFocusTraversalPolicyProvider(true);
+        J5T3.setName("J5T3"); // NOI18N
+        FormInput.add(J5T3);
+        J5T3.setBounds(450, 380, 70, 23);
 
-        TD28.setFocusTraversalPolicyProvider(true);
-        TD28.setName("TD28"); // NOI18N
-        FormInput.add(TD28);
-        TD28.setBounds(450, 380, 70, 23);
+        J5H3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        J5H3.setText("0");
+        J5H3.setFocusTraversalPolicyProvider(true);
+        J5H3.setName("J5H3"); // NOI18N
+        FormInput.add(J5H3);
+        J5H3.setBounds(710, 380, 100, 23);
 
-        TD29.setFocusTraversalPolicyProvider(true);
-        TD29.setName("TD29"); // NOI18N
-        FormInput.add(TD29);
-        TD29.setBounds(710, 380, 100, 23);
+        J5T2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        J5T2.setText("0");
+        J5T2.setFocusTraversalPolicyProvider(true);
+        J5T2.setName("J5T2"); // NOI18N
+        FormInput.add(J5T2);
+        J5T2.setBounds(370, 380, 70, 23);
 
-        TD30.setFocusTraversalPolicyProvider(true);
-        TD30.setName("TD30"); // NOI18N
-        FormInput.add(TD30);
-        TD30.setBounds(370, 380, 70, 23);
+        J5JH1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        J5JH1.setText("0");
+        J5JH1.setFocusTraversalPolicyProvider(true);
+        J5JH1.setName("J5JH1"); // NOI18N
+        FormInput.add(J5JH1);
+        J5JH1.setBounds(530, 380, 60, 23);
 
-        TD31.setFocusTraversalPolicyProvider(true);
-        TD31.setName("TD31"); // NOI18N
-        FormInput.add(TD31);
-        TD31.setBounds(530, 380, 60, 23);
+        J5H2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        J5H2.setText("0");
+        J5H2.setFocusTraversalPolicyProvider(true);
+        J5H2.setName("J5H2"); // NOI18N
+        FormInput.add(J5H2);
+        J5H2.setBounds(600, 380, 100, 23);
 
-        TD32.setFocusTraversalPolicyProvider(true);
-        TD32.setName("TD32"); // NOI18N
-        FormInput.add(TD32);
-        TD32.setBounds(180, 380, 100, 23);
-
-        TD33.setFocusTraversalPolicyProvider(true);
-        TD33.setName("TD33"); // NOI18N
-        FormInput.add(TD33);
-        TD33.setBounds(600, 380, 100, 23);
-
-        TD34.setFocusTraversalPolicyProvider(true);
-        TD34.setName("TD34"); // NOI18N
-        FormInput.add(TD34);
-        TD34.setBounds(290, 380, 70, 23);
+        J5T1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        J5T1.setText("0");
+        J5T1.setFocusTraversalPolicyProvider(true);
+        J5T1.setName("J5T1"); // NOI18N
+        FormInput.add(J5T1);
+        J5T1.setBounds(290, 380, 70, 23);
 
         jLabel24.setText("Pinset Anatomi");
         jLabel24.setName("jLabel24"); // NOI18N
         FormInput.add(jLabel24);
         jLabel24.setBounds(30, 380, 130, 23);
 
-        TD35.setFocusTraversalPolicyProvider(true);
-        TD35.setName("TD35"); // NOI18N
-        FormInput.add(TD35);
-        TD35.setBounds(180, 410, 100, 23);
+        J6T1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        J6T1.setText("0");
+        J6T1.setFocusTraversalPolicyProvider(true);
+        J6T1.setName("J6T1"); // NOI18N
+        FormInput.add(J6T1);
+        J6T1.setBounds(290, 410, 70, 23);
 
-        TD36.setFocusTraversalPolicyProvider(true);
-        TD36.setName("TD36"); // NOI18N
-        FormInput.add(TD36);
-        TD36.setBounds(290, 410, 70, 23);
+        J6JH1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        J6JH1.setText("0");
+        J6JH1.setFocusTraversalPolicyProvider(true);
+        J6JH1.setName("J6JH1"); // NOI18N
+        FormInput.add(J6JH1);
+        J6JH1.setBounds(530, 410, 60, 23);
 
-        TD37.setFocusTraversalPolicyProvider(true);
-        TD37.setName("TD37"); // NOI18N
-        FormInput.add(TD37);
-        TD37.setBounds(530, 410, 60, 23);
+        J6H3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        J6H3.setText("0");
+        J6H3.setFocusTraversalPolicyProvider(true);
+        J6H3.setName("J6H3"); // NOI18N
+        FormInput.add(J6H3);
+        J6H3.setBounds(710, 410, 100, 23);
 
-        TD38.setFocusTraversalPolicyProvider(true);
-        TD38.setName("TD38"); // NOI18N
-        FormInput.add(TD38);
-        TD38.setBounds(710, 410, 100, 23);
+        J6T3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        J6T3.setText("0");
+        J6T3.setFocusTraversalPolicyProvider(true);
+        J6T3.setName("J6T3"); // NOI18N
+        FormInput.add(J6T3);
+        J6T3.setBounds(450, 410, 70, 23);
 
-        TD39.setFocusTraversalPolicyProvider(true);
-        TD39.setName("TD39"); // NOI18N
-        FormInput.add(TD39);
-        TD39.setBounds(450, 410, 70, 23);
-
-        TD40.setFocusTraversalPolicyProvider(true);
-        TD40.setName("TD40"); // NOI18N
-        FormInput.add(TD40);
-        TD40.setBounds(600, 410, 100, 23);
+        J6H2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        J6H2.setText("0");
+        J6H2.setFocusTraversalPolicyProvider(true);
+        J6H2.setName("J6H2"); // NOI18N
+        FormInput.add(J6H2);
+        J6H2.setBounds(600, 410, 100, 23);
 
         jLabel30.setText("Pinset Cirurgis");
         jLabel30.setName("jLabel30"); // NOI18N
         FormInput.add(jLabel30);
         jLabel30.setBounds(30, 410, 130, 23);
 
-        TD41.setFocusTraversalPolicyProvider(true);
-        TD41.setName("TD41"); // NOI18N
-        FormInput.add(TD41);
-        TD41.setBounds(370, 410, 70, 23);
+        J6T2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        J6T2.setText("0");
+        J6T2.setFocusTraversalPolicyProvider(true);
+        J6T2.setName("J6T2"); // NOI18N
+        FormInput.add(J6T2);
+        J6T2.setBounds(370, 410, 70, 23);
 
         jLabel31.setText("Gunting");
         jLabel31.setName("jLabel31"); // NOI18N
         FormInput.add(jLabel31);
         jLabel31.setBounds(30, 440, 130, 23);
 
-        TD42.setFocusTraversalPolicyProvider(true);
-        TD42.setName("TD42"); // NOI18N
-        FormInput.add(TD42);
-        TD42.setBounds(530, 440, 60, 23);
+        J7JH1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        J7JH1.setText("0");
+        J7JH1.setFocusTraversalPolicyProvider(true);
+        J7JH1.setName("J7JH1"); // NOI18N
+        FormInput.add(J7JH1);
+        J7JH1.setBounds(530, 440, 60, 23);
 
-        TD43.setFocusTraversalPolicyProvider(true);
-        TD43.setName("TD43"); // NOI18N
-        FormInput.add(TD43);
-        TD43.setBounds(450, 440, 70, 23);
+        J7T3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        J7T3.setText("0");
+        J7T3.setFocusTraversalPolicyProvider(true);
+        J7T3.setName("J7T3"); // NOI18N
+        FormInput.add(J7T3);
+        J7T3.setBounds(450, 440, 70, 23);
 
-        TD44.setFocusTraversalPolicyProvider(true);
-        TD44.setName("TD44"); // NOI18N
-        FormInput.add(TD44);
-        TD44.setBounds(180, 440, 100, 23);
+        J7T1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        J7T1.setText("0");
+        J7T1.setFocusTraversalPolicyProvider(true);
+        J7T1.setName("J7T1"); // NOI18N
+        FormInput.add(J7T1);
+        J7T1.setBounds(290, 440, 70, 23);
 
-        TD45.setFocusTraversalPolicyProvider(true);
-        TD45.setName("TD45"); // NOI18N
-        FormInput.add(TD45);
-        TD45.setBounds(290, 440, 70, 23);
+        J7H3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        J7H3.setText("0");
+        J7H3.setFocusTraversalPolicyProvider(true);
+        J7H3.setName("J7H3"); // NOI18N
+        FormInput.add(J7H3);
+        J7H3.setBounds(710, 440, 100, 23);
 
-        TD46.setFocusTraversalPolicyProvider(true);
-        TD46.setName("TD46"); // NOI18N
-        FormInput.add(TD46);
-        TD46.setBounds(710, 440, 100, 23);
+        J7T2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        J7T2.setText("0");
+        J7T2.setFocusTraversalPolicyProvider(true);
+        J7T2.setName("J7T2"); // NOI18N
+        FormInput.add(J7T2);
+        J7T2.setBounds(370, 440, 70, 23);
 
-        TD47.setFocusTraversalPolicyProvider(true);
-        TD47.setName("TD47"); // NOI18N
-        FormInput.add(TD47);
-        TD47.setBounds(370, 440, 70, 23);
-
-        TD48.setFocusTraversalPolicyProvider(true);
-        TD48.setName("TD48"); // NOI18N
-        FormInput.add(TD48);
-        TD48.setBounds(600, 440, 100, 23);
+        J7H2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        J7H2.setText("0");
+        J7H2.setFocusTraversalPolicyProvider(true);
+        J7H2.setName("J7H2"); // NOI18N
+        FormInput.add(J7H2);
+        J7H2.setBounds(600, 440, 100, 23);
 
         jLabel32.setText("Towel Klem");
         jLabel32.setName("jLabel32"); // NOI18N
         FormInput.add(jLabel32);
         jLabel32.setBounds(30, 470, 130, 23);
 
-        TD49.setFocusTraversalPolicyProvider(true);
-        TD49.setName("TD49"); // NOI18N
-        FormInput.add(TD49);
-        TD49.setBounds(600, 470, 100, 23);
+        J8H2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        J8H2.setText("0");
+        J8H2.setFocusTraversalPolicyProvider(true);
+        J8H2.setName("J8H2"); // NOI18N
+        FormInput.add(J8H2);
+        J8H2.setBounds(600, 470, 100, 23);
 
-        TD50.setFocusTraversalPolicyProvider(true);
-        TD50.setName("TD50"); // NOI18N
-        FormInput.add(TD50);
-        TD50.setBounds(290, 470, 70, 23);
+        J8T1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        J8T1.setText("0");
+        J8T1.setFocusTraversalPolicyProvider(true);
+        J8T1.setName("J8T1"); // NOI18N
+        FormInput.add(J8T1);
+        J8T1.setBounds(290, 470, 70, 23);
 
-        TD51.setFocusTraversalPolicyProvider(true);
-        TD51.setName("TD51"); // NOI18N
-        FormInput.add(TD51);
-        TD51.setBounds(370, 470, 70, 23);
+        J8T2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        J8T2.setText("0");
+        J8T2.setFocusTraversalPolicyProvider(true);
+        J8T2.setName("J8T2"); // NOI18N
+        FormInput.add(J8T2);
+        J8T2.setBounds(370, 470, 70, 23);
 
-        TD52.setFocusTraversalPolicyProvider(true);
-        TD52.setName("TD52"); // NOI18N
-        FormInput.add(TD52);
-        TD52.setBounds(180, 470, 100, 23);
+        J8H3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        J8H3.setText("0");
+        J8H3.setFocusTraversalPolicyProvider(true);
+        J8H3.setName("J8H3"); // NOI18N
+        FormInput.add(J8H3);
+        J8H3.setBounds(710, 470, 100, 23);
 
-        TD53.setFocusTraversalPolicyProvider(true);
-        TD53.setName("TD53"); // NOI18N
-        FormInput.add(TD53);
-        TD53.setBounds(710, 470, 100, 23);
+        J8T3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        J8T3.setText("0");
+        J8T3.setFocusTraversalPolicyProvider(true);
+        J8T3.setName("J8T3"); // NOI18N
+        FormInput.add(J8T3);
+        J8T3.setBounds(450, 470, 70, 23);
 
-        TD54.setFocusTraversalPolicyProvider(true);
-        TD54.setName("TD54"); // NOI18N
-        FormInput.add(TD54);
-        TD54.setBounds(450, 470, 70, 23);
+        J8JH1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        J8JH1.setText("0");
+        J8JH1.setFocusTraversalPolicyProvider(true);
+        J8JH1.setName("J8JH1"); // NOI18N
+        FormInput.add(J8JH1);
+        J8JH1.setBounds(530, 470, 60, 23);
 
-        TD55.setFocusTraversalPolicyProvider(true);
-        TD55.setName("TD55"); // NOI18N
-        FormInput.add(TD55);
-        TD55.setBounds(530, 470, 60, 23);
+        J9H2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        J9H2.setText("0");
+        J9H2.setFocusTraversalPolicyProvider(true);
+        J9H2.setName("J9H2"); // NOI18N
+        FormInput.add(J9H2);
+        J9H2.setBounds(600, 500, 100, 23);
 
-        TD56.setFocusTraversalPolicyProvider(true);
-        TD56.setName("TD56"); // NOI18N
-        FormInput.add(TD56);
-        TD56.setBounds(600, 500, 100, 23);
-
-        TD57.setFocusTraversalPolicyProvider(true);
-        TD57.setName("TD57"); // NOI18N
-        FormInput.add(TD57);
-        TD57.setBounds(370, 500, 70, 23);
-
-        TD58.setFocusTraversalPolicyProvider(true);
-        TD58.setName("TD58"); // NOI18N
-        FormInput.add(TD58);
-        TD58.setBounds(180, 500, 100, 23);
+        J9T2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        J9T2.setText("0");
+        J9T2.setFocusTraversalPolicyProvider(true);
+        J9T2.setName("J9T2"); // NOI18N
+        FormInput.add(J9T2);
+        J9T2.setBounds(370, 500, 70, 23);
 
         jLabel33.setText("Handle Mess");
         jLabel33.setName("jLabel33"); // NOI18N
         FormInput.add(jLabel33);
         jLabel33.setBounds(30, 500, 130, 23);
 
-        TD59.setFocusTraversalPolicyProvider(true);
-        TD59.setName("TD59"); // NOI18N
-        FormInput.add(TD59);
-        TD59.setBounds(290, 500, 70, 23);
+        J9T1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        J9T1.setText("0");
+        J9T1.setFocusTraversalPolicyProvider(true);
+        J9T1.setName("J9T1"); // NOI18N
+        FormInput.add(J9T1);
+        J9T1.setBounds(290, 500, 70, 23);
 
-        TD60.setFocusTraversalPolicyProvider(true);
-        TD60.setName("TD60"); // NOI18N
-        FormInput.add(TD60);
-        TD60.setBounds(710, 500, 100, 23);
+        J9H3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        J9H3.setText("0");
+        J9H3.setFocusTraversalPolicyProvider(true);
+        J9H3.setName("J9H3"); // NOI18N
+        FormInput.add(J9H3);
+        J9H3.setBounds(710, 500, 100, 23);
 
-        TD61.setFocusTraversalPolicyProvider(true);
-        TD61.setName("TD61"); // NOI18N
-        FormInput.add(TD61);
-        TD61.setBounds(450, 500, 70, 23);
+        J9T3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        J9T3.setText("0");
+        J9T3.setFocusTraversalPolicyProvider(true);
+        J9T3.setName("J9T3"); // NOI18N
+        FormInput.add(J9T3);
+        J9T3.setBounds(450, 500, 70, 23);
 
-        TD62.setFocusTraversalPolicyProvider(true);
-        TD62.setName("TD62"); // NOI18N
-        FormInput.add(TD62);
-        TD62.setBounds(530, 500, 60, 23);
+        J9JH1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        J9JH1.setText("0");
+        J9JH1.setFocusTraversalPolicyProvider(true);
+        J9JH1.setName("J9JH1"); // NOI18N
+        FormInput.add(J9JH1);
+        J9JH1.setBounds(530, 500, 60, 23);
 
-        TD63.setFocusTraversalPolicyProvider(true);
-        TD63.setName("TD63"); // NOI18N
-        FormInput.add(TD63);
-        TD63.setBounds(290, 530, 70, 23);
+        J10T1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        J10T1.setText("0");
+        J10T1.setFocusTraversalPolicyProvider(true);
+        J10T1.setName("J10T1"); // NOI18N
+        FormInput.add(J10T1);
+        J10T1.setBounds(290, 530, 70, 23);
 
-        TD64.setFocusTraversalPolicyProvider(true);
-        TD64.setName("TD64"); // NOI18N
-        FormInput.add(TD64);
-        TD64.setBounds(600, 530, 100, 23);
+        J10H2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        J10H2.setText("0");
+        J10H2.setFocusTraversalPolicyProvider(true);
+        J10H2.setName("J10H2"); // NOI18N
+        FormInput.add(J10H2);
+        J10H2.setBounds(600, 530, 100, 23);
 
-        TD65.setFocusTraversalPolicyProvider(true);
-        TD65.setName("TD65"); // NOI18N
-        FormInput.add(TD65);
-        TD65.setBounds(370, 530, 70, 23);
+        J10T2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        J10T2.setText("0");
+        J10T2.setFocusTraversalPolicyProvider(true);
+        J10T2.setName("J10T2"); // NOI18N
+        FormInput.add(J10T2);
+        J10T2.setBounds(370, 530, 70, 23);
 
-        TD66.setFocusTraversalPolicyProvider(true);
-        TD66.setName("TD66"); // NOI18N
-        FormInput.add(TD66);
-        TD66.setBounds(180, 530, 100, 23);
+        J10H3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        J10H3.setText("0");
+        J10H3.setFocusTraversalPolicyProvider(true);
+        J10H3.setName("J10H3"); // NOI18N
+        FormInput.add(J10H3);
+        J10H3.setBounds(710, 530, 100, 23);
 
-        TD67.setFocusTraversalPolicyProvider(true);
-        TD67.setName("TD67"); // NOI18N
-        FormInput.add(TD67);
-        TD67.setBounds(710, 530, 100, 23);
+        J10T3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        J10T3.setText("0");
+        J10T3.setFocusTraversalPolicyProvider(true);
+        J10T3.setName("J10T3"); // NOI18N
+        FormInput.add(J10T3);
+        J10T3.setBounds(450, 530, 70, 23);
 
-        TD68.setFocusTraversalPolicyProvider(true);
-        TD68.setName("TD68"); // NOI18N
-        FormInput.add(TD68);
-        TD68.setBounds(450, 530, 70, 23);
-
-        TD69.setFocusTraversalPolicyProvider(true);
-        TD69.setName("TD69"); // NOI18N
-        FormInput.add(TD69);
-        TD69.setBounds(530, 530, 60, 23);
+        J10JH1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        J10JH1.setText("0");
+        J10JH1.setFocusTraversalPolicyProvider(true);
+        J10JH1.setName("J10JH1"); // NOI18N
+        FormInput.add(J10JH1);
+        J10JH1.setBounds(530, 530, 60, 23);
 
         jLabel34.setText("Allis Klem");
         jLabel34.setName("jLabel34"); // NOI18N
@@ -1298,120 +1462,188 @@ public final class RMChecklistDuranteOperasi extends javax.swing.JDialog {
         FormInput.add(jLabel36);
         jLabel36.setBounds(30, 560, 130, 23);
 
-        TD70.setFocusTraversalPolicyProvider(true);
-        TD70.setName("TD70"); // NOI18N
-        FormInput.add(TD70);
-        TD70.setBounds(600, 560, 100, 23);
+        J11H2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        J11H2.setText("0");
+        J11H2.setFocusTraversalPolicyProvider(true);
+        J11H2.setName("J11H2"); // NOI18N
+        FormInput.add(J11H2);
+        J11H2.setBounds(600, 560, 100, 23);
 
-        TD71.setFocusTraversalPolicyProvider(true);
-        TD71.setName("TD71"); // NOI18N
-        FormInput.add(TD71);
-        TD71.setBounds(290, 560, 70, 23);
+        J11T1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        J11T1.setText("0");
+        J11T1.setFocusTraversalPolicyProvider(true);
+        J11T1.setName("J11T1"); // NOI18N
+        FormInput.add(J11T1);
+        J11T1.setBounds(290, 560, 70, 23);
 
-        TD72.setFocusTraversalPolicyProvider(true);
-        TD72.setName("TD72"); // NOI18N
-        FormInput.add(TD72);
-        TD72.setBounds(370, 560, 70, 23);
+        J11T2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        J11T2.setText("0");
+        J11T2.setFocusTraversalPolicyProvider(true);
+        J11T2.setName("J11T2"); // NOI18N
+        FormInput.add(J11T2);
+        J11T2.setBounds(370, 560, 70, 23);
 
-        TD73.setFocusTraversalPolicyProvider(true);
-        TD73.setName("TD73"); // NOI18N
-        FormInput.add(TD73);
-        TD73.setBounds(180, 560, 100, 23);
+        J11H3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        J11H3.setText("0");
+        J11H3.setFocusTraversalPolicyProvider(true);
+        J11H3.setName("J11H3"); // NOI18N
+        FormInput.add(J11H3);
+        J11H3.setBounds(710, 560, 100, 23);
 
-        TD74.setFocusTraversalPolicyProvider(true);
-        TD74.setName("TD74"); // NOI18N
-        FormInput.add(TD74);
-        TD74.setBounds(710, 560, 100, 23);
+        J11T3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        J11T3.setText("0");
+        J11T3.setFocusTraversalPolicyProvider(true);
+        J11T3.setName("J11T3"); // NOI18N
+        FormInput.add(J11T3);
+        J11T3.setBounds(450, 560, 70, 23);
 
-        TD75.setFocusTraversalPolicyProvider(true);
-        TD75.setName("TD75"); // NOI18N
-        FormInput.add(TD75);
-        TD75.setBounds(450, 560, 70, 23);
+        J11JH1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        J11JH1.setText("0");
+        J11JH1.setFocusTraversalPolicyProvider(true);
+        J11JH1.setName("J11JH1"); // NOI18N
+        FormInput.add(J11JH1);
+        J11JH1.setBounds(530, 560, 60, 23);
 
-        TD76.setFocusTraversalPolicyProvider(true);
-        TD76.setName("TD76"); // NOI18N
-        FormInput.add(TD76);
-        TD76.setBounds(530, 560, 60, 23);
+        J12H2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        J12H2.setText("0");
+        J12H2.setFocusTraversalPolicyProvider(true);
+        J12H2.setName("J12H2"); // NOI18N
+        FormInput.add(J12H2);
+        J12H2.setBounds(600, 590, 100, 23);
 
-        TD77.setFocusTraversalPolicyProvider(true);
-        TD77.setName("TD77"); // NOI18N
-        FormInput.add(TD77);
-        TD77.setBounds(600, 590, 100, 23);
-
-        TD78.setFocusTraversalPolicyProvider(true);
-        TD78.setName("TD78"); // NOI18N
-        FormInput.add(TD78);
-        TD78.setBounds(370, 590, 70, 23);
-
-        TD79.setFocusTraversalPolicyProvider(true);
-        TD79.setName("TD79"); // NOI18N
-        FormInput.add(TD79);
-        TD79.setBounds(180, 590, 100, 23);
+        J12T2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        J12T2.setText("0");
+        J12T2.setFocusTraversalPolicyProvider(true);
+        J12T2.setName("J12T2"); // NOI18N
+        FormInput.add(J12T2);
+        J12T2.setBounds(370, 590, 70, 23);
 
         jLabel37.setText("Langen Back");
         jLabel37.setName("jLabel37"); // NOI18N
         FormInput.add(jLabel37);
         jLabel37.setBounds(30, 590, 130, 23);
 
-        TD80.setFocusTraversalPolicyProvider(true);
-        TD80.setName("TD80"); // NOI18N
-        FormInput.add(TD80);
-        TD80.setBounds(290, 590, 70, 23);
+        J12T1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        J12T1.setText("0");
+        J12T1.setFocusTraversalPolicyProvider(true);
+        J12T1.setName("J12T1"); // NOI18N
+        FormInput.add(J12T1);
+        J12T1.setBounds(290, 590, 70, 23);
 
-        TD81.setFocusTraversalPolicyProvider(true);
-        TD81.setName("TD81"); // NOI18N
-        FormInput.add(TD81);
-        TD81.setBounds(710, 590, 100, 23);
+        J12H3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        J12H3.setText("0");
+        J12H3.setFocusTraversalPolicyProvider(true);
+        J12H3.setName("J12H3"); // NOI18N
+        FormInput.add(J12H3);
+        J12H3.setBounds(710, 590, 100, 23);
 
-        TD82.setFocusTraversalPolicyProvider(true);
-        TD82.setName("TD82"); // NOI18N
-        FormInput.add(TD82);
-        TD82.setBounds(450, 590, 70, 23);
+        J12T3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        J12T3.setText("0");
+        J12T3.setFocusTraversalPolicyProvider(true);
+        J12T3.setName("J12T3"); // NOI18N
+        FormInput.add(J12T3);
+        J12T3.setBounds(450, 590, 70, 23);
 
-        TD83.setFocusTraversalPolicyProvider(true);
-        TD83.setName("TD83"); // NOI18N
-        FormInput.add(TD83);
-        TD83.setBounds(530, 590, 60, 23);
+        J12JH1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        J12JH1.setText("0");
+        J12JH1.setFocusTraversalPolicyProvider(true);
+        J12JH1.setName("J12JH1"); // NOI18N
+        FormInput.add(J12JH1);
+        J12JH1.setBounds(530, 590, 60, 23);
 
-        TD84.setFocusTraversalPolicyProvider(true);
-        TD84.setName("TD84"); // NOI18N
-        FormInput.add(TD84);
-        TD84.setBounds(290, 620, 70, 23);
+        J13T1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        J13T1.setText("0");
+        J13T1.setFocusTraversalPolicyProvider(true);
+        J13T1.setName("J13T1"); // NOI18N
+        FormInput.add(J13T1);
+        J13T1.setBounds(290, 620, 70, 23);
 
-        TD85.setFocusTraversalPolicyProvider(true);
-        TD85.setName("TD85"); // NOI18N
-        FormInput.add(TD85);
-        TD85.setBounds(600, 620, 100, 23);
+        J13H2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        J13H2.setText("0");
+        J13H2.setFocusTraversalPolicyProvider(true);
+        J13H2.setName("J13H2"); // NOI18N
+        FormInput.add(J13H2);
+        J13H2.setBounds(600, 620, 100, 23);
 
-        TD86.setFocusTraversalPolicyProvider(true);
-        TD86.setName("TD86"); // NOI18N
-        FormInput.add(TD86);
-        TD86.setBounds(370, 620, 70, 23);
+        J13T2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        J13T2.setText("0");
+        J13T2.setFocusTraversalPolicyProvider(true);
+        J13T2.setName("J13T2"); // NOI18N
+        FormInput.add(J13T2);
+        J13T2.setBounds(370, 620, 70, 23);
 
-        TD87.setFocusTraversalPolicyProvider(true);
-        TD87.setName("TD87"); // NOI18N
-        FormInput.add(TD87);
-        TD87.setBounds(180, 620, 100, 23);
+        J13H3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        J13H3.setText("0");
+        J13H3.setFocusTraversalPolicyProvider(true);
+        J13H3.setName("J13H3"); // NOI18N
+        FormInput.add(J13H3);
+        J13H3.setBounds(710, 620, 100, 23);
 
-        TD88.setFocusTraversalPolicyProvider(true);
-        TD88.setName("TD88"); // NOI18N
-        FormInput.add(TD88);
-        TD88.setBounds(710, 620, 100, 23);
+        J13T3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        J13T3.setText("0");
+        J13T3.setFocusTraversalPolicyProvider(true);
+        J13T3.setName("J13T3"); // NOI18N
+        FormInput.add(J13T3);
+        J13T3.setBounds(450, 620, 70, 23);
 
-        TD89.setFocusTraversalPolicyProvider(true);
-        TD89.setName("TD89"); // NOI18N
-        FormInput.add(TD89);
-        TD89.setBounds(450, 620, 70, 23);
-
-        TD90.setFocusTraversalPolicyProvider(true);
-        TD90.setName("TD90"); // NOI18N
-        FormInput.add(TD90);
-        TD90.setBounds(530, 620, 60, 23);
+        J13JH1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        J13JH1.setText("0");
+        J13JH1.setFocusTraversalPolicyProvider(true);
+        J13JH1.setName("J13JH1"); // NOI18N
+        FormInput.add(J13JH1);
+        J13JH1.setBounds(530, 620, 60, 23);
 
         jLabel38.setText("Jarum");
         jLabel38.setName("jLabel38"); // NOI18N
         FormInput.add(jLabel38);
         jLabel38.setBounds(30, 620, 130, 23);
+
+        J1H3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        J1H3.setText("0");
+        J1H3.setFocusTraversalPolicyProvider(true);
+        J1H3.setName("J1H3"); // NOI18N
+        FormInput.add(J1H3);
+        J1H3.setBounds(710, 260, 100, 23);
+
+        J1T1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        J1T1.setText("0");
+        J1T1.setFocusTraversalPolicyProvider(true);
+        J1T1.setName("J1T1"); // NOI18N
+        FormInput.add(J1T1);
+        J1T1.setBounds(290, 260, 70, 23);
+
+        J1T2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        J1T2.setText("0");
+        J1T2.setFocusTraversalPolicyProvider(true);
+        J1T2.setName("J1T2"); // NOI18N
+        FormInput.add(J1T2);
+        J1T2.setBounds(370, 260, 70, 23);
+
+        J1T3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        J1T3.setText("0");
+        J1T3.setFocusTraversalPolicyProvider(true);
+        J1T3.setName("J1T3"); // NOI18N
+        FormInput.add(J1T3);
+        J1T3.setBounds(450, 260, 70, 23);
+
+        J1JH1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        J1JH1.setText("0");
+        J1JH1.setFocusTraversalPolicyProvider(true);
+        J1JH1.setName("J1JH1"); // NOI18N
+        J1JH1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                J1JH1ActionPerformed(evt);
+            }
+        });
+        FormInput.add(J1JH1);
+        J1JH1.setBounds(530, 260, 60, 23);
+
+        J1H2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        J1H2.setText("0");
+        J1H2.setFocusTraversalPolicyProvider(true);
+        J1H2.setName("J1H2"); // NOI18N
+        FormInput.add(J1H2);
+        J1H2.setBounds(600, 260, 100, 23);
 
         scrollInput.setViewportView(FormInput);
 
@@ -1430,13 +1662,13 @@ public final class RMChecklistDuranteOperasi extends javax.swing.JDialog {
         }else if(NIP.getText().trim().equals("")||NamaPetugas.getText().trim().equals("")){
             Valid.textKosong(NIP,"Petugas");
         }else{
-            if(Sequel.menyimpantf("catatan_observasi_ranap","?,?,?,?,?,?,?,?,?,?","Data",10,new String[]{
-                TNoRw.getText(),Valid.SetTgl(Tanggal.getSelectedItem()+""),Jam.getSelectedItem()+":"+Menit.getSelectedItem()+":"+Detik.getSelectedItem(),
-                GCS.getText(),TD.getText(),HR.getText(),RR.getText(),Suhu.getText(),SPO.getText(),NIP.getText()
-            })==true){
-                tampil();
-                emptTeks();
-            }   
+//            if(Sequel.menyimpantf("catatan_observasi_ranap","?,?,?,?,?,?,?,?,?,?","Data",10,new String[]{
+//                TNoRw.getText(),Valid.SetTgl(Tanggal.getSelectedItem()+""),Jam.getSelectedItem()+":"+Menit.getSelectedItem()+":"+Detik.getSelectedItem(),
+//                J1T1.getText(),J1h3.getText(),J1T2.getText(),J1JH1.getText(),J1T3.getText(),J1H2.getText(),NIP.getText()
+//            })==true){
+//                tampil();
+//                emptTeks();
+//            }   
         }
 }//GEN-LAST:event_BtnSimpanActionPerformed
 
@@ -1444,7 +1676,7 @@ public final class RMChecklistDuranteOperasi extends javax.swing.JDialog {
         if(evt.getKeyCode()==KeyEvent.VK_SPACE){
             BtnSimpanActionPerformed(null);
         }else{
-            Valid.pindah(evt,SPO,BtnBatal);
+//            Valid.pindah(evt,J1H2,BtnBatal);
         }
 }//GEN-LAST:event_BtnSimpanKeyPressed
 
@@ -1659,6 +1891,10 @@ public final class RMChecklistDuranteOperasi extends javax.swing.JDialog {
         isForm();
     }//GEN-LAST:event_ChkInputActionPerformed
 
+    private void J1JH1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_J1JH1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_J1JH1ActionPerformed
+
     /**
     * @param args the command line arguments
     */
@@ -1690,10 +1926,97 @@ public final class RMChecklistDuranteOperasi extends javax.swing.JDialog {
     private widget.Tanggal DTPCari2;
     private widget.ComboBox Detik;
     private widget.PanelBiasa FormInput;
-    private widget.TextBox GCS;
-    private widget.TextBox HR;
-    private widget.TextBox J1HP1;
-    private widget.TextBox J2HP1;
+    private widget.TextBox J10H1;
+    private widget.TextBox J10H2;
+    private widget.TextBox J10H3;
+    private widget.TextBox J10JH1;
+    private widget.TextBox J10T1;
+    private widget.TextBox J10T2;
+    private widget.TextBox J10T3;
+    private widget.TextBox J11H1;
+    private widget.TextBox J11H2;
+    private widget.TextBox J11H3;
+    private widget.TextBox J11JH1;
+    private widget.TextBox J11T1;
+    private widget.TextBox J11T2;
+    private widget.TextBox J11T3;
+    private widget.TextBox J12H1;
+    private widget.TextBox J12H2;
+    private widget.TextBox J12H3;
+    private widget.TextBox J12JH1;
+    private widget.TextBox J12T1;
+    private widget.TextBox J12T2;
+    private widget.TextBox J12T3;
+    private widget.TextBox J13H1;
+    private widget.TextBox J13H2;
+    private widget.TextBox J13H3;
+    private widget.TextBox J13JH1;
+    private widget.TextBox J13T1;
+    private widget.TextBox J13T2;
+    private widget.TextBox J13T3;
+    private widget.TextBox J1H1;
+    private widget.TextBox J1H2;
+    private widget.TextBox J1H3;
+    private widget.TextBox J1JH1;
+    private widget.TextBox J1T1;
+    private widget.TextBox J1T2;
+    private widget.TextBox J1T3;
+    private widget.TextBox J2H1;
+    private widget.TextBox J2H2;
+    private widget.TextBox J2H3;
+    private widget.TextBox J2JH1;
+    private widget.TextBox J2T1;
+    private widget.TextBox J2T2;
+    private widget.TextBox J2T3;
+    private widget.TextBox J3H1;
+    private widget.TextBox J3H2;
+    private widget.TextBox J3H3;
+    private widget.TextBox J3JH1;
+    private widget.TextBox J3T1;
+    private widget.TextBox J3T2;
+    private widget.TextBox J3T3;
+    private widget.TextBox J4H1;
+    private widget.TextBox J4H2;
+    private widget.TextBox J4H3;
+    private widget.TextBox J4JH1;
+    private widget.TextBox J4T1;
+    private widget.TextBox J4T2;
+    private widget.TextBox J4T3;
+    private widget.TextBox J5H1;
+    private widget.TextBox J5H2;
+    private widget.TextBox J5H3;
+    private widget.TextBox J5JH1;
+    private widget.TextBox J5T1;
+    private widget.TextBox J5T2;
+    private widget.TextBox J5T3;
+    private widget.TextBox J6H1;
+    private widget.TextBox J6H2;
+    private widget.TextBox J6H3;
+    private widget.TextBox J6JH1;
+    private widget.TextBox J6T1;
+    private widget.TextBox J6T2;
+    private widget.TextBox J6T3;
+    private widget.TextBox J7H1;
+    private widget.TextBox J7H2;
+    private widget.TextBox J7H3;
+    private widget.TextBox J7JH1;
+    private widget.TextBox J7T1;
+    private widget.TextBox J7T2;
+    private widget.TextBox J7T3;
+    private widget.TextBox J8H1;
+    private widget.TextBox J8H2;
+    private widget.TextBox J8H3;
+    private widget.TextBox J8JH1;
+    private widget.TextBox J8T1;
+    private widget.TextBox J8T2;
+    private widget.TextBox J8T3;
+    private widget.TextBox J9H1;
+    private widget.TextBox J9H2;
+    private widget.TextBox J9H3;
+    private widget.TextBox J9JH1;
+    private widget.TextBox J9T1;
+    private widget.TextBox J9T2;
+    private widget.TextBox J9T3;
     private widget.ComboBox Jam;
     private widget.ComboBox Kardiologi10;
     private widget.ComboBox Kardiologi11;
@@ -1709,95 +2032,8 @@ public final class RMChecklistDuranteOperasi extends javax.swing.JDialog {
     private widget.TextBox NIP;
     private widget.TextBox NamaPetugas;
     private javax.swing.JPanel PanelInput;
-    private widget.TextBox RR;
-    private widget.TextBox SPO;
     private widget.ScrollPane Scroll;
-    private widget.TextBox Suhu;
     private widget.TextBox TCari;
-    private widget.TextBox TD;
-    private widget.TextBox TD10;
-    private widget.TextBox TD11;
-    private widget.TextBox TD12;
-    private widget.TextBox TD13;
-    private widget.TextBox TD14;
-    private widget.TextBox TD15;
-    private widget.TextBox TD16;
-    private widget.TextBox TD17;
-    private widget.TextBox TD18;
-    private widget.TextBox TD19;
-    private widget.TextBox TD20;
-    private widget.TextBox TD21;
-    private widget.TextBox TD22;
-    private widget.TextBox TD23;
-    private widget.TextBox TD24;
-    private widget.TextBox TD25;
-    private widget.TextBox TD26;
-    private widget.TextBox TD27;
-    private widget.TextBox TD28;
-    private widget.TextBox TD29;
-    private widget.TextBox TD30;
-    private widget.TextBox TD31;
-    private widget.TextBox TD32;
-    private widget.TextBox TD33;
-    private widget.TextBox TD34;
-    private widget.TextBox TD35;
-    private widget.TextBox TD36;
-    private widget.TextBox TD37;
-    private widget.TextBox TD38;
-    private widget.TextBox TD39;
-    private widget.TextBox TD40;
-    private widget.TextBox TD41;
-    private widget.TextBox TD42;
-    private widget.TextBox TD43;
-    private widget.TextBox TD44;
-    private widget.TextBox TD45;
-    private widget.TextBox TD46;
-    private widget.TextBox TD47;
-    private widget.TextBox TD48;
-    private widget.TextBox TD49;
-    private widget.TextBox TD50;
-    private widget.TextBox TD51;
-    private widget.TextBox TD52;
-    private widget.TextBox TD53;
-    private widget.TextBox TD54;
-    private widget.TextBox TD55;
-    private widget.TextBox TD56;
-    private widget.TextBox TD57;
-    private widget.TextBox TD58;
-    private widget.TextBox TD59;
-    private widget.TextBox TD60;
-    private widget.TextBox TD61;
-    private widget.TextBox TD62;
-    private widget.TextBox TD63;
-    private widget.TextBox TD64;
-    private widget.TextBox TD65;
-    private widget.TextBox TD66;
-    private widget.TextBox TD67;
-    private widget.TextBox TD68;
-    private widget.TextBox TD69;
-    private widget.TextBox TD7;
-    private widget.TextBox TD70;
-    private widget.TextBox TD71;
-    private widget.TextBox TD72;
-    private widget.TextBox TD73;
-    private widget.TextBox TD74;
-    private widget.TextBox TD75;
-    private widget.TextBox TD76;
-    private widget.TextBox TD77;
-    private widget.TextBox TD78;
-    private widget.TextBox TD79;
-    private widget.TextBox TD80;
-    private widget.TextBox TD81;
-    private widget.TextBox TD82;
-    private widget.TextBox TD83;
-    private widget.TextBox TD84;
-    private widget.TextBox TD85;
-    private widget.TextBox TD86;
-    private widget.TextBox TD87;
-    private widget.TextBox TD88;
-    private widget.TextBox TD89;
-    private widget.TextBox TD9;
-    private widget.TextBox TD90;
     private widget.TextBox TNoRM;
     private widget.TextBox TNoRw;
     private widget.TextBox TPasien;
@@ -1916,14 +2152,14 @@ public final class RMChecklistDuranteOperasi extends javax.swing.JDialog {
     }
     
     public void emptTeks() {
-        GCS.setText("");
-        TD.setText("");
-        HR.setText("");
-        RR.setText("");
-        Suhu.setText("");
-        SPO.setText("");
+//        J1T1.setText("");
+//        J1h3.setText("");
+//        J1T2.setText("");
+//        J1JH1.setText("");
+//        J1T3.setText("");
+//        J1H2.setText("");
         Tanggal.setDate(new Date());
-        GCS.requestFocus();
+//        J1T1.requestFocus();
     } 
 
     private void getData() {
@@ -1935,12 +2171,12 @@ public final class RMChecklistDuranteOperasi extends javax.swing.JDialog {
             Jam.setSelectedItem(tbObat.getValueAt(tbObat.getSelectedRow(),7).toString().substring(0,2));
             Menit.setSelectedItem(tbObat.getValueAt(tbObat.getSelectedRow(),7).toString().substring(3,5));
             Detik.setSelectedItem(tbObat.getValueAt(tbObat.getSelectedRow(),7).toString().substring(6,8));
-            GCS.setText(tbObat.getValueAt(tbObat.getSelectedRow(),8).toString());
-            TD.setText(tbObat.getValueAt(tbObat.getSelectedRow(),9).toString());
-            HR.setText(tbObat.getValueAt(tbObat.getSelectedRow(),10).toString());
-            RR.setText(tbObat.getValueAt(tbObat.getSelectedRow(),11).toString());
-            Suhu.setText(tbObat.getValueAt(tbObat.getSelectedRow(),12).toString());
-            SPO.setText(tbObat.getValueAt(tbObat.getSelectedRow(),13).toString());
+//            J1T1.setText(tbObat.getValueAt(tbObat.getSelectedRow(),8).toString());
+//            J1h3.setText(tbObat.getValueAt(tbObat.getSelectedRow(),9).toString());
+//            J1T2.setText(tbObat.getValueAt(tbObat.getSelectedRow(),10).toString());
+//            J1JH1.setText(tbObat.getValueAt(tbObat.getSelectedRow(),11).toString());
+//            J1T3.setText(tbObat.getValueAt(tbObat.getSelectedRow(),12).toString());
+//            J1H2.setText(tbObat.getValueAt(tbObat.getSelectedRow(),13).toString());
             Valid.SetTgl(Tanggal,tbObat.getValueAt(tbObat.getSelectedRow(),6).toString());  
         }
     }
@@ -2049,15 +2285,23 @@ public final class RMChecklistDuranteOperasi extends javax.swing.JDialog {
     }
 
     private void ganti() {
-        Sequel.mengedit("catatan_observasi_ranap","tgl_perawatan=? and jam_rawat=? and no_rawat=?","no_rawat=?,tgl_perawatan=?,jam_rawat=?,gcs=?,td=?,hr=?,rr=?,suhu=?,spo2=?,nip=?",13,new String[]{
-            TNoRw.getText(),Valid.SetTgl(Tanggal.getSelectedItem()+""),Jam.getSelectedItem()+":"+Menit.getSelectedItem()+":"+Detik.getSelectedItem(),
-            GCS.getText(),TD.getText(),HR.getText(),RR.getText(),Suhu.getText(),SPO.getText(),NIP.getText(),tbObat.getValueAt(tbObat.getSelectedRow(),6).toString(),
-            tbObat.getValueAt(tbObat.getSelectedRow(),7).toString(),tbObat.getValueAt(tbObat.getSelectedRow(),0).toString()
-        });
-        if(tabMode.getRowCount()!=0){tampil();}
-        emptTeks();
+//        Sequel.mengedit("catatan_observasi_ranap","tgl_perawatan=? and jam_rawat=? and no_rawat=?","no_rawat=?,tgl_perawatan=?,jam_rawat=?,gcs=?,td=?,hr=?,rr=?,suhu=?,spo2=?,nip=?",13,new String[]{
+//            TNoRw.getText(),Valid.SetTgl(Tanggal.getSelectedItem()+""),Jam.getSelectedItem()+":"+Menit.getSelectedItem()+":"+Detik.getSelectedItem(),
+//            J1T1.getText(),J1h3.getText(),J1T2.getText(),J1JH1.getText(),J1T3.getText(),J1H2.getText(),NIP.getText(),tbObat.getValueAt(tbObat.getSelectedRow(),6).toString(),
+//            tbObat.getValueAt(tbObat.getSelectedRow(),7).toString(),tbObat.getValueAt(tbObat.getSelectedRow(),0).toString()
+//        });
+//        if(tabMode.getRowCount()!=0){tampil();}
+//        emptTeks();
     }
-
+    
+    private void isHitung(){    
+        J1JH1.setText(Valid.SetAngka(Valid.SetAngka(J1T1.getText())+Valid.SetAngka(J1T2.getText())+Valid.SetAngka(J1T3.getText())));
+           
+    }
+    
+    
+    
+    
     private void hapus() {
         if(Sequel.queryu2tf("delete from catatan_observasi_ranap where tgl_perawatan=? and jam_rawat=? and no_rawat=?",3,new String[]{
             tbObat.getValueAt(tbObat.getSelectedRow(),6).toString(),tbObat.getValueAt(tbObat.getSelectedRow(),7).toString(),tbObat.getValueAt(tbObat.getSelectedRow(),0).toString()
