@@ -59,7 +59,7 @@ public final class RMChecklistDuranteOperasi extends javax.swing.JDialog {
         setSize(628,674);
 
         tabMode=new DefaultTableModel(null,new Object[]{
-            "No.Rawat","No.R.M.","Nama Pasien","Tgl Checklist","Jam Checklist","NIP","Nama Petugas","Posisi Operasi","Cuci Tangan","Jas Operasi","Handscoon",
+            "No.Rawat","No.R.M.","Nama Pasien","Tgl Lahir","Tgl Checklist","Jam Checklist","NIP","Nama Petugas","Posisi Operasi","Cuci Tangan","Jas Operasi","Handscoon",
             "Disinfeksi Iodine","Disinfeksi Alkohol","Linen Steril","Klasifikasi Luka",
             "Kassa H Pertama ","Kassa T1","Kassa T2","Kassa T3","Kassa Jumlah HP","Kassa H Kedua","Kassa H Akhir",
             "Pean Kecil H Pertama ","Pean Kecil T1","Pean Kecil T2","Pean Kecil T3","Pean Kecil Jumlah HP","Pean Kecil H Kedua","Pean Kecil H Akhir",
@@ -84,7 +84,7 @@ public final class RMChecklistDuranteOperasi extends javax.swing.JDialog {
         tbObat.setPreferredScrollableViewportSize(new Dimension(500,500));
         tbObat.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
 
-        for (i = 0; i < 106; i++) {
+        for (i = 0; i < 107; i++) {
             TableColumn column = tbObat.getColumnModel().getColumn(i);
             if(i==0){
                 column.setPreferredWidth(105);
@@ -3148,7 +3148,7 @@ public final class RMChecklistDuranteOperasi extends javax.swing.JDialog {
         try{
             if(TCari.getText().toString().trim().equals("")){
                 ps=koneksi.prepareStatement(
-                    "SELECT reg_periksa.no_rawat,pasien.no_rkm_medis,pasien.nm_pasien,checklist_durante_operasi.tanggal,checklist_durante_operasi.jam,petugas.nip,petugas.nama,checklist_durante_operasi.posisi_operasi,checklist_durante_operasi.cuci_tangan,checklist_durante_operasi.jas_operasi, "+  
+                    "SELECT reg_periksa.no_rawat,pasien.no_rkm_medis,pasien.nm_pasien,pasien.tgl_lahir,checklist_durante_operasi.tanggal,checklist_durante_operasi.jam,petugas.nip,petugas.nama,checklist_durante_operasi.posisi_operasi,checklist_durante_operasi.cuci_tangan,checklist_durante_operasi.jas_operasi, "+  
                     "checklist_durante_operasi.handscoon,checklist_durante_operasi.disinfeksi,checklist_durante_operasi.alkohol,checklist_durante_operasi.linen_steril,checklist_durante_operasi.klasifikasi_luka, "+ 
                     "checklist_durante_operasi.j1h1,checklist_durante_operasi.j1t1,checklist_durante_operasi.j1t2,checklist_durante_operasi.j1t3,checklist_durante_operasi.j1jh1,checklist_durante_operasi.j1h2,checklist_durante_operasi.j1h3, "+
                     "checklist_durante_operasi.j2h1,checklist_durante_operasi.j2t1,checklist_durante_operasi.j2t2,checklist_durante_operasi.j2t3,checklist_durante_operasi.j2jh1,checklist_durante_operasi.j2h2,checklist_durante_operasi.j2h3, "+
@@ -3168,7 +3168,7 @@ public final class RMChecklistDuranteOperasi extends javax.swing.JDialog {
                     "WHERE checklist_durante_operasi.tanggal BETWEEN ? AND ? ORDER BY checklist_durante_operasi.tanggal ");
             }else{
                 ps=koneksi.prepareStatement(
-                    "SELECT reg_periksa.no_rawat,pasien.no_rkm_medis,pasien.nm_pasien,checklist_durante_operasi.tanggal,checklist_durante_operasi.jam,petugas.nip,petugas.nama,checklist_durante_operasi.posisi_operasi,checklist_durante_operasi.cuci_tangan,checklist_durante_operasi.jas_operasi, "+  
+                    "SELECT reg_periksa.no_rawat,pasien.no_rkm_medis,pasien.nm_pasien,pasien.tgl_lahir,checklist_durante_operasi.tanggal,checklist_durante_operasi.jam,petugas.nip,petugas.nama,checklist_durante_operasi.posisi_operasi,checklist_durante_operasi.cuci_tangan,checklist_durante_operasi.jas_operasi, "+  
                     "checklist_durante_operasi.handscoon,checklist_durante_operasi.disinfeksi,checklist_durante_operasi.alkohol,checklist_durante_operasi.linen_steril,checklist_durante_operasi.klasifikasi_luka, "+ 
                     "checklist_durante_operasi.j1h1,checklist_durante_operasi.j1t1,checklist_durante_operasi.j1t2,checklist_durante_operasi.j1t3,checklist_durante_operasi.j1jh1,checklist_durante_operasi.j1h2,checklist_durante_operasi.j1h3, "+
                     "checklist_durante_operasi.j2h1,checklist_durante_operasi.j2t1,checklist_durante_operasi.j2t2,checklist_durante_operasi.j2t3,checklist_durante_operasi.j2jh1,checklist_durante_operasi.j2h2,checklist_durante_operasi.j2h3, "+
@@ -3205,7 +3205,7 @@ public final class RMChecklistDuranteOperasi extends javax.swing.JDialog {
                 rs=ps.executeQuery();
                 while(rs.next()){
                     tabMode.addRow(new String[]{
-                        rs.getString("no_rawat"),rs.getString("no_rkm_medis"),rs.getString("nm_pasien"),rs.getString("tanggal"),rs.getString("jam"),
+                        rs.getString("no_rawat"),rs.getString("no_rkm_medis"),rs.getString("nm_pasien"),rs.getString("tgl_lahir"),rs.getString("tanggal"),rs.getString("jam"),
                         rs.getString("nip"),rs.getString("nama"),rs.getString("posisi_operasi"),rs.getString("cuci_tangan"),
                         rs.getString("jas_operasi"),rs.getString("handscoon"),rs.getString("disinfeksi"),rs.getString("alkohol"),rs.getString("linen_steril"),rs.getString("klasifikasi_luka"),
                         rs.getString("j1h1"),rs.getString("j1t1"),rs.getString("j1t2"),rs.getString("j1t3"),rs.getString("j1jh1"),rs.getString("j1h2"),rs.getString("j1h3"),
@@ -3353,19 +3353,127 @@ public final class RMChecklistDuranteOperasi extends javax.swing.JDialog {
             TNoRw.setText(tbObat.getValueAt(tbObat.getSelectedRow(),0).toString());
             TNoRM.setText(tbObat.getValueAt(tbObat.getSelectedRow(),1).toString());
             TPasien.setText(tbObat.getValueAt(tbObat.getSelectedRow(),2).toString());
-            TglLahir.setText(tbObat.getValueAt(tbObat.getSelectedRow(),5).toString());
-            Jam.setSelectedItem(tbObat.getValueAt(tbObat.getSelectedRow(),7).toString().substring(0,2));
-            Menit.setSelectedItem(tbObat.getValueAt(tbObat.getSelectedRow(),7).toString().substring(3,5));
-            Detik.setSelectedItem(tbObat.getValueAt(tbObat.getSelectedRow(),7).toString().substring(6,8));
-            J1T1.setText(tbObat.getValueAt(tbObat.getSelectedRow(),8).toString());
-            J1H3.setText(tbObat.getValueAt(tbObat.getSelectedRow(),9).toString());
-            J1T2.setText(tbObat.getValueAt(tbObat.getSelectedRow(),10).toString());
-            J1JH1.setText(tbObat.getValueAt(tbObat.getSelectedRow(),11).toString());
-            J1T3.setText(tbObat.getValueAt(tbObat.getSelectedRow(),12).toString());
-            J1H2.setText(tbObat.getValueAt(tbObat.getSelectedRow(),13).toString());
+            TglLahir.setText(tbObat.getValueAt(tbObat.getSelectedRow(),3).toString());
+            Jam.setSelectedItem(tbObat.getValueAt(tbObat.getSelectedRow(),5).toString().substring(0,2));
+            Menit.setSelectedItem(tbObat.getValueAt(tbObat.getSelectedRow(),5).toString().substring(3,5));
+            Detik.setSelectedItem(tbObat.getValueAt(tbObat.getSelectedRow(),5).toString().substring(6,8));
+            NIP.setText(tbObat.getValueAt(tbObat.getSelectedRow(),6).toString());
+            NamaPetugas.setText(tbObat.getValueAt(tbObat.getSelectedRow(),7).toString());
+            PosisiOperasi.setSelectedItem(tbObat.getValueAt(tbObat.getSelectedRow(),8).toString());
+            CuciTangan.setSelectedItem(tbObat.getValueAt(tbObat.getSelectedRow(),9).toString());
+            JasOperasi.setSelectedItem(tbObat.getValueAt(tbObat.getSelectedRow(),10).toString());
+            Handscoon.setSelectedItem(tbObat.getValueAt(tbObat.getSelectedRow(),11).toString());
+            Disinfeksi.setSelectedItem(tbObat.getValueAt(tbObat.getSelectedRow(),12).toString());
+            Alkohol.setSelectedItem(tbObat.getValueAt(tbObat.getSelectedRow(),13).toString());
+            LinenSteril.setSelectedItem(tbObat.getValueAt(tbObat.getSelectedRow(),14).toString());
+            KlasifikasiLuka.setSelectedItem(tbObat.getValueAt(tbObat.getSelectedRow(),15).toString());
+            
+            J1H1.setText(tbObat.getValueAt(tbObat.getSelectedRow(),16).toString());
+            J1T1.setText(tbObat.getValueAt(tbObat.getSelectedRow(),17).toString());
+            J1T2.setText(tbObat.getValueAt(tbObat.getSelectedRow(),18).toString());
+            J1T3.setText(tbObat.getValueAt(tbObat.getSelectedRow(),19).toString());
+            J1JH1.setText(tbObat.getValueAt(tbObat.getSelectedRow(),20).toString());
+            J1H2.setText(tbObat.getValueAt(tbObat.getSelectedRow(),21).toString());
+            J1H3.setText(tbObat.getValueAt(tbObat.getSelectedRow(),22).toString());
+            
+            J2H1.setText(tbObat.getValueAt(tbObat.getSelectedRow(),23).toString());
+            J2T1.setText(tbObat.getValueAt(tbObat.getSelectedRow(),24).toString());
+            J2T2.setText(tbObat.getValueAt(tbObat.getSelectedRow(),25).toString());
+            J2T3.setText(tbObat.getValueAt(tbObat.getSelectedRow(),26).toString());
+            J2JH1.setText(tbObat.getValueAt(tbObat.getSelectedRow(),27).toString());
+            J2H2.setText(tbObat.getValueAt(tbObat.getSelectedRow(),28).toString());
+            J2H3.setText(tbObat.getValueAt(tbObat.getSelectedRow(),29).toString());
+            
+            J3H1.setText(tbObat.getValueAt(tbObat.getSelectedRow(),30).toString());
+            J3T1.setText(tbObat.getValueAt(tbObat.getSelectedRow(),31).toString());
+            J3T2.setText(tbObat.getValueAt(tbObat.getSelectedRow(),32).toString());
+            J3T3.setText(tbObat.getValueAt(tbObat.getSelectedRow(),33).toString());
+            J3JH1.setText(tbObat.getValueAt(tbObat.getSelectedRow(),34).toString());
+            J3H2.setText(tbObat.getValueAt(tbObat.getSelectedRow(),35).toString());
+            J3H3.setText(tbObat.getValueAt(tbObat.getSelectedRow(),36).toString());
+            
+            J4H1.setText(tbObat.getValueAt(tbObat.getSelectedRow(),37).toString());
+            J4T1.setText(tbObat.getValueAt(tbObat.getSelectedRow(),38).toString());
+            J4T2.setText(tbObat.getValueAt(tbObat.getSelectedRow(),39).toString());
+            J4T3.setText(tbObat.getValueAt(tbObat.getSelectedRow(),40).toString());
+            J4JH1.setText(tbObat.getValueAt(tbObat.getSelectedRow(),41).toString());
+            J4H2.setText(tbObat.getValueAt(tbObat.getSelectedRow(),42).toString());
+            J4H3.setText(tbObat.getValueAt(tbObat.getSelectedRow(),43).toString());
+            
+            J5H1.setText(tbObat.getValueAt(tbObat.getSelectedRow(),44).toString());
+            J5T1.setText(tbObat.getValueAt(tbObat.getSelectedRow(),45).toString());
+            J5T2.setText(tbObat.getValueAt(tbObat.getSelectedRow(),46).toString());
+            J5T3.setText(tbObat.getValueAt(tbObat.getSelectedRow(),47).toString());
+            J5JH1.setText(tbObat.getValueAt(tbObat.getSelectedRow(),48).toString());
+            J5H2.setText(tbObat.getValueAt(tbObat.getSelectedRow(),49).toString());
+            J5H3.setText(tbObat.getValueAt(tbObat.getSelectedRow(),50).toString());
+            
+            J6H1.setText(tbObat.getValueAt(tbObat.getSelectedRow(),51).toString());
+            J6T1.setText(tbObat.getValueAt(tbObat.getSelectedRow(),52).toString());
+            J6T2.setText(tbObat.getValueAt(tbObat.getSelectedRow(),53).toString());
+            J6T3.setText(tbObat.getValueAt(tbObat.getSelectedRow(),54).toString());
+            J6JH1.setText(tbObat.getValueAt(tbObat.getSelectedRow(),55).toString());
+            J6H2.setText(tbObat.getValueAt(tbObat.getSelectedRow(),56).toString());
+            J6H3.setText(tbObat.getValueAt(tbObat.getSelectedRow(),56).toString());
+            
+            J7H1.setText(tbObat.getValueAt(tbObat.getSelectedRow(),57).toString());
+            J7T1.setText(tbObat.getValueAt(tbObat.getSelectedRow(),58).toString());
+            J7T2.setText(tbObat.getValueAt(tbObat.getSelectedRow(),59).toString());
+            J7T3.setText(tbObat.getValueAt(tbObat.getSelectedRow(),60).toString());
+            J7JH1.setText(tbObat.getValueAt(tbObat.getSelectedRow(),61).toString());
+            J7H2.setText(tbObat.getValueAt(tbObat.getSelectedRow(),62).toString());
+            J7H3.setText(tbObat.getValueAt(tbObat.getSelectedRow(),63).toString());
+            
+            J8H1.setText(tbObat.getValueAt(tbObat.getSelectedRow(),64).toString());
+            J8T1.setText(tbObat.getValueAt(tbObat.getSelectedRow(),65).toString());
+            J8T2.setText(tbObat.getValueAt(tbObat.getSelectedRow(),66).toString());
+            J8T3.setText(tbObat.getValueAt(tbObat.getSelectedRow(),67).toString());
+            J8JH1.setText(tbObat.getValueAt(tbObat.getSelectedRow(),68).toString());
+            J8H2.setText(tbObat.getValueAt(tbObat.getSelectedRow(),69).toString());
+            J8H3.setText(tbObat.getValueAt(tbObat.getSelectedRow(),70).toString());
+            
+            J9H1.setText(tbObat.getValueAt(tbObat.getSelectedRow(),71).toString());
+            J9T1.setText(tbObat.getValueAt(tbObat.getSelectedRow(),72).toString());
+            J9T2.setText(tbObat.getValueAt(tbObat.getSelectedRow(),73).toString());
+            J9T3.setText(tbObat.getValueAt(tbObat.getSelectedRow(),74).toString());
+            J9JH1.setText(tbObat.getValueAt(tbObat.getSelectedRow(),75).toString());
+            J9H2.setText(tbObat.getValueAt(tbObat.getSelectedRow(),76).toString());
+            J9H3.setText(tbObat.getValueAt(tbObat.getSelectedRow(),77).toString());
+            
+            J10H1.setText(tbObat.getValueAt(tbObat.getSelectedRow(),78).toString());
+            J10T1.setText(tbObat.getValueAt(tbObat.getSelectedRow(),79).toString());
+            J10T2.setText(tbObat.getValueAt(tbObat.getSelectedRow(),80).toString());
+            J10T3.setText(tbObat.getValueAt(tbObat.getSelectedRow(),81).toString());
+            J10JH1.setText(tbObat.getValueAt(tbObat.getSelectedRow(),82).toString());
+            J10H2.setText(tbObat.getValueAt(tbObat.getSelectedRow(),83).toString());
+            J10H3.setText(tbObat.getValueAt(tbObat.getSelectedRow(),84).toString());
+            
+            J11H1.setText(tbObat.getValueAt(tbObat.getSelectedRow(),85).toString());
+            J11T1.setText(tbObat.getValueAt(tbObat.getSelectedRow(),86).toString());
+            J11T2.setText(tbObat.getValueAt(tbObat.getSelectedRow(),87).toString());
+            J11T3.setText(tbObat.getValueAt(tbObat.getSelectedRow(),88).toString());
+            J11JH1.setText(tbObat.getValueAt(tbObat.getSelectedRow(),89).toString());
+            J11H2.setText(tbObat.getValueAt(tbObat.getSelectedRow(),90).toString());
+            J11H3.setText(tbObat.getValueAt(tbObat.getSelectedRow(),91).toString());
+            
+            J12H1.setText(tbObat.getValueAt(tbObat.getSelectedRow(),92).toString());
+            J12T1.setText(tbObat.getValueAt(tbObat.getSelectedRow(),93).toString());
+            J12T2.setText(tbObat.getValueAt(tbObat.getSelectedRow(),94).toString());
+            J12T3.setText(tbObat.getValueAt(tbObat.getSelectedRow(),95).toString());
+            J12JH1.setText(tbObat.getValueAt(tbObat.getSelectedRow(),95).toString());
+            J12H2.setText(tbObat.getValueAt(tbObat.getSelectedRow(),96).toString());
+            J12H3.setText(tbObat.getValueAt(tbObat.getSelectedRow(),97).toString());
+            
+            J13H1.setText(tbObat.getValueAt(tbObat.getSelectedRow(),98).toString());
+            J13T1.setText(tbObat.getValueAt(tbObat.getSelectedRow(),99).toString());
+            J13T2.setText(tbObat.getValueAt(tbObat.getSelectedRow(),100).toString());
+            J13T3.setText(tbObat.getValueAt(tbObat.getSelectedRow(),101).toString());
+            J13JH1.setText(tbObat.getValueAt(tbObat.getSelectedRow(),102).toString());
+            J13H2.setText(tbObat.getValueAt(tbObat.getSelectedRow(),103).toString());
+            J13H3.setText(tbObat.getValueAt(tbObat.getSelectedRow(),104).toString());
             
             
-            Valid.SetTgl(Tanggal,tbObat.getValueAt(tbObat.getSelectedRow(),6).toString());  
+            Valid.SetTgl(Tanggal,tbObat.getValueAt(tbObat.getSelectedRow(),4).toString());  
         }
     }
     private void isRawat() {
