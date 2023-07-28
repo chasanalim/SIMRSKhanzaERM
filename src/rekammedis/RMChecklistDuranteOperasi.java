@@ -168,6 +168,21 @@ public final class RMChecklistDuranteOperasi extends javax.swing.JDialog {
         isForm();
         jam();
         
+        J1H1.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                isHitung();
+            }
+        });
+        
         J1T1.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
             @Override
             public void insertUpdate(DocumentEvent e) {
@@ -212,6 +227,923 @@ public final class RMChecklistDuranteOperasi extends javax.swing.JDialog {
                 isHitung();
             }
         });
+        
+        J1H2.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                isHitung();
+            }
+        });
+        
+        J2H1.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                isHitung();
+            }
+        });
+        
+        J2T1.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                isHitung();
+            }
+        });
+        
+        J2T2.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                isHitung();
+            }
+        });
+        
+        J2T3.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                isHitung();
+            }
+        });
+        
+        J2H2.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                isHitung();
+            }
+        });
+        
+        J3H1.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                isHitung();
+            }
+        });
+        
+        J3T1.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                isHitung();
+            }
+        });
+        
+        J3T2.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
+          
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                isHitung();
+            }
+        });
+        
+        J3T3.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                isHitung();
+            }
+        });
+        
+        J3H2.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                isHitung();
+            }
+        });
+        
+        J4H1.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                isHitung();
+            }
+        });
+        
+        J4T1.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                isHitung();
+            }
+        });
+        
+        J4T2.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                isHitung();
+            }
+        });
+        
+        J4T3.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                isHitung();
+            }
+        });
+        
+        J4H2.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                isHitung();
+            }
+        });
+        
+        J5H1.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                isHitung();
+            }
+        });
+        
+        J5T1.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                isHitung();
+            }
+        });
+        
+        J5T2.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                isHitung();
+            }
+        });
+        
+        J5T3.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                isHitung();
+            }
+        });
+        
+        J5H2.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                isHitung();
+            }
+        });
+        
+        J6H1.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                isHitung();
+            }
+        });
+        
+        J6T1.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                isHitung();
+            }
+        });
+        
+        J6T2.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                isHitung();
+            }
+        });
+        
+        J6T3.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                isHitung();
+            }
+        });
+        
+        J6H2.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                isHitung();
+            }
+        });
+        
+        J7H1.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                isHitung();
+            }
+        });
+        
+        J7T1.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                isHitung();
+            }
+        });
+        
+        J7T2.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                isHitung();
+            }
+        });
+        
+        J7T3.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                isHitung();
+            }
+        });
+        
+        J7H2.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                isHitung();
+            }
+        });
+        
+        J8H1.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                isHitung();
+            }
+        });
+        
+        J8T1.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                isHitung();
+            }
+        });
+        
+        J8T2.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                isHitung();
+            }
+        });
+        
+        J8T3.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                isHitung();
+            }
+        });
+        
+        J8H2.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                isHitung();
+            }
+        });
+        
+        J9H1.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                isHitung();
+            }
+        });
+        
+        J9T1.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                isHitung();
+            }
+        });
+        
+        J9T2.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                isHitung();
+            }
+        });
+        
+        J9T3.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                isHitung();
+            }
+        });
+        
+        J9H2.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                isHitung();
+            }
+        });
+        
+        J10H1.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                isHitung();
+            }
+        });
+        
+        J10T1.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                isHitung();
+            }
+        });
+        
+        J10T2.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                isHitung();
+            }
+        });
+        
+        J10T3.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                isHitung();
+            }
+        });
+        
+        J10H2.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                isHitung();
+            }
+        });
+        
+        J11H1.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                isHitung();
+            }
+        });
+        
+        J11T1.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                isHitung();
+            }
+        });
+        
+        J11T2.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                isHitung();
+            }
+        });
+        
+        J11T3.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                isHitung();
+            }
+        });
+        
+        J11H2.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                isHitung();
+            }
+        });
+        
+        J12H1.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                isHitung();
+            }
+        });
+        
+        J12T1.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                isHitung();
+            }
+        });
+        
+        J12T2.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                isHitung();
+            }
+        });
+        
+        J12T3.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                isHitung();
+            }
+        });
+        
+        J12H2.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                isHitung();
+            }
+        });
+        
+        J13H1.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                isHitung();
+            }
+        });
+        
+        J13T1.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                isHitung();
+            }
+        });
+        
+        J13T2.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                isHitung();
+            }
+        });
+        
+        J13T3.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                isHitung();
+            }
+        });
+        
+        J13H2.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                isHitung();
+            }
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                isHitung();
+            }
+        });
+        
     }
 
 
@@ -584,7 +1516,7 @@ public final class RMChecklistDuranteOperasi extends javax.swing.JDialog {
         panelGlass9.add(jLabel19);
 
         DTPCari1.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "27-07-2023" }));
+        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "28-07-2023" }));
         DTPCari1.setDisplayFormat("dd-MM-yyyy");
         DTPCari1.setName("DTPCari1"); // NOI18N
         DTPCari1.setOpaque(false);
@@ -598,7 +1530,7 @@ public final class RMChecklistDuranteOperasi extends javax.swing.JDialog {
         panelGlass9.add(jLabel21);
 
         DTPCari2.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "27-07-2023" }));
+        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "28-07-2023" }));
         DTPCari2.setDisplayFormat("dd-MM-yyyy");
         DTPCari2.setName("DTPCari2"); // NOI18N
         DTPCari2.setOpaque(false);
@@ -708,7 +1640,7 @@ public final class RMChecklistDuranteOperasi extends javax.swing.JDialog {
         TPasien.setBounds(336, 10, 285, 23);
 
         Tanggal.setForeground(new java.awt.Color(50, 70, 50));
-        Tanggal.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "27-07-2023" }));
+        Tanggal.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "28-07-2023" }));
         Tanggal.setDisplayFormat("dd-MM-yyyy");
         Tanggal.setName("Tanggal"); // NOI18N
         Tanggal.setOpaque(false);
@@ -1039,6 +1971,9 @@ public final class RMChecklistDuranteOperasi extends javax.swing.JDialog {
         FormInput.add(jLabel13);
         jLabel13.setBounds(30, 290, 130, 23);
 
+        J2H3.setEditable(false);
+        J2H3.setBackground(new java.awt.Color(255, 246, 230));
+        J2H3.setForeground(new java.awt.Color(255, 51, 51));
         J2H3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         J2H3.setText("0");
         J2H3.setFocusTraversalPolicyProvider(true);
@@ -1067,6 +2002,9 @@ public final class RMChecklistDuranteOperasi extends javax.swing.JDialog {
         FormInput.add(J2T3);
         J2T3.setBounds(450, 290, 70, 23);
 
+        J2JH1.setEditable(false);
+        J2JH1.setBackground(new java.awt.Color(255, 246, 230));
+        J2JH1.setForeground(new java.awt.Color(255, 51, 51));
         J2JH1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         J2JH1.setText("0");
         J2JH1.setFocusTraversalPolicyProvider(true);
@@ -1086,6 +2024,9 @@ public final class RMChecklistDuranteOperasi extends javax.swing.JDialog {
         FormInput.add(jLabel14);
         jLabel14.setBounds(30, 320, 130, 23);
 
+        J3H3.setEditable(false);
+        J3H3.setBackground(new java.awt.Color(255, 246, 230));
+        J3H3.setForeground(new java.awt.Color(255, 51, 51));
         J3H3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         J3H3.setText("0");
         J3H3.setFocusTraversalPolicyProvider(true);
@@ -1114,6 +2055,9 @@ public final class RMChecklistDuranteOperasi extends javax.swing.JDialog {
         FormInput.add(J3T3);
         J3T3.setBounds(450, 320, 70, 23);
 
+        J3JH1.setEditable(false);
+        J3JH1.setBackground(new java.awt.Color(255, 246, 230));
+        J3JH1.setForeground(new java.awt.Color(255, 51, 51));
         J3JH1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         J3JH1.setText("0");
         J3JH1.setFocusTraversalPolicyProvider(true);
@@ -1133,6 +2077,9 @@ public final class RMChecklistDuranteOperasi extends javax.swing.JDialog {
         FormInput.add(jLabel15);
         jLabel15.setBounds(30, 350, 130, 23);
 
+        J4H3.setEditable(false);
+        J4H3.setBackground(new java.awt.Color(255, 246, 230));
+        J4H3.setForeground(new java.awt.Color(255, 51, 51));
         J4H3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         J4H3.setText("0");
         J4H3.setFocusTraversalPolicyProvider(true);
@@ -1161,6 +2108,9 @@ public final class RMChecklistDuranteOperasi extends javax.swing.JDialog {
         FormInput.add(J4T3);
         J4T3.setBounds(450, 350, 70, 23);
 
+        J4JH1.setEditable(false);
+        J4JH1.setBackground(new java.awt.Color(255, 246, 230));
+        J4JH1.setForeground(new java.awt.Color(255, 51, 51));
         J4JH1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         J4JH1.setText("0");
         J4JH1.setFocusTraversalPolicyProvider(true);
@@ -1182,6 +2132,9 @@ public final class RMChecklistDuranteOperasi extends javax.swing.JDialog {
         FormInput.add(J5T3);
         J5T3.setBounds(450, 380, 70, 23);
 
+        J5H3.setEditable(false);
+        J5H3.setBackground(new java.awt.Color(255, 246, 230));
+        J5H3.setForeground(new java.awt.Color(255, 51, 51));
         J5H3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         J5H3.setText("0");
         J5H3.setFocusTraversalPolicyProvider(true);
@@ -1196,6 +2149,9 @@ public final class RMChecklistDuranteOperasi extends javax.swing.JDialog {
         FormInput.add(J5T2);
         J5T2.setBounds(370, 380, 70, 23);
 
+        J5JH1.setEditable(false);
+        J5JH1.setBackground(new java.awt.Color(255, 246, 230));
+        J5JH1.setForeground(new java.awt.Color(255, 51, 51));
         J5JH1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         J5JH1.setText("0");
         J5JH1.setFocusTraversalPolicyProvider(true);
@@ -1229,6 +2185,9 @@ public final class RMChecklistDuranteOperasi extends javax.swing.JDialog {
         FormInput.add(J6T1);
         J6T1.setBounds(290, 410, 70, 23);
 
+        J6JH1.setEditable(false);
+        J6JH1.setBackground(new java.awt.Color(255, 246, 230));
+        J6JH1.setForeground(new java.awt.Color(255, 51, 51));
         J6JH1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         J6JH1.setText("0");
         J6JH1.setFocusTraversalPolicyProvider(true);
@@ -1236,6 +2195,9 @@ public final class RMChecklistDuranteOperasi extends javax.swing.JDialog {
         FormInput.add(J6JH1);
         J6JH1.setBounds(530, 410, 60, 23);
 
+        J6H3.setEditable(false);
+        J6H3.setBackground(new java.awt.Color(255, 246, 230));
+        J6H3.setForeground(new java.awt.Color(255, 51, 51));
         J6H3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         J6H3.setText("0");
         J6H3.setFocusTraversalPolicyProvider(true);
@@ -1274,6 +2236,9 @@ public final class RMChecklistDuranteOperasi extends javax.swing.JDialog {
         FormInput.add(jLabel31);
         jLabel31.setBounds(30, 440, 130, 23);
 
+        J7JH1.setEditable(false);
+        J7JH1.setBackground(new java.awt.Color(255, 246, 230));
+        J7JH1.setForeground(new java.awt.Color(255, 51, 51));
         J7JH1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         J7JH1.setText("0");
         J7JH1.setFocusTraversalPolicyProvider(true);
@@ -1295,6 +2260,9 @@ public final class RMChecklistDuranteOperasi extends javax.swing.JDialog {
         FormInput.add(J7T1);
         J7T1.setBounds(290, 440, 70, 23);
 
+        J7H3.setEditable(false);
+        J7H3.setBackground(new java.awt.Color(255, 246, 230));
+        J7H3.setForeground(new java.awt.Color(255, 51, 51));
         J7H3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         J7H3.setText("0");
         J7H3.setFocusTraversalPolicyProvider(true);
@@ -1342,6 +2310,9 @@ public final class RMChecklistDuranteOperasi extends javax.swing.JDialog {
         FormInput.add(J8T2);
         J8T2.setBounds(370, 470, 70, 23);
 
+        J8H3.setEditable(false);
+        J8H3.setBackground(new java.awt.Color(255, 246, 230));
+        J8H3.setForeground(new java.awt.Color(255, 51, 51));
         J8H3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         J8H3.setText("0");
         J8H3.setFocusTraversalPolicyProvider(true);
@@ -1356,6 +2327,9 @@ public final class RMChecklistDuranteOperasi extends javax.swing.JDialog {
         FormInput.add(J8T3);
         J8T3.setBounds(450, 470, 70, 23);
 
+        J8JH1.setEditable(false);
+        J8JH1.setBackground(new java.awt.Color(255, 246, 230));
+        J8JH1.setForeground(new java.awt.Color(255, 51, 51));
         J8JH1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         J8JH1.setText("0");
         J8JH1.setFocusTraversalPolicyProvider(true);
@@ -1389,6 +2363,9 @@ public final class RMChecklistDuranteOperasi extends javax.swing.JDialog {
         FormInput.add(J9T1);
         J9T1.setBounds(290, 500, 70, 23);
 
+        J9H3.setEditable(false);
+        J9H3.setBackground(new java.awt.Color(255, 246, 230));
+        J9H3.setForeground(new java.awt.Color(255, 51, 51));
         J9H3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         J9H3.setText("0");
         J9H3.setFocusTraversalPolicyProvider(true);
@@ -1403,6 +2380,9 @@ public final class RMChecklistDuranteOperasi extends javax.swing.JDialog {
         FormInput.add(J9T3);
         J9T3.setBounds(450, 500, 70, 23);
 
+        J9JH1.setEditable(false);
+        J9JH1.setBackground(new java.awt.Color(255, 246, 230));
+        J9JH1.setForeground(new java.awt.Color(255, 51, 51));
         J9JH1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         J9JH1.setText("0");
         J9JH1.setFocusTraversalPolicyProvider(true);
@@ -1431,6 +2411,9 @@ public final class RMChecklistDuranteOperasi extends javax.swing.JDialog {
         FormInput.add(J10T2);
         J10T2.setBounds(370, 530, 70, 23);
 
+        J10H3.setEditable(false);
+        J10H3.setBackground(new java.awt.Color(255, 246, 230));
+        J10H3.setForeground(new java.awt.Color(255, 51, 51));
         J10H3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         J10H3.setText("0");
         J10H3.setFocusTraversalPolicyProvider(true);
@@ -1445,6 +2428,9 @@ public final class RMChecklistDuranteOperasi extends javax.swing.JDialog {
         FormInput.add(J10T3);
         J10T3.setBounds(450, 530, 70, 23);
 
+        J10JH1.setEditable(false);
+        J10JH1.setBackground(new java.awt.Color(255, 246, 230));
+        J10JH1.setForeground(new java.awt.Color(255, 51, 51));
         J10JH1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         J10JH1.setText("0");
         J10JH1.setFocusTraversalPolicyProvider(true);
@@ -1483,6 +2469,9 @@ public final class RMChecklistDuranteOperasi extends javax.swing.JDialog {
         FormInput.add(J11T2);
         J11T2.setBounds(370, 560, 70, 23);
 
+        J11H3.setEditable(false);
+        J11H3.setBackground(new java.awt.Color(255, 246, 230));
+        J11H3.setForeground(new java.awt.Color(255, 51, 51));
         J11H3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         J11H3.setText("0");
         J11H3.setFocusTraversalPolicyProvider(true);
@@ -1497,6 +2486,9 @@ public final class RMChecklistDuranteOperasi extends javax.swing.JDialog {
         FormInput.add(J11T3);
         J11T3.setBounds(450, 560, 70, 23);
 
+        J11JH1.setEditable(false);
+        J11JH1.setBackground(new java.awt.Color(255, 246, 230));
+        J11JH1.setForeground(new java.awt.Color(255, 51, 51));
         J11JH1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         J11JH1.setText("0");
         J11JH1.setFocusTraversalPolicyProvider(true);
@@ -1530,6 +2522,9 @@ public final class RMChecklistDuranteOperasi extends javax.swing.JDialog {
         FormInput.add(J12T1);
         J12T1.setBounds(290, 590, 70, 23);
 
+        J12H3.setEditable(false);
+        J12H3.setBackground(new java.awt.Color(255, 246, 230));
+        J12H3.setForeground(new java.awt.Color(255, 51, 51));
         J12H3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         J12H3.setText("0");
         J12H3.setFocusTraversalPolicyProvider(true);
@@ -1544,6 +2539,9 @@ public final class RMChecklistDuranteOperasi extends javax.swing.JDialog {
         FormInput.add(J12T3);
         J12T3.setBounds(450, 590, 70, 23);
 
+        J12JH1.setEditable(false);
+        J12JH1.setBackground(new java.awt.Color(255, 246, 230));
+        J12JH1.setForeground(new java.awt.Color(255, 51, 51));
         J12JH1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         J12JH1.setText("0");
         J12JH1.setFocusTraversalPolicyProvider(true);
@@ -1572,6 +2570,9 @@ public final class RMChecklistDuranteOperasi extends javax.swing.JDialog {
         FormInput.add(J13T2);
         J13T2.setBounds(370, 620, 70, 23);
 
+        J13H3.setEditable(false);
+        J13H3.setBackground(new java.awt.Color(255, 246, 230));
+        J13H3.setForeground(new java.awt.Color(255, 51, 51));
         J13H3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         J13H3.setText("0");
         J13H3.setFocusTraversalPolicyProvider(true);
@@ -1586,6 +2587,9 @@ public final class RMChecklistDuranteOperasi extends javax.swing.JDialog {
         FormInput.add(J13T3);
         J13T3.setBounds(450, 620, 70, 23);
 
+        J13JH1.setEditable(false);
+        J13JH1.setBackground(new java.awt.Color(255, 246, 230));
+        J13JH1.setForeground(new java.awt.Color(255, 51, 51));
         J13JH1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         J13JH1.setText("0");
         J13JH1.setFocusTraversalPolicyProvider(true);
@@ -1598,6 +2602,9 @@ public final class RMChecklistDuranteOperasi extends javax.swing.JDialog {
         FormInput.add(jLabel38);
         jLabel38.setBounds(30, 620, 130, 23);
 
+        J1H3.setEditable(false);
+        J1H3.setBackground(new java.awt.Color(255, 246, 230));
+        J1H3.setForeground(new java.awt.Color(255, 51, 51));
         J1H3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         J1H3.setText("0");
         J1H3.setFocusTraversalPolicyProvider(true);
@@ -1626,6 +2633,9 @@ public final class RMChecklistDuranteOperasi extends javax.swing.JDialog {
         FormInput.add(J1T3);
         J1T3.setBounds(450, 260, 70, 23);
 
+        J1JH1.setEditable(false);
+        J1JH1.setBackground(new java.awt.Color(255, 246, 230));
+        J1JH1.setForeground(new java.awt.Color(255, 51, 51));
         J1JH1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         J1JH1.setText("0");
         J1JH1.setFocusTraversalPolicyProvider(true);
@@ -1662,13 +2672,13 @@ public final class RMChecklistDuranteOperasi extends javax.swing.JDialog {
         }else if(NIP.getText().trim().equals("")||NamaPetugas.getText().trim().equals("")){
             Valid.textKosong(NIP,"Petugas");
         }else{
-//            if(Sequel.menyimpantf("catatan_observasi_ranap","?,?,?,?,?,?,?,?,?,?","Data",10,new String[]{
-//                TNoRw.getText(),Valid.SetTgl(Tanggal.getSelectedItem()+""),Jam.getSelectedItem()+":"+Menit.getSelectedItem()+":"+Detik.getSelectedItem(),
-//                J1T1.getText(),J1h3.getText(),J1T2.getText(),J1JH1.getText(),J1T3.getText(),J1H2.getText(),NIP.getText()
-//            })==true){
-//                tampil();
-//                emptTeks();
-//            }   
+            if(Sequel.menyimpantf("c","?,?,?,?,?,?,?,?,?,?","Data",10,new String[]{
+                TNoRw.getText(),Valid.SetTgl(Tanggal.getSelectedItem()+""),Jam.getSelectedItem()+":"+Menit.getSelectedItem()+":"+Detik.getSelectedItem(),
+                J1T1.getText(),J1H3.getText(),J1T2.getText(),J1JH1.getText(),J1T3.getText(),J1H2.getText(),NIP.getText()
+            })==true){
+                tampil();
+                emptTeks();
+            }   
         }
 }//GEN-LAST:event_BtnSimpanActionPerformed
 
@@ -2152,14 +3162,111 @@ public final class RMChecklistDuranteOperasi extends javax.swing.JDialog {
     }
     
     public void emptTeks() {
-//        J1T1.setText("");
-//        J1h3.setText("");
-//        J1T2.setText("");
-//        J1JH1.setText("");
-//        J1T3.setText("");
-//        J1H2.setText("");
+        J1H1.setText("0");
+        J1T1.setText("0");
+        J1T2.setText("0");
+        J1T3.setText("0");
+        J1JH1.setText("0");
+        J1H2.setText("0");
+        J1H3.setText("0");
+        
+        J2H1.setText("0");
+        J2T1.setText("0");
+        J2T2.setText("0");
+        J2T3.setText("0");
+        J2JH1.setText("0");
+        J2H2.setText("0");
+        J2H3.setText("0");
+        
+        J3H1.setText("0");
+        J3T1.setText("0");
+        J3T2.setText("0");
+        J3T3.setText("0");
+        J3JH1.setText("0");
+        J3H2.setText("0");
+        J3H3.setText("0");
+        
+        J4H1.setText("0");
+        J4T1.setText("0");
+        J4T2.setText("0");
+        J4T3.setText("0");
+        J4JH1.setText("0");
+        J4H2.setText("0");
+        J4H3.setText("0");
+        
+        J5H1.setText("0");
+        J5T1.setText("0");
+        J5T2.setText("0");
+        J5T3.setText("0");
+        J5JH1.setText("0");
+        J5H2.setText("0");
+        J5H3.setText("0");
+        
+        J6H1.setText("0");
+        J6T1.setText("0");
+        J6T2.setText("0");
+        J6T3.setText("0");
+        J6JH1.setText("0");
+        J6H2.setText("0");
+        J6H3.setText("0");
+        
+        J7H1.setText("0");
+        J7T1.setText("0");
+        J7T2.setText("0");
+        J7T3.setText("0");
+        J7JH1.setText("0");
+        J7H2.setText("0");
+        J7H3.setText("0");
+        
+        J8H1.setText("0");
+        J8T1.setText("0");
+        J8T2.setText("0");
+        J8T3.setText("0");
+        J8JH1.setText("0");
+        J8H2.setText("0");
+        J8H3.setText("0");
+        
+        J9H1.setText("0");
+        J9T1.setText("0");
+        J9T2.setText("0");
+        J9T3.setText("0");
+        J9JH1.setText("0");
+        J9H2.setText("0");
+        J9H3.setText("0");
+        
+        J10H1.setText("0");
+        J10T1.setText("0");
+        J10T2.setText("0");
+        J10T3.setText("0");
+        J10JH1.setText("0");
+        J10H2.setText("0");
+        J10H3.setText("0");
+        
+        J11H1.setText("0");
+        J11T1.setText("0");
+        J11T2.setText("0");
+        J11T3.setText("0");
+        J11JH1.setText("0");
+        J11H2.setText("0");
+        J11H3.setText("0");
+        
+        J12H1.setText("0");
+        J12T1.setText("0");
+        J12T2.setText("0");
+        J12T3.setText("0");
+        J12JH1.setText("0");
+        J12H2.setText("0");
+        J12H3.setText("0");
+        
+        J13H1.setText("0");
+        J13T1.setText("0");
+        J13T2.setText("0");
+        J13T3.setText("0");
+        J13JH1.setText("0");
+        J13H2.setText("0");
+        J13H3.setText("0");
+         
         Tanggal.setDate(new Date());
-//        J1T1.requestFocus();
     } 
 
     private void getData() {
@@ -2294,9 +3401,36 @@ public final class RMChecklistDuranteOperasi extends javax.swing.JDialog {
 //        emptTeks();
     }
     
-    private void isHitung(){    
-        J1JH1.setText(Valid.SetAngka(Valid.SetAngka(J1T1.getText())+Valid.SetAngka(J1T2.getText())+Valid.SetAngka(J1T3.getText())));
-           
+    private void isHitung(){
+        //jumlah Tambahan Selama Operasi
+        J1JH1.setText(Valid.SetAngka(Valid.SetAngka(J1H1.getText())+Valid.SetAngka(J1T1.getText())+Valid.SetAngka(J1T2.getText())+Valid.SetAngka(J1T3.getText())));
+        J2JH1.setText(Valid.SetAngka(Valid.SetAngka(J2H1.getText())+Valid.SetAngka(J2T1.getText())+Valid.SetAngka(J2T2.getText())+Valid.SetAngka(J2T3.getText())));
+        J3JH1.setText(Valid.SetAngka(Valid.SetAngka(J3H1.getText())+Valid.SetAngka(J3T1.getText())+Valid.SetAngka(J3T2.getText())+Valid.SetAngka(J3T3.getText())));
+        J4JH1.setText(Valid.SetAngka(Valid.SetAngka(J4H1.getText())+Valid.SetAngka(J4T1.getText())+Valid.SetAngka(J4T2.getText())+Valid.SetAngka(J4T3.getText())));
+        J5JH1.setText(Valid.SetAngka(Valid.SetAngka(J5H1.getText())+Valid.SetAngka(J5T1.getText())+Valid.SetAngka(J5T2.getText())+Valid.SetAngka(J5T3.getText())));
+        J6JH1.setText(Valid.SetAngka(Valid.SetAngka(J6H1.getText())+Valid.SetAngka(J6T1.getText())+Valid.SetAngka(J6T2.getText())+Valid.SetAngka(J6T3.getText())));
+        J7JH1.setText(Valid.SetAngka(Valid.SetAngka(J7H1.getText())+Valid.SetAngka(J7T1.getText())+Valid.SetAngka(J7T2.getText())+Valid.SetAngka(J7T3.getText())));
+        J8JH1.setText(Valid.SetAngka(Valid.SetAngka(J8H1.getText())+Valid.SetAngka(J8T1.getText())+Valid.SetAngka(J8T2.getText())+Valid.SetAngka(J8T3.getText())));
+        J9JH1.setText(Valid.SetAngka(Valid.SetAngka(J9H1.getText())+Valid.SetAngka(J9T1.getText())+Valid.SetAngka(J9T2.getText())+Valid.SetAngka(J9T3.getText())));
+        J10JH1.setText(Valid.SetAngka(Valid.SetAngka(J10H1.getText())+Valid.SetAngka(J10T1.getText())+Valid.SetAngka(J10T2.getText())+Valid.SetAngka(J10T3.getText())));
+        J11JH1.setText(Valid.SetAngka(Valid.SetAngka(J11H1.getText())+Valid.SetAngka(J11T1.getText())+Valid.SetAngka(J11T2.getText())+Valid.SetAngka(J11T3.getText())));
+        J12JH1.setText(Valid.SetAngka(Valid.SetAngka(J12H1.getText())+Valid.SetAngka(J12T1.getText())+Valid.SetAngka(J12T2.getText())+Valid.SetAngka(J12T3.getText())));
+        J13JH1.setText(Valid.SetAngka(Valid.SetAngka(J13H1.getText())+Valid.SetAngka(J13T1.getText())+Valid.SetAngka(J13T2.getText())+Valid.SetAngka(J13T3.getText())));
+        //Jumlah Hitungan Akhir
+        J1H3.setText(Valid.SetAngka(Valid.SetAngka(J1JH1.getText())+Valid.SetAngka(J1H2.getText())));
+        J2H3.setText(Valid.SetAngka(Valid.SetAngka(J2JH1.getText())+Valid.SetAngka(J2H2.getText())));
+        J3H3.setText(Valid.SetAngka(Valid.SetAngka(J3JH1.getText())+Valid.SetAngka(J3H2.getText())));
+        J4H3.setText(Valid.SetAngka(Valid.SetAngka(J4JH1.getText())+Valid.SetAngka(J4H2.getText())));
+        J5H3.setText(Valid.SetAngka(Valid.SetAngka(J5JH1.getText())+Valid.SetAngka(J5H2.getText())));
+        J6H3.setText(Valid.SetAngka(Valid.SetAngka(J6JH1.getText())+Valid.SetAngka(J6H2.getText())));
+        J7H3.setText(Valid.SetAngka(Valid.SetAngka(J7JH1.getText())+Valid.SetAngka(J7H2.getText())));
+        J8H3.setText(Valid.SetAngka(Valid.SetAngka(J8JH1.getText())+Valid.SetAngka(J8H2.getText())));
+        J9H3.setText(Valid.SetAngka(Valid.SetAngka(J9JH1.getText())+Valid.SetAngka(J9H2.getText())));
+        J10H3.setText(Valid.SetAngka(Valid.SetAngka(J10JH1.getText())+Valid.SetAngka(J10H2.getText())));
+        J11H3.setText(Valid.SetAngka(Valid.SetAngka(J11JH1.getText())+Valid.SetAngka(J11H2.getText())));
+        J12H3.setText(Valid.SetAngka(Valid.SetAngka(J12JH1.getText())+Valid.SetAngka(J12H2.getText())));
+        J13H3.setText(Valid.SetAngka(Valid.SetAngka(J13JH1.getText())+Valid.SetAngka(J13H2.getText())));
+          
     }
     
     
