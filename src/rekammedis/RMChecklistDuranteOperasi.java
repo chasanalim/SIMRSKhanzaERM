@@ -1203,22 +1203,22 @@ public final class RMChecklistDuranteOperasi extends javax.swing.JDialog {
         jLabel12 = new widget.Label();
         jLabel53 = new widget.Label();
         jLabel58 = new widget.Label();
-        Kardiologi5 = new widget.ComboBox();
+        PosisiOperasi = new widget.ComboBox();
         jLabel54 = new widget.Label();
         jLabel59 = new widget.Label();
-        Kardiologi6 = new widget.ComboBox();
+        CuciTangan = new widget.ComboBox();
         jLabel60 = new widget.Label();
-        Kardiologi7 = new widget.ComboBox();
+        JasOperasi = new widget.ComboBox();
         jLabel61 = new widget.Label();
-        Kardiologi8 = new widget.ComboBox();
+        Handscoon = new widget.ComboBox();
         jLabel62 = new widget.Label();
-        Kardiologi9 = new widget.ComboBox();
+        Disinfeksi = new widget.ComboBox();
         jLabel63 = new widget.Label();
-        Kardiologi10 = new widget.ComboBox();
+        Alkohol = new widget.ComboBox();
         jLabel64 = new widget.Label();
-        Kardiologi11 = new widget.ComboBox();
+        LinenSteril = new widget.ComboBox();
         jLabel65 = new widget.Label();
-        Kardiologi12 = new widget.ComboBox();
+        KlasifikasiLuka = new widget.ComboBox();
         jLabel55 = new widget.Label();
         jLabel66 = new widget.Label();
         jLabel67 = new widget.Label();
@@ -1703,6 +1703,11 @@ public final class RMChecklistDuranteOperasi extends javax.swing.JDialog {
         btnPetugas.setMnemonic('2');
         btnPetugas.setToolTipText("ALt+2");
         btnPetugas.setName("btnPetugas"); // NOI18N
+        btnPetugas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPetugasActionPerformed(evt);
+            }
+        });
         FormInput.add(btnPetugas);
         btnPetugas.setBounds(761, 40, 28, 23);
 
@@ -1733,10 +1738,10 @@ public final class RMChecklistDuranteOperasi extends javax.swing.JDialog {
         FormInput.add(jLabel58);
         jLabel58.setBounds(30, 90, 210, 23);
 
-        Kardiologi5.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Supinasi", "Pronasi", "Litotomi", "Tengkulup", "Leteral Kanan/Kiri", "Sim Kanan/Kiri" }));
-        Kardiologi5.setName("Kardiologi5"); // NOI18N
-        FormInput.add(Kardiologi5);
-        Kardiologi5.setBounds(170, 90, 200, 23);
+        PosisiOperasi.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Supinasi", "Pronasi", "Litotomi", "Tengkulup", "Leteral Kanan/Kiri", "Sim Kanan/Kiri" }));
+        PosisiOperasi.setName("PosisiOperasi"); // NOI18N
+        FormInput.add(PosisiOperasi);
+        PosisiOperasi.setBounds(170, 90, 200, 23);
 
         jLabel54.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel54.setText("I. Posisi Operasi ");
@@ -1750,11 +1755,11 @@ public final class RMChecklistDuranteOperasi extends javax.swing.JDialog {
         FormInput.add(jLabel59);
         jLabel59.setBounds(30, 130, 170, 23);
 
-        Kardiologi6.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Ya", "Tidak" }));
-        Kardiologi6.setName("Kardiologi6"); // NOI18N
-        Kardiologi6.setPreferredSize(new java.awt.Dimension(55, 22));
-        FormInput.add(Kardiologi6);
-        Kardiologi6.setBounds(150, 130, 80, 23);
+        CuciTangan.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Ya", "Tidak" }));
+        CuciTangan.setName("CuciTangan"); // NOI18N
+        CuciTangan.setPreferredSize(new java.awt.Dimension(55, 22));
+        FormInput.add(CuciTangan);
+        CuciTangan.setBounds(150, 130, 80, 23);
 
         jLabel60.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel60.setText("Memakai Jas Operasi :");
@@ -1762,11 +1767,11 @@ public final class RMChecklistDuranteOperasi extends javax.swing.JDialog {
         FormInput.add(jLabel60);
         jLabel60.setBounds(30, 160, 170, 23);
 
-        Kardiologi7.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Ya", "Tidak" }));
-        Kardiologi7.setName("Kardiologi7"); // NOI18N
-        Kardiologi7.setPreferredSize(new java.awt.Dimension(55, 20));
-        FormInput.add(Kardiologi7);
-        Kardiologi7.setBounds(150, 160, 80, 23);
+        JasOperasi.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Ya", "Tidak" }));
+        JasOperasi.setName("JasOperasi"); // NOI18N
+        JasOperasi.setPreferredSize(new java.awt.Dimension(55, 20));
+        FormInput.add(JasOperasi);
+        JasOperasi.setBounds(150, 160, 80, 23);
 
         jLabel61.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel61.setText("Memakai Handscoon Streil :");
@@ -1774,11 +1779,11 @@ public final class RMChecklistDuranteOperasi extends javax.swing.JDialog {
         FormInput.add(jLabel61);
         jLabel61.setBounds(280, 130, 170, 23);
 
-        Kardiologi8.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Ya", "Tidak" }));
-        Kardiologi8.setName("Kardiologi8"); // NOI18N
-        Kardiologi8.setPreferredSize(new java.awt.Dimension(55, 22));
-        FormInput.add(Kardiologi8);
-        Kardiologi8.setBounds(460, 130, 80, 23);
+        Handscoon.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Ya", "Tidak" }));
+        Handscoon.setName("Handscoon"); // NOI18N
+        Handscoon.setPreferredSize(new java.awt.Dimension(55, 22));
+        FormInput.add(Handscoon);
+        Handscoon.setBounds(460, 130, 80, 23);
 
         jLabel62.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel62.setText("Desinfeksi Iodine Providone 10%:");
@@ -1786,11 +1791,11 @@ public final class RMChecklistDuranteOperasi extends javax.swing.JDialog {
         FormInput.add(jLabel62);
         jLabel62.setBounds(280, 160, 170, 23);
 
-        Kardiologi9.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Ya", "Tidak" }));
-        Kardiologi9.setName("Kardiologi9"); // NOI18N
-        Kardiologi9.setPreferredSize(new java.awt.Dimension(55, 20));
-        FormInput.add(Kardiologi9);
-        Kardiologi9.setBounds(460, 160, 80, 23);
+        Disinfeksi.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Ya", "Tidak" }));
+        Disinfeksi.setName("Disinfeksi"); // NOI18N
+        Disinfeksi.setPreferredSize(new java.awt.Dimension(55, 20));
+        FormInput.add(Disinfeksi);
+        Disinfeksi.setBounds(460, 160, 80, 23);
 
         jLabel63.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel63.setText("Desinfeksi Alkohol :");
@@ -1798,11 +1803,11 @@ public final class RMChecklistDuranteOperasi extends javax.swing.JDialog {
         FormInput.add(jLabel63);
         jLabel63.setBounds(600, 130, 170, 23);
 
-        Kardiologi10.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Ya", "Tidak" }));
-        Kardiologi10.setName("Kardiologi10"); // NOI18N
-        Kardiologi10.setPreferredSize(new java.awt.Dimension(55, 22));
-        FormInput.add(Kardiologi10);
-        Kardiologi10.setBounds(720, 130, 80, 23);
+        Alkohol.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Ya", "Tidak" }));
+        Alkohol.setName("Alkohol"); // NOI18N
+        Alkohol.setPreferredSize(new java.awt.Dimension(55, 22));
+        FormInput.add(Alkohol);
+        Alkohol.setBounds(720, 130, 80, 23);
 
         jLabel64.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel64.setText("Memasang Linen Steril :");
@@ -1810,11 +1815,11 @@ public final class RMChecklistDuranteOperasi extends javax.swing.JDialog {
         FormInput.add(jLabel64);
         jLabel64.setBounds(600, 160, 170, 23);
 
-        Kardiologi11.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Ya", "Tidak" }));
-        Kardiologi11.setName("Kardiologi11"); // NOI18N
-        Kardiologi11.setPreferredSize(new java.awt.Dimension(55, 20));
-        FormInput.add(Kardiologi11);
-        Kardiologi11.setBounds(720, 160, 80, 23);
+        LinenSteril.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Ya", "Tidak" }));
+        LinenSteril.setName("LinenSteril"); // NOI18N
+        LinenSteril.setPreferredSize(new java.awt.Dimension(55, 20));
+        FormInput.add(LinenSteril);
+        LinenSteril.setBounds(720, 160, 80, 23);
 
         jLabel65.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jLabel65.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -1823,10 +1828,10 @@ public final class RMChecklistDuranteOperasi extends javax.swing.JDialog {
         FormInput.add(jLabel65);
         jLabel65.setBounds(290, 230, 230, 23);
 
-        Kardiologi12.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Bersih", "Terkontaminasi", "Infeksi" }));
-        Kardiologi12.setName("Kardiologi12"); // NOI18N
-        FormInput.add(Kardiologi12);
-        Kardiologi12.setBounds(150, 190, 150, 23);
+        KlasifikasiLuka.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Bersih", "Terkontaminasi", "Infeksi" }));
+        KlasifikasiLuka.setName("KlasifikasiLuka"); // NOI18N
+        FormInput.add(KlasifikasiLuka);
+        KlasifikasiLuka.setBounds(150, 190, 150, 23);
 
         jLabel55.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel55.setText("2. Preparasi Operasi");
@@ -2672,9 +2677,10 @@ public final class RMChecklistDuranteOperasi extends javax.swing.JDialog {
         }else if(NIP.getText().trim().equals("")||NamaPetugas.getText().trim().equals("")){
             Valid.textKosong(NIP,"Petugas");
         }else{
-            if(Sequel.menyimpantf("checklist_durante_operasi","?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?","Data",102,new String[]{
+            if(Sequel.menyimpantf("checklist_durante_operasi","?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?","Data",103,new String[]{
                 TNoRw.getText(),Valid.SetTgl(Tanggal.getSelectedItem()+""),Jam.getSelectedItem()+":"+Menit.getSelectedItem()+":"+Detik.getSelectedItem()
-                ,NIP.getText(),J1H1.getText(),J1T1.getText(),J1T2.getText(),J1T3.getText(),J1JH1.getText(),J1H2.getText(),J1H3.getText()
+                ,NIP.getText(),PosisiOperasi.getSelectedItem().toString(),CuciTangan.getSelectedItem().toString(),JasOperasi.getSelectedItem().toString(),Handscoon.getSelectedItem().toString(),Disinfeksi.getSelectedItem().toString(),Alkohol.getSelectedItem().toString(),LinenSteril.getSelectedItem().toString(),KlasifikasiLuka.getSelectedItem().toString()
+                ,J1H1.getText(),J1T1.getText(),J1T2.getText(),J1T3.getText(),J1JH1.getText(),J1H2.getText(),J1H3.getText()
                 ,J2H1.getText(),J2T1.getText(),J2T2.getText(),J2T3.getText(),J2JH1.getText(),J2H2.getText(),J2H3.getText()
                 ,J3H1.getText(),J3T1.getText(),J3T2.getText(),J3T3.getText(),J3JH1.getText(),J3H2.getText(),J3H3.getText()
                 ,J4H1.getText(),J4T1.getText(),J4T2.getText(),J4T3.getText(),J4JH1.getText(),J4H2.getText(),J4H3.getText()
@@ -2688,8 +2694,9 @@ public final class RMChecklistDuranteOperasi extends javax.swing.JDialog {
                 ,J12H1.getText(),J12T1.getText(),J12T2.getText(),J12T3.getText(),J12JH1.getText(),J12H2.getText(),J12H3.getText()
                 ,J13H1.getText(),J13T1.getText(),J13T2.getText(),J13T3.getText(),J13JH1.getText(),J13H2.getText(),J13H3.getText()
             })==true){
-                tampil();
-                emptTeks();
+                JOptionPane.showMessageDialog(null," Sukses Simpan!!");
+//                tampil();
+//                emptTeks();
             }   
         }
 }//GEN-LAST:event_BtnSimpanActionPerformed
@@ -2917,6 +2924,14 @@ public final class RMChecklistDuranteOperasi extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_J1JH1ActionPerformed
 
+    private void btnPetugasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPetugasActionPerformed
+        petugas.emptTeks();
+        petugas.isCek();
+        petugas.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
+        petugas.setLocationRelativeTo(internalFrame1);
+        petugas.setVisible(true);
+    }//GEN-LAST:event_btnPetugasActionPerformed
+
     /**
     * @param args the command line arguments
     */
@@ -2934,6 +2949,7 @@ public final class RMChecklistDuranteOperasi extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private widget.ComboBox Alkohol;
     private widget.Button BtnAll;
     private widget.Button BtnBatal;
     private widget.Button BtnCari;
@@ -2944,10 +2960,13 @@ public final class RMChecklistDuranteOperasi extends javax.swing.JDialog {
     private widget.Button BtnSimpan;
     private widget.CekBox ChkInput;
     private widget.CekBox ChkKejadian;
+    private widget.ComboBox CuciTangan;
     private widget.Tanggal DTPCari1;
     private widget.Tanggal DTPCari2;
     private widget.ComboBox Detik;
+    private widget.ComboBox Disinfeksi;
     private widget.PanelBiasa FormInput;
+    private widget.ComboBox Handscoon;
     private widget.TextBox J10H1;
     private widget.TextBox J10H2;
     private widget.TextBox J10H3;
@@ -3040,20 +3059,16 @@ public final class RMChecklistDuranteOperasi extends javax.swing.JDialog {
     private widget.TextBox J9T2;
     private widget.TextBox J9T3;
     private widget.ComboBox Jam;
-    private widget.ComboBox Kardiologi10;
-    private widget.ComboBox Kardiologi11;
-    private widget.ComboBox Kardiologi12;
-    private widget.ComboBox Kardiologi5;
-    private widget.ComboBox Kardiologi6;
-    private widget.ComboBox Kardiologi7;
-    private widget.ComboBox Kardiologi8;
-    private widget.ComboBox Kardiologi9;
+    private widget.ComboBox JasOperasi;
+    private widget.ComboBox KlasifikasiLuka;
     private widget.Label LCount;
+    private widget.ComboBox LinenSteril;
     private widget.ComboBox Menit;
     private javax.swing.JMenuItem MnCatatanObservasiIGD;
     private widget.TextBox NIP;
     private widget.TextBox NamaPetugas;
     private javax.swing.JPanel PanelInput;
+    private widget.ComboBox PosisiOperasi;
     private widget.ScrollPane Scroll;
     private widget.TextBox TCari;
     private widget.TextBox TNoRM;
