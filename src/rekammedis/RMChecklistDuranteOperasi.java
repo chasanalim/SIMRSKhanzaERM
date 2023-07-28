@@ -59,8 +59,22 @@ public final class RMChecklistDuranteOperasi extends javax.swing.JDialog {
         setSize(628,674);
 
         tabMode=new DefaultTableModel(null,new Object[]{
-            "No.Rawat","No.R.M.","Nama Pasien","Umur","JK","Tgl.Lahir","Tgl.Obser","Jam Obser","GCS (E,V,M)",
-            "TD(mmHg)","HR(x/menit)","RR(x/menit)","Suhu(°C)","SpO2(%)","NIP","Nama Petugas"
+            "No.Rawat","No.R.M.","Nama Pasien","Tgl Checklist","Jam Checklist","NIP","Nama Petugas","Posisi Operasi","Cuci Tangan","Jas Operasi","Handscoon",
+            "Disinfeksi Iodine","Disinfeksi Alkohol","Linen Steril","Klasifikasi Luka",
+            "Kassa H Pertama ","Kassa T1","Kassa T2","Kassa T3","Kassa Jumlah HP","Kassa H Kedua","Kassa H Akhir",
+            "Pean Kecil H Pertama ","Pean Kecil T1","Pean Kecil T2","Pean Kecil T3","Pean Kecil Jumlah HP","Pean Kecil H Kedua","Pean Kecil H Akhir",
+            "Pean Besar H Pertama ","Pean Besar T1","Pean Besar T2","Pean Besar T3","Pean Besar Jumlah HP","Pean Besar H Kedua","Pean Besar H Akhir",
+            "Kocher H Pertama ","Kocher T1","Kocher T2","Kocher T3","Kocher Jumlah HP","Kocher H Kedua","Kocher H Akhir",
+            "Pinset Anatomi H Pertama ","Pinset Anatomi T1","Pinset Anatomi T2","Pinset Anatomi T3","Pinset Anatomi Jumlah HP","Pinset Anatomi H Kedua","Pinset Anatomi H Akhir",
+            "Pinset Cirurgis H Pertama ","Pinset Cirurgis T1","Pinset Cirurgis T2","Pinset Cirurgis T3","Pinset Cirurgis Jumlah HP","Pinset Cirurgis H Kedua","Pinset Cirurgis H Akhir",
+            "Gunting H Pertama ","Gunting T1","Gunting T2","Gunting T3","Gunting Jumlah HP","Gunting H Kedua","Gunting H Akhir",
+            "Towel Klem H Pertama ","Towel Klem T1","Towel Klem T2","Towel Klem T3","Towel Klem Jumlah HP","Towel Klem H Kedua","Towel Klem H Akhir",
+            "Handel Mess H Pertama ","Handel Mess T1","Handel Mess T2","Handel Mess T3","Handel Mess Jumlah HP","Handel Mess H Kedua","Handel Mess H Akhir",
+            "Allis Klem H Pertama ","Allis Klem T1","Allis Klem T2","Allis Klem T3","Allis Klem Jumlah HP","Allis Klem H Kedua","Allis Klem H Akhir",
+            "Needle H Pertama ","Needle T1","Needle T2","Needle T3","Needle Jumlah HP","Needle H Kedua","Needle H Akhir",
+            "Lengen Back H Pertama ","Lengen Back T1","Lengen Back T2","Lengen Back T3","Lengen Back Jumlah HP","Lengen Back H Kedua","Lengen Back H Akhir",
+            "Jarum H Pertama ","Jarum T1","Jarum T2","Jarum T3","Jarum Jumlah HP","Jarum H Kedua","Jarum H Akhir",
+            
         }){
               @Override public boolean isCellEditable(int rowIndex, int colIndex){return false;}
         };
@@ -70,7 +84,7 @@ public final class RMChecklistDuranteOperasi extends javax.swing.JDialog {
         tbObat.setPreferredScrollableViewportSize(new Dimension(500,500));
         tbObat.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
 
-        for (i = 0; i < 16; i++) {
+        for (i = 0; i < 106; i++) {
             TableColumn column = tbObat.getColumnModel().getColumn(i);
             if(i==0){
                 column.setPreferredWidth(105);
@@ -104,6 +118,8 @@ public final class RMChecklistDuranteOperasi extends javax.swing.JDialog {
                 column.setPreferredWidth(90);
             }else if(i==15){
                 column.setPreferredWidth(160);
+            }else{
+                column.setPreferredWidth(80);
             }
         }
         tbObat.setDefaultRenderer(Object.class, new WarnaTable());
@@ -2694,9 +2710,9 @@ public final class RMChecklistDuranteOperasi extends javax.swing.JDialog {
                 ,J12H1.getText(),J12T1.getText(),J12T2.getText(),J12T3.getText(),J12JH1.getText(),J12H2.getText(),J12H3.getText()
                 ,J13H1.getText(),J13T1.getText(),J13T2.getText(),J13T3.getText(),J13JH1.getText(),J13H2.getText(),J13H3.getText()
             })==true){
-                JOptionPane.showMessageDialog(null," Sukses Simpan!!");
-//                tampil();
-//                emptTeks();
+//                JOptionPane.showMessageDialog(null," Sukses Simpan!!");
+                tampil();
+                emptTeks();
             }   
         }
 }//GEN-LAST:event_BtnSimpanActionPerformed
@@ -2746,25 +2762,26 @@ public final class RMChecklistDuranteOperasi extends javax.swing.JDialog {
 }//GEN-LAST:event_BtnHapusKeyPressed
 
     private void BtnEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnEditActionPerformed
-        if(TNoRw.getText().trim().equals("")||TPasien.getText().trim().equals("")){
-            Valid.textKosong(TNoRw,"pasien");
-        }else if(NIP.getText().trim().equals("")||NamaPetugas.getText().trim().equals("")){
-            Valid.textKosong(NIP,"Petugas");
-        }else{ 
-            if(tbObat.getSelectedRow()>-1){
-                if(akses.getkode().equals("Admin Utama")){
-                    ganti();
-                }else{
-                    if(NIP.getText().equals(tbObat.getValueAt(tbObat.getSelectedRow(),14).toString())){
-                        ganti();
-                    }else{
-                        JOptionPane.showMessageDialog(null,"Hanya bisa diganti oleh petugas yang bersangkutan..!!");
-                    }
-                }
-            }else{
-                JOptionPane.showMessageDialog(rootPane,"Silahkan anda pilih data terlebih dahulu..!!");
-            }
-        }
+        JOptionPane.showMessageDialog(null,"Maaf, MASIH DALAM PENGEMBANGAN !");
+//        if(TNoRw.getText().trim().equals("")||TPasien.getText().trim().equals("")){
+//            Valid.textKosong(TNoRw,"pasien");
+//        }else if(NIP.getText().trim().equals("")||NamaPetugas.getText().trim().equals("")){
+//            Valid.textKosong(NIP,"Petugas");
+//        }else{ 
+//            if(tbObat.getSelectedRow()>-1){
+//                if(akses.getkode().equals("Admin Utama")){
+//                    ganti();
+//                }else{
+//                    if(NIP.getText().equals(tbObat.getValueAt(tbObat.getSelectedRow(),14).toString())){
+//                        ganti();
+//                    }else{
+//                        JOptionPane.showMessageDialog(null,"Hanya bisa diganti oleh petugas yang bersangkutan..!!");
+//                    }
+//                }
+//            }else{
+//                JOptionPane.showMessageDialog(rootPane,"Silahkan anda pilih data terlebih dahulu..!!");
+//            }
+//        }
 }//GEN-LAST:event_BtnEditActionPerformed
 
     private void BtnEditKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BtnEditKeyPressed
@@ -2892,28 +2909,30 @@ public final class RMChecklistDuranteOperasi extends javax.swing.JDialog {
 }//GEN-LAST:event_tbObatKeyPressed
 
     private void MnCatatanObservasiIGDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MnCatatanObservasiIGDActionPerformed
-        if(tbObat.getSelectedRow()>-1){
-            Map<String, Object> param = new HashMap<>();
-            param.put("namars",akses.getnamars());
-            param.put("alamatrs",akses.getalamatrs());
-            param.put("kotars",akses.getkabupatenrs());
-            param.put("propinsirs",akses.getpropinsirs());
-            param.put("kontakrs",akses.getkontakrs());
-            param.put("emailrs",akses.getemailrs());   
-            dpjp=Sequel.cariIsi("select dokter.nm_dokter from dpjp_ranap inner join dokter on dpjp_ranap.kd_dokter=dokter.kd_dokter where dpjp_ranap.no_rawat=?",tbObat.getValueAt(tbObat.getSelectedRow(),0).toString());
-            if(dpjp.equals("")){
-                dpjp=Sequel.cariIsi("select dokter.nm_dokter from reg_periksa inner join dokter on reg_periksa.kd_dokter=dokter.kd_dokter where reg_periksa.no_rawat=?",tbObat.getValueAt(tbObat.getSelectedRow(),0).toString());
-            }
-            param.put("dpjp",dpjp);   
-            param.put("logo",Sequel.cariGambar("select setting.logo from setting")); 
-            Valid.MyReportqry("rptFormulirCatatanObservasiRanap.jasper","report","::[ Formulir Catatan Observasi Rawat Inap ]::",
-                    "select reg_periksa.no_rawat,pasien.no_rkm_medis,pasien.nm_pasien,reg_periksa.umurdaftar,reg_periksa.sttsumur,reg_periksa.tgl_registrasi,reg_periksa.jam_reg,"+
-                    "pasien.jk,pasien.tgl_lahir,catatan_observasi_ranap.tgl_perawatan,catatan_observasi_ranap.jam_rawat,catatan_observasi_ranap.gcs,"+
-                    "catatan_observasi_ranap.td,catatan_observasi_ranap.hr,catatan_observasi_ranap.rr,catatan_observasi_ranap.suhu,catatan_observasi_ranap.spo2,"+
-                    "petugas.nama from catatan_observasi_ranap inner join reg_periksa on catatan_observasi_ranap.no_rawat=reg_periksa.no_rawat "+
-                    "inner join pasien on reg_periksa.no_rkm_medis=pasien.no_rkm_medis "+
-                    "inner join petugas on catatan_observasi_ranap.nip=petugas.nip where reg_periksa.no_rawat='"+tbObat.getValueAt(tbObat.getSelectedRow(),0).toString()+"'",param);
-        }
+          JOptionPane.showMessageDialog(null,"Maaf, MASIH DALAM PENGEMBANGAN !");
+
+//        if(tbObat.getSelectedRow()>-1){
+//            Map<String, Object> param = new HashMap<>();
+//            param.put("namars",akses.getnamars());
+//            param.put("alamatrs",akses.getalamatrs());
+//            param.put("kotars",akses.getkabupatenrs());
+//            param.put("propinsirs",akses.getpropinsirs());
+//            param.put("kontakrs",akses.getkontakrs());
+//            param.put("emailrs",akses.getemailrs());   
+//            dpjp=Sequel.cariIsi("select dokter.nm_dokter from dpjp_ranap inner join dokter on dpjp_ranap.kd_dokter=dokter.kd_dokter where dpjp_ranap.no_rawat=?",tbObat.getValueAt(tbObat.getSelectedRow(),0).toString());
+//            if(dpjp.equals("")){
+//                dpjp=Sequel.cariIsi("select dokter.nm_dokter from reg_periksa inner join dokter on reg_periksa.kd_dokter=dokter.kd_dokter where reg_periksa.no_rawat=?",tbObat.getValueAt(tbObat.getSelectedRow(),0).toString());
+//            }
+//            param.put("dpjp",dpjp);   
+//            param.put("logo",Sequel.cariGambar("select setting.logo from setting")); 
+//            Valid.MyReportqry("rptFormulirCatatanObservasiRanap.jasper","report","::[ Formulir Catatan Observasi Rawat Inap ]::",
+//                    "select reg_periksa.no_rawat,pasien.no_rkm_medis,pasien.nm_pasien,reg_periksa.umurdaftar,reg_periksa.sttsumur,reg_periksa.tgl_registrasi,reg_periksa.jam_reg,"+
+//                    "pasien.jk,pasien.tgl_lahir,catatan_observasi_ranap.tgl_perawatan,catatan_observasi_ranap.jam_rawat,catatan_observasi_ranap.gcs,"+
+//                    "catatan_observasi_ranap.td,catatan_observasi_ranap.hr,catatan_observasi_ranap.rr,catatan_observasi_ranap.suhu,catatan_observasi_ranap.spo2,"+
+//                    "petugas.nama from catatan_observasi_ranap inner join reg_periksa on catatan_observasi_ranap.no_rawat=reg_periksa.no_rawat "+
+//                    "inner join pasien on reg_periksa.no_rkm_medis=pasien.no_rkm_medis "+
+//                    "inner join petugas on catatan_observasi_ranap.nip=petugas.nip where reg_periksa.no_rawat='"+tbObat.getValueAt(tbObat.getSelectedRow(),0).toString()+"'",param);
+//        }
     }//GEN-LAST:event_MnCatatanObservasiIGDActionPerformed
 
     private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChkInputActionPerformed
@@ -3129,23 +3148,44 @@ public final class RMChecklistDuranteOperasi extends javax.swing.JDialog {
         try{
             if(TCari.getText().toString().trim().equals("")){
                 ps=koneksi.prepareStatement(
-                    "select reg_periksa.no_rawat,pasien.no_rkm_medis,pasien.nm_pasien,reg_periksa.umurdaftar,reg_periksa.sttsumur,"+
-                    "pasien.jk,pasien.tgl_lahir,catatan_observasi_ranap.tgl_perawatan,catatan_observasi_ranap.jam_rawat,catatan_observasi_ranap.gcs,"+
-                    "catatan_observasi_ranap.td,catatan_observasi_ranap.hr,catatan_observasi_ranap.rr,catatan_observasi_ranap.suhu,catatan_observasi_ranap.spo2,"+
-                    "catatan_observasi_ranap.nip,petugas.nama from catatan_observasi_ranap inner join reg_periksa on catatan_observasi_ranap.no_rawat=reg_periksa.no_rawat "+
-                    "inner join pasien on reg_periksa.no_rkm_medis=pasien.no_rkm_medis "+
-                    "inner join petugas on catatan_observasi_ranap.nip=petugas.nip where "+
-                    "catatan_observasi_ranap.tgl_perawatan between ? and ? order by catatan_observasi_ranap.tgl_perawatan");
+                    "SELECT reg_periksa.no_rawat,pasien.no_rkm_medis,pasien.nm_pasien,checklist_durante_operasi.tanggal,checklist_durante_operasi.jam,petugas.nip,petugas.nama,checklist_durante_operasi.posisi_operasi,checklist_durante_operasi.cuci_tangan,checklist_durante_operasi.jas_operasi, "+  
+                    "checklist_durante_operasi.handscoon,checklist_durante_operasi.disinfeksi,checklist_durante_operasi.alkohol,checklist_durante_operasi.linen_steril,checklist_durante_operasi.klasifikasi_luka, "+ 
+                    "checklist_durante_operasi.j1h1,checklist_durante_operasi.j1t1,checklist_durante_operasi.j1t2,checklist_durante_operasi.j1t3,checklist_durante_operasi.j1jh1,checklist_durante_operasi.j1h2,checklist_durante_operasi.j1h3, "+
+                    "checklist_durante_operasi.j2h1,checklist_durante_operasi.j2t1,checklist_durante_operasi.j2t2,checklist_durante_operasi.j2t3,checklist_durante_operasi.j2jh1,checklist_durante_operasi.j2h2,checklist_durante_operasi.j2h3, "+
+                    "checklist_durante_operasi.j3h1,checklist_durante_operasi.j3t1,checklist_durante_operasi.j3t2,checklist_durante_operasi.j3t3,checklist_durante_operasi.j3jh1,checklist_durante_operasi.j3h2,checklist_durante_operasi.j3h3, "+
+                    "checklist_durante_operasi.j4h1,checklist_durante_operasi.j4t1,checklist_durante_operasi.j4t2,checklist_durante_operasi.j4t3,checklist_durante_operasi.j4jh1,checklist_durante_operasi.j4h2,checklist_durante_operasi.j4h3, "+
+                    "checklist_durante_operasi.j5h1,checklist_durante_operasi.j5t1,checklist_durante_operasi.j5t2,checklist_durante_operasi.j5t3,checklist_durante_operasi.j5jh1,checklist_durante_operasi.j5h2,checklist_durante_operasi.j5h3, "+
+                    "checklist_durante_operasi.j6h1,checklist_durante_operasi.j6t1,checklist_durante_operasi.j6t2,checklist_durante_operasi.j6t3,checklist_durante_operasi.j6jh1,checklist_durante_operasi.j6h2,checklist_durante_operasi.j6h3, "+
+                    "checklist_durante_operasi.j7h1,checklist_durante_operasi.j7t1,checklist_durante_operasi.j7t2,checklist_durante_operasi.j7t3,checklist_durante_operasi.j7jh1,checklist_durante_operasi.j7h2,checklist_durante_operasi.j7h3, "+
+                    "checklist_durante_operasi.j8h1,checklist_durante_operasi.j8t1,checklist_durante_operasi.j8t2,checklist_durante_operasi.j8t3,checklist_durante_operasi.j8jh1,checklist_durante_operasi.j8h2,checklist_durante_operasi.j8h3, "+
+                    "checklist_durante_operasi.j9h1,checklist_durante_operasi.j9t1,checklist_durante_operasi.j9t2,checklist_durante_operasi.j9t3,checklist_durante_operasi.j9jh1,checklist_durante_operasi.j9h2,checklist_durante_operasi.j9h3, "+
+                    "checklist_durante_operasi.j10h1,checklist_durante_operasi.j10t1,checklist_durante_operasi.j10t2,checklist_durante_operasi.j10t3,checklist_durante_operasi.j10jh1,checklist_durante_operasi.j10h2,checklist_durante_operasi.j10h3, "+	
+                    "checklist_durante_operasi.j11h1,checklist_durante_operasi.j11t1,checklist_durante_operasi.j11t2,checklist_durante_operasi.j11t3,checklist_durante_operasi.j11jh1,checklist_durante_operasi.j11h2,checklist_durante_operasi.j11h3, "+
+                    "checklist_durante_operasi.j12h1,checklist_durante_operasi.j12t1,checklist_durante_operasi.j12t2,checklist_durante_operasi.j12t3,checklist_durante_operasi.j12jh1,checklist_durante_operasi.j12h2,checklist_durante_operasi.j12h3, "+
+                    "checklist_durante_operasi.j13h1,checklist_durante_operasi.j13t1,checklist_durante_operasi.j13t2,checklist_durante_operasi.j13t3,checklist_durante_operasi.j13jh1,checklist_durante_operasi.j13h2,checklist_durante_operasi.j13h3 "+
+                    "FROM checklist_durante_operasi INNER JOIN reg_periksa ON checklist_durante_operasi.no_rawat = reg_periksa.no_rawat INNER JOIN pasien ON reg_periksa.no_rkm_medis = pasien.no_rkm_medis "+ 
+                    "INNER JOIN petugas ON checklist_durante_operasi.nip = petugas.nip "+ 
+                    "WHERE checklist_durante_operasi.tanggal BETWEEN ? AND ? ORDER BY checklist_durante_operasi.tanggal ");
             }else{
                 ps=koneksi.prepareStatement(
-                    "select reg_periksa.no_rawat,pasien.no_rkm_medis,pasien.nm_pasien,reg_periksa.umurdaftar,reg_periksa.sttsumur,"+
-                    "pasien.jk,pasien.tgl_lahir,catatan_observasi_ranap.tgl_perawatan,catatan_observasi_ranap.jam_rawat,catatan_observasi_ranap.gcs,"+
-                    "catatan_observasi_ranap.td,catatan_observasi_ranap.hr,catatan_observasi_ranap.rr,catatan_observasi_ranap.suhu,catatan_observasi_ranap.spo2,"+
-                    "catatan_observasi_ranap.nip,petugas.nama from catatan_observasi_ranap inner join reg_periksa on catatan_observasi_ranap.no_rawat=reg_periksa.no_rawat "+
-                    "inner join pasien on reg_periksa.no_rkm_medis=pasien.no_rkm_medis "+
-                    "inner join petugas on catatan_observasi_ranap.nip=petugas.nip where "+
-                    "catatan_observasi_ranap.tgl_perawatan between ? and ? and (reg_periksa.no_rawat like ? or pasien.no_rkm_medis like ? or pasien.nm_pasien like ? or catatan_observasi_ranap.nip like ? or petugas.nama like ?) "+
-                    "order by catatan_observasi_ranap.tgl_perawatan ");
+                    "SELECT reg_periksa.no_rawat,pasien.no_rkm_medis,pasien.nm_pasien,checklist_durante_operasi.tanggal,checklist_durante_operasi.jam,petugas.nip,petugas.nama,checklist_durante_operasi.posisi_operasi,checklist_durante_operasi.cuci_tangan,checklist_durante_operasi.jas_operasi, "+  
+                    "checklist_durante_operasi.handscoon,checklist_durante_operasi.disinfeksi,checklist_durante_operasi.alkohol,checklist_durante_operasi.linen_steril,checklist_durante_operasi.klasifikasi_luka, "+ 
+                    "checklist_durante_operasi.j1h1,checklist_durante_operasi.j1t1,checklist_durante_operasi.j1t2,checklist_durante_operasi.j1t3,checklist_durante_operasi.j1jh1,checklist_durante_operasi.j1h2,checklist_durante_operasi.j1h3, "+
+                    "checklist_durante_operasi.j2h1,checklist_durante_operasi.j2t1,checklist_durante_operasi.j2t2,checklist_durante_operasi.j2t3,checklist_durante_operasi.j2jh1,checklist_durante_operasi.j2h2,checklist_durante_operasi.j2h3, "+
+                    "checklist_durante_operasi.j3h1,checklist_durante_operasi.j3t1,checklist_durante_operasi.j3t2,checklist_durante_operasi.j3t3,checklist_durante_operasi.j3jh1,checklist_durante_operasi.j3h2,checklist_durante_operasi.j3h3, "+
+                    "checklist_durante_operasi.j4h1,checklist_durante_operasi.j4t1,checklist_durante_operasi.j4t2,checklist_durante_operasi.j4t3,checklist_durante_operasi.j4jh1,checklist_durante_operasi.j4h2,checklist_durante_operasi.j4h3, "+
+                    "checklist_durante_operasi.j5h1,checklist_durante_operasi.j5t1,checklist_durante_operasi.j5t2,checklist_durante_operasi.j5t3,checklist_durante_operasi.j5jh1,checklist_durante_operasi.j5h2,checklist_durante_operasi.j5h3, "+
+                    "checklist_durante_operasi.j6h1,checklist_durante_operasi.j6t1,checklist_durante_operasi.j6t2,checklist_durante_operasi.j6t3,checklist_durante_operasi.j6jh1,checklist_durante_operasi.j6h2,checklist_durante_operasi.j6h3, "+
+                    "checklist_durante_operasi.j7h1,checklist_durante_operasi.j7t1,checklist_durante_operasi.j7t2,checklist_durante_operasi.j7t3,checklist_durante_operasi.j7jh1,checklist_durante_operasi.j7h2,checklist_durante_operasi.j7h3, "+
+                    "checklist_durante_operasi.j8h1,checklist_durante_operasi.j8t1,checklist_durante_operasi.j8t2,checklist_durante_operasi.j8t3,checklist_durante_operasi.j8jh1,checklist_durante_operasi.j8h2,checklist_durante_operasi.j8h3, "+
+                    "checklist_durante_operasi.j9h1,checklist_durante_operasi.j9t1,checklist_durante_operasi.j9t2,checklist_durante_operasi.j9t3,checklist_durante_operasi.j9jh1,checklist_durante_operasi.j9h2,checklist_durante_operasi.j9h3, "+
+                    "checklist_durante_operasi.j10h1,checklist_durante_operasi.j10t1,checklist_durante_operasi.j10t2,checklist_durante_operasi.j10t3,checklist_durante_operasi.j10jh1,checklist_durante_operasi.j10h2,checklist_durante_operasi.j10h3, "+	
+                    "checklist_durante_operasi.j11h1,checklist_durante_operasi.j11t1,checklist_durante_operasi.j11t2,checklist_durante_operasi.j11t3,checklist_durante_operasi.j11jh1,checklist_durante_operasi.j11h2,checklist_durante_operasi.j11h3, "+
+                    "checklist_durante_operasi.j12h1,checklist_durante_operasi.j12t1,checklist_durante_operasi.j12t2,checklist_durante_operasi.j12t3,checklist_durante_operasi.j12jh1,checklist_durante_operasi.j12h2,checklist_durante_operasi.j12h3, "+
+                    "checklist_durante_operasi.j13h1,checklist_durante_operasi.j13t1,checklist_durante_operasi.j13t2,checklist_durante_operasi.j13t3,checklist_durante_operasi.j13jh1,checklist_durante_operasi.j13h2,checklist_durante_operasi.j13h3 "+
+                    "FROM checklist_durante_operasi INNER JOIN reg_periksa ON checklist_durante_operasi.no_rawat = reg_periksa.no_rawat INNER JOIN pasien ON reg_periksa.no_rkm_medis = pasien.no_rkm_medis "+ 
+                    "INNER JOIN petugas ON checklist_durante_operasi.nip = petugas.nip "+ 
+                    "WHERE checklist_durante_operasi.tanggal BETWEEN ? AND ? AND (reg_periksa.no_rawat like ? or pasien.no_rkm_medis like ? or pasien.nm_pasien like ? or checklist_durante_operasi.nip like ? or petugas.nama like ?) ORDER BY checklist_durante_operasi.tanggal ");
             }
                 
             try {
@@ -3165,11 +3205,23 @@ public final class RMChecklistDuranteOperasi extends javax.swing.JDialog {
                 rs=ps.executeQuery();
                 while(rs.next()){
                     tabMode.addRow(new String[]{
-                        rs.getString("no_rawat"),rs.getString("no_rkm_medis"),rs.getString("nm_pasien"),
-                        rs.getString("umurdaftar")+" "+rs.getString("sttsumur"),rs.getString("jk"),rs.getString("tgl_lahir"),
-                        rs.getString("tgl_perawatan"),rs.getString("jam_rawat"),rs.getString("gcs"),rs.getString("td"),
-                        rs.getString("hr"),rs.getString("rr"),rs.getString("suhu"),rs.getString("spo2"),rs.getString("nip"),
-                        rs.getString("nama")
+                        rs.getString("no_rawat"),rs.getString("no_rkm_medis"),rs.getString("nm_pasien"),rs.getString("tanggal"),rs.getString("jam"),
+                        rs.getString("nip"),rs.getString("nama"),rs.getString("posisi_operasi"),rs.getString("cuci_tangan"),
+                        rs.getString("jas_operasi"),rs.getString("handscoon"),rs.getString("disinfeksi"),rs.getString("alkohol"),rs.getString("linen_steril"),rs.getString("klasifikasi_luka"),
+                        rs.getString("j1h1"),rs.getString("j1t1"),rs.getString("j1t2"),rs.getString("j1t3"),rs.getString("j1jh1"),rs.getString("j1h2"),rs.getString("j1h3"),
+                        rs.getString("j2h1"),rs.getString("j2t1"),rs.getString("j2t2"),rs.getString("j2t3"),rs.getString("j2jh1"),rs.getString("j2h2"),rs.getString("j2h3"),
+                        rs.getString("j3h1"),rs.getString("j3t1"),rs.getString("j3t2"),rs.getString("j3t3"),rs.getString("j3jh1"),rs.getString("j3h2"),rs.getString("j3h3"),
+                        rs.getString("j4h1"),rs.getString("j4t1"),rs.getString("j4t2"),rs.getString("j4t3"),rs.getString("j4jh1"),rs.getString("j4h2"),rs.getString("j4h3"),
+                        rs.getString("j5h1"),rs.getString("j5t1"),rs.getString("j5t2"),rs.getString("j5t3"),rs.getString("j5jh1"),rs.getString("j5h2"),rs.getString("j5h3"),
+                        rs.getString("j6h1"),rs.getString("j6t1"),rs.getString("j6t2"),rs.getString("j6t3"),rs.getString("j6jh1"),rs.getString("j6h2"),rs.getString("j6h3"),
+                        rs.getString("j7h1"),rs.getString("j7t1"),rs.getString("j7t2"),rs.getString("j7t3"),rs.getString("j7jh1"),rs.getString("j7h2"),rs.getString("j7h3"),
+                        rs.getString("j8h1"),rs.getString("j8t1"),rs.getString("j8t2"),rs.getString("j8t3"),rs.getString("j8jh1"),rs.getString("j8h2"),rs.getString("j8h3"),
+                        rs.getString("j9h1"),rs.getString("j9t1"),rs.getString("j9t2"),rs.getString("j9t3"),rs.getString("j9jh1"),rs.getString("j9h2"),rs.getString("j9h3"),
+                        rs.getString("j10h1"),rs.getString("j10t1"),rs.getString("j10t2"),rs.getString("j10t3"),rs.getString("j10jh1"),rs.getString("j10h2"),rs.getString("j10h3"),
+                        rs.getString("j11h1"),rs.getString("j11t1"),rs.getString("j11t2"),rs.getString("j11t3"),rs.getString("j11jh1"),rs.getString("j11h2"),rs.getString("j11h3"),
+                        rs.getString("j12h1"),rs.getString("j12t1"),rs.getString("j12t2"),rs.getString("j12t3"),rs.getString("j12jh1"),rs.getString("j12h2"),rs.getString("j12h3"),
+                        rs.getString("j13h1"),rs.getString("j13t1"),rs.getString("j13t2"),rs.getString("j13t3"),rs.getString("j13jh1"),rs.getString("j13h2"),rs.getString("j13h3")
+                        
                     });
                 }
             } catch (Exception e) {
@@ -3305,12 +3357,14 @@ public final class RMChecklistDuranteOperasi extends javax.swing.JDialog {
             Jam.setSelectedItem(tbObat.getValueAt(tbObat.getSelectedRow(),7).toString().substring(0,2));
             Menit.setSelectedItem(tbObat.getValueAt(tbObat.getSelectedRow(),7).toString().substring(3,5));
             Detik.setSelectedItem(tbObat.getValueAt(tbObat.getSelectedRow(),7).toString().substring(6,8));
-//            J1T1.setText(tbObat.getValueAt(tbObat.getSelectedRow(),8).toString());
-//            J1h3.setText(tbObat.getValueAt(tbObat.getSelectedRow(),9).toString());
-//            J1T2.setText(tbObat.getValueAt(tbObat.getSelectedRow(),10).toString());
-//            J1JH1.setText(tbObat.getValueAt(tbObat.getSelectedRow(),11).toString());
-//            J1T3.setText(tbObat.getValueAt(tbObat.getSelectedRow(),12).toString());
-//            J1H2.setText(tbObat.getValueAt(tbObat.getSelectedRow(),13).toString());
+            J1T1.setText(tbObat.getValueAt(tbObat.getSelectedRow(),8).toString());
+            J1H3.setText(tbObat.getValueAt(tbObat.getSelectedRow(),9).toString());
+            J1T2.setText(tbObat.getValueAt(tbObat.getSelectedRow(),10).toString());
+            J1JH1.setText(tbObat.getValueAt(tbObat.getSelectedRow(),11).toString());
+            J1T3.setText(tbObat.getValueAt(tbObat.getSelectedRow(),12).toString());
+            J1H2.setText(tbObat.getValueAt(tbObat.getSelectedRow(),13).toString());
+            
+            
             Valid.SetTgl(Tanggal,tbObat.getValueAt(tbObat.getSelectedRow(),6).toString());  
         }
     }
@@ -3419,13 +3473,13 @@ public final class RMChecklistDuranteOperasi extends javax.swing.JDialog {
     }
 
     private void ganti() {
-//        Sequel.mengedit("catatan_observasi_ranap","tgl_perawatan=? and jam_rawat=? and no_rawat=?","no_rawat=?,tgl_perawatan=?,jam_rawat=?,gcs=?,td=?,hr=?,rr=?,suhu=?,spo2=?,nip=?",13,new String[]{
-//            TNoRw.getText(),Valid.SetTgl(Tanggal.getSelectedItem()+""),Jam.getSelectedItem()+":"+Menit.getSelectedItem()+":"+Detik.getSelectedItem(),
-//            J1T1.getText(),J1h3.getText(),J1T2.getText(),J1JH1.getText(),J1T3.getText(),J1H2.getText(),NIP.getText(),tbObat.getValueAt(tbObat.getSelectedRow(),6).toString(),
-//            tbObat.getValueAt(tbObat.getSelectedRow(),7).toString(),tbObat.getValueAt(tbObat.getSelectedRow(),0).toString()
-//        });
-//        if(tabMode.getRowCount()!=0){tampil();}
-//        emptTeks();
+        Sequel.mengedit("catatan_observasi_ranap","tgl_perawatan=? and jam_rawat=? and no_rawat=?","no_rawat=?,tgl_perawatan=?,jam_rawat=?,gcs=?,td=?,hr=?,rr=?,suhu=?,spo2=?,nip=?",13,new String[]{
+            TNoRw.getText(),Valid.SetTgl(Tanggal.getSelectedItem()+""),Jam.getSelectedItem()+":"+Menit.getSelectedItem()+":"+Detik.getSelectedItem(),
+            J1T1.getText(),J1H3.getText(),J1T2.getText(),J1JH1.getText(),J1T3.getText(),J1H2.getText(),NIP.getText(),tbObat.getValueAt(tbObat.getSelectedRow(),6).toString(),
+            tbObat.getValueAt(tbObat.getSelectedRow(),7).toString(),tbObat.getValueAt(tbObat.getSelectedRow(),0).toString()
+        });
+        if(tabMode.getRowCount()!=0){tampil();}
+        emptTeks();
     }
     
     private void isHitung(){
@@ -3461,10 +3515,8 @@ public final class RMChecklistDuranteOperasi extends javax.swing.JDialog {
     }
     
     
-    
-    
     private void hapus() {
-        if(Sequel.queryu2tf("delete from catatan_observasi_ranap where tgl_perawatan=? and jam_rawat=? and no_rawat=?",3,new String[]{
+        if(Sequel.queryu2tf("delete from checklist_durante_operasi where tgl_perawatan=? and jam_rawat=? and no_rawat=?",3,new String[]{
             tbObat.getValueAt(tbObat.getSelectedRow(),6).toString(),tbObat.getValueAt(tbObat.getSelectedRow(),7).toString(),tbObat.getValueAt(tbObat.getSelectedRow(),0).toString()
         })==true){
             tampil();
