@@ -916,7 +916,7 @@
                             <StringItem index="1" value="Pronasi"/>
                             <StringItem index="2" value="Litotomi"/>
                             <StringItem index="3" value="Tengkulup"/>
-                            <StringItem index="4" value="Leteral Kanan/Kiri"/>
+                            <StringItem index="4" value="Lateral Kanan/Kiri"/>
                             <StringItem index="5" value="Sim Kanan/Kiri"/>
                           </StringArray>
                         </Property>

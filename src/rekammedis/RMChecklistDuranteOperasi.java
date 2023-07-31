@@ -1532,7 +1532,7 @@ public final class RMChecklistDuranteOperasi extends javax.swing.JDialog {
         panelGlass9.add(jLabel19);
 
         DTPCari1.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "28-07-2023" }));
+        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "31-07-2023" }));
         DTPCari1.setDisplayFormat("dd-MM-yyyy");
         DTPCari1.setName("DTPCari1"); // NOI18N
         DTPCari1.setOpaque(false);
@@ -1546,7 +1546,7 @@ public final class RMChecklistDuranteOperasi extends javax.swing.JDialog {
         panelGlass9.add(jLabel21);
 
         DTPCari2.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "28-07-2023" }));
+        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "31-07-2023" }));
         DTPCari2.setDisplayFormat("dd-MM-yyyy");
         DTPCari2.setName("DTPCari2"); // NOI18N
         DTPCari2.setOpaque(false);
@@ -1656,7 +1656,7 @@ public final class RMChecklistDuranteOperasi extends javax.swing.JDialog {
         TPasien.setBounds(336, 10, 285, 23);
 
         Tanggal.setForeground(new java.awt.Color(50, 70, 50));
-        Tanggal.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "28-07-2023" }));
+        Tanggal.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "31-07-2023" }));
         Tanggal.setDisplayFormat("dd-MM-yyyy");
         Tanggal.setName("Tanggal"); // NOI18N
         Tanggal.setOpaque(false);
@@ -1754,7 +1754,7 @@ public final class RMChecklistDuranteOperasi extends javax.swing.JDialog {
         FormInput.add(jLabel58);
         jLabel58.setBounds(30, 90, 210, 23);
 
-        PosisiOperasi.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Supinasi", "Pronasi", "Litotomi", "Tengkulup", "Leteral Kanan/Kiri", "Sim Kanan/Kiri" }));
+        PosisiOperasi.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Supinasi", "Pronasi", "Litotomi", "Tengkulup", "Lateral Kanan/Kiri", "Sim Kanan/Kiri" }));
         PosisiOperasi.setName("PosisiOperasi"); // NOI18N
         FormInput.add(PosisiOperasi);
         PosisiOperasi.setBounds(170, 90, 200, 23);
@@ -3581,20 +3581,20 @@ public final class RMChecklistDuranteOperasi extends javax.swing.JDialog {
     }
 
     private void ganti() {
-        Sequel.mengedit("checklist_durante_operasi","tanggal? and jam=? and no_rawat=?","no_rawat=?,tanggal=?,jam=?,nip=?,posisi_operasi=?,cuci_tangan=?,jas_operasi=?,handscoon=?,disinfeksi=?,alkohol=?,linen_steril=?,klasifikasi_luka=?," + 
-                "j1h11=?,j1t1=?,j1t2=?,j1t3=?,j1jh1=?,j1h2=?,j1h3=?,"+
-                "j2h11=?,j2t1=?,j2t2=?,j2t3=?,j2jh1=?,j2h2=?,j2h3=?,"+
-                "j3h11=?,j3t1=?,j3t2=?,j3t3=?,j3jh1=?,j3h2=?,j3h3=?,"+
-                "j4h11=?,j4t1=?,j4t2=?,j4t3=?,j4jh1=?,j4h2=?,j4h3=?,"+
-                "j5h11=?,j5t1=?,j5t2=?,j5t3=?,j5jh1=?,j5h2=?,j5h3=?,"+
-                "j6h11=?,j6t1=?,j6t2=?,j6t3=?,j6jh1=?,j6h2=?,j6h3=?,"+
-                "j7h11=?,j7t1=?,j7t2=?,j7t3=?,j7jh1=?,j7h2=?,j7h3=?,"+
-                "j8h11=?,j8t1=?,j8t2=?,j8t3=?,j8jh1=?,j8h2=?,j8h3=?,"+
-                "j9h11=?,j9t1=?,j9t2=?,j9t3=?,j9jh1=?,j9h2=?,j9h3=?,"+
-                "j10h11=?,j10t1=?,j10t2=?,j10t3=?,j10jh1=?,j10h2=?,j10h3=?,"+
-                "j11h11=?,j11t1=?,j11t2=?,j11t3=?,j11jh1=?,j11h2=?,j11h3=?,"+
-                "j12h11=?,j12t1=?,j12t2=?,j12t3=?,j12jh1=?,j12h2=?,j12h3=?,"+
-                "j13h11=?,j13t1=?,j13t2=?,j13t3=?,j13jh1=?,j13h2=?,j13h3=?",106,new String[]{
+        Sequel.mengedit("checklist_durante_operasi","tanggal=? and jam=? and no_rawat=?","no_rawat=?,tanggal=?,jam=?,nip=?,posisi_operasi=?,cuci_tangan=?,jas_operasi=?,handscoon=?,disinfeksi=?,alkohol=?,linen_steril=?,klasifikasi_luka=?," + 
+                "j1h1=?,j1t1=?,j1t2=?,j1t3=?,j1jh1=?,j1h2=?,j1h3=?,"+
+                "j2h1=?,j2t1=?,j2t2=?,j2t3=?,j2jh1=?,j2h2=?,j2h3=?,"+
+                "j3h1=?,j3t1=?,j3t2=?,j3t3=?,j3jh1=?,j3h2=?,j3h3=?,"+
+                "j4h1=?,j4t1=?,j4t2=?,j4t3=?,j4jh1=?,j4h2=?,j4h3=?,"+
+                "j5h1=?,j5t1=?,j5t2=?,j5t3=?,j5jh1=?,j5h2=?,j5h3=?,"+
+                "j6h1=?,j6t1=?,j6t2=?,j6t3=?,j6jh1=?,j6h2=?,j6h3=?,"+
+                "j7h1=?,j7t1=?,j7t2=?,j7t3=?,j7jh1=?,j7h2=?,j7h3=?,"+
+                "j8h1=?,j8t1=?,j8t2=?,j8t3=?,j8jh1=?,j8h2=?,j8h3=?,"+
+                "j9h1=?,j9t1=?,j9t2=?,j9t3=?,j9jh1=?,j9h2=?,j9h3=?,"+
+                "j10h1=?,j10t1=?,j10t2=?,j10t3=?,j10jh1=?,j10h2=?,j10h3=?,"+
+                "j11h1=?,j11t1=?,j11t2=?,j11t3=?,j11jh1=?,j11h2=?,j11h3=?,"+
+                "j12h1=?,j12t1=?,j12t2=?,j12t3=?,j12jh1=?,j12h2=?,j12h3=?,"+
+                "j13h1=?,j13t1=?,j13t2=?,j13t3=?,j13jh1=?,j13h2=?,j13h3=?",106,new String[]{
            TNoRw.getText(),Valid.SetTgl(Tanggal.getSelectedItem()+""),Jam.getSelectedItem()+":"+Menit.getSelectedItem()+":"+Detik.getSelectedItem()
                 ,NIP.getText(),PosisiOperasi.getSelectedItem().toString(),CuciTangan.getSelectedItem().toString(),JasOperasi.getSelectedItem().toString(),Handscoon.getSelectedItem().toString(),Disinfeksi.getSelectedItem().toString(),Alkohol.getSelectedItem().toString(),LinenSteril.getSelectedItem().toString(),KlasifikasiLuka.getSelectedItem().toString()
                 ,J1H1.getText(),J1T1.getText(),J1T2.getText(),J1T3.getText(),J1JH1.getText(),J1H2.getText(),J1H3.getText()
