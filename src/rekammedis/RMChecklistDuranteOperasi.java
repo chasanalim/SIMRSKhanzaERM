@@ -2762,26 +2762,26 @@ public final class RMChecklistDuranteOperasi extends javax.swing.JDialog {
 }//GEN-LAST:event_BtnHapusKeyPressed
 
     private void BtnEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnEditActionPerformed
-        JOptionPane.showMessageDialog(null,"Maaf, MASIH DALAM PENGEMBANGAN !");
-//        if(TNoRw.getText().trim().equals("")||TPasien.getText().trim().equals("")){
-//            Valid.textKosong(TNoRw,"pasien");
-//        }else if(NIP.getText().trim().equals("")||NamaPetugas.getText().trim().equals("")){
-//            Valid.textKosong(NIP,"Petugas");
-//        }else{ 
-//            if(tbObat.getSelectedRow()>-1){
-//                if(akses.getkode().equals("Admin Utama")){
-//                    ganti();
-//                }else{
-//                    if(NIP.getText().equals(tbObat.getValueAt(tbObat.getSelectedRow(),14).toString())){
-//                        ganti();
-//                    }else{
-//                        JOptionPane.showMessageDialog(null,"Hanya bisa diganti oleh petugas yang bersangkutan..!!");
-//                    }
-//                }
-//            }else{
-//                JOptionPane.showMessageDialog(rootPane,"Silahkan anda pilih data terlebih dahulu..!!");
-//            }
-//        }
+//        JOptionPane.showMessageDialog(null,"Maaf, MASIH DALAM PENGEMBANGAN !");
+        if(TNoRw.getText().trim().equals("")||TPasien.getText().trim().equals("")){
+            Valid.textKosong(TNoRw,"pasien");
+        }else if(NIP.getText().trim().equals("")||NamaPetugas.getText().trim().equals("")){
+            Valid.textKosong(NIP,"Petugas");
+        }else{ 
+            if(tbObat.getSelectedRow()>-1){
+                if(akses.getkode().equals("Admin Utama")){
+                    ganti();
+                }else{
+                    if(NIP.getText().equals(tbObat.getValueAt(tbObat.getSelectedRow(),14).toString())){
+                        ganti();
+                    }else{
+                        JOptionPane.showMessageDialog(null,"Hanya bisa diganti oleh petugas yang bersangkutan..!!");
+                    }
+                }
+            }else{
+                JOptionPane.showMessageDialog(rootPane,"Silahkan anda pilih data terlebih dahulu..!!");
+            }
+        }
 }//GEN-LAST:event_BtnEditActionPerformed
 
     private void BtnEditKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BtnEditKeyPressed
@@ -3581,10 +3581,36 @@ public final class RMChecklistDuranteOperasi extends javax.swing.JDialog {
     }
 
     private void ganti() {
-        Sequel.mengedit("catatan_observasi_ranap","tgl_perawatan=? and jam_rawat=? and no_rawat=?","no_rawat=?,tgl_perawatan=?,jam_rawat=?,gcs=?,td=?,hr=?,rr=?,suhu=?,spo2=?,nip=?",13,new String[]{
-            TNoRw.getText(),Valid.SetTgl(Tanggal.getSelectedItem()+""),Jam.getSelectedItem()+":"+Menit.getSelectedItem()+":"+Detik.getSelectedItem(),
-            J1T1.getText(),J1H3.getText(),J1T2.getText(),J1JH1.getText(),J1T3.getText(),J1H2.getText(),NIP.getText(),tbObat.getValueAt(tbObat.getSelectedRow(),6).toString(),
-            tbObat.getValueAt(tbObat.getSelectedRow(),7).toString(),tbObat.getValueAt(tbObat.getSelectedRow(),0).toString()
+        Sequel.mengedit("checklist_durante_operasi","tanggal? and jam=? and no_rawat=?","no_rawat=?,tanggal=?,jam=?,nip=?,posisi_operasi=?,cuci_tangan=?,jas_operasi=?,handscoon=?,disinfeksi=?,alkohol=?,linen_steril=?,klasifikasi_luka=?," + 
+                "j1h11=?,j1t1=?,j1t2=?,j1t3=?,j1jh1=?,j1h2=?,j1h3=?,"+
+                "j2h11=?,j2t1=?,j2t2=?,j2t3=?,j2jh1=?,j2h2=?,j2h3=?,"+
+                "j3h11=?,j3t1=?,j3t2=?,j3t3=?,j3jh1=?,j3h2=?,j3h3=?,"+
+                "j4h11=?,j4t1=?,j4t2=?,j4t3=?,j4jh1=?,j4h2=?,j4h3=?,"+
+                "j5h11=?,j5t1=?,j5t2=?,j5t3=?,j5jh1=?,j5h2=?,j5h3=?,"+
+                "j6h11=?,j6t1=?,j6t2=?,j6t3=?,j6jh1=?,j6h2=?,j6h3=?,"+
+                "j7h11=?,j7t1=?,j7t2=?,j7t3=?,j7jh1=?,j7h2=?,j7h3=?,"+
+                "j8h11=?,j8t1=?,j8t2=?,j8t3=?,j8jh1=?,j8h2=?,j8h3=?,"+
+                "j9h11=?,j9t1=?,j9t2=?,j9t3=?,j9jh1=?,j9h2=?,j9h3=?,"+
+                "j10h11=?,j10t1=?,j10t2=?,j10t3=?,j10jh1=?,j10h2=?,j10h3=?,"+
+                "j11h11=?,j11t1=?,j11t2=?,j11t3=?,j11jh1=?,j11h2=?,j11h3=?,"+
+                "j12h11=?,j12t1=?,j12t2=?,j12t3=?,j12jh1=?,j12h2=?,j12h3=?,"+
+                "j13h11=?,j13t1=?,j13t2=?,j13t3=?,j13jh1=?,j13h2=?,j13h3=?",106,new String[]{
+           TNoRw.getText(),Valid.SetTgl(Tanggal.getSelectedItem()+""),Jam.getSelectedItem()+":"+Menit.getSelectedItem()+":"+Detik.getSelectedItem()
+                ,NIP.getText(),PosisiOperasi.getSelectedItem().toString(),CuciTangan.getSelectedItem().toString(),JasOperasi.getSelectedItem().toString(),Handscoon.getSelectedItem().toString(),Disinfeksi.getSelectedItem().toString(),Alkohol.getSelectedItem().toString(),LinenSteril.getSelectedItem().toString(),KlasifikasiLuka.getSelectedItem().toString()
+                ,J1H1.getText(),J1T1.getText(),J1T2.getText(),J1T3.getText(),J1JH1.getText(),J1H2.getText(),J1H3.getText()
+                ,J2H1.getText(),J2T1.getText(),J2T2.getText(),J2T3.getText(),J2JH1.getText(),J2H2.getText(),J2H3.getText()
+                ,J3H1.getText(),J3T1.getText(),J3T2.getText(),J3T3.getText(),J3JH1.getText(),J3H2.getText(),J3H3.getText()
+                ,J4H1.getText(),J4T1.getText(),J4T2.getText(),J4T3.getText(),J4JH1.getText(),J4H2.getText(),J4H3.getText()
+                ,J5H1.getText(),J5T1.getText(),J5T2.getText(),J5T3.getText(),J5JH1.getText(),J5H2.getText(),J5H3.getText()
+                ,J6H1.getText(),J6T1.getText(),J6T2.getText(),J6T3.getText(),J6JH1.getText(),J6H2.getText(),J6H3.getText()
+                ,J7H1.getText(),J7T1.getText(),J7T2.getText(),J7T3.getText(),J7JH1.getText(),J7H2.getText(),J7H3.getText()
+                ,J8H1.getText(),J8T1.getText(),J8T2.getText(),J8T3.getText(),J8JH1.getText(),J8H2.getText(),J8H3.getText()
+                ,J9H1.getText(),J9T1.getText(),J9T2.getText(),J9T3.getText(),J9JH1.getText(),J9H2.getText(),J9H3.getText()
+                ,J10H1.getText(),J10T1.getText(),J10T2.getText(),J10T3.getText(),J10JH1.getText(),J10H2.getText(),J10H3.getText()
+                ,J11H1.getText(),J11T1.getText(),J11T2.getText(),J11T3.getText(),J11JH1.getText(),J11H2.getText(),J11H3.getText()
+                ,J12H1.getText(),J12T1.getText(),J12T2.getText(),J12T3.getText(),J12JH1.getText(),J12H2.getText(),J12H3.getText()
+                ,J13H1.getText(),J13T1.getText(),J13T2.getText(),J13T3.getText(),J13JH1.getText(),J13H2.getText(),J13H3.getText(),
+            tbObat.getValueAt(tbObat.getSelectedRow(),4).toString(),tbObat.getValueAt(tbObat.getSelectedRow(),5).toString(),tbObat.getValueAt(tbObat.getSelectedRow(),0).toString()
         });
         if(tabMode.getRowCount()!=0){tampil();}
         emptTeks();
