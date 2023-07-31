@@ -3650,8 +3650,8 @@ public final class RMChecklistDuranteOperasi extends javax.swing.JDialog {
     
     
     private void hapus() {
-        if(Sequel.queryu2tf("delete from checklist_durante_operasi where tgl_perawatan=? and jam_rawat=? and no_rawat=?",3,new String[]{
-            tbObat.getValueAt(tbObat.getSelectedRow(),6).toString(),tbObat.getValueAt(tbObat.getSelectedRow(),7).toString(),tbObat.getValueAt(tbObat.getSelectedRow(),0).toString()
+        if(Sequel.queryu2tf("delete from checklist_durante_operasi where tanggal=? and jam=? and no_rawat=?",3,new String[]{
+            tbObat.getValueAt(tbObat.getSelectedRow(),4).toString(),tbObat.getValueAt(tbObat.getSelectedRow(),5).toString(),tbObat.getValueAt(tbObat.getSelectedRow(),0).toString()
         })==true){
             tampil();
             emptTeks();
