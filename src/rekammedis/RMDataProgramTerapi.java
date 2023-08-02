@@ -197,8 +197,6 @@ public final class RMDataProgramTerapi extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPopupMenu1 = new javax.swing.JPopupMenu();
-        MnCatatanObservasiIGD = new javax.swing.JMenuItem();
         internalFrame1 = new widget.InternalFrame();
         Scroll = new widget.ScrollPane();
         tbObat = new widget.Table();
@@ -251,22 +249,6 @@ public final class RMDataProgramTerapi extends javax.swing.JDialog {
         Program = new widget.TextBox();
         ChkInput = new widget.CekBox();
 
-        jPopupMenu1.setName("jPopupMenu1"); // NOI18N
-
-        MnCatatanObservasiIGD.setBackground(new java.awt.Color(255, 255, 254));
-        MnCatatanObservasiIGD.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
-        MnCatatanObservasiIGD.setForeground(new java.awt.Color(50, 50, 50));
-        MnCatatanObservasiIGD.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/category.png"))); // NOI18N
-        MnCatatanObservasiIGD.setText("Formulir Catatan Observasi IGD");
-        MnCatatanObservasiIGD.setName("MnCatatanObservasiIGD"); // NOI18N
-        MnCatatanObservasiIGD.setPreferredSize(new java.awt.Dimension(230, 26));
-        MnCatatanObservasiIGD.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MnCatatanObservasiIGDActionPerformed(evt);
-            }
-        });
-        jPopupMenu1.add(MnCatatanObservasiIGD);
-
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setUndecorated(true);
         setResizable(false);
@@ -281,7 +263,6 @@ public final class RMDataProgramTerapi extends javax.swing.JDialog {
         Scroll.setPreferredSize(new java.awt.Dimension(452, 200));
 
         tbObat.setToolTipText("Silahkan klik untuk memilih data yang mau diedit ataupun dihapus");
-        tbObat.setComponentPopupMenu(jPopupMenu1);
         tbObat.setName("tbObat"); // NOI18N
         tbObat.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -1045,26 +1026,6 @@ public final class RMDataProgramTerapi extends javax.swing.JDialog {
         Valid.pindah(evt,Detik,Diagnosa);
     }//GEN-LAST:event_btnPetugasKeyPressed
 
-    private void MnCatatanObservasiIGDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MnCatatanObservasiIGDActionPerformed
-        if(tbObat.getSelectedRow()>-1){
-            Map<String, Object> param = new HashMap<>();
-            param.put("namars",akses.getnamars());
-            param.put("alamatrs",akses.getalamatrs());
-            param.put("kotars",akses.getkabupatenrs());
-            param.put("propinsirs",akses.getpropinsirs());
-            param.put("kontakrs",akses.getkontakrs());
-            param.put("emailrs",akses.getemailrs());   
-            param.put("logo",Sequel.cariGambar("select setting.logo from setting")); 
-            Valid.MyReportqry("rptFormulirCatatanObservasiIGD.jasper","report","::[ Formulir Catatan Observasi IGD ]::",
-                    "select reg_periksa.no_rawat,pasien.no_rkm_medis,pasien.nm_pasien,reg_periksa.umurdaftar,reg_periksa.sttsumur,reg_periksa.tgl_registrasi,reg_periksa.jam_reg,"+
-                    "pasien.jk,pasien.tgl_lahir,catatan_observasi_igd.tgl_perawatan,catatan_observasi_igd.jam_rawat,catatan_observasi_igd.gcs,dokter.nm_dokter,"+
-                    "catatan_observasi_igd.td,catatan_observasi_igd.hr,catatan_observasi_igd.rr,catatan_observasi_igd.suhu,catatan_observasi_igd.spo2,"+
-                    "petugas.nama from catatan_observasi_igd inner join reg_periksa on catatan_observasi_igd.no_rawat=reg_periksa.no_rawat "+
-                    "inner join pasien on reg_periksa.no_rkm_medis=pasien.no_rkm_medis inner join dokter on dokter.kd_dokter=reg_periksa.kd_dokter "+
-                    "inner join petugas on catatan_observasi_igd.nip=petugas.nip where reg_periksa.no_rawat='"+tbObat.getValueAt(tbObat.getSelectedRow(),0).toString()+"'",param);
-        }
-    }//GEN-LAST:event_MnCatatanObservasiIGDActionPerformed
-
     private void DiagnosaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_DiagnosaKeyPressed
         Valid.pindah(evt,btnPetugas,Terapi);
     }//GEN-LAST:event_DiagnosaKeyPressed
@@ -1130,7 +1091,6 @@ public final class RMDataProgramTerapi extends javax.swing.JDialog {
     private widget.TextBox KdPetugas;
     private widget.Label LCount;
     private widget.ComboBox Menit;
-    private javax.swing.JMenuItem MnCatatanObservasiIGD;
     private widget.TextBox NamaDokter;
     private widget.TextBox NamaPetugas;
     private javax.swing.JPanel PanelInput;
@@ -1159,7 +1119,6 @@ public final class RMDataProgramTerapi extends javax.swing.JDialog {
     private widget.Label jLabel7;
     private widget.Label jLabel8;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPopupMenu jPopupMenu1;
     private widget.panelisi panelGlass8;
     private widget.panelisi panelGlass9;
     private widget.Table tbObat;
@@ -1366,17 +1325,17 @@ public final class RMDataProgramTerapi extends javax.swing.JDialog {
     }
 
     private void ganti() {
-//        Sequel.mengedit("catatan_observasi_igd","tgl_perawatan=? and jam_rawat=? and no_rawat=?","no_rawat=?,tgl_perawatan=?,jam_rawat=?,gcs=?,td=?,hr=?,rr=?,suhu=?,spo2=?,nip=?",13,new String[]{
-//            TNoRw.getText(),Valid.SetTgl(Tanggal.getSelectedItem()+""),Jam.getSelectedItem()+":"+Menit.getSelectedItem()+":"+Detik.getSelectedItem(),
-//            GCS.getText(),TD.getText(),HR.getText(),RR.getText(),Suhu.getText(),SPO.getText(),NIP.getText(),tbObat.getValueAt(tbObat.getSelectedRow(),6).toString(),
-//            tbObat.getValueAt(tbObat.getSelectedRow(),7).toString(),tbObat.getValueAt(tbObat.getSelectedRow(),0).toString()
-//        });
-//        if(tabMode.getRowCount()!=0){tampil();}
-//        emptTeks();
+        Sequel.mengedit("program_terapi","tgl_perawatan=? and jam_rawat=? and no_rawat=?","no_rawat=?,tgl_perawatan=?,jam_rawat=?,diagnosa=?,terapi=?,program=?,kd_dokter=?,nip=?",11,new String[]{
+            TNoRw.getText(),Valid.SetTgl(Tanggal.getSelectedItem()+""),Jam.getSelectedItem()+":"+Menit.getSelectedItem()+":"+Detik.getSelectedItem(),
+            Diagnosa.getText(),Terapi.getText(),Program.getText(),KdDokter.getText(),KdPetugas.getText(),tbObat.getValueAt(tbObat.getSelectedRow(),6).toString(),
+            tbObat.getValueAt(tbObat.getSelectedRow(),7).toString(),tbObat.getValueAt(tbObat.getSelectedRow(),0).toString()
+        });
+        if(tabMode.getRowCount()!=0){tampil();}
+        emptTeks();
     }
 
     private void hapus() {
-        if(Sequel.queryu2tf("delete from catatan_observasi_igd where tgl_perawatan=? and jam_rawat=? and no_rawat=?",3,new String[]{
+        if(Sequel.queryu2tf("delete from program_terapi where tgl_perawatan=? and jam_rawat=? and no_rawat=?",3,new String[]{
             tbObat.getValueAt(tbObat.getSelectedRow(),6).toString(),tbObat.getValueAt(tbObat.getSelectedRow(),7).toString(),tbObat.getValueAt(tbObat.getSelectedRow(),0).toString()
         })==true){
             tampil();
