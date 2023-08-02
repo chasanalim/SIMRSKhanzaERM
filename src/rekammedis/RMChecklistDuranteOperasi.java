@@ -93,31 +93,31 @@ public final class RMChecklistDuranteOperasi extends javax.swing.JDialog {
             }else if(i==2){
                 column.setPreferredWidth(160);
             }else if(i==3){
-                column.setPreferredWidth(35);
+                column.setPreferredWidth(85);
             }else if(i==4){
-                column.setPreferredWidth(20);
+                column.setPreferredWidth(90);
             }else if(i==5){
-                column.setPreferredWidth(65);
+                column.setPreferredWidth(85);
             }else if(i==6){
                 column.setPreferredWidth(65);
             }else if(i==7){
-                column.setPreferredWidth(60);
-            }else if(i==8){
-                column.setPreferredWidth(65);
-            }else if(i==9){
-                column.setPreferredWidth(65);
-            }else if(i==10){
-                column.setPreferredWidth(65);
-            }else if(i==11){
-                column.setPreferredWidth(65);
-            }else if(i==12){
-                column.setPreferredWidth(50);
-            }else if(i==13){
-                column.setPreferredWidth(55);
-            }else if(i==14){
-                column.setPreferredWidth(90);
-            }else if(i==15){
                 column.setPreferredWidth(160);
+            }else if(i==8){
+                column.setPreferredWidth(85);
+            }else if(i==9){
+                column.setPreferredWidth(85);
+            }else if(i==10){
+                column.setPreferredWidth(85);
+            }else if(i==11){
+                column.setPreferredWidth(85);
+            }else if(i==12){
+                column.setPreferredWidth(85);
+            }else if(i==13){
+                column.setPreferredWidth(85);
+            }else if(i==14){
+                column.setPreferredWidth(85);
+            }else if(i==15){
+                column.setPreferredWidth(85);
             }else{
                 column.setPreferredWidth(80);
             }
@@ -1173,7 +1173,7 @@ public final class RMChecklistDuranteOperasi extends javax.swing.JDialog {
     private void initComponents() {
 
         jPopupMenu1 = new javax.swing.JPopupMenu();
-        MnCatatanObservasiIGD = new javax.swing.JMenuItem();
+        MnLembarChecklistDurante = new javax.swing.JMenuItem();
         internalFrame1 = new widget.InternalFrame();
         Scroll = new widget.ScrollPane();
         tbObat = new widget.Table();
@@ -1348,19 +1348,19 @@ public final class RMChecklistDuranteOperasi extends javax.swing.JDialog {
 
         jPopupMenu1.setName("jPopupMenu1"); // NOI18N
 
-        MnCatatanObservasiIGD.setBackground(new java.awt.Color(255, 255, 254));
-        MnCatatanObservasiIGD.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
-        MnCatatanObservasiIGD.setForeground(new java.awt.Color(50, 50, 50));
-        MnCatatanObservasiIGD.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/category.png"))); // NOI18N
-        MnCatatanObservasiIGD.setText("Formulir Catatan Observasi Rawat Inap");
-        MnCatatanObservasiIGD.setName("MnCatatanObservasiIGD"); // NOI18N
-        MnCatatanObservasiIGD.setPreferredSize(new java.awt.Dimension(260, 26));
-        MnCatatanObservasiIGD.addActionListener(new java.awt.event.ActionListener() {
+        MnLembarChecklistDurante.setBackground(new java.awt.Color(255, 255, 254));
+        MnLembarChecklistDurante.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        MnLembarChecklistDurante.setForeground(new java.awt.Color(50, 50, 50));
+        MnLembarChecklistDurante.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/category.png"))); // NOI18N
+        MnLembarChecklistDurante.setText("Form Checklist Durante Operasi");
+        MnLembarChecklistDurante.setName("MnLembarChecklistDurante"); // NOI18N
+        MnLembarChecklistDurante.setPreferredSize(new java.awt.Dimension(260, 26));
+        MnLembarChecklistDurante.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MnCatatanObservasiIGDActionPerformed(evt);
+                MnLembarChecklistDuranteActionPerformed(evt);
             }
         });
-        jPopupMenu1.add(MnCatatanObservasiIGD);
+        jPopupMenu1.add(MnLembarChecklistDurante);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setUndecorated(true);
@@ -2661,11 +2661,6 @@ public final class RMChecklistDuranteOperasi extends javax.swing.JDialog {
         J1JH1.setText("0");
         J1JH1.setFocusTraversalPolicyProvider(true);
         J1JH1.setName("J1JH1"); // NOI18N
-        J1JH1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                J1JH1ActionPerformed(evt);
-            }
-        });
         FormInput.add(J1JH1);
         J1JH1.setBounds(530, 260, 60, 23);
 
@@ -2908,40 +2903,50 @@ public final class RMChecklistDuranteOperasi extends javax.swing.JDialog {
         }
 }//GEN-LAST:event_tbObatKeyPressed
 
-    private void MnCatatanObservasiIGDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MnCatatanObservasiIGDActionPerformed
-          JOptionPane.showMessageDialog(null,"Maaf, MASIH DALAM PENGEMBANGAN !");
+    private void MnLembarChecklistDuranteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MnLembarChecklistDuranteActionPerformed
+//          JOptionPane.showMessageDialog(null,"Maaf, MASIH DALAM PENGEMBANGAN !");
 
-//        if(tbObat.getSelectedRow()>-1){
-//            Map<String, Object> param = new HashMap<>();
-//            param.put("namars",akses.getnamars());
-//            param.put("alamatrs",akses.getalamatrs());
-//            param.put("kotars",akses.getkabupatenrs());
-//            param.put("propinsirs",akses.getpropinsirs());
-//            param.put("kontakrs",akses.getkontakrs());
-//            param.put("emailrs",akses.getemailrs());   
-//            dpjp=Sequel.cariIsi("select dokter.nm_dokter from dpjp_ranap inner join dokter on dpjp_ranap.kd_dokter=dokter.kd_dokter where dpjp_ranap.no_rawat=?",tbObat.getValueAt(tbObat.getSelectedRow(),0).toString());
-//            if(dpjp.equals("")){
-//                dpjp=Sequel.cariIsi("select dokter.nm_dokter from reg_periksa inner join dokter on reg_periksa.kd_dokter=dokter.kd_dokter where reg_periksa.no_rawat=?",tbObat.getValueAt(tbObat.getSelectedRow(),0).toString());
-//            }
-//            param.put("dpjp",dpjp);   
-//            param.put("logo",Sequel.cariGambar("select setting.logo from setting")); 
-//            Valid.MyReportqry("rptFormulirCatatanObservasiRanap.jasper","report","::[ Formulir Catatan Observasi Rawat Inap ]::",
-//                    "select reg_periksa.no_rawat,pasien.no_rkm_medis,pasien.nm_pasien,reg_periksa.umurdaftar,reg_periksa.sttsumur,reg_periksa.tgl_registrasi,reg_periksa.jam_reg,"+
-//                    "pasien.jk,pasien.tgl_lahir,catatan_observasi_ranap.tgl_perawatan,catatan_observasi_ranap.jam_rawat,catatan_observasi_ranap.gcs,"+
-//                    "catatan_observasi_ranap.td,catatan_observasi_ranap.hr,catatan_observasi_ranap.rr,catatan_observasi_ranap.suhu,catatan_observasi_ranap.spo2,"+
-//                    "petugas.nama from catatan_observasi_ranap inner join reg_periksa on catatan_observasi_ranap.no_rawat=reg_periksa.no_rawat "+
-//                    "inner join pasien on reg_periksa.no_rkm_medis=pasien.no_rkm_medis "+
-//                    "inner join petugas on catatan_observasi_ranap.nip=petugas.nip where reg_periksa.no_rawat='"+tbObat.getValueAt(tbObat.getSelectedRow(),0).toString()+"'",param);
-//        }
-    }//GEN-LAST:event_MnCatatanObservasiIGDActionPerformed
+        if(tbObat.getSelectedRow()>-1){
+            Map<String, Object> param = new HashMap<>();
+            param.put("namars",akses.getnamars());
+            param.put("alamatrs",akses.getalamatrs());
+            param.put("kotars",akses.getkabupatenrs());
+            param.put("propinsirs",akses.getpropinsirs());
+            param.put("kontakrs",akses.getkontakrs());
+            param.put("emailrs",akses.getemailrs());   
+            dpjp=Sequel.cariIsi("select dokter.nm_dokter from dpjp_ranap inner join dokter on dpjp_ranap.kd_dokter=dokter.kd_dokter where dpjp_ranap.no_rawat=?",tbObat.getValueAt(tbObat.getSelectedRow(),0).toString());
+            if(dpjp.equals("")){
+                dpjp=Sequel.cariIsi("select dokter.nm_dokter from reg_periksa inner join dokter on reg_periksa.kd_dokter=dokter.kd_dokter where reg_periksa.no_rawat=?",tbObat.getValueAt(tbObat.getSelectedRow(),0).toString());
+            }
+            param.put("dpjp",dpjp);   
+            param.put("logo",Sequel.cariGambar("select setting.logo from setting")); 
+            Valid.MyReportqry("rptFormulirChecklistDurante.jasper","report","::[ Checklist Durante Operasi ]::",
+                    "SELECT reg_periksa.no_rawat,pasien.no_rkm_medis,pasien.nm_pasien,reg_periksa.umurdaftar,reg_periksa.sttsumur,reg_periksa.tgl_registrasi,reg_periksa.jam_reg,pasien.jk,pasien.tgl_lahir,petugas.nama, "+ 
+                    "checklist_durante_operasi.posisi_operasi,checklist_durante_operasi.cuci_tangan,checklist_durante_operasi.jas_operasi,checklist_durante_operasi.handscoon,checklist_durante_operasi.disinfeksi,checklist_durante_operasi.alkohol, "+
+                    "checklist_durante_operasi.linen_steril,checklist_durante_operasi.klasifikasi_luka,checklist_durante_operasi.jam,checklist_durante_operasi.tanggal, "+
+                    "checklist_durante_operasi.j1h1,checklist_durante_operasi.j2h1,checklist_durante_operasi.j3h1,checklist_durante_operasi.j4h1,checklist_durante_operasi.j5h1,checklist_durante_operasi.j6h1, "+
+                    "checklist_durante_operasi.j7h1,checklist_durante_operasi.j8h1,checklist_durante_operasi.j9h1,checklist_durante_operasi.j10h1,checklist_durante_operasi.j11h1,checklist_durante_operasi.j12h1,checklist_durante_operasi.j13h1, "+
+                    "checklist_durante_operasi.j1t1,checklist_durante_operasi.j2t1,checklist_durante_operasi.j3t1,checklist_durante_operasi.j4t1,checklist_durante_operasi.j5t1,checklist_durante_operasi.j6t1,checklist_durante_operasi.j7t1, "+
+                    "checklist_durante_operasi.j8t1,checklist_durante_operasi.j9t1,checklist_durante_operasi.j10t1,checklist_durante_operasi.j11t1,checklist_durante_operasi.j12t1,checklist_durante_operasi.j13t1, "+
+                    "checklist_durante_operasi.j1t2,checklist_durante_operasi.j2t2,checklist_durante_operasi.j3t2,checklist_durante_operasi.j4t2,checklist_durante_operasi.j5t2,checklist_durante_operasi.j6t2,checklist_durante_operasi.j7t2, "+
+                    "checklist_durante_operasi.j8t2,checklist_durante_operasi.j9t2,checklist_durante_operasi.j10t2,checklist_durante_operasi.j11t2,checklist_durante_operasi.j12t2,checklist_durante_operasi.j13t2, "+
+                    "checklist_durante_operasi.j1t3,checklist_durante_operasi.j2t3,checklist_durante_operasi.j3t3,checklist_durante_operasi.j4t3,checklist_durante_operasi.j5t3,checklist_durante_operasi.j6t3,checklist_durante_operasi.j7t3, "+
+                    "checklist_durante_operasi.j8t3,checklist_durante_operasi.j9t3,checklist_durante_operasi.j10t3,checklist_durante_operasi.j11t3,checklist_durante_operasi.j12t3,checklist_durante_operasi.j13t3, "+
+                    "checklist_durante_operasi.j1jh1,checklist_durante_operasi.j2jh1,checklist_durante_operasi.j3jh1,checklist_durante_operasi.j4jh1,checklist_durante_operasi.j5jh1,checklist_durante_operasi.j6jh1,checklist_durante_operasi.j7jh1, "+
+                    "checklist_durante_operasi.j8jh1,checklist_durante_operasi.j9jh1,checklist_durante_operasi.j10jh1,checklist_durante_operasi.j11jh1,checklist_durante_operasi.j12jh1,checklist_durante_operasi.j13jh1, "+
+                    "checklist_durante_operasi.j1h2,checklist_durante_operasi.j2h2,checklist_durante_operasi.j3h2,checklist_durante_operasi.j4h2,checklist_durante_operasi.j5h2,checklist_durante_operasi.j6h2,checklist_durante_operasi.j7h2, "+
+                    "checklist_durante_operasi.j8h2,checklist_durante_operasi.j9h2,checklist_durante_operasi.j10h2,checklist_durante_operasi.j11h2,checklist_durante_operasi.j12h2,checklist_durante_operasi.j13h2, "+
+                    "checklist_durante_operasi.j1h3,checklist_durante_operasi.j2h3,checklist_durante_operasi.j3h3,checklist_durante_operasi.j4h3,checklist_durante_operasi.j5h3,checklist_durante_operasi.j6h3,checklist_durante_operasi.j7h3, "+
+                    "checklist_durante_operasi.j8h3,checklist_durante_operasi.j9h3,checklist_durante_operasi.j10h3,checklist_durante_operasi.j11h3,checklist_durante_operasi.j12h3,checklist_durante_operasi.j13h3 "+
+                    "FROM checklist_durante_operasi INNER JOIN reg_periksa ON checklist_durante_operasi.no_rawat = reg_periksa.no_rawat INNER JOIN pasien ON reg_periksa.no_rkm_medis = pasien.no_rkm_medis "+ 
+                    "INNER JOIN petugas ON checklist_durante_operasi.nip = petugas.nip "+ 
+                    "where reg_periksa.no_rawat='"+tbObat.getValueAt(tbObat.getSelectedRow(),0).toString()+"'",param);
+        }
+    }//GEN-LAST:event_MnLembarChecklistDuranteActionPerformed
 
     private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChkInputActionPerformed
         isForm();
     }//GEN-LAST:event_ChkInputActionPerformed
-
-    private void J1JH1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_J1JH1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_J1JH1ActionPerformed
 
     private void btnPetugasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPetugasActionPerformed
         petugas.emptTeks();
@@ -3083,7 +3088,7 @@ public final class RMChecklistDuranteOperasi extends javax.swing.JDialog {
     private widget.Label LCount;
     private widget.ComboBox LinenSteril;
     private widget.ComboBox Menit;
-    private javax.swing.JMenuItem MnCatatanObservasiIGD;
+    private javax.swing.JMenuItem MnLembarChecklistDurante;
     private widget.TextBox NIP;
     private widget.TextBox NamaPetugas;
     private javax.swing.JPanel PanelInput;

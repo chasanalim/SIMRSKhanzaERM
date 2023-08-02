@@ -7390,7 +7390,11 @@ public final class DlgKasirRalan extends javax.swing.JDialog {
                     MnSuratKontrolActionPerformed(null);
                 }else if(i==12){//UppoudBerkasDigital
                     ppBerkasDigitalBtnPrintActionPerformed(null);
+                }else if(i==11){//UppoudBerkasDigital
+                    ppRiwayatBtnPrintActionPerformed(null);
                 }
+                
+                
                 
             }
         }
