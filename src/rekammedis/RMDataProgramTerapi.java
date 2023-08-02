@@ -48,6 +48,7 @@ public final class RMDataProgramTerapi extends javax.swing.JDialog {
     private ResultSet rs;
     private int i=0;    
     private DlgCariPetugas petugas=new DlgCariPetugas(null,false);
+    private DlgCariPetugas petugas2=new DlgCariPetugas(null,false);
     /** Creates new form DlgRujuk
      * @param parent
      * @param modal */
@@ -59,7 +60,7 @@ public final class RMDataProgramTerapi extends javax.swing.JDialog {
 
         tabMode=new DefaultTableModel(null,new Object[]{
             "No.Rawat","No.R.M.","Nama Pasien","Umur","JK","Tgl.Lahir","Tgl Terapi","Jam Terapi","Diagnosa",
-            "Permintaan Terapi","Kd Dokter","Nama Dokter","NIP","Nama Petugas"
+            "Permintaan Terapi","Program","Kd Dokter","Nama Dokter","NIP","Nama Petugas"
         }){
               @Override public boolean isCellEditable(int rowIndex, int colIndex){return false;}
         };
@@ -88,26 +89,28 @@ public final class RMDataProgramTerapi extends javax.swing.JDialog {
             }else if(i==7){
                 column.setPreferredWidth(60);
             }else if(i==8){
-                column.setPreferredWidth(65);
+                column.setPreferredWidth(175);
             }else if(i==9){
-                column.setPreferredWidth(65);
+                column.setPreferredWidth(175);
             }else if(i==10){
-                column.setPreferredWidth(65);
+                column.setPreferredWidth(175);
             }else if(i==11){
                 column.setPreferredWidth(65);
             }else if(i==12){
-                column.setPreferredWidth(50);
+                column.setPreferredWidth(170);
             }else if(i==13){
-                column.setPreferredWidth(55);
+                column.setPreferredWidth(65);
+            }else if(i==14){
+                column.setPreferredWidth(175);
             }
         }
         tbObat.setDefaultRenderer(Object.class, new WarnaTable());
 
         TNoRw.setDocument(new batasInput((byte)17).getKata(TNoRw));
         KdDokter.setDocument(new batasInput((byte)20).getKata(KdDokter));
-        Diagnosa.setDocument(new batasInput((byte)100).getKata(Diagnosa));
-        Terapi.setDocument(new batasInput((byte)150).getKata(Terapi));
-        Program.setDocument(new batasInput((byte)150).getKata(Program));
+//        Diagnosa.setDocument(new batasInput((byte)100).getKata(Diagnosa));
+//        Terapi.setDocument(new batasInput((byte)150).getKata(Terapi));
+//        Program.setDocument(new batasInput((byte)150).getKata(Program));
         TCari.setDocument(new batasInput((int)100).getKata(TCari));
         
         if(koneksiDB.CARICEPAT().equals("aktif")){
@@ -154,7 +157,30 @@ public final class RMDataProgramTerapi extends javax.swing.JDialog {
             public void windowActivated(WindowEvent e) {}
             @Override
             public void windowDeactivated(WindowEvent e) {}
-        }); 
+        });
+        
+        petugas2.addWindowListener(new WindowListener() {
+            @Override
+            public void windowOpened(WindowEvent e) {}
+            @Override
+            public void windowClosing(WindowEvent e) {}
+            @Override
+            public void windowClosed(WindowEvent e) {
+                if(petugas2.getTable().getSelectedRow()!= -1){                   
+                    KdPetugas.setText(petugas2.getTable().getValueAt(petugas2.getTable().getSelectedRow(),0).toString());
+                    NamaPetugas.setText(petugas2.getTable().getValueAt(petugas2.getTable().getSelectedRow(),1).toString());
+                }  
+                KdPetugas.requestFocus();
+            }
+            @Override
+            public void windowIconified(WindowEvent e) {}
+            @Override
+            public void windowDeiconified(WindowEvent e) {}
+            @Override
+            public void windowActivated(WindowEvent e) {}
+            @Override
+            public void windowDeactivated(WindowEvent e) {}
+        });
         
         ChkInput.setSelected(false);
         isForm();
@@ -216,13 +242,13 @@ public final class RMDataProgramTerapi extends javax.swing.JDialog {
         jLabel12 = new widget.Label();
         Diagnosa = new widget.TextBox();
         jLabel23 = new widget.Label();
-        Terapi = new widget.TextBox();
         jLabel29 = new widget.Label();
-        Program = new widget.TextBox();
         KdPetugas = new widget.TextBox();
         jLabel20 = new widget.Label();
         NamaPetugas = new widget.TextBox();
         btnPetugas1 = new widget.Button();
+        Terapi = new widget.TextBox();
+        Program = new widget.TextBox();
         ChkInput = new widget.CekBox();
 
         jPopupMenu1.setName("jPopupMenu1"); // NOI18N
@@ -486,7 +512,7 @@ public final class RMDataProgramTerapi extends javax.swing.JDialog {
 
         PanelInput.setName("PanelInput"); // NOI18N
         PanelInput.setOpaque(false);
-        PanelInput.setPreferredSize(new java.awt.Dimension(192, 124));
+        PanelInput.setPreferredSize(new java.awt.Dimension(192, 154));
         PanelInput.setLayout(new java.awt.BorderLayout(1, 1));
 
         FormInput.setBackground(new java.awt.Color(250, 255, 245));
@@ -657,30 +683,10 @@ public final class RMDataProgramTerapi extends javax.swing.JDialog {
         FormInput.add(jLabel23);
         jLabel23.setBounds(0, 100, 100, 23);
 
-        Terapi.setFocusTraversalPolicyProvider(true);
-        Terapi.setName("Terapi"); // NOI18N
-        Terapi.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                TerapiKeyPressed(evt);
-            }
-        });
-        FormInput.add(Terapi);
-        Terapi.setBounds(110, 100, 260, 23);
-
         jLabel29.setText("Program :");
         jLabel29.setName("jLabel29"); // NOI18N
         FormInput.add(jLabel29);
         jLabel29.setBounds(380, 100, 60, 23);
-
-        Program.setFocusTraversalPolicyProvider(true);
-        Program.setName("Program"); // NOI18N
-        Program.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                ProgramKeyPressed(evt);
-            }
-        });
-        FormInput.add(Program);
-        Program.setBounds(450, 100, 340, 23);
 
         KdPetugas.setEditable(false);
         KdPetugas.setHighlighter(null);
@@ -719,6 +725,26 @@ public final class RMDataProgramTerapi extends javax.swing.JDialog {
         });
         FormInput.add(btnPetugas1);
         btnPetugas1.setBounds(750, 70, 50, 23);
+
+        Terapi.setFocusTraversalPolicyProvider(true);
+        Terapi.setName("Terapi"); // NOI18N
+        Terapi.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                TerapiKeyPressed(evt);
+            }
+        });
+        FormInput.add(Terapi);
+        Terapi.setBounds(110, 100, 260, 23);
+
+        Program.setFocusTraversalPolicyProvider(true);
+        Program.setName("Program"); // NOI18N
+        Program.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                ProgramKeyPressed(evt);
+            }
+        });
+        FormInput.add(Program);
+        Program.setBounds(450, 100, 340, 23);
 
         PanelInput.add(FormInput, java.awt.BorderLayout.CENTER);
 
@@ -1043,25 +1069,29 @@ public final class RMDataProgramTerapi extends javax.swing.JDialog {
         Valid.pindah(evt,btnPetugas,Terapi);
     }//GEN-LAST:event_DiagnosaKeyPressed
 
-    private void TerapiKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TerapiKeyPressed
-//        Valid.pindah(evt,GCS,HR);
-    }//GEN-LAST:event_TerapiKeyPressed
-
-    private void ProgramKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ProgramKeyPressed
-//        Valid.pindah(evt,Suhu,BtnSimpan);
-    }//GEN-LAST:event_ProgramKeyPressed
-
     private void KdPetugasKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_KdPetugasKeyPressed
         // TODO add your handling code here:
     }//GEN-LAST:event_KdPetugasKeyPressed
 
     private void btnPetugas1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPetugas1ActionPerformed
-        // TODO add your handling code here:
+        petugas2.emptTeks();
+        petugas2.isCek();
+        petugas2.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
+        petugas2.setLocationRelativeTo(internalFrame1);
+        petugas2.setVisible(true);
     }//GEN-LAST:event_btnPetugas1ActionPerformed
 
     private void btnPetugas1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnPetugas1KeyPressed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnPetugas1KeyPressed
+
+    private void TerapiKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TerapiKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TerapiKeyPressed
+
+    private void ProgramKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ProgramKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ProgramKeyPressed
 
     /**
     * @param args the command line arguments
@@ -1140,23 +1170,23 @@ public final class RMDataProgramTerapi extends javax.swing.JDialog {
         try{
             if(TCari.getText().toString().trim().equals("")){
                 ps=koneksi.prepareStatement(
-                    "select reg_periksa.no_rawat,pasien.no_rkm_medis,pasien.nm_pasien,reg_periksa.umurdaftar,reg_periksa.sttsumur,"+
-                    "pasien.jk,pasien.tgl_lahir,catatan_observasi_igd.tgl_perawatan,catatan_observasi_igd.jam_rawat,catatan_observasi_igd.gcs,"+
-                    "catatan_observasi_igd.td,catatan_observasi_igd.hr,catatan_observasi_igd.rr,catatan_observasi_igd.suhu,catatan_observasi_igd.spo2,"+
-                    "catatan_observasi_igd.nip,petugas.nama from catatan_observasi_igd inner join reg_periksa on catatan_observasi_igd.no_rawat=reg_periksa.no_rawat "+
-                    "inner join pasien on reg_periksa.no_rkm_medis=pasien.no_rkm_medis "+
-                    "inner join petugas on catatan_observasi_igd.nip=petugas.nip where "+
-                    "catatan_observasi_igd.tgl_perawatan between ? and ? order by catatan_observasi_igd.tgl_perawatan");
+                    "SELECT reg_periksa.no_rawat,pasien.no_rkm_medis,pasien.nm_pasien,reg_periksa.umurdaftar,reg_periksa.sttsumur, "+
+                    "pasien.jk,pasien.tgl_lahir,program_terapi.tgl_perawatan,program_terapi.jam_rawat,program_terapi.diagnosa, "+
+                    "program_terapi.terapi,program_terapi.program,program_terapi.kd_dokter,program_terapi.nip,petugas.nama,dokter.nm_dokter "+
+                    "FROM program_terapi INNER JOIN reg_periksa ON program_terapi.no_rawat = reg_periksa.no_rawat "+ 
+                    "INNER JOIN pasien ON reg_periksa.no_rkm_medis = pasien.no_rkm_medis INNER JOIN petugas ON program_terapi.nip = petugas.nip "+
+                    "INNER JOIN dokter ON program_terapi.kd_dokter = dokter.kd_dokter WHERE program_terapi.tgl_perawatan BETWEEN ? AND ? "+ 
+                    "ORDER BY program_terapi.tgl_perawatan ");
             }else{
                 ps=koneksi.prepareStatement(
-                    "select reg_periksa.no_rawat,pasien.no_rkm_medis,pasien.nm_pasien,reg_periksa.umurdaftar,reg_periksa.sttsumur,"+
-                    "pasien.jk,pasien.tgl_lahir,catatan_observasi_igd.tgl_perawatan,catatan_observasi_igd.jam_rawat,catatan_observasi_igd.gcs,"+
-                    "catatan_observasi_igd.td,catatan_observasi_igd.hr,catatan_observasi_igd.rr,catatan_observasi_igd.suhu,catatan_observasi_igd.spo2,"+
-                    "catatan_observasi_igd.nip,petugas.nama from catatan_observasi_igd inner join reg_periksa on catatan_observasi_igd.no_rawat=reg_periksa.no_rawat "+
-                    "inner join pasien on reg_periksa.no_rkm_medis=pasien.no_rkm_medis "+
-                    "inner join petugas on catatan_observasi_igd.nip=petugas.nip where "+
-                    "catatan_observasi_igd.tgl_perawatan between ? and ? and (reg_periksa.no_rawat like ? or pasien.no_rkm_medis like ? or pasien.nm_pasien like ? or catatan_observasi_igd.nip like ? or petugas.nama like ?) "+
-                    "order by catatan_observasi_igd.tgl_perawatan ");
+                    "SELECT reg_periksa.no_rawat,pasien.no_rkm_medis,pasien.nm_pasien,reg_periksa.umurdaftar,reg_periksa.sttsumur, "+
+                    "pasien.jk,pasien.tgl_lahir,program_terapi.tgl_perawatan,program_terapi.jam_rawat,program_terapi.diagnosa, "+
+                    "program_terapi.terapi,program_terapi.program,program_terapi.kd_dokter,program_terapi.nip,petugas.nama,dokter.nm_dokter "+
+                    "FROM program_terapi INNER JOIN reg_periksa ON program_terapi.no_rawat = reg_periksa.no_rawat "+ 
+                    "INNER JOIN pasien ON reg_periksa.no_rkm_medis = pasien.no_rkm_medis INNER JOIN petugas ON program_terapi.nip = petugas.nip "+
+                    "INNER JOIN dokter ON program_terapi.kd_dokter = dokter.kd_dokter WHERE program_terapi.tgl_perawatan BETWEEN ? AND ? "+ 
+                    "and (reg_periksa.no_rawat like ? or pasien.no_rkm_medis like ? or pasien.nm_pasien like ? or program_terapi.nip like ? or petugas.nama like ?) "+
+                    "ORDER BY program_terapi.tgl_perawatan ");
             }
                 
             try {
@@ -1178,8 +1208,8 @@ public final class RMDataProgramTerapi extends javax.swing.JDialog {
                     tabMode.addRow(new String[]{
                         rs.getString("no_rawat"),rs.getString("no_rkm_medis"),rs.getString("nm_pasien"),
                         rs.getString("umurdaftar")+" "+rs.getString("sttsumur"),rs.getString("jk"),rs.getString("tgl_lahir"),
-                        rs.getString("tgl_perawatan"),rs.getString("jam_rawat"),rs.getString("gcs"),rs.getString("td"),
-                        rs.getString("hr"),rs.getString("rr"),rs.getString("suhu"),rs.getString("spo2"),rs.getString("nip"),
+                        rs.getString("tgl_perawatan"),rs.getString("jam_rawat"),rs.getString("diagnosa"),rs.getString("terapi"),
+                        rs.getString("program"),rs.getString("kd_dokter"),rs.getString("nm_dokter"),rs.getString("nip"),
                         rs.getString("nama")
                     });
                 }
@@ -1202,9 +1232,10 @@ public final class RMDataProgramTerapi extends javax.swing.JDialog {
     public void emptTeks() {
         Diagnosa.setText("");
         Terapi.setText("");
-//        HR.setText("");
-//        RR.setText("");
-//        Suhu.setText("");
+        KdPetugas.setText("");
+        NamaPetugas.setText("");
+        KdDokter.setText("");
+        NamaDokter.setText("");
         Program.setText("");
         Tanggal.setDate(new Date());
         Diagnosa.requestFocus();
@@ -1219,12 +1250,14 @@ public final class RMDataProgramTerapi extends javax.swing.JDialog {
             Jam.setSelectedItem(tbObat.getValueAt(tbObat.getSelectedRow(),7).toString().substring(0,2));
             Menit.setSelectedItem(tbObat.getValueAt(tbObat.getSelectedRow(),7).toString().substring(3,5));
             Detik.setSelectedItem(tbObat.getValueAt(tbObat.getSelectedRow(),7).toString().substring(6,8));
+
             Diagnosa.setText(tbObat.getValueAt(tbObat.getSelectedRow(),8).toString());
             Terapi.setText(tbObat.getValueAt(tbObat.getSelectedRow(),9).toString());
-//            HR.setText(tbObat.getValueAt(tbObat.getSelectedRow(),10).toString());
-//            RR.setText(tbObat.getValueAt(tbObat.getSelectedRow(),11).toString());
-//            Suhu.setText(tbObat.getValueAt(tbObat.getSelectedRow(),12).toString());
-            Program.setText(tbObat.getValueAt(tbObat.getSelectedRow(),13).toString());
+            Program.setText(tbObat.getValueAt(tbObat.getSelectedRow(),10).toString());
+            KdDokter.setText(tbObat.getValueAt(tbObat.getSelectedRow(),11).toString());
+            NamaDokter.setText(tbObat.getValueAt(tbObat.getSelectedRow(),12).toString());
+            KdPetugas.setText(tbObat.getValueAt(tbObat.getSelectedRow(),13).toString());
+            NamaPetugas.setText(tbObat.getValueAt(tbObat.getSelectedRow(),14).toString());
             Valid.SetTgl(Tanggal,tbObat.getValueAt(tbObat.getSelectedRow(),6).toString());  
         }
     }
