@@ -83,10 +83,12 @@ import rekammedis.RMDataCatatanCekGDS;
 import rekammedis.RMDataCatatanObservasiIGD;
 import rekammedis.RMDataMonitoringAsuhanGizi;
 import rekammedis.RMDataMonitoringReaksiTranfusi;
+import rekammedis.RMDataProgramTerapi;
 import rekammedis.RMDataSkriningGiziLanjut;
 import rekammedis.RMHemodialisa;
 import rekammedis.RMDeteksiDiniCorona;
 import rekammedis.RMEdukasiPasienKeluargaRawatJalan;
+import rekammedis.RMFormFisioterapi;
 import rekammedis.RMHasilPemeriksaanUSG;
 import rekammedis.RMHasilTindakanESWL;
 import rekammedis.RMKonselingFarmasi;
@@ -633,6 +635,9 @@ public final class DlgKasirRalan extends javax.swing.JDialog {
         MnPenilaianAwalMedisRalanBedah = new javax.swing.JMenuItem();
         MnPenilaianAwalMedisRalanBedahMulut = new javax.swing.JMenuItem();
         MnPenilaianAwalMedisRalanGeriatri = new javax.swing.JMenuItem();
+        MnFisioterapi = new javax.swing.JMenu();
+        MnFormFisioterapi = new javax.swing.JMenuItem();
+        MnProgramTerapi = new javax.swing.JMenuItem();
         MnHasilPemeriksaanUSG = new javax.swing.JMenuItem();
         MnDokumentasiTindakanESWL = new javax.swing.JMenuItem();
         MnRMOperasi = new javax.swing.JMenu();
@@ -1495,6 +1500,50 @@ public final class DlgKasirRalan extends javax.swing.JDialog {
         MnAwalMedis.add(MnPenilaianAwalMedisRalanGeriatri);
 
         MnRMRawatJalan.add(MnAwalMedis);
+
+        MnFisioterapi.setBackground(new java.awt.Color(255, 255, 254));
+        MnFisioterapi.setForeground(new java.awt.Color(50, 50, 50));
+        MnFisioterapi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/category.png"))); // NOI18N
+        MnFisioterapi.setText("Fisioterapi");
+        MnFisioterapi.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        MnFisioterapi.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        MnFisioterapi.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        MnFisioterapi.setName("MnFisioterapi"); // NOI18N
+        MnFisioterapi.setPreferredSize(new java.awt.Dimension(200, 26));
+
+        MnFormFisioterapi.setBackground(new java.awt.Color(255, 255, 254));
+        MnFormFisioterapi.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        MnFormFisioterapi.setForeground(new java.awt.Color(50, 50, 50));
+        MnFormFisioterapi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/category.png"))); // NOI18N
+        MnFormFisioterapi.setText("Formulir Fisioterapi");
+        MnFormFisioterapi.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        MnFormFisioterapi.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        MnFormFisioterapi.setName("MnFormFisioterapi"); // NOI18N
+        MnFormFisioterapi.setPreferredSize(new java.awt.Dimension(310, 26));
+        MnFormFisioterapi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MnFormFisioterapiActionPerformed(evt);
+            }
+        });
+        MnFisioterapi.add(MnFormFisioterapi);
+
+        MnProgramTerapi.setBackground(new java.awt.Color(255, 255, 254));
+        MnProgramTerapi.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        MnProgramTerapi.setForeground(new java.awt.Color(50, 50, 50));
+        MnProgramTerapi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/category.png"))); // NOI18N
+        MnProgramTerapi.setText("Program Terapi");
+        MnProgramTerapi.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        MnProgramTerapi.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        MnProgramTerapi.setName("MnProgramTerapi"); // NOI18N
+        MnProgramTerapi.setPreferredSize(new java.awt.Dimension(310, 26));
+        MnProgramTerapi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MnProgramTerapiActionPerformed(evt);
+            }
+        });
+        MnFisioterapi.add(MnProgramTerapi);
+
+        MnRMRawatJalan.add(MnFisioterapi);
 
         MnHasilPemeriksaanUSG.setBackground(new java.awt.Color(255, 255, 254));
         MnHasilPemeriksaanUSG.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
@@ -5953,7 +6002,7 @@ public final class DlgKasirRalan extends javax.swing.JDialog {
         panelBiasa2.setLayout(null);
 
         TglSakit1.setForeground(new java.awt.Color(50, 70, 50));
-        TglSakit1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "20-07-2023" }));
+        TglSakit1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "02-08-2023" }));
         TglSakit1.setDisplayFormat("dd-MM-yyyy");
         TglSakit1.setName("TglSakit1"); // NOI18N
         TglSakit1.setOpaque(false);
@@ -6000,7 +6049,7 @@ public final class DlgKasirRalan extends javax.swing.JDialog {
         jLabel32.setBounds(176, 10, 20, 23);
 
         TglSakit2.setForeground(new java.awt.Color(50, 70, 50));
-        TglSakit2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "20-07-2023" }));
+        TglSakit2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "02-08-2023" }));
         TglSakit2.setDisplayFormat("dd-MM-yyyy");
         TglSakit2.setName("TglSakit2"); // NOI18N
         TglSakit2.setOpaque(false);
@@ -6284,7 +6333,7 @@ public final class DlgKasirRalan extends javax.swing.JDialog {
         jLabel15.setPreferredSize(new java.awt.Dimension(70, 23));
         panelGlass8.add(jLabel15);
 
-        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "20-07-2023" }));
+        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "02-08-2023" }));
         DTPCari1.setDisplayFormat("dd-MM-yyyy");
         DTPCari1.setName("DTPCari1"); // NOI18N
         DTPCari1.setOpaque(false);
@@ -6297,7 +6346,7 @@ public final class DlgKasirRalan extends javax.swing.JDialog {
         jLabel17.setPreferredSize(new java.awt.Dimension(23, 23));
         panelGlass8.add(jLabel17);
 
-        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "20-07-2023" }));
+        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "02-08-2023" }));
         DTPCari2.setDisplayFormat("dd-MM-yyyy");
         DTPCari2.setName("DTPCari2"); // NOI18N
         DTPCari2.setOpaque(false);
@@ -13168,6 +13217,7 @@ private void MnDataPemberianObatActionPerformed(java.awt.event.ActionEvent evt) 
         }
     }//GEN-LAST:event_ppRiwayatBtnPrintActionPerformed
 
+    
     private void ppDeteksiDIniCoronaBtnPrintActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ppDeteksiDIniCoronaBtnPrintActionPerformed
         if(tabModekasir.getRowCount()==0){
             JOptionPane.showMessageDialog(null,"Maaf, data registrasi sudah habis...!!!!");
@@ -13190,6 +13240,52 @@ private void MnDataPemberianObatActionPerformed(java.awt.event.ActionEvent evt) 
             }
         }
     }//GEN-LAST:event_ppDeteksiDIniCoronaBtnPrintActionPerformed
+
+    private void MnFormFisioterapiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MnFormFisioterapiActionPerformed
+        if(tabModekasir.getRowCount()==0){
+            JOptionPane.showMessageDialog(null,"Maaf, table masih kosong...!!!!");
+            //TNoReg.requestFocus();
+        }else if(TNoRw.getText().trim().equals("")){
+            JOptionPane.showMessageDialog(null,"Maaf, Silahkan anda pilih dulu dengan menklik data pada table...!!!");
+            tbKasirRalan.requestFocus();
+        }else{
+            if(tbKasirRalan.getSelectedRow()!= -1){
+                this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+                RMFormFisioterapi form=new RMFormFisioterapi(null,false);
+                form.isCek();
+                form.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
+                form.setLocationRelativeTo(internalFrame1);
+                form.setVisible(true);
+                form.emptTeks();
+                form.setNoRm(TNoRw.getText(),DTPCari2.getDate());
+                form.tampil();
+                this.setCursor(Cursor.getDefaultCursor());
+            }
+        }
+    }//GEN-LAST:event_MnFormFisioterapiActionPerformed
+
+    private void MnProgramTerapiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MnProgramTerapiActionPerformed
+         if(tabModekasir.getRowCount()==0){
+            JOptionPane.showMessageDialog(null,"Maaf, table masih kosong...!!!!");
+            //TNoReg.requestFocus();
+        }else if(TNoRw.getText().trim().equals("")){
+            JOptionPane.showMessageDialog(null,"Maaf, Silahkan anda pilih dulu dengan menklik data pada table...!!!");
+            tbKasirRalan.requestFocus();
+        }else{
+            if(tbKasirRalan.getSelectedRow()!= -1){
+                this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+                RMDataProgramTerapi form=new RMDataProgramTerapi(null,false);
+                form.isCek();
+                form.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
+                form.setLocationRelativeTo(internalFrame1);
+                form.setVisible(true);
+                form.emptTeks();
+                form.setNoRm(TNoRw.getText(),DTPCari2.getDate());
+                form.tampil();
+                this.setCursor(Cursor.getDefaultCursor());
+            }
+        }
+    }//GEN-LAST:event_MnProgramTerapiActionPerformed
 
     /**
     * @param args the command line arguments
@@ -13289,6 +13385,8 @@ private void MnDataPemberianObatActionPerformed(java.awt.event.ActionEvent evt) 
     private javax.swing.JMenuItem MnDokter;
     private javax.swing.JMenuItem MnDokumentasiTindakanESWL;
     private javax.swing.JMenuItem MnEdukasiPasienKeluarga;
+    private javax.swing.JMenu MnFisioterapi;
+    private javax.swing.JMenuItem MnFormFisioterapi;
     private javax.swing.JMenuItem MnGabungNoRawat;
     private javax.swing.JMenu MnGanti;
     private javax.swing.JMenuItem MnGelang1;
@@ -13429,6 +13527,7 @@ private void MnDataPemberianObatActionPerformed(java.awt.event.ActionEvent evt) 
     private javax.swing.JMenuItem MnPiutangObat;
     private javax.swing.JMenuItem MnPoli;
     private javax.swing.JMenuItem MnPoliInternal;
+    private javax.swing.JMenuItem MnProgramTerapi;
     private javax.swing.JMenuItem MnPulangAtasPermintaanSendiri;
     private javax.swing.JMenuItem MnPulangPaksa;
     private javax.swing.JMenu MnRMCatatanMonitoring;
