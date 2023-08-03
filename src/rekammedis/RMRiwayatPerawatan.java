@@ -2923,7 +2923,7 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                     menampilkanProgramTerapi(rs.getString("no_rawat"));
                     
                     //menampilkan Form Fisioterapi
-//                    menampilkanFormFisioterapi(rs.getString("no_rawat"));
+                    menampilkanFormFisioterapi(rs.getString("no_rawat"));
                     
                     
                     
@@ -13936,6 +13936,81 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
         }
     }
 
+     private void menampilkanFormFisioterapi(String norawat) {
+        try {
+            if(chkProgramTerapi.isSelected()==true){
+                try {
+                    rs2=koneksi.prepareStatement(
+                        "SELECT reg_periksa.no_rawat,pasien.no_rkm_medis,pasien.nm_pasien,reg_periksa.umurdaftar,reg_periksa.sttsumur, "+
+                        "pasien.jk,pasien.tgl_lahir,program_terapi.tgl_perawatan,program_terapi.jam_rawat,program_terapi.diagnosa, "+
+                        "program_terapi.terapi,program_terapi.program,program_terapi.kd_dokter,program_terapi.nip,petugas.nama,dokter.nm_dokter "+
+                        "FROM program_terapi INNER JOIN reg_periksa ON program_terapi.no_rawat = reg_periksa.no_rawat "+ 
+                        "INNER JOIN pasien ON reg_periksa.no_rkm_medis = pasien.no_rkm_medis INNER JOIN petugas ON program_terapi.nip = petugas.nip "+
+                        "INNER JOIN dokter ON program_terapi.kd_dokter = dokter.kd_dokter WHERE program_terapi.no_rawat='"+norawat+"'").executeQuery();
+                    if(rs2.next()){
+                        htmlContent.append(
+                          "<tr class='isi'>"+ 
+                            "<td valign='top' width='2%'></td>"+        
+                            "<td valign='top' style='font-weight:bold;' width='18%'>Program Terapi Fisioterapi</td>"+
+                            "<td valign='top' width='1%' align='center'>:</td>"+
+                            "<td valign='top' width='79%'>"+
+                              "<table width='100%' border='0' align='center' cellpadding='3px' cellspacing='0' class='tbl_form'>"
+                               
+                                 
+                        );
+                        rs2.beforeFirst();
+                        w=1;
+                        while(rs2.next()){
+                            htmlContent.append(
+                                 "<tr>"+
+                                    "<td valign='top' width='20%'>Diagnosa</td>"+
+                                    "<td valign='top' width='1%' align='right'>:</td>"+
+                                    "<td valign='top' width='79%' align='left'>"+rs2.getString("diagnosa")+"</td>"+
+                                 "</tr>"+
+                                 "<tr>"+
+                                    "<td valign='top' width='20%'>Permintaan Terapi</td>"+
+                                    "<td valign='top' width='1%' align='right'>:</td>"+
+                                    "<td valign='top' width='79%' align='left'>"+rs2.getString("terapi")+"</td>"+
+                                 "</tr>"+
+                              "</table>"+
+                              "<table width='100%' border='0' align='center' cellpadding='3px' cellspacing='0' class='tbl_form'>"+
+                                 "<tr align='center'>"+
+                                    "<td valign='top' width='4%' bgcolor='#FFFAF8'>No.</td>"+
+                                    "<td valign='top' width='36%' bgcolor='#FFFAF8'>Program</td>"+
+                                    "<td valign='top' width='28%' bgcolor='#FFFAF8'>Tanggal</td>"+
+                                    "<td valign='top' width='21%' bgcolor='#FFFAF8'>Dokter</td>"+
+                                    "<td valign='top' width='21%' bgcolor='#FFFAF8'>Petugas</td>"+
+                                 "</tr>"+
+                                 "<tr>"+
+                                    "<td valign='top' align='center' valign='middle'>"+w+"</td>"+
+                                    "<td valign='top' align='center' valign='middle'>"+rs2.getString("program")+"</td>"+
+                                    "<td valign='top' align='center' valign='middle'>"+rs2.getString("tgl_perawatan")+" "+rs2.getString("jam_perawatan")+"</td>"+
+                                    "<td valign='top' align='center' valign='middle'>"+rs2.getString("kd_dokter")+"<br>"+rs2.getString("nm_dokter")+"</td>"+
+                                    "<td valign='top' align='center' valign='middle'>"+rs2.getString("nip")+"<br>"+rs2.getString("nama")+"</td>"+
+                                 "</tr>"
+                                 
+                            );                                     
+                            w++;
+                        }
+                        htmlContent.append(
+                              "</table>"+
+                            "</td>"+
+                          "</tr>");
+                    }
+                } catch (Exception e) {
+                    System.out.println("Notifikasi : "+e);
+                } finally{
+                    if(rs2!=null){
+                        rs2.close();
+                    }
+                }
+            }
+        } catch (Exception e) {
+            System.out.println("Notif Hemodialisa : "+e);
+        }
+    }
+    
+    
     private void menampilkanAsuhanMedisRawatJalanPsikiatrik(String norawat) {
         try{
             if(chkAsuhanMedisRalanPsikiatri.isSelected()==true){
@@ -15832,4 +15907,6 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
         } 
     
     }
+
+   
 }
