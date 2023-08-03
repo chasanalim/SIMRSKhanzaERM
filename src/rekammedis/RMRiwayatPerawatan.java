@@ -296,6 +296,8 @@ public final class RMRiwayatPerawatan extends javax.swing.JDialog {
         chkTambahanBiaya = new widget.CekBox();
         chkDiagnosaPenyakit = new widget.CekBox();
         chkProsedurTindakan = new widget.CekBox();
+        chkProgramTerapi = new widget.CekBox();
+        chkFormFisioterapi = new widget.CekBox();
         chkPemantauanPEWSDewasa = new widget.CekBox();
         chkPemantauanMOEWSObstetri = new widget.CekBox();
         chkPemantauanPEWSAnak = new widget.CekBox();
@@ -649,11 +651,6 @@ public final class RMRiwayatPerawatan extends javax.swing.JDialog {
                 chkSemuaItemStateChanged(evt);
             }
         });
-        chkSemua.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                chkSemuaActionPerformed(evt);
-            }
-        });
         FormMenu.add(chkSemua);
 
         chkSBPK.setBackground(new java.awt.Color(204, 204, 204));
@@ -666,11 +663,6 @@ public final class RMRiwayatPerawatan extends javax.swing.JDialog {
         chkSBPK.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 chkSBPKItemStateChanged(evt);
-            }
-        });
-        chkSBPK.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                chkSBPKActionPerformed(evt);
             }
         });
         FormMenu.add(chkSBPK);
@@ -769,11 +761,6 @@ public final class RMRiwayatPerawatan extends javax.swing.JDialog {
         chkTambahanBiaya.setName("chkTambahanBiaya"); // NOI18N
         chkTambahanBiaya.setOpaque(false);
         chkTambahanBiaya.setPreferredSize(new java.awt.Dimension(245, 22));
-        chkTambahanBiaya.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                chkTambahanBiayaActionPerformed(evt);
-            }
-        });
         FormMenu.add(chkTambahanBiaya);
 
         chkDiagnosaPenyakit.setSelected(true);
@@ -791,6 +778,22 @@ public final class RMRiwayatPerawatan extends javax.swing.JDialog {
         chkProsedurTindakan.setOpaque(false);
         chkProsedurTindakan.setPreferredSize(new java.awt.Dimension(245, 22));
         FormMenu.add(chkProsedurTindakan);
+
+        chkProgramTerapi.setSelected(true);
+        chkProgramTerapi.setText("Fisioterapi - Program Fisioterapi");
+        chkProgramTerapi.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        chkProgramTerapi.setName("chkProgramTerapi"); // NOI18N
+        chkProgramTerapi.setOpaque(false);
+        chkProgramTerapi.setPreferredSize(new java.awt.Dimension(245, 22));
+        FormMenu.add(chkProgramTerapi);
+
+        chkFormFisioterapi.setSelected(true);
+        chkFormFisioterapi.setText("FIsioterapi - Form Fisioterapi");
+        chkFormFisioterapi.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        chkFormFisioterapi.setName("chkFormFisioterapi"); // NOI18N
+        chkFormFisioterapi.setOpaque(false);
+        chkFormFisioterapi.setPreferredSize(new java.awt.Dimension(245, 22));
+        FormMenu.add(chkFormFisioterapi);
 
         chkPemantauanPEWSDewasa.setSelected(true);
         chkPemantauanPEWSDewasa.setText("EWS - Pemantauan EWS Dewasa");
@@ -2006,8 +2009,36 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
             chkTransferAntarRuang.setSelected(true);
             chkCatatanCekGDS.setSelected(true);
             chkChecklistPreOperasi.setSelected(true);
-            chkSBARRanap.setSelected(true);
+            chkSignInSebelumAnestesi.setSelected(true);
+            chkTimeOutSebelumInsisi.setSelected(true);
+            chkSignOutSebelumMenutupLuka.setSelected(true);
+            chkChecklistPostOperasi.setSelected(true);
             chkRekonsiliasiObat.setSelected(true);
+            chkPenilaianPasienTerminal.setSelected(true);
+            chkMonitoringReaksiTranfusi.setSelected(true);
+            chkPenilaianKorbanKekerasan.setSelected(true);
+            chkAsuhanLanjutanRisikoJatuhLansia.setSelected(true);
+            chkPenilaianPasienPenyakitMenular.setSelected(true);
+            chkEdukasiPasienTerintegrasiRawatJalan.setSelected(true);
+            chkPemantauanPEWSDewasa.setSelected(true);
+            chkAsuhanTambahanBunuhDiri.setSelected(true);
+            chkAsuhanTambahanPerilakuKekerasan.setSelected(true);
+            chkAsuhanTambahanMelarikanDiri.setSelected(true);
+            chkPenilaianPasienKeracunan.setSelected(true);
+            chkAsuhanMedisRalanBedahMulut.setSelected(true);
+            chkPemantauanMOEWSObstetri.setSelected(true);
+            chkCatatanADIMEGizi.setSelected(true);
+            chkAsuhanKeperawatanRalanGeriatri.setSelected(true);
+            chkChecklistKriteriaMasukHCU.setSelected(true);
+            chkChecklistKriteriaKeluarHCU.setSelected(true);
+            chkAsuhanRisikoDekubitus.setSelected(true);
+            chkDokumentasiTindakanESWL.setSelected(true);
+            chkChecklistKriteriaMasukICU.setSelected(true);
+            chkChecklistKriteriaKeluarICU.setSelected(true);
+            chkFollowUpDBD.setSelected(true);
+            chkSBARRanap.setSelected(true);
+            chkProgramTerapi.setSelected(true);
+            chkFormFisioterapi.setSelected(true);
         }else{
             chkSBPK.setSelected(false);
             chkTriase.setSelected(false);
@@ -2087,8 +2118,36 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
             chkTransferAntarRuang.setSelected(false);
             chkCatatanCekGDS.setSelected(false);
             chkChecklistPreOperasi.setSelected(false);
-            chkSBARRanap.setSelected(false);
+            chkSignInSebelumAnestesi.setSelected(false);
+            chkTimeOutSebelumInsisi.setSelected(false);
+            chkSignOutSebelumMenutupLuka.setSelected(false);
+            chkChecklistPostOperasi.setSelected(false);
             chkRekonsiliasiObat.setSelected(false);
+            chkPenilaianPasienTerminal.setSelected(false);
+            chkMonitoringReaksiTranfusi.setSelected(false);
+            chkPenilaianKorbanKekerasan.setSelected(false);
+            chkAsuhanLanjutanRisikoJatuhLansia.setSelected(false);
+            chkPenilaianPasienPenyakitMenular.setSelected(false);
+            chkEdukasiPasienTerintegrasiRawatJalan.setSelected(false);
+            chkPemantauanPEWSDewasa.setSelected(false);
+            chkAsuhanTambahanBunuhDiri.setSelected(false);
+            chkAsuhanTambahanPerilakuKekerasan.setSelected(false);
+            chkAsuhanTambahanMelarikanDiri.setSelected(false);
+            chkPenilaianPasienKeracunan.setSelected(false);
+            chkAsuhanMedisRalanBedahMulut.setSelected(false);
+            chkPemantauanMOEWSObstetri.setSelected(false);
+            chkCatatanADIMEGizi.setSelected(false);
+            chkAsuhanKeperawatanRalanGeriatri.setSelected(false);
+            chkChecklistKriteriaMasukHCU.setSelected(false);
+            chkChecklistKriteriaKeluarHCU.setSelected(false);
+            chkAsuhanRisikoDekubitus.setSelected(false);
+            chkDokumentasiTindakanESWL.setSelected(false);
+            chkChecklistKriteriaMasukICU.setSelected(false);
+            chkChecklistKriteriaKeluarICU.setSelected(false);
+            chkFollowUpDBD.setSelected(false);
+            chkSBARRanap.setSelected(false);
+            chkProgramTerapi.setSelected(false);
+            chkFormFisioterapi.setSelected(false);
         }
     }//GEN-LAST:event_chkSemuaItemStateChanged
 
@@ -2101,14 +2160,6 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
             BtnCari1ActionPerformed(null);
         }
     }//GEN-LAST:event_NoRawatKeyPressed
-
-    private void chkSemuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkSemuaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_chkSemuaActionPerformed
-
-    private void chkSBPKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkSBPKActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_chkSBPKActionPerformed
 
     private void chkSBPKItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_chkSBPKItemStateChanged
         if(chkSBPK.isSelected()==true){
@@ -2203,10 +2254,6 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
             
         }
     }//GEN-LAST:event_chkSBPKItemStateChanged
-
-    private void chkTambahanBiayaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkTambahanBiayaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_chkTambahanBiayaActionPerformed
 
     private void chkPemeriksaanLaboratActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkPemeriksaanLaboratActionPerformed
         // TODO add your handling code here:
@@ -2332,6 +2379,7 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
     private widget.CekBox chkDokumentasiTindakanESWL;
     private widget.CekBox chkEdukasiPasienTerintegrasiRawatJalan;
     private widget.CekBox chkFollowUpDBD;
+    private widget.CekBox chkFormFisioterapi;
     private widget.CekBox chkHasilPemeriksaanUSG;
     private widget.CekBox chkHemodialisa;
     private widget.CekBox chkKonselingFarmasi;
@@ -2359,6 +2407,7 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
     private widget.CekBox chkPenilaianPasienTerminal;
     private widget.CekBox chkPerencanaanPemulangan;
     private widget.CekBox chkPotonganBiaya;
+    private widget.CekBox chkProgramTerapi;
     private widget.CekBox chkProsedurTindakan;
     private widget.CekBox chkRekonsiliasiObat;
     private widget.CekBox chkResepPulang;
@@ -2601,7 +2650,7 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
         }
     }
 
-    private void tampilPerawatan() {
+    public void tampilPerawatan() {
         try{   
             htmlContent = new StringBuilder();
             if(R1.isSelected()==true){
@@ -2869,6 +2918,15 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                     menampilkanDiagnosa(rs.getString("no_rawat"));
                     //menampilkan berkas digital
                     menampilkanBerkasDigital(rs.getString("no_rawat"));
+                    
+                    //menampilkan Program Terapi
+                    menampilkanProgramTerapi(rs.getString("no_rawat"));
+                    
+                    //menampilkan Form Fisioterapi
+//                    menampilkanFormFisioterapi(rs.getString("no_rawat"));
+                    
+                    
+                    
                     //menampilkan catatan dokter
                     if(chkCatatanDokter.isSelected()==true){
                         try {
@@ -13751,6 +13809,7 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
             System.out.println("Notif Asuhan medis Rawat Inap Kebidanan : "+e);
         }
     }
+    
     private void menampilkanBerkasDigital(String norawat) {
         try {
             if(chkBerkasDigital.isSelected()==true){
@@ -13800,6 +13859,102 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
             }
         }catch (Exception e) {
             System.out.println("Notif Berkas Digitaln: "+e);
+        }
+    }
+    
+    private void menampilkanProgramTerapi(String norawat) {
+        try {
+            if(chkProgramTerapi.isSelected()==true){
+                try {
+                    rs2=koneksi.prepareStatement(
+                            "select penilaian_lanjutan_resiko_jatuh_dewasa.penilaian_jatuhmorse_skala1,penilaian_lanjutan_resiko_jatuh_dewasa.penilaian_jatuhmorse_nilai1,"+
+                            "penilaian_lanjutan_resiko_jatuh_dewasa.penilaian_jatuhmorse_skala2,penilaian_lanjutan_resiko_jatuh_dewasa.penilaian_jatuhmorse_nilai2,"+
+                            "penilaian_lanjutan_resiko_jatuh_dewasa.penilaian_jatuhmorse_skala3,penilaian_lanjutan_resiko_jatuh_dewasa.penilaian_jatuhmorse_nilai3,"+
+                            "penilaian_lanjutan_resiko_jatuh_dewasa.penilaian_jatuhmorse_skala4,penilaian_lanjutan_resiko_jatuh_dewasa.penilaian_jatuhmorse_nilai4,"+
+                            "penilaian_lanjutan_resiko_jatuh_dewasa.penilaian_jatuhmorse_skala5,penilaian_lanjutan_resiko_jatuh_dewasa.penilaian_jatuhmorse_nilai5,"+
+                            "penilaian_lanjutan_resiko_jatuh_dewasa.penilaian_jatuhmorse_skala6,penilaian_lanjutan_resiko_jatuh_dewasa.penilaian_jatuhmorse_nilai6,"+
+                            "penilaian_lanjutan_resiko_jatuh_dewasa.penilaian_jatuhmorse_totalnilai,penilaian_lanjutan_resiko_jatuh_dewasa.hasil_skrining,"+
+                            "penilaian_lanjutan_resiko_jatuh_dewasa.saran,penilaian_lanjutan_resiko_jatuh_dewasa.nip,petugas.nama,penilaian_lanjutan_resiko_jatuh_dewasa.tanggal "+
+                            "from penilaian_lanjutan_resiko_jatuh_dewasa inner join petugas on penilaian_lanjutan_resiko_jatuh_dewasa.nip=petugas.nip where "+
+                            "penilaian_lanjutan_resiko_jatuh_dewasa.no_rawat='"+norawat+"'").executeQuery();
+                    if(rs2.next()){
+                        htmlContent.append(
+                          "<tr class='isi'>"+ 
+                            "<td valign='top' width='2%'></td>"+        
+                            "<td valign='top' style='font-weight:bold;' width='18%'>Program Terapi Fisioterapi</td>"+
+                            "<td valign='top' width='1%' align='center'>:</td>"+
+                            "<td valign='top' width='79%'>"+
+                              "<table width='100%' border='0' align='center' cellpadding='3px' cellspacing='0' class='tbl_form'>"+
+                                 "<tr align='center'>"+
+                                    "<td valign='top' width='4%' bgcolor='#FFFAF8'>No.</td>"+
+                                    "<td valign='top' width='15%' bgcolor='#FFFAF8'>Tanggal & Petugas</td>"+
+                                    "<td valign='top' width='22%' bgcolor='#FFFAF8'>Parameter</td>"+
+                                    "<td valign='top' width='26%' bgcolor='#FFFAF8'>Kriteria</td>"+
+                                    "<td valign='top' width='5%' bgcolor='#FFFAF8'>Skor</td>"+
+                                    "<td valign='top' width='14%' bgcolor='#FFFAF8'>Hasil Skrining</td>"+
+                                    "<td valign='top' width='14%' bgcolor='#FFFAF8'>Saran</td>"+
+                                 "</tr>"
+                        );
+                        rs2.beforeFirst();
+                        w=1;
+                        while(rs2.next()){
+                            htmlContent.append(
+                                 "<tr>"+
+                                    "<td valign='top' align='center' valign='middle' rowspan='7'>"+w+"</td>"+
+                                    "<td valign='top' align='center' valign='middle' rowspan='7'>"+rs2.getString("tanggal")+"<br>"+rs2.getString("nip")+" "+rs2.getString("nama")+"</td>"+
+                                    "<td valign='top' align='center' valign='middle'>Riwayat Jatuh (1 Tahun Terakhir)</td>"+
+                                    "<td valign='top' align='center' valign='middle'>"+rs2.getString("penilaian_jatuhmorse_skala1")+"</td>"+
+                                    "<td valign='top' align='center' valign='middle'>"+rs2.getString("penilaian_jatuhmorse_nilai1")+"</td>"+
+                                    "<td valign='top' align='center' valign='middle' rowspan='7'>"+rs2.getString("hasil_skrining").replaceAll("(\r\n|\r|\n|\n\r)","<br>")+"</td>"+
+                                    "<td valign='top' align='center' valign='middle' rowspan='7'>"+rs2.getString("saran").replaceAll("(\r\n|\r|\n|\n\r)","<br>")+"</td>"+
+                                 "</tr>"+
+                                 "<tr>"+
+                                    "<td valign='top' align='center' valign='middle'>Diagnosis Sekunder (≥ 2 Diagnosis Medis)</td>"+
+                                    "<td valign='top' align='center' valign='middle'>"+rs2.getString("penilaian_jatuhmorse_skala2")+"</td>"+
+                                    "<td valign='top' align='center' valign='middle'>"+rs2.getString("penilaian_jatuhmorse_nilai2")+"</td>"+
+                                 "</tr>"+
+                                 "<tr>"+
+                                    "<td valign='top' align='center' valign='middle'>Alat Bantu</td>"+
+                                    "<td valign='top' align='center' valign='middle'>"+rs2.getString("penilaian_jatuhmorse_skala3")+"</td>"+
+                                    "<td valign='top' align='center' valign='middle'>"+rs2.getString("penilaian_jatuhmorse_nilai3")+"</td>"+
+                                 "</tr>"+
+                                 "<tr>"+
+                                    "<td valign='top' align='center' valign='middle'>Terpasang Infuse</td>"+
+                                    "<td valign='top' align='center' valign='middle'>"+rs2.getString("penilaian_jatuhmorse_skala4")+"</td>"+
+                                    "<td valign='top' align='center' valign='middle'>"+rs2.getString("penilaian_jatuhmorse_nilai4")+"</td>"+
+                                 "</tr>"+
+                                 "<tr>"+
+                                    "<td valign='top' align='center' valign='middle'>Gaya Berjalan</td>"+
+                                    "<td valign='top' align='center' valign='middle'>"+rs2.getString("penilaian_jatuhmorse_skala5")+"</td>"+
+                                    "<td valign='top' align='center' valign='middle'>"+rs2.getString("penilaian_jatuhmorse_nilai5")+"</td>"+
+                                 "</tr>"+
+                                 "<tr>"+
+                                    "<td valign='top' align='center' valign='middle'>Status Mental</td>"+
+                                    "<td valign='top' align='center' valign='middle'>"+rs2.getString("penilaian_jatuhmorse_skala6")+"</td>"+
+                                    "<td valign='top' align='center' valign='middle'>"+rs2.getString("penilaian_jatuhmorse_nilai6")+"</td>"+
+                                 "</tr>"+
+                                 "<tr>"+
+                                    "<td valign='top' align='center' valign='middle' colspan='2'>TOTAL</td>"+
+                                    "<td valign='top' align='center' valign='middle'>"+rs2.getString("penilaian_jatuhmorse_totalnilai")+"</td>"+
+                                 "</tr>"
+                            );                                     
+                            w++;
+                        }
+                        htmlContent.append(
+                              "</table>"+
+                            "</td>"+
+                          "</tr>");
+                    }
+                } catch (Exception e) {
+                    System.out.println("Notifikasi : "+e);
+                } finally{
+                    if(rs2!=null){
+                        rs2.close();
+                    }
+                }
+            }
+        } catch (Exception e) {
+            System.out.println("Notif Hemodialisa : "+e);
         }
     }
 
