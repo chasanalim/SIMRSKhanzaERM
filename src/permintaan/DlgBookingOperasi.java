@@ -34,6 +34,7 @@ import rekammedis.RMSignInSebelumAnastesi;
 import rekammedis.RMTransferPasienAntarRuang;
 import setting.DlgCariRuangOperasi;
 import simrskhanza.DlgTagihanOperasi;
+import surat.SuratPersetujuanPenolakanTindakan;
 
 /**
  *
@@ -44,7 +45,7 @@ public class DlgBookingOperasi extends javax.swing.JDialog {
     private Connection koneksi=koneksiDB.condb();
     private sekuel Sequel=new sekuel();
     private validasi Valid=new validasi();
-    private PreparedStatement ps;
+    private PreparedStatement ps, psanak;
     private ResultSet rs;
     private int i=0;
     private String status="",bangsal="",lokasistok="",kamar="",diagnosa="",order="",kelas="",penjab="",norawatibu="",posisi="",norm="";
@@ -296,14 +297,19 @@ public class DlgBookingOperasi extends javax.swing.JDialog {
         FormMenu = new widget.PanelBiasa();
         BtnKamarInap = new widget.Button();
         BtnPermintaanLab = new widget.Button();
+        BtnObatBhp = new widget.Button();
         BtnRiwayatPasien = new widget.Button();
-        BtnChecklistPreOperasi = new widget.Button();
-        BtnSignInSebelumAnestesi = new widget.Button();
+        BtnInformasiTindakanMedis = new widget.Button();
         BtnPreOperasi = new widget.Button();
         BtnPreAnastesi = new widget.Button();
-        BtnTagihanOperasi = new widget.Button();
-        BtnObatBhp = new widget.Button();
+        BtnChecklistPreOperasi = new widget.Button();
         BtnTransferAntarRuang = new widget.Button();
+        BtnChecklistDurante = new widget.Button();
+        BtnSignInSebelumAnestesi = new widget.Button();
+        BtnTimeOut = new widget.Button();
+        BtnSignOut = new widget.Button();
+        BtnTagihanOperasi = new widget.Button();
+        BtnChecklistPostOperasi = new widget.Button();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setUndecorated(true);
@@ -542,7 +548,7 @@ public class DlgBookingOperasi extends javax.swing.JDialog {
         R2.setPreferredSize(new java.awt.Dimension(90, 23));
         panelCari.add(R2);
 
-        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "01-01-2023" }));
+        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "07-08-2023" }));
         DTPCari1.setDisplayFormat("dd-MM-yyyy");
         DTPCari1.setName("DTPCari1"); // NOI18N
         DTPCari1.setOpaque(false);
@@ -565,7 +571,7 @@ public class DlgBookingOperasi extends javax.swing.JDialog {
         jLabel22.setPreferredSize(new java.awt.Dimension(30, 23));
         panelCari.add(jLabel22);
 
-        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "01-01-2023" }));
+        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "07-08-2023" }));
         DTPCari2.setDisplayFormat("dd-MM-yyyy");
         DTPCari2.setName("DTPCari2"); // NOI18N
         DTPCari2.setOpaque(false);
@@ -593,7 +599,7 @@ public class DlgBookingOperasi extends javax.swing.JDialog {
         R3.setPreferredSize(new java.awt.Dimension(75, 23));
         panelCari.add(R3);
 
-        DTPCari3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "01-01-2023" }));
+        DTPCari3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "07-08-2023" }));
         DTPCari3.setDisplayFormat("dd-MM-yyyy");
         DTPCari3.setName("DTPCari3"); // NOI18N
         DTPCari3.setOpaque(false);
@@ -616,7 +622,7 @@ public class DlgBookingOperasi extends javax.swing.JDialog {
         jLabel25.setPreferredSize(new java.awt.Dimension(30, 23));
         panelCari.add(jLabel25);
 
-        DTPCari4.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "01-01-2023" }));
+        DTPCari4.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "07-08-2023" }));
         DTPCari4.setDisplayFormat("dd-MM-yyyy");
         DTPCari4.setName("DTPCari4"); // NOI18N
         DTPCari4.setOpaque(false);
@@ -699,7 +705,7 @@ public class DlgBookingOperasi extends javax.swing.JDialog {
         TPasien.setBounds(195, 10, 208, 23);
 
         DTPTgl.setForeground(new java.awt.Color(50, 70, 50));
-        DTPTgl.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "01-01-2023" }));
+        DTPTgl.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "07-08-2023" }));
         DTPTgl.setDisplayFormat("dd-MM-yyyy");
         DTPTgl.setName("DTPTgl"); // NOI18N
         DTPTgl.setOpaque(false);
@@ -936,6 +942,7 @@ public class DlgBookingOperasi extends javax.swing.JDialog {
         FormMenu.setPreferredSize(new java.awt.Dimension(115, 43));
         FormMenu.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 1, 1));
 
+        BtnKamarInap.setBackground(new java.awt.Color(204, 255, 204));
         BtnKamarInap.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/item.png"))); // NOI18N
         BtnKamarInap.setText("Kamar Inap");
         BtnKamarInap.setFocusPainted(false);
@@ -953,6 +960,7 @@ public class DlgBookingOperasi extends javax.swing.JDialog {
         });
         FormMenu.add(BtnKamarInap);
 
+        BtnPermintaanLab.setBackground(new java.awt.Color(204, 255, 204));
         BtnPermintaanLab.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/item.png"))); // NOI18N
         BtnPermintaanLab.setText("Permintaan Lab");
         BtnPermintaanLab.setFocusPainted(false);
@@ -970,6 +978,25 @@ public class DlgBookingOperasi extends javax.swing.JDialog {
         });
         FormMenu.add(BtnPermintaanLab);
 
+        BtnObatBhp.setBackground(new java.awt.Color(204, 255, 204));
+        BtnObatBhp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/item.png"))); // NOI18N
+        BtnObatBhp.setText("Permintaan Resep");
+        BtnObatBhp.setFocusPainted(false);
+        BtnObatBhp.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        BtnObatBhp.setGlassColor(new java.awt.Color(255, 255, 255));
+        BtnObatBhp.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        BtnObatBhp.setMargin(new java.awt.Insets(1, 1, 1, 1));
+        BtnObatBhp.setName("BtnObatBhp"); // NOI18N
+        BtnObatBhp.setPreferredSize(new java.awt.Dimension(160, 23));
+        BtnObatBhp.setRoundRect(false);
+        BtnObatBhp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnObatBhpActionPerformed(evt);
+            }
+        });
+        FormMenu.add(BtnObatBhp);
+
+        BtnRiwayatPasien.setBackground(new java.awt.Color(204, 255, 204));
         BtnRiwayatPasien.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/item.png"))); // NOI18N
         BtnRiwayatPasien.setText("Riwayat Perawatan");
         BtnRiwayatPasien.setFocusPainted(false);
@@ -987,39 +1014,22 @@ public class DlgBookingOperasi extends javax.swing.JDialog {
         });
         FormMenu.add(BtnRiwayatPasien);
 
-        BtnChecklistPreOperasi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/item.png"))); // NOI18N
-        BtnChecklistPreOperasi.setText("Check List Pre Operasi");
-        BtnChecklistPreOperasi.setFocusPainted(false);
-        BtnChecklistPreOperasi.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
-        BtnChecklistPreOperasi.setGlassColor(new java.awt.Color(255, 255, 255));
-        BtnChecklistPreOperasi.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        BtnChecklistPreOperasi.setMargin(new java.awt.Insets(1, 1, 1, 1));
-        BtnChecklistPreOperasi.setName("BtnChecklistPreOperasi"); // NOI18N
-        BtnChecklistPreOperasi.setPreferredSize(new java.awt.Dimension(160, 23));
-        BtnChecklistPreOperasi.setRoundRect(false);
-        BtnChecklistPreOperasi.addActionListener(new java.awt.event.ActionListener() {
+        BtnInformasiTindakanMedis.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/item.png"))); // NOI18N
+        BtnInformasiTindakanMedis.setText("Informasi Tindakan Medis");
+        BtnInformasiTindakanMedis.setFocusPainted(false);
+        BtnInformasiTindakanMedis.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        BtnInformasiTindakanMedis.setGlassColor(new java.awt.Color(255, 255, 255));
+        BtnInformasiTindakanMedis.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        BtnInformasiTindakanMedis.setMargin(new java.awt.Insets(1, 1, 1, 1));
+        BtnInformasiTindakanMedis.setName("BtnInformasiTindakanMedis"); // NOI18N
+        BtnInformasiTindakanMedis.setPreferredSize(new java.awt.Dimension(160, 23));
+        BtnInformasiTindakanMedis.setRoundRect(false);
+        BtnInformasiTindakanMedis.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnChecklistPreOperasiActionPerformed(evt);
+                BtnInformasiTindakanMedisActionPerformed(evt);
             }
         });
-        FormMenu.add(BtnChecklistPreOperasi);
-
-        BtnSignInSebelumAnestesi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/item.png"))); // NOI18N
-        BtnSignInSebelumAnestesi.setText("Sign-In Sebelum Anestesi");
-        BtnSignInSebelumAnestesi.setFocusPainted(false);
-        BtnSignInSebelumAnestesi.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
-        BtnSignInSebelumAnestesi.setGlassColor(new java.awt.Color(255, 255, 255));
-        BtnSignInSebelumAnestesi.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        BtnSignInSebelumAnestesi.setMargin(new java.awt.Insets(1, 1, 1, 1));
-        BtnSignInSebelumAnestesi.setName("BtnSignInSebelumAnestesi"); // NOI18N
-        BtnSignInSebelumAnestesi.setPreferredSize(new java.awt.Dimension(160, 23));
-        BtnSignInSebelumAnestesi.setRoundRect(false);
-        BtnSignInSebelumAnestesi.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnSignInSebelumAnestesiActionPerformed(evt);
-            }
-        });
-        FormMenu.add(BtnSignInSebelumAnestesi);
+        FormMenu.add(BtnInformasiTindakanMedis);
 
         BtnPreOperasi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/item.png"))); // NOI18N
         BtnPreOperasi.setText("Penilaian Pre Operasi");
@@ -1055,39 +1065,22 @@ public class DlgBookingOperasi extends javax.swing.JDialog {
         });
         FormMenu.add(BtnPreAnastesi);
 
-        BtnTagihanOperasi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/item.png"))); // NOI18N
-        BtnTagihanOperasi.setText("Tagihan Operasi/VK");
-        BtnTagihanOperasi.setFocusPainted(false);
-        BtnTagihanOperasi.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
-        BtnTagihanOperasi.setGlassColor(new java.awt.Color(255, 255, 255));
-        BtnTagihanOperasi.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        BtnTagihanOperasi.setMargin(new java.awt.Insets(1, 1, 1, 1));
-        BtnTagihanOperasi.setName("BtnTagihanOperasi"); // NOI18N
-        BtnTagihanOperasi.setPreferredSize(new java.awt.Dimension(160, 23));
-        BtnTagihanOperasi.setRoundRect(false);
-        BtnTagihanOperasi.addActionListener(new java.awt.event.ActionListener() {
+        BtnChecklistPreOperasi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/item.png"))); // NOI18N
+        BtnChecklistPreOperasi.setText("Check List Pre Operasi");
+        BtnChecklistPreOperasi.setFocusPainted(false);
+        BtnChecklistPreOperasi.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        BtnChecklistPreOperasi.setGlassColor(new java.awt.Color(255, 255, 255));
+        BtnChecklistPreOperasi.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        BtnChecklistPreOperasi.setMargin(new java.awt.Insets(1, 1, 1, 1));
+        BtnChecklistPreOperasi.setName("BtnChecklistPreOperasi"); // NOI18N
+        BtnChecklistPreOperasi.setPreferredSize(new java.awt.Dimension(160, 23));
+        BtnChecklistPreOperasi.setRoundRect(false);
+        BtnChecklistPreOperasi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnTagihanOperasiActionPerformed(evt);
+                BtnChecklistPreOperasiActionPerformed(evt);
             }
         });
-        FormMenu.add(BtnTagihanOperasi);
-
-        BtnObatBhp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/item.png"))); // NOI18N
-        BtnObatBhp.setText("Permintaan Resep");
-        BtnObatBhp.setFocusPainted(false);
-        BtnObatBhp.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
-        BtnObatBhp.setGlassColor(new java.awt.Color(255, 255, 255));
-        BtnObatBhp.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        BtnObatBhp.setMargin(new java.awt.Insets(1, 1, 1, 1));
-        BtnObatBhp.setName("BtnObatBhp"); // NOI18N
-        BtnObatBhp.setPreferredSize(new java.awt.Dimension(160, 23));
-        BtnObatBhp.setRoundRect(false);
-        BtnObatBhp.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnObatBhpActionPerformed(evt);
-            }
-        });
-        FormMenu.add(BtnObatBhp);
+        FormMenu.add(BtnChecklistPreOperasi);
 
         BtnTransferAntarRuang.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/item.png"))); // NOI18N
         BtnTransferAntarRuang.setText("Transfer Antar Ruang");
@@ -1105,6 +1098,109 @@ public class DlgBookingOperasi extends javax.swing.JDialog {
             }
         });
         FormMenu.add(BtnTransferAntarRuang);
+
+        BtnChecklistDurante.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/item.png"))); // NOI18N
+        BtnChecklistDurante.setText("Check List Durante");
+        BtnChecklistDurante.setToolTipText("");
+        BtnChecklistDurante.setFocusPainted(false);
+        BtnChecklistDurante.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        BtnChecklistDurante.setGlassColor(new java.awt.Color(255, 255, 255));
+        BtnChecklistDurante.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        BtnChecklistDurante.setMargin(new java.awt.Insets(1, 1, 1, 1));
+        BtnChecklistDurante.setName("BtnChecklistDurante"); // NOI18N
+        BtnChecklistDurante.setPreferredSize(new java.awt.Dimension(160, 23));
+        BtnChecklistDurante.setRoundRect(false);
+        BtnChecklistDurante.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnChecklistDuranteActionPerformed(evt);
+            }
+        });
+        FormMenu.add(BtnChecklistDurante);
+
+        BtnSignInSebelumAnestesi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/item.png"))); // NOI18N
+        BtnSignInSebelumAnestesi.setText("Sign-In Sebelum Anestesi");
+        BtnSignInSebelumAnestesi.setFocusPainted(false);
+        BtnSignInSebelumAnestesi.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        BtnSignInSebelumAnestesi.setGlassColor(new java.awt.Color(255, 255, 255));
+        BtnSignInSebelumAnestesi.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        BtnSignInSebelumAnestesi.setMargin(new java.awt.Insets(1, 1, 1, 1));
+        BtnSignInSebelumAnestesi.setName("BtnSignInSebelumAnestesi"); // NOI18N
+        BtnSignInSebelumAnestesi.setPreferredSize(new java.awt.Dimension(160, 23));
+        BtnSignInSebelumAnestesi.setRoundRect(false);
+        BtnSignInSebelumAnestesi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnSignInSebelumAnestesiActionPerformed(evt);
+            }
+        });
+        FormMenu.add(BtnSignInSebelumAnestesi);
+
+        BtnTimeOut.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/item.png"))); // NOI18N
+        BtnTimeOut.setText("Time-Out Sebelum Insisi");
+        BtnTimeOut.setFocusPainted(false);
+        BtnTimeOut.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        BtnTimeOut.setGlassColor(new java.awt.Color(255, 255, 255));
+        BtnTimeOut.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        BtnTimeOut.setMargin(new java.awt.Insets(1, 1, 1, 1));
+        BtnTimeOut.setName("BtnTimeOut"); // NOI18N
+        BtnTimeOut.setPreferredSize(new java.awt.Dimension(160, 23));
+        BtnTimeOut.setRoundRect(false);
+        BtnTimeOut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnTimeOutActionPerformed(evt);
+            }
+        });
+        FormMenu.add(BtnTimeOut);
+
+        BtnSignOut.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/item.png"))); // NOI18N
+        BtnSignOut.setText("Sign-Out Sebelum Menutup Luka");
+        BtnSignOut.setFocusPainted(false);
+        BtnSignOut.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        BtnSignOut.setGlassColor(new java.awt.Color(255, 255, 255));
+        BtnSignOut.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        BtnSignOut.setMargin(new java.awt.Insets(1, 1, 1, 1));
+        BtnSignOut.setName("BtnSignOut"); // NOI18N
+        BtnSignOut.setPreferredSize(new java.awt.Dimension(160, 23));
+        BtnSignOut.setRoundRect(false);
+        BtnSignOut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnSignOutActionPerformed(evt);
+            }
+        });
+        FormMenu.add(BtnSignOut);
+
+        BtnTagihanOperasi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/item.png"))); // NOI18N
+        BtnTagihanOperasi.setText("Tagihan/Laporan Operasi");
+        BtnTagihanOperasi.setFocusPainted(false);
+        BtnTagihanOperasi.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        BtnTagihanOperasi.setGlassColor(new java.awt.Color(255, 255, 255));
+        BtnTagihanOperasi.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        BtnTagihanOperasi.setMargin(new java.awt.Insets(1, 1, 1, 1));
+        BtnTagihanOperasi.setName("BtnTagihanOperasi"); // NOI18N
+        BtnTagihanOperasi.setPreferredSize(new java.awt.Dimension(160, 23));
+        BtnTagihanOperasi.setRoundRect(false);
+        BtnTagihanOperasi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnTagihanOperasiActionPerformed(evt);
+            }
+        });
+        FormMenu.add(BtnTagihanOperasi);
+
+        BtnChecklistPostOperasi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/item.png"))); // NOI18N
+        BtnChecklistPostOperasi.setText("Check List Post Operasi");
+        BtnChecklistPostOperasi.setFocusPainted(false);
+        BtnChecklistPostOperasi.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        BtnChecklistPostOperasi.setGlassColor(new java.awt.Color(255, 255, 255));
+        BtnChecklistPostOperasi.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        BtnChecklistPostOperasi.setMargin(new java.awt.Insets(1, 1, 1, 1));
+        BtnChecklistPostOperasi.setName("BtnChecklistPostOperasi"); // NOI18N
+        BtnChecklistPostOperasi.setPreferredSize(new java.awt.Dimension(160, 23));
+        BtnChecklistPostOperasi.setRoundRect(false);
+        BtnChecklistPostOperasi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnChecklistPostOperasiActionPerformed(evt);
+            }
+        });
+        FormMenu.add(BtnChecklistPostOperasi);
 
         ScrollMenu.setViewportView(FormMenu);
 
@@ -1742,6 +1838,96 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
         }
     }//GEN-LAST:event_BtnSignInSebelumAnestesiActionPerformed
 
+    private void BtnInformasiTindakanMedisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnInformasiTindakanMedisActionPerformed
+        if(tabMode.getRowCount()==0){
+            JOptionPane.showMessageDialog(null,"Maaf, table masih kosong...!!!!");
+            TCari.requestFocus();
+        }else{            
+//            if(tbObat.getSelectedRow()!= -1){
+//                this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+//                RMPenilaianPreOperasi form=new RMPenilaianPreOperasi(null,false);
+//                form.isCek();
+//                form.emptTeks();
+//                form.setNoRm(TNoRw.getText(),DTPCari2.getDate(),KdDokter.getText(),NmDokter.getText(),NmOperasi.getText());
+//                form.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
+//                form.setLocationRelativeTo(internalFrame1);
+//                form.setVisible(true);
+//                this.setCursor(Cursor.getDefaultCursor());
+//            }else{
+//                JOptionPane.showMessageDialog(null,"Maaf, silahkan pilih data...!!!!");
+//            }
+            
+             if(tbObat.getSelectedRow()>-1){
+                if(tbObat.getValueAt(tbObat.getSelectedRow(),0).toString().equals("")){
+                    try {
+                        psanak=koneksi.prepareStatement(
+                              "select pasien.no_rkm_medis,pasien.nm_pasien,ranap_gabung.no_rawat2,concat(reg_periksa.umurdaftar,' ',reg_periksa.sttsumur)as umur,pasien.no_peserta, "+
+                              "concat(pasien.alamatpj,', ',pasien.kelurahanpj,', ',pasien.kecamatanpj,', ',pasien.kabupatenpj) as alamat "+
+                              "from reg_periksa inner join pasien inner join ranap_gabung on "+
+                              "pasien.no_rkm_medis=reg_periksa.no_rkm_medis and ranap_gabung.no_rawat2=reg_periksa.no_rawat where ranap_gabung.no_rawat=?");            
+                        try {
+                              psanak.setString(1,tbObat.getValueAt(tbObat.getSelectedRow()-1,0).toString());
+                              rs=psanak.executeQuery();
+                              if(rs.next()){
+                                    this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+                                    SuratPersetujuanPenolakanTindakan resume=new SuratPersetujuanPenolakanTindakan(null,false);
+                                    resume.isCek();
+                                    resume.emptTeks();
+                                    resume.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
+                                    resume.setLocationRelativeTo(internalFrame1);
+                                    resume.setNoRm(rs.getString("no_rawat2"),new Date());
+                                    resume.tampil();
+                                    resume.setVisible(true);
+                                    this.setCursor(Cursor.getDefaultCursor());
+                              }else{
+                                  JOptionPane.showMessageDialog(null,"Maaf, Silahkan anda pilih dulu pasien...!!!");
+                                  tbObat.requestFocus();
+                              }
+                        } catch(Exception ex){
+                              System.out.println("Notifikasi : "+ex);
+                        }finally{
+                              if(rs != null){
+                                  rs.close();
+                              }
+                              if(psanak != null){
+                                  psanak.close();
+                              }
+                        }
+                    } catch (Exception e) {
+                        System.out.println(e);
+                    }                
+                }else{
+                    this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+                    SuratPersetujuanPenolakanTindakan resume=new SuratPersetujuanPenolakanTindakan(null,false);
+                    resume.isCek();
+                    resume.emptTeks();
+                    resume.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
+                    resume.setLocationRelativeTo(internalFrame1);
+                    resume.setNoRm(TNoRw.getText(),new Date());
+                    resume.tampil();
+                    resume.setVisible(true);
+                    this.setCursor(Cursor.getDefaultCursor());
+                }
+            }
+        }
+    }//GEN-LAST:event_BtnInformasiTindakanMedisActionPerformed
+
+    private void BtnChecklistDuranteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnChecklistDuranteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BtnChecklistDuranteActionPerformed
+
+    private void BtnChecklistPostOperasiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnChecklistPostOperasiActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BtnChecklistPostOperasiActionPerformed
+
+    private void BtnTimeOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnTimeOutActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BtnTimeOutActionPerformed
+
+    private void BtnSignOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnSignOutActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BtnSignOutActionPerformed
+
     /**
     * @param args the command line arguments
     */
@@ -1762,9 +1948,12 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     private widget.Button BtnAll;
     private widget.Button BtnBatal;
     private widget.Button BtnCari;
+    private widget.Button BtnChecklistDurante;
+    private widget.Button BtnChecklistPostOperasi;
     private widget.Button BtnChecklistPreOperasi;
     private widget.Button BtnEdit;
     private widget.Button BtnHapus;
+    private widget.Button BtnInformasiTindakanMedis;
     private widget.Button BtnKamarInap;
     private widget.Button BtnKeluar;
     private widget.Button BtnObatBhp;
@@ -1777,8 +1966,10 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     private widget.Button BtnRiwayatPasien;
     private widget.Button BtnRuangOperasi;
     private widget.Button BtnSignInSebelumAnestesi;
+    private widget.Button BtnSignOut;
     private widget.Button BtnSimpan;
     private widget.Button BtnTagihanOperasi;
+    private widget.Button BtnTimeOut;
     private widget.Button BtnTransferAntarRuang;
     private widget.CekBox ChkAccor;
     private widget.CekBox ChkInput;
