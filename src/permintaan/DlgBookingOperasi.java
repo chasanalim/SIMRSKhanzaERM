@@ -26,12 +26,14 @@ import javax.swing.table.TableColumn;
 import kepegawaian.DlgCariDokter;
 import keuangan.DlgCariDaftarOperasi;
 import rekammedis.RMChecklistDuranteOperasi;
+import rekammedis.RMChecklistPostOperasi;
 import rekammedis.RMChecklistPreOperasi;
 import rekammedis.RMPenilaianPreAnastesi;
 import rekammedis.RMPenilaianPreOperasi;
 import simrskhanza.DlgKamarInap;
 import rekammedis.RMRiwayatPerawatan;
 import rekammedis.RMSignInSebelumAnastesi;
+import rekammedis.RMSignOutSebelumMenutupLuka;
 import rekammedis.RMTimeOutSebelumInsisi;
 import rekammedis.RMTransferPasienAntarRuang;
 import setting.DlgCariRuangOperasi;
@@ -1942,11 +1944,34 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     }//GEN-LAST:event_BtnChecklistDuranteActionPerformed
 
     private void BtnChecklistPostOperasiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnChecklistPostOperasiActionPerformed
-        // TODO add your handling code here:
+        if(tabMode.getRowCount()==0){
+            JOptionPane.showMessageDialog(null,"Maaf, table masih kosong...!!!!");
+            TCari.requestFocus();
+        }else{            
+            if(tbObat.getSelectedRow()!= -1){
+               this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+               RMChecklistPostOperasi form=new RMChecklistPostOperasi(null,false);
+               form.isCek();
+               form.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
+               form.setLocationRelativeTo(internalFrame1);
+               form.setVisible(true);
+               if(R1.isSelected()==true){
+                   form.setNoRm(TNoRw.getText(),new Date());
+               }else if(R2.isSelected()==true){
+                   form.setNoRm(TNoRw.getText(),DTPCari2.getDate());
+               }else if(R3.isSelected()==true){
+                   form.setNoRm(TNoRw.getText(),DTPCari4.getDate());
+               }
+               this.setCursor(Cursor.getDefaultCursor());
+               form.tampil();
+            }else{
+                JOptionPane.showMessageDialog(null,"Maaf, silahkan pilih data...!!!!");
+            }
+        }
     }//GEN-LAST:event_BtnChecklistPostOperasiActionPerformed
 
     private void BtnTimeOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnTimeOutActionPerformed
-         if(tabMode.getRowCount()==0){
+        if(tabMode.getRowCount()==0){
             JOptionPane.showMessageDialog(null,"Maaf, table masih kosong...!!!!");
             TCari.requestFocus();
         }else{            
@@ -1973,7 +1998,30 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     }//GEN-LAST:event_BtnTimeOutActionPerformed
 
     private void BtnSignOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnSignOutActionPerformed
-        // TODO add your handling code here:
+        if(tabMode.getRowCount()==0){
+            JOptionPane.showMessageDialog(null,"Maaf, table masih kosong...!!!!");
+            TCari.requestFocus();
+        }else{            
+            if(tbObat.getSelectedRow()!= -1){
+               this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+                    RMSignOutSebelumMenutupLuka form=new RMSignOutSebelumMenutupLuka(null,false);
+                    form.isCek();
+                    form.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
+                    form.setLocationRelativeTo(internalFrame1);
+                    form.setVisible(true);
+                    if(R1.isSelected()==true){
+                        form.setNoRm(TNoRw.getText(),new Date());
+                    }else if(R2.isSelected()==true){
+                        form.setNoRm(TNoRw.getText(),DTPCari2.getDate());
+                    }else if(R3.isSelected()==true){
+                        form.setNoRm(TNoRw.getText(),DTPCari4.getDate());
+                    }
+                    form.tampil();
+                    this.setCursor(Cursor.getDefaultCursor());
+            }else{
+                JOptionPane.showMessageDialog(null,"Maaf, silahkan pilih data...!!!!");
+            }
+        }
     }//GEN-LAST:event_BtnSignOutActionPerformed
 
     /**
