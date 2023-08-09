@@ -67,7 +67,7 @@ public final class RMSignInSebelumAnastesi extends javax.swing.JDialog {
         tabMode=new DefaultTableModel(null,new Object[]{
             "No.Rawat","No.RM","Nama Pasien","Tgl.Lahir","J.K.","Tanggal","SN/CN","Tindakan","Kode Dokter Bedah","Nama Dokter Bedah",
             "Kode Dokter Anest","Nama Dokter Anestesi","Identitas","Penandaan Area Operasi","Alergi","Resiko Aspirasi","Rencana Antisipasi Aspirasi",
-            "Resiko Kehilangan Darah","Antisipasi Kehilangan Darah","Line","Antisipasi Line","Kesiapan Alat Obat Anastesi","Antisipasi Alat Obat Anastesi",
+            "Resiko Kehilangan Darah","Line","Antisipasi Line","Kesiapan Alat Obat Anastesi","Antisipasi Alat Obat Anastesi",
             "NIP OK","Petugas Ruang OK"
         }){
               @Override public boolean isCellEditable(int rowIndex, int colIndex){return false;}
@@ -78,7 +78,7 @@ public final class RMSignInSebelumAnastesi extends javax.swing.JDialog {
         tbObat.setPreferredScrollableViewportSize(new Dimension(500,500));
         tbObat.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
 
-        for (i = 0; i < 25; i++) {
+        for (i = 0; i < 24; i++) {
             TableColumn column = tbObat.getColumnModel().getColumn(i);
             if(i==0){
                 column.setPreferredWidth(105);
@@ -125,11 +125,9 @@ public final class RMSignInSebelumAnastesi extends javax.swing.JDialog {
             }else if(i==21){
                 column.setPreferredWidth(90);
             }else if(i==22){
-                column.setPreferredWidth(120);
+                column.setPreferredWidth(70);
             }else if(i==23){
-                column.setPreferredWidth(90);
-            }else if(i==24){
-                column.setPreferredWidth(120);
+                column.setPreferredWidth(140);
             }
         }
         tbObat.setDefaultRenderer(Object.class, new WarnaTable());
@@ -893,7 +891,7 @@ public final class RMSignInSebelumAnastesi extends javax.swing.JDialog {
             }
         });
         FormInput.add(btnPetugasOK);
-        btnPetugasOK.setBounds(350, 270, 28, 23);
+        btnPetugasOK.setBounds(360, 270, 28, 23);
 
         jLabel5.setText(":");
         jLabel5.setName("jLabel5"); // NOI18N
@@ -1762,8 +1760,19 @@ public final class RMSignInSebelumAnastesi extends javax.swing.JDialog {
             KodeDokterAnestesi.setText(tbObat.getValueAt(tbObat.getSelectedRow(),10).toString());
             NamaDokterAnestesi.setText(tbObat.getValueAt(tbObat.getSelectedRow(),11).toString());
             Identitas.setSelectedItem(tbObat.getValueAt(tbObat.getSelectedRow(),12).toString());
-            KdPetugasOK.setText(tbObat.getValueAt(tbObat.getSelectedRow(),33).toString());
-            NmPetugasOK.setText(tbObat.getValueAt(tbObat.getSelectedRow(),34).toString());
+            AreaOperasi.setSelectedItem(tbObat.getValueAt(tbObat.getSelectedRow(),13).toString());
+            Alergi.setText(tbObat.getValueAt(tbObat.getSelectedRow(),14).toString());
+            ResikoAspirasi.setSelectedItem(tbObat.getValueAt(tbObat.getSelectedRow(),15).toString());
+            AntisipasiAspirasi.setText(tbObat.getValueAt(tbObat.getSelectedRow(),16).toString());
+            ResikoKehilanganDarah.setSelectedItem(tbObat.getValueAt(tbObat.getSelectedRow(),17).toString());
+            Line.setText(tbObat.getValueAt(tbObat.getSelectedRow(),18).toString());
+            AntisipasiLine.setText(tbObat.getValueAt(tbObat.getSelectedRow(),19).toString());
+            AlatAnastesi.setSelectedItem(tbObat.getValueAt(tbObat.getSelectedRow(),20).toString());
+            AntisipasiAlat.setText(tbObat.getValueAt(tbObat.getSelectedRow(),21).toString());
+            
+            
+            KdPetugasOK.setText(tbObat.getValueAt(tbObat.getSelectedRow(),22).toString());
+            NmPetugasOK.setText(tbObat.getValueAt(tbObat.getSelectedRow(),23).toString());
             Valid.SetTgl2(Tanggal,tbObat.getValueAt(tbObat.getSelectedRow(),5).toString());
         }
     }
@@ -1831,7 +1840,7 @@ public final class RMSignInSebelumAnastesi extends javax.swing.JDialog {
 
     private void ganti() {
         Sequel.mengedit("signin_sebelum_anestesi","no_rawat=? and tanggal=?","no_rawat=?,tanggal=?,sncn=?,tindakan=?,kd_dokter_bedah=?,kd_dokter_anestesi=?,identitas=?,"+
-            "penandaan_area_operasi=?,alergi=?,resiko_aspirasi=?,resiko_aspirasi_rencana_antisipasi=?,resiko_kehilangan_darah=?,resiko_kehilangan_ddarah_line=?,resiko_kehilangan_darah_antisipasi_line=?,"+
+            "penandaan_area_operasi=?,alergi=?,resiko_aspirasi=?,resiko_aspirasi_rencana_antisipasi=?,resiko_kehilangan_darah=?,resiko_kehilangan_darah_line=?,resiko_kehilangan_darah_antisipasi_line=?,"+
             "Kesiapan_alat_obat_anestesi=?,kesiapan_alat_obat_anestesi_rencana_antisipasi=?,"+
             "nip_perawat_ok=?",19,new String[]{
                 TNoRw.getText(),Valid.SetTgl(Tanggal.getSelectedItem()+"")+" "+Tanggal.getSelectedItem().toString().substring(11,19),SNCN.getText(),Tindakan.getText(),
@@ -1847,7 +1856,7 @@ public final class RMSignInSebelumAnastesi extends javax.swing.JDialog {
     }
 
     private void hapus() {
-        if(Sequel.queryu2tf("delete from checklist_pre_operasi where no_rawat=? and tanggal=?",2,new String[]{
+        if(Sequel.queryu2tf("delete from signin_sebelum_anestesi where no_rawat=? and tanggal=?",2,new String[]{
             tbObat.getValueAt(tbObat.getSelectedRow(),0).toString(),tbObat.getValueAt(tbObat.getSelectedRow(),5).toString()
         })==true){
             tampil();
