@@ -1712,7 +1712,7 @@ public final class RMSignInSebelumAnastesi extends javax.swing.JDialog {
                         rs.getString("kd_dokter_anestesi"),rs.getString("dokteranestesi"),rs.getString("identitas"),rs.getString("penandaan_area_operasi"),
                         rs.getString("alergi"),rs.getString("resiko_aspirasi"),rs.getString("resiko_aspirasi_rencana_antisipasi"),rs.getString("resiko_kehilangan_darah"),
                         rs.getString("resiko_kehilangan_darah_line"),rs.getString("resiko_kehilangan_darah_rencana_antisipasi"),rs.getString("kesiapan_alat_obat_anestesi"),
-                        rs.getString("kesiapan_alat_obat_anestesi_rencana_antisiapsi"),rs.getString("nip_perawat_ok"),rs.getString("petugasok")
+                        rs.getString("kesiapan_alat_obat_anestesi_rencana_antisipasi"),rs.getString("nip_perawat_ok"),rs.getString("nama")
                     });
                 }
             } catch (Exception e) {
