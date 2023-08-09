@@ -1087,6 +1087,7 @@ public final class RMSignOutSebelumMenutupLuka extends javax.swing.JDialog {
                 KelengkapanSpesimenFormulir.getSelectedItem().toString(),PeninjauanKembaliDokterBedah.getSelectedItem().toString(),PeninjauanKembaliDokterAnestesi.getSelectedItem().toString(), 
                 PeninjauanKembaliPerawatKamarOK.getSelectedItem().toString(),PerhatianUtamaFasePemulihan.getText(),KdPetugasOK.getText()
             })==true){
+
                 tampil();
                 emptTeks();
             } 
