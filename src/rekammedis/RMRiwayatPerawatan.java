@@ -2688,7 +2688,7 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                     "reg_periksa.hubunganpj,reg_periksa.biaya_reg,reg_periksa.status_lanjut,penjab.png_jawab "+
                     "from reg_periksa inner join dokter on reg_periksa.kd_dokter=dokter.kd_dokter "+
                     "inner join poliklinik on reg_periksa.kd_poli=poliklinik.kd_poli inner join penjab on reg_periksa.kd_pj=penjab.kd_pj "+
-                    "where reg_periksa.stts<>'Batal' and reg_periksa.no_rkm_medis=? order by reg_periksa.tgl_registrasi desc limit 1");
+                    "where reg_periksa.stts<>'Batal' and reg_periksa.no_rkm_medis=? order by reg_periksa.tgl_registrasi desc limit 3");
             }else if(R2.isSelected()==true){
                 ps=koneksi.prepareStatement(
                     "select reg_periksa.no_reg,reg_periksa.no_rawat,reg_periksa.tgl_registrasi,reg_periksa.jam_reg,"+
@@ -2856,7 +2856,7 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                     // (+) menampilkan Form Fisioterapi
                     menampilkanSEPRajal(rs.getString("no_rawat"));
                     // (+) menampilkan Form Fisioterapi
-                    menampilkanSEPRanap(rs.getString("no_rawat"));
+//                    menampilkanSEPRanap(rs.getString("no_rawat"));
                  
                     
                     
@@ -14799,7 +14799,7 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                                  "<tr>"+
                                     "<td valign='top' align='center' valign='middle'>"+w+"</td>"+
                                     "<td valign='top' align='center' valign='middle'>"+rs2.getString("program")+"</td>"+
-                                    "<td valign='top' align='center' valign='middle'>"+rs2.getString("tgl_perawatan")+" "+rs2.getString("jam_perawatan")+"</td>"+
+                                    "<td valign='top' align='center' valign='middle'>"+rs2.getString("tgl_perawatan")+" "+rs2.getString("jam_rawat")+"</td>"+
                                     "<td valign='top' align='center' valign='middle'>"+rs2.getString("kd_dokter")+"<br>"+rs2.getString("nm_dokter")+"</td>"+
                                     "<td valign='top' align='center' valign='middle'>"+rs2.getString("nip")+"<br>"+rs2.getString("nama")+"</td>"+
                                  "</tr>"
@@ -14843,7 +14843,7 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                             "<td valign='top' style='font-weight:bold;' width='18%'>Formulir Klaim Rawat Jalan Rehabilitasi Medik</td>"+
                             "<td valign='top' width='1%' align='center'>:</td>"+
                             "<td valign='top' width='79%'>"+
-                              "<table width='100%' border='1' align='center' cellpadding='3px' cellspacing='0' class='tbl_form'>"  
+                              "<table width='100%' border='0' align='center' cellpadding='3px' cellspacing='0' class='tbl_form'>"  
                         );
                         rs2.beforeFirst();
                         w=1;
@@ -14943,21 +14943,21 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                             htmlContent.append(
                                 
                                  "<tr class='sepjudul'>"+
-                                    "<td valign='top' align='center'><a href='http://"+koneksiDB.HOSTHYBRIDWEB()+":"+koneksiDB.PORTWEB()+"/"+koneksiDB.HYBRIDWEB()+"/berkasrawat/"+rs2.getString("lokasi_file")+"'><img alt='Gambar Berkas Digital' src='http://"+koneksiDB.HOSTHYBRIDWEB()+":"+koneksiDB.PORTWEB()+"/"+koneksiDB.HYBRIDWEB()+"/berkasrawat/"+rs2.getString("lokasi_file")+"' width=100% height='500'/></a></td>"+
-                                    "<td valign='top' border='0' width='2%'></td>"+
-                                    "<td valign='top' border='0' width='20%' style='font-size:10px;' id='title'>SURAT ELIGIBITAS PESERTA </td>"+
-                                    "<td valign='top' border='0' width='2%'></td>"+
+                                    "<td valign='top' border='0' width='4%'></td>"+
+                                    "<td valign='top' border='0' align='center'><img alt='SEP Rajal' src='http://192.168.1.236/webapp/berkasrawat/pages/upload/bpjs.jpg' width='90%' height='30'/></td>"+
+                                    "<td valign='top' border='0' width='4%'></td>"+
+                                    "<td valign='top' border='0' width='15%' style='font-size:10px;' id='title'>SURAT ELIGIBITAS PESERTA RSU BANYUMANIK 2 </td>"+
                                     "<td valign='top' border='0' width='35%'> </td>"+
                                     "<td valign='top' border='0' width='21%'></td>"+
                                  "</tr>"+
-                                 "<tr class='sepjudul'>"+
-                                    "<td valign='top' border='0' width='20%'></td>"+
-                                    "<td valign='top' border='0' width='2%'></td>"+
-                                    "<td valign='top' border='0' width='20%' style='font-size:10px;' id='title'>RUMAH SAKIT UMUM BANYUMANIK 2</td>"+
-                                    "<td valign='top' border='0' width='2%'></td>"+
-                                    "<td valign='top' border='0' width='35%'></td>"+
-                                    "<td valign='top' border='0' width='21%'></td>"+
-                                 "</tr>"+
+//                                 "<tr class='sepjudul'>"+
+//                                    "<td valign='top' border='0' width='20%'></td>"+
+//                                    "<td valign='top' border='0' width='2%'></td>"+
+//                                    "<td valign='top' border='0' width='20%' style='font-size:10px;' id='title'></td>"+
+//                                    "<td valign='top' border='0' width='2%'></td>"+
+//                                    "<td valign='top' border='0' width='35%'></td>"+
+//                                    "<td valign='top' border='0' width='21%'></td>"+
+//                                 "</tr>"+
                               "</table>" +
                               "<table width='100%' border='0' align='center' cellpadding='3px' cellspacing='0' class='tbl_form'>"+
                                  "<tr class='sep'>"+

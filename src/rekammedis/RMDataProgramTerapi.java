@@ -1260,8 +1260,8 @@ public final class RMDataProgramTerapi extends javax.swing.JDialog {
         BtnEdit.setEnabled(akses.getcatatan_observasi_igd());
         BtnPrint.setEnabled(akses.getcatatan_observasi_igd()); 
         if(akses.getjml2()>=1){
-            KdDokter.setEditable(false);
-            btnPetugas.setEnabled(false);
+            KdDokter.setEditable(true);
+            btnPetugas.setEnabled(true);
             KdDokter.setText(akses.getkode());
             Sequel.cariIsi("select petugas.nama from petugas where petugas.nip=?", NamaDokter,KdDokter.getText());
             if(NamaDokter.getText().equals("")){
