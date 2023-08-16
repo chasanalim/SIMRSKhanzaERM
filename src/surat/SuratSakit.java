@@ -43,7 +43,7 @@ public final class SuratSakit extends javax.swing.JDialog {
     private PreparedStatement ps;
     private ResultSet rs;
     private int i=0;
-    private String tgl;
+    private String tgl,finger="";
     /** Creates new form DlgRujuk
      * @param parent
      * @param modal */
@@ -54,7 +54,7 @@ public final class SuratSakit extends javax.swing.JDialog {
         setSize(628,674);
         
         tabMode=new DefaultTableModel(null,new Object[]{
-            "No.Surat Sakit","No.Rawat","No.R.M.","Nama Pasien","Dari Tanggal","Sampai Tanggal","Lama Sakit"
+            "No.Surat Sakit","No.Rawat","No.R.M.","Nama Pasien","Dari Tanggal","Sampai Tanggal","Lama Sakit","Kode Dokter","Nama Dokter","Kode DPJP","Nama DPJP Ranap"
         }){
               @Override public boolean isCellEditable(int rowIndex, int colIndex){return false;}
         };
@@ -64,7 +64,7 @@ public final class SuratSakit extends javax.swing.JDialog {
         tbObat.setPreferredScrollableViewportSize(new Dimension(500,500));
         tbObat.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
 
-        for (i = 0; i < 7; i++) {
+        for (i = 0; i < 11; i++) {
             TableColumn column = tbObat.getColumnModel().getColumn(i);
             if(i==0){
                 column.setPreferredWidth(105);
@@ -81,7 +81,13 @@ public final class SuratSakit extends javax.swing.JDialog {
             }else if(i==6){
                 column.setPreferredWidth(100);
             }else if(i==7){
-                column.setPreferredWidth(90);
+                column.setPreferredWidth(60);
+            }else if(i==8){
+                column.setPreferredWidth(120);
+            }else if(i==9){
+                column.setPreferredWidth(60);
+            }else if(i==10){
+                column.setPreferredWidth(120);
             }
         }
         tbObat.setDefaultRenderer(Object.class, new WarnaTable());
@@ -892,7 +898,13 @@ public final class SuratSakit extends javax.swing.JDialog {
                 param.put("propinsirs",akses.getpropinsirs());
                 param.put("kontakrs",akses.getkontakrs());
                 param.put("emailrs",akses.getemailrs()); 
-                param.put("logo",Sequel.cariGambar("select logo from setting")); 
+                param.put("logo",Sequel.cariGambar("select logo from setting"));
+                
+                finger=Sequel.cariIsi("select sha1(sidikjari.sidikjari) from sidikjari inner join pegawai on pegawai.id=sidikjari.id where pegawai.nik=?",tbObat.getValueAt(tbObat.getSelectedRow(),7).toString());
+                param.put("finger","Dikeluarkan di "+akses.getnamars()+", Kabupaten/Kota "+akses.getkabupatenrs()+"\nDitandatangani secara elektronik oleh "+tbObat.getValueAt(tbObat.getSelectedRow(),8).toString()+"\nID "+(finger.equals("")?tbObat.getValueAt(tbObat.getSelectedRow(),7).toString():finger)+"\n"+Valid.SetTgl3(tbObat.getValueAt(tbObat.getSelectedRow(),4).toString())); 
+//                finger=Sequel.cariIsi("select sha1(sidikjari.sidikjari) from sidikjari inner join pegawai on pegawai.id=sidikjari.id where pegawai.nik=?",rs.getString("kd_dokter"));
+//                param.put("finger","Dikeluarkan di "+akses.getnamars()+", Kabupaten/Kota "+akses.getkabupatenrs()+"\nDitandatangani secara elektronik oleh "+rs.getString("nm_dokter")+"\nID "+(finger.equals("")?rs.getString("kd_dokter"):finger)+"\n"+rs.getString("tgl_periksa")); 
+                
                 Valid.MyReportqry("rptSuratSakit5.jasper","report","::[ Surat Sakit ]::",
                              "select DATE_FORMAT(reg_periksa.tgl_registrasi,'%d-%m-%Y')as tgl_registrasi,perusahaan_pasien.nama_perusahaan,reg_periksa.no_rawat,dokter.nm_dokter,pasien.keluarga,pasien.namakeluarga,pasien.tgl_lahir,pasien.jk," +
                               " pasien.nm_pasien,pasien.jk,concat(reg_periksa.umurdaftar,' ',reg_periksa.sttsumur)as umur,pasien.pekerjaan,concat(pasien.alamat,', ',kelurahan.nm_kel,', ',kecamatan.nm_kec,', ',kabupaten.nm_kab) as alamat" +
@@ -969,17 +981,19 @@ public final class SuratSakit extends javax.swing.JDialog {
             tgl=" suratsakit.tanggalawal between '"+Valid.SetTgl(DTPCari1.getSelectedItem()+"")+"' and '"+Valid.SetTgl(DTPCari2.getSelectedItem()+"")+"' ";
             if(TCari.getText().trim().equals("")){
                 ps=koneksi.prepareStatement(
-                     "select suratsakit.no_surat,suratsakit.no_rawat,reg_periksa.no_rkm_medis,pasien.nm_pasien,"+
-                     "suratsakit.tanggalawal,suratsakit.tanggalakhir,suratsakit.lamasakit "+                  
-                     "from suratsakit inner join reg_periksa on suratsakit.no_rawat=reg_periksa.no_rawat "+
-                     "inner join pasien on reg_periksa.no_rkm_medis=pasien.no_rkm_medis "+
-                     "where "+tgl+"order by suratsakit.no_surat");
+                     "SELECT suratsakit.no_surat,suratsakit.no_rawat,reg_periksa.no_rkm_medis,pasien.nm_pasien,suratsakit.tanggalawal,suratsakit.tanggalakhir,suratsakit.lamasakit,reg_periksa.kd_dokter,dokter.nm_dokter, "+
+                     "(SELECT dpjp_ranap.kd_dokter from dpjp_ranap WHERE dpjp_ranap.no_rawat=reg_periksa.no_rawat and dpjp_ranap.prioritas=1 limit 1) as dpjp_ranap, "+
+                     "(SELECT dokter.nm_dokter from dokter INNER JOIN dpjp_ranap on dokter.kd_dokter=dpjp_ranap.kd_dokter WHERE dpjp_ranap.no_rawat=reg_periksa.no_rawat and dpjp_ranap.prioritas=1 limit 1) as dokter_ranap "+
+                     "FROM suratsakit INNER JOIN reg_periksa ON suratsakit.no_rawat = reg_periksa.no_rawat INNER JOIN pasien ON reg_periksa.no_rkm_medis = pasien.no_rkm_medis INNER JOIN dokter on dokter.kd_dokter = reg_periksa.kd_dokter "+ 
+                     "LEFT JOIN dpjp_ranap on reg_periksa.no_rawat = dpjp_ranap.no_rawat "+
+                     "WHERE "+tgl+" ORDER BY reg_periksa.no_rawat desc ");
             }else{
                 ps=koneksi.prepareStatement(
-                     "select suratsakit.no_surat,suratsakit.no_rawat,reg_periksa.no_rkm_medis,pasien.nm_pasien,"+
-                     "suratsakit.tanggalawal,suratsakit.tanggalakhir,suratsakit.lamasakit "+                  
-                     "from suratsakit inner join reg_periksa on suratsakit.no_rawat=reg_periksa.no_rawat "+
-                     "inner join pasien on reg_periksa.no_rkm_medis=pasien.no_rkm_medis "+
+                    "SELECT suratsakit.no_surat,suratsakit.no_rawat,reg_periksa.no_rkm_medis,pasien.nm_pasien,suratsakit.tanggalawal,suratsakit.tanggalakhir,suratsakit.lamasakit,reg_periksa.kd_dokter,dokter.nm_dokter, "+
+                     "(SELECT dpjp_ranap.kd_dokter from dpjp_ranap WHERE dpjp_ranap.no_rawat=reg_periksa.no_rawat and dpjp_ranap.prioritas=1 limit 1) as dpjp_ranap, "+
+                     "(SELECT dokter.nm_dokter from dokter INNER JOIN dpjp_ranap on dokter.kd_dokter=dpjp_ranap.kd_dokter WHERE dpjp_ranap.no_rawat=reg_periksa.no_rawat and dpjp_ranap.prioritas=1 limit 1) as dokter_ranap "+
+                     "FROM suratsakit INNER JOIN reg_periksa ON suratsakit.no_rawat = reg_periksa.no_rawat INNER JOIN pasien ON reg_periksa.no_rkm_medis = pasien.no_rkm_medis INNER JOIN dokter on dokter.kd_dokter = reg_periksa.kd_dokter "+ 
+                     "LEFT JOIN dpjp_ranap on reg_periksa.no_rawat = dpjp_ranap.no_rawat "+
                      "where "+tgl+"and no_surat like '%"+TCari.getText().trim()+"%' or "+
                      tgl+"and suratsakit.no_rawat like '%"+TCari.getText().trim()+"%' or "+
                      tgl+"and reg_periksa.no_rkm_medis like '%"+TCari.getText().trim()+"%' or "+
@@ -995,7 +1009,8 @@ public final class SuratSakit extends javax.swing.JDialog {
                     tabMode.addRow(new String[]{
                         rs.getString(1),rs.getString(2),rs.getString(3),
                         rs.getString(4),rs.getString(5),rs.getString(6),
-                        rs.getString(7)
+                        rs.getString(7),rs.getString(8),rs.getString(9),
+                        rs.getString(10),rs.getString(11)
                     });
                 }
             } catch (Exception e) {
