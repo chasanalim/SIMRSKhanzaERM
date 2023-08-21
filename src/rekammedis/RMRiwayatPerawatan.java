@@ -11541,15 +11541,7 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                                        "1. Posisi Operasi"+  
                                        "<table width='100%' border='0' align='center' cellpadding='3px' cellspacing='0px' class='tbl_form'>"+
                                           "<tr>"+
-                                              "<td width='33%' border='0'>Tanggal : "+rs2.getString("nm_pasien")+"</td>"+
-                                              "<td width='67%' border='0'>Dokter Bedah : "+rs2.getString("nm_pasien")+" "+rs2.getString("nm_pasien")+"</td>"+
-                                          "</tr>"+
-                                          "<tr>"+
-                                              "<td width='33%' border='0'>SN/CN : "+rs2.getString("nm_pasien")+"</td>"+
-                                              "<td width='67%' border='0'>Dokter Anestesi : "+rs2.getString("nm_pasien")+" "+rs2.getString("nm_pasien")+"</td>"+
-                                          "</tr>"+
-                                          "<tr>"+
-                                              "<td width='100%' border='0' colspan='2'>Tindakan/Operasi : "+rs2.getString("nm_pasien")+"</td>"+
+                                              "<td width='100%' border='0'>Pengaturan Posisi Operasi : "+rs2.getString("posisi_operasi")+"</td>"+
                                           "</tr>"+
                                        "</table>"+
                                     "</td>"+
@@ -11559,15 +11551,17 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                                        "2. Preparasi Operasi"+  
                                        "<table width='100%' border='0' align='center' cellpadding='3px' cellspacing='0px' class='tbl_form'>"+
                                           "<tr>"+
-                                              "<td width='33%' border='0'>Tanggal : "+rs2.getString("nm_pasien")+"</td>"+
-                                              "<td width='67%' border='0'>Dokter Bedah : "+rs2.getString("nm_pasien")+" "+rs2.getString("nm_pasien")+"</td>"+
+                                              "<td width='33%' border='0'>Cuci Tangan Bedah : "+rs2.getString("cuci_tangan")+"</td>"+
+                                              "<td width='33%' border='0'>Memakai Jas Operasi : "+rs2.getString("jas_operasi")+"</td>"+
+                                              "<td width='33%' border='0'>Memakai Handscoon Steril : "+rs2.getString("handscoon")+"</td>"+
+                                          "</tr>"+
+                                              "<tr>"+
+                                              "<td width='33%' border='0'>Desinfeksi Iodine Povidone 10% : "+rs2.getString("disinfeksi")+"</td>"+
+                                              "<td width='33%' border='0'>Desinfeksi Alkohol : "+rs2.getString("alkohol")+"</td>"+
+                                              "<td width='33%' border='0'>Memasang Linen Steril : "+rs2.getString("linen_steril")+"</td>"+
                                           "</tr>"+
                                           "<tr>"+
-                                              "<td width='33%' border='0'>SN/CN : "+rs2.getString("nm_pasien")+"</td>"+
-                                              "<td width='67%' border='0'>Dokter Anestesi : "+rs2.getString("nm_pasien")+" "+rs2.getString("nm_pasien")+"</td>"+
-                                          "</tr>"+
-                                          "<tr>"+
-                                              "<td width='100%' border='0' colspan='2'>Tindakan/Operasi : "+rs2.getString("nm_pasien")+"</td>"+
+                                              "<td width='100%' border='0' colspan='2'>Klasifikasi Luka : "+rs2.getString("klasifikasi_luka")+"</td>"+
                                           "</tr>"+
                                        "</table>"+
                                     "</td>"+
