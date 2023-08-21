@@ -11570,45 +11570,153 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                                     "<td valign='top'>"+
                                        "3. Perhitungan Instrumen Dasar"+  
                                        "<table width='100%' border='0' align='center' cellpadding='3px' cellspacing='0px' class='tbl_form'>"+
-                                          "<tr>"+
-                                              "<td width='33%' border='0'>Keadaan Umum : "+rs2.getString("posisi_operasi")+"</td>"+
-                                              "<td width='33%' border='0'>Jenis Cairan Infus : "+rs2.getString("posisi_operasi")+"</td>"+
-                                              "<td width='33%' border='0'>Jaringan/Organ Tubuh PA/VC : "+rs2.getString("posisi_operasi")+"</td>"+
+                                         "<tr class='isi'>"+
+                                              "<td width='23%' bgcolor='#FFFAF8' align='center' valign='middle' rowspan='2'>Jenis Item</td>"+
+                                              "<td width='11%' bgcolor='#FFFAF8' align='center' valign='middle' rowspan='2'>Hitungan Pertama</td>"+
+                                              "<td width='33%' bgcolor='#FFFAF8' align='center' colspan='3'>Tambahan Selama Operasi</td>"+
+                                              "<td width='11%' bgcolor='#FFFAF8' align='center' valign='middle' rowspan='2'>Jumlah Hitungan Pertama</td>"+
+                                              "<td width='11%' bgcolor='#FFFAF8' align='center' valign='middle' rowspan='2'>Hitungan Kedua</td>"+
+                                              "<td width='11%' bgcolor='#FFFAF8' align='center' valign='middle' rowspan='2'>Hitungan Terakhir</td>"+
+                                          "</tr>"+
+                                          "<tr align='center'>"+
+                                            "<td valign='top' width='11%' bgcolor='#FFFAF8'>Tambahan Pertama</td>"+
+                                            "<td valign='top' width='11%' bgcolor='#FFFAF8'>Tambahan Kedua</td>"+
+                                            "<td valign='top' width='11%' bgcolor='#FFFAF8'>Tambahan Ketiga</td>"+
                                           "</tr>"+
                                           "<tr>"+
-                                              "<td width='33%' border='0'>Kateter Urine : "+rs2.getString("posisi_operasi")+"</td>"+
-                                              "<td width='33%' border='0'>Jika Ada, Tgl.Pemasangan : "+rs2.getString("posisi_operasi")+"</td>"+
-                                              "<td width='33%' border='0'>Warna : "+rs2.getString("posisi_operasi")+", Jumlah : "+rs2.getString("posisi_operasi")+" cc</td>"+
+                                              "<td>1. Gause (Kassa)</td>"+
+                                              "<td align='center'>"+rs2.getString("j1h1")+"</td>"+
+                                              "<td align='center'>"+rs2.getString("j1t1")+"</td>"+
+                                              "<td align='center'>"+rs2.getString("j1t2")+"</td>"+
+                                              "<td align='center'>"+rs2.getString("j1t3")+"</td>"+
+                                              "<td align='center'>"+rs2.getString("j1jh1")+"</td>"+
+                                              "<td align='center'>"+rs2.getString("j1h2")+"</td>"+
+                                              "<td align='center'>"+rs2.getString("j1h3")+"</td>"+
                                           "</tr>"+
                                           "<tr>"+
-                                              "<td width='33%' border='0'>Drain : "+rs2.getString("posisi_operasi")+"</td>"+
-                                              "<td width='33%' border='0'>Jika Ada, Jumlah : "+rs2.getString("posisi_operasi")+" buah</td>"+
-                                              "<td width='33%' border='0'>Letak : "+rs2.getString("posisi_operasi")+", Warna/Produksi : "+rs2.getString("posisi_operasi")+"</td>"+
+                                              "<td>2. Pean Kecil</td>"+
+                                              "<td align='center'>"+rs2.getString("j2h1")+"</td>"+
+                                              "<td align='center'>"+rs2.getString("j2t1")+"</td>"+
+                                              "<td align='center'>"+rs2.getString("j2t2")+"</td>"+
+                                              "<td align='center'>"+rs2.getString("j2t3")+"</td>"+
+                                              "<td align='center'>"+rs2.getString("j2jh1")+"</td>"+
+                                              "<td align='center'>"+rs2.getString("j2h2")+"</td>"+
+                                              "<td align='center'>"+rs2.getString("j2h3")+"</td>"+
                                           "</tr>"+
                                           "<tr>"+
-                                              "<td width='100%' colspan='3'>"+
-                                                  "Hasil Pemeriksaan Penunjang :"+
-                                                  "<table width='98%' border='0' align='right' cellpadding='3px' cellspacing='0px' class='tbl_form'>"+
-                                                     "<tr>"+
-                                                        "<td width='50%' border='0'>Radiologi : "+rs2.getString("posisi_operasi")+(rs2.getString("posisi_operasi").equals("")?"":", "+rs2.getString("posisi_operasi"))+"</td>"+
-                                                        "<td width='50%' border='0'>EKG : "+rs2.getString("posisi_operasi")+(rs2.getString("posisi_operasi").equals("")?"":", "+rs2.getString("posisi_operasi"))+"</td>"+
-                                                     "</tr>"+
-                                                     "<tr>"+
-                                                        "<td width='50%' border='0'>USG : "+rs2.getString("posisi_operasi")+(rs2.getString("posisi_operasi").equals("")?"":", "+rs2.getString("posisi_operasi"))+"</td>"+
-                                                        "<td width='50%' border='0'>CT Scan : "+rs2.getString("posisi_operasi")+(rs2.getString("posisi_operasi").equals("")?"":", "+rs2.getString("posisi_operasi"))+"</td>"+
-                                                     "</tr>"+
-                                                     "<tr>"+
-                                                        "<td width='100%' border='0' colspan='2'>MRI : "+rs2.getString("posisi_operasi")+(rs2.getString("posisi_operasi").equals("")?"":", "+rs2.getString("posisi_operasi"))+"</td>"+
-                                                     "</tr>"+
-                                                  "</table>"+
-                                              "</td>"+
+                                              "<td>3. Pean Besar</td>"+
+                                              "<td align='center'>"+rs2.getString("j3h1")+"</td>"+
+                                              "<td align='center'>"+rs2.getString("j3t1")+"</td>"+
+                                              "<td align='center'>"+rs2.getString("j3t2")+"</td>"+
+                                              "<td align='center'>"+rs2.getString("j3t3")+"</td>"+
+                                              "<td align='center'>"+rs2.getString("j3jh1")+"</td>"+
+                                              "<td align='center'>"+rs2.getString("j3h2")+"</td>"+
+                                              "<td align='center'>"+rs2.getString("j3h3")+"</td>"+
                                           "</tr>"+
                                           "<tr>"+
-                                              "<td width='100%' border='0' colspan='3'>Area Luka Operasi : "+rs2.getString("posisi_operasi")+"</td>"+
+                                              "<td>4. Kocher</td>"+
+                                              "<td align='center'>"+rs2.getString("j4h1")+"</td>"+
+                                              "<td align='center'>"+rs2.getString("j4t1")+"</td>"+
+                                              "<td align='center'>"+rs2.getString("j4t2")+"</td>"+
+                                              "<td align='center'>"+rs2.getString("j4t3")+"</td>"+
+                                              "<td align='center'>"+rs2.getString("j4jh1")+"</td>"+
+                                              "<td align='center'>"+rs2.getString("j4h2")+"</td>"+
+                                              "<td align='center'>"+rs2.getString("j4h3")+"</td>"+
+                                          "</tr>"+
+                                          "<tr>"+
+                                              "<td>5. Pinset Anatomi</td>"+
+                                              "<td align='center'>"+rs2.getString("j5h1")+"</td>"+
+                                              "<td align='center'>"+rs2.getString("j5t1")+"</td>"+
+                                              "<td align='center'>"+rs2.getString("j5t2")+"</td>"+
+                                              "<td align='center'>"+rs2.getString("j5t3")+"</td>"+
+                                              "<td align='center'>"+rs2.getString("j5jh1")+"</td>"+
+                                              "<td align='center'>"+rs2.getString("j5h2")+"</td>"+
+                                              "<td align='center'>"+rs2.getString("j5h3")+"</td>"+
+                                          "</tr>"+
+                                          "<tr>"+
+                                              "<td>6. Pinset Cirurges</td>"+
+                                              "<td align='center'>"+rs2.getString("j6h1")+"</td>"+
+                                              "<td align='center'>"+rs2.getString("j6t1")+"</td>"+
+                                              "<td align='center'>"+rs2.getString("j6t2")+"</td>"+
+                                              "<td align='center'>"+rs2.getString("j6t3")+"</td>"+
+                                              "<td align='center'>"+rs2.getString("j6jh1")+"</td>"+
+                                              "<td align='center'>"+rs2.getString("j6h2")+"</td>"+
+                                              "<td align='center'>"+rs2.getString("j6h3")+"</td>"+
+                                          "</tr>"+
+                                           "<tr>"+
+                                              "<td>7. Pinset Cirurges</td>"+
+                                              "<td align='center'>"+rs2.getString("j7h1")+"</td>"+
+                                              "<td align='center'>"+rs2.getString("j7t1")+"</td>"+
+                                              "<td align='center'>"+rs2.getString("j7t2")+"</td>"+
+                                              "<td align='center'>"+rs2.getString("j7t3")+"</td>"+
+                                              "<td align='center'>"+rs2.getString("j7jh1")+"</td>"+
+                                              "<td align='center'>"+rs2.getString("j7h2")+"</td>"+
+                                              "<td align='center'>"+rs2.getString("j7h3")+"</td>"+
+                                          "</tr>"+
+                                           "<tr>"+
+                                              "<td>8. Pinset Cirurges</td>"+
+                                              "<td align='center'>"+rs2.getString("j8h1")+"</td>"+
+                                              "<td align='center'>"+rs2.getString("j8t1")+"</td>"+
+                                              "<td align='center'>"+rs2.getString("j8t2")+"</td>"+
+                                              "<td align='center'>"+rs2.getString("j8t3")+"</td>"+
+                                              "<td align='center'>"+rs2.getString("j8jh1")+"</td>"+
+                                              "<td align='center'>"+rs2.getString("j8h2")+"</td>"+
+                                              "<td align='center'>"+rs2.getString("j8h3")+"</td>"+
+                                          "</tr>"+
+                                           "<tr>"+
+                                              "<td>9. Gunting</td>"+
+                                              "<td align='center'>"+rs2.getString("j9h1")+"</td>"+
+                                              "<td align='center'>"+rs2.getString("j9t1")+"</td>"+
+                                              "<td align='center'>"+rs2.getString("j9t2")+"</td>"+
+                                              "<td align='center'>"+rs2.getString("j9t3")+"</td>"+
+                                              "<td align='center'>"+rs2.getString("j9jh1")+"</td>"+
+                                              "<td align='center'>"+rs2.getString("j9h2")+"</td>"+
+                                              "<td align='center'>"+rs2.getString("j9h3")+"</td>"+
+                                          "</tr>"+
+                                           "<tr>"+
+                                              "<td>10. Allis Klem</td>"+
+                                              "<td align='center'>"+rs2.getString("j10h1")+"</td>"+
+                                              "<td align='center'>"+rs2.getString("j10t1")+"</td>"+
+                                              "<td align='center'>"+rs2.getString("j10t2")+"</td>"+
+                                              "<td align='center'>"+rs2.getString("j10t3")+"</td>"+
+                                              "<td align='center'>"+rs2.getString("j10jh1")+"</td>"+
+                                              "<td align='center'>"+rs2.getString("j10h2")+"</td>"+
+                                              "<td align='center'>"+rs2.getString("j10h3")+"</td>"+
+                                          "</tr>"+
+                                           "<tr>"+
+                                              "<td>11. Needle</td>"+
+                                              "<td align='center'>"+rs2.getString("j11h1")+"</td>"+
+                                              "<td align='center'>"+rs2.getString("j11t1")+"</td>"+
+                                              "<td align='center'>"+rs2.getString("j11t2")+"</td>"+
+                                              "<td align='center'>"+rs2.getString("j11t3")+"</td>"+
+                                              "<td align='center'>"+rs2.getString("j11jh1")+"</td>"+
+                                              "<td align='center'>"+rs2.getString("j11h2")+"</td>"+
+                                              "<td align='center'>"+rs2.getString("j11h3")+"</td>"+
+                                          "</tr>"+
+                                           "<tr>"+
+                                              "<td>12. Langen Back</td>"+
+                                              "<td align='center'>"+rs2.getString("j12h1")+"</td>"+
+                                              "<td align='center'>"+rs2.getString("j12t1")+"</td>"+
+                                              "<td align='center'>"+rs2.getString("j12t2")+"</td>"+
+                                              "<td align='center'>"+rs2.getString("j12t3")+"</td>"+
+                                              "<td align='center'>"+rs2.getString("j12jh1")+"</td>"+
+                                              "<td align='center'>"+rs2.getString("j12h2")+"</td>"+
+                                              "<td align='center'>"+rs2.getString("j12h3")+"</td>"+
+                                          "</tr>"+
+                                           "<tr>"+
+                                              "<td>13. Jarum</td>"+
+                                              "<td align='center'>"+rs2.getString("j13h1")+"</td>"+
+                                              "<td align='center'>"+rs2.getString("j13t1")+"</td>"+
+                                              "<td align='center'>"+rs2.getString("j13t2")+"</td>"+
+                                              "<td align='center'>"+rs2.getString("j13t3")+"</td>"+
+                                              "<td align='center'>"+rs2.getString("j13jh1")+"</td>"+
+                                              "<td align='center'>"+rs2.getString("j13h2")+"</td>"+
+                                              "<td align='center'>"+rs2.getString("j13h3")+"</td>"+
                                           "</tr>"+
                                        "</table>"+
                                     "</td>"+
-                                 "</tr>"); 
+                                 "</tr>"
+                             );
                         }
                         htmlContent.append(
                               "</table>"+
