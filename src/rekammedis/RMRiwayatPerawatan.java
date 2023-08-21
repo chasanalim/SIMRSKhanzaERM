@@ -2180,7 +2180,7 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
             chkFormFisioterapi.setSelected(false);//+
             chkSEPRajal.setSelected(false);//=
             chkSEPRanap.setSelected(false);//+
-            chkChecklistDuranteOperasi.setSelected(true);//+
+            chkChecklistDuranteOperasi.setSelected(false);//+
         }
     }//GEN-LAST:event_chkSemuaItemStateChanged
 
@@ -11496,25 +11496,24 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
             if(chkChecklistDuranteOperasi.isSelected()==true){
                 try {
                     rs2=koneksi.prepareStatement(
-                            "select reg_periksa.no_rawat,pasien.no_rkm_medis,pasien.nm_pasien,pasien.tgl_lahir,pasien.jk,checklist_post_operasi.tanggal,"+
-                            "checklist_post_operasi.sncn,checklist_post_operasi.tindakan,checklist_post_operasi.kd_dokter_bedah,dokterbedah.nm_dokter as dokterbedah,"+
-                            "checklist_post_operasi.kd_dokter_anestesi,dokteranestesi.nm_dokter as dokteranestesi,checklist_post_operasi.keadaan_umum,"+
-                            "checklist_post_operasi.pemeriksaan_penunjang_rontgen,checklist_post_operasi.keterangan_pemeriksaan_penunjang_rontgen,"+
-                            "checklist_post_operasi.pemeriksaan_penunjang_ekg,checklist_post_operasi.keterangan_pemeriksaan_penunjang_ekg,checklist_post_operasi.pemeriksaan_penunjang_usg,"+
-                            "checklist_post_operasi.keterangan_pemeriksaan_penunjang_usg,checklist_post_operasi.pemeriksaan_penunjang_ctscan,"+
-                            "checklist_post_operasi.keterangan_pemeriksaan_penunjang_ctscan,checklist_post_operasi.pemeriksaan_penunjang_mri,"+
-                            "checklist_post_operasi.keterangan_pemeriksaan_penunjang_mri,checklist_post_operasi.jenis_cairan_infus,checklist_post_operasi.kateter_urine,"+
-                            "checklist_post_operasi.tanggal_pemasangan_kateter,checklist_post_operasi.warna_kateter,checklist_post_operasi.jumlah_kateter,"+
-                            "checklist_post_operasi.area_luka_operasi,checklist_post_operasi.drain,checklist_post_operasi.jumlah_drain,checklist_post_operasi.letak_drain,"+
-                            "checklist_post_operasi.warna_drain,checklist_post_operasi.jaringan_pa,checklist_post_operasi.nip_perawat_ok,petugasok.nama as petugasok,"+
-                            "checklist_post_operasi.nip_perawat_anestesi,petugasanestesi.nama as petugasanestesi "+
-                            "from checklist_post_operasi inner join reg_periksa on checklist_post_operasi.no_rawat=reg_periksa.no_rawat "+
-                            "inner join pasien on reg_periksa.no_rkm_medis=pasien.no_rkm_medis "+
-                            "inner join dokter as dokterbedah on dokterbedah.kd_dokter=checklist_post_operasi.kd_dokter_bedah "+
-                            "inner join dokter as dokteranestesi on dokteranestesi.kd_dokter=checklist_post_operasi.kd_dokter_anestesi "+
-                            "inner join petugas as petugasanestesi on petugasanestesi.nip=checklist_post_operasi.nip_perawat_anestesi "+
-                            "inner join petugas as petugasok on petugasok.nip=checklist_post_operasi.nip_perawat_ok "+
-                            "where checklist_post_operasi.no_rawat='"+norawat+"' order by checklist_post_operasi.tanggal").executeQuery();
+                            "SELECT reg_periksa.no_rawat,pasien.no_rkm_medis,pasien.nm_pasien,pasien.tgl_lahir,checklist_durante_operasi.tanggal,checklist_durante_operasi.jam,petugas.nip,petugas.nama,checklist_durante_operasi.posisi_operasi,checklist_durante_operasi.cuci_tangan,checklist_durante_operasi.jas_operasi, "+  
+                            "checklist_durante_operasi.handscoon,checklist_durante_operasi.disinfeksi,checklist_durante_operasi.alkohol,checklist_durante_operasi.linen_steril,checklist_durante_operasi.klasifikasi_luka, "+ 
+                            "checklist_durante_operasi.j1h1,checklist_durante_operasi.j1t1,checklist_durante_operasi.j1t2,checklist_durante_operasi.j1t3,checklist_durante_operasi.j1jh1,checklist_durante_operasi.j1h2,checklist_durante_operasi.j1h3, "+
+                            "checklist_durante_operasi.j2h1,checklist_durante_operasi.j2t1,checklist_durante_operasi.j2t2,checklist_durante_operasi.j2t3,checklist_durante_operasi.j2jh1,checklist_durante_operasi.j2h2,checklist_durante_operasi.j2h3, "+
+                            "checklist_durante_operasi.j3h1,checklist_durante_operasi.j3t1,checklist_durante_operasi.j3t2,checklist_durante_operasi.j3t3,checklist_durante_operasi.j3jh1,checklist_durante_operasi.j3h2,checklist_durante_operasi.j3h3, "+
+                            "checklist_durante_operasi.j4h1,checklist_durante_operasi.j4t1,checklist_durante_operasi.j4t2,checklist_durante_operasi.j4t3,checklist_durante_operasi.j4jh1,checklist_durante_operasi.j4h2,checklist_durante_operasi.j4h3, "+
+                            "checklist_durante_operasi.j5h1,checklist_durante_operasi.j5t1,checklist_durante_operasi.j5t2,checklist_durante_operasi.j5t3,checklist_durante_operasi.j5jh1,checklist_durante_operasi.j5h2,checklist_durante_operasi.j5h3, "+
+                            "checklist_durante_operasi.j6h1,checklist_durante_operasi.j6t1,checklist_durante_operasi.j6t2,checklist_durante_operasi.j6t3,checklist_durante_operasi.j6jh1,checklist_durante_operasi.j6h2,checklist_durante_operasi.j6h3, "+
+                            "checklist_durante_operasi.j7h1,checklist_durante_operasi.j7t1,checklist_durante_operasi.j7t2,checklist_durante_operasi.j7t3,checklist_durante_operasi.j7jh1,checklist_durante_operasi.j7h2,checklist_durante_operasi.j7h3, "+
+                            "checklist_durante_operasi.j8h1,checklist_durante_operasi.j8t1,checklist_durante_operasi.j8t2,checklist_durante_operasi.j8t3,checklist_durante_operasi.j8jh1,checklist_durante_operasi.j8h2,checklist_durante_operasi.j8h3, "+
+                            "checklist_durante_operasi.j9h1,checklist_durante_operasi.j9t1,checklist_durante_operasi.j9t2,checklist_durante_operasi.j9t3,checklist_durante_operasi.j9jh1,checklist_durante_operasi.j9h2,checklist_durante_operasi.j9h3, "+
+                            "checklist_durante_operasi.j10h1,checklist_durante_operasi.j10t1,checklist_durante_operasi.j10t2,checklist_durante_operasi.j10t3,checklist_durante_operasi.j10jh1,checklist_durante_operasi.j10h2,checklist_durante_operasi.j10h3, "+	
+                            "checklist_durante_operasi.j11h1,checklist_durante_operasi.j11t1,checklist_durante_operasi.j11t2,checklist_durante_operasi.j11t3,checklist_durante_operasi.j11jh1,checklist_durante_operasi.j11h2,checklist_durante_operasi.j11h3, "+
+                            "checklist_durante_operasi.j12h1,checklist_durante_operasi.j12t1,checklist_durante_operasi.j12t2,checklist_durante_operasi.j12t3,checklist_durante_operasi.j12jh1,checklist_durante_operasi.j12h2,checklist_durante_operasi.j12h3, "+
+                            "checklist_durante_operasi.j13h1,checklist_durante_operasi.j13t1,checklist_durante_operasi.j13t2,checklist_durante_operasi.j13t3,checklist_durante_operasi.j13jh1,checklist_durante_operasi.j13h2,checklist_durante_operasi.j13h3 "+
+                            "FROM checklist_durante_operasi INNER JOIN reg_periksa ON checklist_durante_operasi.no_rawat = reg_periksa.no_rawat INNER JOIN pasien ON reg_periksa.no_rkm_medis = pasien.no_rkm_medis "+ 
+                            "INNER JOIN petugas ON checklist_durante_operasi.nip = petugas.nip "+ 
+                            "where checklist_durante_operasi.no_rawat='"+norawat+"' order by checklist_durante_operasi.tanggal").executeQuery();
                     if(rs2.next()){
                         htmlContent.append(
                           "<tr class='isi'>"+ 
