@@ -11531,69 +11531,86 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                                        "YANG MELAKUKAN PENGKAJIAN"+  
                                        "<table width='100%' border='0' align='center' cellpadding='3px' cellspacing='0px' class='tbl_form'>"+
                                           "<tr>"+
-                                              "<td width='50%' border='0'>Petugas Anestesi : "+rs2.getString("nip_perawat_anestesi")+" "+rs2.getString("petugasanestesi")+"</td>"+
-                                              "<td width='50%' border='0'>Petugas Kamar Operasi : "+rs2.getString("nip_perawat_ok")+" "+rs2.getString("petugasok")+"</td>"+
+                                              "<td width='50%' border='0'>Petugas  : "+rs2.getString("nip")+" "+rs2.getString("nama")+"</td>"+
                                           "</tr>"+
                                        "</table>"+
                                     "</td>"+
                                  "</tr>"+
                                  "<tr>"+
                                     "<td valign='top'>"+
-                                       "RENCANA OPERASI"+  
+                                       "1. Posisi Operasi"+  
                                        "<table width='100%' border='0' align='center' cellpadding='3px' cellspacing='0px' class='tbl_form'>"+
                                           "<tr>"+
-                                              "<td width='33%' border='0'>Tanggal : "+rs2.getString("tanggal")+"</td>"+
-                                              "<td width='67%' border='0'>Dokter Bedah : "+rs2.getString("kd_dokter_bedah")+" "+rs2.getString("dokterbedah")+"</td>"+
+                                              "<td width='33%' border='0'>Tanggal : "+rs2.getString("nm_pasien")+"</td>"+
+                                              "<td width='67%' border='0'>Dokter Bedah : "+rs2.getString("nm_pasien")+" "+rs2.getString("nm_pasien")+"</td>"+
                                           "</tr>"+
                                           "<tr>"+
-                                              "<td width='33%' border='0'>SN/CN : "+rs2.getString("sncn")+"</td>"+
-                                              "<td width='67%' border='0'>Dokter Anestesi : "+rs2.getString("kd_dokter_anestesi")+" "+rs2.getString("dokteranestesi")+"</td>"+
+                                              "<td width='33%' border='0'>SN/CN : "+rs2.getString("nm_pasien")+"</td>"+
+                                              "<td width='67%' border='0'>Dokter Anestesi : "+rs2.getString("nm_pasien")+" "+rs2.getString("nm_pasien")+"</td>"+
                                           "</tr>"+
                                           "<tr>"+
-                                              "<td width='100%' border='0' colspan='2'>Tindakan/Operasi : "+rs2.getString("tindakan")+"</td>"+
+                                              "<td width='100%' border='0' colspan='2'>Tindakan/Operasi : "+rs2.getString("nm_pasien")+"</td>"+
                                           "</tr>"+
                                        "</table>"+
                                     "</td>"+
                                  "</tr>"+
                                  "<tr>"+
                                     "<td valign='top'>"+
-                                       "SERAH TERIMA PERAWAT KAMAR OPERASI DENGAN ANESTESI / INTENSIF / RUANGAN. PERAWAT MELAKUKAN SERAH TERIMA SECARA VERBAL"+  
+                                       "2. Preparasi Operasi"+  
                                        "<table width='100%' border='0' align='center' cellpadding='3px' cellspacing='0px' class='tbl_form'>"+
                                           "<tr>"+
-                                              "<td width='33%' border='0'>Keadaan Umum : "+rs2.getString("keadaan_umum")+"</td>"+
-                                              "<td width='33%' border='0'>Jenis Cairan Infus : "+rs2.getString("jenis_cairan_infus")+"</td>"+
-                                              "<td width='33%' border='0'>Jaringan/Organ Tubuh PA/VC : "+rs2.getString("jaringan_pa")+"</td>"+
+                                              "<td width='33%' border='0'>Tanggal : "+rs2.getString("nm_pasien")+"</td>"+
+                                              "<td width='67%' border='0'>Dokter Bedah : "+rs2.getString("nm_pasien")+" "+rs2.getString("nm_pasien")+"</td>"+
                                           "</tr>"+
                                           "<tr>"+
-                                              "<td width='33%' border='0'>Kateter Urine : "+rs2.getString("kateter_urine")+"</td>"+
-                                              "<td width='33%' border='0'>Jika Ada, Tgl.Pemasangan : "+rs2.getString("tanggal_pemasangan_kateter")+"</td>"+
-                                              "<td width='33%' border='0'>Warna : "+rs2.getString("warna_kateter")+", Jumlah : "+rs2.getString("jumlah_kateter")+" cc</td>"+
+                                              "<td width='33%' border='0'>SN/CN : "+rs2.getString("nm_pasien")+"</td>"+
+                                              "<td width='67%' border='0'>Dokter Anestesi : "+rs2.getString("nm_pasien")+" "+rs2.getString("nm_pasien")+"</td>"+
                                           "</tr>"+
                                           "<tr>"+
-                                              "<td width='33%' border='0'>Drain : "+rs2.getString("drain")+"</td>"+
-                                              "<td width='33%' border='0'>Jika Ada, Jumlah : "+rs2.getString("jumlah_drain")+" buah</td>"+
-                                              "<td width='33%' border='0'>Letak : "+rs2.getString("letak_drain")+", Warna/Produksi : "+rs2.getString("warna_drain")+"</td>"+
+                                              "<td width='100%' border='0' colspan='2'>Tindakan/Operasi : "+rs2.getString("nm_pasien")+"</td>"+
+                                          "</tr>"+
+                                       "</table>"+
+                                    "</td>"+
+                                 "</tr>"+
+                                 "<tr>"+
+                                    "<td valign='top'>"+
+                                       "3. Perhitungan Instrumen Dasar"+  
+                                       "<table width='100%' border='0' align='center' cellpadding='3px' cellspacing='0px' class='tbl_form'>"+
+                                          "<tr>"+
+                                              "<td width='33%' border='0'>Keadaan Umum : "+rs2.getString("posisi_operasi")+"</td>"+
+                                              "<td width='33%' border='0'>Jenis Cairan Infus : "+rs2.getString("posisi_operasi")+"</td>"+
+                                              "<td width='33%' border='0'>Jaringan/Organ Tubuh PA/VC : "+rs2.getString("posisi_operasi")+"</td>"+
+                                          "</tr>"+
+                                          "<tr>"+
+                                              "<td width='33%' border='0'>Kateter Urine : "+rs2.getString("posisi_operasi")+"</td>"+
+                                              "<td width='33%' border='0'>Jika Ada, Tgl.Pemasangan : "+rs2.getString("posisi_operasi")+"</td>"+
+                                              "<td width='33%' border='0'>Warna : "+rs2.getString("posisi_operasi")+", Jumlah : "+rs2.getString("posisi_operasi")+" cc</td>"+
+                                          "</tr>"+
+                                          "<tr>"+
+                                              "<td width='33%' border='0'>Drain : "+rs2.getString("posisi_operasi")+"</td>"+
+                                              "<td width='33%' border='0'>Jika Ada, Jumlah : "+rs2.getString("posisi_operasi")+" buah</td>"+
+                                              "<td width='33%' border='0'>Letak : "+rs2.getString("posisi_operasi")+", Warna/Produksi : "+rs2.getString("posisi_operasi")+"</td>"+
                                           "</tr>"+
                                           "<tr>"+
                                               "<td width='100%' colspan='3'>"+
                                                   "Hasil Pemeriksaan Penunjang :"+
                                                   "<table width='98%' border='0' align='right' cellpadding='3px' cellspacing='0px' class='tbl_form'>"+
                                                      "<tr>"+
-                                                        "<td width='50%' border='0'>Radiologi : "+rs2.getString("pemeriksaan_penunjang_rontgen")+(rs2.getString("keterangan_pemeriksaan_penunjang_rontgen").equals("")?"":", "+rs2.getString("keterangan_pemeriksaan_penunjang_rontgen"))+"</td>"+
-                                                        "<td width='50%' border='0'>EKG : "+rs2.getString("pemeriksaan_penunjang_ekg")+(rs2.getString("keterangan_pemeriksaan_penunjang_ekg").equals("")?"":", "+rs2.getString("keterangan_pemeriksaan_penunjang_ekg"))+"</td>"+
+                                                        "<td width='50%' border='0'>Radiologi : "+rs2.getString("posisi_operasi")+(rs2.getString("posisi_operasi").equals("")?"":", "+rs2.getString("posisi_operasi"))+"</td>"+
+                                                        "<td width='50%' border='0'>EKG : "+rs2.getString("posisi_operasi")+(rs2.getString("posisi_operasi").equals("")?"":", "+rs2.getString("posisi_operasi"))+"</td>"+
                                                      "</tr>"+
                                                      "<tr>"+
-                                                        "<td width='50%' border='0'>USG : "+rs2.getString("pemeriksaan_penunjang_usg")+(rs2.getString("keterangan_pemeriksaan_penunjang_usg").equals("")?"":", "+rs2.getString("keterangan_pemeriksaan_penunjang_usg"))+"</td>"+
-                                                        "<td width='50%' border='0'>CT Scan : "+rs2.getString("pemeriksaan_penunjang_ctscan")+(rs2.getString("keterangan_pemeriksaan_penunjang_ctscan").equals("")?"":", "+rs2.getString("keterangan_pemeriksaan_penunjang_ctscan"))+"</td>"+
+                                                        "<td width='50%' border='0'>USG : "+rs2.getString("posisi_operasi")+(rs2.getString("posisi_operasi").equals("")?"":", "+rs2.getString("posisi_operasi"))+"</td>"+
+                                                        "<td width='50%' border='0'>CT Scan : "+rs2.getString("posisi_operasi")+(rs2.getString("posisi_operasi").equals("")?"":", "+rs2.getString("posisi_operasi"))+"</td>"+
                                                      "</tr>"+
                                                      "<tr>"+
-                                                        "<td width='100%' border='0' colspan='2'>MRI : "+rs2.getString("pemeriksaan_penunjang_mri")+(rs2.getString("keterangan_pemeriksaan_penunjang_mri").equals("")?"":", "+rs2.getString("keterangan_pemeriksaan_penunjang_mri"))+"</td>"+
+                                                        "<td width='100%' border='0' colspan='2'>MRI : "+rs2.getString("posisi_operasi")+(rs2.getString("posisi_operasi").equals("")?"":", "+rs2.getString("posisi_operasi"))+"</td>"+
                                                      "</tr>"+
                                                   "</table>"+
                                               "</td>"+
                                           "</tr>"+
                                           "<tr>"+
-                                              "<td width='100%' border='0' colspan='3'>Area Luka Operasi : "+rs2.getString("area_luka_operasi")+"</td>"+
+                                              "<td width='100%' border='0' colspan='3'>Area Luka Operasi : "+rs2.getString("posisi_operasi")+"</td>"+
                                           "</tr>"+
                                        "</table>"+
                                     "</td>"+
@@ -12245,8 +12262,8 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                                               "<td width='33%'>Indikasi Pindah : "+rs2.getString("indikasi_pindah_ruang")+(rs2.getString("keterangan_indikasi_pindah_ruang").equals("")?"":", "+rs2.getString("keterangan_indikasi_pindah_ruang"))+"</td>"+
                                           "</tr>"+
                                           "<tr>"+
-                                              "<td width='33%'>Asal Ruang Rawat : "+rs2.getString("tanggal_masuk")+"</td>"+
-                                              "<td width='33%'>Ruang Rawat Selanjutnya : "+rs2.getString("tanggal_pindah")+"</td>"+
+                                              "<td width='33%'>Asal Ruang Rawat : "+rs2.getString("asal_ruang")+"</td>"+
+                                              "<td width='33%'>Ruang Rawat Selanjutnya : "+rs2.getString("ruang_selanjutnya")+"</td>"+
                                               "<td width='33%'>Metode Pemindahan : "+rs2.getString("metode_pemindahan_pasien")+"</td>"+
                                           "</tr>"+
                                           "<tr>"+
