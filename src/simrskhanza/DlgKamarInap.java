@@ -8840,7 +8840,7 @@ private void MnRujukMasukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-
     }//GEN-LAST:event_btnPasienRanapGabungActionPerformed
 
     private void BtnHapusGabungActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnHapusGabungActionPerformed
-        Sequel.mengedit("reg_periksa","no_rawat='"+Sequel.cariIsi("select no_rawat2 from ranap_gabung where no_rawat=?",norawat.getText())+"'","status_lanjut='Ralan'"); 
+        Sequel.mengedit("reg_periksa","no_rawat='"+Sequel.cariIsi("select no_rawat2 from ranap_gabung where no_rawat=?",norawat.getText())+"'","status_lanjut='Ralan',status_bayar='Belum bayar'"); 
         Sequel.meghapus("ranap_gabung","no_rawat",norawat.getText());
         NoRawatGabung.setText("");
         NoRmBayi.setText("");
