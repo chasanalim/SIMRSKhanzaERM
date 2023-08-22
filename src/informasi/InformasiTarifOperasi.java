@@ -312,7 +312,7 @@ public final class InformasiTarifOperasi extends javax.swing.JDialog {
                            "paket_operasi.sewa_ok+paket_operasi.akomodasi+paket_operasi.bagian_rs+"+
                            "paket_operasi.omloop+paket_operasi.omloop2+paket_operasi.omloop3+"+
                            "paket_operasi.sarpras+paket_operasi.dokter_pjanak+paket_operasi.dokter_umum) as jumlah, "+
-                           "penjab.png_jawab from paket_operasi inner join penjab on penjab.kd_pj=paket_operasi.kd_pj,paket_operasi.kelas "+
+                           "penjab.png_jawab,paket_operasi.kelas from paket_operasi inner join penjab on penjab.kd_pj=paket_operasi.kd_pj "+
                            "where paket_operasi.status='1' and paket_operasi.kode_paket like ? or "+
                            "paket_operasi.status='1' and paket_operasi.nm_perawatan like ? or "+
                            "paket_operasi.status='1' and penjab.png_jawab like ? order by paket_operasi.kode_paket ");
