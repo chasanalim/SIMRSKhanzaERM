@@ -46,7 +46,7 @@ public final class SuratSakitPihak2 extends javax.swing.JDialog {
     private PreparedStatement ps;
     private ResultSet rs;
     private int i=0;
-    private String tgl,bln_angka="", bln_romawi="";
+    private String tgl,bln_angka="", bln_romawi="", finger="";
     private Date lahir;
     private LocalDate today=LocalDate.now();
     private LocalDate birthday;
@@ -61,7 +61,7 @@ public final class SuratSakitPihak2 extends javax.swing.JDialog {
         tabMode=new DefaultTableModel(null,new Object[]{
             "Nomor Surat","No.Rawat","No.R.M.","Nama Pasien","Dari Tanggal","Sampai",
             "Lama Sakit","Nama Pihak ke 2","Lahir","Umur","J.K.","Alamat",
-            "Hubungan","Pekerjaan","Instansi"
+            "Hubungan","Pekerjaan","Instansi","Kode Dokter","Nama Dokter","Kode DPJP","Nama DPJP Ranap"
         }){
               @Override public boolean isCellEditable(int rowIndex, int colIndex){return false;}
         };
@@ -71,7 +71,7 @@ public final class SuratSakitPihak2 extends javax.swing.JDialog {
         tbObat.setPreferredScrollableViewportSize(new Dimension(500,500));
         tbObat.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
 
-        for (i = 0; i < 15; i++) {
+        for (i = 0; i < 19; i++) {
             TableColumn column = tbObat.getColumnModel().getColumn(i);
             if(i==0){
                 column.setPreferredWidth(105);
@@ -103,6 +103,14 @@ public final class SuratSakitPihak2 extends javax.swing.JDialog {
                 column.setPreferredWidth(90);
             }else if(i==14){
                 column.setPreferredWidth(150);
+            }else if(i==15){
+                column.setPreferredWidth(60);
+            }else if(i==16){
+                column.setPreferredWidth(120);
+            }else if(i==17){
+                column.setPreferredWidth(60);
+            }else if(i==18){
+                column.setPreferredWidth(120);
             }
         }
         tbObat.setDefaultRenderer(Object.class, new WarnaTable());
@@ -252,7 +260,7 @@ public final class SuratSakitPihak2 extends javax.swing.JDialog {
         setUndecorated(true);
         setResizable(false);
 
-        internalFrame1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(240, 245, 235)), "::[ Data Surat Keterangan Sakit Pihak Ke 2 ]::", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(50, 50, 50))); // NOI18N
+        internalFrame1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(240, 245, 235)), "::[ Data Surat Keterangan Sakit Pihak Ke 2 ]::", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 0, 12), new java.awt.Color(50, 50, 50))); // NOI18N
         internalFrame1.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
         internalFrame1.setName("internalFrame1"); // NOI18N
         internalFrame1.setLayout(new java.awt.BorderLayout(1, 1));
@@ -426,7 +434,7 @@ public final class SuratSakitPihak2 extends javax.swing.JDialog {
         panelGlass9.add(jLabel19);
 
         DTPCari1.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "08-09-2022" }));
+        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "07-06-2023" }));
         DTPCari1.setDisplayFormat("dd-MM-yyyy");
         DTPCari1.setName("DTPCari1"); // NOI18N
         DTPCari1.setOpaque(false);
@@ -440,7 +448,7 @@ public final class SuratSakitPihak2 extends javax.swing.JDialog {
         panelGlass9.add(jLabel21);
 
         DTPCari2.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "08-09-2022" }));
+        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "07-06-2023" }));
         DTPCari2.setDisplayFormat("dd-MM-yyyy");
         DTPCari2.setName("DTPCari2"); // NOI18N
         DTPCari2.setOpaque(false);
@@ -539,7 +547,7 @@ public final class SuratSakitPihak2 extends javax.swing.JDialog {
         TPasien.setBounds(355, 10, 365, 23);
 
         TanggalAkhir.setForeground(new java.awt.Color(50, 70, 50));
-        TanggalAkhir.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "08-09-2022" }));
+        TanggalAkhir.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "07-06-2023" }));
         TanggalAkhir.setDisplayFormat("dd-MM-yyyy");
         TanggalAkhir.setName("TanggalAkhir"); // NOI18N
         TanggalAkhir.setOpaque(false);
@@ -585,7 +593,7 @@ public final class SuratSakitPihak2 extends javax.swing.JDialog {
         jLabel18.setBounds(556, 40, 70, 23);
 
         TglLahir.setForeground(new java.awt.Color(50, 70, 50));
-        TglLahir.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "08-09-2022" }));
+        TglLahir.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "07-06-2023" }));
         TglLahir.setDisplayFormat("dd-MM-yyyy");
         TglLahir.setName("TglLahir"); // NOI18N
         TglLahir.setOpaque(false);
@@ -695,7 +703,7 @@ public final class SuratSakitPihak2 extends javax.swing.JDialog {
         jLabel15.setBounds(250, 40, 80, 23);
 
         TanggalAwal.setForeground(new java.awt.Color(50, 70, 50));
-        TanggalAwal.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "08-09-2022" }));
+        TanggalAwal.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "07-06-2023" }));
         TanggalAwal.setDisplayFormat("dd-MM-yyyy");
         TanggalAwal.setName("TanggalAwal"); // NOI18N
         TanggalAwal.setOpaque(false);
@@ -1075,6 +1083,9 @@ public final class SuratSakitPihak2 extends javax.swing.JDialog {
                     "on diagnosa_pasien.no_rawat=reg_periksa.no_rawat and diagnosa_pasien.kd_penyakit=penyakit.kd_penyakit "+
                     "where diagnosa_pasien.no_rawat=? and diagnosa_pasien.prioritas='1'",TNoRw.getText()));
                 param.put("logo",Sequel.cariGambar("select logo from setting")); 
+                finger=Sequel.cariIsi("select sha1(sidikjari.sidikjari) from sidikjari inner join pegawai on pegawai.id=sidikjari.id where pegawai.nik=?",tbObat.getValueAt(tbObat.getSelectedRow(),15).toString());
+                param.put("finger","Dikeluarkan di "+akses.getnamars()+", Kabupaten/Kota "+akses.getkabupatenrs()+"\nDitandatangani secara elektronik oleh "+tbObat.getValueAt(tbObat.getSelectedRow(),16).toString()+"\nID "+(finger.equals("")?tbObat.getValueAt(tbObat.getSelectedRow(),15).toString():finger)+"\n"+Valid.SetTgl3(tbObat.getValueAt(tbObat.getSelectedRow(),4).toString())); 
+                
                 Valid.MyReportqry("rptSuratSakitPihakKe2.jasper","report","::[ Surat Sakit untuk Penunggu ]::",
                               " select suratsakitpihak2.no_surat,DATE_FORMAT(suratsakitpihak2.tanggalawal,'%d-%m-%Y')as tanggalawal,DATE_FORMAT(suratsakitpihak2.tanggalakhir,'%d-%m-%Y')as tanggalakhir,suratsakitpihak2.lamasakit,suratsakitpihak2.nama2,"+
                               " DATE_FORMAT(suratsakitpihak2.tgl_lahir,'%d-%m-%Y')as tgl_lahirpj,"+
@@ -1182,6 +1193,10 @@ public final class SuratSakitPihak2 extends javax.swing.JDialog {
                     "on diagnosa_pasien.no_rawat=reg_periksa.no_rawat and diagnosa_pasien.kd_penyakit=penyakit.kd_penyakit "+
                     "where diagnosa_pasien.no_rawat=? and diagnosa_pasien.prioritas='1'",TNoRw.getText()));
                 param.put("logo",Sequel.cariGambar("select logo from setting")); 
+                finger=Sequel.cariIsi("select sha1(sidikjari.sidikjari) from sidikjari inner join pegawai on pegawai.id=sidikjari.id where pegawai.nik=?",tbObat.getValueAt(tbObat.getSelectedRow(),17).toString());
+                param.put("finger","Dikeluarkan di "+akses.getnamars()+", Kabupaten/Kota "+akses.getkabupatenrs()+"\nDitandatangani secara elektronik oleh "+tbObat.getValueAt(tbObat.getSelectedRow(),18).toString()+"\nID "+(finger.equals("")?tbObat.getValueAt(tbObat.getSelectedRow(),17).toString():finger)+"\n"+Valid.SetTgl3(tbObat.getValueAt(tbObat.getSelectedRow(),4).toString())); 
+                
+                
                 Valid.MyReportqry("rptSuratSakitPihakKe2Ranap.jasper","report","::[ Surat Sakit untuk Penunggu ]::",
                               " select suratsakitpihak2.no_surat,DATE_FORMAT(suratsakitpihak2.tanggalawal,'%d-%m-%Y')as tanggalawal,DATE_FORMAT(suratsakitpihak2.tanggalakhir,'%d-%m-%Y')as tanggalakhir,suratsakitpihak2.lamasakit,suratsakitpihak2.nama2,"+
                               " DATE_FORMAT(suratsakitpihak2.tgl_lahir,'%d-%m-%Y')as tgl_lahirpj,"+
@@ -1281,15 +1296,21 @@ public final class SuratSakitPihak2 extends javax.swing.JDialog {
                 ps=koneksi.prepareStatement(
                      "select suratsakitpihak2.no_surat,suratsakitpihak2.no_rawat,reg_periksa.no_rkm_medis,pasien.nm_pasien,"+
                      "suratsakitpihak2.tanggalawal,suratsakitpihak2.tanggalakhir,suratsakitpihak2.lamasakit,suratsakitpihak2.nama2,suratsakitpihak2.tgl_lahir, "+                  
-                     "suratsakitpihak2.umur,suratsakitpihak2.jk,suratsakitpihak2.alamat,suratsakitpihak2.hubungan,suratsakitpihak2.pekerjaan,suratsakitpihak2.instansi from suratsakitpihak2 inner join reg_periksa on suratsakitpihak2.no_rawat=reg_periksa.no_rawat "+
-                     "inner join pasien on reg_periksa.no_rkm_medis=pasien.no_rkm_medis "+
+                     "suratsakitpihak2.umur,suratsakitpihak2.jk,suratsakitpihak2.alamat,suratsakitpihak2.hubungan,suratsakitpihak2.pekerjaan,suratsakitpihak2.instansi, "+
+                     "reg_periksa.kd_dokter,dokter.nm_dokter,(SELECT dpjp_ranap.kd_dokter from dpjp_ranap WHERE dpjp_ranap.no_rawat=reg_periksa.no_rawat and dpjp_ranap.prioritas=1 limit 1) as dpjp_ranap, "+
+                     "(SELECT dokter.nm_dokter from dokter INNER JOIN dpjp_ranap on dokter.kd_dokter=dpjp_ranap.kd_dokter WHERE dpjp_ranap.no_rawat=reg_periksa.no_rawat and dpjp_ranap.prioritas=1 limit 1) as dokter_ranap "+
+                     "from suratsakitpihak2 inner join reg_periksa on suratsakitpihak2.no_rawat=reg_periksa.no_rawat inner join pasien on reg_periksa.no_rkm_medis=pasien.no_rkm_medis "+
+                     "INNER JOIN dokter on dokter.kd_dokter = reg_periksa.kd_dokter LEFT JOIN dpjp_ranap on reg_periksa.no_rawat = dpjp_ranap.no_rawat "+        
                      "where "+tgl+"order by suratsakitpihak2.no_surat");
             }else{
                 ps=koneksi.prepareStatement(
                      "select suratsakitpihak2.no_surat,suratsakitpihak2.no_rawat,reg_periksa.no_rkm_medis,pasien.nm_pasien,"+
                      "suratsakitpihak2.tanggalawal,suratsakitpihak2.tanggalakhir,suratsakitpihak2.lamasakit,suratsakitpihak2.nama2,suratsakitpihak2.tgl_lahir, "+                  
-                     "suratsakitpihak2.umur,suratsakitpihak2.jk,suratsakitpihak2.alamat,suratsakitpihak2.hubungan,suratsakitpihak2.pekerjaan,suratsakitpihak2.instansi from suratsakitpihak2 inner join reg_periksa on suratsakitpihak2.no_rawat=reg_periksa.no_rawat "+
-                     "inner join pasien on reg_periksa.no_rkm_medis=pasien.no_rkm_medis "+
+                     "suratsakitpihak2.umur,suratsakitpihak2.jk,suratsakitpihak2.alamat,suratsakitpihak2.hubungan,suratsakitpihak2.pekerjaan,suratsakitpihak2.instansi, "+
+                     "reg_periksa.kd_dokter,dokter.nm_dokter,(SELECT dpjp_ranap.kd_dokter from dpjp_ranap WHERE dpjp_ranap.no_rawat=reg_periksa.no_rawat and dpjp_ranap.prioritas=1 limit 1) as dpjp_ranap, "+
+                     "(SELECT dokter.nm_dokter from dokter INNER JOIN dpjp_ranap on dokter.kd_dokter=dpjp_ranap.kd_dokter WHERE dpjp_ranap.no_rawat=reg_periksa.no_rawat and dpjp_ranap.prioritas=1 limit 1) as dokter_ranap "+
+                     "from suratsakitpihak2 inner join reg_periksa on suratsakitpihak2.no_rawat=reg_periksa.no_rawat inner join pasien on reg_periksa.no_rkm_medis=pasien.no_rkm_medis "+
+                     "INNER JOIN dokter on dokter.kd_dokter = reg_periksa.kd_dokter LEFT JOIN dpjp_ranap on reg_periksa.no_rawat = dpjp_ranap.no_rawat "+
                      "where "+tgl+" and (no_surat like '%"+TCari.getText().trim()+"%' or suratsakitpihak2.no_rawat like '%"+TCari.getText().trim()+"%' or "+
                      "reg_periksa.no_rkm_medis like '%"+TCari.getText().trim()+"%' or pasien.nm_pasien like '%"+TCari.getText().trim()+"%' or "+
                      "suratsakitpihak2.instansi like '%"+TCari.getText().trim()+"%' or suratsakitpihak2.alamat like '%"+TCari.getText().trim()+"%' or "+
@@ -1305,7 +1326,9 @@ public final class SuratSakitPihak2 extends javax.swing.JDialog {
                         rs.getString(4),rs.getString(5),rs.getString(6),
                         rs.getString(7),rs.getString(8),rs.getString(9),
                         rs.getString(10),rs.getString(11),rs.getString(12),
-                        rs.getString(13),rs.getString(14),rs.getString(15)
+                        rs.getString(13),rs.getString(14),rs.getString(15),
+                        rs.getString(16),rs.getString(17),rs.getString(18),
+                        rs.getString(19)
                         
                     });
                 }

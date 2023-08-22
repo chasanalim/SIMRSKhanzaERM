@@ -983,11 +983,11 @@ public final class SuratSakit extends javax.swing.JDialog {
             tgl=" suratsakit.tanggalawal between '"+Valid.SetTgl(DTPCari1.getSelectedItem()+"")+"' and '"+Valid.SetTgl(DTPCari2.getSelectedItem()+"")+"' ";
             if(TCari.getText().trim().equals("")){
                 ps=koneksi.prepareStatement(
-                     "SELECT suratsakit.no_surat,suratsakit.no_rawat,reg_periksa.no_rkm_medis,pasien.nm_pasien,suratsakit.tanggalawal,suratsakit.tanggalakhir,suratsakit.lamasakit,reg_periksa.kd_dokter,dokter.nm_dokter, "+
-                     "(SELECT dpjp_ranap.kd_dokter from dpjp_ranap WHERE dpjp_ranap.no_rawat=reg_periksa.no_rawat and dpjp_ranap.prioritas=1 limit 1) as dpjp_ranap, "+
+                     "SELECT suratsakit.no_surat,suratsakit.no_rawat,reg_periksa.no_rkm_medis,pasien.nm_pasien,suratsakit.tanggalawal,suratsakit.tanggalakhir,suratsakit.lamasakit, "+
+                     "reg_periksa.kd_dokter,dokter.nm_dokter,(SELECT dpjp_ranap.kd_dokter from dpjp_ranap WHERE dpjp_ranap.no_rawat=reg_periksa.no_rawat and dpjp_ranap.prioritas=1 limit 1) as dpjp_ranap, "+
                      "(SELECT dokter.nm_dokter from dokter INNER JOIN dpjp_ranap on dokter.kd_dokter=dpjp_ranap.kd_dokter WHERE dpjp_ranap.no_rawat=reg_periksa.no_rawat and dpjp_ranap.prioritas=1 limit 1) as dokter_ranap "+
-                     "FROM suratsakit INNER JOIN reg_periksa ON suratsakit.no_rawat = reg_periksa.no_rawat INNER JOIN pasien ON reg_periksa.no_rkm_medis = pasien.no_rkm_medis INNER JOIN dokter on dokter.kd_dokter = reg_periksa.kd_dokter "+ 
-                     "LEFT JOIN dpjp_ranap on reg_periksa.no_rawat = dpjp_ranap.no_rawat "+
+                     "FROM suratsakit INNER JOIN reg_periksa ON suratsakit.no_rawat = reg_periksa.no_rawat INNER JOIN pasien ON reg_periksa.no_rkm_medis = pasien.no_rkm_medis "+ 
+                     "INNER JOIN dokter on dokter.kd_dokter = reg_periksa.kd_dokter LEFT JOIN dpjp_ranap on reg_periksa.no_rawat = dpjp_ranap.no_rawat "+
                      "WHERE "+tgl+" ORDER BY reg_periksa.no_rawat desc ");
             }else{
                 ps=koneksi.prepareStatement(
