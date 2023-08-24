@@ -110,6 +110,7 @@ import rekammedis.RMSkriningNutrisiLansia;
 import rekammedis.RMTransferPasienAntarRuang;
 import rekammedis.RMTriaseIGD;
 import rekammedis.RMUjiFungsiKFR;
+import rekammedis.ValidasiSBAR;
 
 /**
  *
@@ -1723,6 +1724,8 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
         TPegawai3 = new widget.TextBox();
         KdPeg3 = new widget.TextBox();
         jLabel84 = new widget.Label();
+        BtnVerifSbar1 = new widget.Button();
+        jLabel87 = new widget.Label();
         BtnVerifSbar = new widget.Button();
         jLabel85 = new widget.Label();
         BtnSeekPegawai3 = new widget.Button();
@@ -1802,6 +1805,7 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
         BtnKonselingFarmasi = new widget.Button();
         BtnInformasiObat = new widget.Button();
         BtnTransferAntarRuang = new widget.Button();
+        BtnVerifikasiSBAR = new widget.Button();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setUndecorated(true);
@@ -1969,7 +1973,7 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
         panelGlass9.add(jLabel19);
 
         DTPCari1.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "02-08-2023" }));
+        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "24-08-2023" }));
         DTPCari1.setDisplayFormat("dd-MM-yyyy");
         DTPCari1.setName("DTPCari1"); // NOI18N
         DTPCari1.setOpaque(false);
@@ -1983,7 +1987,7 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
         panelGlass9.add(jLabel21);
 
         DTPCari2.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "02-08-2023" }));
+        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "24-08-2023" }));
         DTPCari2.setDisplayFormat("dd-MM-yyyy");
         DTPCari2.setName("DTPCari2"); // NOI18N
         DTPCari2.setOpaque(false);
@@ -4088,6 +4092,25 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
         panelGlass17.add(jLabel84);
         jLabel84.setBounds(40, 210, 90, 23);
 
+        BtnVerifSbar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/file-edit-32x32.png"))); // NOI18N
+        BtnVerifSbar1.setMnemonic('4');
+        BtnVerifSbar1.setToolTipText("ALt+4");
+        BtnVerifSbar1.setName("BtnVerifSbar1"); // NOI18N
+        BtnVerifSbar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnVerifSbar1ActionPerformed(evt);
+            }
+        });
+        panelGlass17.add(BtnVerifSbar1);
+        BtnVerifSbar1.setBounds(550, 210, 28, 23);
+
+        jLabel87.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel87.setText("Status Verifikasi SBAR");
+        jLabel87.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel87.setName("jLabel87"); // NOI18N
+        panelGlass17.add(jLabel87);
+        jLabel87.setBounds(800, 210, 200, 23);
+
         BtnVerifSbar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/regis.png"))); // NOI18N
         BtnVerifSbar.setMnemonic('4');
         BtnVerifSbar.setToolTipText("ALt+4");
@@ -4098,10 +4121,10 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
             }
         });
         panelGlass17.add(BtnVerifSbar);
-        BtnVerifSbar.setBounds(550, 210, 28, 23);
+        BtnVerifSbar.setBounds(760, 210, 28, 23);
 
         jLabel85.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel85.setText("Status Verifikasi SBAR");
+        jLabel85.setText("Verifikasi SBAR");
         jLabel85.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel85.setName("jLabel85"); // NOI18N
         panelGlass17.add(jLabel85);
@@ -4169,7 +4192,7 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
         jLabel23.setBounds(554, 10, 60, 23);
 
         DTPTgl.setForeground(new java.awt.Color(50, 70, 50));
-        DTPTgl.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "02-08-2023" }));
+        DTPTgl.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "24-08-2023" }));
         DTPTgl.setDisplayFormat("dd-MM-yyyy");
         DTPTgl.setName("DTPTgl"); // NOI18N
         DTPTgl.setOpaque(false);
@@ -4263,7 +4286,7 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
         FormMenu.setBackground(new java.awt.Color(255, 255, 255));
         FormMenu.setBorder(null);
         FormMenu.setName("FormMenu"); // NOI18N
-        FormMenu.setPreferredSize(new java.awt.Dimension(150, 483));
+        FormMenu.setPreferredSize(new java.awt.Dimension(150, 500));
         FormMenu.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 1, 1));
 
         BtnRiwayat.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/item.png"))); // NOI18N
@@ -5302,6 +5325,23 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
             }
         });
         FormMenu.add(BtnTransferAntarRuang);
+
+        BtnVerifikasiSBAR.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/item.png"))); // NOI18N
+        BtnVerifikasiSBAR.setText("Verifikasi SBAR");
+        BtnVerifikasiSBAR.setFocusPainted(false);
+        BtnVerifikasiSBAR.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        BtnVerifikasiSBAR.setGlassColor(new java.awt.Color(255, 255, 255));
+        BtnVerifikasiSBAR.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        BtnVerifikasiSBAR.setMargin(new java.awt.Insets(1, 1, 1, 1));
+        BtnVerifikasiSBAR.setName("BtnVerifikasiSBAR"); // NOI18N
+        BtnVerifikasiSBAR.setPreferredSize(new java.awt.Dimension(180, 23));
+        BtnVerifikasiSBAR.setRoundRect(false);
+        BtnVerifikasiSBAR.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnVerifikasiSBARActionPerformed(evt);
+            }
+        });
+        FormMenu.add(BtnVerifikasiSBAR);
 
         ScrollMenu.setViewportView(FormMenu);
 
@@ -6518,10 +6558,10 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
                     tampilPRMRJ();
                 break;
             case 9:
-                TCari.setPreferredSize(new Dimension(240,23));
-                TCariPasien.setText(TNoRM.getText());
+//                TCari.setPreferredSize(new Dimension(240,23));
+//                TCariPasien.setText(TNoRM.getText());
                
-                    tampilPemeriksaanSbar();
+                tampilPemeriksaanSbar();
                 
                 break;
             default:
@@ -8628,6 +8668,42 @@ private void BtnEditKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
         }
     }//GEN-LAST:event_BtnFormFisioterapiActionPerformed
 
+    private void BtnVerifSbar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnVerifSbar1ActionPerformed
+        if(TPasien.getText().trim().equals("")||TNoRw.getText().trim().equals("")){
+            JOptionPane.showMessageDialog(null,"Maaf, Silahkan anda pilih dulu dengan menklik data pada table...!!!");
+            TCari.requestFocus();
+        }else{
+            this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+            ValidasiSBAR form=new ValidasiSBAR(null,false);
+            form.isCek();
+            form.emptTeks();
+            form.setNoRm(TNoRw.getText(),DTPCari2.getDate());
+            form.tampil();
+            form.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
+            form.setLocationRelativeTo(internalFrame1);
+            form.setVisible(true);
+            this.setCursor(Cursor.getDefaultCursor());
+        }
+    }//GEN-LAST:event_BtnVerifSbar1ActionPerformed
+
+    private void BtnVerifikasiSBARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnVerifikasiSBARActionPerformed
+        if(TPasien.getText().trim().equals("")||TNoRw.getText().trim().equals("")){
+            JOptionPane.showMessageDialog(null,"Maaf, Silahkan anda pilih dulu dengan menklik data pada table...!!!");
+            TCari.requestFocus();
+        }else{
+            this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+            ValidasiSBAR form=new ValidasiSBAR(null,false);
+            form.isCek();
+            form.emptTeks();
+            form.setNoRm(TNoRw.getText(),DTPCari2.getDate());
+            form.tampil();
+            form.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
+            form.setLocationRelativeTo(internalFrame1);
+            form.setVisible(true);
+            this.setCursor(Cursor.getDefaultCursor());
+        }
+    }//GEN-LAST:event_BtnVerifikasiSBARActionPerformed
+
     /**
     * @param args the command line arguments
     */
@@ -8727,6 +8803,8 @@ private void BtnEditKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
     private widget.Button BtnTriaseIGD;
     private widget.Button BtnUjiFungsiKFR;
     private widget.Button BtnVerifSbar;
+    private widget.Button BtnVerifSbar1;
+    private widget.Button BtnVerifikasiSBAR;
     private widget.TextArea Catatan;
     private widget.CekBox ChkAccor;
     private widget.CekBox ChkInput;
@@ -8943,6 +9021,7 @@ private void BtnEditKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
     private widget.Label jLabel84;
     private widget.Label jLabel85;
     private widget.Label jLabel86;
+    private widget.Label jLabel87;
     private widget.Label jLabel88;
     private widget.Label jLabel89;
     private widget.Label jLabel9;
