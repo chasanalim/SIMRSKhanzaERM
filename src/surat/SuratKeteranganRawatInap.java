@@ -54,7 +54,7 @@ public final class SuratKeteranganRawatInap extends javax.swing.JDialog {
         setSize(628,674);
         
         tabMode=new DefaultTableModel(null,new Object[]{
-            "No.Surat","No.Rawat","No.R.M.","Nama Pasien","Dari Tanggal","Sampai Tanggal"
+            "No.Surat","No.Rawat","No.R.M.","Nama Pasien","Dari Tanggal","Sampai Tanggal","Kode DPJP","Nama DPJP Ranap"
         }){
               @Override public boolean isCellEditable(int rowIndex, int colIndex){return false;}
         };
@@ -64,7 +64,7 @@ public final class SuratKeteranganRawatInap extends javax.swing.JDialog {
         tbObat.setPreferredScrollableViewportSize(new Dimension(500,500));
         tbObat.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
 
-        for (i = 0; i < 6; i++) {
+        for (i = 0; i < 8; i++) {
             TableColumn column = tbObat.getColumnModel().getColumn(i);
             if(i==0){
                 column.setPreferredWidth(105);
@@ -78,7 +78,11 @@ public final class SuratKeteranganRawatInap extends javax.swing.JDialog {
                 column.setPreferredWidth(90);
             }else if(i==5){
                 column.setPreferredWidth(90);
-           }
+            }else if(i==6){
+                column.setPreferredWidth(60);
+            }else if(i==7){
+                column.setPreferredWidth(120);
+            }
         }
         tbObat.setDefaultRenderer(Object.class, new WarnaTable());
         
@@ -796,7 +800,6 @@ public final class SuratKeteranganRawatInap extends javax.swing.JDialog {
                     "where diagnosa_pasien.no_rawat=? and diagnosa_pasien.prioritas='1'",TNoRw.getText()));
                 param.put("logo",Sequel.cariGambar("select setting.logo from setting")); 
                 
-                
                 finger=Sequel.cariIsi("select sha1(sidikjari.sidikjari) from sidikjari inner join pegawai on pegawai.id=sidikjari.id where pegawai.nik=?",tbObat.getValueAt(tbObat.getSelectedRow(),7).toString());
                 param.put("finger","Dikeluarkan di "+akses.getnamars()+", Kabupaten/Kota "+akses.getkabupatenrs()+"\nDitandatangani secara elektronik oleh "+tbObat.getValueAt(tbObat.getSelectedRow(),8).toString()+"\nID "+(finger.equals("")?tbObat.getValueAt(tbObat.getSelectedRow(),7).toString():finger)+"\n"+Valid.SetTgl3(tbObat.getValueAt(tbObat.getSelectedRow(),4).toString())); 
        
@@ -874,21 +877,23 @@ public final class SuratKeteranganRawatInap extends javax.swing.JDialog {
             if(TCari.getText().trim().equals("")){
                 ps=koneksi.prepareStatement(
                      "select surat_keterangan_rawat_inap.no_surat,surat_keterangan_rawat_inap.no_rawat,reg_periksa.no_rkm_medis,pasien.nm_pasien,"+
-                     "surat_keterangan_rawat_inap.tanggalawal,surat_keterangan_rawat_inap.tanggalakhir "+                  
+                     "surat_keterangan_rawat_inap.tanggalawal,surat_keterangan_rawat_inap.tanggalakhir,dpjp_ranap.kd_dokter,dokter.nm_dokter "+                  
                      "from surat_keterangan_rawat_inap inner join reg_periksa on surat_keterangan_rawat_inap.no_rawat=reg_periksa.no_rawat "+
                      "inner join pasien on reg_periksa.no_rkm_medis=pasien.no_rkm_medis "+
-                     "where "+tgl+"order by surat_keterangan_rawat_inap.no_surat");
+                     "INNER JOIN dpjp_ranap ON dpjp_ranap.no_rawat = surat_keterangan_rawat_inap.no_rawat INNER JOIN dokter ON dpjp_ranap.kd_dokter = dokter.kd_dokter "+
+                     "where dpjp_ranap.prioritas = 1 and "+tgl+"order by surat_keterangan_rawat_inap.no_surat");
             }else{
                 ps=koneksi.prepareStatement(
                      "select surat_keterangan_rawat_inap.no_surat,surat_keterangan_rawat_inap.no_rawat,reg_periksa.no_rkm_medis,pasien.nm_pasien,"+
-                     "surat_keterangan_rawat_inap.tanggalawal,surat_keterangan_rawat_inap.tanggalakhir "+                  
+                     "surat_keterangan_rawat_inap.tanggalawal,surat_keterangan_rawat_inap.tanggalakhir,dpjp_ranap.kd_dokter,dokter.nm_dokter  "+                  
                      "from surat_keterangan_rawat_inap inner join reg_periksa on surat_keterangan_rawat_inap.no_rawat=reg_periksa.no_rawat "+
                      "inner join pasien on reg_periksa.no_rkm_medis=pasien.no_rkm_medis "+
-                     "where "+tgl+"and no_surat like '%"+TCari.getText().trim()+"%' or "+
-                     tgl+"and surat_keterangan_rawat_inap.no_rawat like '%"+TCari.getText().trim()+"%' or "+
-                     tgl+"and reg_periksa.no_rkm_medis like '%"+TCari.getText().trim()+"%' or "+
-                     tgl+"and pasien.nm_pasien like '%"+TCari.getText().trim()+"%' or "+
-                     tgl+"and surat_keterangan_rawat_inap.tanggalawal like '%"+TCari.getText().trim()+"%' or "+
+                     "INNER JOIN dpjp_ranap ON dpjp_ranap.no_rawat = surat_keterangan_rawat_inap.no_rawat INNER JOIN dokter ON dpjp_ranap.kd_dokter = dokter.kd_dokter "+
+                     "where dpjp_ranap.prioritas = 1 and "+tgl+"and no_surat like '%"+TCari.getText().trim()+"%' or dpjp_ranap.prioritas = 1 and "+
+                     tgl+"and surat_keterangan_rawat_inap.no_rawat like '%"+TCari.getText().trim()+"%' or dpjp_ranap.prioritas = 1 and "+
+                     tgl+"and reg_periksa.no_rkm_medis like '%"+TCari.getText().trim()+"%' or dpjp_ranap.prioritas = 1 and "+
+                     tgl+"and pasien.nm_pasien like '%"+TCari.getText().trim()+"%' or dpjp_ranap.prioritas = 1 and "+
+                     tgl+"and surat_keterangan_rawat_inap.tanggalawal like '%"+TCari.getText().trim()+"%' or dpjp_ranap.prioritas = 1 and "+
                      tgl+"and surat_keterangan_rawat_inap.tanggalakhir like '%"+TCari.getText().trim()+"%' "+
                      "order by surat_keterangan_rawat_inap.no_surat");
             }
@@ -898,8 +903,8 @@ public final class SuratKeteranganRawatInap extends javax.swing.JDialog {
                 while(rs.next()){
                     tabMode.addRow(new String[]{
                         rs.getString(1),rs.getString(2),rs.getString(3),
-                        rs.getString(4),rs.getString(5),rs.getString(6)
-                        
+                        rs.getString(4),rs.getString(5),rs.getString(6),
+                        rs.getString(7),rs.getString(8)
                     });
                 }
             } catch (Exception e) {
