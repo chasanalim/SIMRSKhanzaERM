@@ -1233,7 +1233,7 @@ public final class RMPenilaianAwalKeperawatanRanapAnak extends javax.swing.JDial
             }
         });
 
-        internalFrame1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(240, 245, 235)), "::[ Penilaian Awal Keperawatan Rawat Inap Umum ]::", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(50, 50, 50))); // NOI18N
+        internalFrame1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(240, 245, 235)), "::[ Penilaian Awal Keperawatan Rawat Inap Anak ]::", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(50, 50, 50))); // NOI18N
         internalFrame1.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
         internalFrame1.setName("internalFrame1"); // NOI18N
         internalFrame1.setLayout(new java.awt.BorderLayout(1, 1));
@@ -8202,7 +8202,7 @@ public final class RMPenilaianAwalKeperawatanRanapAnak extends javax.swing.JDial
                 "penilaian_awal_keperawatan_ranap_anak.nilai_total_gizi,penilaian_awal_keperawatan_ranap_anak.skrining_gizi_diagnosa_khusus,penilaian_awal_keperawatan_ranap_anak.skrining_gizi_ket_diagnosa_khusus,"+
                 "penilaian_awal_keperawatan_ranap_anak.skrining_gizi_diketahui_dietisen,penilaian_awal_keperawatan_ranap_anak.skrining_gizi_jam_diketahui_dietisen,"+
                 "penilaian_awal_keperawatan_ranap_anak.populasi_hospitalisasi1,penilaian_awal_keperawatan_ranap_anak.populasi_hospitalisasi2,penilaian_awal_keperawatan_ranap_anak.populasi_hospitalisasi1,penilaian_awal_keperawatan_ranap_anak.populasi_hospitalisasi3,"+
-                "penilaian_awal_keperawatan_ranap_anak.populasi_hospitalisasi4,penilaian_awal_keperawatan_ranap_anak.populasi_hospitalisasi5,penilaian_awal_keperawatan_ranap_anak.populasi_hospitalisasi1,penilaian_awal_keperawatan_ranap_anak.populasi_hospitalisasi6,"+        
+                "penilaian_awal_keperawatan_ranap_anak.populasi_hospitalisasi4,penilaian_awal_keperawatan_ranap_anak.populasi_hospitalisasi5,penilaian_awal_keperawatan_ranap_anak.populasi_hospitalisasi1,penilaian_awal_keperawatan_ranap_anak.populasi_hospitalisasi6,penilaian_awal_keperawatan_ranap_anak.populasi_hospitalisasi7,"+        
                 "penilaian_awal_keperawatan_ranap_anak.populasi_polaasuh1,penilaian_awal_keperawatan_ranap_anak.populasi_polaasuh2,penilaian_awal_keperawatan_ranap_anak.populasi_polaasuh3,penilaian_awal_keperawatan_ranap_anak.populasi_polaasuh4,"+
                 "penilaian_awal_keperawatan_ranap_anak.populasi_psikiatri1,penilaian_awal_keperawatan_ranap_anak.populasi_psikiatri2,penilaian_awal_keperawatan_ranap_anak.populasi_psikiatri3,"+       
                 "penilaian_awal_keperawatan_ranap_anak.populasi_psikiatri4,penilaian_awal_keperawatan_ranap_anak.populasi_psikiatri5,penilaian_awal_keperawatan_ranap_anak.populasi_psikiatri6,"+         
