@@ -8196,7 +8196,7 @@ public final class RMPenilaianAwalKeperawatanRanapAnak extends javax.swing.JDial
                 "penilaian_awal_keperawatan_ranap_anak.penilaian_jatuh_skala2,penilaian_awal_keperawatan_ranap_anak.penilaian_jatuh_nilai2,penilaian_awal_keperawatan_ranap_anak.penilaian_jatuh_skala3,"+
                 "penilaian_awal_keperawatan_ranap_anak.penilaian_jatuh_nilai3,penilaian_awal_keperawatan_ranap_anak.penilaian_jatuh_skala4,penilaian_awal_keperawatan_ranap_anak.penilaian_jatuh_nilai4,"+
                 "penilaian_awal_keperawatan_ranap_anak.penilaian_jatuh_skala5,penilaian_awal_keperawatan_ranap_anak.penilaian_jatuh_nilai5,penilaian_awal_keperawatan_ranap_anak.penilaian_jatuh_skala6,"+
-                "penilaian_awal_keperawatan_ranap_anak.penilaian_jatuh_nilai6,penilaian_awal_keperawatan_ranap_anak.penilaian_jatuh_nilai7,penilaian_awal_keperawatan_ranap_anak.penilaian_jatuhmorse_totalnilai,"+
+                "penilaian_awal_keperawatan_ranap_anak.penilaian_jatuh_nilai6,penilaian_awal_keperawatan_ranap_anak.penilaian_jatuh_nilai7,penilaian_awal_keperawatan_ranap_anak.penilaian_jatuh_totalnilai,"+
                 "penilaian_awal_keperawatan_ranap_anak.skrining_gizi1,penilaian_awal_keperawatan_ranap_anak.nilai_gizi1,penilaian_awal_keperawatan_ranap_anak.skrining_gizi2,penilaian_awal_keperawatan_ranap_anak.nilai_gizi2,"+
                 "penilaian_awal_keperawatan_ranap_anak.skrining_gizi3,penilaian_awal_keperawatan_ranap_anak.nilai_gizi3,penilaian_awal_keperawatan_ranap_anak.skrining_gizi4,penilaian_awal_keperawatan_ranap_anak.nilai_gizi4,"+
                 "penilaian_awal_keperawatan_ranap_anak.nilai_total_gizi,penilaian_awal_keperawatan_ranap_anak.skrining_gizi_diagnosa_khusus,penilaian_awal_keperawatan_ranap_anak.skrining_gizi_ket_diagnosa_khusus,"+
@@ -8218,7 +8218,7 @@ public final class RMPenilaianAwalKeperawatanRanapAnak extends javax.swing.JDial
                 "penilaian_awal_keperawatan_ranap_anak.tanggal between ? and ? "+
                 (TCari.getText().trim().equals("")?"":"and (reg_periksa.no_rawat like ? or pasien.no_rkm_medis like ? or pasien.nm_pasien like ? or penilaian_awal_keperawatan_ranap_anak.nip1 like ? or "+
                 "pengkaji1.nama like ? or penilaian_awal_keperawatan_ranap_anak.kd_dokter like ? or dokter.nm_dokter like ?)")+
-                " order by penilaian_awal_keperawatan_ranap.tanggal");
+                " order by penilaian_awal_keperawatan_ranap_anak.tanggal");
             
             try {
                 ps.setString(1,Valid.SetTgl(DTPCari1.getSelectedItem()+"")+" 00:00:00");
