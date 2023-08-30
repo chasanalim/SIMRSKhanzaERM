@@ -68,25 +68,24 @@ public final class RMPenilaianAwalKeperawatanRanapAnak extends javax.swing.JDial
         initComponents();
         
         tabMode=new DefaultTableModel(null,new Object[]{
-            "No.Rawat","No.RM","Nama Pasien","Tgl.Lahir","J.K.","NIP Pengkaji 1","Nama Pengkaji 1","NIP Pengkaji 2","Nama Pengkaji 2","Kode DPJP","Nama DPJP",
-            "Tgl.Asuhan","Macam Kasus","Anamnesis","Tiba Di Ruang Rawat","Cara Masuk","Riwayat Penyakit Saat Ini","Riwayat Penyakit Dahulu","Riwayat Penyakit Keluarga",
-            "Riwayat Penggunaan Obat","Riwayat Pembedahan","Riwayat Dirawat Di RS","Alat Bantu Yang Dipakai","Dalam Keadaan Hamil/Sedang Menyusui","Riwayat Transfusi Darah",
-            "Riwayat Alergi","Merokok","Batang/Hari","Alkohol","Gelas/Hari","Obat Tidur","Olah Raga","Kesadaran Mental","Keadaan Umum","GCS(E,V,M)","TD(mmHg)",
-            "Nadi(x/menit)","RR(x/menit)","Suhu(°C)","SpO2(%)","BB(Kg)","TB(cm)","Kepala","Wajah","Leher","Kejang","Sensorik","Pulsasi","Sirkulasi","Denyut Nadi",
-            "Retraksi","Pola Nafas","Suara Nafas","Batuk & Sekresi","Volume","Jenis Pernafasaan","Irama","Mulut","Lidah","Gigi","Tenggorokan","Abdomen","Peistatik Usus",
-            "Anus","Sensorik","Penglihatan","Alat Bantu Penglihatan","Motorik","Pendengaran","Bicara","Otot","Kulit","Warna Kulit","Turgor","Resiko Decubitas",
-            "Oedema","Pergerakan Sendi","Kekuatan Otot","Fraktur","Nyeri Sendi","Frekuensi BAB","x/","Konsistensi BAB","Warna BAB","Frekuensi BAK","x/","Warna BAK",
-            "Lain-lain BAK","Mandi","Makan/Minum","Berpakaian","Eliminasi","Berpindah","Porsi Makan","Frekuensi Makan","Jenis Makanan","Lama Tidur","Gangguan Tidur",
-            "a. Aktifitas Sehari-hari","b. Berjalan","c. Aktifitas","d. Alat Ambulasi","e. Ekstremitas Atas","f. Ekstremitas Bawah","g. Kemampuan Menggenggam",
-            "h. Kemampuan Koordinasi","i. Kesimpulan Gangguan Fungsi","a. Kondisi Psikologis","b. Adakah Perilaku","c. Gangguan Jiwa di Masa Lalu","d. Hubungan Pasien",
-            "e. Agama","f. Tinggal Dengan","g. Pekerjaan","h. Pembayaran","i. Nilai-nilai Kepercayaan","j. Bahasa Sehari-hari","k. Pendidikan Pasien","l. Pendidikan P.J.",
-            "m. Edukasi Diberikan Kepada","Nyeri","Penyebab Nyeri","Kualitas Nyeri","Lokasi Nyeri","Nyeri Menyebar","Skala Nyeri","Waktu / Durasi","Nyeri Hilang Bila",
-            "Diberitahukan Pada Dokter","Skala Morse 1","N.M. 1","Skala Morse 2","N.M. 2","Skala Morse 3","N.M. 3","Skala Morse 4","N.M. 4","Skala Morse 5","N.M. 5",
-            "Skala Morse 6","N.M. 6","T.M.","Skala Sydney 1","N.S. 1","Skala Sydney 2","N.S. 2","Skala Sydney 3","N.S. 3","Skala Sydney 4","N.S. 4",
-            "Skala Sydney 5","N.S. 5","Skala Sydney 6","N.S. 6","Skala Sydney 7","N.S. 7","Skala Sydney 8","N.S. 8","Skala Sydney 9","N.S. 9","Skala Sydney 10","N.S. 10",
-            "Skala Sydney 11","N.S. 11","T.S.","1. Apakah ada penurunan BB yang tidak diinginkan selama 6 bulan terakhir ?","Skor 1","2. Apakah asupan makan berkurang karena tidak nafsu makan ?",
-            "Skor 2","Total Skor","Pasien dengan diagnosis khusus","Keterangan Diagnosa Khusus","Sudah dibaca dan diketahui oleh Dietisen","Jam Dibaca Dietisen",
-            "Rencana Keperawatan Lainnya"
+            "No.Rawat","No.RM","Nama Pasien","Tgl.Lahir","J.K.","NIP Pengkaji 1","Nama Pengkaji 1","NIP Pengkaji 2","Nama Pengkaji 2","Kode DPJP",
+            "Nama DPJP","Tgl.Asuhan","Macam Kasus","Anamnesis","Tiba Di Ruang Rawat","Cara Masuk","Riwayat Penyakit Saat Ini","Riwayat Penyakit Dahulu","Riwayat Penyakit Keluarga","Riwayat Penggunaan Obat",
+            "Riwayat Pembedahan","Riwayat Dirawat Di RS","Alat Bantu Yang Dipakai","Dalam Keadaan Hamil/Sedang Menyusui","Riwayat Transfusi Darah","Riwayat Alergi","Merokok","Batang/Hari","Alkohol","Gelas/Hari",
+            "Obat Tidur","Olah Raga","Kesadaran Mental","Keadaan Umum","GCS(E,V,M)","TD(mmHg)","Nadi(x/menit)","RR(x/menit)","Suhu(°C)","SpO2(%)",
+            "BB(Kg)","TB(cm)","Kepala","Wajah","Leher","Kejang","Sensorik","Pulsasi","Sirkulasi","Denyut Nadi",
+            "Retraksi","Pola Nafas","Suara Nafas","Batuk & Sekresi","Volume","Jenis Pernafasaan","Irama","Mulut","Lidah","Gigi",
+            "Tenggorokan","Abdomen","Peistatik Usus","Anus","Sensorik","Penglihatan","Alat Bantu Penglihatan","Motorik","Pendengaran","Bicara",
+            "Otot","Kulit","Warna Kulit","Turgor","Resiko Decubitas","Oedema","Pergerakan Sendi","Kekuatan Otot","Fraktur","Nyeri Sendi",
+            "Frekuensi BAB","x/","Konsistensi BAB","Warna BAB","Frekuensi BAK","x/","Warna BAK","Lain-lain BAK","Mandi","Makan/Minum",
+            "Berpakaian","Eliminasi","Berpindah","Porsi Makan","Frekuensi Makan","Jenis Makanan","Lama Tidur","Gangguan Tidur","a. Aktifitas Sehari-hari","b. Berjalan",
+            "c. Aktifitas","d. Alat Ambulasi","e. Ekstremitas Atas","f. Ekstremitas Bawah","g. Kemampuan Menggenggam","h. Kemampuan Koordinasi","i. Kesimpulan Gangguan Fungsi","a. Kondisi Psikologis","b. Adakah Perilaku","c. Gangguan Jiwa di Masa Lalu",
+            "d. Hubungan Pasien","e. Agama","f. Tinggal Dengan","g. Pekerjaan","h. Pembayaran","i. Nilai-nilai Kepercayaan","j. Bahasa Sehari-hari","k. Pendidikan Pasien","l. Pendidikan P.J.","m. Edukasi Diberikan Kepada",
+            "Nyeri","Penyebab Nyeri","Kualitas Nyeri","Lokasi Nyeri","Nyeri Menyebar","Skala Nyeri","Waktu / Durasi","Nyeri Hilang Bila","Diberitahukan Pada Dokter","Skala Humpty 1",
+            "N.H. 1","Skala Humpty 2","N.H. 2","Skala Humpty 3","N.H. 3","Skala Humpty 4","N.H. 4","Skala Humpty 5","N.H. 5","Skala Humpty 6",
+            "N.H. 6","Skala Humpty 7","N.H. 7","T.H.","Skrinning Gizi 1","Skor 1","Skrining Gizi2","Skor 2","Skrinning Gizi 3","Skor 3",
+            "Skrining Gizi4","Skor 4","Total Skor","Pasien dengan diagnosis khusus","Keterangan Diagnosa Khusus","Sudah dibaca dan diketahui oleh Dietisen","Jam Dibaca Dietisen","Usia anak saat dirawat","berapa kali dirawat","orang terdekat",
+            "Apakah anak merasa terpisah saat dirawat","Reaksi anak saat dirawat","Cemas","Alasan Cemas","Pengasuh","Pembawaan Umum","Temperamen","Kebiasaan perilaku unik","Fantasi","Super ego",
+            "Konsep diri anak","Kesadaran anak pada persoalan","Koordinasi motorik kasar","Koordinasi motorik halus","Rencana Keperawatan Lainnya"
         }){
               @Override public boolean isCellEditable(int rowIndex, int colIndex){return false;}
         };
@@ -8196,7 +8195,7 @@ public final class RMPenilaianAwalKeperawatanRanapAnak extends javax.swing.JDial
                 "penilaian_awal_keperawatan_ranap_anak.penilaian_jatuh_skala2,penilaian_awal_keperawatan_ranap_anak.penilaian_jatuh_nilai2,penilaian_awal_keperawatan_ranap_anak.penilaian_jatuh_skala3,"+
                 "penilaian_awal_keperawatan_ranap_anak.penilaian_jatuh_nilai3,penilaian_awal_keperawatan_ranap_anak.penilaian_jatuh_skala4,penilaian_awal_keperawatan_ranap_anak.penilaian_jatuh_nilai4,"+
                 "penilaian_awal_keperawatan_ranap_anak.penilaian_jatuh_skala5,penilaian_awal_keperawatan_ranap_anak.penilaian_jatuh_nilai5,penilaian_awal_keperawatan_ranap_anak.penilaian_jatuh_skala6,"+
-                "penilaian_awal_keperawatan_ranap_anak.penilaian_jatuh_nilai6,penilaian_awal_keperawatan_ranap_anak.penilaian_jatuh_nilai7,penilaian_awal_keperawatan_ranap_anak.penilaian_jatuh_totalnilai,"+
+                "penilaian_awal_keperawatan_ranap_anak.penilaian_jatuh_nilai6,penilaian_awal_keperawatan_ranap_anak.penilaian_jatuh_skala7,penilaian_awal_keperawatan_ranap_anak.penilaian_jatuh_nilai7,penilaian_awal_keperawatan_ranap_anak.penilaian_jatuh_totalnilai,"+
                 "penilaian_awal_keperawatan_ranap_anak.skrining_gizi1,penilaian_awal_keperawatan_ranap_anak.nilai_gizi1,penilaian_awal_keperawatan_ranap_anak.skrining_gizi2,penilaian_awal_keperawatan_ranap_anak.nilai_gizi2,"+
                 "penilaian_awal_keperawatan_ranap_anak.skrining_gizi3,penilaian_awal_keperawatan_ranap_anak.nilai_gizi3,penilaian_awal_keperawatan_ranap_anak.skrining_gizi4,penilaian_awal_keperawatan_ranap_anak.nilai_gizi4,"+
                 "penilaian_awal_keperawatan_ranap_anak.nilai_total_gizi,penilaian_awal_keperawatan_ranap_anak.skrining_gizi_diagnosa_khusus,penilaian_awal_keperawatan_ranap_anak.skrining_gizi_ket_diagnosa_khusus,"+
@@ -8270,7 +8269,7 @@ public final class RMPenilaianAwalKeperawatanRanapAnak extends javax.swing.JDial
                         rs.getString("penilaian_nyeri_waktu"),rs.getString("penilaian_nyeri_hilang")+", "+rs.getString("penilaian_nyeri_ket_hilang"),rs.getString("penilaian_nyeri_diberitahukan_dokter")+", "+rs.getString("penilaian_nyeri_jam_diberitahukan_dokter"),
                         rs.getString("penilaian_jatuh_skala1"),rs.getString("penilaian_jatuh_nilai1"),rs.getString("penilaian_jatuh_skala2"),rs.getString("penilaian_jatuh_nilai2"),
                         rs.getString("penilaian_jatuh_skala3"),rs.getString("penilaian_jatuh_nilai3"),rs.getString("penilaian_jatuh_skala4"),rs.getString("penilaian_jatuh_nilai4"),
-                        rs.getString("penilaian_jatuh_skala5"),rs.getString("penilaian_jatuh_nilai5"),rs.getString("penilaian_jatuh_skala6"),rs.getString("penilaian_jatuh_nilai6"),
+                        rs.getString("penilaian_jatuh_skala5"),rs.getString("penilaian_jatuh_nilai5"),rs.getString("penilaian_jatuh_skala6"),rs.getString("penilaian_jatuh_nilai6"),rs.getString("penilaian_jatuh_skala7"),rs.getString("penilaian_jatuh_nilai7"),
                         rs.getString("penilaian_jatuh_totalnilai"),
                         rs.getString("skrining_gizi1"),rs.getString("nilai_gizi1"),rs.getString("skrining_gizi2"),rs.getString("nilai_gizi2"),rs.getString("skrining_gizi3"),rs.getString("nilai_gizi3"),rs.getString("skrining_gizi4"),rs.getString("nilai_gizi4"),rs.getString("nilai_total_gizi"),
                         rs.getString("skrining_gizi_diagnosa_khusus"),rs.getString("skrining_gizi_ket_diagnosa_khusus"),rs.getString("skrining_gizi_diketahui_dietisen"),rs.getString("skrining_gizi_jam_diketahui_dietisen"), 
@@ -8455,6 +8454,8 @@ public final class RMPenilaianAwalKeperawatanRanapAnak extends javax.swing.JDial
         NilaiResiko5.setText("0");
         SkalaResiko6.setSelectedIndex(0);
         NilaiResiko6.setText("0");
+        SkalaResiko7.setSelectedIndex(0);
+        NilaiResiko7.setText("0");
         NilaiResikoTotal.setText("0");
         TingkatResiko.setText("Tingkat Resiko : Risiko Rendah (0-24), Tindakan : Intervensi pencegahan risiko jatuh standar");
 //        SkalaSydney1.setSelectedIndex(0);
@@ -8954,8 +8955,8 @@ public final class RMPenilaianAwalKeperawatanRanapAnak extends javax.swing.JDial
                 
                 ps=koneksi.prepareStatement(
                         "select master_rencana_keperawatan.kode_rencana,master_rencana_keperawatan.rencana_keperawatan from master_rencana_keperawatan "+
-                        "inner join penilaian_awal_keperawatan_ranap_rencana on penilaian_awal_keperawatan_ranap_rencana.kode_rencana=master_rencana_keperawatan.kode_rencana "+
-                        "where penilaian_awal_keperawatan_ranap_rencana.no_rawat=? order by penilaian_awal_keperawatan_ranap_rencana.kode_rencana");
+                        "inner join penilaian_awal_keperawatan_ranap_rencana_anak on penilaian_awal_keperawatan_ranap_rencana_anak.kode_rencana=master_rencana_keperawatan.kode_rencana "+
+                        "where penilaian_awal_keperawatan_ranap_rencana_anak.no_rawat=? order by penilaian_awal_keperawatan_ranap_rencana_anak.kode_rencana");
                 try {
                     ps.setString(1,tbObat.getValueAt(tbObat.getSelectedRow(),0).toString());
                     rs=ps.executeQuery();
@@ -9075,8 +9076,8 @@ public final class RMPenilaianAwalKeperawatanRanapAnak extends javax.swing.JDial
                 Valid.tabelKosong(tabModeDetailMasalah);
                 ps=koneksi.prepareStatement(
                         "select master_masalah_keperawatan.kode_masalah,master_masalah_keperawatan.nama_masalah from master_masalah_keperawatan "+
-                        "inner join penilaian_awal_keperawatan_ranap_masalah on penilaian_awal_keperawatan_ranap_masalah.kode_masalah=master_masalah_keperawatan.kode_masalah "+
-                        "where penilaian_awal_keperawatan_ranap_masalah.no_rawat=? order by penilaian_awal_keperawatan_ranap_masalah.kode_masalah");
+                        "inner join penilaian_awal_keperawatan_ranap_masalah_anak on penilaian_awal_keperawatan_ranap_masalah_anak.kode_masalah=master_masalah_keperawatan.kode_masalah "+
+                        "where penilaian_awal_keperawatan_ranap_masalah_anak.no_rawat=? order by penilaian_awal_keperawatan_ranap_masalah_anak.kode_masalah");
                 try {
                     ps.setString(1,tbObat.getValueAt(tbObat.getSelectedRow(),0).toString());
                     rs=ps.executeQuery();
@@ -9101,8 +9102,8 @@ public final class RMPenilaianAwalKeperawatanRanapAnak extends javax.swing.JDial
                 Valid.tabelKosong(tabModeDetailRencana);
                 ps=koneksi.prepareStatement(
                         "select master_rencana_keperawatan.kode_rencana,master_rencana_keperawatan.rencana_keperawatan from master_rencana_keperawatan "+
-                        "inner join penilaian_awal_keperawatan_ranap_rencana on penilaian_awal_keperawatan_ranap_rencana.kode_rencana=master_rencana_keperawatan.kode_rencana "+
-                        "where penilaian_awal_keperawatan_ranap_rencana.no_rawat=? order by penilaian_awal_keperawatan_ranap_rencana.kode_rencana");
+                        "inner join penilaian_awal_keperawatan_ranap_rencana_anak on penilaian_awal_keperawatan_ranap_rencana_anak.kode_rencana=master_rencana_keperawatan.kode_rencana "+
+                        "where penilaian_awal_keperawatan_ranap_rencana_anak.no_rawat=? order by penilaian_awal_keperawatan_ranap_rencana_anak.kode_rencana");
                 try {
                     ps.setString(1,tbObat.getValueAt(tbObat.getSelectedRow(),0).toString());
                     rs=ps.executeQuery();
