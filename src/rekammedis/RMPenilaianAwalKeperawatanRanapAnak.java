@@ -1504,7 +1504,7 @@ public final class RMPenilaianAwalKeperawatanRanapAnak extends javax.swing.JDial
         Anamnesis.setBounds(74, 100, 130, 23);
 
         TglAsuhan.setForeground(new java.awt.Color(50, 70, 50));
-        TglAsuhan.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "30-08-2023 08:52:54" }));
+        TglAsuhan.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "31-08-2023 09:09:31" }));
         TglAsuhan.setDisplayFormat("dd-MM-yyyy HH:mm:ss");
         TglAsuhan.setName("TglAsuhan"); // NOI18N
         TglAsuhan.setOpaque(false);
@@ -4777,7 +4777,7 @@ public final class RMPenilaianAwalKeperawatanRanapAnak extends javax.swing.JDial
         jLabel303.setText("b. Pembawaan Umum");
         jLabel303.setName("jLabel303"); // NOI18N
         FormInput.add(jLabel303);
-        jLabel303.setBounds(510, 2370, 240, 23);
+        jLabel303.setBounds(510, 2370, 190, 23);
 
         PolaAsuh1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Orang tua", "Ayah", "Ibu", "Nenek", "Saudara" }));
         PolaAsuh1.setName("PolaAsuh1"); // NOI18N
@@ -5035,7 +5035,7 @@ public final class RMPenilaianAwalKeperawatanRanapAnak extends javax.swing.JDial
         panelGlass9.add(jLabel19);
 
         DTPCari1.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "30-08-2023" }));
+        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "31-08-2023" }));
         DTPCari1.setDisplayFormat("dd-MM-yyyy");
         DTPCari1.setName("DTPCari1"); // NOI18N
         DTPCari1.setOpaque(false);
@@ -5049,7 +5049,7 @@ public final class RMPenilaianAwalKeperawatanRanapAnak extends javax.swing.JDial
         panelGlass9.add(jLabel21);
 
         DTPCari2.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "30-08-2023" }));
+        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "31-08-2023" }));
         DTPCari2.setDisplayFormat("dd-MM-yyyy");
         DTPCari2.setName("DTPCari2"); // NOI18N
         DTPCari2.setOpaque(false);
@@ -8882,45 +8882,41 @@ public final class RMPenilaianAwalKeperawatanRanapAnak extends javax.swing.JDial
             NilaiResiko5.setText(tbObat.getValueAt(tbObat.getSelectedRow(),138).toString());
             SkalaResiko6.setSelectedItem(tbObat.getValueAt(tbObat.getSelectedRow(),139).toString());
             NilaiResiko6.setText(tbObat.getValueAt(tbObat.getSelectedRow(),140).toString());
-            NilaiResikoTotal.setText(tbObat.getValueAt(tbObat.getSelectedRow(),141).toString());
+            SkalaResiko7.setSelectedItem(tbObat.getValueAt(tbObat.getSelectedRow(),140).toString());
+            NilaiResiko7.setText(tbObat.getValueAt(tbObat.getSelectedRow(),141).toString());
+            NilaiResikoTotal.setText(tbObat.getValueAt(tbObat.getSelectedRow(),142).toString());
             isTotalResikoJatuh();
-//            SkalaSydney1.setSelectedItem(tbObat.getValueAt(tbObat.getSelectedRow(),142).toString());
-//            NilaiSydney1.setText(tbObat.getValueAt(tbObat.getSelectedRow(),143).toString());
-//            SkalaSydney2.setSelectedItem(tbObat.getValueAt(tbObat.getSelectedRow(),144).toString());
-//            NilaiSydney2.setText(tbObat.getValueAt(tbObat.getSelectedRow(),145).toString());
-//            SkalaSydney3.setSelectedItem(tbObat.getValueAt(tbObat.getSelectedRow(),146).toString());
-//            NilaiSydney3.setText(tbObat.getValueAt(tbObat.getSelectedRow(),147).toString());
-//            SkalaSydney4.setSelectedItem(tbObat.getValueAt(tbObat.getSelectedRow(),148).toString());
-//            NilaiSydney4.setText(tbObat.getValueAt(tbObat.getSelectedRow(),149).toString());
-//            SkalaSydney5.setSelectedItem(tbObat.getValueAt(tbObat.getSelectedRow(),150).toString());
-//            NilaiSydney5.setText(tbObat.getValueAt(tbObat.getSelectedRow(),151).toString());
-//            SkalaSydney6.setSelectedItem(tbObat.getValueAt(tbObat.getSelectedRow(),152).toString());
-//            NilaiSydney6.setText(tbObat.getValueAt(tbObat.getSelectedRow(),153).toString());
-//            SkalaSydney7.setSelectedItem(tbObat.getValueAt(tbObat.getSelectedRow(),154).toString());
-//            NilaiSydney7.setText(tbObat.getValueAt(tbObat.getSelectedRow(),155).toString());
-//            SkalaSydney8.setSelectedItem(tbObat.getValueAt(tbObat.getSelectedRow(),156).toString());
-//            NilaiSydney8.setText(tbObat.getValueAt(tbObat.getSelectedRow(),157).toString());
-//            SkalaSydney9.setSelectedItem(tbObat.getValueAt(tbObat.getSelectedRow(),158).toString());
-//            NilaiSydney9.setText(tbObat.getValueAt(tbObat.getSelectedRow(),159).toString());
-//            SkalaSydney10.setSelectedItem(tbObat.getValueAt(tbObat.getSelectedRow(),160).toString());
-//            NilaiSydney10.setText(tbObat.getValueAt(tbObat.getSelectedRow(),161).toString());
-//            SkalaSydney11.setSelectedItem(tbObat.getValueAt(tbObat.getSelectedRow(),162).toString());
-//            NilaiSydney11.setText(tbObat.getValueAt(tbObat.getSelectedRow(),163).toString());
-//            NilaiSydneyTotal.setText(tbObat.getValueAt(tbObat.getSelectedRow(),164).toString());
-            isTotalResikoSydney();
-            SkalaGizi1.setSelectedItem(tbObat.getValueAt(tbObat.getSelectedRow(),165).toString());
-            NilaiGizi1.setText(tbObat.getValueAt(tbObat.getSelectedRow(),166).toString());
-            SkalaGizi2.setSelectedItem(tbObat.getValueAt(tbObat.getSelectedRow(),167).toString());
-            NilaiGizi2.setText(tbObat.getValueAt(tbObat.getSelectedRow(),168).toString());
-            SkalaGizi3.setSelectedItem(tbObat.getValueAt(tbObat.getSelectedRow(),167).toString());
-            NilaiGizi3.setText(tbObat.getValueAt(tbObat.getSelectedRow(),168).toString());
-            SkalaGizi4.setSelectedItem(tbObat.getValueAt(tbObat.getSelectedRow(),167).toString());
-            NilaiGizi4.setText(tbObat.getValueAt(tbObat.getSelectedRow(),168).toString());
-            NilaiGiziTotal.setText(tbObat.getValueAt(tbObat.getSelectedRow(),169).toString());
-            DiagnosaKhususGizi.setSelectedItem(tbObat.getValueAt(tbObat.getSelectedRow(),170).toString());
-            KeteranganDiagnosaKhususGizi.setText(tbObat.getValueAt(tbObat.getSelectedRow(),171).toString());
-            DiketahuiDietisen.setSelectedItem(tbObat.getValueAt(tbObat.getSelectedRow(),172).toString());
-            KeteranganDiketahuiDietisen.setText(tbObat.getValueAt(tbObat.getSelectedRow(),173).toString());
+            SkalaGizi1.setSelectedItem(tbObat.getValueAt(tbObat.getSelectedRow(),143).toString());
+            NilaiGizi1.setText(tbObat.getValueAt(tbObat.getSelectedRow(),144).toString());
+            SkalaGizi2.setSelectedItem(tbObat.getValueAt(tbObat.getSelectedRow(),145).toString());
+            NilaiGizi2.setText(tbObat.getValueAt(tbObat.getSelectedRow(),146).toString());
+            SkalaGizi3.setSelectedItem(tbObat.getValueAt(tbObat.getSelectedRow(),147).toString());
+            NilaiGizi3.setText(tbObat.getValueAt(tbObat.getSelectedRow(),148).toString());
+            SkalaGizi4.setSelectedItem(tbObat.getValueAt(tbObat.getSelectedRow(),149).toString());
+            NilaiGizi4.setText(tbObat.getValueAt(tbObat.getSelectedRow(),150).toString());
+            NilaiGiziTotal.setText(tbObat.getValueAt(tbObat.getSelectedRow(),151).toString());
+            DiagnosaKhususGizi.setSelectedItem(tbObat.getValueAt(tbObat.getSelectedRow(),152).toString());
+            KeteranganDiagnosaKhususGizi.setText(tbObat.getValueAt(tbObat.getSelectedRow(),153).toString());
+            DiketahuiDietisen.setSelectedItem(tbObat.getValueAt(tbObat.getSelectedRow(),154).toString());
+            KeteranganDiketahuiDietisen.setText(tbObat.getValueAt(tbObat.getSelectedRow(),155).toString());
+            Hospitalisasi1.setSelectedItem(tbObat.getValueAt(tbObat.getSelectedRow(),156).toString());
+            Hospitalisasi2.setSelectedItem(tbObat.getValueAt(tbObat.getSelectedRow(),157).toString());
+            Hospitalisasi3.setSelectedItem(tbObat.getValueAt(tbObat.getSelectedRow(),158).toString());
+            Hospitalisasi4.setSelectedItem(tbObat.getValueAt(tbObat.getSelectedRow(),159).toString());
+            Hospitalisasi5.setSelectedItem(tbObat.getValueAt(tbObat.getSelectedRow(),160).toString());
+            Hospitalisasi6.setSelectedItem(tbObat.getValueAt(tbObat.getSelectedRow(),161).toString());
+            Hospitalisasi7.setSelectedItem(tbObat.getValueAt(tbObat.getSelectedRow(),162).toString());
+            PolaAsuh1.setSelectedItem(tbObat.getValueAt(tbObat.getSelectedRow(),163).toString());
+            PolaAsuh2.setSelectedItem(tbObat.getValueAt(tbObat.getSelectedRow(),164).toString());
+            PolaAsuh3.setSelectedItem(tbObat.getValueAt(tbObat.getSelectedRow(),165).toString());
+            PolaAsuh4.setSelectedItem(tbObat.getValueAt(tbObat.getSelectedRow(),166).toString());
+            Psikiatri1.setText(tbObat.getValueAt(tbObat.getSelectedRow(),167).toString());
+            Psikiatri2.setText(tbObat.getValueAt(tbObat.getSelectedRow(),168).toString());
+            Psikiatri3.setText(tbObat.getValueAt(tbObat.getSelectedRow(),169).toString());
+            Psikiatri4.setText(tbObat.getValueAt(tbObat.getSelectedRow(),170).toString());
+            Psikiatri5.setText(tbObat.getValueAt(tbObat.getSelectedRow(),171).toString());
+            Psikiatri6.setText(tbObat.getValueAt(tbObat.getSelectedRow(),172).toString());
+            
             Rencana.setText(tbObat.getValueAt(tbObat.getSelectedRow(),174).toString());
             
             try {
