@@ -505,7 +505,7 @@
                             </Property>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                               <StringArray count="1">
-                                <StringItem index="0" value="30-08-2023 08:52:54"/>
+                                <StringItem index="0" value="31-08-2023 09:09:31"/>
                               </StringArray>
                             </Property>
                             <Property name="displayFormat" type="java.lang.String" value="dd-MM-yyyy HH:mm:ss"/>
@@ -5889,7 +5889,7 @@
                         <Component class="widget.Label" name="jLabel289">
                           <Properties>
                             <Property name="horizontalAlignment" type="int" value="2"/>
-                            <Property name="text" type="java.lang.String" value="f. Tinggal Dengan"/>
+                            <Property name="text" type="java.lang.String" value="h. Status Pernikahan"/>
                             <Property name="name" type="java.lang.String" value="jLabel289" noResource="true"/>
                           </Properties>
                           <Constraints>
@@ -5901,12 +5901,10 @@
                         <Component class="widget.ComboBox" name="StatusPernikahan">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="5">
-                                <StringItem index="0" value="Sendiri"/>
-                                <StringItem index="1" value="Orang Tua"/>
-                                <StringItem index="2" value="Suami/Istri"/>
-                                <StringItem index="3" value="Keluarga"/>
-                                <StringItem index="4" value="Lain-lain"/>
+                              <StringArray count="3">
+                                <StringItem index="0" value="Menikah"/>
+                                <StringItem index="1" value="Cerai"/>
+                                <StringItem index="2" value="Single Parent"/>
                               </StringArray>
                             </Property>
                             <Property name="name" type="java.lang.String" value="StatusPernikahan" noResource="true"/>
@@ -7165,7 +7163,7 @@
                         </Property>
                         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                           <StringArray count="1">
-                            <StringItem index="0" value="30-08-2023"/>
+                            <StringItem index="0" value="31-08-2023"/>
                           </StringArray>
                         </Property>
                         <Property name="displayFormat" type="java.lang.String" value="dd-MM-yyyy"/>
@@ -7193,7 +7191,7 @@
                         </Property>
                         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                           <StringArray count="1">
-                            <StringItem index="0" value="30-08-2023"/>
+                            <StringItem index="0" value="31-08-2023"/>
                           </StringArray>
                         </Property>
                         <Property name="displayFormat" type="java.lang.String" value="dd-MM-yyyy"/>
