@@ -430,23 +430,23 @@ public final class RMPenilaianAwalKeperawatanRanapAnak extends javax.swing.JDial
             }else if(i==165){
                 column.setPreferredWidth(380);
             }else if(i==166){
-                column.setPreferredWidth(40);
+                column.setPreferredWidth(120);
             }else if(i==167){
                 column.setPreferredWidth(317);
             }else if(i==168){
-                column.setPreferredWidth(40);
+                column.setPreferredWidth(120);
             }else if(i==169){
-                column.setPreferredWidth(58);
+                column.setPreferredWidth(128);
             }else if(i==170){
-                column.setPreferredWidth(165);
+                column.setPreferredWidth(135);
             }else if(i==171){
                 column.setPreferredWidth(149);
             }else if(i==172){
-                column.setPreferredWidth(209);
+                column.setPreferredWidth(129);
             }else if(i==173){
                 column.setPreferredWidth(107);
             }else if(i==174){
-                column.setPreferredWidth(200);
+                column.setPreferredWidth(120);
             }
         }
         tbObat.setDefaultRenderer(Object.class, new WarnaTable());
@@ -9159,8 +9159,8 @@ public final class RMPenilaianAwalKeperawatanRanapAnak extends javax.swing.JDial
                     PekerjaanPasien.getText(),StatusPernikahan.getSelectedItem().toString(),NilaiKepercayaan.getSelectedItem().toString(),KeteranganNilaiKepercayaan.getText(),PendidikanPJ.getSelectedItem().toString(),EdukasiPsikolgis.getSelectedItem().toString(),KeteranganEdukasiPsikologis.getText(),Nyeri.getSelectedItem().toString(),Provokes.getSelectedItem().toString(),KetProvokes.getText(), 
                     Quality.getSelectedItem().toString(),KetQuality.getText(),Lokasi.getText(),Menyebar.getSelectedItem().toString(),SkalaNyeri.getSelectedItem().toString(),Durasi.getText(),NyeriHilang.getSelectedItem().toString(),KetNyeri.getText(),PadaDokter.getSelectedItem().toString(), 
                     KetPadaDokter.getText(),SkalaResiko1.getSelectedItem().toString(),NilaiResiko1.getText(),SkalaResiko2.getSelectedItem().toString(),NilaiResiko2.getText(),SkalaResiko3.getSelectedItem().toString(),NilaiResiko3.getText(),SkalaResiko4.getSelectedItem().toString(),NilaiResiko4.getText(), 
-                    SkalaResiko5.getSelectedItem().toString(),NilaiResiko5.getText(),SkalaResiko6.getSelectedItem().toString(),NilaiResiko6.getText(),SkalaResiko7.getSelectedItem().toString(),NilaiResiko7.getText(),NilaiResikoTotal.getText(),DiagnosaKhususGizi.getSelectedItem().toString(),KeteranganDiagnosaKhususGizi.getText(),DiketahuiDietisen.getSelectedItem().toString(),KeteranganDiketahuiDietisen.getText(),
-                    SkalaGizi1.getSelectedItem().toString(),NilaiGizi1.getText(),SkalaGizi2.getSelectedItem().toString(),NilaiGizi2.getText(),SkalaGizi3.getSelectedItem().toString(),NilaiGizi3.getText(),SkalaGizi4.getSelectedItem().toString(),NilaiGizi4.getText(),NilaiGiziTotal.getText(),
+                    SkalaResiko5.getSelectedItem().toString(),NilaiResiko5.getText(),SkalaResiko6.getSelectedItem().toString(),NilaiResiko6.getText(),SkalaResiko7.getSelectedItem().toString(),NilaiResiko7.getText(),NilaiResikoTotal.getText(),
+                    SkalaGizi1.getSelectedItem().toString(),NilaiGizi1.getText(),SkalaGizi2.getSelectedItem().toString(),NilaiGizi2.getText(),SkalaGizi3.getSelectedItem().toString(),NilaiGizi3.getText(),SkalaGizi4.getSelectedItem().toString(),NilaiGizi4.getText(),NilaiGiziTotal.getText(),DiagnosaKhususGizi.getSelectedItem().toString(),KeteranganDiagnosaKhususGizi.getText(),DiketahuiDietisen.getSelectedItem().toString(),KeteranganDiketahuiDietisen.getText(),
                     Hospitalisasi1.getSelectedItem().toString(),Hospitalisasi2.getSelectedItem().toString(),Hospitalisasi3.getSelectedItem().toString(),Hospitalisasi4.getSelectedItem().toString(),Hospitalisasi5.getSelectedItem().toString(),Hospitalisasi6.getSelectedItem().toString(),Hospitalisasi7.getSelectedItem().toString(),
                     PolaAsuh1.getSelectedItem().toString(),PolaAsuh2.getSelectedItem().toString(),PolaAsuh3.getSelectedItem().toString(),PolaAsuh4.getSelectedItem().toString(),Psikiatri1.getText(),Psikiatri2.getText(),Psikiatri3.getText(),Psikiatri4.getText(),Psikiatri5.getText(),Psikiatri6.getText(),
                     Rencana.getText(),KdPetugas.getText(),KdPetugas2.getText(),KdDPJP.getText(),tbObat.getValueAt(tbObat.getSelectedRow(),0).toString()
