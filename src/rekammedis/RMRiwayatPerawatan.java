@@ -14753,7 +14753,7 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                                           "</tr>"+
                                           "<tr>"+
                                               "<td valign='top' align='left' colspan='3'>Total Skor : </td>"+
-                                              "<td valign='top' align='right' colspan='3'>"+rs2.getString("nilai_total_gizi")+"&nbsp;&nbsp;</td>"+
+                                              "<td valign='top' align='center' colspan='3'>"+rs2.getString("nilai_total_gizi")+"&nbsp;&nbsp;</td>"+
                                           "</tr>"+
                                           "<tr>"+
                                               "<td valign='top' align='left' colspan='4' border='0'>Pasien dengan diagnosis khusus : "+rs2.getString("skrining_gizi_diagnosa_khusus")+(rs2.getString("skrining_gizi_ket_diagnosa_khusus").equals("")?"":", "+rs2.getString("skrining_gizi_ket_diagnosa_khusus"))+"</td>"+
@@ -14764,6 +14764,120 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                                        "</table>"+
                                     "</td>"+
                                  "</tr>"+
+                                 "<tr>"+
+                                    "<td valign='top'>"+
+                                       "IX. ASESSMEN POPULASI KHUSUS ANAK"+  
+                                       "<table width='100%' border='0' align='center' cellpadding='3px' cellspacing='0px' class='tbl_form'>"+
+                                          "<tr>"+
+                                               "<td valign='middle' bgcolor='#FFFAF8' align='center' width='5%'>No</td>"+
+                                               "<td valign='middle' bgcolor='#FFFAF8' align='center' width='55%'>Hospitalisasi</td>"+
+                                               "<td valign='middle' bgcolor='#FFFAF8' align='center' width='40%'>Hasil Asesmen</td>"+
+                                          "</tr>"+
+                                          "<tr>"+
+                                              "<td valign='top'>1</td>"+
+                                              "<td valign='top'>Usia anak saat dirawat</td>"+
+                                              "<td valign='top' align='left' width='40%'>"+rs2.getString("populasi_hospitalisasi1")+"</td>"+                                           
+                                          "</tr>"+
+                                          "<tr>"+
+                                              "<td valign='top'>2</td>"+
+                                              "<td valign='top'>Sampai usia saat ini berapa kali pernah dirawat</td>"+
+                                              "<td valign='top' align='left' width='40%'>"+rs2.getString("populasi_hospitalisasi2")+"</td>"+                                
+                                          "</tr>"+
+                                          "<tr>"+
+                                              "<td valign='top'>3</td>"+
+                                              "<td valign='top'>Siapa orang terdekat dengan anak</td>"+
+                                              "<td valign='top' align='left' width='40%'>"+rs2.getString("populasi_hospitalisasi3")+"</td>"+                          
+                                          "</tr>"+
+                                          "<tr>"+
+                                              "<td valign='top'>4</td>"+
+                                              "<td valign='top'>Apakah anak merasa terpisah saat dirawat</td>"+
+                                              "<td valign='top' align='left' width='40%'>"+rs2.getString("populasi_hospitalisasi4")+"</td>"+                                 
+                                          "</tr>"+
+                                          "<tr>"+
+                                              "<td valign='top'>5</td>"+
+                                              "<td valign='top'>Reaksi anak saat dirawat</td>"+
+                                              "<td valign='top' align='left' width='40%'>"+rs2.getString("populasi_hospitalisasi5")+"</td>"+                                 
+                                          "</tr>"+
+                                          "<tr>"+
+                                              "<td valign='top'>6</td>"+
+                                              "<td valign='top'>Cemas</td>"+
+                                              "<td valign='top' align='left' width='40%'>"+rs2.getString("populasi_hospitalisasi6")+"</td>"+                                 
+                                          "</tr>"+
+                                          "<tr>"+
+                                              "<td valign='top'>7</td>"+
+                                              "<td valign='top'>Alasan Cemas</td>"+
+                                              "<td valign='top' align='left' width='40%'>"+rs2.getString("populasi_hospitalisasi7")+"</td>"+                                 
+                                          "</tr>"+
+                                       "</table>"+
+                                                      
+                                        "<table width='100%' border='0' align='center' cellpadding='3px' cellspacing='0px' class='tbl_form'>"+
+                                          "<tr>"+
+                                               "<td valign='middle' bgcolor='#FFFAF8' align='center' width='5%'>No</td>"+
+                                               "<td valign='middle' bgcolor='#FFFAF8' align='center' width='55%'>Pola Asuh Anak</td>"+
+                                               "<td valign='middle' bgcolor='#FFFAF8' align='center' width='40%'>Hasil Asesmen</td>"+
+                                          "</tr>"+
+                                          "<tr>"+
+                                              "<td valign='top'>1</td>"+
+                                              "<td valign='top'>Pengasuh</td>"+
+                                              "<td valign='top' align='left' width='40%'>"+rs2.getString("populasi_polaasuh1")+"</td>"+                                           
+                                          "</tr>"+
+                                          "<tr>"+
+                                              "<td valign='top'>2</td>"+
+                                              "<td valign='top'>Pembawaan Umum</td>"+
+                                              "<td valign='top' align='left' width='40%'>"+rs2.getString("populasi_polaasuh2")+"</td>"+                                
+                                          "</tr>"+
+                                          "<tr>"+
+                                              "<td valign='top'>3</td>"+
+                                              "<td valign='top'>Temperamen</td>"+
+                                              "<td valign='top' align='left' width='40%'>"+rs2.getString("populasi_polaasuh3")+"</td>"+                          
+                                          "</tr>"+
+                                          "<tr>"+
+                                              "<td valign='top'>4</td>"+
+                                              "<td valign='top'>Kebiasaan perilaku unik</td>"+
+                                              "<td valign='top' align='left' width='40%'>"+rs2.getString("populasi_polaasuh4")+"</td>"+                                 
+                                          "</tr>"+
+                                       "</table>"+
+                                                      
+                                       "<table width='100%' border='0' align='center' cellpadding='3px' cellspacing='0px' class='tbl_form'>"+
+                                          "<tr>"+
+                                               "<td valign='middle' bgcolor='#FFFAF8' align='center' width='5%'>No</td>"+
+                                               "<td valign='middle' bgcolor='#FFFAF8' align='center' width='55%'>Psikiatri</td>"+
+                                               "<td valign='middle' bgcolor='#FFFAF8' align='center' width='40%'>Hasil Asesmen</td>"+
+                                          "</tr>"+
+                                          "<tr>"+
+                                              "<td valign='top'>1</td>"+
+                                              "<td valign='top'>Fantasi (di bawah umur 9 tahun)</td>"+
+                                              "<td valign='top' align='left' width='40%'>"+rs2.getString("populasi_psikiatri1")+"</td>"+                                           
+                                          "</tr>"+
+                                          "<tr>"+
+                                              "<td valign='top'>2</td>"+
+                                              "<td valign='top'>Super ego</td>"+
+                                              "<td valign='top' align='left' width='40%'>"+rs2.getString("populasi_psikiatri2")+"</td>"+                                
+                                          "</tr>"+
+                                          "<tr>"+
+                                              "<td valign='top'>3</td>"+
+                                              "<td valign='top'>Konsep diri anak</td>"+
+                                              "<td valign='top' align='left' width='40%'>"+rs2.getString("populasi_psikiatri3")+"</td>"+                          
+                                          "</tr>"+
+                                          "<tr>"+
+                                              "<td valign='top'>4</td>"+
+                                              "<td valign='top'>Kesadaran anak pada persoalannya</td>"+
+                                              "<td valign='top' align='left' width='40%'>"+rs2.getString("populasi_psikiatri4")+"</td>"+                                 
+                                          "</tr>"+
+                                          "<tr>"+
+                                              "<td valign='top'>5</td>"+
+                                              "<td valign='top'>Koordinasi motorik kasar</td>"+
+                                              "<td valign='top' align='left' width='40%'>"+rs2.getString("populasi_psikiatri5")+"</td>"+                                 
+                                          "</tr>"+
+                                          "<tr>"+
+                                              "<td valign='top'>6</td>"+
+                                              "<td valign='top'>Koordinasi motorik halus</td>"+
+                                              "<td valign='top' align='left' width='40%'>"+rs2.getString("populasi_psikiatri6")+"</td>"+                                 
+                                          "</tr>"+
+                                       "</table>"+
+                                    "</td>"+
+                                 "</tr>"+                
+                                                      
                                  "<tr>"+
                                     "<td valign='top'>"+
                                        "<table width='100%' border='0' align='center' cellpadding='3px' cellspacing='0px' class='tbl_form'>"+
