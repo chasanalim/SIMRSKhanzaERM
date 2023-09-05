@@ -7209,15 +7209,7 @@ public final class RMPenilaianAwalKeperawatanRanapAnak extends javax.swing.JDial
         if(SkalaGizi1.getSelectedIndex()==0){
             NilaiGizi1.setText("0");
         }else if(SkalaGizi1.getSelectedIndex()==1){
-            NilaiGizi1.setText("2");
-        }else if(SkalaGizi1.getSelectedIndex()==2){
             NilaiGizi1.setText("1");
-        }else if(SkalaGizi1.getSelectedIndex()==3){
-            NilaiGizi1.setText("2");
-        }else if(SkalaGizi1.getSelectedIndex()==4){
-            NilaiGizi1.setText("3");
-        }else if(SkalaGizi1.getSelectedIndex()==5){
-            NilaiGizi1.setText("4");
         }
         isTotalGizi();
     }//GEN-LAST:event_SkalaGizi1ItemStateChanged
@@ -7392,7 +7384,12 @@ public final class RMPenilaianAwalKeperawatanRanapAnak extends javax.swing.JDial
     }//GEN-LAST:event_StatusPernikahanKeyPressed
 
     private void SkalaGizi3ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_SkalaGizi3ItemStateChanged
-        // TODO add your handling code here:
+        if(SkalaGizi3.getSelectedIndex()==0){
+            NilaiGizi3.setText("0");
+        }else if(SkalaGizi3.getSelectedIndex()==1){
+            NilaiGizi3.setText("1");
+        }
+        isTotalGizi();
     }//GEN-LAST:event_SkalaGizi3ItemStateChanged
 
     private void SkalaGizi3KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SkalaGizi3KeyPressed
@@ -7400,7 +7397,12 @@ public final class RMPenilaianAwalKeperawatanRanapAnak extends javax.swing.JDial
     }//GEN-LAST:event_SkalaGizi3KeyPressed
 
     private void SkalaGizi4ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_SkalaGizi4ItemStateChanged
-        // TODO add your handling code here:
+        if(SkalaGizi4.getSelectedIndex()==0){
+            NilaiGizi4.setText("0");
+        }else if(SkalaGizi4.getSelectedIndex()==1){
+            NilaiGizi4.setText("1");
+        }
+        isTotalGizi();
     }//GEN-LAST:event_SkalaGizi4ItemStateChanged
 
     private void SkalaGizi4KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SkalaGizi4KeyPressed
@@ -9188,17 +9190,15 @@ public final class RMPenilaianAwalKeperawatanRanapAnak extends javax.swing.JDial
     
     private void isTotalResikoJatuh(){
         try {
-            NilaiResikoTotal.setText((Integer.parseInt(NilaiResiko1.getText())+Integer.parseInt(NilaiResiko2.getText())+Integer.parseInt(NilaiResiko3.getText())+Integer.parseInt(NilaiResiko4.getText())+Integer.parseInt(NilaiResiko5.getText())+Integer.parseInt(NilaiResiko6.getText()))+"");
-            if(Integer.parseInt(NilaiResikoTotal.getText())<25){
-                TingkatResiko.setText("Tingkat Resiko : Risiko Rendah (0-24), Tindakan : Intervensi pencegahan risiko jatuh standar");
-            }else if(Integer.parseInt(NilaiResikoTotal.getText())<45){
-                TingkatResiko.setText("Tingkat Resiko : Risiko Sedang (25-44), Tindakan : Intervensi pencegahan risiko jatuh standar");
-            }else if(Integer.parseInt(NilaiResikoTotal.getText())>=45){
-                TingkatResiko.setText("Tingkat Resiko : Risiko Tinggi (> 45), Tindakan : Intervensi pencegahan risiko jatuh standar dan Intervensi risiko jatuh tinggi");
+            NilaiResikoTotal.setText((Integer.parseInt(NilaiResiko1.getText())+Integer.parseInt(NilaiResiko2.getText())+Integer.parseInt(NilaiResiko3.getText())+Integer.parseInt(NilaiResiko4.getText())+Integer.parseInt(NilaiResiko5.getText())+Integer.parseInt(NilaiResiko6.getText())+Integer.parseInt(NilaiResiko7.getText()))+"");
+            if(Integer.parseInt(NilaiResikoTotal.getText())>=12){
+                TingkatResiko.setText("Tingkat Resiko : Risiko Tinggi (12-23), Tindakan : Intervensi setiap 4 Jam");
+            }else if(Integer.parseInt(NilaiResikoTotal.getText())<=11){
+                TingkatResiko.setText("Tingkat Resiko : Risiko Rendah (7-11), Tindakan : Intervensi setiap 8 Jam");
             }
         } catch (Exception e) {
             NilaiResikoTotal.setText("0");
-            TingkatResiko.setText("Tingkat Resiko : Risiko Rendah (0-24), Tindakan : Intervensi pencegahan risiko jatuh standar");
+            TingkatResiko.setText("Tingkat Resiko : Risiko Rendah (7-11), Tindakan : Intervensi setiap 8 Jam");
         }
     }
     
