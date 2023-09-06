@@ -1662,7 +1662,7 @@ public final class DlgRawatInap extends javax.swing.JDialog {
         panelGlass10.add(jLabel19);
 
         DTPCari1.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "27-06-2023" }));
+        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "06-09-2023" }));
         DTPCari1.setDisplayFormat("dd-MM-yyyy");
         DTPCari1.setName("DTPCari1"); // NOI18N
         DTPCari1.setOpaque(false);
@@ -1676,7 +1676,7 @@ public final class DlgRawatInap extends javax.swing.JDialog {
         panelGlass10.add(jLabel21);
 
         DTPCari2.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "27-06-2023" }));
+        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "06-09-2023" }));
         DTPCari2.setDisplayFormat("dd-MM-yyyy");
         DTPCari2.setName("DTPCari2"); // NOI18N
         DTPCari2.setOpaque(false);
@@ -3486,7 +3486,7 @@ public final class DlgRawatInap extends javax.swing.JDialog {
         TPegawai3.setHighlighter(null);
         TPegawai3.setName("TPegawai3"); // NOI18N
         panelGlass16.add(TPegawai3);
-        TPegawai3.setBounds(250, 210, 212, 23);
+        TPegawai3.setBounds(322, 210, 220, 23);
 
         KdPeg3.setHighlighter(null);
         KdPeg3.setName("KdPeg3"); // NOI18N
@@ -3496,14 +3496,14 @@ public final class DlgRawatInap extends javax.swing.JDialog {
             }
         });
         panelGlass16.add(KdPeg3);
-        KdPeg3.setBounds(130, 210, 115, 23);
+        KdPeg3.setBounds(250, 210, 70, 23);
 
         jLabel70.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel70.setText("Dokter DPJP :");
+        jLabel70.setText("Ditujukan ke Perawat / Dokter DPJP :");
         jLabel70.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel70.setName("jLabel70"); // NOI18N
         panelGlass16.add(jLabel70);
-        jLabel70.setBounds(40, 210, 90, 23);
+        jLabel70.setBounds(10, 210, 240, 23);
 
         BtnVerifSbar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/regis.png"))); // NOI18N
         BtnVerifSbar.setMnemonic('4');
@@ -3515,14 +3515,14 @@ public final class DlgRawatInap extends javax.swing.JDialog {
             }
         });
         panelGlass16.add(BtnVerifSbar);
-        BtnVerifSbar.setBounds(740, 210, 28, 23);
+        BtnVerifSbar.setBounds(760, 210, 28, 23);
 
         jLabel84.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel84.setText("Status Verifikasi SBAR");
         jLabel84.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel84.setName("jLabel84"); // NOI18N
         panelGlass16.add(jLabel84);
-        jLabel84.setBounds(780, 210, 200, 23);
+        jLabel84.setBounds(790, 210, 170, 23);
 
         BtnSeekPegawai2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/190.png"))); // NOI18N
         BtnSeekPegawai2.setMnemonic('4');
@@ -3534,14 +3534,14 @@ public final class DlgRawatInap extends javax.swing.JDialog {
             }
         });
         panelGlass16.add(BtnSeekPegawai2);
-        BtnSeekPegawai2.setBounds(460, 210, 28, 23);
+        BtnSeekPegawai2.setBounds(540, 210, 28, 23);
 
         jLabel85.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel85.setText("Verifikasi SBAR");
         jLabel85.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel85.setName("jLabel85"); // NOI18N
         panelGlass16.add(jLabel85);
-        jLabel85.setBounds(590, 210, 200, 23);
+        jLabel85.setBounds(650, 210, 100, 23);
 
         BtnVerifSbar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/file-edit-32x32.png"))); // NOI18N
         BtnVerifSbar1.setMnemonic('4');
@@ -3553,7 +3553,7 @@ public final class DlgRawatInap extends javax.swing.JDialog {
             }
         });
         panelGlass16.add(BtnVerifSbar1);
-        BtnVerifSbar1.setBounds(550, 210, 28, 23);
+        BtnVerifSbar1.setBounds(610, 210, 28, 23);
 
         PanelInput4.add(panelGlass16, java.awt.BorderLayout.CENTER);
 
@@ -3572,7 +3572,6 @@ public final class DlgRawatInap extends javax.swing.JDialog {
 
         jLabel3.setText("No.Rawat :");
         jLabel3.setName("jLabel3"); // NOI18N
-        jLabel3.setPreferredSize(null);
         FormInput.add(jLabel3);
         jLabel3.setBounds(0, 10, 70, 23);
 
@@ -3604,7 +3603,7 @@ public final class DlgRawatInap extends javax.swing.JDialog {
         TPasien.setBounds(283, 10, 260, 23);
 
         DTPTgl.setForeground(new java.awt.Color(50, 70, 50));
-        DTPTgl.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "27-06-2023" }));
+        DTPTgl.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "06-09-2023" }));
         DTPTgl.setDisplayFormat("dd-MM-yyyy");
         DTPTgl.setName("DTPTgl"); // NOI18N
         DTPTgl.setOpaque(false);
@@ -4847,15 +4846,14 @@ public final class DlgRawatInap extends javax.swing.JDialog {
     private void tampilPemeriksaanSbar() {
         Valid.tabelKosong(tabModePemeriksaanSbar);
         try{
-            
-            if(KdPeg2.getText().contains("202") || KdPeg3.getText().equals("") ){
+            if(KdPeg3.getText().equals("") ){
             ps7=koneksi.prepareStatement("select pemeriksaan_ranap_sbar.no_rawat,reg_periksa.no_rkm_medis,pasien.nm_pasien,"+
                 "pemeriksaan_ranap_sbar.tgl_perawatan,pemeriksaan_ranap_sbar.jam_rawat,pemeriksaan_ranap_sbar.situation,pemeriksaan_ranap_sbar.background, " +
-                "pemeriksaan_ranap_sbar.assesment,pemeriksaan_ranap_sbar.recommendation,pemeriksaan_ranap_sbar.nip,pegawai.nama,pegawai.jbtn,pemeriksaan_ranap_sbar.kd_dokter,dokter.nm_dokter " +
+                "pemeriksaan_ranap_sbar.assesment,pemeriksaan_ranap_sbar.recommendation,pemeriksaan_ranap_sbar.nip,pegawai.nama,pegawai.jbtn,pemeriksaan_ranap_sbar.kd_dokter,petugas.nama " +
                 "from pasien inner join reg_periksa on reg_periksa.no_rkm_medis=pasien.no_rkm_medis "+
                 "inner join pemeriksaan_ranap_sbar on pemeriksaan_ranap_sbar.no_rawat=reg_periksa.no_rawat "+
                 "inner join pegawai on pemeriksaan_ranap_sbar.nip=pegawai.nik "+
-                "inner join dokter on pemeriksaan_ranap_sbar.kd_dokter=dokter.kd_dokter "+
+                "inner join petugas on pemeriksaan_ranap_sbar.kd_dokter=petugas.nip "+
                 "LEFT JOIN validasi_pemeriksaan_sbar ON validasi_pemeriksaan_sbar.no_rawat = pemeriksaan_ranap_sbar.no_rawat "+ 
                 "AND validasi_pemeriksaan_sbar.tgl_perawatan = pemeriksaan_ranap_sbar.tgl_perawatan "+ 
                 "AND validasi_pemeriksaan_sbar.jam_rawat = pemeriksaan_ranap_sbar.jam_rawat where "+ 
@@ -4869,15 +4867,15 @@ public final class DlgRawatInap extends javax.swing.JDialog {
             }else{
             ps7=koneksi.prepareStatement("select pemeriksaan_ranap_sbar.no_rawat,reg_periksa.no_rkm_medis,pasien.nm_pasien,"+
                 "pemeriksaan_ranap_sbar.tgl_perawatan,pemeriksaan_ranap_sbar.jam_rawat,pemeriksaan_ranap_sbar.situation,pemeriksaan_ranap_sbar.background, " +
-                "pemeriksaan_ranap_sbar.assesment,pemeriksaan_ranap_sbar.recommendation,pemeriksaan_ranap_sbar.nip,pegawai.nama,pegawai.jbtn,pemeriksaan_ranap_sbar.kd_dokter,dokter.nm_dokter " +
+                "pemeriksaan_ranap_sbar.assesment,pemeriksaan_ranap_sbar.recommendation,pemeriksaan_ranap_sbar.nip,pegawai.nama,pegawai.jbtn,pemeriksaan_ranap_sbar.kd_dokter,petugas.nama " +
                 "from pasien inner join reg_periksa on reg_periksa.no_rkm_medis=pasien.no_rkm_medis "+
                 "inner join pemeriksaan_ranap_sbar on pemeriksaan_ranap_sbar.no_rawat=reg_periksa.no_rawat "+
                 "inner join pegawai on pemeriksaan_ranap_sbar.nip=pegawai.nik "+
-                "inner join dokter on pemeriksaan_ranap_sbar.kd_dokter=dokter.kd_dokter "+
+                "inner join petugas on pemeriksaan_ranap_sbar.kd_dokter=petugas.nip "+
                 "LEFT JOIN validasi_pemeriksaan_sbar ON validasi_pemeriksaan_sbar.no_rawat = pemeriksaan_ranap_sbar.no_rawat "+ 
                 "AND validasi_pemeriksaan_sbar.tgl_perawatan = pemeriksaan_ranap_sbar.tgl_perawatan "+ 
                 "AND validasi_pemeriksaan_sbar.jam_rawat = pemeriksaan_ranap_sbar.jam_rawat where "+ 
-                "dokter.nm_dokter='"+TPegawai2.getText()+"' and pemeriksaan_ranap_sbar.tgl_perawatan between ? and ? and reg_periksa.no_rkm_medis like ? "+
+                "pemeriksaan_ranap_sbar.tgl_perawatan between ? and ? and reg_periksa.no_rkm_medis like ? "+
                 "AND ISNULL( validasi_pemeriksaan_sbar.status_validasi ) "+
                 (TCari.getText().trim().equals("")?"":"and (pemeriksaan_ranap_sbar.no_rawat like ? or reg_periksa.no_rkm_medis like ? or pasien.nm_pasien like ? or "+
                 "pemeriksaan_ranap_sbar.situation like ? or pemeriksaan_ranap_sbar.background like ? or pemeriksaan_ranap_sbar.assesment like ? or "+
