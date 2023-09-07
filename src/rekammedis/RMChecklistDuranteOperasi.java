@@ -1632,11 +1632,11 @@ public final class RMChecklistDuranteOperasi extends javax.swing.JDialog {
         PanelInput.add(ChkInput, java.awt.BorderLayout.PAGE_END);
 
         scrollInput.setName("scrollInput"); // NOI18N
-        scrollInput.setPreferredSize(new java.awt.Dimension(102, 557));
+        scrollInput.setPreferredSize(new java.awt.Dimension(102, 567));
 
         FormInput.setBackground(new java.awt.Color(250, 255, 245));
         FormInput.setName("FormInput"); // NOI18N
-        FormInput.setPreferredSize(new java.awt.Dimension(100, 655));
+        FormInput.setPreferredSize(new java.awt.Dimension(100, 665));
         FormInput.setLayout(null);
 
         jLabel4.setText("No.Rawat :");
