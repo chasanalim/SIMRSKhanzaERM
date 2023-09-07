@@ -1934,6 +1934,8 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
                    form.setNoRm(TNoRw.getText(),DTPCari2.getDate());
                }else if(R3.isSelected()==true){
                    form.setNoRm(TNoRw.getText(),DTPCari4.getDate());
+               }else if(R4.isSelected()==true){
+                   form.setNoRm(TNoRw.getText(),new Date());
                }
                this.setCursor(Cursor.getDefaultCursor());
                form.tampil();
@@ -1961,6 +1963,8 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
                    form.setNoRm(TNoRw.getText(),DTPCari2.getDate());
                }else if(R3.isSelected()==true){
                    form.setNoRm(TNoRw.getText(),DTPCari4.getDate());
+               }else if(R4.isSelected()==true){
+                   form.setNoRm(TNoRw.getText(),new Date());
                }
                this.setCursor(Cursor.getDefaultCursor());
                form.tampil();
@@ -1988,7 +1992,9 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
                         form.setNoRm(TNoRw.getText(),DTPCari2.getDate());
                     }else if(R3.isSelected()==true){
                         form.setNoRm(TNoRw.getText(),DTPCari4.getDate());
-                    }
+                    }else if(R4.isSelected()==true){
+                        form.setNoRm(TNoRw.getText(),new Date());
+                    } 
                     form.tampil();
                     this.setCursor(Cursor.getDefaultCursor());
             }else{
@@ -2015,6 +2021,8 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
                         form.setNoRm(TNoRw.getText(),DTPCari2.getDate());
                     }else if(R3.isSelected()==true){
                         form.setNoRm(TNoRw.getText(),DTPCari4.getDate());
+                    }else if(R4.isSelected()==true){
+                        form.setNoRm(TNoRw.getText(),new Date());
                     }
                     form.tampil();
                     this.setCursor(Cursor.getDefaultCursor());
