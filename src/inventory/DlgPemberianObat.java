@@ -1538,7 +1538,7 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
             BtnObat2.setEnabled(false);
             BtnObat3.setEnabled(true);
         }
-        DTPCari1.setDate(tgl1);
+        Sequel.cariIsi("select reg_periksa.tgl_registrasi from reg_periksa where reg_periksa.no_rawat='"+norwt+"'", DTPCari1);
         DTPCari2.setDate(tgl2);
     }
     
