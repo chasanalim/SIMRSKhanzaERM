@@ -319,6 +319,7 @@ public class DlgBookingOperasi extends javax.swing.JDialog {
         BtnChecklistPostOperasi = new widget.Button();
         BtnLembarAnastesi = new widget.Button();
         BtnLembarRecovery = new widget.Button();
+        BtnLembarRecovery1 = new widget.Button();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setUndecorated(true);
@@ -942,14 +943,20 @@ public class DlgBookingOperasi extends javax.swing.JDialog {
         PanelAccor.add(ChkAccor, java.awt.BorderLayout.EAST);
 
         ScrollMenu.setBorder(null);
+        ScrollMenu.setToolTipText("");
+        ScrollMenu.setInheritsPopupMenu(true);
+        ScrollMenu.setMaximumSize(new java.awt.Dimension(32767, 17));
+        ScrollMenu.setMinimumSize(new java.awt.Dimension(17, 8));
         ScrollMenu.setName("ScrollMenu"); // NOI18N
         ScrollMenu.setOpaque(true);
         ScrollMenu.setPreferredSize(new java.awt.Dimension(115, 13));
 
         FormMenu.setBackground(new java.awt.Color(255, 255, 255));
         FormMenu.setBorder(null);
+        FormMenu.setMaximumSize(new java.awt.Dimension(32767, 17));
+        FormMenu.setMinimumSize(new java.awt.Dimension(6136, 14));
         FormMenu.setName("FormMenu"); // NOI18N
-        FormMenu.setPreferredSize(new java.awt.Dimension(115, 23));
+        FormMenu.setPreferredSize(new java.awt.Dimension(115, 13));
         FormMenu.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 1, 1));
 
         BtnKamarInap.setBackground(new java.awt.Color(204, 255, 204));
@@ -1230,7 +1237,7 @@ public class DlgBookingOperasi extends javax.swing.JDialog {
         FormMenu.add(BtnChecklistPostOperasi);
 
         BtnLembarAnastesi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/item.png"))); // NOI18N
-        BtnLembarAnastesi.setText("Lembar Anastesi");
+        BtnLembarAnastesi.setText("Lembar Monitor Anastesi");
         BtnLembarAnastesi.setFocusPainted(false);
         BtnLembarAnastesi.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
         BtnLembarAnastesi.setGlassColor(new java.awt.Color(255, 255, 255));
@@ -1247,7 +1254,7 @@ public class DlgBookingOperasi extends javax.swing.JDialog {
         FormMenu.add(BtnLembarAnastesi);
 
         BtnLembarRecovery.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/item.png"))); // NOI18N
-        BtnLembarRecovery.setText("Lembar Recovery");
+        BtnLembarRecovery.setText("Lembar Monitor Recovery");
         BtnLembarRecovery.setFocusPainted(false);
         BtnLembarRecovery.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
         BtnLembarRecovery.setGlassColor(new java.awt.Color(255, 255, 255));
@@ -1262,6 +1269,23 @@ public class DlgBookingOperasi extends javax.swing.JDialog {
             }
         });
         FormMenu.add(BtnLembarRecovery);
+
+        BtnLembarRecovery1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/item.png"))); // NOI18N
+        BtnLembarRecovery1.setText("Lembar Monitor Recovery");
+        BtnLembarRecovery1.setFocusPainted(false);
+        BtnLembarRecovery1.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        BtnLembarRecovery1.setGlassColor(new java.awt.Color(255, 255, 255));
+        BtnLembarRecovery1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        BtnLembarRecovery1.setMargin(new java.awt.Insets(1, 1, 1, 1));
+        BtnLembarRecovery1.setName("BtnLembarRecovery1"); // NOI18N
+        BtnLembarRecovery1.setPreferredSize(new java.awt.Dimension(160, 23));
+        BtnLembarRecovery1.setRoundRect(false);
+        BtnLembarRecovery1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnLembarRecovery1ActionPerformed(evt);
+            }
+        });
+        FormMenu.add(BtnLembarRecovery1);
 
         ScrollMenu.setViewportView(FormMenu);
 
@@ -2188,6 +2212,10 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
         // TODO add your handling code here:
     }//GEN-LAST:event_BtnLembarRecoveryActionPerformed
 
+    private void BtnLembarRecovery1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnLembarRecovery1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BtnLembarRecovery1ActionPerformed
+
     /**
     * @param args the command line arguments
     */
@@ -2218,6 +2246,7 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     private widget.Button BtnKeluar;
     private widget.Button BtnLembarAnastesi;
     private widget.Button BtnLembarRecovery;
+    private widget.Button BtnLembarRecovery1;
     private widget.Button BtnObatBHP;
     private widget.Button BtnObatBhp;
     private widget.Button BtnOperasi;
