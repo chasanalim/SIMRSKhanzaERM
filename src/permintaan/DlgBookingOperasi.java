@@ -319,7 +319,6 @@ public class DlgBookingOperasi extends javax.swing.JDialog {
         BtnChecklistPostOperasi = new widget.Button();
         BtnLembarAnastesi = new widget.Button();
         BtnLembarRecovery = new widget.Button();
-        BtnLembarRecovery1 = new widget.Button();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setUndecorated(true);
@@ -1270,23 +1269,6 @@ public class DlgBookingOperasi extends javax.swing.JDialog {
         });
         FormMenu.add(BtnLembarRecovery);
 
-        BtnLembarRecovery1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/item.png"))); // NOI18N
-        BtnLembarRecovery1.setText("Lembar Monitor Recovery");
-        BtnLembarRecovery1.setFocusPainted(false);
-        BtnLembarRecovery1.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
-        BtnLembarRecovery1.setGlassColor(new java.awt.Color(255, 255, 255));
-        BtnLembarRecovery1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        BtnLembarRecovery1.setMargin(new java.awt.Insets(1, 1, 1, 1));
-        BtnLembarRecovery1.setName("BtnLembarRecovery1"); // NOI18N
-        BtnLembarRecovery1.setPreferredSize(new java.awt.Dimension(160, 23));
-        BtnLembarRecovery1.setRoundRect(false);
-        BtnLembarRecovery1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnLembarRecovery1ActionPerformed(evt);
-            }
-        });
-        FormMenu.add(BtnLembarRecovery1);
-
         ScrollMenu.setViewportView(FormMenu);
 
         PanelAccor.add(ScrollMenu, java.awt.BorderLayout.CENTER);
@@ -2205,16 +2187,12 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     }//GEN-LAST:event_BtnObatBHPActionPerformed
 
     private void BtnLembarAnastesiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnLembarAnastesiActionPerformed
-        // TODO add your handling code here:
+           JOptionPane.showMessageDialog(null,"Maaf, Masih Dalam Pengembangan!!!");
     }//GEN-LAST:event_BtnLembarAnastesiActionPerformed
 
     private void BtnLembarRecoveryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnLembarRecoveryActionPerformed
-        // TODO add your handling code here:
+           JOptionPane.showMessageDialog(null,"Maaf, Masih Dalam Pengembangan..!!!");
     }//GEN-LAST:event_BtnLembarRecoveryActionPerformed
-
-    private void BtnLembarRecovery1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnLembarRecovery1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_BtnLembarRecovery1ActionPerformed
 
     /**
     * @param args the command line arguments
@@ -2246,7 +2224,6 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     private widget.Button BtnKeluar;
     private widget.Button BtnLembarAnastesi;
     private widget.Button BtnLembarRecovery;
-    private widget.Button BtnLembarRecovery1;
     private widget.Button BtnObatBHP;
     private widget.Button BtnObatBhp;
     private widget.Button BtnOperasi;
