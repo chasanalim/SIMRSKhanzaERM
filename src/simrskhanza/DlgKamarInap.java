@@ -178,9 +178,9 @@ public class DlgKamarInap extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
         tabMode=new DefaultTableModel(null,new Object[]{
-            "No.Rawat","Nomer RM","Nama Pasien","Alamat Pasien","Penanggung Jawab","Hubungan P.J.","Jenis Bayar","Kamar","Tarif Kamar",
+            "No.Rawat","NoRM","Nama Pasien","Alamat Pasien","Penanggung Jawab","Hubungan P.J.","Jenis Bayar","Kamar","Tarif Kamar",
             "Diagnosa Awal","Diagnosa Akhir","Tgl.Masuk","Jam Masuk","Tgl.Keluar","Jam Keluar",
-            "Ttl.Biaya","Stts.Pulang","Lama","Dokter P.J.","Kamar","Status Bayar","Agama","BPJS Naik Kelas","Kelas Asli/Titipan","J.K","Umur"
+            "Ttl.Biaya","Stts.Pulang","Lama","Dokter P.J.","Kamar","Status Bayar","Agama","Kelas BPJS","BPJS Naik Kelas","Kelas Asli/Titipan","J.K","Umur"
             }){
               @Override public boolean isCellEditable(int rowIndex, int colIndex){return false;}
         };
@@ -190,7 +190,7 @@ public class DlgKamarInap extends javax.swing.JDialog {
         tbKamIn.setPreferredScrollableViewportSize(new Dimension(500,500));
         tbKamIn.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
 
-        for (i = 0; i < 26; i++) {
+        for (i = 0; i < 27; i++) {
             TableColumn column = tbKamIn.getColumnModel().getColumn(i);
             if(i==0){ //No Rawat
                 column.setPreferredWidth(60);
@@ -199,7 +199,7 @@ public class DlgKamarInap extends javax.swing.JDialog {
             }else if(i==2){ //Pasien
                 column.setPreferredWidth(170);
             }else if(i==3){ //Alamat
-                column.setPreferredWidth(150);
+                column.setPreferredWidth(130);
             }else if(i==4){ // PJ
                 column.setMinWidth(0);
                 column.setMaxWidth(0);
@@ -240,14 +240,16 @@ public class DlgKamarInap extends javax.swing.JDialog {
             }else if(i==20){ //Status Bayar
                 column.setPreferredWidth(60);
             }else if(i==21){ //Agama
+                column.setPreferredWidth(50);
+            }else if(i==22){ //Kelas BPJS
+                column.setPreferredWidth(65);
+            }else if(i==23){ //Naik Kelas
+                column.setPreferredWidth(80);
+            }else if(i==24){ //Titipan
                 column.setPreferredWidth(60);
-            }else if(i==22){ //Naik Kelas
-                column.setPreferredWidth(90);
-            }else if(i==23){ //Titipan
-                column.setPreferredWidth(60);
-            }else if(i==24){ //Jk
+            }else if(i==25){ //Jk
                 column.setPreferredWidth(20);
-            }else if(i==25){ //Umur
+            }else if(i==26){ //Umur
                 column.setPreferredWidth(30);
             }
         }
@@ -6469,7 +6471,7 @@ public class DlgKamarInap extends javax.swing.JDialog {
                     MnDataSEPActionPerformed(null);
                 }else if(i==11){//Upload Berkas Digital
                     ppBerkasDigitalBtnPrintActionPerformed(null);
-                }else if(i==23){//Upload Berkas Digital
+                }else if(i==24){//Titipan
                     ppTitipanRanapBtnPrintActionPerformed(null);
                 }
             }
@@ -15795,7 +15797,8 @@ private void MnRujukMasukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-
                "kamar_inap.tgl_masuk,kamar_inap.jam_masuk,if(kamar_inap.tgl_keluar='0000-00-00','',kamar_inap.tgl_keluar) as tgl_keluar,if(kamar_inap.jam_keluar='00:00:00','',kamar_inap.jam_keluar) as jam_keluar,"+
                "kamar_inap.ttl_biaya,kamar_inap.stts_pulang,kamar_inap.lama,dokter.nm_dokter,kamar_inap.kd_kamar,reg_periksa.kd_pj,concat(reg_periksa.umurdaftar,' ',reg_periksa.sttsumur)as umur,reg_periksa.status_bayar, "+
                "pasien.agama, IFNULL(( SELECT bridging_sep.klsnaik FROM bridging_sep WHERE bridging_sep.no_rawat = reg_periksa.no_rawat AND bridging_sep.jnspelayanan = 1 LIMIT 1 ), '' ) AS klsnaik, "+
-               "IFNULL(( SELECT titipan_ranap.kelas_asli FROM titipan_ranap WHERE titipan_ranap.no_rawat = reg_periksa.no_rawat LIMIT 1 ), '' ) as kelas_asli "+
+               "IFNULL(( IF ( kamar.kelas != CONCAT( 'Kelas ', bridging_sep.klsrawat ), CONCAT( 'Kelas ', bridging_sep.klsrawat ), '' )), '' ) AS kelas_asli, "+
+               "IFNULL(( SELECT bridging_sep.klsrawat FROM bridging_sep WHERE bridging_sep.no_rawat = reg_periksa.no_rawat AND bridging_sep.jnspelayanan = 1 LIMIT 1 ), '' ) AS klsrawat "+
                "from kamar_inap inner join reg_periksa on kamar_inap.no_rawat=reg_periksa.no_rawat inner join pasien on reg_periksa.no_rkm_medis=pasien.no_rkm_medis "+
                "inner join kamar on kamar_inap.kd_kamar=kamar.kd_kamar inner join bangsal on kamar.kd_bangsal=bangsal.kd_bangsal "+
                "inner join kelurahan on pasien.kd_kel=kelurahan.kd_kel inner join kecamatan on pasien.kd_kec=kecamatan.kd_kec "+
@@ -15812,7 +15815,7 @@ private void MnRujukMasukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-
                         rs.getString("kamar"),Valid.SetAngka(rs.getDouble("trf_kamar")),rs.getString("diagnosa_awal"),
                         rs.getString("diagnosa_akhir"),rs.getString("tgl_masuk"),rs.getString("jam_masuk"),rs.getString("tgl_keluar"),
                         rs.getString("jam_keluar"),Valid.SetAngka(rs.getDouble("ttl_biaya")),rs.getString("stts_pulang"),
-                        rs.getString("lama"),rs.getString("nm_dokter"),rs.getString("kd_kamar"),rs.getString("status_bayar"),rs.getString("agama"),rs.getString("klsnaik").replaceAll("1","1. VVIP").replaceAll("2","2. VIP").
+                        rs.getString("lama"),rs.getString("nm_dokter"),rs.getString("kd_kamar"),rs.getString("status_bayar"),rs.getString("agama"),rs.getString("klsrawat").replaceAll("1","Kelas 1").replaceAll("2", "Kelas 2").replaceAll("3", "Kelas 3"),rs.getString("klsnaik").replaceAll("1","1. VVIP").replaceAll("2","2. VIP").
                         replaceAll("3","3. Kelas I").replaceAll("4","4. Kelas II").replaceAll("5","5. Kelas III").replaceAll("6","6. ICCU").replaceAll("7","7. ICU").replaceAll("8","8. Diatas Kelas 1"),rs.getString("kelas_asli"),rs.getString("jk"),rs.getString("umur")
                     });
                     psanak=koneksi.prepareStatement(
@@ -15830,7 +15833,7 @@ private void MnRujukMasukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-
                                 rs.getString("kamar"),Valid.SetAngka(rs.getDouble("trf_kamar")*(persenbayi/100)),"",
                                 "",rs.getString("tgl_masuk"),rs.getString("jam_masuk"),rs.getString("tgl_keluar"),
                                 rs.getString("jam_keluar"),Valid.SetAngka(rs.getDouble("ttl_biaya")*(persenbayi/100)),rs.getString("stts_pulang"),
-                                rs.getString("lama"),rs.getString("nm_dokter"),rs.getString("kd_kamar"),rs.getString("status_bayar"),rs.getString("agama"),rs.getString("klsnaik").replaceAll("1","1. VVIP").replaceAll("2","2. VIP").
+                                rs.getString("lama"),rs.getString("nm_dokter"),rs.getString("kd_kamar"),rs.getString("status_bayar"),rs.getString("agama"),rs.getString("klsrawat").replaceAll("1","Kelas 1").replaceAll("2", "Kelas 2").replaceAll("3", "Kelas 3"),rs.getString("klsnaik").replaceAll("1","1. VVIP").replaceAll("2","2. VIP").
                         replaceAll("3","3. Kelas I").replaceAll("4","4. Kelas II").replaceAll("5","5. Kelas III").replaceAll("6","6. ICCU").replaceAll("7","7. ICU").replaceAll("8","8. Diatas Kelas 1"),rs.getString("kelas_asli"),rs2.getString("jk"),rs2.getString("umur")
                             });
                         }
