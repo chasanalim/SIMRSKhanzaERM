@@ -28,15 +28,8 @@ public class WarnaTableRanap extends DefaultTableCellRenderer {
         }
         
         if (table.getValueAt(row, jnsbayar).toString().equals("BPJS KESEHATAN")){
-            component.setBackground(new Color(160, 230, 180));
-            
+            component.setBackground(new Color(160, 230, 180)); 
         }
-        
-//        if (table.getValueAt(row, 23).toString().equals("Kelas 2")){
-//            component.setBackground(new Color(255,200,100));
-//            
-//        }
-        
         
         if (table.getValueAt(row, jnsbayar).toString().contains("(Asuransi)")){
             component.setBackground(new Color(224, 252, 130));
@@ -50,17 +43,9 @@ public class WarnaTableRanap extends DefaultTableCellRenderer {
             component.setBackground(new Color(255,153,204));
         }
         
-        
-        
-        
-        
-        
         if (table.getValueAt(row, statbayar).toString().equals("Sudah Bayar")){
             component.setBackground(new Color(129, 217, 252));
         }
-        
-        
-       
         return component;
     }
 
