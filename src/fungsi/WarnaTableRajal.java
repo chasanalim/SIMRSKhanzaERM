@@ -23,35 +23,24 @@ public class WarnaTableRajal extends DefaultTableCellRenderer {
         Component component = super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
         if (row % 2 == 1){
             component.setBackground(new Color(245,255,250));
-//            component.setForeground(new Color(40,40,40));
         }else{
             component.setBackground(new Color(255,255,255));
-//            component.setForeground(new Color(40,40,40));
         } 
         
         if (table.getValueAt(row, statrawat).toString().equals("Batal")){
             component.setBackground(new Color(155, 155, 155));
-//            component.setForeground(new Color(245, 240, 240));
         }
-//        else if (table.getValueAt(row, statbayar).toString().equals("Sudah Bayar")&&table.getValueAt(row,9).toString().equals("UMUM")){
-//            component.setBackground(new Color(245, 235, 110));
-////            component.setForeground(new Color(245, 240, 240));
-//        }
         else if (table.getValueAt(row, statbayar).toString().equals("Sudah Bayar")){
             component.setBackground(new Color(130, 215, 250));
-//            component.setForeground(new Color(245, 240, 240));
         }
         else if (table.getValueAt(row, statrawat).toString().equals("Berkas Terkirim")){
             component.setBackground(new Color(120, 250, 140));
-//            component.setForeground(new Color(255,255,255));
         }
         else if (table.getValueAt(row, statrawat).toString().equals("Berkas Diterima")){
             component.setBackground(new Color(250, 155, 200));
-//            component.setForeground(new Color(255,255,255));
         }
         else if (table.getValueAt(row, statrawat).toString().equals("Sudah")){
             component.setBackground(new Color(220,115,215));
-//            component.setForeground(new Color(40,40,40));
         }
         return component;
     }
