@@ -11258,17 +11258,22 @@ private void MnDataPemberianObatActionPerformed(java.awt.event.ActionEvent evt) 
             JOptionPane.showMessageDialog(null,"Maaf, Silahkan anda pilih dulu dengan menklik data pada table...!!!");
             tbKasirRalan.requestFocus();
         }else{
-            Sequel.menyimpan("mutasi_berkas","'"+TNoRw.getText()+"','Sudah Diterima','0000-00-00 00:00:00',now(),'0000-00-00 00:00:00','0000-00-00 00:00:00','0000-00-00 00:00:00'","status='Sudah Diterima',diterima=now()","no_rawat='"+TNoRw.getText()+"'");
-            Valid.editTable(tabModekasir,"reg_periksa","no_rawat",TNoRw,"stts='Berkas Diterima'");
-            try {
-                    music = new BackgroundMusic("./suara/alarm.mp3");
-                    music.start();
-                } catch (Exception ex) {
-                    System.out.println(ex);
-            } 
-            if(tabModekasir.getRowCount()!=0){
-                tampilkasir();
-            }   
+            if(tbKasirRalan.getSelectedRow()!= -1){
+                Sequel.queryu("delete from antripoli where kd_dokter='"+tbKasirRalan.getValueAt(tbKasirRalan.getSelectedRow(),0).toString()+"' and kd_poli='"+tbKasirRalan.getValueAt(tbKasirRalan.getSelectedRow(),18).toString()+"'");
+                Sequel.queryu("insert into antripoli values('"+tbKasirRalan.getValueAt(tbKasirRalan.getSelectedRow(),0).toString()+"','"+tbKasirRalan.getValueAt(tbKasirRalan.getSelectedRow(),18).toString()+"','1','"+tbKasirRalan.getValueAt(tbKasirRalan.getSelectedRow(),11).toString()+"')");
+                Sequel.menyimpan("mutasi_berkas","'"+TNoRw.getText()+"','Sudah Diterima','0000-00-00 00:00:00',now(),'0000-00-00 00:00:00','0000-00-00 00:00:00','0000-00-00 00:00:00'","status='Sudah Diterima',diterima=now()","no_rawat='"+TNoRw.getText()+"'");
+                Valid.editTable(tabModekasir,"reg_periksa","no_rawat",TNoRw,"stts='Berkas Diterima'");
+    //            try {
+    //                    music = new BackgroundMusic("./suara/alarm.mp3");
+    //                    music.start();
+    //                } catch (Exception ex) {
+    //                    System.out.println(ex);
+    //            } 
+                if(tabModekasir.getRowCount()!=0){
+                    tampilkasir();
+                }  
+            
+            }            
         }
     }//GEN-LAST:event_ppMasukPoliBtnPrintActionPerformed
 
