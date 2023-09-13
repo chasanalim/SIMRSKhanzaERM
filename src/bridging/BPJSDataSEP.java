@@ -6075,6 +6075,7 @@ public final class BPJSDataSEP extends javax.swing.JDialog {
         DTPCari1.setDate(tgl1);
         DTPCari2.setDate(tgl1);
         TabRawat.setSelectedIndex(1);
+        isRawat();
     }
     
     public void isCek(){
