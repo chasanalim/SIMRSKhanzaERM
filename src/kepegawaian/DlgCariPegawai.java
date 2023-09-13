@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import fungsi.WarnaTable;
 import fungsi.batasInput;
 import fungsi.koneksiDB;
+import fungsi.sekuel;
 import fungsi.validasi;
 import java.awt.Dimension;
 import java.awt.event.KeyEvent;
@@ -36,6 +37,7 @@ public final class DlgCariPegawai extends javax.swing.JDialog {
     private JsonNode root;
     private JsonNode response;
     private FileReader myObj;
+    private sekuel Sequel=new sekuel();
     /** Creates new form DlgPenyakit
      * @param parent
      * @param modal */
@@ -455,5 +457,38 @@ public final class DlgCariPegawai extends javax.swing.JDialog {
             System.out.println("Notifikasi : "+ex);
         }
     } 
-
+    
+    public String tampil3(String kode) {
+        try {
+            if(Valid.daysOld("./cache/pegawai.iyem")>7){
+                tampil();
+            }
+        } catch (Exception e) {
+            if(e.toString().contains("No such file or directory")){
+                tampil();
+            }
+        }
+        
+        iyem="";
+        try {
+            myObj = new FileReader("./cache/pegawai.iyem");
+            root = mapper.readTree(myObj);
+            Valid.tabelKosong(tabMode);
+            response = root.path("pegawai");
+            if(response.isArray()){
+                for(JsonNode list:response){
+                    if(list.path("NIP").asText().toLowerCase().equals(kode)){
+                        iyem=list.path("Nama").asText();
+                    }
+                }
+            }
+            myObj.close();
+        } catch (Exception ex) {
+            System.out.println("Notifikasi : "+ex);
+        }
+        if(iyem.equals("")){
+            iyem=Sequel.cariIsi("select pegawai.nama from pegawai where pegawai.nik=?",kode);
+        }
+        return iyem;
+    }
 }
