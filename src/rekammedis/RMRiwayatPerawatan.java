@@ -1418,6 +1418,11 @@ public final class RMRiwayatPerawatan extends javax.swing.JDialog {
         chkAsuhanKeperawatanRanap.setName("chkAsuhanKeperawatanRanap"); // NOI18N
         chkAsuhanKeperawatanRanap.setOpaque(false);
         chkAsuhanKeperawatanRanap.setPreferredSize(new java.awt.Dimension(245, 22));
+        chkAsuhanKeperawatanRanap.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chkAsuhanKeperawatanRanapActionPerformed(evt);
+            }
+        });
         FormMenu.add(chkAsuhanKeperawatanRanap);
 
         chkAsuhanMedisRanapKandungan.setSelected(true);
@@ -2306,6 +2311,10 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
     private void chkPemeriksaanLaboratActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkPemeriksaanLaboratActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_chkPemeriksaanLaboratActionPerformed
+
+    private void chkAsuhanKeperawatanRanapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkAsuhanKeperawatanRanapActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_chkAsuhanKeperawatanRanapActionPerformed
 
     /**
     * @param args the command line arguments
@@ -4018,21 +4027,22 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                             rs2=koneksi.prepareStatement(
                                 "select detail_pemberian_obat.tgl_perawatan,detail_pemberian_obat.jam,databarang.kode_sat, "+
                                 "detail_pemberian_obat.kode_brng,detail_pemberian_obat.jml,detail_pemberian_obat.total,"+
-                                "databarang.nama_brng from detail_pemberian_obat inner join databarang "+
-                                "on detail_pemberian_obat.kode_brng=databarang.kode_brng  "+
-                                "where detail_pemberian_obat.no_rawat='"+rs.getString("no_rawat")+"' order by detail_pemberian_obat.tgl_perawatan,detail_pemberian_obat.jam").executeQuery();
+                                "databarang.nama_brng,pegawai.nama from detail_pemberian_obat inner join databarang "+
+                                "on detail_pemberian_obat.kode_brng=databarang.kode_brng inner JOIN resep_obat on resep_obat.no_rawat = detail_pemberian_obat.no_rawat "+
+                                "LEFT JOIN pegawai on pegawai.nik = resep_obat.kd_petugas where detail_pemberian_obat.no_rawat='"+rs.getString("no_rawat")+"' order by detail_pemberian_obat.tgl_perawatan,detail_pemberian_obat.jam").executeQuery();
                             if(rs2.next()){                                    
                                 htmlContent.append(  
                                   "<table width='100%' border='0' align='center' cellpadding='3px' cellspacing='0' class='tbl_form'>"+
                                     "<tr><td valign='top' colspan='5'>Pemberian Obat/BHP/Alkes</td><td valign='top' colspan='1' align='right'>:</td><td></td></tr>"+            
                                     "<tr align='center'>"+
                                       "<td valign='top' width='4%' bgcolor='#FFFAF8'>No.</td>"+
-                                      "<td valign='top' width='15%' bgcolor='#FFFAF8'>Tanggal</td>"+
-                                      "<td valign='top' width='10%' bgcolor='#FFFAF8'>Kode</td>"+
-                                      "<td valign='top' width='35%' bgcolor='#FFFAF8'>Nama Obat/BHP/Alkes</td>"+
-                                      "<td valign='top' width='10%' bgcolor='#FFFAF8'>Jumlah</td>"+
-                                      "<td valign='top' width='16%' bgcolor='#FFFAF8'>Aturan Pakai</td>"+
-                                      "<td valign='top' width='10%' bgcolor='#FFFAF8'>Biaya</td>"+
+                                      "<td valign='top' width='13%' bgcolor='#FFFAF8'>Tanggal</td>"+
+                                      "<td valign='top' width='8%' bgcolor='#FFFAF8'>Kode</td>"+
+                                      "<td valign='top' width='28%' bgcolor='#FFFAF8'>Nama Obat/BHP/Alkes</td>"+
+                                      "<td valign='top' width='6%' bgcolor='#FFFAF8'>Jumlah</td>"+
+                                      "<td valign='top' width='19%' bgcolor='#FFFAF8'>Aturan Pakai</td>"+
+                                      "<td valign='top' width='16%' bgcolor='#FFFAF8'>Peresep</td>"+
+                                      "<td valign='top' width='6%' bgcolor='#FFFAF8'>Biaya</td>"+
                                     "</tr>");
                                 rs2.beforeFirst();
                                 w=1;
@@ -4045,6 +4055,7 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                                             "<td valign='top'>"+rs2.getString("nama_brng")+"</td>"+
                                             "<td valign='top'>"+rs2.getDouble("jml")+" "+rs2.getString("kode_sat")+"</td>"+
                                             "<td valign='top'>"+Sequel.cariIsi("select aturan from aturan_pakai where tgl_perawatan='"+rs2.getString("tgl_perawatan")+"' and jam='"+rs2.getString("jam")+"' and no_rawat='"+rs.getString("no_rawat")+"' and kode_brng='"+rs2.getString("kode_brng")+"'")+"</td>"+
+                                            "<td valign='top'>"+rs2.getString("nama")+"</td>"+
                                             "<td valign='top' align='right'>"+Valid.SetAngka(rs2.getDouble("total"))+"</td>"+
                                          "</tr>"); 
                                     w++;
@@ -4164,12 +4175,14 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                                   "<table width='100%' border='0' align='center' cellpadding='3px' cellspacing='0' class='tbl_form'>"+
                                     "<tr><td valign='top' colspan='4'>Resep Pulang</td><td valign='top' colspan='1' align='right'>:</td><td></td></tr>"+            
                                     "<tr align='center'>"+
-                                      "<td valign='top' width='4%' bgcolor='#FFFAF8'>No.</td>"+
-                                      "<td valign='top' width='10%' bgcolor='#FFFAF8'>Kode</td>"+
-                                      "<td valign='top' width='50%' bgcolor='#FFFAF8'>Nama Obat/BHP/Alkes</td>"+
-                                      "<td valign='top' width='16%' bgcolor='#FFFAF8'>Dosis</td>"+
-                                      "<td valign='top' width='10%' bgcolor='#FFFAF8'>Jumlah</td>"+
-                                      "<td valign='top' width='10%' bgcolor='#FFFAF8'>Biaya</td>"+
+                                      "<td valign='top' width='4%'  bgcolor='#FFFAF8'>No.</td>"+
+                                      "<td valign='top' width='13%' bgcolor='#FFFAF8'>Tanggal</td>"+
+                                      "<td valign='top' width='8%'  bgcolor='#FFFAF8'>Kode</td>"+
+                                      "<td valign='top' width='28%' bgcolor='#FFFAF8'>Nama Obat/BHP/Alkes</td>"+
+                                      "<td valign='top' width='6%'  bgcolor='#FFFAF8'>Jumlah</td>"+
+                                      "<td valign='top' width='19%' bgcolor='#FFFAF8'>Aturan Pakai</td>"+
+                                      "<td valign='top' width='16%' bgcolor='#FFFAF8'>Peresep</td>"+
+                                      "<td valign='top' width='6%'  bgcolor='#FFFAF8'>Biaya</td>"+
                                     "</tr>");
                                 rs2.beforeFirst();
                                 w=1;
@@ -4179,8 +4192,8 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                                             "<td valign='top' align='center'>"+w+"</td>"+
                                             "<td valign='top'>"+rs2.getString("kode_brng")+"</td>"+
                                             "<td valign='top'>"+rs2.getString("nama_brng")+"</td>"+
-                                            "<td valign='top'>"+rs2.getString("dosis")+"</td>"+
                                             "<td valign='top'>"+rs2.getDouble("jml_barang")+" "+rs2.getString("kode_sat")+"</td>"+
+                                            "<td valign='top'>"+rs2.getString("dosis")+"</td>"+
                                             "<td valign='top' align='right'>"+Valid.SetAngka(rs2.getDouble("total"))+"</td>"+
                                          "</tr>"); 
                                     w++;
@@ -15575,68 +15588,68 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                                                        "</tr>"+
                                                        "<tr>"+
                                                            "<td>1. Gangguan Gaya Berjalan (Diseret, Menghentak, Diayun)</td>"+
-                                                           "<td align='center'>"+rs2.getString("penilaian_jatuh_skala1")+"</td>"+
-                                                           "<td align='center'>"+rs2.getString("penilaian_jatuh_nilai1")+"</td>"+
+                                                           "<td align='center'>"+rs2.getString("penilaian_jatuhsydney_skala1")+"</td>"+
+                                                           "<td align='center'>"+rs2.getString("penilaian_jatuhsydney_nilai1")+"</td>"+
                                                        "</tr>"+
                                                        "<tr>"+
                                                            "<td>2. Pusing / Pingsan Pada Posisi Tegak</td>"+
-                                                           "<td align='center'>"+rs2.getString("penilaian_jatuh_skala2")+"</td>"+
-                                                           "<td align='center'>"+rs2.getString("penilaian_jatuh_nilai2")+"</td>"+
+                                                           "<td align='center'>"+rs2.getString("penilaian_jatuhsydney_skala2")+"</td>"+
+                                                           "<td align='center'>"+rs2.getString("penilaian_jatuhsydney_nilai2")+"</td>"+
                                                        "</tr>"+
                                                        "<tr>"+
                                                            "<td>3. Kebigungan Setiap Saat</td>"+
-                                                           "<td align='center'>"+rs2.getString("penilaian_jatuh_skala3")+"</td>"+
-                                                           "<td align='center'>"+rs2.getString("penilaian_jatuh_nilai3")+"</td>"+
+                                                           "<td align='center'>"+rs2.getString("penilaian_jatuhsydney_skala3")+"</td>"+
+                                                           "<td align='center'>"+rs2.getString("penilaian_jatuhsydney_nilai3")+"</td>"+
                                                        "</tr>"+
                                                        "<tr>"+
                                                            "<td>4. Nokturia / Inkontinen</td>"+
-                                                           "<td align='center'>"+rs2.getString("penilaian_jatuh_skala4")+"</td>"+
-                                                           "<td align='center'>"+rs2.getString("penilaian_jatuh_nilai4")+"</td>"+
+                                                           "<td align='center'>"+rs2.getString("penilaian_jatuhsydney_skala4")+"</td>"+
+                                                           "<td align='center'>"+rs2.getString("penilaian_jatuhsydney_nilai4")+"</td>"+
                                                        "</tr>"+
                                                        "<tr>"+
                                                            "<td>5. Kebingungan Intermiten</td>"+
-                                                           "<td align='center'>"+rs2.getString("penilaian_jatuh_skala5")+"</td>"+
-                                                           "<td align='center'>"+rs2.getString("penilaian_jatuh_nilai5")+"</td>"+
+                                                           "<td align='center'>"+rs2.getString("penilaian_jatuhsydney_skala5")+"</td>"+
+                                                           "<td align='center'>"+rs2.getString("penilaian_jatuhsydney_nilai5")+"</td>"+
                                                        "</tr>"+
                                                        "<tr>"+
                                                            "<td>6. Kelemahan Umum</td>"+
-                                                           "<td align='center'>"+rs2.getString("penilaian_jatuh_skala6")+"</td>"+
-                                                           "<td align='center'>"+rs2.getString("penilaian_jatuh_nilai6")+"</td>"+
+                                                           "<td align='center'>"+rs2.getString("penilaian_jatuhsydney_skala6")+"</td>"+
+                                                           "<td align='center'>"+rs2.getString("penilaian_jatuhsydney_nilai6")+"</td>"+
                                                        "</tr>"+
                                                        "<tr>"+
                                                            "<td valign='middle'>7. Obat-obat Beresiko Tinggi (Diuretic, Narkotik, Sedativ, Anti Psikotik, Laksatif, Vasodilator Antiaritmia, Antihipertensi, Obat Hipoglikemik, Anti Depresan, Neuroleptik, NSAID)</td>"+
-                                                           "<td align='center' valign='middle'>"+rs2.getString("penilaian_jatuh_skala7")+"</td>"+
-                                                           "<td align='center' valign='middle'>"+rs2.getString("penilaian_jatuh_nilai7")+"</td>"+
+                                                           "<td align='center' valign='middle'>"+rs2.getString("penilaian_jatuhsydney_skala7")+"</td>"+
+                                                           "<td align='center' valign='middle'>"+rs2.getString("penilaian_jatuhsydney_nilai7")+"</td>"+
                                                        "</tr>"+
                                                        "<tr>"+
                                                            "<td>8. Riwayat Jatuh Dalam Waktu 12 Bulan Sebelumnya</td>"+
-                                                           "<td align='center'>"+rs2.getString("penilaian_jatuh_skala7")+"</td>"+
-                                                           "<td align='center'>"+rs2.getString("penilaian_jatuh_nilai7")+"</td>"+
+                                                           "<td align='center'>"+rs2.getString("penilaian_jatuhsydney_skala7")+"</td>"+
+                                                           "<td align='center'>"+rs2.getString("penilaian_jatuhsydney_nilai7")+"</td>"+
                                                        "</tr>"+
                                                        "<tr>"+
                                                            "<td>9. Osteoporosis</td>"+
-                                                           "<td align='center'>"+rs2.getString("penilaian_jatuh_skala7")+"</td>"+
-                                                           "<td align='center'>"+rs2.getString("penilaian_jatuh_nilai7")+"</td>"+
+                                                           "<td align='center'>"+rs2.getString("penilaian_jatuhsydney_skala7")+"</td>"+
+                                                           "<td align='center'>"+rs2.getString("penilaian_jatuhsydney_nilai7")+"</td>"+
                                                        "</tr>"+
                                                        "<tr>"+
                                                            "<td>10. Gangguan Pendengaran Dan Atau Penglihatan</td>"+
-                                                           "<td align='center'>"+rs2.getString("penilaian_jatuh_skala7")+"</td>"+
-                                                           "<td align='center'>"+rs2.getString("penilaian_jatuh_nilai7")+"</td>"+
+                                                           "<td align='center'>"+rs2.getString("penilaian_jatuhsydney_skala7")+"</td>"+
+                                                           "<td align='center'>"+rs2.getString("penilaian_jatuhsydney_nilai7")+"</td>"+
                                                        "</tr>"+
                                                        "<tr>"+
                                                            "<td>11. Usia 70 Tahun Ke Atas</td>"+
-                                                           "<td align='center'>"+rs2.getString("penilaian_jatuh_skala7")+"</td>"+
-                                                           "<td align='center'>"+rs2.getString("penilaian_jatuh_nilai7")+"</td>"+
+                                                           "<td align='center'>"+rs2.getString("penilaian_jatuhsydney_skala7")+"</td>"+
+                                                           "<td align='center'>"+rs2.getString("penilaian_jatuhsydney_nilai7")+"</td>"+
                                                        "</tr>"+
                                                        "<tr>"+
                                                            "<td align='right' colspan='2'>Total :</td>"+
-                                                           "<td align='center'>"+rs2.getString("penilaian_jatuh_nilai7")+"</td>"+
+                                                           "<td align='center'>"+rs2.getString("penilaian_jatuhsydney_nilai7")+"</td>"+
                                                        "</tr>"+
                                                        "<tr>"+
                                                            "<td align='center' colspan='3'>"
                                          );
 
-                                         if(rs2.getInt("penilaian_jatuh_totalnilai")<4){
+                                         if(rs2.getInt("penilaian_jatuhsydney_totalnilai")<4){
                                              htmlContent.append("Tingkat Resiko : Risiko Rendah (1-3), Tindakan : Intervensi pencegahan risiko standar");
                                          }else if(rs2.getInt("penilaian_jatuh_totalnilai")>=4){
                                              htmlContent.append("Tingkat Resiko : Risiko Sedang (> 4), Tindakan : Intervensi pencegahan risiko tinggi");
