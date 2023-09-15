@@ -1654,13 +1654,8 @@ public class frmUtama extends javax.swing.JFrame {
         jMenu7 = new javax.swing.JMenu();
         MnAnjungan = new javax.swing.JMenuItem();
         jSeparator12 = new javax.swing.JPopupMenu.Separator();
-        MnRekapHadir9 = new javax.swing.JMenuItem();
-        MnRekapHadir3 = new javax.swing.JMenuItem();
-        MnRekapHadir10 = new javax.swing.JMenuItem();
-        MnRekapHadir4 = new javax.swing.JMenuItem();
         MnInfoBed4 = new javax.swing.JMenuItem();
         MnAntrianFarmasi = new javax.swing.JMenu();
-        MnRekapHadir5 = new javax.swing.JMenuItem();
         MnRekapHadir7 = new javax.swing.JMenuItem();
         MnRekapHadir8 = new javax.swing.JMenuItem();
         MnRekapHadir11 = new javax.swing.JMenuItem();
@@ -1877,7 +1872,7 @@ public class frmUtama extends javax.swing.JFrame {
 
         tanggal.setEditable(false);
         tanggal.setForeground(new java.awt.Color(50, 70, 50));
-        tanggal.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "13/07/2023" }));
+        tanggal.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "14/09/2023" }));
         tanggal.setDisplayFormat("dd/MM/yyyy");
         tanggal.setName("tanggal"); // NOI18N
         tanggal.setOpaque(false);
@@ -7882,67 +7877,11 @@ public class frmUtama extends javax.swing.JFrame {
         jSeparator12.setPreferredSize(new java.awt.Dimension(0, 1));
         jMenu7.add(jSeparator12);
 
-        MnRekapHadir9.setBackground(new java.awt.Color(255, 255, 254));
-        MnRekapHadir9.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
-        MnRekapHadir9.setForeground(new java.awt.Color(50, 90, 40));
-        MnRekapHadir9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/Create-Ticket24.png"))); // NOI18N
-        MnRekapHadir9.setText("Cetak Antrian Loket");
-        MnRekapHadir9.setName("MnRekapHadir9"); // NOI18N
-        MnRekapHadir9.setPreferredSize(new java.awt.Dimension(205, 30));
-        MnRekapHadir9.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MnRekapHadir9ActionPerformed(evt);
-            }
-        });
-        jMenu7.add(MnRekapHadir9);
-
-        MnRekapHadir3.setBackground(new java.awt.Color(255, 255, 254));
-        MnRekapHadir3.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
-        MnRekapHadir3.setForeground(new java.awt.Color(50, 90, 40));
-        MnRekapHadir3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/Create-Ticket24.png"))); // NOI18N
-        MnRekapHadir3.setText("Antrian Loket");
-        MnRekapHadir3.setName("MnRekapHadir3"); // NOI18N
-        MnRekapHadir3.setPreferredSize(new java.awt.Dimension(205, 30));
-        MnRekapHadir3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MnRekapHadir3ActionPerformed(evt);
-            }
-        });
-        jMenu7.add(MnRekapHadir3);
-
-        MnRekapHadir10.setBackground(new java.awt.Color(255, 255, 254));
-        MnRekapHadir10.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
-        MnRekapHadir10.setForeground(new java.awt.Color(50, 90, 40));
-        MnRekapHadir10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/Create-Ticket24.png"))); // NOI18N
-        MnRekapHadir10.setText("Antrian Loket 2");
-        MnRekapHadir10.setName("MnRekapHadir10"); // NOI18N
-        MnRekapHadir10.setPreferredSize(new java.awt.Dimension(205, 30));
-        MnRekapHadir10.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MnRekapHadir10ActionPerformed(evt);
-            }
-        });
-        jMenu7.add(MnRekapHadir10);
-
-        MnRekapHadir4.setBackground(new java.awt.Color(255, 255, 254));
-        MnRekapHadir4.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
-        MnRekapHadir4.setForeground(new java.awt.Color(50, 90, 40));
-        MnRekapHadir4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/Create-Ticket24.png"))); // NOI18N
-        MnRekapHadir4.setText("Antrian Unit/Poliklinik");
-        MnRekapHadir4.setName("MnRekapHadir4"); // NOI18N
-        MnRekapHadir4.setPreferredSize(new java.awt.Dimension(205, 30));
-        MnRekapHadir4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MnRekapHadir4ActionPerformed(evt);
-            }
-        });
-        jMenu7.add(MnRekapHadir4);
-
         MnInfoBed4.setBackground(new java.awt.Color(255, 255, 254));
         MnInfoBed4.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
         MnInfoBed4.setForeground(new java.awt.Color(50, 90, 40));
         MnInfoBed4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/Create-Ticket24.png"))); // NOI18N
-        MnInfoBed4.setText("Antrian Unit/Poliklinik 2");
+        MnInfoBed4.setText("Antrian Poliklinik");
         MnInfoBed4.setName("MnInfoBed4"); // NOI18N
         MnInfoBed4.setPreferredSize(new java.awt.Dimension(205, 30));
         MnInfoBed4.addActionListener(new java.awt.event.ActionListener() {
@@ -7955,32 +7894,18 @@ public class frmUtama extends javax.swing.JFrame {
         MnAntrianFarmasi.setBackground(new java.awt.Color(255, 255, 254));
         MnAntrianFarmasi.setForeground(new java.awt.Color(50, 90, 40));
         MnAntrianFarmasi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/Create-Ticket24.png"))); // NOI18N
-        MnAntrianFarmasi.setText("Antrian Apotek");
+        MnAntrianFarmasi.setText("Antrian Farmasi");
         MnAntrianFarmasi.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
         MnAntrianFarmasi.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         MnAntrianFarmasi.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         MnAntrianFarmasi.setName("MnAntrianFarmasi"); // NOI18N
         MnAntrianFarmasi.setPreferredSize(new java.awt.Dimension(205, 30));
 
-        MnRekapHadir5.setBackground(new java.awt.Color(255, 255, 254));
-        MnRekapHadir5.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
-        MnRekapHadir5.setForeground(new java.awt.Color(50, 90, 40));
-        MnRekapHadir5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/Create-Ticket24.png"))); // NOI18N
-        MnRekapHadir5.setText("Apotek 1");
-        MnRekapHadir5.setName("MnRekapHadir5"); // NOI18N
-        MnRekapHadir5.setPreferredSize(new java.awt.Dimension(180, 30));
-        MnRekapHadir5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MnRekapHadir5ActionPerformed(evt);
-            }
-        });
-        MnAntrianFarmasi.add(MnRekapHadir5);
-
         MnRekapHadir7.setBackground(new java.awt.Color(255, 255, 254));
         MnRekapHadir7.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
         MnRekapHadir7.setForeground(new java.awt.Color(50, 90, 40));
         MnRekapHadir7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/Create-Ticket24.png"))); // NOI18N
-        MnRekapHadir7.setText("Apotek 2");
+        MnRekapHadir7.setText("Apotek Farmasi");
         MnRekapHadir7.setName("MnRekapHadir7"); // NOI18N
         MnRekapHadir7.setPreferredSize(new java.awt.Dimension(180, 30));
         MnRekapHadir7.addActionListener(new java.awt.event.ActionListener() {
@@ -10702,26 +10627,6 @@ private void MnGantiPasswordBtnLogActionPerformed(java.awt.event.ActionEvent evt
             System.out.print("Notifikasi : "+e);
         } 
     }//GEN-LAST:event_MnAnjunganActionPerformed
-
-    private void MnRekapHadir3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MnRekapHadir3ActionPerformed
-        try {
-            this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
-            Runtime.getRuntime().exec("java -jar antrianloket.jar");
-            this.setCursor(Cursor.getDefaultCursor());
-        } catch (Exception e) {
-            System.out.print("Notifikasi : "+e);
-        } 
-    }//GEN-LAST:event_MnRekapHadir3ActionPerformed
-
-    private void MnRekapHadir4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MnRekapHadir4ActionPerformed
-        try {
-            this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
-            Runtime.getRuntime().exec("java -jar antrianpoli.jar");
-            this.setCursor(Cursor.getDefaultCursor());
-        } catch (Exception e) {
-            System.out.print("Notifikasi : "+e);
-        } 
-    }//GEN-LAST:event_MnRekapHadir4ActionPerformed
 
     private void btnCekBPJSNomorRujukanPCareActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCekBPJSNomorRujukanPCareActionPerformed
         isTutup();
@@ -13854,16 +13759,6 @@ private void MnGantiPasswordBtnLogActionPerformed(java.awt.event.ActionEvent evt
         this.setCursor(Cursor.getDefaultCursor());
     }//GEN-LAST:event_btnSaldoAkunPerBulanActionPerformed
 
-    private void MnRekapHadir5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MnRekapHadir5ActionPerformed
-        try {
-            this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
-            Runtime.getRuntime().exec("java -jar antrianapotek.jar");
-            this.setCursor(Cursor.getDefaultCursor());
-        } catch (Exception e) {
-            System.out.print("Notifikasi : "+e);
-        }
-    }//GEN-LAST:event_MnRekapHadir5ActionPerformed
-
     private void btnDisplayApotekActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDisplayApotekActionPerformed
         isTutup();
         this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
@@ -14413,26 +14308,6 @@ private void MnGantiPasswordBtnLogActionPerformed(java.awt.event.ActionEvent evt
         Valid.panggilUrl("antrianfarmasi.php");
         this.setCursor(Cursor.getDefaultCursor());
     }//GEN-LAST:event_MnRekapHadir7ActionPerformed
-
-    private void MnRekapHadir9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MnRekapHadir9ActionPerformed
-        try {
-            this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
-            Runtime.getRuntime().exec("java -jar KhanzaCetakAntrianLoket.jar");
-            this.setCursor(Cursor.getDefaultCursor());
-        } catch (Exception e) {
-            System.out.print("Notifikasi : "+e);
-        } 
-    }//GEN-LAST:event_MnRekapHadir9ActionPerformed
-
-    private void MnRekapHadir10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MnRekapHadir10ActionPerformed
-        try {
-            this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
-            Runtime.getRuntime().exec("java -jar KhanzaAntrianLoket2.jar");
-            this.setCursor(Cursor.getDefaultCursor());
-        } catch (Exception e) {
-            System.out.print("Notifikasi : "+e);
-        } 
-    }//GEN-LAST:event_MnRekapHadir10ActionPerformed
 
     private void btnLaboratoriumMBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLaboratoriumMBActionPerformed
         isTutup();
@@ -20462,15 +20337,10 @@ private void MnGantiPasswordBtnLogActionPerformed(java.awt.event.ActionEvent evt
     private javax.swing.JMenuItem MnRekapBulanan4;
     private javax.swing.JMenuItem MnRekapHadir;
     private javax.swing.JMenuItem MnRekapHadir1;
-    private javax.swing.JMenuItem MnRekapHadir10;
     private javax.swing.JMenuItem MnRekapHadir11;
-    private javax.swing.JMenuItem MnRekapHadir3;
-    private javax.swing.JMenuItem MnRekapHadir4;
-    private javax.swing.JMenuItem MnRekapHadir5;
     private javax.swing.JMenuItem MnRekapHadir6;
     private javax.swing.JMenuItem MnRekapHadir7;
     private javax.swing.JMenuItem MnRekapHadir8;
-    private javax.swing.JMenuItem MnRekapHadir9;
     private javax.swing.JMenuItem MnSudahPulang;
     private javax.swing.JMenuItem MnSudahPulang1;
     private javax.swing.JMenuItem MnSudahPulang2;
