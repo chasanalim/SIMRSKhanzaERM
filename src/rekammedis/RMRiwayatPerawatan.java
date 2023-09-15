@@ -4166,9 +4166,9 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                     if(chkResepPulang.isSelected()==true){
                         try{
                             rs2=koneksi.prepareStatement(
-                                "select resep_pulang.kode_brng,databarang.nama_brng,resep_pulang.dosis,resep_pulang.jml_barang, "+
+                                "select resep_pulang.tanggal, resep_pulang.jam,resep_pulang.kode_brng,databarang.nama_brng,resep_pulang.dosis,resep_pulang.jml_barang, "+
                                 "databarang.kode_sat,resep_pulang.dosis,resep_pulang.total from resep_pulang inner join databarang "+
-                                "on resep_pulang.kode_brng=databarang.kode_brng where "+
+                                "on resep_pulang.kode_brng=databarang.kode_brng inner JOIN permintaan_resep_pulang on resep_pulang.no_rawat = permintaan_resep_pulang.no_rawat LEFT JOIN pegawai on pegawai.nik = permintaan_resep_pulang.kd_petugas where "+
                                 "resep_pulang.no_rawat='"+rs.getString("no_rawat")+"' order by databarang.nama_brng").executeQuery();
                             if(rs2.next()){                                    
                                 htmlContent.append(  
@@ -4190,10 +4190,12 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                                     htmlContent.append(
                                          "<tr>"+
                                             "<td valign='top' align='center'>"+w+"</td>"+
+                                            "<td valign='top'>"+rs2.getString("tanggal")+" "+rs2.getString("jam")+"</td>"+
                                             "<td valign='top'>"+rs2.getString("kode_brng")+"</td>"+
                                             "<td valign='top'>"+rs2.getString("nama_brng")+"</td>"+
                                             "<td valign='top'>"+rs2.getDouble("jml_barang")+" "+rs2.getString("kode_sat")+"</td>"+
                                             "<td valign='top'>"+rs2.getString("dosis")+"</td>"+
+                                            "<td valign='top'>"+rs2.getString("nama")+"</td>"+
                                             "<td valign='top' align='right'>"+Valid.SetAngka(rs2.getDouble("total"))+"</td>"+
                                          "</tr>"); 
                                     w++;
