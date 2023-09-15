@@ -685,20 +685,20 @@ private void KdKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TKdKey
                         sukses=true;
                         
                         if(ubah==false){
-                            if(Sequel.menyimpantf2("permintaan_resep_pulang","?,?,?,?,?,?,'0000-00-00','00:00:00'","Nomer Permintaan",6,new String[]{
-                                    NoResep.getText(),Valid.SetTgl(DTPBeri.getSelectedItem()+""),cmbJam.getSelectedItem()+":"+cmbMnt.getSelectedItem()+":"+cmbDtk.getSelectedItem(),TNoRw.getText(),KdDokter.getText(),"Belum"
+                            if(Sequel.menyimpantf2("permintaan_resep_pulang","?,?,?,?,?,?,?,'0000-00-00','00:00:00'","Nomer Permintaan",7,new String[]{
+                                    NoResep.getText(),Valid.SetTgl(DTPBeri.getSelectedItem()+""),cmbJam.getSelectedItem()+":"+cmbMnt.getSelectedItem()+":"+cmbDtk.getSelectedItem(),TNoRw.getText(),KdDokter.getText(),akses.getkode(),"Belum"
                                 })==true){
                                 simpandata();
                             }else{
                                 emptTeksobat();
-                                if(Sequel.menyimpantf2("permintaan_resep_pulang","?,?,?,?,?,?,'0000-00-00','00:00:00'","Nomer Permintaan",6,new String[]{
-                                        NoResep.getText(),Valid.SetTgl(DTPBeri.getSelectedItem()+""),cmbJam.getSelectedItem()+":"+cmbMnt.getSelectedItem()+":"+cmbDtk.getSelectedItem(),TNoRw.getText(),KdDokter.getText(),"Belum"
+                                if(Sequel.menyimpantf2("permintaan_resep_pulang","?,?,?,?,?,?,?,'0000-00-00','00:00:00'","Nomer Permintaan",7,new String[]{
+                                        NoResep.getText(),Valid.SetTgl(DTPBeri.getSelectedItem()+""),cmbJam.getSelectedItem()+":"+cmbMnt.getSelectedItem()+":"+cmbDtk.getSelectedItem(),TNoRw.getText(),KdDokter.getText(),akses.getkode(),"Belum"
                                     })==true){
                                     simpandata();
                                 }else{
                                     emptTeksobat();
-                                    if(Sequel.menyimpantf2("permintaan_resep_pulang","?,?,?,?,?,?,'0000-00-00','00:00:00'","Nomer Permintaan",6,new String[]{
-                                            NoResep.getText(),Valid.SetTgl(DTPBeri.getSelectedItem()+""),cmbJam.getSelectedItem()+":"+cmbMnt.getSelectedItem()+":"+cmbDtk.getSelectedItem(),TNoRw.getText(),KdDokter.getText(),"Belum"
+                                    if(Sequel.menyimpantf2("permintaan_resep_pulang","?,?,?,?,?,?,?,'0000-00-00','00:00:00'","Nomer Permintaan",7,new String[]{
+                                            NoResep.getText(),Valid.SetTgl(DTPBeri.getSelectedItem()+""),cmbJam.getSelectedItem()+":"+cmbMnt.getSelectedItem()+":"+cmbDtk.getSelectedItem(),TNoRw.getText(),KdDokter.getText(),akses.getkode(),"Belum"
                                         })==true){
                                         simpandata();
                                     }else{
