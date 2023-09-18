@@ -1298,7 +1298,7 @@ public final class ValidasiSBAR extends javax.swing.JDialog {
             KodeDokter.setEditable(false);
             BtnDokter.setEnabled(false);
             KodeDokter.setText(akses.getkode());
-            Sequel.cariIsi("select nama from petugas where nip=?", NamaDokter,KodeDokter.getText());
+            Sequel.cariIsi("select nama from pegawai where nik=?", NamaDokter,KodeDokter.getText());
 //            if(NamaDokter.getText().equals("")){
 //                KodeDokter.setText("");
 //                JOptionPane.showMessageDialog(null,"User login bukan dokter...!!");
