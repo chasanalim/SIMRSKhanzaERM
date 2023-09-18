@@ -4039,8 +4039,8 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                                       "<td valign='top' width='13%' bgcolor='#FFFAF8'>Tanggal</td>"+
                                       "<td valign='top' width='8%' bgcolor='#FFFAF8'>Kode</td>"+
                                       "<td valign='top' width='28%' bgcolor='#FFFAF8'>Nama Obat/BHP/Alkes</td>"+
-                                      "<td valign='top' width='6%' bgcolor='#FFFAF8'>Jumlah</td>"+
-                                      "<td valign='top' width='19%' bgcolor='#FFFAF8'>Aturan Pakai</td>"+
+                                      "<td valign='top' width='7%' bgcolor='#FFFAF8'>Jumlah</td>"+
+                                      "<td valign='top' width='18%' bgcolor='#FFFAF8'>Aturan Pakai</td>"+
                                       "<td valign='top' width='16%' bgcolor='#FFFAF8'>Peresep</td>"+
                                       "<td valign='top' width='6%' bgcolor='#FFFAF8'>Biaya</td>"+
                                     "</tr>");
@@ -4167,7 +4167,7 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                         try{
                             rs2=koneksi.prepareStatement(
                                 "select resep_pulang.tanggal, resep_pulang.jam,resep_pulang.kode_brng,databarang.nama_brng,resep_pulang.dosis,resep_pulang.jml_barang, "+
-                                "databarang.kode_sat,resep_pulang.dosis,resep_pulang.total from resep_pulang inner join databarang "+
+                                "databarang.kode_sat,resep_pulang.dosis,resep_pulang.total,pegawai.nama from resep_pulang inner join databarang "+
                                 "on resep_pulang.kode_brng=databarang.kode_brng inner JOIN permintaan_resep_pulang on resep_pulang.no_rawat = permintaan_resep_pulang.no_rawat LEFT JOIN pegawai on pegawai.nik = permintaan_resep_pulang.kd_petugas where "+
                                 "resep_pulang.no_rawat='"+rs.getString("no_rawat")+"' order by databarang.nama_brng").executeQuery();
                             if(rs2.next()){                                    
@@ -4179,8 +4179,8 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                                       "<td valign='top' width='13%' bgcolor='#FFFAF8'>Tanggal</td>"+
                                       "<td valign='top' width='8%'  bgcolor='#FFFAF8'>Kode</td>"+
                                       "<td valign='top' width='28%' bgcolor='#FFFAF8'>Nama Obat/BHP/Alkes</td>"+
-                                      "<td valign='top' width='6%'  bgcolor='#FFFAF8'>Jumlah</td>"+
-                                      "<td valign='top' width='19%' bgcolor='#FFFAF8'>Aturan Pakai</td>"+
+                                      "<td valign='top' width='7%'  bgcolor='#FFFAF8'>Jumlah</td>"+
+                                      "<td valign='top' width='18%' bgcolor='#FFFAF8'>Aturan Pakai</td>"+
                                       "<td valign='top' width='16%' bgcolor='#FFFAF8'>Peresep</td>"+
                                       "<td valign='top' width='6%'  bgcolor='#FFFAF8'>Biaya</td>"+
                                     "</tr>");
