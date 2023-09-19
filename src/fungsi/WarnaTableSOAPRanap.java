@@ -16,7 +16,7 @@ import javax.swing.table.DefaultTableCellRenderer;
  */
 public class WarnaTableSOAPRanap extends DefaultTableCellRenderer {
     public int kolom;
-    public int dokter = 24;
+    public int dokter = 8;
     @Override
     public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column){
         Component component = super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
