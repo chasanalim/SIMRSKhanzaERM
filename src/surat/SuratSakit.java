@@ -988,10 +988,10 @@ public final class SuratSakit extends javax.swing.JDialog {
                      "(SELECT dokter.nm_dokter from dokter INNER JOIN dpjp_ranap on dokter.kd_dokter=dpjp_ranap.kd_dokter WHERE dpjp_ranap.no_rawat=reg_periksa.no_rawat and dpjp_ranap.prioritas=1 limit 1) as dokter_ranap "+
                      "FROM suratsakit INNER JOIN reg_periksa ON suratsakit.no_rawat = reg_periksa.no_rawat INNER JOIN pasien ON reg_periksa.no_rkm_medis = pasien.no_rkm_medis "+ 
                      "INNER JOIN dokter on dokter.kd_dokter = reg_periksa.kd_dokter LEFT JOIN dpjp_ranap on reg_periksa.no_rawat = dpjp_ranap.no_rawat "+
-                     "WHERE "+tgl+" ORDER BY reg_periksa.no_rawat desc ");
+                     "WHERE "+tgl+" GROUP BY suratsakit.no_surat ORDER BY reg_periksa.no_rawat desc ");
             }else{
                 ps=koneksi.prepareStatement(
-                    "SELECT suratsakit.no_surat,suratsakit.no_rawat,reg_periksa.no_rkm_medis,pasien.nm_pasien,suratsakit.tanggalawal,suratsakit.tanggalakhir,suratsakit.lamasakit,reg_periksa.kd_dokter,dokter.nm_dokter, "+
+                     "SELECT suratsakit.no_surat,suratsakit.no_rawat,reg_periksa.no_rkm_medis,pasien.nm_pasien,suratsakit.tanggalawal,suratsakit.tanggalakhir,suratsakit.lamasakit,reg_periksa.kd_dokter,dokter.nm_dokter, "+
                      "(SELECT dpjp_ranap.kd_dokter from dpjp_ranap WHERE dpjp_ranap.no_rawat=reg_periksa.no_rawat and dpjp_ranap.prioritas=1 limit 1) as dpjp_ranap, "+
                      "(SELECT dokter.nm_dokter from dokter INNER JOIN dpjp_ranap on dokter.kd_dokter=dpjp_ranap.kd_dokter WHERE dpjp_ranap.no_rawat=reg_periksa.no_rawat and dpjp_ranap.prioritas=1 limit 1) as dokter_ranap "+
                      "FROM suratsakit INNER JOIN reg_periksa ON suratsakit.no_rawat = reg_periksa.no_rawat INNER JOIN pasien ON reg_periksa.no_rkm_medis = pasien.no_rkm_medis INNER JOIN dokter on dokter.kd_dokter = reg_periksa.kd_dokter "+ 
@@ -1002,7 +1002,7 @@ public final class SuratSakit extends javax.swing.JDialog {
                      tgl+"and pasien.nm_pasien like '%"+TCari.getText().trim()+"%' or "+
                      tgl+"and suratsakit.tanggalawal like '%"+TCari.getText().trim()+"%' or "+
                      tgl+"and suratsakit.tanggalakhir like '%"+TCari.getText().trim()+"%' "+
-                     "order by suratsakit.no_surat");
+                     "GROUP BY suratsakit.no_surat order by suratsakit.no_surat");
             }
                 
             try {
@@ -1040,7 +1040,7 @@ public final class SuratSakit extends javax.swing.JDialog {
         TanggalAwal.setDate(new Date());
         TanggalAkhir.setDate(new Date());
         Valid.autoNomer3("select ifnull(MAX(CONVERT(RIGHT(no_surat,3),signed)),0) from suratsakit where tanggalawal='"+Valid.SetTgl(TanggalAwal.getSelectedItem()+"")+"' ",
-                "SKS"+TanggalAwal.getSelectedItem().toString().substring(6,10)+TanggalAwal.getSelectedItem().toString().substring(3,5)+TanggalAwal.getSelectedItem().toString().substring(0,2),3,NoSurat); 
+                "SKS-"+TanggalAwal.getSelectedItem().toString().substring(6,10)+TanggalAwal.getSelectedItem().toString().substring(3,5)+TanggalAwal.getSelectedItem().toString().substring(0,2),3,NoSurat); 
         NoSurat.requestFocus();
     }
 
@@ -1100,6 +1100,9 @@ public final class SuratSakit extends javax.swing.JDialog {
         isPsien(); 
         ChkInput.setSelected(true);
         isForm();
+        Valid.autoNomer3("select ifnull(MAX(CONVERT(RIGHT(no_surat,3),signed)),0) from suratsakit where tanggalawal='"+Valid.SetTgl(TanggalAwal.getSelectedItem()+"")+"' ",
+                "SKS-"+TanggalAwal.getSelectedItem().toString().substring(6,10)+TanggalAwal.getSelectedItem().toString().substring(3,5)+TanggalAwal.getSelectedItem().toString().substring(0,2),3,NoSurat); 
+        
     }
     private void isForm(){
         if(ChkInput.isSelected()==true){
@@ -1120,6 +1123,7 @@ public final class SuratSakit extends javax.swing.JDialog {
         BtnSimpan.setEnabled(akses.getsurat_sakit());
         BtnHapus.setEnabled(akses.getsurat_sakit());
         BtnEdit.setEnabled(akses.getsurat_sakit());
+        
     }
 }
 
