@@ -1301,7 +1301,7 @@ public final class SuratSakitPihak2 extends javax.swing.JDialog {
                      "(SELECT dokter.nm_dokter from dokter INNER JOIN dpjp_ranap on dokter.kd_dokter=dpjp_ranap.kd_dokter WHERE dpjp_ranap.no_rawat=reg_periksa.no_rawat and dpjp_ranap.prioritas=1 limit 1) as dokter_ranap "+
                      "from suratsakitpihak2 inner join reg_periksa on suratsakitpihak2.no_rawat=reg_periksa.no_rawat inner join pasien on reg_periksa.no_rkm_medis=pasien.no_rkm_medis "+
                      "INNER JOIN dokter on dokter.kd_dokter = reg_periksa.kd_dokter LEFT JOIN dpjp_ranap on reg_periksa.no_rawat = dpjp_ranap.no_rawat "+        
-                     "where "+tgl+"order by suratsakitpihak2.no_surat");
+                     "where "+tgl+" group by suratsakitpihak2.no_surat order by suratsakitpihak2.no_surat");
             }else{
                 ps=koneksi.prepareStatement(
                      "select suratsakitpihak2.no_surat,suratsakitpihak2.no_rawat,reg_periksa.no_rkm_medis,pasien.nm_pasien,"+
@@ -1315,7 +1315,7 @@ public final class SuratSakitPihak2 extends javax.swing.JDialog {
                      "reg_periksa.no_rkm_medis like '%"+TCari.getText().trim()+"%' or pasien.nm_pasien like '%"+TCari.getText().trim()+"%' or "+
                      "suratsakitpihak2.instansi like '%"+TCari.getText().trim()+"%' or suratsakitpihak2.alamat like '%"+TCari.getText().trim()+"%' or "+
                      "suratsakitpihak2.nama2 like '%"+TCari.getText().trim()+"%' or suratsakitpihak2.hubungan like '%"+TCari.getText().trim()+"%') "+
-                     "order by suratsakitpihak2.no_surat");
+                     " group by suratsakitpihak2.no_surat order by suratsakitpihak2.no_surat");
             }
                 
             try {
