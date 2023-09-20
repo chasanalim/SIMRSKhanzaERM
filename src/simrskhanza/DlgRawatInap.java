@@ -5264,7 +5264,7 @@ public final class DlgRawatInap extends javax.swing.JDialog {
                                         "' and tgl_perawatan='"+tbPemeriksaan.getValueAt(i,4).toString()+
                                         "' and jam_rawat='"+tbPemeriksaan.getValueAt(i,5).toString()+"' ");
                             }else{
-                                if(akses.getkode().equals(tbPemeriksaan.getValueAt(i,22).toString())){
+                                if(akses.getkode().equals(tbPemeriksaan.getValueAt(i,6).toString())){
                                     Sequel.queryu("delete from pemeriksaan_ranap where no_rawat='"+tbPemeriksaan.getValueAt(i,1).toString()+
                                             "' and tgl_perawatan='"+tbPemeriksaan.getValueAt(i,4).toString()+
                                             "' and jam_rawat='"+tbPemeriksaan.getValueAt(i,5).toString()+"' ");
@@ -6045,7 +6045,7 @@ private void BtnEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST
                                 tampilPemeriksaan();
                                 BtnBatalActionPerformed(evt);
                             }else{
-                                if(akses.getkode().equals(tbPemeriksaan.getValueAt(tbPemeriksaan.getSelectedRow(),22).toString())){
+                                if(akses.getkode().equals(tbPemeriksaan.getValueAt(tbPemeriksaan.getSelectedRow(),6).toString())){
                                     Sequel.mengedit("pemeriksaan_ranap","no_rawat='"+tbPemeriksaan.getValueAt(tbPemeriksaan.getSelectedRow(),1)+
                                         "' and tgl_perawatan='"+tbPemeriksaan.getValueAt(tbPemeriksaan.getSelectedRow(),4)+
                                         "' and jam_rawat='"+tbPemeriksaan.getValueAt(tbPemeriksaan.getSelectedRow(),5)+"'",
