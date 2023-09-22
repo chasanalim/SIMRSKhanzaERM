@@ -53,6 +53,7 @@ public final class DlgPengeluaranHarian extends javax.swing.JDialog {
     private DlgCariKategoriPengeluaran kategori=new DlgCariKategoriPengeluaran(null,false);
     private double total=0;
     private boolean sukses=true;
+    private String nopengajuanbiaya="";
 
     /** Creates new form DlgResepObat 
      *@param parent
@@ -94,7 +95,7 @@ public final class DlgPengeluaranHarian extends javax.swing.JDialog {
             }else if(i==4){
                 column.setPreferredWidth(110);
             }else if(i==5){
-                column.setPreferredWidth(150);
+                column.setPreferredWidth(350);
             }else if(i==6){
                 column.setMinWidth(0);
                 column.setMaxWidth(0);
@@ -422,7 +423,7 @@ public final class DlgPengeluaranHarian extends javax.swing.JDialog {
         panelGlass9.add(jLabel19);
 
         DTPCari1.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "26-01-2020" }));
+        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "21-07-2023" }));
         DTPCari1.setDisplayFormat("dd-MM-yyyy");
         DTPCari1.setName("DTPCari1"); // NOI18N
         DTPCari1.setOpaque(false);
@@ -436,7 +437,7 @@ public final class DlgPengeluaranHarian extends javax.swing.JDialog {
         panelGlass9.add(jLabel21);
 
         DTPCari2.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "26-01-2020" }));
+        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "21-07-2023" }));
         DTPCari2.setDisplayFormat("dd-MM-yyyy");
         DTPCari2.setName("DTPCari2"); // NOI18N
         DTPCari2.setOpaque(false);
@@ -579,7 +580,7 @@ public final class DlgPengeluaranHarian extends javax.swing.JDialog {
         btnKategori.setBounds(409, 12, 28, 23);
 
         Tanggal.setForeground(new java.awt.Color(50, 70, 50));
-        Tanggal.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "26-01-2020 09:54:57" }));
+        Tanggal.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "21-07-2023 12:55:36" }));
         Tanggal.setDisplayFormat("dd-MM-yyyy HH:mm:ss");
         Tanggal.setName("Tanggal"); // NOI18N
         Tanggal.setOpaque(false);
@@ -709,6 +710,9 @@ public final class DlgPengeluaranHarian extends javax.swing.JDialog {
             }   
             
             if(sukses==true){
+                if(!nopengajuanbiaya.equals("")){
+                    Sequel.queryu("update pengajuan_biaya set status='Divalidasi' where no_pengajuan='"+nopengajuanbiaya+"'");
+                }
                 Sequel.Commit();
             }else{
                 sukses=false;
@@ -941,7 +945,7 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
 
     private void KdPtgKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_KdPtgKeyPressed
         if(evt.getKeyCode()==KeyEvent.VK_PAGE_DOWN){
-            Sequel.cariIsi("select petugas.nama from petugas where petugas.nip=?",NmPtg,KdPtg.getText());
+            NmPtg.setText(petugas.tampil3(KdPtg.getText()));
         }else if(evt.getKeyCode()==KeyEvent.VK_UP){
             btnPetugasActionPerformed(null);
         }else{
@@ -959,7 +963,7 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
 
     private void KdKategoriKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_KdKategoriKeyPressed
         if(evt.getKeyCode()==KeyEvent.VK_PAGE_DOWN){
-            Sequel.cariIsi("select nama_kategori from kategori_pengeluaran_harian where kode_kategori=?",NmKategori,KdKategori.getText());
+            Sequel.cariIsi("select kategori_pengeluaran_harian.nama_kategori from kategori_pengeluaran_harian where kategori_pengeluaran_harian.kode_kategori=?",NmKategori,KdKategori.getText());
         }else if(evt.getKeyCode()==KeyEvent.VK_UP){
             btnKategoriActionPerformed(null);
         }else{            
@@ -1101,6 +1105,7 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
         NmKategori.setText("");
         Tanggal.setDate(new Date());
         KdKategori.requestFocus();
+        nopengajuanbiaya="";
         autoNomor();
     }
 
@@ -1140,12 +1145,19 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
             BtnSimpan.setEnabled(akses.getpengeluaran());
             BtnHapus.setEnabled(akses.getpengeluaran());
             BtnPrint.setEnabled(akses.getpengeluaran());
-            Sequel.cariIsi("select petugas.nama from petugas where petugas.nip=?", NmPtg,KdPtg.getText());
+            NmPtg.setText(petugas.tampil3(KdPtg.getText()));
         }   
     }
     
     private void autoNomor() {
         Valid.autoNomer3("select ifnull(MAX(CONVERT(RIGHT(no_keluar,3),signed)),0) from pengeluaran_harian where tanggal like '%"+Valid.SetTgl(Tanggal.getSelectedItem()+"")+"%' ",
                 "PH"+Tanggal.getSelectedItem().toString().substring(6,10)+Tanggal.getSelectedItem().toString().substring(3,5)+Tanggal.getSelectedItem().toString().substring(0,2),3,Nomor); 
+    }
+    
+    public void setPengajuan(String nopengajuan,String keterangan,String pengeluaran){
+        nopengajuanbiaya=nopengajuan;
+        Nomor.setText(nopengajuan);
+        Keterangan.setText(keterangan);
+        Pengeluaran.setText(pengeluaran);
     }
 }
