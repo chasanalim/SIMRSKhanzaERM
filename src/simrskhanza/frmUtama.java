@@ -8134,6 +8134,8 @@ public class frmUtama extends javax.swing.JFrame {
                     if(AKTIFKANTRACKSQL.equals("yes")){
                         Sequel.menyimpan("tracker","'"+edAdmin.getText()+"',current_date(),current_time()","Login");
                     }
+                    JOptionPane.showMessageDialog(null,"Login Sukses !! \nSelamat Datang "+namauser+" \nPastikan Login sesuai Akun Anda !!!");
+                    
                 }else if((akses.getjml1()==0)&&(akses.getjml2()==0)){
                     JOptionPane.showMessageDialog(null,"Maaf, Gagal login. ID User atau password ada yang salah ...!");
                     BtnToolReg.setEnabled(false);
