@@ -6359,6 +6359,8 @@ public class DlgKamarInap extends javax.swing.JDialog {
             if(norawat.isEditable()==true){
                 if(diagnosaawal.getText().equals("")){
                     Valid.textKosong(diagnosaawal,"diagnosa awal masuk rawat inap");
+                }else if(KdDPJP.getText().equals("")){
+                    Valid.textKosong(KdDPJP,"DPJP Rawat Inap");
                 }else{
                     switch (TSttsKamar.getText().trim()) {
                         case "ISI":
