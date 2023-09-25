@@ -420,7 +420,11 @@ public class DlgKamarInap extends javax.swing.JDialog {
                         }else if(pilihan==3){
                             CrDokter3.setText(dokter.getTable().getValueAt(dokter.getTable().getSelectedRow(),1).toString());
                             CrDokter3.requestFocus();
-                        } 
+                        }else if(pilihan==4){
+                            KdDPJP.setText(dokter.getTable().getValueAt(dokter.getTable().getSelectedRow(),0).toString());
+                            NmDPJP.setText(dokter.getTable().getValueAt(dokter.getTable().getSelectedRow(),1).toString());
+                            KdDPJP.requestFocus();
+                        }
                     }                
                 }
             }
@@ -827,6 +831,10 @@ public class DlgKamarInap extends javax.swing.JDialog {
         cmbStatus = new widget.ComboBox();
         jLabel26 = new widget.Label();
         btnDiagnosa = new widget.Button();
+        NmDPJP = new widget.TextBox();
+        KdDPJP = new widget.TextBox();
+        btnDPJP = new widget.Button();
+        jLabel48 = new widget.Label();
         TOut = new widget.TextBox();
         TIn = new widget.TextBox();
         jPopupMenu1 = new javax.swing.JPopupMenu();
@@ -1209,10 +1217,10 @@ public class DlgKamarInap extends javax.swing.JDialog {
         internalFrame2.add(kdkamar);
         kdkamar.setBounds(75, 55, 95, 23);
 
-        jLabel10.setText("Proses :");
+        jLabel10.setText("DPJP Utama :");
         jLabel10.setName("jLabel10"); // NOI18N
         internalFrame2.add(jLabel10);
-        jLabel10.setBounds(0, 175, 72, 23);
+        jLabel10.setBounds(220, 175, 90, 23);
 
         ttlbiaya.setEditable(false);
         ttlbiaya.setText("0");
@@ -1443,7 +1451,7 @@ public class DlgKamarInap extends javax.swing.JDialog {
         LblStts.setText("Check In");
         LblStts.setName("LblStts"); // NOI18N
         internalFrame2.add(LblStts);
-        LblStts.setBounds(75, 175, 180, 23);
+        LblStts.setBounds(75, 175, 90, 23);
 
         jLabel18.setText("Diagnosa Awal Masuk :");
         jLabel18.setName("jLabel18"); // NOI18N
@@ -1532,12 +1540,12 @@ public class DlgKamarInap extends javax.swing.JDialog {
             }
         });
         internalFrame2.add(cmbStatus);
-        cmbStatus.setBounds(418, 175, 240, 23);
+        cmbStatus.setBounds(438, 175, 220, 23);
 
         jLabel26.setText("Status Pulang/Keluar :");
         jLabel26.setName("jLabel26"); // NOI18N
         internalFrame2.add(jLabel26);
-        jLabel26.setBounds(275, 175, 140, 23);
+        jLabel26.setBounds(328, 175, 111, 23);
 
         btnDiagnosa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/190.png"))); // NOI18N
         btnDiagnosa.setMnemonic('3');
@@ -1555,6 +1563,50 @@ public class DlgKamarInap extends javax.swing.JDialog {
         });
         internalFrame2.add(btnDiagnosa);
         btnDiagnosa.setBounds(630, 115, 28, 23);
+
+        NmDPJP.setEditable(false);
+        NmDPJP.setHighlighter(null);
+        NmDPJP.setName("NmDPJP"); // NOI18N
+        NmDPJP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NmDPJPActionPerformed(evt);
+            }
+        });
+        NmDPJP.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                NmDPJPKeyPressed(evt);
+            }
+        });
+        internalFrame2.add(NmDPJP);
+        NmDPJP.setBounds(380, 175, 245, 23);
+
+        KdDPJP.setEditable(false);
+        KdDPJP.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        KdDPJP.setName("KdDPJP"); // NOI18N
+        internalFrame2.add(KdDPJP);
+        KdDPJP.setBounds(315, 175, 60, 23);
+
+        btnDPJP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/190.png"))); // NOI18N
+        btnDPJP.setMnemonic('2');
+        btnDPJP.setToolTipText("Alt+2");
+        btnDPJP.setName("btnDPJP"); // NOI18N
+        btnDPJP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDPJPActionPerformed(evt);
+            }
+        });
+        btnDPJP.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                btnDPJPKeyPressed(evt);
+            }
+        });
+        internalFrame2.add(btnDPJP);
+        btnDPJP.setBounds(630, 175, 28, 23);
+
+        jLabel48.setText("Proses :");
+        jLabel48.setName("jLabel48"); // NOI18N
+        internalFrame2.add(jLabel48);
+        jLabel48.setBounds(0, 175, 72, 23);
 
         WindowInputKamar.getContentPane().add(internalFrame2, java.awt.BorderLayout.CENTER);
 
@@ -5714,7 +5766,7 @@ public class DlgKamarInap extends javax.swing.JDialog {
         R2.setPreferredSize(new java.awt.Dimension(90, 23));
         panelCari.add(R2);
 
-        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "21-09-2023" }));
+        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "25-09-2023" }));
         DTPCari1.setDisplayFormat("dd-MM-yyyy");
         DTPCari1.setName("DTPCari1"); // NOI18N
         DTPCari1.setOpaque(false);
@@ -5737,7 +5789,7 @@ public class DlgKamarInap extends javax.swing.JDialog {
         jLabel22.setPreferredSize(new java.awt.Dimension(25, 23));
         panelCari.add(jLabel22);
 
-        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "21-09-2023" }));
+        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "25-09-2023" }));
         DTPCari2.setDisplayFormat("dd-MM-yyyy");
         DTPCari2.setName("DTPCari2"); // NOI18N
         DTPCari2.setOpaque(false);
@@ -5763,7 +5815,7 @@ public class DlgKamarInap extends javax.swing.JDialog {
         R3.setPreferredSize(new java.awt.Dimension(75, 23));
         panelCari.add(R3);
 
-        DTPCari3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "21-09-2023" }));
+        DTPCari3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "25-09-2023" }));
         DTPCari3.setDisplayFormat("dd-MM-yyyy");
         DTPCari3.setName("DTPCari3"); // NOI18N
         DTPCari3.setOpaque(false);
@@ -5786,7 +5838,7 @@ public class DlgKamarInap extends javax.swing.JDialog {
         jLabel25.setPreferredSize(new java.awt.Dimension(25, 23));
         panelCari.add(jLabel25);
 
-        DTPCari4.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "21-09-2023" }));
+        DTPCari4.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "25-09-2023" }));
         DTPCari4.setDisplayFormat("dd-MM-yyyy");
         DTPCari4.setName("DTPCari4"); // NOI18N
         DTPCari4.setOpaque(false);
@@ -6034,7 +6086,11 @@ public class DlgKamarInap extends javax.swing.JDialog {
                 kdkamar.setEditable(false);
                 i=1;
                 isKmr();
-                diagnosaawal.setEditable(false);                
+                diagnosaawal.setEditable(false);
+                jLabel10.setVisible(false);
+                KdDPJP.setVisible(false);
+                NmDPJP.setVisible(false);
+                btnDPJP.setVisible(false);                
                 diagnosaakhir.setVisible(true);                
                 btnDiagnosa.setVisible(true);
                 jLabel23.setVisible(true);
@@ -6318,7 +6374,8 @@ public class DlgKamarInap extends javax.swing.JDialog {
                                     cmbJam.getSelectedItem()+":"+cmbMnt.getSelectedItem()+":"+cmbDtk.getSelectedItem()+"','0000-00-00','00:00:00','"+TJmlHari.getText()+"','"+
                                     ttlbiaya.getText()+"','-'","No.Rawat")==true){
                                 Sequel.mengedit("reg_periksa","no_rawat='"+norawat.getText()+"'","status_lanjut='Ranap'");
-                                Sequel.mengedit("kamar","kd_kamar='"+kdkamar.getText()+"'","status='ISI'");                
+                                Sequel.mengedit("kamar","kd_kamar='"+kdkamar.getText()+"'","status='ISI'");
+                                Sequel.menyimpantf("dpjp_ranap","'"+norawat.getText()+"','"+1+"','"+KdDPJP.getText()+"'","No.Rawat");
                                 emptTeks();                            
                             }   
                             break;
@@ -15789,6 +15846,27 @@ private void MnRujukMasukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-
         }
     }//GEN-LAST:event_ppSkriningManagerPelayananPasienBtnPrintActionPerformed
 
+    private void NmDPJPKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NmDPJPKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_NmDPJPKeyPressed
+
+    private void btnDPJPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDPJPActionPerformed
+       akses.setform("DlgKamarInap");
+        pilihan=4;
+        dokter.isCek();
+        dokter.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
+        dokter.setLocationRelativeTo(internalFrame1);
+        dokter.setVisible(true);
+    }//GEN-LAST:event_btnDPJPActionPerformed
+
+    private void btnDPJPKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnDPJPKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnDPJPKeyPressed
+
+    private void NmDPJPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NmDPJPActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_NmDPJPActionPerformed
+
     /**
     * @param args the command line arguments
     */
@@ -15847,6 +15925,7 @@ private void MnRujukMasukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-
     private javax.swing.JDialog DlgCatatan;
     private javax.swing.JDialog DlgSakit2;
     private widget.TextBox JamMasuk;
+    private widget.TextBox KdDPJP;
     private widget.Label LCount;
     private widget.Label LabelCatatan;
     private widget.Label LblStts;
@@ -16035,6 +16114,7 @@ private void MnRujukMasukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-
     private javax.swing.JMenuItem MnUrutTanggalMasukAsc;
     private javax.swing.JMenuItem MnUrutTanggalMasukDesc;
     private widget.TextBox NmBayi;
+    private widget.TextBox NmDPJP;
     private widget.TextBox NoRawatGabung;
     private widget.TextBox NoRmBayi;
     private widget.TextBox NomorSurat;
@@ -16076,6 +16156,7 @@ private void MnRujukMasukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-
     private javax.swing.JDialog WindowRanapGabung;
     private widget.Button btnBangsalCari;
     private widget.Button btnBayar;
+    private widget.Button btnDPJP;
     private widget.Button btnDiagnosa;
     private widget.Button btnDokterCari;
     private widget.Button btnKamar;
@@ -16145,6 +16226,7 @@ private void MnRujukMasukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-
     private widget.Label jLabel45;
     private widget.Label jLabel46;
     private widget.Label jLabel47;
+    private widget.Label jLabel48;
     private widget.Label jLabel5;
     private widget.Label jLabel6;
     private widget.Label jLabel7;
@@ -16313,6 +16395,8 @@ private void MnRujukMasukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-
         TBangsal.setText("");
         diagnosaawal.setText("");
         diagnosaakhir.setText("");
+        KdDPJP.setText("");
+        NmDPJP.setText("");
         date = new Date();
         now=dateFormat.format(date);
         CmbTahun.setSelectedItem(now.substring(0,4));
@@ -16506,7 +16590,11 @@ private void MnRujukMasukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-
                     cmbStatus.setVisible(true);
                     jLabel26.setVisible(true);
                     diagnosaakhir.setText("");
-                    LblStts.setText("Pulang/Check Out");  
+                    LblStts.setText("Pulang/Check Out");
+                    jLabel10.setVisible(false);
+                    KdDPJP.setVisible(false);
+                    NmDPJP.setVisible(false);
+                    btnDPJP.setVisible(false);
                     i=1;
                     btnReg.setEnabled(false);
                     btnKamar.setEnabled(false);
@@ -16527,6 +16615,10 @@ private void MnRujukMasukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-
                     cmbStatus.setVisible(false);
                     jLabel26.setVisible(false);
                     diagnosaakhir.setText("-");
+                    jLabel10.setVisible(true);
+                    KdDPJP.setVisible(true);
+                    NmDPJP.setVisible(true);
+                    btnDPJP.setVisible(true);
                     LblStts.setText("Masuk/Check In");
                     btnReg.setEnabled(true);
                     btnKamar.setEnabled(true);   
