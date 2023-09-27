@@ -12,6 +12,7 @@
 package keuangan;
 
 import fungsi.WarnaTable;
+import fungsi.WarnaTableKamar;
 import fungsi.batasInput;
 import fungsi.koneksiDB;
 import fungsi.sekuel;
@@ -101,7 +102,7 @@ public final class DlgKamar extends javax.swing.JDialog {
                  column.setPreferredWidth(90);
             }
         }
-        tbKamar.setDefaultRenderer(Object.class, new WarnaTable());
+        tbKamar.setDefaultRenderer(Object.class, new WarnaTableKamar());
 
         TKd.setDocument(new batasInput((byte)15).getKata(TKd));
         TTarif.setDocument(new batasInput((byte)16).getOnlyAngka(TTarif));
