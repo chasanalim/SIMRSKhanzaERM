@@ -164,7 +164,7 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
     private RMCari5SOAPTerakhir soapterakhir=new RMCari5SOAPTerakhir(null,false);       
     private PreparedStatement ps,ps2,ps3,ps4,ps5,ps6,ps7,pstindakan,psset_tarif,psrekening;
     private ResultSet rs,rstindakan,rsset_tarif,rsrekening;
-    private int i=0,jmlparsial=0,jml=0,index=0,tinggi=0;
+    private int i=0,jmlparsial=0,jml=0,index=0,tinggi=0,reply;
     private String aktifkanparsial="no",kode_poli="",kd_pj="",poli_ralan="No",cara_bayar_ralan="No",
             Suspen_Piutang_Tindakan_Ralan="",Tindakan_Ralan="",Beban_Jasa_Medik_Dokter_Tindakan_Ralan="",Utang_Jasa_Medik_Dokter_Tindakan_Ralan="",
             Beban_Jasa_Medik_Paramedis_Tindakan_Ralan="",Utang_Jasa_Medik_Paramedis_Tindakan_Ralan="",Beban_KSO_Tindakan_Ralan="",Utang_KSO_Tindakan_Ralan="",
@@ -6593,6 +6593,8 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
                     JOptionPane.showMessageDialog(null,"Maaf, data sudah habis...!!!!");
                     TNoRw.requestFocus();
                 }else{
+                    reply = JOptionPane.showConfirmDialog(rootPane,"Eeiiiiiits, Yakin mau hapus data ini.?? \nData yang sudah terhapus tidak bisa dikembalikan !!","Konfirmasi",JOptionPane.YES_NO_OPTION);
+                    if (reply == JOptionPane.YES_OPTION) {
                     Sequel.AutoComitFalse();
                     sukses=true;
                     ttljmdokter=0;ttljmperawat=0;ttlkso=0;ttlpendapatan=0;ttljasasarana=0;ttlbhp=0;ttlmenejemen=0;
@@ -6658,12 +6660,15 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
                         Sequel.RollBack();
                     }
                     Sequel.AutoComitTrue();
+                    }
                 }   break;
             case 1:
                 if(tabModePr.getRowCount()==0){
                     JOptionPane.showMessageDialog(null,"Maaf, data sudah habis...!!!!");
                     TNoRw.requestFocus();
                 }else{
+                    reply = JOptionPane.showConfirmDialog(rootPane,"Eeiiiiiits, Yakin mau hapus data ini.?? \nData yang sudah terhapus tidak bisa dikembalikan !!","Konfirmasi",JOptionPane.YES_NO_OPTION);
+                    if (reply == JOptionPane.YES_OPTION) {
                     Sequel.AutoComitFalse();
                     sukses=true;
                     ttljmdokter=0;ttljmperawat=0;ttlkso=0;ttlpendapatan=0;ttljasasarana=0;ttlbhp=0;ttlmenejemen=0;
@@ -6729,12 +6734,15 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
                         Sequel.RollBack();
                     }
                     Sequel.AutoComitTrue();
+                    }
                 }   break;
             case 2:
                 if(tabModeDrPr.getRowCount()==0){
                     JOptionPane.showMessageDialog(null,"Maaf, data sudah habis...!!!!");
                     TNoRw.requestFocus();
                 }else{
+                    reply = JOptionPane.showConfirmDialog(rootPane,"Eeiiiiiits, Yakin mau hapus data ini.?? \nData yang sudah terhapus tidak bisa dikembalikan !!","Konfirmasi",JOptionPane.YES_NO_OPTION);
+                    if (reply == JOptionPane.YES_OPTION) {
                     Sequel.AutoComitFalse();
                     sukses=true;
                     ttljmdokter=0;ttljmperawat=0;ttlkso=0;ttlpendapatan=0;ttljasasarana=0;ttlbhp=0;ttlmenejemen=0;
@@ -6806,12 +6814,15 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
                         Sequel.RollBack();
                     }
                     Sequel.AutoComitTrue();
+                    }
                 }   break;
             case 3:
                 if(tabModePemeriksaan.getRowCount()==0){
                     JOptionPane.showMessageDialog(null,"Maaf, data sudah habis...!!!!");
                     TNoRw.requestFocus();
                 }else{
+                    reply = JOptionPane.showConfirmDialog(rootPane,"Eeiiiiiits, Yakin mau hapus data ini.?? \nData yang sudah terhapus tidak bisa dikembalikan !!","Konfirmasi",JOptionPane.YES_NO_OPTION);
+                    if (reply == JOptionPane.YES_OPTION) {
                     for(i=0;i<tbPemeriksaan.getRowCount();i++){
                         if(tbPemeriksaan.getValueAt(i,0).toString().equals("true")){
                             if(akses.getkode().equals("Admin Utama")){
@@ -6830,12 +6841,15 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
                         }
                     }
                     tampilPemeriksaan();
+                    }
                 }   break;
             case 4:
                 if(tabModeObstetri.getRowCount()==0){
                     JOptionPane.showMessageDialog(null,"Maaf, data sudah habis...!!!!");
                     TNoRw.requestFocus();
                 }else{
+                    reply = JOptionPane.showConfirmDialog(rootPane,"Eeiiiiiits, Yakin mau hapus data ini.?? \nData yang sudah terhapus tidak bisa dikembalikan !!","Konfirmasi",JOptionPane.YES_NO_OPTION);
+                    if (reply == JOptionPane.YES_OPTION) {
                     for(i=0;i<tbPemeriksaanObstetri.getRowCount();i++){
                         if(tbPemeriksaanObstetri.getValueAt(i,0).toString().equals("true")){
                             Sequel.queryu("delete from pemeriksaan_obstetri_ralan where no_rawat='"+tbPemeriksaanObstetri.getValueAt(i,1).toString()+
@@ -6844,12 +6858,15 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
                         }
                     }
                     tampilPemeriksaanObstetri();
+                    }
                 }   break;
             case 5:
                 if(tabModeGinekologi.getRowCount()==0){
                     JOptionPane.showMessageDialog(null, "Maaf, data sudah habis...!!!");
                     TNoRw.requestFocus();                    
                 }else {
+                    reply = JOptionPane.showConfirmDialog(rootPane,"Eeiiiiiits, Yakin mau hapus data ini.?? \nData yang sudah terhapus tidak bisa dikembalikan !!","Konfirmasi",JOptionPane.YES_NO_OPTION);
+                    if (reply == JOptionPane.YES_OPTION) {
                     for(i=0;i<tbPemeriksaanGinekologi.getRowCount();i++){
                         if(tbPemeriksaanGinekologi.getValueAt(i,0).toString().equals("true")){
                             Sequel.queryu("delete from pemeriksaan_ginekologi_ralan where no_rawat='"+tbPemeriksaanGinekologi.getValueAt(i,1).toString()+
@@ -6858,17 +6875,23 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
                         }
                     }
                     tampilPemeriksaanGinekologi();
+                    }
                 }   break;
             case 6:
+                reply = JOptionPane.showConfirmDialog(rootPane,"Eeiiiiiits, Yakin mau hapus data ini.?? \nData yang sudah terhapus tidak bisa dikembalikan !!","Konfirmasi",JOptionPane.YES_NO_OPTION);
+                if (reply == JOptionPane.YES_OPTION) {
                 panelDiagnosa1.setRM(TNoRw.getText(),TNoRM.getText(),Valid.SetTgl(DTPCari1.getSelectedItem()+""),Valid.SetTgl(DTPCari2.getSelectedItem()+""),"Ralan",TCari.getText().trim());
                 panelDiagnosa1.hapus();
                 LCount.setText(panelDiagnosa1.getRecord()+"");
+                }
                 break;
             case 7:
                 if(TabModeCatatan.getRowCount()==0){
                     JOptionPane.showMessageDialog(null,"Maaf, data sudah habis...!!!!");
                     TNoRw.requestFocus();
                 }else{
+                    reply = JOptionPane.showConfirmDialog(rootPane,"Eeiiiiiits, Yakin mau hapus data ini.?? \nData yang sudah terhapus tidak bisa dikembalikan !!","Konfirmasi",JOptionPane.YES_NO_OPTION);
+                    if (reply == JOptionPane.YES_OPTION) {
                     for(i=0;i<tbCatatan.getRowCount();i++){
                         if(tbCatatan.getValueAt(i,0).toString().equals("true")){
                             Sequel.queryu("delete from catatan_perawatan where no_rawat='"+tbCatatan.getValueAt(i,1).toString()+
@@ -6878,6 +6901,7 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
                         }
                     }
                     tampilCatatan();
+                    }
                 }   break;
             case 8:
                 if(TabModePRMRJ.getRowCount()==0){
@@ -6885,6 +6909,8 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
                     TNoRw.requestFocus();
                     
                 }else {
+                    reply = JOptionPane.showConfirmDialog(rootPane,"Eeiiiiiits, Yakin mau hapus data ini.?? \nData yang sudah terhapus tidak bisa dikembalikan !!","Konfirmasi",JOptionPane.YES_NO_OPTION);
+                    if (reply == JOptionPane.YES_OPTION) {
                     for(i=0;i<tbPRMRJ.getRowCount();i++){
                         if(tbPRMRJ.getValueAt(i,0).toString().equals("true")){
                             Sequel.queryu("delete from prmrj where no_rawat='"+tbPRMRJ.getValueAt(i,1).toString()+
@@ -6893,6 +6919,7 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
                         }
                     }
                     tampilPRMRJ();
+                    }
                 }   break;
             case 9:
                 if(tabModePemeriksaanSbar.getRowCount()==0){
@@ -6900,6 +6927,8 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
                     TNoRw.requestFocus();
                     
                 }else {
+                    reply = JOptionPane.showConfirmDialog(rootPane,"Eeiiiiiits, Yakin mau hapus data ini.?? \nData yang sudah terhapus tidak bisa dikembalikan !!","Konfirmasi",JOptionPane.YES_NO_OPTION);
+                    if (reply == JOptionPane.YES_OPTION) {
                     for(i=0;i<tbPemeriksaanSbar.getRowCount();i++){
                         if(tbPemeriksaanSbar.getValueAt(i,0).toString().equals("true")){
                             Sequel.queryu("delete from pemeriksaan_ranap_sbar where no_rawat='"+tbPemeriksaanSbar.getValueAt(i,1).toString()+
@@ -6908,6 +6937,7 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
                         }
                     }
                     tampilPemeriksaanSbar();
+                    }
                 }   break;
             default:
                 break;
