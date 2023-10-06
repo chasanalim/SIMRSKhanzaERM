@@ -6346,7 +6346,7 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
                                     JOptionPane.showMessageDialog(null,"Hanya bisa disimpan oleh dokter/petugas yang bersangkutan..!!");
                                 }
                                 
-                                Sequel.queryu("delete from antripoli where kd_dokter='"+KdPeg.getText()+"'");
+//                                Sequel.queryu("delete from antripoli where kd_dokter='"+KdPeg.getText()+"'");
                             }
                         }
                     }
