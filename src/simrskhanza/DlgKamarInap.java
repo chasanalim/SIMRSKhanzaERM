@@ -5937,6 +5937,7 @@ public class DlgKamarInap extends javax.swing.JDialog {
         jLabel43.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jLabel43.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel43.setText("BPJS");
+        jLabel43.setToolTipText("");
         jLabel43.setName("jLabel43"); // NOI18N
         jLabel43.setOpaque(true);
         jLabel43.setPreferredSize(new java.awt.Dimension(80, 23));
@@ -5946,7 +5947,7 @@ public class DlgKamarInap extends javax.swing.JDialog {
         jLabel44.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jLabel44.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel44.setText("BPJS NAIK KELAS");
-        jLabel44.setToolTipText("Warna hanya akan muncul Jika SEP naik kelas  tervcetak melalui Bridging Khanza");
+        jLabel44.setToolTipText("Warna hanya akan muncul Jika SEP naik kelas  terbit melalui Bridging Khanza");
         jLabel44.setName("jLabel44"); // NOI18N
         jLabel44.setOpaque(true);
         jLabel44.setPreferredSize(new java.awt.Dimension(100, 23));
@@ -5974,7 +5975,7 @@ public class DlgKamarInap extends javax.swing.JDialog {
         jLabel47.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jLabel47.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel47.setText("TITIPAN");
-        jLabel47.setToolTipText("Jika SEP Terbit -> Kelas Rawat tidak sesuai dengan Kelas Bed Kamar");
+        jLabel47.setToolTipText("Warna akan muncul Jika SEP terbit dari khanza dan  Kelas Rawat tidak sesuai dengan Kelas Bed Kamar");
         jLabel47.setName("jLabel47"); // NOI18N
         jLabel47.setOpaque(true);
         jLabel47.setPreferredSize(new java.awt.Dimension(90, 23));
