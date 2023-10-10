@@ -12,6 +12,7 @@
 
 package simrskhanza;
 
+
 import bridging.AkunRekeningBankJabar;
 import bridging.AkunRekeningBankJateng;
 import bridging.AkunRekeningBankMandiri;
@@ -624,6 +625,7 @@ import ipsrs.IPSRSRingkasanPengeluaranBarangNonMedis;
 import ipsrs.IPSRSRingkasanReturBeliBarangNonMedis;
 import ipsrs.IPSRSRiwayatBarang;
 import ipsrs.IPSRSVerifikasiPenerimaan;
+import java.awt.event.ActionListener;
 import java.net.InetAddress;
 import kepegawaian.DlgAuditBundleIADP;
 import kepegawaian.DlgAuditBundleIDO;
@@ -1005,6 +1007,7 @@ public class frmUtama extends javax.swing.JFrame {
     private String coder_nik="",pilihpage="",judulform="",tampilkantni=Sequel.cariIsi("select set_tni_polri.tampilkan_tni_polri from set_tni_polri"),
             AKTIFKANTRACKSQL=koneksiDB.AKTIFKANTRACKSQL();
     
+ 
     private frmUtama() {
         super();
         initComponents();
@@ -8038,6 +8041,7 @@ public class frmUtama extends javax.swing.JFrame {
             case "Log In":
                 DlgLogin.setVisible(true);
                 edAdmin.requestFocus();
+
                 break;
         }
     }//GEN-LAST:event_BtnLogActionPerformed
