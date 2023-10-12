@@ -6521,26 +6521,32 @@ public class DlgKamarInap extends javax.swing.JDialog {
             try {
                 getData();
             } catch (java.lang.NullPointerException e) {
-            }
-            if(evt.getClickCount()==1){
-//                norawatdipilih=tbKamIn.getValueAt(tbKamIn.getSelectedRow(),0).toString();
-//                if(norawatdipilih.equals("")){
-//                i=tbKamIn.getSelectedColumn();
-//                    if(i==2){
-//                        if(validasicatatan.equals("Yes")){
-//                            this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
-//                             LabelCatatan.setText(Sequel.cariIsi("select catatan_pasien.catatan from catatan_pasien where catatan_pasien.no_rkm_medis=?",TNoRMCari.getText()));
-//                            if(!LabelCatatan.getText().equals("")){
-////                                DlgCatatan.setLocationRelativeTo(Scroll);
-//                                DlgCatatan.setLocation(200,100);
-//                                DlgCatatan.setVisible(true);
-//                            }else{
-//                                DlgCatatan.setVisible(false);
-//                            }                            
-//                            this.setCursor(Cursor.getDefaultCursor());
-//                        }  
-//                    }      
-//                }
+            }if(evt.getClickCount()==1){
+                if(gabungkan.equals("gabung")){
+                    if(norawat.getText().equals(norawatgabung)){
+                        JOptionPane.showMessageDialog(null,"Gabungkan ke ranap ibu gagal karena no perawatan ibu dan bayi yang dipilih sama..!!");
+                        gabungkan="";
+                        norawatgabung="";
+                    }else{
+                        int reply = JOptionPane.showConfirmDialog(rootPane,"Eeiiiiiits, udah bener belum data yang mau digabung..??","Konfirmasi",JOptionPane.YES_NO_OPTION);
+                        if (reply == JOptionPane.YES_OPTION) {
+                            if(Sequel.menyimpantf("ranap_gabung","?,?","Data Ranap Gabung",2,new String[]{
+                                    norawat.getText(),norawatgabung
+                                })==true){
+                                Sequel.mengedit("kamar_inap","no_rawat='"+norawatgabung+"'","stts_pulang='Pindah Kamar'");
+                                Sequel.mengedit("kamar","kd_kamar='"+kamaryangdigabung+"'","status='KOSONG'");                
+                                Sequel.mengedit("kamar_inap","no_rawat='"+norawatgabung+"'","no_rawat='"+norawat.getText()+"'"); 
+                                Sequel.mengedit("reg_periksa","no_rawat='"+norawatgabung+"'","status_lanjut='Ranap'");                
+                                gabungkan="";
+                                norawatgabung="";
+                                tampil();
+                            }
+                        }else{
+                            gabungkan="";
+                            norawatgabung="";
+                        }
+                    }
+                }
             }
             if(evt.getClickCount()==2){
                 i=tbKamIn.getSelectedColumn();
@@ -8652,7 +8658,7 @@ private void MnRujukMasukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-
     }//GEN-LAST:event_btnPasienRanapGabungActionPerformed
 
     private void BtnHapusGabungActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnHapusGabungActionPerformed
-        Sequel.mengedit("reg_periksa","no_rawat='"+Sequel.cariIsi("select no_rawat2 from ranap_gabung where no_rawat=?",norawat.getText())+"'","status_lanjut='Ralan',status_bayar='Belum bayar'"); 
+        Sequel.mengedit("reg_periksa","no_rawat='"+Sequel.cariIsi("select ranap_gabung.no_rawat2 from ranap_gabung where ranap_gabung.no_rawat=?",norawat.getText())+"'","status_lanjut='Ralan',status_bayar='Belum bayar'"); 
         Sequel.meghapus("ranap_gabung","no_rawat",norawat.getText());
         NoRawatGabung.setText("");
         NoRmBayi.setText("");
