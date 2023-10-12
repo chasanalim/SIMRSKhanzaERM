@@ -6457,7 +6457,7 @@ public final class DlgKasirRalan extends javax.swing.JDialog {
         jLabel45.setText("Belum Datang");
         jLabel45.setName("jLabel45"); // NOI18N
         jLabel45.setOpaque(true);
-        jLabel45.setPreferredSize(new java.awt.Dimension(80, 23));
+        jLabel45.setPreferredSize(new java.awt.Dimension(90, 23));
         panelGlass6.add(jLabel45);
 
         jLabel43.setBackground(new java.awt.Color(160, 230, 180));
@@ -6467,7 +6467,7 @@ public final class DlgKasirRalan extends javax.swing.JDialog {
         jLabel43.setToolTipText("");
         jLabel43.setName("jLabel43"); // NOI18N
         jLabel43.setOpaque(true);
-        jLabel43.setPreferredSize(new java.awt.Dimension(80, 23));
+        jLabel43.setPreferredSize(new java.awt.Dimension(90, 23));
         panelGlass6.add(jLabel43);
 
         jLabel44.setBackground(new java.awt.Color(250, 155, 200));
@@ -6477,19 +6477,19 @@ public final class DlgKasirRalan extends javax.swing.JDialog {
         jLabel44.setToolTipText("Warna hanya akan muncul Jika SEP naik kelas  terbit melalui Bridging Khanza");
         jLabel44.setName("jLabel44"); // NOI18N
         jLabel44.setOpaque(true);
-        jLabel44.setPreferredSize(new java.awt.Dimension(120, 23));
+        jLabel44.setPreferredSize(new java.awt.Dimension(130, 23));
         panelGlass6.add(jLabel44);
 
-        jLabel46.setBackground(new java.awt.Color(224, 252, 130));
+        jLabel46.setBackground(new java.awt.Color(220, 115, 215));
         jLabel46.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jLabel46.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel46.setText("Selesai Pemeriksaan");
         jLabel46.setName("jLabel46"); // NOI18N
         jLabel46.setOpaque(true);
-        jLabel46.setPreferredSize(new java.awt.Dimension(90, 23));
+        jLabel46.setPreferredSize(new java.awt.Dimension(120, 23));
         panelGlass6.add(jLabel46);
 
-        jLabel47.setBackground(new java.awt.Color(255, 200, 100));
+        jLabel47.setBackground(new java.awt.Color(130, 215, 250));
         jLabel47.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jLabel47.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel47.setText("Sudah Bayar");
@@ -6499,7 +6499,7 @@ public final class DlgKasirRalan extends javax.swing.JDialog {
         jLabel47.setPreferredSize(new java.awt.Dimension(90, 23));
         panelGlass6.add(jLabel47);
 
-        jLabel48.setBackground(new java.awt.Color(255, 200, 100));
+        jLabel48.setBackground(new java.awt.Color(155, 155, 155));
         jLabel48.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jLabel48.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel48.setText("Batal Periksa");
