@@ -6454,10 +6454,10 @@ public final class DlgKasirRalan extends javax.swing.JDialog {
         jLabel45.setBackground(new java.awt.Color(255, 255, 255));
         jLabel45.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jLabel45.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel45.setText("Belum Datang");
+        jLabel45.setText("Belum Cetak SEP");
         jLabel45.setName("jLabel45"); // NOI18N
         jLabel45.setOpaque(true);
-        jLabel45.setPreferredSize(new java.awt.Dimension(90, 23));
+        jLabel45.setPreferredSize(new java.awt.Dimension(95, 23));
         panelGlass6.add(jLabel45);
 
         jLabel43.setBackground(new java.awt.Color(160, 230, 180));
