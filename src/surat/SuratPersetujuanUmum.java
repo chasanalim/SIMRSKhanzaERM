@@ -1147,6 +1147,10 @@ public final class SuratPersetujuanUmum extends javax.swing.JDialog {
                 Sequel.queryu("delete from antripersetujuanumum");
                 Sequel.queryu("insert into antripersetujuanumum values('"+tbObat.getValueAt(tbObat.getSelectedRow(),0).toString()+"','"+tbObat.getValueAt(tbObat.getSelectedRow(),1).toString()+"')");
                 Sequel.queryu("delete from surat_persetujuan_umum_pembuat_pernyataan where no_surat='"+tbObat.getValueAt(tbObat.getSelectedRow(),0).toString()+"'");
+                this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+                Valid.panggilUrlGC("persetujuanmedis");
+                this.setCursor(Cursor.getDefaultCursor());
+            
             }else{
                 JOptionPane.showMessageDialog(rootPane,"Silahkan anda pilih No.Pernyataan terlebih dahulu..!!");
             }
