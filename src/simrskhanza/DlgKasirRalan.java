@@ -995,16 +995,9 @@ public final class DlgKasirRalan extends javax.swing.JDialog {
         jPanel2 = new javax.swing.JPanel();
         panelGlass6 = new widget.panelisi();
         BtnPrint = new widget.Button();
+        BtnKeluar = new widget.Button();
         jLabel10 = new widget.Label();
         LCount = new widget.Label();
-        BtnKeluar = new widget.Button();
-        jLabel42 = new widget.Label();
-        jLabel45 = new widget.Label();
-        jLabel43 = new widget.Label();
-        jLabel44 = new widget.Label();
-        jLabel46 = new widget.Label();
-        jLabel47 = new widget.Label();
-        jLabel48 = new widget.Label();
         panelGlass7 = new widget.panelisi();
         jLabel14 = new widget.Label();
         CrPtg = new widget.TextBox();
@@ -1039,6 +1032,13 @@ public final class DlgKasirRalan extends javax.swing.JDialog {
         TNoRMCari = new widget.TextBox();
         jLabel8 = new widget.Label();
         TPasienCari = new widget.TextBox();
+        jLabel42 = new widget.Label();
+        jLabel45 = new widget.Label();
+        jLabel43 = new widget.Label();
+        jLabel44 = new widget.Label();
+        jLabel46 = new widget.Label();
+        jLabel47 = new widget.Label();
+        jLabel48 = new widget.Label();
 
         jPopupMenu1.setForeground(new java.awt.Color(50, 50, 50));
         jPopupMenu1.setName("jPopupMenu1"); // NOI18N
@@ -6224,7 +6224,7 @@ public final class DlgKasirRalan extends javax.swing.JDialog {
         panelBiasa2.setLayout(null);
 
         TglSakit1.setForeground(new java.awt.Color(50, 70, 50));
-        TglSakit1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "12-10-2023" }));
+        TglSakit1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "13-10-2023" }));
         TglSakit1.setDisplayFormat("dd-MM-yyyy");
         TglSakit1.setName("TglSakit1"); // NOI18N
         TglSakit1.setOpaque(false);
@@ -6271,7 +6271,7 @@ public final class DlgKasirRalan extends javax.swing.JDialog {
         jLabel32.setBounds(176, 10, 20, 23);
 
         TglSakit2.setForeground(new java.awt.Color(50, 70, 50));
-        TglSakit2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "12-10-2023" }));
+        TglSakit2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "13-10-2023" }));
         TglSakit2.setDisplayFormat("dd-MM-yyyy");
         TglSakit2.setName("TglSakit2"); // NOI18N
         TglSakit2.setOpaque(false);
@@ -6417,17 +6417,6 @@ public final class DlgKasirRalan extends javax.swing.JDialog {
         });
         panelGlass6.add(BtnPrint);
 
-        jLabel10.setText("Record :");
-        jLabel10.setName("jLabel10"); // NOI18N
-        jLabel10.setPreferredSize(new java.awt.Dimension(100, 30));
-        panelGlass6.add(jLabel10);
-
-        LCount.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        LCount.setText("0");
-        LCount.setName("LCount"); // NOI18N
-        LCount.setPreferredSize(new java.awt.Dimension(100, 30));
-        panelGlass6.add(LCount);
-
         BtnKeluar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/exit.png"))); // NOI18N
         BtnKeluar.setMnemonic('K');
         BtnKeluar.setText("Keluar");
@@ -6446,68 +6435,16 @@ public final class DlgKasirRalan extends javax.swing.JDialog {
         });
         panelGlass6.add(BtnKeluar);
 
-        jLabel42.setText("Keterangan Warna :");
-        jLabel42.setName("jLabel42"); // NOI18N
-        jLabel42.setPreferredSize(new java.awt.Dimension(120, 23));
-        panelGlass6.add(jLabel42);
+        jLabel10.setText("Record :");
+        jLabel10.setName("jLabel10"); // NOI18N
+        jLabel10.setPreferredSize(new java.awt.Dimension(100, 30));
+        panelGlass6.add(jLabel10);
 
-        jLabel45.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel45.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jLabel45.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel45.setText("Belum Cetak SEP");
-        jLabel45.setName("jLabel45"); // NOI18N
-        jLabel45.setOpaque(true);
-        jLabel45.setPreferredSize(new java.awt.Dimension(95, 23));
-        panelGlass6.add(jLabel45);
-
-        jLabel43.setBackground(new java.awt.Color(160, 230, 180));
-        jLabel43.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jLabel43.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel43.setText("SEP Tercetak");
-        jLabel43.setToolTipText("");
-        jLabel43.setName("jLabel43"); // NOI18N
-        jLabel43.setOpaque(true);
-        jLabel43.setPreferredSize(new java.awt.Dimension(90, 23));
-        panelGlass6.add(jLabel43);
-
-        jLabel44.setBackground(new java.awt.Color(250, 155, 200));
-        jLabel44.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jLabel44.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel44.setText("Panggilan Masuk Klinik");
-        jLabel44.setToolTipText("Warna hanya akan muncul Jika SEP naik kelas  terbit melalui Bridging Khanza");
-        jLabel44.setName("jLabel44"); // NOI18N
-        jLabel44.setOpaque(true);
-        jLabel44.setPreferredSize(new java.awt.Dimension(130, 23));
-        panelGlass6.add(jLabel44);
-
-        jLabel46.setBackground(new java.awt.Color(220, 115, 215));
-        jLabel46.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jLabel46.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel46.setText("Selesai Pemeriksaan");
-        jLabel46.setName("jLabel46"); // NOI18N
-        jLabel46.setOpaque(true);
-        jLabel46.setPreferredSize(new java.awt.Dimension(120, 23));
-        panelGlass6.add(jLabel46);
-
-        jLabel47.setBackground(new java.awt.Color(130, 215, 250));
-        jLabel47.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jLabel47.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel47.setText("Sudah Bayar");
-        jLabel47.setToolTipText("Warna akan muncul Jika SEP terbit dari khanza dan  Kelas Rawat tidak sesuai dengan Kelas Bed Kamar");
-        jLabel47.setName("jLabel47"); // NOI18N
-        jLabel47.setOpaque(true);
-        jLabel47.setPreferredSize(new java.awt.Dimension(90, 23));
-        panelGlass6.add(jLabel47);
-
-        jLabel48.setBackground(new java.awt.Color(155, 155, 155));
-        jLabel48.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jLabel48.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel48.setText("Batal Periksa");
-        jLabel48.setToolTipText("Warna akan muncul Jika SEP terbit dari khanza dan  Kelas Rawat tidak sesuai dengan Kelas Bed Kamar");
-        jLabel48.setName("jLabel48"); // NOI18N
-        jLabel48.setOpaque(true);
-        jLabel48.setPreferredSize(new java.awt.Dimension(90, 23));
-        panelGlass6.add(jLabel48);
+        LCount.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        LCount.setText("0");
+        LCount.setName("LCount"); // NOI18N
+        LCount.setPreferredSize(new java.awt.Dimension(100, 30));
+        panelGlass6.add(LCount);
 
         jPanel2.add(panelGlass6, java.awt.BorderLayout.PAGE_END);
 
@@ -6618,7 +6555,7 @@ public final class DlgKasirRalan extends javax.swing.JDialog {
         jLabel15.setPreferredSize(new java.awt.Dimension(70, 23));
         panelGlass8.add(jLabel15);
 
-        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "12-10-2023" }));
+        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "13-10-2023" }));
         DTPCari1.setDisplayFormat("dd-MM-yyyy");
         DTPCari1.setName("DTPCari1"); // NOI18N
         DTPCari1.setOpaque(false);
@@ -6631,7 +6568,7 @@ public final class DlgKasirRalan extends javax.swing.JDialog {
         jLabel17.setPreferredSize(new java.awt.Dimension(23, 23));
         panelGlass8.add(jLabel17);
 
-        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "12-10-2023" }));
+        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "13-10-2023" }));
         DTPCari2.setDisplayFormat("dd-MM-yyyy");
         DTPCari2.setName("DTPCari2"); // NOI18N
         DTPCari2.setOpaque(false);
@@ -6727,13 +6664,13 @@ public final class DlgKasirRalan extends javax.swing.JDialog {
 
         jLabel4.setText("No. Rawat :");
         jLabel4.setName("jLabel4"); // NOI18N
-        jLabel4.setPreferredSize(new java.awt.Dimension(70, 23));
+        jLabel4.setPreferredSize(new java.awt.Dimension(65, 23));
         panelGlass9.add(jLabel4);
 
         TNoRwCari.setEditable(false);
         TNoRwCari.setHighlighter(null);
         TNoRwCari.setName("TNoRwCari"); // NOI18N
-        TNoRwCari.setPreferredSize(new java.awt.Dimension(140, 23));
+        TNoRwCari.setPreferredSize(new java.awt.Dimension(120, 23));
         TNoRwCari.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 TNoRwCariMouseClicked(evt);
@@ -6741,15 +6678,15 @@ public final class DlgKasirRalan extends javax.swing.JDialog {
         });
         panelGlass9.add(TNoRwCari);
 
-        jLabel5.setText("No. Reg. :");
+        jLabel5.setText("No.Reg. :");
         jLabel5.setName("jLabel5"); // NOI18N
-        jLabel5.setPreferredSize(new java.awt.Dimension(70, 23));
+        jLabel5.setPreferredSize(new java.awt.Dimension(55, 23));
         panelGlass9.add(jLabel5);
 
         TNoReg.setEditable(false);
         TNoReg.setHighlighter(null);
         TNoReg.setName("TNoReg"); // NOI18N
-        TNoReg.setPreferredSize(new java.awt.Dimension(50, 23));
+        TNoReg.setPreferredSize(new java.awt.Dimension(40, 23));
         TNoReg.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 TNoRegKeyPressed(evt);
@@ -6759,25 +6696,90 @@ public final class DlgKasirRalan extends javax.swing.JDialog {
 
         jLabel7.setText("No.R.M. :");
         jLabel7.setName("jLabel7"); // NOI18N
-        jLabel7.setPreferredSize(new java.awt.Dimension(65, 23));
+        jLabel7.setPreferredSize(new java.awt.Dimension(55, 23));
         panelGlass9.add(jLabel7);
 
         TNoRMCari.setEditable(false);
         TNoRMCari.setHighlighter(null);
         TNoRMCari.setName("TNoRMCari"); // NOI18N
-        TNoRMCari.setPreferredSize(new java.awt.Dimension(90, 23));
+        TNoRMCari.setPreferredSize(new java.awt.Dimension(55, 23));
         panelGlass9.add(TNoRMCari);
 
         jLabel8.setText("Nama Pasien :");
         jLabel8.setName("jLabel8"); // NOI18N
-        jLabel8.setPreferredSize(new java.awt.Dimension(85, 23));
+        jLabel8.setPreferredSize(new java.awt.Dimension(75, 23));
         panelGlass9.add(jLabel8);
 
         TPasienCari.setEditable(false);
         TPasienCari.setHighlighter(null);
         TPasienCari.setName("TPasienCari"); // NOI18N
-        TPasienCari.setPreferredSize(new java.awt.Dimension(250, 23));
+        TPasienCari.setPreferredSize(new java.awt.Dimension(190, 23));
         panelGlass9.add(TPasienCari);
+
+        jLabel42.setText("Ket.Warna :");
+        jLabel42.setName("jLabel42"); // NOI18N
+        jLabel42.setPreferredSize(new java.awt.Dimension(70, 23));
+        panelGlass9.add(jLabel42);
+
+        jLabel45.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel45.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jLabel45.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel45.setText("Belum Cetak SEP");
+        jLabel45.setName("jLabel45"); // NOI18N
+        jLabel45.setOpaque(true);
+        jLabel45.setPreferredSize(new java.awt.Dimension(92, 23));
+        panelGlass9.add(jLabel45);
+
+        jLabel43.setBackground(new java.awt.Color(120, 250, 140));
+        jLabel43.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jLabel43.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel43.setText("SEP Tercetak");
+        jLabel43.setToolTipText("");
+        jLabel43.setName("jLabel43"); // NOI18N
+        jLabel43.setOpaque(true);
+        jLabel43.setPreferredSize(new java.awt.Dimension(80, 23));
+        panelGlass9.add(jLabel43);
+
+        jLabel44.setBackground(new java.awt.Color(250, 155, 200));
+        jLabel44.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jLabel44.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel44.setText("Panggil Masuk");
+        jLabel44.setToolTipText("Warna hanya akan muncul Jika SEP naik kelas  terbit melalui Bridging Khanza");
+        jLabel44.setName("jLabel44"); // NOI18N
+        jLabel44.setOpaque(true);
+        jLabel44.setPreferredSize(new java.awt.Dimension(80, 23));
+        panelGlass9.add(jLabel44);
+
+        jLabel46.setBackground(new java.awt.Color(220, 115, 215));
+        jLabel46.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jLabel46.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel46.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel46.setText("Selesai Periksa");
+        jLabel46.setName("jLabel46"); // NOI18N
+        jLabel46.setOpaque(true);
+        jLabel46.setPreferredSize(new java.awt.Dimension(80, 23));
+        panelGlass9.add(jLabel46);
+
+        jLabel47.setBackground(new java.awt.Color(130, 215, 250));
+        jLabel47.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jLabel47.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel47.setText("Sudah Bayar");
+        jLabel47.setToolTipText("Warna akan muncul Jika SEP terbit dari khanza dan  Kelas Rawat tidak sesuai dengan Kelas Bed Kamar");
+        jLabel47.setName("jLabel47"); // NOI18N
+        jLabel47.setOpaque(true);
+        jLabel47.setPreferredSize(new java.awt.Dimension(75, 23));
+        panelGlass9.add(jLabel47);
+
+        jLabel48.setBackground(new java.awt.Color(155, 155, 155));
+        jLabel48.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jLabel48.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel48.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel48.setText("Batal");
+        jLabel48.setToolTipText("Warna akan muncul Jika SEP terbit dari khanza dan  Kelas Rawat tidak sesuai dengan Kelas Bed Kamar");
+        jLabel48.setName("jLabel48"); // NOI18N
+        jLabel48.setOpaque(true);
+        jLabel48.setPreferredSize(new java.awt.Dimension(45, 23));
+        panelGlass9.add(jLabel48);
 
         internalFrame1.add(panelGlass9, java.awt.BorderLayout.PAGE_START);
 
