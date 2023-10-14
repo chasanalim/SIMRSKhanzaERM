@@ -998,6 +998,7 @@ public final class DlgKasirRalan extends javax.swing.JDialog {
         BtnKeluar = new widget.Button();
         jLabel10 = new widget.Label();
         LCount = new widget.Label();
+        ASC = new widget.Label();
         panelGlass7 = new widget.panelisi();
         jLabel14 = new widget.Label();
         CrPtg = new widget.TextBox();
@@ -6224,7 +6225,7 @@ public final class DlgKasirRalan extends javax.swing.JDialog {
         panelBiasa2.setLayout(null);
 
         TglSakit1.setForeground(new java.awt.Color(50, 70, 50));
-        TglSakit1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "13-10-2023" }));
+        TglSakit1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "14-10-2023" }));
         TglSakit1.setDisplayFormat("dd-MM-yyyy");
         TglSakit1.setName("TglSakit1"); // NOI18N
         TglSakit1.setOpaque(false);
@@ -6271,7 +6272,7 @@ public final class DlgKasirRalan extends javax.swing.JDialog {
         jLabel32.setBounds(176, 10, 20, 23);
 
         TglSakit2.setForeground(new java.awt.Color(50, 70, 50));
-        TglSakit2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "13-10-2023" }));
+        TglSakit2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "14-10-2023" }));
         TglSakit2.setDisplayFormat("dd-MM-yyyy");
         TglSakit2.setName("TglSakit2"); // NOI18N
         TglSakit2.setOpaque(false);
@@ -6446,6 +6447,11 @@ public final class DlgKasirRalan extends javax.swing.JDialog {
         LCount.setPreferredSize(new java.awt.Dimension(100, 30));
         panelGlass6.add(LCount);
 
+        ASC.setText("Untuk Login Dokter: Secara Default Pasien urut bedasarkan No Registrasi / No Antrian secara ASC");
+        ASC.setName("ASC"); // NOI18N
+        ASC.setPreferredSize(new java.awt.Dimension(500, 30));
+        panelGlass6.add(ASC);
+
         jPanel2.add(panelGlass6, java.awt.BorderLayout.PAGE_END);
 
         panelGlass7.setName("panelGlass7"); // NOI18N
@@ -6555,7 +6561,7 @@ public final class DlgKasirRalan extends javax.swing.JDialog {
         jLabel15.setPreferredSize(new java.awt.Dimension(70, 23));
         panelGlass8.add(jLabel15);
 
-        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "13-10-2023" }));
+        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "14-10-2023" }));
         DTPCari1.setDisplayFormat("dd-MM-yyyy");
         DTPCari1.setName("DTPCari1"); // NOI18N
         DTPCari1.setOpaque(false);
@@ -6568,7 +6574,7 @@ public final class DlgKasirRalan extends javax.swing.JDialog {
         jLabel17.setPreferredSize(new java.awt.Dimension(23, 23));
         panelGlass8.add(jLabel17);
 
-        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "13-10-2023" }));
+        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "14-10-2023" }));
         DTPCari2.setDisplayFormat("dd-MM-yyyy");
         DTPCari2.setName("DTPCari2"); // NOI18N
         DTPCari2.setOpaque(false);
@@ -6713,7 +6719,7 @@ public final class DlgKasirRalan extends javax.swing.JDialog {
         TPasienCari.setEditable(false);
         TPasienCari.setHighlighter(null);
         TPasienCari.setName("TPasienCari"); // NOI18N
-        TPasienCari.setPreferredSize(new java.awt.Dimension(190, 23));
+        TPasienCari.setPreferredSize(new java.awt.Dimension(200, 23));
         panelGlass9.add(TPasienCari);
 
         jLabel42.setText("Ket.Warna :");
@@ -6743,11 +6749,11 @@ public final class DlgKasirRalan extends javax.swing.JDialog {
         jLabel44.setBackground(new java.awt.Color(250, 155, 200));
         jLabel44.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jLabel44.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel44.setText("Panggil Masuk");
+        jLabel44.setText("Panggil Masuk Poli");
         jLabel44.setToolTipText("Warna hanya akan muncul Jika SEP naik kelas  terbit melalui Bridging Khanza");
         jLabel44.setName("jLabel44"); // NOI18N
         jLabel44.setOpaque(true);
-        jLabel44.setPreferredSize(new java.awt.Dimension(80, 23));
+        jLabel44.setPreferredSize(new java.awt.Dimension(105, 23));
         panelGlass9.add(jLabel44);
 
         jLabel46.setBackground(new java.awt.Color(220, 115, 215));
@@ -6757,7 +6763,7 @@ public final class DlgKasirRalan extends javax.swing.JDialog {
         jLabel46.setText("Selesai Periksa");
         jLabel46.setName("jLabel46"); // NOI18N
         jLabel46.setOpaque(true);
-        jLabel46.setPreferredSize(new java.awt.Dimension(80, 23));
+        jLabel46.setPreferredSize(new java.awt.Dimension(90, 23));
         panelGlass9.add(jLabel46);
 
         jLabel47.setBackground(new java.awt.Color(130, 215, 250));
@@ -6774,11 +6780,11 @@ public final class DlgKasirRalan extends javax.swing.JDialog {
         jLabel48.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jLabel48.setForeground(new java.awt.Color(255, 255, 255));
         jLabel48.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel48.setText("Batal");
+        jLabel48.setText("Batal Periksa");
         jLabel48.setToolTipText("Warna akan muncul Jika SEP terbit dari khanza dan  Kelas Rawat tidak sesuai dengan Kelas Bed Kamar");
         jLabel48.setName("jLabel48"); // NOI18N
         jLabel48.setOpaque(true);
-        jLabel48.setPreferredSize(new java.awt.Dimension(45, 23));
+        jLabel48.setPreferredSize(new java.awt.Dimension(80, 23));
         panelGlass9.add(jLabel48);
 
         internalFrame1.add(panelGlass9, java.awt.BorderLayout.PAGE_START);
@@ -13856,6 +13862,7 @@ private void MnDataPemberianObatActionPerformed(java.awt.event.ActionEvent evt) 
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private widget.Label ASC;
     private widget.Button BtnAll;
     private widget.Button BtnBatal;
     private widget.Button BtnCari;
@@ -14630,10 +14637,14 @@ private void MnDataPemberianObatActionPerformed(java.awt.event.ActionEvent evt) 
                 CrPtg.setText("");
                 BtnSeek3.setEnabled(true);
                 CrPtg.setEditable(true);
+                ASC.setVisible(false);
             }else{
                 CrPtg.setText(namadokter);
                 BtnSeek3.setEnabled(false);
                 CrPtg.setEditable(false);
+//                order="reg_periksa.no_reg asc";
+//                tampilkasir();
+                ASC.setVisible(true);
             }                
         }else{
             namadokter=Sequel.cariIsi("select dokter.nm_dokter from dokter where dokter.kd_dokter=?",akses.getkode());
@@ -14641,10 +14652,14 @@ private void MnDataPemberianObatActionPerformed(java.awt.event.ActionEvent evt) 
                 CrPtg.setText(namadokter);
                 BtnSeek3.setEnabled(false);
                 CrPtg.setEditable(false);
+                order="reg_periksa.no_reg asc";
+                tampilkasir();
+                ASC.setVisible(true);
             }else{
                 CrPtg.setText("");
                 BtnSeek3.setEnabled(true);
                 CrPtg.setEditable(true);
+                ASC.setVisible(false);
             }
         }
         
