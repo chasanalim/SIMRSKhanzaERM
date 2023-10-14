@@ -6447,9 +6447,10 @@ public final class DlgKasirRalan extends javax.swing.JDialog {
         LCount.setPreferredSize(new java.awt.Dimension(100, 30));
         panelGlass6.add(LCount);
 
-        ASC.setText("Untuk Login Dokter: Secara Default Pasien urut bedasarkan No Registrasi / No Antrian secara ASC");
+        ASC.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        ASC.setText("Untuk Login Akun Dokter: Secara Default Pasien urut bedasarkan No Registrasi / No Antrian secara ASC");
         ASC.setName("ASC"); // NOI18N
-        ASC.setPreferredSize(new java.awt.Dimension(500, 30));
+        ASC.setPreferredSize(new java.awt.Dimension(550, 30));
         panelGlass6.add(ASC);
 
         jPanel2.add(panelGlass6, java.awt.BorderLayout.PAGE_END);
