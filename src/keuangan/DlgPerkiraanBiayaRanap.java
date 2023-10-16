@@ -11,6 +11,7 @@
 
 package keuangan;
 
+import fungsi.WarnaPerkiraanRanap;
 import fungsi.WarnaTable;
 import fungsi.batasInput;
 import fungsi.koneksiDB;
@@ -82,7 +83,13 @@ public final class DlgPerkiraanBiayaRanap extends javax.swing.JDialog {
                 "Resep Pulang","Laborat","Radiologi","Potongan","Tambahan","Kamar","Operasi","Harian","Total","Deposit","Kekurangan",
                 "Diagnosa Awal","ICD 10","Perkiraan Tarif","Limit"
             }){
-                @Override public boolean isCellEditable(int rowIndex, int colIndex){return false;}
+                @Override public boolean isCellEditable(int rowIndex, int colIndex){
+                    boolean a = false;
+                    if (colIndex==22) {
+                    a=true;
+                }
+                return a;
+                }
         };
         tbBangsal.setModel(tabMode);
         //tbBangsal.setDefaultRenderer(Object.class, new WarnaTable(jPanel2.getBackground(),tbBangsal.getBackground()));
@@ -117,7 +124,7 @@ public final class DlgPerkiraanBiayaRanap extends javax.swing.JDialog {
                 column.setPreferredWidth(75);
             }
         }
-        tbBangsal.setDefaultRenderer(Object.class, new WarnaTable());
+        tbBangsal.setDefaultRenderer(Object.class, new WarnaPerkiraanRanap());
         
         tabModeDiagnosa=new DefaultTableModel(null,new Object[]{
             "Kode","Nama Penyakit","Ciri-ciri Penyakit","Keterangan","Ktg.Penyakit","Ciri-ciri Umum"}){
