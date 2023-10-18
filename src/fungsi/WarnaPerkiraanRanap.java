@@ -27,7 +27,7 @@ public class WarnaPerkiraanRanap extends DefaultTableCellRenderer {
         } 
         
         if (table.getValueAt(row, 23).toString().contains("Tidak")){
-            component.setBackground(new Color(247, 143, 136));
+            component.setBackground(new Color(250, 142, 162));
         }
         return component;
     }

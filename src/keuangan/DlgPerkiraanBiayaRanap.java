@@ -85,7 +85,7 @@ public final class DlgPerkiraanBiayaRanap extends javax.swing.JDialog {
             }){
                 @Override public boolean isCellEditable(int rowIndex, int colIndex){
                     boolean a = false;
-                    if (colIndex==22) {
+                    if ((colIndex==22)||(colIndex==21)) {
                     a=true;
                 }
                 return a;
@@ -317,6 +317,8 @@ public final class DlgPerkiraanBiayaRanap extends javax.swing.JDialog {
         label10 = new widget.Label();
         BtnPrint = new widget.Button();
         BtnKeluar = new widget.Button();
+        label18 = new widget.Label();
+        label19 = new widget.Label();
         panelDiagnosa = new widget.PanelBiasa();
         jLabel13 = new widget.Label();
         Diagnosa = new widget.TextBox();
@@ -570,6 +572,19 @@ public final class DlgPerkiraanBiayaRanap extends javax.swing.JDialog {
             }
         });
         panelGlass5.add(BtnKeluar);
+
+        label18.setText("Warna :");
+        label18.setName("label18"); // NOI18N
+        label18.setPreferredSize(new java.awt.Dimension(85, 23));
+        panelGlass5.add(label18);
+
+        label19.setBackground(new java.awt.Color(250, 142, 162));
+        label19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        label19.setText("Tidak Aman");
+        label19.setName("label19"); // NOI18N
+        label19.setOpaque(true);
+        label19.setPreferredSize(new java.awt.Dimension(85, 23));
+        panelGlass5.add(label19);
 
         FormCari.add(panelGlass5, java.awt.BorderLayout.PAGE_END);
 
@@ -1126,6 +1141,8 @@ private void BtnCari1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_
     private javax.swing.JPopupMenu jPopupMenu3;
     private widget.Label label10;
     private widget.Label label17;
+    private widget.Label label18;
+    private widget.Label label19;
     private widget.Label label9;
     private widget.panelisi panelCari;
     public widget.PanelBiasa panelDiagnosa;
