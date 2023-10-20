@@ -121,7 +121,6 @@ public final class ICareRiwayatPerawatan extends javax.swing.JDialog {
         LabelPoli6 = new widget.Label();
         KdDPJPLayanan = new widget.TextBox();
         BtnCari = new widget.Button();
-        LabelPoli7 = new widget.Label();
         BtnKeluar = new widget.Button();
         PanelContent = new widget.panelisi();
 
@@ -181,13 +180,6 @@ public final class ICareRiwayatPerawatan extends javax.swing.JDialog {
             }
         });
         panelGlass6.add(BtnCari);
-
-        LabelPoli7.setForeground(new java.awt.Color(255, 51, 51));
-        LabelPoli7.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        LabelPoli7.setText("<-- Klik Centang Untuk melihat I Care BPJS");
-        LabelPoli7.setName("LabelPoli7"); // NOI18N
-        LabelPoli7.setPreferredSize(new java.awt.Dimension(230, 23));
-        panelGlass6.add(LabelPoli7);
 
         BtnKeluar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/exit.png"))); // NOI18N
         BtnKeluar.setMnemonic('K');
@@ -278,7 +270,6 @@ public final class ICareRiwayatPerawatan extends javax.swing.JDialog {
     private widget.Button BtnKeluar;
     private widget.TextBox KdDPJPLayanan;
     private widget.Label LabelPoli6;
-    private widget.Label LabelPoli7;
     private widget.TextBox NoKartu;
     private widget.panelisi PanelContent;
     private widget.InternalFrame internalFrame1;
