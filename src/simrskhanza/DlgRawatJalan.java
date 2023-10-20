@@ -10951,7 +10951,7 @@ private void BtnEditKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
         Sequel.cariIsi("select gcs from penilaian_awal_keperawatan_kebidanan where no_rawat=?",TGCS,TNoRw.getText());
         Sequel.cariIsi("select bb from penilaian_awal_keperawatan_kebidanan where no_rawat=?",TBerat,TNoRw.getText());
         Sequel.cariIsi("select tb from penilaian_awal_keperawatan_kebidanan where no_rawat=?",TTinggi,TNoRw.getText());    
-        } else if(Jabatan.getText().trim().contains("Gigi")){
+        } else if((Jabatan.getText().trim().contains("Gigisa"))||(Jabatan.getText().trim().contains("Bedah Mulut"))){
         Sequel.cariIsi("select keluhan_utama from penilaian_awal_keperawatan_gigi where no_rawat=?",TKeluhan,TNoRw.getText());
         Sequel.cariIsi("select td from penilaian_awal_keperawatan_gigi where no_rawat=?",TTensi,TNoRw.getText());
         Sequel.cariIsi("select nadi from penilaian_awal_keperawatan_gigi where no_rawat=?",TNadi,TNoRw.getText());
