@@ -2538,7 +2538,7 @@ public final class RMDataResumePasienRanap extends javax.swing.JDialog {
             } catch (Exception e) {
                 System.out.println("Notif : "+e);
             }
-            param.put("ruang",KdRuang.getText()+" "+NmRuang.getText());
+            param.put("ruang",KdRuang.getText());
             param.put("tanggalkeluar",Valid.SetTgl3(Keluar.getText()));
             param.put("nosurat",NoSurat.getText());
             param.put("poli",NmPoli.getText());
