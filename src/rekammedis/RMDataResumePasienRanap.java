@@ -3320,6 +3320,7 @@ public final class RMDataResumePasienRanap extends javax.swing.JDialog {
                     NmRuang.setText(rs.getString("nm_bangsal"));
                     KodeDokterPengirim.setText(rs.getString("kd_dokter"));
                     NamaDokterPengirim.setText(rs.getString("nm_dokter"));
+                    Alasan.setText(Sequel.cariIsi("select indikasi from penilaian_medis_igd where no_rawat=?",TNoRw.getText()));
                 }
             } catch (Exception e) {
                 System.out.println("Notif : "+e);
