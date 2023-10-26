@@ -1800,7 +1800,7 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
                     "inner join kabupaten on pasien.kd_kab=kabupaten.kd_kab "+
 //                    "inner join jadwal on jadwal.kd_dokter=booking_registrasi.kd_dokter and jadwal.kd_poli=booking_registrasi.kd_poli "+
                     "left join referensi_mobilejkn_bpjs on referensi_mobilejkn_bpjs.norm=booking_registrasi.no_rkm_medis and referensi_mobilejkn_bpjs.tanggalperiksa=booking_registrasi.tanggal_periksa "+
-                    "where "+filter+" order by booking_registrasi.tanggal_booking,dokter.nm_dokter");
+                    "where "+filter+" GROUP BY booking_registrasi.no_rkm_medis order by booking_registrasi.tanggal_booking,dokter.nm_dokter");
 //            }
 //            else{
 //             ps=koneksi.prepareStatement(

@@ -35,6 +35,8 @@ import javax.swing.text.Document;
 import javax.swing.text.html.HTMLEditorKit;
 import javax.swing.text.html.StyleSheet;
 import kepegawaian.DlgCariDokter;
+import permintaan.DlgPerintahInap;
+import simrskhanza.DlgIGD;
 
 
 /**
@@ -50,6 +52,7 @@ public final class RMPenilaianAwalMedisIGD extends javax.swing.JDialog {
     private ResultSet rs;
     private int i=0;
     private DlgCariDokter dokter=new DlgCariDokter(null,false);
+    private DlgIGD igd =new DlgIGD(null,false);
     private StringBuilder htmlContent;
     private String finger="";
     
@@ -1588,6 +1591,17 @@ public final class RMPenilaianAwalMedisIGD extends javax.swing.JDialog {
                     Radiologi.getText(),Laborat.getText(),Diagnosis.getText(),Tatalaksana.getText(),CaraKeluar.getSelectedItem().toString(),RTL.getText(),Indikasi.getText()
                 })==true){
                     emptTeks();
+                    JOptionPane.showMessageDialog(rootPane, "Proses SImpan Sukses, ");
+                    DlgPerintahInap Supri=new DlgPerintahInap(null,false);
+                    Supri.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
+                    Supri.setLocationRelativeTo(internalFrame1);
+                    Supri.emptTeks();
+                    Supri.setNoRm(TNoRw.getText(),TNoRM.getText(),TPasien.getText(),NmDokter.getText()); 
+                    Supri.isCek();
+                    Supri.setVisible(true);
+                    
+                    
+                    
             }
         }
     
