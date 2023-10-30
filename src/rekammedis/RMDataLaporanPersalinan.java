@@ -60,7 +60,7 @@ public final class RMDataLaporanPersalinan extends javax.swing.JDialog {
 
         tabMode=new DefaultTableModel(null,new Object[]{
             "No.Rawat","No.R.M.","Nama Pasien","Umur","JK","Tgl.Lahir","Tgl.Persalinan","Jam persalinan","Nadi","Tensi",
-            "Suhu(°C)","His","DJJ","Keadaan Umum,dll","NIP","Nama Petugas"
+            "Suhu(°C)","RR","SpO2","His","DJJ","Keadaan Umum,dll","NIP","Nama Petugas"
         }){
               @Override public boolean isCellEditable(int rowIndex, int colIndex){return false;}
         };
@@ -70,7 +70,7 @@ public final class RMDataLaporanPersalinan extends javax.swing.JDialog {
         tbObat.setPreferredScrollableViewportSize(new Dimension(500,500));
         tbObat.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
 
-        for (i = 0; i < 16; i++) {
+        for (i = 0; i < 18; i++) {
             TableColumn column = tbObat.getColumnModel().getColumn(i);
             if(i==0){//norawat
                 column.setPreferredWidth(105);
@@ -94,15 +94,19 @@ public final class RMDataLaporanPersalinan extends javax.swing.JDialog {
                 column.setPreferredWidth(55);
             }else if(i==10){//suhu
                 column.setPreferredWidth(55);
-            }else if(i==11){//his
+            }else if(i==11){//rr
                 column.setPreferredWidth(55);
-            }else if(i==12){//djj
+            }else if(i==12){//spo2
+                column.setPreferredWidth(55);
+            }else if(i==13){//his
+                column.setPreferredWidth(55);
+            }else if(i==14){//djj
                 column.setPreferredWidth(50);
-            }else if(i==13){//keadaan umum
+            }else if(i==15){//keadaan umum
                 column.setPreferredWidth(500);
-            }else if(i==14){//nip
+            }else if(i==16){//nip
                 column.setPreferredWidth(60);
-            }else if(i==15){//namapetugas
+            }else if(i==17){//namapetugas
                 column.setPreferredWidth(125);
             }
         }
@@ -113,8 +117,8 @@ public final class RMDataLaporanPersalinan extends javax.swing.JDialog {
         Nadi.setDocument(new batasInput((byte)10).getKata(Nadi));
         Tensi.setDocument(new batasInput((byte)8).getKata(Tensi));
         Suhu.setDocument(new batasInput((byte)5).getKata(Suhu));
-        His.setDocument(new batasInput((byte)5).getKata(His));
-        DJJ.setDocument(new batasInput((byte)5).getKata(DJJ));
+        His.setDocument(new batasInput((byte)40).getKata(His));
+        DJJ.setDocument(new batasInput((byte)40).getKata(DJJ));
 
         TCari.setDocument(new batasInput((int)100).getKata(TCari));
         
@@ -234,6 +238,10 @@ public final class RMDataLaporanPersalinan extends javax.swing.JDialog {
         jLabel13 = new widget.Label();
         scrollPane2 = new widget.ScrollPane();
         KeadaanUmum = new widget.TextArea();
+        jLabel24 = new widget.Label();
+        RR = new widget.TextBox();
+        jLabel25 = new widget.Label();
+        Spo2 = new widget.TextBox();
         ChkInput = new widget.CekBox();
 
         jPopupMenu1.setName("jPopupMenu1"); // NOI18N
@@ -422,7 +430,7 @@ public final class RMDataLaporanPersalinan extends javax.swing.JDialog {
         panelGlass9.add(jLabel19);
 
         DTPCari1.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "25-07-2023" }));
+        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "27-10-2023" }));
         DTPCari1.setDisplayFormat("dd-MM-yyyy");
         DTPCari1.setName("DTPCari1"); // NOI18N
         DTPCari1.setOpaque(false);
@@ -436,7 +444,7 @@ public final class RMDataLaporanPersalinan extends javax.swing.JDialog {
         panelGlass9.add(jLabel21);
 
         DTPCari2.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "25-07-2023" }));
+        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "27-10-2023" }));
         DTPCari2.setDisplayFormat("dd-MM-yyyy");
         DTPCari2.setName("DTPCari2"); // NOI18N
         DTPCari2.setOpaque(false);
@@ -529,10 +537,10 @@ public final class RMDataLaporanPersalinan extends javax.swing.JDialog {
             }
         });
         FormInput.add(TPasien);
-        TPasien.setBounds(336, 10, 285, 23);
+        TPasien.setBounds(336, 10, 390, 23);
 
         Tanggal.setForeground(new java.awt.Color(50, 70, 50));
-        Tanggal.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "25-07-2023" }));
+        Tanggal.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "27-10-2023" }));
         Tanggal.setDisplayFormat("dd-MM-yyyy");
         Tanggal.setName("Tanggal"); // NOI18N
         Tanggal.setOpaque(false);
@@ -619,7 +627,7 @@ public final class RMDataLaporanPersalinan extends javax.swing.JDialog {
         NamaPetugas.setEditable(false);
         NamaPetugas.setName("NamaPetugas"); // NOI18N
         FormInput.add(NamaPetugas);
-        NamaPetugas.setBounds(570, 40, 187, 23);
+        NamaPetugas.setBounds(570, 40, 300, 23);
 
         btnPetugas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/190.png"))); // NOI18N
         btnPetugas.setMnemonic('2');
@@ -636,17 +644,17 @@ public final class RMDataLaporanPersalinan extends javax.swing.JDialog {
             }
         });
         FormInput.add(btnPetugas);
-        btnPetugas.setBounds(761, 40, 28, 23);
+        btnPetugas.setBounds(870, 40, 28, 23);
 
         jLabel8.setText("Tgl.Lahir :");
         jLabel8.setName("jLabel8"); // NOI18N
         FormInput.add(jLabel8);
-        jLabel8.setBounds(625, 10, 60, 23);
+        jLabel8.setBounds(730, 10, 60, 23);
 
         TglLahir.setHighlighter(null);
         TglLahir.setName("TglLahir"); // NOI18N
         FormInput.add(TglLahir);
-        TglLahir.setBounds(689, 10, 100, 23);
+        TglLahir.setBounds(790, 10, 100, 23);
 
         jLabel12.setText("Keadaan Umum, dll :");
         jLabel12.setName("jLabel12"); // NOI18N
@@ -671,17 +679,17 @@ public final class RMDataLaporanPersalinan extends javax.swing.JDialog {
             }
         });
         FormInput.add(Suhu);
-        Suhu.setBounds(380, 70, 60, 23);
+        Suhu.setBounds(310, 70, 50, 23);
 
         jLabel20.setText("Suhu (°C) :");
         jLabel20.setName("jLabel20"); // NOI18N
         FormInput.add(jLabel20);
-        jLabel20.setBounds(320, 70, 60, 23);
+        jLabel20.setBounds(250, 70, 60, 23);
 
-        jLabel22.setText("Detak Jantung Janin :");
+        jLabel22.setText("DJJ :");
         jLabel22.setName("jLabel22"); // NOI18N
         FormInput.add(jLabel22);
-        jLabel22.setBounds(560, 70, 150, 23);
+        jLabel22.setBounds(750, 70, 30, 23);
 
         DJJ.setFocusTraversalPolicyProvider(true);
         DJJ.setName("DJJ"); // NOI18N
@@ -691,12 +699,12 @@ public final class RMDataLaporanPersalinan extends javax.swing.JDialog {
             }
         });
         FormInput.add(DJJ);
-        DJJ.setBounds(720, 70, 70, 23);
+        DJJ.setBounds(780, 70, 170, 23);
 
         jLabel23.setText("Tensi :");
         jLabel23.setName("jLabel23"); // NOI18N
         FormInput.add(jLabel23);
-        jLabel23.setBounds(180, 70, 40, 23);
+        jLabel23.setBounds(150, 70, 40, 23);
 
         Tensi.setFocusTraversalPolicyProvider(true);
         Tensi.setName("Tensi"); // NOI18N
@@ -706,7 +714,7 @@ public final class RMDataLaporanPersalinan extends javax.swing.JDialog {
             }
         });
         FormInput.add(Tensi);
-        Tensi.setBounds(220, 70, 70, 23);
+        Tensi.setBounds(190, 70, 50, 23);
 
         His.setFocusTraversalPolicyProvider(true);
         His.setName("His"); // NOI18N
@@ -716,12 +724,12 @@ public final class RMDataLaporanPersalinan extends javax.swing.JDialog {
             }
         });
         FormInput.add(His);
-        His.setBounds(510, 70, 60, 23);
+        His.setBounds(580, 70, 150, 23);
 
         jLabel28.setText("His :");
         jLabel28.setName("jLabel28"); // NOI18N
         FormInput.add(jLabel28);
-        jLabel28.setBounds(460, 70, 40, 23);
+        jLabel28.setBounds(540, 70, 40, 23);
 
         jLabel13.setText("Nadi (/menit) :");
         jLabel13.setName("jLabel13"); // NOI18N
@@ -743,7 +751,37 @@ public final class RMDataLaporanPersalinan extends javax.swing.JDialog {
         scrollPane2.setViewportView(KeadaanUmum);
 
         FormInput.add(scrollPane2);
-        scrollPane2.setBounds(120, 100, 670, 50);
+        scrollPane2.setBounds(120, 100, 830, 50);
+
+        jLabel24.setText("RR :");
+        jLabel24.setName("jLabel24"); // NOI18N
+        FormInput.add(jLabel24);
+        jLabel24.setBounds(360, 70, 40, 23);
+
+        RR.setFocusTraversalPolicyProvider(true);
+        RR.setName("RR"); // NOI18N
+        RR.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                RRKeyPressed(evt);
+            }
+        });
+        FormInput.add(RR);
+        RR.setBounds(400, 70, 50, 23);
+
+        jLabel25.setText("Spo2 :");
+        jLabel25.setName("jLabel25"); // NOI18N
+        FormInput.add(jLabel25);
+        jLabel25.setBounds(450, 70, 40, 23);
+
+        Spo2.setFocusTraversalPolicyProvider(true);
+        Spo2.setName("Spo2"); // NOI18N
+        Spo2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                Spo2KeyPressed(evt);
+            }
+        });
+        FormInput.add(Spo2);
+        Spo2.setBounds(490, 70, 50, 23);
 
         PanelInput.add(FormInput, java.awt.BorderLayout.CENTER);
 
@@ -794,9 +832,9 @@ public final class RMDataLaporanPersalinan extends javax.swing.JDialog {
         }else if(NIP.getText().trim().equals("")||NamaPetugas.getText().trim().equals("")){
             Valid.textKosong(NIP,"Petugas");
         }else{
-            if(Sequel.menyimpantf("laporan_persalinan","?,?,?,?,?,?,?,?,?,?","Data",10,new String[]{
+            if(Sequel.menyimpantf("laporan_persalinan","?,?,?,?,?,?,?,?,?,?,?,?","Data",12,new String[]{
                 TNoRw.getText(),Valid.SetTgl(Tanggal.getSelectedItem()+""),Jam.getSelectedItem()+":"+Menit.getSelectedItem()+":"+Detik.getSelectedItem(),Nadi.getText(),
-                Tensi.getText(),Suhu.getText(),His.getText(),DJJ.getText(),KeadaanUmum.getText(),NIP.getText()
+                Tensi.getText(),Suhu.getText(),RR.getText(),Spo2.getText(),His.getText(),DJJ.getText(),KeadaanUmum.getText(),NIP.getText()
             })==true){
                 tampil();
                 emptTeks();
@@ -829,7 +867,7 @@ public final class RMDataLaporanPersalinan extends javax.swing.JDialog {
             if(akses.getkode().equals("Admin Utama")){
                 hapus();
             }else{
-                if(NIP.getText().equals(tbObat.getValueAt(tbObat.getSelectedRow(),18).toString())){
+                if(NIP.getText().equals(tbObat.getValueAt(tbObat.getSelectedRow(),16).toString())){
                     hapus();
                 }else{
                     JOptionPane.showMessageDialog(null,"Hanya bisa dihapus oleh petugas yang bersangkutan..!!");
@@ -858,7 +896,7 @@ public final class RMDataLaporanPersalinan extends javax.swing.JDialog {
                 if(akses.getkode().equals("Admin Utama")){
                     ganti();
                 }else{
-                    if(NIP.getText().equals(tbObat.getValueAt(tbObat.getSelectedRow(),18).toString())){
+                    if(NIP.getText().equals(tbObat.getValueAt(tbObat.getSelectedRow(),16).toString())){
                         ganti();
                     }else{
                         JOptionPane.showMessageDialog(null,"Hanya bisa diganti oleh petugas yang bersangkutan..!!");
@@ -1074,7 +1112,7 @@ public final class RMDataLaporanPersalinan extends javax.swing.JDialog {
     }//GEN-LAST:event_NadiKeyPressed
 
     private void SuhuKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SuhuKeyPressed
-        Valid.pindah(evt,Tensi,His);
+        Valid.pindah(evt,Tensi,RR);
     }//GEN-LAST:event_SuhuKeyPressed
 
     private void DJJKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_DJJKeyPressed
@@ -1092,6 +1130,14 @@ public final class RMDataLaporanPersalinan extends javax.swing.JDialog {
     private void KeadaanUmumKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_KeadaanUmumKeyPressed
         Valid.pindah2(evt,DJJ,BtnBatal);
     }//GEN-LAST:event_KeadaanUmumKeyPressed
+
+    private void RRKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_RRKeyPressed
+        Valid.pindah(evt,Suhu,Spo2);
+    }//GEN-LAST:event_RRKeyPressed
+
+    private void Spo2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Spo2KeyPressed
+        Valid.pindah(evt,RR,His);
+    }//GEN-LAST:event_Spo2KeyPressed
 
     /**
     * @param args the command line arguments
@@ -1135,7 +1181,9 @@ public final class RMDataLaporanPersalinan extends javax.swing.JDialog {
     private widget.TextBox Nadi;
     private widget.TextBox NamaPetugas;
     private javax.swing.JPanel PanelInput;
+    private widget.TextBox RR;
     private widget.ScrollPane Scroll;
+    private widget.TextBox Spo2;
     private widget.TextBox Suhu;
     private widget.TextBox TCari;
     private widget.TextBox TNoRM;
@@ -1155,6 +1203,8 @@ public final class RMDataLaporanPersalinan extends javax.swing.JDialog {
     private widget.Label jLabel21;
     private widget.Label jLabel22;
     private widget.Label jLabel23;
+    private widget.Label jLabel24;
+    private widget.Label jLabel25;
     private widget.Label jLabel28;
     private widget.Label jLabel4;
     private widget.Label jLabel6;
@@ -1370,10 +1420,10 @@ public final class RMDataLaporanPersalinan extends javax.swing.JDialog {
     }
 
     private void ganti() {
-        Sequel.mengedit("laporan_persalinan","tgl_perawatan=? and jam_rawat=? and no_rawat=?","no_rawat=?,tgl_perawatan=?,jam_rawat=?,nadi=?,tensi=?,"+
-            "suhu=?,his=?,djj=?,keadaan_umum=?,nip=?",13,new String[]{
+        Sequel.mengedit("laporan_persalinan","tgl_perawatan=? and jam_rawat=? and no_rawat=?","no_rawat=?,tgl_perawatan=?,jam_rawat=?,nadi=?,tensi=?,rr=?,spo2=?,"+
+            "suhu=?,his=?,djj=?,keadaan_umum=?,nip=?",15,new String[]{
             TNoRw.getText(),Valid.SetTgl(Tanggal.getSelectedItem()+""),Jam.getSelectedItem()+":"+Menit.getSelectedItem()+":"+Detik.getSelectedItem(),Nadi.getText(),
-            Tensi.getText(),Suhu.getText(),His.getText(),DJJ.getText(),KeadaanUmum.getText(),NIP.getText(),
+            Tensi.getText(),Suhu.getText(),RR.getText(),Spo2.getText(),His.getText(),DJJ.getText(),KeadaanUmum.getText(),NIP.getText(),
             tbObat.getValueAt(tbObat.getSelectedRow(),6).toString(),tbObat.getValueAt(tbObat.getSelectedRow(),7).toString(),tbObat.getValueAt(tbObat.getSelectedRow(),0).toString()
         });
         if(tabMode.getRowCount()!=0){tampil();}
