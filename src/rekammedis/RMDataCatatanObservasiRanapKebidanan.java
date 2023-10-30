@@ -60,7 +60,7 @@ public final class RMDataCatatanObservasiRanapKebidanan extends javax.swing.JDia
 
         tabMode=new DefaultTableModel(null,new Object[]{
             "No.Rawat","No.R.M.","Nama Pasien","Umur","JK","Tgl.Lahir","Tgl.Obser","Jam Obser","GCS (E,V,M)","TD(mmHg)",
-            "HR(x/menit)","RR(x/menit)","Suhu(°C)","SpO2(%)","Kontraksi/HIS","DJJ","PPV","VT","NIP","Nama Petugas"
+            "HR(x/menit)","RR(x/menit)","Suhu(°C)","SpO2(%)","Kontraksi/HIS","DJJ","PPV","VT","Ketuban","Presentasi","Hodge","NIP","Nama Petugas"
         }){
               @Override public boolean isCellEditable(int rowIndex, int colIndex){return false;}
         };
@@ -72,45 +72,51 @@ public final class RMDataCatatanObservasiRanapKebidanan extends javax.swing.JDia
 
         for (i = 0; i < 20; i++) {
             TableColumn column = tbObat.getColumnModel().getColumn(i);
-            if(i==0){
+            if(i==0){//norw
                 column.setPreferredWidth(105);
-            }else if(i==1){
+            }else if(i==1){//norm
                 column.setPreferredWidth(65);
-            }else if(i==2){
+            }else if(i==2){//nama
                 column.setPreferredWidth(160);
-            }else if(i==3){
+            }else if(i==3){//umur
                 column.setPreferredWidth(35);
-            }else if(i==4){
+            }else if(i==4){//JK
                 column.setPreferredWidth(20);
-            }else if(i==5){
+            }else if(i==5){//TglLahir
                 column.setPreferredWidth(65);
-            }else if(i==6){
+            }else if(i==6){//Tgl Obs
                 column.setPreferredWidth(65);
-            }else if(i==7){
+            }else if(i==7){//jam Obs
                 column.setPreferredWidth(60);
-            }else if(i==8){
+            }else if(i==8){//GCS
                 column.setPreferredWidth(65);
-            }else if(i==9){
+            }else if(i==9){//TD
                 column.setPreferredWidth(65);
-            }else if(i==10){
+            }else if(i==10){//HR
                 column.setPreferredWidth(65);
-            }else if(i==11){
+            }else if(i==11){//RR
                 column.setPreferredWidth(65);
-            }else if(i==12){
+            }else if(i==12){//Suhu
                 column.setPreferredWidth(50);
-            }else if(i==13){
+            }else if(i==13){//Spo2
                 column.setPreferredWidth(55);
-            }else if(i==14){
+            }else if(i==14){//Kontraksi
                 column.setPreferredWidth(90);
-            }else if(i==15){
+            }else if(i==15){//Djj
                 column.setPreferredWidth(55);
-            }else if(i==16){
+            }else if(i==16){//ppv
                 column.setPreferredWidth(90);
-            }else if(i==17){
+            }else if(i==17){//vt
                 column.setPreferredWidth(150);
-            }else if(i==18){
+            }else if(i==18){//ketuban
+                column.setPreferredWidth(150);
+            }else if(i==19){//presentasi
+                column.setPreferredWidth(150);
+            }else if(i==20){//hodge
+                column.setPreferredWidth(150);
+            }else if(i==21){//nip
                 column.setPreferredWidth(90);
-            }else if(i==19){
+            }else if(i==22){//nama petugas
                 column.setPreferredWidth(160);
             }
         }
@@ -127,7 +133,7 @@ public final class RMDataCatatanObservasiRanapKebidanan extends javax.swing.JDia
         Kontraksi.setDocument(new batasInput((byte)15).getKata(Kontraksi));
         BJJ.setDocument(new batasInput((byte)5).getKata(BJJ));
         PPV.setDocument(new batasInput((byte)15).getKata(PPV));
-        VT.setDocument(new batasInput((byte)30).getKata(VT));
+        VT.setDocument(new batasInput((byte)100).getKata(VT));
         TCari.setDocument(new batasInput((int)100).getKata(TCari));
         
         if(koneksiDB.CARICEPAT().equals("aktif")){
@@ -259,6 +265,12 @@ public final class RMDataCatatanObservasiRanapKebidanan extends javax.swing.JDia
         VT = new widget.TextBox();
         jLabel32 = new widget.Label();
         jLabel33 = new widget.Label();
+        Ketuban = new widget.TextBox();
+        jLabel34 = new widget.Label();
+        jLabel36 = new widget.Label();
+        Presentasi = new widget.TextBox();
+        Hodge = new widget.TextBox();
+        jLabel37 = new widget.Label();
         ChkInput = new widget.CekBox();
 
         jPopupMenu1.setName("jPopupMenu1"); // NOI18N
@@ -281,7 +293,7 @@ public final class RMDataCatatanObservasiRanapKebidanan extends javax.swing.JDia
         setUndecorated(true);
         setResizable(false);
 
-        internalFrame1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(240, 245, 235)), "::[ Catatan Observasi Rawat Inap Kebidanan ]::", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(50, 50, 50))); // NOI18N
+        internalFrame1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(240, 245, 235)), "::[ Catatan Observasi Rawat Inap Kebidanan ]::", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 0, 12), new java.awt.Color(50, 50, 50))); // NOI18N
         internalFrame1.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
         internalFrame1.setName("internalFrame1"); // NOI18N
         internalFrame1.setLayout(new java.awt.BorderLayout(1, 1));
@@ -447,7 +459,7 @@ public final class RMDataCatatanObservasiRanapKebidanan extends javax.swing.JDia
         panelGlass9.add(jLabel19);
 
         DTPCari1.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "31-10-2022" }));
+        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "27-10-2023" }));
         DTPCari1.setDisplayFormat("dd-MM-yyyy");
         DTPCari1.setName("DTPCari1"); // NOI18N
         DTPCari1.setOpaque(false);
@@ -461,7 +473,7 @@ public final class RMDataCatatanObservasiRanapKebidanan extends javax.swing.JDia
         panelGlass9.add(jLabel21);
 
         DTPCari2.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "31-10-2022" }));
+        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "27-10-2023" }));
         DTPCari2.setDisplayFormat("dd-MM-yyyy");
         DTPCari2.setName("DTPCari2"); // NOI18N
         DTPCari2.setOpaque(false);
@@ -527,7 +539,7 @@ public final class RMDataCatatanObservasiRanapKebidanan extends javax.swing.JDia
 
         FormInput.setBackground(new java.awt.Color(250, 255, 245));
         FormInput.setName("FormInput"); // NOI18N
-        FormInput.setPreferredSize(new java.awt.Dimension(100, 225));
+        FormInput.setPreferredSize(new java.awt.Dimension(100, 245));
         FormInput.setLayout(null);
 
         jLabel4.setText("No.Rawat :");
@@ -557,7 +569,7 @@ public final class RMDataCatatanObservasiRanapKebidanan extends javax.swing.JDia
         TPasien.setBounds(336, 10, 285, 23);
 
         Tanggal.setForeground(new java.awt.Color(50, 70, 50));
-        Tanggal.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "31-10-2022" }));
+        Tanggal.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "27-10-2023" }));
         Tanggal.setDisplayFormat("dd-MM-yyyy");
         Tanggal.setName("Tanggal"); // NOI18N
         Tanggal.setOpaque(false);
@@ -864,6 +876,51 @@ public final class RMDataCatatanObservasiRanapKebidanan extends javax.swing.JDia
         FormInput.add(jLabel33);
         jLabel33.setBounds(382, 70, 50, 23);
 
+        Ketuban.setFocusTraversalPolicyProvider(true);
+        Ketuban.setName("Ketuban"); // NOI18N
+        Ketuban.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                KetubanKeyPressed(evt);
+            }
+        });
+        FormInput.add(Ketuban);
+        Ketuban.setBounds(90, 130, 220, 23);
+
+        jLabel34.setText("Ketuban :");
+        jLabel34.setName("jLabel34"); // NOI18N
+        FormInput.add(jLabel34);
+        jLabel34.setBounds(10, 130, 70, 23);
+
+        jLabel36.setText("Presentasi :");
+        jLabel36.setName("jLabel36"); // NOI18N
+        FormInput.add(jLabel36);
+        jLabel36.setBounds(330, 130, 60, 23);
+
+        Presentasi.setFocusTraversalPolicyProvider(true);
+        Presentasi.setName("Presentasi"); // NOI18N
+        Presentasi.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                PresentasiKeyPressed(evt);
+            }
+        });
+        FormInput.add(Presentasi);
+        Presentasi.setBounds(400, 130, 150, 23);
+
+        Hodge.setFocusTraversalPolicyProvider(true);
+        Hodge.setName("Hodge"); // NOI18N
+        Hodge.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                HodgeKeyPressed(evt);
+            }
+        });
+        FormInput.add(Hodge);
+        Hodge.setBounds(620, 130, 170, 23);
+
+        jLabel37.setText("Hodge :");
+        jLabel37.setName("jLabel37"); // NOI18N
+        FormInput.add(jLabel37);
+        jLabel37.setBounds(570, 130, 40, 23);
+
         PanelInput.add(FormInput, java.awt.BorderLayout.CENTER);
 
         ChkInput.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/143.png"))); // NOI18N
@@ -913,9 +970,10 @@ public final class RMDataCatatanObservasiRanapKebidanan extends javax.swing.JDia
         }else if(NIP.getText().trim().equals("")||NamaPetugas.getText().trim().equals("")){
             Valid.textKosong(NIP,"Petugas");
         }else{
-            if(Sequel.menyimpantf("catatan_observasi_ranap_kebidanan","?,?,?,?,?,?,?,?,?,?,?,?,?,?","Data",14,new String[]{
+            if(Sequel.menyimpantf("catatan_observasi_ranap_kebidanan","?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?","Data",17,new String[]{
                 TNoRw.getText(),Valid.SetTgl(Tanggal.getSelectedItem()+""),Jam.getSelectedItem()+":"+Menit.getSelectedItem()+":"+Detik.getSelectedItem(),GCS.getText(),
-                TD.getText(),HR.getText(),RR.getText(),Suhu.getText(),SPO.getText(),Kontraksi.getText(),BJJ.getText(),PPV.getText(),VT.getText(),NIP.getText()
+                TD.getText(),HR.getText(),RR.getText(),Suhu.getText(),SPO.getText(),Kontraksi.getText(),BJJ.getText(),PPV.getText(),VT.getText(),
+                Ketuban.getText(),Presentasi.getText(),Hodge.getText(),NIP.getText()
             })==true){
                 tampil();
                 emptTeks();
@@ -948,7 +1006,7 @@ public final class RMDataCatatanObservasiRanapKebidanan extends javax.swing.JDia
             if(akses.getkode().equals("Admin Utama")){
                 hapus();
             }else{
-                if(NIP.getText().equals(tbObat.getValueAt(tbObat.getSelectedRow(),18).toString())){
+                if(NIP.getText().equals(tbObat.getValueAt(tbObat.getSelectedRow(),21).toString())){
                     hapus();
                 }else{
                     JOptionPane.showMessageDialog(null,"Hanya bisa dihapus oleh petugas yang bersangkutan..!!");
@@ -977,7 +1035,7 @@ public final class RMDataCatatanObservasiRanapKebidanan extends javax.swing.JDia
                 if(akses.getkode().equals("Admin Utama")){
                     ganti();
                 }else{
-                    if(NIP.getText().equals(tbObat.getValueAt(tbObat.getSelectedRow(),18).toString())){
+                    if(NIP.getText().equals(tbObat.getValueAt(tbObat.getSelectedRow(),21).toString())){
                         ganti();
                     }else{
                         JOptionPane.showMessageDialog(null,"Hanya bisa diganti oleh petugas yang bersangkutan..!!");
@@ -1226,12 +1284,24 @@ public final class RMDataCatatanObservasiRanapKebidanan extends javax.swing.JDia
     }//GEN-LAST:event_PPVKeyPressed
 
     private void VTKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_VTKeyPressed
-        Valid.pindah(evt,PPV,BtnSimpan);
+        Valid.pindah(evt,PPV,Ketuban);
     }//GEN-LAST:event_VTKeyPressed
 
     private void BJJActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BJJActionPerformed
-        // TODO add your handling code here:
+  
     }//GEN-LAST:event_BJJActionPerformed
+
+    private void KetubanKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_KetubanKeyPressed
+        Valid.pindah(evt,VT,Presentasi);
+    }//GEN-LAST:event_KetubanKeyPressed
+
+    private void PresentasiKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_PresentasiKeyPressed
+        Valid.pindah(evt,Ketuban,Hodge);
+    }//GEN-LAST:event_PresentasiKeyPressed
+
+    private void HodgeKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_HodgeKeyPressed
+        Valid.pindah(evt,Presentasi,BtnSimpan);
+    }//GEN-LAST:event_HodgeKeyPressed
 
     /**
     * @param args the command line arguments
@@ -1267,7 +1337,9 @@ public final class RMDataCatatanObservasiRanapKebidanan extends javax.swing.JDia
     private widget.PanelBiasa FormInput;
     private widget.TextBox GCS;
     private widget.TextBox HR;
+    private widget.TextBox Hodge;
     private widget.ComboBox Jam;
+    private widget.TextBox Ketuban;
     private widget.TextBox Kontraksi;
     private widget.Label LCount;
     private widget.ComboBox Menit;
@@ -1276,6 +1348,7 @@ public final class RMDataCatatanObservasiRanapKebidanan extends javax.swing.JDia
     private widget.TextBox NamaPetugas;
     private widget.TextBox PPV;
     private javax.swing.JPanel PanelInput;
+    private widget.TextBox Presentasi;
     private widget.TextBox RR;
     private widget.TextBox SPO;
     private widget.ScrollPane Scroll;
@@ -1309,7 +1382,10 @@ public final class RMDataCatatanObservasiRanapKebidanan extends javax.swing.JDia
     private widget.Label jLabel31;
     private widget.Label jLabel32;
     private widget.Label jLabel33;
+    private widget.Label jLabel34;
     private widget.Label jLabel35;
+    private widget.Label jLabel36;
+    private widget.Label jLabel37;
     private widget.Label jLabel4;
     private widget.Label jLabel6;
     private widget.Label jLabel7;
@@ -1447,7 +1523,7 @@ public final class RMDataCatatanObservasiRanapKebidanan extends javax.swing.JDia
     private void isForm(){
         if(ChkInput.isSelected()==true){
             ChkInput.setVisible(false);
-            PanelInput.setPreferredSize(new Dimension(WIDTH,154));
+            PanelInput.setPreferredSize(new Dimension(WIDTH,174));
             FormInput.setVisible(true);      
             ChkInput.setVisible(true);
         }else if(ChkInput.isSelected()==false){           
@@ -1530,9 +1606,9 @@ public final class RMDataCatatanObservasiRanapKebidanan extends javax.swing.JDia
 
     private void ganti() {
         Sequel.mengedit("catatan_observasi_ranap_kebidanan","tgl_perawatan=? and jam_rawat=? and no_rawat=?","no_rawat=?,tgl_perawatan=?,jam_rawat=?,gcs=?,td=?,"+
-            "hr=?,rr=?,suhu=?,spo2=?,kontraksi=?,bjj=?,ppv=?,vt=?,nip=?",17,new String[]{
+            "hr=?,rr=?,suhu=?,spo2=?,kontraksi=?,bjj=?,ppv=?,vt=?,ketuban=?,presentasi=?,hodge=?,nip=?",20,new String[]{
             TNoRw.getText(),Valid.SetTgl(Tanggal.getSelectedItem()+""),Jam.getSelectedItem()+":"+Menit.getSelectedItem()+":"+Detik.getSelectedItem(),GCS.getText(),
-            TD.getText(),HR.getText(),RR.getText(),Suhu.getText(),SPO.getText(),Kontraksi.getText(),BJJ.getText(),PPV.getText(),VT.getText(),NIP.getText(),
+            TD.getText(),HR.getText(),RR.getText(),Suhu.getText(),SPO.getText(),Kontraksi.getText(),BJJ.getText(),PPV.getText(),VT.getText(),Ketuban.getText(),Presentasi.getText(),Hodge.getText(),NIP.getText(),
             tbObat.getValueAt(tbObat.getSelectedRow(),6).toString(),tbObat.getValueAt(tbObat.getSelectedRow(),7).toString(),tbObat.getValueAt(tbObat.getSelectedRow(),0).toString()
         });
         if(tabMode.getRowCount()!=0){tampil();}
