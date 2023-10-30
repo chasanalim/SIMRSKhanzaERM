@@ -1100,7 +1100,7 @@ public final class RMDataLaporanPersalinan extends javax.swing.JDialog {
             Valid.MyReportqry("rptLaporanPersalinan.jasper","report","::[ Laporan Persalinan ]::",
                     "select reg_periksa.no_rawat,pasien.no_rkm_medis,pasien.nm_pasien,reg_periksa.umurdaftar,reg_periksa.sttsumur,reg_periksa.tgl_registrasi,reg_periksa.jam_reg,"+
                     "pasien.jk,pasien.tgl_lahir,laporan_persalinan.tgl_perawatan,laporan_persalinan.jam_rawat,laporan_persalinan.nadi,"+
-                    "laporan_persalinan.tensi,laporan_persalinan.suhu,laporan_persalinan.his,laporan_persalinan.djj,laporan_persalinan.keadaan_umum,"+
+                    "laporan_persalinan.tensi,laporan_persalinan.suhu,laporan_persalinan.rr,laporan_persalinan.spo2,laporan_persalinan.his,laporan_persalinan.djj,laporan_persalinan.keadaan_umum,"+
                     "laporan_persalinan.nip,petugas.nama from laporan_persalinan inner join reg_periksa on laporan_persalinan.no_rawat=reg_periksa.no_rawat "+
                     "inner join pasien on reg_periksa.no_rkm_medis=pasien.no_rkm_medis "+
                     "inner join petugas on laporan_persalinan.nip=petugas.nip where reg_periksa.no_rawat='"+tbObat.getValueAt(tbObat.getSelectedRow(),0).toString()+"'",param);
@@ -1225,7 +1225,7 @@ public final class RMDataLaporanPersalinan extends javax.swing.JDialog {
                 ps=koneksi.prepareStatement(
                     "select reg_periksa.no_rawat,pasien.no_rkm_medis,pasien.nm_pasien,reg_periksa.umurdaftar,reg_periksa.sttsumur,"+
                     "pasien.jk,pasien.tgl_lahir,laporan_persalinan.tgl_perawatan,laporan_persalinan.jam_rawat,laporan_persalinan.nadi,"+
-                    "laporan_persalinan.tensi,laporan_persalinan.suhu,laporan_persalinan.his,laporan_persalinan.djj,laporan_persalinan.keadaan_umum,"+
+                    "laporan_persalinan.tensi,laporan_persalinan.suhu,laporan_persalinan.rr,laporan_persalinan.spo2,laporan_persalinan.his,laporan_persalinan.djj,laporan_persalinan.keadaan_umum,"+
                     "laporan_persalinan.nip,petugas.nama from laporan_persalinan inner join reg_periksa on laporan_persalinan.no_rawat=reg_periksa.no_rawat "+
                     "inner join pasien on reg_periksa.no_rkm_medis=pasien.no_rkm_medis "+
                     "inner join petugas on laporan_persalinan.nip=petugas.nip where "+
@@ -1234,7 +1234,7 @@ public final class RMDataLaporanPersalinan extends javax.swing.JDialog {
                 ps=koneksi.prepareStatement(
                     "select reg_periksa.no_rawat,pasien.no_rkm_medis,pasien.nm_pasien,reg_periksa.umurdaftar,reg_periksa.sttsumur,"+
                     "pasien.jk,pasien.tgl_lahir,laporan_persalinan.tgl_perawatan,laporan_persalinan.jam_rawat,laporan_persalinan.nadi,"+
-                    "laporan_persalinan.tensi,laporan_persalinan.suhu,laporan_persalinan.his,laporan_persalinan.djj,laporan_persalinan.keadaan_umum,"+
+                    "laporan_persalinan.tensi,laporan_persalinan.suhu,laporan_persalinan.rr,laporan_persalinan.spo2,laporan_persalinan.his,laporan_persalinan.djj,laporan_persalinan.keadaan_umum,"+
                     "laporan_persalinan.nip,petugas.nama from laporan_persalinan inner join reg_periksa on laporan_persalinan.no_rawat=reg_periksa.no_rawat "+
                     "inner join pasien on reg_periksa.no_rkm_medis=pasien.no_rkm_medis "+
                     "inner join petugas on laporan_persalinan.nip=petugas.nip where "+
@@ -1262,7 +1262,7 @@ public final class RMDataLaporanPersalinan extends javax.swing.JDialog {
                         rs.getString("no_rawat"),rs.getString("no_rkm_medis"),rs.getString("nm_pasien"),
                         rs.getString("umurdaftar")+" "+rs.getString("sttsumur"),rs.getString("jk"),rs.getString("tgl_lahir"),
                         rs.getString("tgl_perawatan"),rs.getString("jam_rawat"),rs.getString("nadi"),rs.getString("tensi"),
-                        rs.getString("suhu"),rs.getString("his"),rs.getString("djj"),rs.getString("keadaan_umum"),rs.getString("nip"),rs.getString("nama")
+                        rs.getString("suhu"),rs.getString("rr"),rs.getString("spo2"),rs.getString("his"),rs.getString("djj"),rs.getString("keadaan_umum"),rs.getString("nip"),rs.getString("nama")
                     });
                 }
             } catch (Exception e) {
@@ -1285,6 +1285,8 @@ public final class RMDataLaporanPersalinan extends javax.swing.JDialog {
         Nadi.setText("");
         Tensi.setText("");
         Suhu.setText("");
+        RR.setText("");
+        Spo2.setText("");
         His.setText("");
         DJJ.setText("");
         NIP.setText("");
@@ -1306,11 +1308,13 @@ public final class RMDataLaporanPersalinan extends javax.swing.JDialog {
             Nadi.setText(tbObat.getValueAt(tbObat.getSelectedRow(),8).toString());
             Tensi.setText(tbObat.getValueAt(tbObat.getSelectedRow(),9).toString());
             Suhu.setText(tbObat.getValueAt(tbObat.getSelectedRow(),10).toString());
-            His.setText(tbObat.getValueAt(tbObat.getSelectedRow(),11).toString());
-            DJJ.setText(tbObat.getValueAt(tbObat.getSelectedRow(),12).toString());
-            KeadaanUmum.setText(tbObat.getValueAt(tbObat.getSelectedRow(),13).toString());
-            NIP.setText(tbObat.getValueAt(tbObat.getSelectedRow(),14).toString());
-            NamaPetugas.setText(tbObat.getValueAt(tbObat.getSelectedRow(),15).toString());
+            RR.setText(tbObat.getValueAt(tbObat.getSelectedRow(),11).toString());
+            Spo2.setText(tbObat.getValueAt(tbObat.getSelectedRow(),12).toString());
+            His.setText(tbObat.getValueAt(tbObat.getSelectedRow(),13).toString());
+            DJJ.setText(tbObat.getValueAt(tbObat.getSelectedRow(),14).toString());
+            KeadaanUmum.setText(tbObat.getValueAt(tbObat.getSelectedRow(),15).toString());
+            NIP.setText(tbObat.getValueAt(tbObat.getSelectedRow(),16).toString());
+            NamaPetugas.setText(tbObat.getValueAt(tbObat.getSelectedRow(),17).toString());
 
             Valid.SetTgl(Tanggal,tbObat.getValueAt(tbObat.getSelectedRow(),6).toString());  
         }
