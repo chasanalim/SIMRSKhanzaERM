@@ -1406,6 +1406,7 @@ public final class RMDataCatatanObservasiRanapKebidanan extends javax.swing.JDia
                     "pasien.jk,pasien.tgl_lahir,catatan_observasi_ranap_kebidanan.tgl_perawatan,catatan_observasi_ranap_kebidanan.jam_rawat,catatan_observasi_ranap_kebidanan.gcs,"+
                     "catatan_observasi_ranap_kebidanan.td,catatan_observasi_ranap_kebidanan.hr,catatan_observasi_ranap_kebidanan.rr,catatan_observasi_ranap_kebidanan.suhu,catatan_observasi_ranap_kebidanan.spo2,"+
                     "catatan_observasi_ranap_kebidanan.kontraksi,catatan_observasi_ranap_kebidanan.bjj,catatan_observasi_ranap_kebidanan.ppv,catatan_observasi_ranap_kebidanan.vt,"+
+                    "catatan_observasi_ranap_kebidanan.ketuban,catatan_observasi_ranap_kebidanan.presentasi,catatan_observasi_ranap_kebidanan.hodge,"+
                     "catatan_observasi_ranap_kebidanan.nip,petugas.nama from catatan_observasi_ranap_kebidanan inner join reg_periksa on catatan_observasi_ranap_kebidanan.no_rawat=reg_periksa.no_rawat "+
                     "inner join pasien on reg_periksa.no_rkm_medis=pasien.no_rkm_medis "+
                     "inner join petugas on catatan_observasi_ranap_kebidanan.nip=petugas.nip where "+
@@ -1416,6 +1417,7 @@ public final class RMDataCatatanObservasiRanapKebidanan extends javax.swing.JDia
                     "pasien.jk,pasien.tgl_lahir,catatan_observasi_ranap_kebidanan.tgl_perawatan,catatan_observasi_ranap_kebidanan.jam_rawat,catatan_observasi_ranap_kebidanan.gcs,"+
                     "catatan_observasi_ranap_kebidanan.td,catatan_observasi_ranap_kebidanan.hr,catatan_observasi_ranap_kebidanan.rr,catatan_observasi_ranap_kebidanan.suhu,catatan_observasi_ranap_kebidanan.spo2,"+
                     "catatan_observasi_ranap_kebidanan.kontraksi,catatan_observasi_ranap_kebidanan.bjj,catatan_observasi_ranap_kebidanan.ppv,catatan_observasi_ranap_kebidanan.vt,"+
+                    "catatan_observasi_ranap_kebidanan.ketuban,catatan_observasi_ranap_kebidanan.presentasi,catatan_observasi_ranap_kebidanan.hodge,"+
                     "catatan_observasi_ranap_kebidanan.nip,petugas.nama from catatan_observasi_ranap_kebidanan inner join reg_periksa on catatan_observasi_ranap_kebidanan.no_rawat=reg_periksa.no_rawat "+
                     "inner join pasien on reg_periksa.no_rkm_medis=pasien.no_rkm_medis "+
                     "inner join petugas on catatan_observasi_ranap_kebidanan.nip=petugas.nip where "+
@@ -1444,7 +1446,8 @@ public final class RMDataCatatanObservasiRanapKebidanan extends javax.swing.JDia
                         rs.getString("umurdaftar")+" "+rs.getString("sttsumur"),rs.getString("jk"),rs.getString("tgl_lahir"),
                         rs.getString("tgl_perawatan"),rs.getString("jam_rawat"),rs.getString("gcs"),rs.getString("td"),
                         rs.getString("hr"),rs.getString("rr"),rs.getString("suhu"),rs.getString("spo2"),rs.getString("kontraksi"),
-                        rs.getString("bjj"),rs.getString("ppv"),rs.getString("vt"),rs.getString("nip"),rs.getString("nama")
+                        rs.getString("bjj"),rs.getString("ppv"),rs.getString("vt"),rs.getString("ketuban"),rs.getString("presentasi"),rs.getString("hodge"),
+                        rs.getString("nip"),rs.getString("nama")
                     });
                 }
             } catch (Exception e) {
@@ -1468,6 +1471,9 @@ public final class RMDataCatatanObservasiRanapKebidanan extends javax.swing.JDia
         TD.setText("");
         HR.setText("");
         RR.setText("");
+        Ketuban.setText("");
+        Presentasi.setText("");
+        Hodge.setText("");
         Suhu.setText("");
         SPO.setText("");
         Kontraksi.setText("");
@@ -1497,6 +1503,9 @@ public final class RMDataCatatanObservasiRanapKebidanan extends javax.swing.JDia
             BJJ.setText(tbObat.getValueAt(tbObat.getSelectedRow(),15).toString());
             PPV.setText(tbObat.getValueAt(tbObat.getSelectedRow(),16).toString());
             VT.setText(tbObat.getValueAt(tbObat.getSelectedRow(),17).toString());
+            Ketuban.setText(tbObat.getValueAt(tbObat.getSelectedRow(),18).toString());
+            Presentasi.setText(tbObat.getValueAt(tbObat.getSelectedRow(),19).toString());
+            Hodge.setText(tbObat.getValueAt(tbObat.getSelectedRow(),20).toString());
             Valid.SetTgl(Tanggal,tbObat.getValueAt(tbObat.getSelectedRow(),6).toString());  
         }
     }
