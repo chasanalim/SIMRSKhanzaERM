@@ -60,7 +60,7 @@ public final class DlgKamar extends javax.swing.JDialog {
         this.setLocation(10,2);
         setSize(628,674);
         tabMode=new DefaultTableModel(null,new String[]{
-                "P","Nomer Bed","Kode Kamar","Nama Kamar","Kelas","Tarif Kamar","Status Kamar"
+                "P","Nomer Bed","Kode Kamar","Nama Kamar","Kelas","Tarif Kamar","Status Kamar","Keterangan Pasien"
             }){
              @Override public boolean isCellEditable(int rowIndex, int colIndex){
                 boolean a = false;
@@ -71,7 +71,7 @@ public final class DlgKamar extends javax.swing.JDialog {
              }
              Class[] types = new Class[] {
                 java.lang.Boolean.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, 
-                java.lang.Object.class, java.lang.Double.class, java.lang.Object.class
+                java.lang.Object.class, java.lang.Double.class, java.lang.Object.class, java.lang.Object.class
              };
              @Override
              public Class getColumnClass(int columnIndex) {
@@ -84,7 +84,7 @@ public final class DlgKamar extends javax.swing.JDialog {
         tbKamar.setPreferredScrollableViewportSize(new Dimension(500,500));
         tbKamar.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
 
-        for (i = 0; i < 7; i++) {
+        for (i = 0; i < 8; i++) {
             TableColumn column = tbKamar.getColumnModel().getColumn(i);
             if(i==0){
                 column.setPreferredWidth(20);
@@ -100,6 +100,8 @@ public final class DlgKamar extends javax.swing.JDialog {
                 column.setPreferredWidth(90);
             }else if(i==6){
                  column.setPreferredWidth(90);
+            }else if(i==7){
+                 column.setPreferredWidth(250);
             }
         }
         tbKamar.setDefaultRenderer(Object.class, new WarnaTableKamar());
@@ -253,7 +255,7 @@ public final class DlgKamar extends javax.swing.JDialog {
             }
         });
 
-        internalFrame1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(240, 245, 235)), "::[ Data Nomor Kamar ]::", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(50, 50, 50))); // NOI18N
+        internalFrame1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(240, 245, 235)), "::[ Data Nomor Kamar ]::", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 0, 12), new java.awt.Color(50, 50, 50))); // NOI18N
         internalFrame1.setName("internalFrame1"); // NOI18N
         internalFrame1.setLayout(new java.awt.BorderLayout(1, 1));
 
@@ -1080,13 +1082,17 @@ private void CmbCrIsiItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST
         Valid.tabelKosong(tabMode);
         try{     
             ps=koneksi.prepareStatement("select kamar.kd_kamar,kamar.kd_bangsal,bangsal.nm_bangsal, "+
-                       "kamar.kelas,kamar.trf_kamar,kamar.status from bangsal inner join kamar "+
-                       "on kamar.kd_bangsal=bangsal.kd_bangsal where "+
+                       "kamar.kelas,kamar.trf_kamar,kamar.status, "+
+                       "(SELECT CONCAT(' (',IF( pasien.jk = 'L', 'Pria', 'Wanita' ),') ',pasien.nm_pasien,' (',reg_periksa.umurdaftar,' ',reg_periksa.sttsumur,')') "+
+                       "FROM pasien INNER JOIN reg_periksa ON pasien.no_rkm_medis = reg_periksa.no_rkm_medis INNER JOIN kamar_inap ON kamar_inap.no_rawat = reg_periksa.no_rawat "+
+                       "WHERE kamar_inap.kd_kamar = kamar.kd_kamar  AND kamar_inap.stts_pulang = '-'  LIMIT 1 ) AS keterangan "+
+                       "from bangsal inner join kamar "+
+                       "on kamar.kd_bangsal=bangsal.kd_bangsal LEFT JOIN kamar_inap ON kamar_inap.kd_kamar = kamar.kd_kamar where "+
                        "kamar.statusdata='1' and bangsal.nm_bangsal like ? and kamar.status like ? "+
                        (TCari.getText().trim().equals("")?"":
                        "and (kamar.kd_kamar like ? or kamar.kd_bangsal like ? or bangsal.nm_bangsal like ? or "+
                        "kamar.kelas like ? or kamar.trf_kamar like ? or kamar.status like ? ) ")+
-                       "order by bangsal.nm_bangsal");
+                       "group by kamar.kd_kamar order by bangsal.nm_bangsal");
             try {                
                 ps.setString(1,"%"+BangsalCari.getText().trim()+"%");
                 ps.setString(2,"%"+CmbCrIsi.getSelectedItem().toString().trim()+"%");
@@ -1105,7 +1111,9 @@ private void CmbCrIsiItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST
                                    rs.getString(3),
                                    rs.getString(4),
                                    rs.getDouble(5),
-                                   rs.getString(6)});
+                                   rs.getString(6),
+                                   rs.getString(7)
+                    });
                 }
             } catch (Exception e) {
                 System.out.println("Notif Kamar : "+e);
