@@ -7834,11 +7834,11 @@ private void MnLaporanRekapKunjunganBulananPoliActionPerformed(java.awt.event.Ac
                 JOptionPane.showMessageDialog(null,"Maaf, Pasien sudah masuk Kamar Inap. Gunakan billing Ranap..!!!");
             }else {
                 this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
-                DlgPermintaanRanap form=new DlgPermintaanRanap(null,false);
+                DlgPerintahInap form=new DlgPerintahInap(null,false);
                 form.isCek();
                 form.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
                 form.setLocationRelativeTo(internalFrame1);
-                form.setNoRm(TNoRw.getText(),TNoRM.getText(),TPasien.getText(),TDokter.getText(),nmpnj.getText(),"UGD/IGD",Sequel.cariIsi("select pasien.no_tlp from pasien where pasien.no_rkm_medis=?",TNoRM.getText()));
+                form.setNoRm(TNoRw.getText(),TNoRM.getText(),TPasien.getText(),TDokter.getText());
                 form.setVisible(true);
                 this.setCursor(Cursor.getDefaultCursor());
             }
