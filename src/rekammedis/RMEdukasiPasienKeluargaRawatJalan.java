@@ -2098,7 +2098,7 @@ public final class RMEdukasiPasienKeluargaRawatJalan extends javax.swing.JDialog
         if(ChkInput.isSelected()==true){
             if(internalFrame1.getHeight()>678){
                 ChkInput.setVisible(false);
-                PanelInput.setPreferredSize(new Dimension(WIDTH,506));
+                PanelInput.setPreferredSize(new Dimension(WIDTH,500));
                 FormInput.setVisible(true);      
                 ChkInput.setVisible(true);
             }else{
