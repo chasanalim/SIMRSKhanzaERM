@@ -98,6 +98,7 @@ import rekammedis.RMDataMonitoringAsuhanGizi;
 import rekammedis.RMDataMonitoringReaksiTranfusi;
 import rekammedis.RMDataResumePasienRanap;
 import rekammedis.RMDataSkriningGiziLanjut;
+import rekammedis.RMEdukasiPasienKeluargaRawatJalan;
 import rekammedis.RMHasilPemeriksaanUSG;
 import rekammedis.RMHasilTindakanESWL;
 import rekammedis.RMKonselingFarmasi;
@@ -915,6 +916,7 @@ public class DlgKamarInap extends javax.swing.JDialog {
         ppCatatanADIMEGizi = new javax.swing.JMenuItem();
         MnTransferAntarRuang = new javax.swing.JMenuItem();
         MnPerencanaanPemulangan = new javax.swing.JMenuItem();
+        MnEdukasiPasienKeluarga = new javax.swing.JMenuItem();
         ppResume = new javax.swing.JMenuItem();
         ppRiwayat = new javax.swing.JMenuItem();
         MnPermintaan = new javax.swing.JMenu();
@@ -2821,6 +2823,22 @@ public class DlgKamarInap extends javax.swing.JDialog {
             }
         });
         MnDataRM.add(MnPerencanaanPemulangan);
+
+        MnEdukasiPasienKeluarga.setBackground(new java.awt.Color(255, 255, 254));
+        MnEdukasiPasienKeluarga.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        MnEdukasiPasienKeluarga.setForeground(new java.awt.Color(50, 50, 50));
+        MnEdukasiPasienKeluarga.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/category.png"))); // NOI18N
+        MnEdukasiPasienKeluarga.setText("Edukasi Pasien & Keluarga");
+        MnEdukasiPasienKeluarga.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        MnEdukasiPasienKeluarga.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        MnEdukasiPasienKeluarga.setName("MnEdukasiPasienKeluarga"); // NOI18N
+        MnEdukasiPasienKeluarga.setPreferredSize(new java.awt.Dimension(250, 26));
+        MnEdukasiPasienKeluarga.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MnEdukasiPasienKeluargaActionPerformed(evt);
+            }
+        });
+        MnDataRM.add(MnEdukasiPasienKeluarga);
 
         ppResume.setBackground(new java.awt.Color(255, 255, 254));
         ppResume.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
@@ -5766,7 +5784,7 @@ public class DlgKamarInap extends javax.swing.JDialog {
         R2.setPreferredSize(new java.awt.Dimension(90, 23));
         panelCari.add(R2);
 
-        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "10-10-2023" }));
+        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "31-10-2023" }));
         DTPCari1.setDisplayFormat("dd-MM-yyyy");
         DTPCari1.setName("DTPCari1"); // NOI18N
         DTPCari1.setOpaque(false);
@@ -5789,7 +5807,7 @@ public class DlgKamarInap extends javax.swing.JDialog {
         jLabel22.setPreferredSize(new java.awt.Dimension(25, 23));
         panelCari.add(jLabel22);
 
-        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "10-10-2023" }));
+        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "31-10-2023" }));
         DTPCari2.setDisplayFormat("dd-MM-yyyy");
         DTPCari2.setName("DTPCari2"); // NOI18N
         DTPCari2.setOpaque(false);
@@ -5815,7 +5833,7 @@ public class DlgKamarInap extends javax.swing.JDialog {
         R3.setPreferredSize(new java.awt.Dimension(75, 23));
         panelCari.add(R3);
 
-        DTPCari3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "10-10-2023" }));
+        DTPCari3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "31-10-2023" }));
         DTPCari3.setDisplayFormat("dd-MM-yyyy");
         DTPCari3.setName("DTPCari3"); // NOI18N
         DTPCari3.setOpaque(false);
@@ -5838,7 +5856,7 @@ public class DlgKamarInap extends javax.swing.JDialog {
         jLabel25.setPreferredSize(new java.awt.Dimension(25, 23));
         panelCari.add(jLabel25);
 
-        DTPCari4.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "10-10-2023" }));
+        DTPCari4.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "31-10-2023" }));
         DTPCari4.setDisplayFormat("dd-MM-yyyy");
         DTPCari4.setName("DTPCari4"); // NOI18N
         DTPCari4.setOpaque(false);
@@ -6061,6 +6079,7 @@ public class DlgKamarInap extends javax.swing.JDialog {
         lama=Sequel.cariIsiAngka("select lamajam from set_jam_minimal");
         hariawal=Sequel.cariIsi("select set_jam_minimal.hariawal from set_jam_minimal");
         
+//        KdDPJP.setText("");
         WindowInputKamar.setLocationRelativeTo(internalFrame1);
         WindowInputKamar.setVisible(true);
 }//GEN-LAST:event_BtnInActionPerformed
@@ -15236,7 +15255,7 @@ private void MnRujukMasukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-
     }//GEN-LAST:event_ppRiwayatBtnPrintActionPerformed
 
     private void MnLaporanPersalinanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MnLaporanPersalinanActionPerformed
-              if(tabMode.getRowCount()==0){
+        if(tabMode.getRowCount()==0){
             JOptionPane.showMessageDialog(null,"Maaf, table masih kosong...!!!!");
             TCari.requestFocus();
         }else{
@@ -15878,6 +15897,29 @@ private void MnRujukMasukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-
         // TODO add your handling code here:
     }//GEN-LAST:event_NmDPJPActionPerformed
 
+    private void MnEdukasiPasienKeluargaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MnEdukasiPasienKeluargaActionPerformed
+        if(tabMode.getRowCount()==0){
+            JOptionPane.showMessageDialog(null,"Maaf, data registrasi sudah habis...!!!!");
+            TNoRM.requestFocus();
+        }else if(TPasien.getText().trim().equals("")){
+            JOptionPane.showMessageDialog(null,"Maaf, Silahkan anda pilih dulu data pasien dengan menklik data pada table...!!!");
+            tbKamIn.requestFocus();
+        }else{
+            if(tbKamIn.getSelectedRow()!= -1){
+                this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+                RMEdukasiPasienKeluargaRawatJalan form=new RMEdukasiPasienKeluargaRawatJalan(null,false);
+                form.isCek();
+                form.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
+                form.setLocationRelativeTo(internalFrame1);
+                form.setVisible(true);
+                form.emptTeks();
+                form.setNoRm(TNoRwCari.getText(),DTPCari2.getDate());
+                form.tampil();
+                this.setCursor(Cursor.getDefaultCursor());
+            }
+        }
+    }//GEN-LAST:event_MnEdukasiPasienKeluargaActionPerformed
+
     /**
     * @param args the command line arguments
     */
@@ -15974,6 +16016,7 @@ private void MnRujukMasukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-
     private javax.swing.JMenuItem MnDiagnosaMasuk;
     private javax.swing.JMenuItem MnDiet;
     private javax.swing.JMenuItem MnDokumentasiTindakanESWL;
+    private javax.swing.JMenuItem MnEdukasiPasienKeluarga;
     private javax.swing.JMenuItem MnFollowUpDBD;
     private javax.swing.JMenuItem MnGabungkanRanap;
     private javax.swing.JMenu MnGanti;
@@ -16635,7 +16678,11 @@ private void MnRujukMasukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-
                     btnKamar.setEnabled(true);   
                     CmbTahun.setSelectedItem(now.substring(0,4));
                     CmbBln.setSelectedItem(now.substring(5,7));
-                    CmbTgl.setSelectedItem(now.substring(8,10));          
+                    CmbTgl.setSelectedItem(now.substring(8,10));
+                    
+                    KdDPJP.setText(Sequel.cariIsi("select kd_dpjp from perintah_ranap where no_rawat=?",norawat.getText()));
+                    NmDPJP.setText(Sequel.cariIsi("select nm_dpjp from perintah_ranap where no_rawat=?",norawat.getText()));
+                    diagnosaawal.setText(Sequel.cariIsi("select catatan from perintah_ranap where no_rawat=?",norawat.getText()));
                 }
             } catch (Exception e) {
                 System.out.println("Notifikasi : "+e);
