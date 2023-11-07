@@ -298,6 +298,7 @@ public final class RMRiwayatPerawatan extends javax.swing.JDialog {
         chkSemua = new widget.CekBox();
         chkSBPK = new widget.CekBox();
         chkAsuhanTambahanBunuhDiri = new widget.CekBox();
+        chkPenilaianLevelKecemasanRanapAnak = new widget.CekBox();
         chkPenilaianKorbanKekerasan = new widget.CekBox();
         chkAsuhanTambahanMelarikanDiri = new widget.CekBox();
         chkAsuhanTambahanGeriatri = new widget.CekBox();
@@ -316,6 +317,7 @@ public final class RMRiwayatPerawatan extends javax.swing.JDialog {
         chkProgramTerapi = new widget.CekBox();
         chkFormFisioterapi = new widget.CekBox();
         chkPemantauanPEWSDewasa = new widget.CekBox();
+        chkPemantauanEWSNeonatus = new widget.CekBox();
         chkPemantauanMOEWSObstetri = new widget.CekBox();
         chkPemantauanPEWSAnak = new widget.CekBox();
         chkKonselingFarmasi = new widget.CekBox();
@@ -336,6 +338,7 @@ public final class RMRiwayatPerawatan extends javax.swing.JDialog {
         chkChecklistKriteriaMasukICU = new widget.CekBox();
         chkAsuhanKeperawatanIGD = new widget.CekBox();
         chkAsuhanMedisIGD = new widget.CekBox();
+        chkAsuhanMedisIGDPsikiatri = new widget.CekBox();
         chkTriase = new widget.CekBox();
         chkCatatanCekGDS = new widget.CekBox();
         chkCatatanDokter = new widget.CekBox();
@@ -357,6 +360,7 @@ public final class RMRiwayatPerawatan extends javax.swing.JDialog {
         chkSignInSebelumAnestesi = new widget.CekBox();
         chkSignOutSebelumMenutupLuka = new widget.CekBox();
         chkTimeOutSebelumInsisi = new widget.CekBox();
+        chkAsuhanMedisHemodialisa = new widget.CekBox();
         chkHemodialisa = new widget.CekBox();
         chkPemeriksaanLaborat = new widget.CekBox();
         chkPemeriksaanRadiologi = new widget.CekBox();
@@ -370,8 +374,10 @@ public final class RMRiwayatPerawatan extends javax.swing.JDialog {
         chkAsuhanMedisRalanBayi = new widget.CekBox();
         chkAsuhanMedisRalanBedah = new widget.CekBox();
         chkAsuhanMedisRalanBedahMulut = new widget.CekBox();
+        chkAsuhanMedisRalanKedokteranFisik = new widget.CekBox();
         chkAsuhanMedisRalanGeriatri = new widget.CekBox();
         chkAsuhanMedisRalanKandungan = new widget.CekBox();
+        chkAsuhanMedisRalanKulitKelamin = new widget.CekBox();
         chkAsuhanMedisRalanMata = new widget.CekBox();
         chkAsuhanMedisRalanNeurologi = new widget.CekBox();
         chkAsuhanMedisRalanOrthopedi = new widget.CekBox();
@@ -404,20 +410,15 @@ public final class RMRiwayatPerawatan extends javax.swing.JDialog {
         chkSBARRanap = new widget.CekBox();
         chkAsuhanLanjutanRisikoJatuhAnak = new widget.CekBox();
         chkAsuhanLanjutanRisikoJatuhDewasa = new widget.CekBox();
-        chkAsuhanLanjutanRisikoJatuhLansia = new widget.CekBox();
-        chkAsuhanRisikoDekubitus = new widget.CekBox();
-        chkTransferAntarRuang = new widget.CekBox();
-        chkUjiFungsiKFR = new widget.CekBox();
-        chkAsuhanMedisIGDPsikiatri = new widget.CekBox();
-        chkAsuhanMedisRalanKulitKelamin = new widget.CekBox();
-        chkAsuhanMedisRalanKedokteranFisik = new widget.CekBox();
-        chkAsuhanMedisHemodialisa = new widget.CekBox();
-        chkPemantauanEWSNeonatus = new widget.CekBox();
         chkAsuhanLanjutanRisikoJatuhGeriatri = new widget.CekBox();
+        chkAsuhanLanjutanRisikoJatuhLansia = new widget.CekBox();
         chkAsuhanLanjutanRisikoJatuhNeonatus = new widget.CekBox();
         chkAsuhanLanjutanRisikoJatuhPsikiatri = new widget.CekBox();
         chkAsuhanLanjutanSkriningFungsional = new widget.CekBox();
-        chkPenilaianLevelKecemasanRanapAnak = new widget.CekBox();
+        chkAsuhanRisikoDekubitus = new widget.CekBox();
+        chkTransferAntarRuang = new widget.CekBox();
+        chkUjiFungsiKFR = new widget.CekBox();
+        chkLaporanPersalinan = new widget.CekBox();
         Scroll6 = new widget.ScrollPane();
         LoadHTMLPRMRJ = new widget.editorpane();
         Scroll4 = new widget.ScrollPane();
@@ -675,7 +676,7 @@ public final class RMRiwayatPerawatan extends javax.swing.JDialog {
         FormMenu.setBackground(new java.awt.Color(255, 255, 255));
         FormMenu.setBorder(null);
         FormMenu.setName("FormMenu"); // NOI18N
-        FormMenu.setPreferredSize(new java.awt.Dimension(255, 2482));
+        FormMenu.setPreferredSize(new java.awt.Dimension(255, 2842));
         FormMenu.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 1, 1));
 
         chkSemua.setBackground(new java.awt.Color(204, 204, 204));
@@ -713,6 +714,14 @@ public final class RMRiwayatPerawatan extends javax.swing.JDialog {
         chkAsuhanTambahanBunuhDiri.setOpaque(false);
         chkAsuhanTambahanBunuhDiri.setPreferredSize(new java.awt.Dimension(245, 22));
         FormMenu.add(chkAsuhanTambahanBunuhDiri);
+
+        chkPenilaianLevelKecemasanRanapAnak.setSelected(true);
+        chkPenilaianLevelKecemasanRanapAnak.setText("Asuhan Tambahan - Penilaian Kecemasan Ranap Anak");
+        chkPenilaianLevelKecemasanRanapAnak.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        chkPenilaianLevelKecemasanRanapAnak.setName("chkPenilaianLevelKecemasanRanapAnak"); // NOI18N
+        chkPenilaianLevelKecemasanRanapAnak.setOpaque(false);
+        chkPenilaianLevelKecemasanRanapAnak.setPreferredSize(new java.awt.Dimension(245, 22));
+        FormMenu.add(chkPenilaianLevelKecemasanRanapAnak);
 
         chkPenilaianKorbanKekerasan.setSelected(true);
         chkPenilaianKorbanKekerasan.setText("Asuhan Tambahan - Penilaian Korban Kekerasan");
@@ -862,6 +871,14 @@ public final class RMRiwayatPerawatan extends javax.swing.JDialog {
         chkPemantauanPEWSDewasa.setOpaque(false);
         chkPemantauanPEWSDewasa.setPreferredSize(new java.awt.Dimension(245, 22));
         FormMenu.add(chkPemantauanPEWSDewasa);
+
+        chkPemantauanEWSNeonatus.setSelected(true);
+        chkPemantauanEWSNeonatus.setText("EWS - Pemantauan EWS Neonatus");
+        chkPemantauanEWSNeonatus.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        chkPemantauanEWSNeonatus.setName("chkPemantauanEWSNeonatus"); // NOI18N
+        chkPemantauanEWSNeonatus.setOpaque(false);
+        chkPemantauanEWSNeonatus.setPreferredSize(new java.awt.Dimension(245, 22));
+        FormMenu.add(chkPemantauanEWSNeonatus);
 
         chkPemantauanMOEWSObstetri.setSelected(true);
         chkPemantauanMOEWSObstetri.setText("EWS - Pemantauan MEOWS Obstetri");
@@ -1022,6 +1039,14 @@ public final class RMRiwayatPerawatan extends javax.swing.JDialog {
         chkAsuhanMedisIGD.setOpaque(false);
         chkAsuhanMedisIGD.setPreferredSize(new java.awt.Dimension(245, 22));
         FormMenu.add(chkAsuhanMedisIGD);
+
+        chkAsuhanMedisIGDPsikiatri.setSelected(true);
+        chkAsuhanMedisIGDPsikiatri.setText("IGD - Awal Medis IGD Psikiatri");
+        chkAsuhanMedisIGDPsikiatri.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        chkAsuhanMedisIGDPsikiatri.setName("chkAsuhanMedisIGDPsikiatri"); // NOI18N
+        chkAsuhanMedisIGDPsikiatri.setOpaque(false);
+        chkAsuhanMedisIGDPsikiatri.setPreferredSize(new java.awt.Dimension(245, 22));
+        FormMenu.add(chkAsuhanMedisIGDPsikiatri);
 
         chkTriase.setSelected(true);
         chkTriase.setText("IGD - Triase IGD/UGD");
@@ -1191,6 +1216,14 @@ public final class RMRiwayatPerawatan extends javax.swing.JDialog {
         chkTimeOutSebelumInsisi.setPreferredSize(new java.awt.Dimension(245, 22));
         FormMenu.add(chkTimeOutSebelumInsisi);
 
+        chkAsuhanMedisHemodialisa.setSelected(true);
+        chkAsuhanMedisHemodialisa.setText("Penunjang - Awal Medis Hemodialisa");
+        chkAsuhanMedisHemodialisa.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        chkAsuhanMedisHemodialisa.setName("chkAsuhanMedisHemodialisa"); // NOI18N
+        chkAsuhanMedisHemodialisa.setOpaque(false);
+        chkAsuhanMedisHemodialisa.setPreferredSize(new java.awt.Dimension(245, 22));
+        FormMenu.add(chkAsuhanMedisHemodialisa);
+
         chkHemodialisa.setSelected(true);
         chkHemodialisa.setText("Penunjang - Hemodialisa");
         chkHemodialisa.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -1300,6 +1333,14 @@ public final class RMRiwayatPerawatan extends javax.swing.JDialog {
         chkAsuhanMedisRalanBedahMulut.setPreferredSize(new java.awt.Dimension(245, 22));
         FormMenu.add(chkAsuhanMedisRalanBedahMulut);
 
+        chkAsuhanMedisRalanKedokteranFisik.setSelected(true);
+        chkAsuhanMedisRalanKedokteranFisik.setText("Ralan - Asessmeen Medis Ralan Fisik & Rehabilitasi");
+        chkAsuhanMedisRalanKedokteranFisik.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        chkAsuhanMedisRalanKedokteranFisik.setName("chkAsuhanMedisRalanKedokteranFisik"); // NOI18N
+        chkAsuhanMedisRalanKedokteranFisik.setOpaque(false);
+        chkAsuhanMedisRalanKedokteranFisik.setPreferredSize(new java.awt.Dimension(245, 22));
+        FormMenu.add(chkAsuhanMedisRalanKedokteranFisik);
+
         chkAsuhanMedisRalanGeriatri.setSelected(true);
         chkAsuhanMedisRalanGeriatri.setText("Ralan - Asessemen Medis Ralan Geriatri");
         chkAsuhanMedisRalanGeriatri.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -1315,6 +1356,14 @@ public final class RMRiwayatPerawatan extends javax.swing.JDialog {
         chkAsuhanMedisRalanKandungan.setOpaque(false);
         chkAsuhanMedisRalanKandungan.setPreferredSize(new java.awt.Dimension(245, 22));
         FormMenu.add(chkAsuhanMedisRalanKandungan);
+
+        chkAsuhanMedisRalanKulitKelamin.setSelected(true);
+        chkAsuhanMedisRalanKulitKelamin.setText("Ralan - Asessemen Medis Ralan Kulit & Kelamin");
+        chkAsuhanMedisRalanKulitKelamin.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        chkAsuhanMedisRalanKulitKelamin.setName("chkAsuhanMedisRalanKulitKelamin"); // NOI18N
+        chkAsuhanMedisRalanKulitKelamin.setOpaque(false);
+        chkAsuhanMedisRalanKulitKelamin.setPreferredSize(new java.awt.Dimension(245, 22));
+        FormMenu.add(chkAsuhanMedisRalanKulitKelamin);
 
         chkAsuhanMedisRalanMata.setSelected(true);
         chkAsuhanMedisRalanMata.setText("Ralan - Asessemen Medis Ralan Mata");
@@ -1577,78 +1626,6 @@ public final class RMRiwayatPerawatan extends javax.swing.JDialog {
         chkAsuhanLanjutanRisikoJatuhDewasa.setPreferredSize(new java.awt.Dimension(245, 22));
         FormMenu.add(chkAsuhanLanjutanRisikoJatuhDewasa);
 
-        chkAsuhanLanjutanRisikoJatuhLansia.setSelected(true);
-        chkAsuhanLanjutanRisikoJatuhLansia.setText("Resiko Jatuh - Lanjutan Risiko Jatuh Lansia");
-        chkAsuhanLanjutanRisikoJatuhLansia.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        chkAsuhanLanjutanRisikoJatuhLansia.setName("chkAsuhanLanjutanRisikoJatuhLansia"); // NOI18N
-        chkAsuhanLanjutanRisikoJatuhLansia.setOpaque(false);
-        chkAsuhanLanjutanRisikoJatuhLansia.setPreferredSize(new java.awt.Dimension(245, 22));
-        FormMenu.add(chkAsuhanLanjutanRisikoJatuhLansia);
-
-        chkAsuhanRisikoDekubitus.setSelected(true);
-        chkAsuhanRisikoDekubitus.setText("Resiko Jatuh - Risiko Dekubitus");
-        chkAsuhanRisikoDekubitus.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        chkAsuhanRisikoDekubitus.setName("chkAsuhanRisikoDekubitus"); // NOI18N
-        chkAsuhanRisikoDekubitus.setOpaque(false);
-        chkAsuhanRisikoDekubitus.setPreferredSize(new java.awt.Dimension(245, 22));
-        FormMenu.add(chkAsuhanRisikoDekubitus);
-
-        chkTransferAntarRuang.setSelected(true);
-        chkTransferAntarRuang.setText("Transfer Antar Ruang");
-        chkTransferAntarRuang.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        chkTransferAntarRuang.setName("chkTransferAntarRuang"); // NOI18N
-        chkTransferAntarRuang.setOpaque(false);
-        chkTransferAntarRuang.setPreferredSize(new java.awt.Dimension(245, 22));
-        FormMenu.add(chkTransferAntarRuang);
-
-        chkUjiFungsiKFR.setSelected(true);
-        chkUjiFungsiKFR.setText("Uji Fungsi/Prosedur KFR");
-        chkUjiFungsiKFR.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        chkUjiFungsiKFR.setName("chkUjiFungsiKFR"); // NOI18N
-        chkUjiFungsiKFR.setOpaque(false);
-        chkUjiFungsiKFR.setPreferredSize(new java.awt.Dimension(245, 22));
-        FormMenu.add(chkUjiFungsiKFR);
-
-        chkAsuhanMedisIGDPsikiatri.setSelected(true);
-        chkAsuhanMedisIGDPsikiatri.setText("IGD - Awal Medis IGD Psikiatri");
-        chkAsuhanMedisIGDPsikiatri.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        chkAsuhanMedisIGDPsikiatri.setName("chkAsuhanMedisIGDPsikiatri"); // NOI18N
-        chkAsuhanMedisIGDPsikiatri.setOpaque(false);
-        chkAsuhanMedisIGDPsikiatri.setPreferredSize(new java.awt.Dimension(245, 22));
-        FormMenu.add(chkAsuhanMedisIGDPsikiatri);
-
-        chkAsuhanMedisRalanKulitKelamin.setSelected(true);
-        chkAsuhanMedisRalanKulitKelamin.setText("Ralan - Awal Medis Ralan Kulit & Kelamin");
-        chkAsuhanMedisRalanKulitKelamin.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        chkAsuhanMedisRalanKulitKelamin.setName("chkAsuhanMedisRalanKulitKelamin"); // NOI18N
-        chkAsuhanMedisRalanKulitKelamin.setOpaque(false);
-        chkAsuhanMedisRalanKulitKelamin.setPreferredSize(new java.awt.Dimension(245, 22));
-        FormMenu.add(chkAsuhanMedisRalanKulitKelamin);
-
-        chkAsuhanMedisRalanKedokteranFisik.setSelected(true);
-        chkAsuhanMedisRalanKedokteranFisik.setText("Ralan - Awal Medis Ralan Fisik & Rehabilitasi");
-        chkAsuhanMedisRalanKedokteranFisik.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        chkAsuhanMedisRalanKedokteranFisik.setName("chkAsuhanMedisRalanKedokteranFisik"); // NOI18N
-        chkAsuhanMedisRalanKedokteranFisik.setOpaque(false);
-        chkAsuhanMedisRalanKedokteranFisik.setPreferredSize(new java.awt.Dimension(245, 22));
-        FormMenu.add(chkAsuhanMedisRalanKedokteranFisik);
-
-        chkAsuhanMedisHemodialisa.setSelected(true);
-        chkAsuhanMedisHemodialisa.setText("Penunjang - Awal Medis Hemodialisa");
-        chkAsuhanMedisHemodialisa.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        chkAsuhanMedisHemodialisa.setName("chkAsuhanMedisHemodialisa"); // NOI18N
-        chkAsuhanMedisHemodialisa.setOpaque(false);
-        chkAsuhanMedisHemodialisa.setPreferredSize(new java.awt.Dimension(245, 22));
-        FormMenu.add(chkAsuhanMedisHemodialisa);
-
-        chkPemantauanEWSNeonatus.setSelected(true);
-        chkPemantauanEWSNeonatus.setText("EWS - Pemantauan EWS Neonatus");
-        chkPemantauanEWSNeonatus.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        chkPemantauanEWSNeonatus.setName("chkPemantauanEWSNeonatus"); // NOI18N
-        chkPemantauanEWSNeonatus.setOpaque(false);
-        chkPemantauanEWSNeonatus.setPreferredSize(new java.awt.Dimension(245, 22));
-        FormMenu.add(chkPemantauanEWSNeonatus);
-
         chkAsuhanLanjutanRisikoJatuhGeriatri.setSelected(true);
         chkAsuhanLanjutanRisikoJatuhGeriatri.setText("Resiko Jatuh - Lanjutan Risiko Jatuh Geriatri");
         chkAsuhanLanjutanRisikoJatuhGeriatri.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -1656,6 +1633,14 @@ public final class RMRiwayatPerawatan extends javax.swing.JDialog {
         chkAsuhanLanjutanRisikoJatuhGeriatri.setOpaque(false);
         chkAsuhanLanjutanRisikoJatuhGeriatri.setPreferredSize(new java.awt.Dimension(245, 22));
         FormMenu.add(chkAsuhanLanjutanRisikoJatuhGeriatri);
+
+        chkAsuhanLanjutanRisikoJatuhLansia.setSelected(true);
+        chkAsuhanLanjutanRisikoJatuhLansia.setText("Resiko Jatuh - Lanjutan Risiko Jatuh Lansia");
+        chkAsuhanLanjutanRisikoJatuhLansia.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        chkAsuhanLanjutanRisikoJatuhLansia.setName("chkAsuhanLanjutanRisikoJatuhLansia"); // NOI18N
+        chkAsuhanLanjutanRisikoJatuhLansia.setOpaque(false);
+        chkAsuhanLanjutanRisikoJatuhLansia.setPreferredSize(new java.awt.Dimension(245, 22));
+        FormMenu.add(chkAsuhanLanjutanRisikoJatuhLansia);
 
         chkAsuhanLanjutanRisikoJatuhNeonatus.setSelected(true);
         chkAsuhanLanjutanRisikoJatuhNeonatus.setText("Resiko Jatuh - Lanjutan Risiko Jatuh Neonatus");
@@ -1681,13 +1666,37 @@ public final class RMRiwayatPerawatan extends javax.swing.JDialog {
         chkAsuhanLanjutanSkriningFungsional.setPreferredSize(new java.awt.Dimension(245, 22));
         FormMenu.add(chkAsuhanLanjutanSkriningFungsional);
 
-        chkPenilaianLevelKecemasanRanapAnak.setSelected(true);
-        chkPenilaianLevelKecemasanRanapAnak.setText("Asuhan Tambahan - Penilaian Kecemasan Ranap Anak");
-        chkPenilaianLevelKecemasanRanapAnak.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        chkPenilaianLevelKecemasanRanapAnak.setName("chkPenilaianLevelKecemasanRanapAnak"); // NOI18N
-        chkPenilaianLevelKecemasanRanapAnak.setOpaque(false);
-        chkPenilaianLevelKecemasanRanapAnak.setPreferredSize(new java.awt.Dimension(245, 22));
-        FormMenu.add(chkPenilaianLevelKecemasanRanapAnak);
+        chkAsuhanRisikoDekubitus.setSelected(true);
+        chkAsuhanRisikoDekubitus.setText("Resiko Jatuh - Risiko Dekubitus");
+        chkAsuhanRisikoDekubitus.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        chkAsuhanRisikoDekubitus.setName("chkAsuhanRisikoDekubitus"); // NOI18N
+        chkAsuhanRisikoDekubitus.setOpaque(false);
+        chkAsuhanRisikoDekubitus.setPreferredSize(new java.awt.Dimension(245, 22));
+        FormMenu.add(chkAsuhanRisikoDekubitus);
+
+        chkTransferAntarRuang.setSelected(true);
+        chkTransferAntarRuang.setText("Transfer Antar Ruang");
+        chkTransferAntarRuang.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        chkTransferAntarRuang.setName("chkTransferAntarRuang"); // NOI18N
+        chkTransferAntarRuang.setOpaque(false);
+        chkTransferAntarRuang.setPreferredSize(new java.awt.Dimension(245, 22));
+        FormMenu.add(chkTransferAntarRuang);
+
+        chkUjiFungsiKFR.setSelected(true);
+        chkUjiFungsiKFR.setText("Uji Fungsi/Prosedur KFR");
+        chkUjiFungsiKFR.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        chkUjiFungsiKFR.setName("chkUjiFungsiKFR"); // NOI18N
+        chkUjiFungsiKFR.setOpaque(false);
+        chkUjiFungsiKFR.setPreferredSize(new java.awt.Dimension(245, 22));
+        FormMenu.add(chkUjiFungsiKFR);
+
+        chkLaporanPersalinan.setSelected(true);
+        chkLaporanPersalinan.setText("VK - Laporan Persalinan");
+        chkLaporanPersalinan.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        chkLaporanPersalinan.setName("chkLaporanPersalinan"); // NOI18N
+        chkLaporanPersalinan.setOpaque(false);
+        chkLaporanPersalinan.setPreferredSize(new java.awt.Dimension(245, 22));
+        FormMenu.add(chkLaporanPersalinan);
 
         ScrollMenu.setViewportView(FormMenu);
 
@@ -2220,6 +2229,7 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
             chkSEPRanap.setSelected(true);//+
             chkChecklistDuranteOperasi.setSelected(true);//+
             chkAsuhanKeperawatanRanap.setSelected(true);//+
+            chkLaporanPersalinan.setSelected(true);//+
         }else{
             chkSBPK.setSelected(false);
             chkTriase.setSelected(false);
@@ -2343,6 +2353,7 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
             chkSEPRanap.setSelected(false);//+
             chkChecklistDuranteOperasi.setSelected(false);//+
             chkAsuhanKeperawatanRanapAnak.setSelected(false);//+
+            chkLaporanPersalinan.setSelected(false);//+
         }
     }//GEN-LAST:event_chkSemuaItemStateChanged
 
@@ -2645,6 +2656,7 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
     private widget.CekBox chkHasilPemeriksaanUSG;
     private widget.CekBox chkHemodialisa;
     private widget.CekBox chkKonselingFarmasi;
+    private widget.CekBox chkLaporanPersalinan;
     private widget.CekBox chkMonitoringGizi;
     private widget.CekBox chkMonitoringReaksiTranfusi;
     private widget.CekBox chkOperasiVK;
@@ -13911,7 +13923,7 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                             "select catatan_observasi_ranap_kebidanan.tgl_perawatan,catatan_observasi_ranap_kebidanan.jam_rawat,catatan_observasi_ranap_kebidanan.gcs,"+
                             "catatan_observasi_ranap_kebidanan.td,catatan_observasi_ranap_kebidanan.hr,catatan_observasi_ranap_kebidanan.rr,catatan_observasi_ranap_kebidanan.suhu,"+
                             "catatan_observasi_ranap_kebidanan.spo2,catatan_observasi_ranap_kebidanan.kontraksi,catatan_observasi_ranap_kebidanan.bjj,catatan_observasi_ranap_kebidanan.ppv,"+
-                            "catatan_observasi_ranap_kebidanan.vt,catatan_observasi_ranap_kebidanan.nip,petugas.nama from catatan_observasi_ranap_kebidanan "+
+                            "catatan_observasi_ranap_kebidanan.vt,catatan_observasi_ranap_kebidanan.ketuban,catatan_observasi_ranap_kebidanan.presentasi,catatan_observasi_ranap_kebidanan.hodge,catatan_observasi_ranap_kebidanan.nip,petugas.nama from catatan_observasi_ranap_kebidanan "+
                             "inner join petugas on catatan_observasi_ranap_kebidanan.nip=petugas.nip "+
                             "where catatan_observasi_ranap_kebidanan.no_rawat='"+norawat+"'").executeQuery();
                     if(rs2.next()){
@@ -13924,17 +13936,17 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                               "<table width='100%' border='0' align='center' cellpadding='3px' cellspacing='0' class='tbl_form'>"+
                                  "<tr align='center'>"+
                                     "<td valign='middle' width='4%' bgcolor='#FFFAF8' rowspan='2'>No.</td>"+
-                                    "<td valign='middle' width='15%' bgcolor='#FFFAF8' rowspan='2'>Tanggal</td>"+
-                                    "<td valign='top' width='58%' bgcolor='#FFFAF8' colspan='6'>Monitoring</td>"+
-                                    "<td valign='middle' width='23%' bgcolor='#FFFAF8' rowspan='2'>Bidan</td>"+
+                                    "<td valign='middle' width='15%' bgcolor='#FFFAF8' rowspan='2'>Tanggal & Bidan</td>"+
+                                    "<td valign='top' width='81%' bgcolor='#FFFAF8' colspan='7'>Monitoring</td>"+
                                  "</tr>"+
                                  "<tr align='center'>"+
-                                    "<td valign='top' width='11%' bgcolor='#FFFAF8'>GCS(E,V,M)</td>"+
-                                    "<td valign='top' width='10%' bgcolor='#FFFAF8'>TD</td>"+
-                                    "<td valign='top' width='9%' bgcolor='#FFFAF8'>HR (/menit)</td>"+
-                                    "<td valign='top' width='9%' bgcolor='#FFFAF8'>RR (/menit)</td>"+
-                                    "<td valign='top' width='9%' bgcolor='#FFFAF8'>Suhu(C)</td>"+
-                                    "<td valign='top' width='9%' bgcolor='#FFFAF8'>SpO2(%)</td>"+
+                                    "<td valign='top' width='12%' bgcolor='#FFFAF8'>GCS(E,V,M)</td>"+
+                                    "<td valign='top' width='12%' bgcolor='#FFFAF8'>TD</td>"+
+                                    "<td valign='top' width='11%' bgcolor='#FFFAF8'>HR (/menit)</td>"+
+                                    "<td valign='top' width='11%' bgcolor='#FFFAF8'>RR (/menit)</td>"+
+                                    "<td valign='top' width='10%' bgcolor='#FFFAF8'>Suhu(C)</td>"+
+                                    "<td valign='top' width='10%' bgcolor='#FFFAF8'>SpO2(%)</td>"+
+                                    "<td valign='top' width='12%' bgcolor='#FFFAF8'>Kontraksi/His</td>"+
                                  "</tr>"
                         );
                         rs2.beforeFirst();
@@ -13943,26 +13955,30 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                             htmlContent.append(
                                  "<tr>"+
                                     "<td valign='top' align='center' rowspan='3'>"+w+"</td>"+
-                                    "<td valign='top' rowspan='3'>"+rs2.getString("tgl_perawatan")+" "+rs2.getString("jam_rawat")+"</td>"+
+                                    "<td valign='top' align='center' rowspan='3'>"+rs2.getString("tgl_perawatan")+" "+rs2.getString("jam_rawat")+"<br>"+rs2.getString("nip")+" "+rs2.getString("nama")+"</td>"+
                                     "<td valign='top' align='center'>"+rs2.getString("gcs")+"</td>"+
                                     "<td valign='top' align='center'>"+rs2.getString("td")+"</td>"+
                                     "<td valign='top' align='center'>"+rs2.getString("hr")+"</td>"+
                                     "<td valign='top' align='center'>"+rs2.getString("rr")+"</td>"+
                                     "<td valign='top' align='center'>"+rs2.getString("suhu")+"</td>"+
                                     "<td valign='top' align='center'>"+rs2.getString("spo2")+"</td>"+
-                                    "<td valign='top' rowspan='3'>"+rs2.getString("nip")+" "+rs2.getString("nama")+"</td>"+
+                                    "<td valign='top' align='center'>"+rs2.getString("kontraksi")+"</td>"+
                                  "</tr>"+
-                                 "<tr align='center'>"+
-                                    "<td valign='top' bgcolor='#FFFAF8'>Kotraksi/HIS</td>"+
+                                 "<tr align='center'>"+                                   
                                     "<td valign='top' bgcolor='#FFFAF8'>BJJ</td>"+
                                     "<td valign='top' bgcolor='#FFFAF8'>PPV</td>"+
-                                    "<td valign='top' bgcolor='#FFFAF8' colspan='3'>VT</td>"+
+                                    "<td valign='top' bgcolor='#FFFAF8'>VT</td>"+
+                                    "<td valign='top' bgcolor='#FFFAF8'>Ketuban</td>"+
+                                    "<td valign='top' bgcolor='#FFFAF8'>Presentasi</td>"+
+                                    "<td valign='top' bgcolor='#FFFAF8' colspan='2'>Hodge</td>"+
                                  "</tr>"+
-                                 "<tr>"+
-                                    "<td valign='top'>"+rs2.getString("kontraksi")+"</td>"+
+                                 "<tr>"+                                 
                                     "<td valign='top' align='center'>"+rs2.getString("bjj")+"</td>"+
                                     "<td valign='top' align='center'>"+rs2.getString("ppv")+"</td>"+
-                                    "<td valign='top' colspan='3'>"+rs2.getString("vt")+"</td>"+
+                                    "<td valign='top' align='center'>"+rs2.getString("vt")+"</td>"+
+                                    "<td valign='top' align='center'>"+rs2.getString("ketuban")+"</td>"+
+                                    "<td valign='top' align='center'>"+rs2.getString("presentasi")+"</td>"+
+                                    "<td valign='top' align='center'colspan='2'>"+rs2.getString("hodge")+"</td>"+
                                  "</tr>"
                             );                                        
                             w++;
@@ -14041,6 +14057,72 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                                     "<td valign='top' colspan='2'>"+rs2.getString("perdarahan")+"</td>"+
                                     "<td valign='top' colspan='2'>"+rs2.getString("keterangan")+"</td>"+
                                  "</tr>"
+                            );                                        
+                            w++;
+                        }
+                        htmlContent.append(
+                              "</table>"+
+                            "</td>"+
+                          "</tr>");
+                    }
+                } catch (Exception e) {
+                    System.out.println("Notifikasi : "+e);
+                } finally{
+                    if(rs2!=null){
+                        rs2.close();
+                    }
+                }
+            }
+            
+            //menampilkan laporan persalinan
+            if(chkLaporanPersalinan.isSelected()==true){
+                try {
+                    rs2=koneksi.prepareStatement(
+                            "select laporan_persalinan.tgl_perawatan,laporan_persalinan.jam_rawat,laporan_persalinan.nadi,"+
+                            "laporan_persalinan.tensi,laporan_persalinan.suhu,laporan_persalinan.rr,laporan_persalinan.spo2,"+
+                            "laporan_persalinan.his,laporan_persalinan.djj,laporan_persalinan.keadaan_umum,laporan_persalinan.nip,petugas.nama from laporan_persalinan "+
+                            "inner join petugas on laporan_persalinan.nip=petugas.nip "+
+                            "where laporan_persalinan.no_rawat='"+norawat+"'").executeQuery();
+                    if(rs2.next()){
+                        htmlContent.append(
+                          "<tr class='isi'>"+ 
+                            "<td valign='top' width='2%'></td>"+        
+                            "<td valign='top' style='font-weight:bold;' width='18%'>Laporan Persalinan</td>"+
+                            "<td valign='top' width='1%' align='center'>:</td>"+
+                            "<td valign='top' width='79%'>"+
+                              "<table width='100%' border='0' align='center' cellpadding='3px' cellspacing='0' class='tbl_form'>"+
+                                 "<tr align='center'>"+
+                                    "<td valign='middle' width='4%' bgcolor='#FFFAF8' rowspan='2'>No.</td>"+
+                                    "<td valign='middle' width='15%' bgcolor='#FFFAF8' rowspan='2'>Tanggal & Bidan</td>"+
+                                    "<td valign='top' width='32%' bgcolor='#FFFAF8' colspan='5'>TTV</td>"+
+                                    "<td valign='middle' width='6%' bgcolor='#FFFAF8' rowspan='2'>His</td>"+
+                                    "<td valign='middle' width='8%' bgcolor='#FFFAF8' rowspan='2'>DJJ</td>"+
+                                    "<td valign='middle' width='35%' bgcolor='#FFFAF8' rowspan='2'>Keadaan Umum</td>"+
+                                 "</tr>"+
+                                 "<tr align='center'>"+
+                                    "<td valign='top' width='5%' bgcolor='#FFFAF8'>Nadi</td>"+
+                                    "<td valign='top' width='6%' bgcolor='#FFFAF8'>Tensi</td>"+
+                                    "<td valign='top' width='6%' bgcolor='#FFFAF8'>Suhu(C)</td>"+
+                                    "<td valign='top' width='8%' bgcolor='#FFFAF8'>RR (/menit)</td>"+
+                                    "<td valign='top' width='7%' bgcolor='#FFFAF8'>SpO2(%)</td>"+
+                                 "</tr>"
+                        );
+                        rs2.beforeFirst();
+                        w=1;
+                        while(rs2.next()){
+                            htmlContent.append(
+                                 "<tr>"+
+                                    "<td valign='top' align='center'>"+w+"</td>"+
+                                    "<td valign='top' align='center'>"+rs2.getString("tgl_perawatan")+" "+rs2.getString("jam_rawat")+"<br>"+rs2.getString("nip")+" "+rs2.getString("nama")+"</td>"+
+                                    "<td valign='top' align='center'>"+rs2.getString("nadi")+"</td>"+
+                                    "<td valign='top' align='center'>"+rs2.getString("tensi")+"</td>"+
+                                    "<td valign='top' align='center'>"+rs2.getString("suhu")+"</td>"+
+                                    "<td valign='top' align='center'>"+rs2.getString("rr")+"</td>"+
+                                    "<td valign='top' align='center'>"+rs2.getString("spo2")+"</td>"+
+                                    "<td valign='top' align='center'>"+rs2.getString("his")+"</td>"+
+                                    "<td valign='top' align='center'>"+rs2.getString("djj")+"</td>"+
+                                    "<td valign='top'>"+rs2.getString("keadaan_umum")+"</td>"+
+                                 "</tr>"                              
                             );                                        
                             w++;
                         }
@@ -18675,7 +18757,7 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                         htmlContent.append(
                           "<tr class='isi'>"+ 
                             "<td valign='top' width='2%'></td>"+        
-                            "<td valign='top' width='18%'>Pemantauan EWS Dewasa</td>"+
+                            "<td valign='top' style='font-weight:bold;' width='18%'>Pemantauan EWS Dewasa</td>"+
                             "<td valign='top' width='1%' align='center'>:</td>"+
                             "<td valign='top' width='79%'>"+
                               "<table width='100%' border='0' align='center' cellpadding='3px' cellspacing='0' class='tbl_form'>"+
@@ -18805,7 +18887,7 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                         htmlContent.append(
                           "<tr class='isi'>"+ 
                             "<td valign='top' width='2%'></td>"+        
-                            "<td valign='top' width='18%'>Pemantauan MEOWS Obstetri</td>"+
+                            "<td valign='top' style='font-weight:bold;' width='18%'>Pemantauan MEOWS Obstetri</td>"+
                             "<td valign='top' width='1%' align='center'>:</td>"+
                             "<td valign='top' width='79%'>"+
                               "<table width='100%' border='0' align='center' cellpadding='3px' cellspacing='0' class='tbl_form'>"+
@@ -18943,7 +19025,7 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                         htmlContent.append(
                           "<tr class='isi'>"+ 
                             "<td valign='top' width='2%'></td>"+        
-                            "<td valign='top' width='18%'>Pemantauan EWS Neonatus</td>"+
+                            "<td valign='top' style='font-weight:bold;' width='18%'>Pemantauan EWS Neonatus</td>"+
                             "<td valign='top' width='1%' align='center'>:</td>"+
                             "<td valign='top' width='79%'>"+
                               "<table width='100%' border='0' align='center' cellpadding='3px' cellspacing='0' class='tbl_form'>"+
