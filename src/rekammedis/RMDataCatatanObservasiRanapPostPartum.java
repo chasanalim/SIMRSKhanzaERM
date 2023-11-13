@@ -124,7 +124,7 @@ public final class RMDataCatatanObservasiRanapPostPartum extends javax.swing.JDi
         RR.setDocument(new batasInput((byte)5).getKata(RR));
         Suhu.setDocument(new batasInput((byte)5).getKata(Suhu));
         SPO.setDocument(new batasInput((byte)3).getKata(SPO));
-        TFU.setDocument(new batasInput((byte)15).getKata(TFU));
+        TFU.setDocument(new batasInput((byte)50).getKata(TFU));
         Kontraksi.setDocument(new batasInput((byte)15).getKata(Kontraksi));
         Perdarahan.setDocument(new batasInput((byte)15).getKata(Perdarahan));
         Keterangan.setDocument(new batasInput((byte)30).getKata(Keterangan));
