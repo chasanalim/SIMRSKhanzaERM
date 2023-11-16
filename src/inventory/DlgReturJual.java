@@ -1406,6 +1406,7 @@ private void BtnGudangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
     
     public void isCek(){  
         autonomor();
+        cariKelasPasien();
         Sequel.cariIsi("select kd_bangsal from set_lokasi",kdgudang);
         Sequel.cariIsi("select nm_bangsal from bangsal where kd_bangsal=?",nmgudang,kdgudang.getText());
         if(akses.getjml2()>=1){
@@ -1417,7 +1418,8 @@ private void BtnGudangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
             BtnBatal.setEnabled(akses.getretur_dari_pembeli());
             Kdptg.setText(akses.getkode());
             Sequel.cariIsi("select petugas.nama from petugas where petugas.nip=?", Nmptg,Kdptg.getText());
-        }        
+        }    
+        
     }
     
     public void setPasien(String norm,String norawat){
@@ -1428,6 +1430,50 @@ private void BtnGudangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
         Sequel.cariIsi("select pasien.nm_pasien from pasien where pasien.no_rkm_medis=?",nmmem,kdmem.getText());
         kdgudang.setText(akses.getkdbangsal());
         Sequel.cariIsi("select bangsal.nm_bangsal from bangsal where bangsal.kd_bangsal=?",nmgudang,kdgudang.getText());
+        cariKelasPasien();
+    }
+    
+    
+    
+    private void cariKelasPasien() {
+        try {
+            ps=koneksi.prepareStatement(
+                    "SELECT kamar.kelas,kamar_inap.no_rawat, kamar_inap.kd_kamar FROM kamar_inap INNER JOIN kamar on kamar_inap.kd_kamar=kamar.kd_kamar where kamar_inap.no_rawat=? and kamar_inap.stts_pulang='-'");
+            try {
+                ps.setString(1,norawat);
+//                ps.setString(2,Kdbar.getText());
+//                ps.setString(3,NoFaktur.getText());
+                rs=ps.executeQuery();
+                if(rs.next()){
+                    if(rs.getString("kelas").equals("Kelas 1")){
+                        Jenisjual.setSelectedIndex(1);
+                    }else if(rs.getString("kelas").equals("Kelas 2")){
+                        Jenisjual.setSelectedIndex(2);
+                    }else if(rs.getString("kelas").equals("Kelas 3")){
+                        Jenisjual.setSelectedIndex(3);
+                    }else if(rs.getString("kelas").equals("Kelas VIP")){
+                        Jenisjual.setSelectedIndex(5);
+                    }else if(rs.getString("kelas").equals("Kelas VVIP")){
+                        Jenisjual.setSelectedIndex(6);
+                    }else if(rs.getString("kelas").equals("Kelas Utama")){
+                        Jenisjual.setSelectedIndex(4);
+                    }else {
+                        Jenisjual.setSelectedIndex(8);
+                    }
+                }
+            } catch (Exception e) {
+                System.out.println("Notif : "+e);
+            } finally{
+                if(rs!=null){
+                    rs.close();
+                }
+                if(ps!=null){
+                    ps.close();
+                }
+            } 
+        } catch (Exception e) {
+            System.out.println("Notif : "+e);
+        }
     }
     
     private void cariBatch() {
@@ -1478,7 +1524,7 @@ private void BtnGudangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
             System.out.println("Notif : "+e);
         }
     }
-
+    
     private void autonomor() {
         if(!formvalid.equals("No")){
             Valid.autoNomer3("select ifnull(MAX(CONVERT(RIGHT(no_retur_jual,3),signed)),0) from returjual where tgl_retur='"+Valid.SetTgl(TglRetur.getSelectedItem()+"")+"' ",
