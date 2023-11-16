@@ -137,7 +137,7 @@ public final class DlgRawatInap extends javax.swing.JDialog {
     private RMCari5SOAPTerakhir soapterakhir=new RMCari5SOAPTerakhir(null,false);  
     private PreparedStatement ps,ps2,ps3,ps4,ps5,psrekening,ps6,ps7;
     private ResultSet rs,rsrekening;
-    private int i=0,tinggi=0;
+    private int i=0,tinggi=0, reply;
     private boolean sukses=false;  
     private double ttljmdokter=0,ttljmperawat=0,ttlkso=0,ttlpendapatan=0,ttljasasarana=0,ttlbhp=0,ttlmenejemen=0;
     private String Suspen_Piutang_Tindakan_Ranap="",Tindakan_Ranap="",Beban_Jasa_Medik_Dokter_Tindakan_Ranap="",Utang_Jasa_Medik_Dokter_Tindakan_Ranap="",
@@ -5650,7 +5650,7 @@ public final class DlgRawatInap extends javax.swing.JDialog {
                 "from pasien inner join reg_periksa on reg_periksa.no_rkm_medis=pasien.no_rkm_medis "+
                 "inner join pemeriksaan_ranap_sbar on pemeriksaan_ranap_sbar.no_rawat=reg_periksa.no_rawat "+
                 "inner join pegawai on pemeriksaan_ranap_sbar.nip=pegawai.nik "+
-                "inner join petugas on pemeriksaan_ranap_sbar.kd_dokter=petugas.nip "+
+                "LEFT join petugas on pemeriksaan_ranap_sbar.kd_dokter=petugas.nip "+
                 "LEFT JOIN validasi_pemeriksaan_sbar ON validasi_pemeriksaan_sbar.no_rawat = pemeriksaan_ranap_sbar.no_rawat "+ 
                 "AND validasi_pemeriksaan_sbar.tgl_perawatan = pemeriksaan_ranap_sbar.tgl_perawatan "+ 
                 "AND validasi_pemeriksaan_sbar.jam_rawat = pemeriksaan_ranap_sbar.jam_rawat where "+ 
@@ -5668,7 +5668,7 @@ public final class DlgRawatInap extends javax.swing.JDialog {
                 "from pasien inner join reg_periksa on reg_periksa.no_rkm_medis=pasien.no_rkm_medis "+
                 "inner join pemeriksaan_ranap_sbar on pemeriksaan_ranap_sbar.no_rawat=reg_periksa.no_rawat "+
                 "inner join pegawai on pemeriksaan_ranap_sbar.nip=pegawai.nik "+
-                "inner join petugas on pemeriksaan_ranap_sbar.kd_dokter=petugas.nip "+
+                "LEFT join petugas on pemeriksaan_ranap_sbar.kd_dokter=petugas.nip "+
                 "LEFT JOIN validasi_pemeriksaan_sbar ON validasi_pemeriksaan_sbar.no_rawat = pemeriksaan_ranap_sbar.no_rawat "+ 
                 "AND validasi_pemeriksaan_sbar.tgl_perawatan = pemeriksaan_ranap_sbar.tgl_perawatan "+ 
                 "AND validasi_pemeriksaan_sbar.jam_rawat = pemeriksaan_ranap_sbar.jam_rawat where "+ 
@@ -5815,6 +5815,7 @@ public final class DlgRawatInap extends javax.swing.JDialog {
     private void BtnHapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnHapusActionPerformed
         switch (TabRawat.getSelectedIndex()) {
             case 0:
+                
                 if(tabModeDr.getRowCount()==0){
                     JOptionPane.showMessageDialog(null,"Maaf, data sudah habis...!!!!");
                     TNoRw.requestFocus();
@@ -6032,72 +6033,84 @@ public final class DlgRawatInap extends javax.swing.JDialog {
                     Sequel.AutoComitTrue();
                 }   break;
             case 3:
-                if(tabModePemeriksaan.getRowCount()==0){
-                    JOptionPane.showMessageDialog(null,"Maaf, data sudah habis...!!!!");
-                    TNoRw.requestFocus();
-                }else{
-                    for(i=0;i<tbPemeriksaan.getRowCount();i++){
-                        if(tbPemeriksaan.getValueAt(i,0).toString().equals("true")){
-                            if(akses.getkode().equals("Admin Utama")){
-                                Sequel.queryu("delete from pemeriksaan_ranap where no_rawat='"+tbPemeriksaan.getValueAt(i,1).toString()+
-                                        "' and tgl_perawatan='"+tbPemeriksaan.getValueAt(i,4).toString()+
-                                        "' and jam_rawat='"+tbPemeriksaan.getValueAt(i,5).toString()+"' ");
-                            }else{
-                                if(akses.getkode().equals(tbPemeriksaan.getValueAt(i,6).toString())){
+                reply = JOptionPane.showConfirmDialog(rootPane,"Eeiiiiiits, Yakin mau hapus data ini.?? \nData yang sudah terhapus tidak bisa dikembalikan !!","Konfirmasi",JOptionPane.YES_NO_OPTION);
+                if (reply == JOptionPane.YES_OPTION) {
+                    if(tabModePemeriksaan.getRowCount()==0){
+                        JOptionPane.showMessageDialog(null,"Maaf, data sudah habis...!!!!");
+                        TNoRw.requestFocus();
+                    }else{
+                        for(i=0;i<tbPemeriksaan.getRowCount();i++){
+                            if(tbPemeriksaan.getValueAt(i,0).toString().equals("true")){
+                                if(akses.getkode().equals("Admin Utama")){
                                     Sequel.queryu("delete from pemeriksaan_ranap where no_rawat='"+tbPemeriksaan.getValueAt(i,1).toString()+
                                             "' and tgl_perawatan='"+tbPemeriksaan.getValueAt(i,4).toString()+
                                             "' and jam_rawat='"+tbPemeriksaan.getValueAt(i,5).toString()+"' ");
                                 }else{
-                                    JOptionPane.showMessageDialog(null,"Hanya bisa dihapus oleh dokter/petugas yang bersangkutan..!!");
+                                    if(akses.getkode().equals(tbPemeriksaan.getValueAt(i,6).toString())){
+                                        Sequel.queryu("delete from pemeriksaan_ranap where no_rawat='"+tbPemeriksaan.getValueAt(i,1).toString()+
+                                                "' and tgl_perawatan='"+tbPemeriksaan.getValueAt(i,4).toString()+
+                                                "' and jam_rawat='"+tbPemeriksaan.getValueAt(i,5).toString()+"' ");
+                                    }else{
+                                        JOptionPane.showMessageDialog(null,"Hanya bisa dihapus oleh dokter/petugas yang bersangkutan..!!");
+                                    }
                                 }
                             }
                         }
-                    }
-                    tampilPemeriksaan();
-                }   break;
+                        tampilPemeriksaan();
+                    }   
+                }break;
             case 4:
-                if(tabModeObstetri.getRowCount()==0){
-                    JOptionPane.showMessageDialog(null,"Maaf, data sudah habis...!!!!");
-                    TNoRw.requestFocus();
-                }else{
-                    for(i=0;i<tbPemeriksaanObstetri.getRowCount();i++){
-                        if(tbPemeriksaanObstetri.getValueAt(i,0).toString().equals("true")){
-                            Sequel.queryu("delete from pemeriksaan_obstetri_ranap where no_rawat='"+tbPemeriksaanObstetri.getValueAt(i,1).toString()+
-                                    "' and tgl_perawatan='"+tbPemeriksaanObstetri.getValueAt(i,4).toString()+
-                                    "' and jam_rawat='"+tbPemeriksaanObstetri.getValueAt(i,5).toString()+"' ");
+                reply = JOptionPane.showConfirmDialog(rootPane,"Eeiiiiiits, Yakin mau hapus data ini.?? \nData yang sudah terhapus tidak bisa dikembalikan !!","Konfirmasi",JOptionPane.YES_NO_OPTION);
+                if (reply == JOptionPane.YES_OPTION) {
+                    if(tabModeObstetri.getRowCount()==0){
+                        JOptionPane.showMessageDialog(null,"Maaf, data sudah habis...!!!!");
+                        TNoRw.requestFocus();
+                    }else{
+                        for(i=0;i<tbPemeriksaanObstetri.getRowCount();i++){
+                            if(tbPemeriksaanObstetri.getValueAt(i,0).toString().equals("true")){
+                                Sequel.queryu("delete from pemeriksaan_obstetri_ranap where no_rawat='"+tbPemeriksaanObstetri.getValueAt(i,1).toString()+
+                                        "' and tgl_perawatan='"+tbPemeriksaanObstetri.getValueAt(i,4).toString()+
+                                        "' and jam_rawat='"+tbPemeriksaanObstetri.getValueAt(i,5).toString()+"' ");
+                            }
                         }
+                        tampilPemeriksaanObstetri();
                     }
-                    tampilPemeriksaanObstetri();
                 }   break;
             case 5:
-                if(tabModeGinekologi.getRowCount()==0){
-                    JOptionPane.showMessageDialog(null, "Maaf, data sudah habis...!!!");
-                    TNoRw.requestFocus();
-                    
-                }else {
-                    for(i=0;i<tbPemeriksaanGinekologi.getRowCount();i++){
-                        if(tbPemeriksaanGinekologi.getValueAt(i,0).toString().equals("true")){
-                            Sequel.queryu("delete from pemeriksaan_ginekologi_ranap where no_rawat='"+tbPemeriksaanGinekologi.getValueAt(i,1).toString()+
-                                    "' and tgl_perawatan='"+tbPemeriksaanGinekologi.getValueAt(i,4).toString()+
-                                    "' and jam_rawat='"+tbPemeriksaanGinekologi.getValueAt(i,5).toString()+"' ");
+                reply = JOptionPane.showConfirmDialog(rootPane,"Eeiiiiiits, Yakin mau hapus data ini.?? \nData yang sudah terhapus tidak bisa dikembalikan !!","Konfirmasi",JOptionPane.YES_NO_OPTION);
+                if (reply == JOptionPane.YES_OPTION) {
+                    if(tabModeGinekologi.getRowCount()==0){
+                        JOptionPane.showMessageDialog(null, "Maaf, data sudah habis...!!!");
+                        TNoRw.requestFocus();
+
+                    }else {
+                        for(i=0;i<tbPemeriksaanGinekologi.getRowCount();i++){
+                            if(tbPemeriksaanGinekologi.getValueAt(i,0).toString().equals("true")){
+                                Sequel.queryu("delete from pemeriksaan_ginekologi_ranap where no_rawat='"+tbPemeriksaanGinekologi.getValueAt(i,1).toString()+
+                                        "' and tgl_perawatan='"+tbPemeriksaanGinekologi.getValueAt(i,4).toString()+
+                                        "' and jam_rawat='"+tbPemeriksaanGinekologi.getValueAt(i,5).toString()+"' ");
+                            }
                         }
+                        tampilPemeriksaanGinekologi();
                     }
-                    tampilPemeriksaanGinekologi();
                 }   break;
             case 6:
-                if(tabModePemeriksaanSbar.getRowCount()==0){
-                    JOptionPane.showMessageDialog(null, "Maaf, data sudah habis...!!!");
-                    TNoRw.requestFocus();
-                    
-                }else {
-                    for(i=0;i<tbPemeriksaanSbar.getRowCount();i++){
-                        if(tbPemeriksaanSbar.getValueAt(i,0).toString().equals("true")){
-                            Sequel.queryu("delete from pemeriksaan_ranap_sbar where no_rawat='"+tbPemeriksaanSbar.getValueAt(i,1).toString()+
-                                    "' and tgl_perawatan='"+tbPemeriksaanSbar.getValueAt(i,4).toString()+
-                                    "' and jam_rawat='"+tbPemeriksaanSbar.getValueAt(i,5).toString()+"' ");
+                reply = JOptionPane.showConfirmDialog(rootPane,"Eeiiiiiits, Yakin mau hapus data ini.?? \nData yang sudah terhapus tidak bisa dikembalikan !!","Konfirmasi",JOptionPane.YES_NO_OPTION);
+                if (reply == JOptionPane.YES_OPTION) {
+                    if(tabModePemeriksaanSbar.getRowCount()==0){
+                        JOptionPane.showMessageDialog(null, "Maaf, data sudah habis...!!!");
+                        TNoRw.requestFocus();
+
+                    }else {
+                        for(i=0;i<tbPemeriksaanSbar.getRowCount();i++){
+                            if(tbPemeriksaanSbar.getValueAt(i,0).toString().equals("true")){
+                                Sequel.queryu("delete from pemeriksaan_ranap_sbar where no_rawat='"+tbPemeriksaanSbar.getValueAt(i,1).toString()+
+                                        "' and tgl_perawatan='"+tbPemeriksaanSbar.getValueAt(i,4).toString()+
+                                        "' and jam_rawat='"+tbPemeriksaanSbar.getValueAt(i,5).toString()+"' ");
+                            }
                         }
+                        tampilPemeriksaanSbar();
                     }
-                    tampilPemeriksaanSbar();
                 }   break;
             default:
                 break;
@@ -9136,6 +9149,7 @@ private void BtnEditKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
             form.isCek();
             form.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
             form.setLocationRelativeTo(internalFrame1);
+            form.setNoRm(TNoRw.getText(),new Date());
             form.tampil();
             form.setVisible(true);
             this.setCursor(Cursor.getDefaultCursor());
