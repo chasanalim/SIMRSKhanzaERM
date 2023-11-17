@@ -3238,26 +3238,29 @@ public final class BPJSDataSEP extends javax.swing.JDialog {
 }//GEN-LAST:event_BtnBatalKeyPressed
 
     private void BtnHapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnHapusActionPerformed
-        if(TabRawat.getSelectedIndex()==1){
-            if(tbDataSEP.getSelectedRow()!= -1){
-                try {
-                    bodyWithDeleteRequest();
-                }catch (Exception ex) {
-                    System.out.println("Notifikasi Bridging Hapus : "+ex);
-                }
-            }else{
-                JOptionPane.showMessageDialog(null,"Silahkan pilih dulu data yang mau dihapus..!!");
-            } 
-        }else if(TabRawat.getSelectedIndex()==2){
-            if(tbDataSEPInternal.getSelectedRow()!= -1){
-                try {
-                    bodyWithDeleteRequestInternal();
-                }catch (Exception ex) {
-                    System.out.println("Notifikasi Bridging Hapus : "+ex);
-                }
-            }else{
-                JOptionPane.showMessageDialog(null,"Silahkan pilih dulu data yang mau dihapus..!!");
-            } 
+        reply = JOptionPane.showConfirmDialog(rootPane,"Eeiiiiiits, Yakin mau hapus data ini.?? \nData yang sudah terhapus tidak bisa dikembalikan !!","Konfirmasi",JOptionPane.YES_NO_OPTION);
+        if (reply == JOptionPane.YES_OPTION) {
+            if(TabRawat.getSelectedIndex()==1){
+                if(tbDataSEP.getSelectedRow()!= -1){
+                    try {
+                        bodyWithDeleteRequest();
+                    }catch (Exception ex) {
+                        System.out.println("Notifikasi Bridging Hapus : "+ex);
+                    }
+                }else{
+                    JOptionPane.showMessageDialog(null,"Silahkan pilih dulu data yang mau dihapus..!!");
+                } 
+            }else if(TabRawat.getSelectedIndex()==2){
+                if(tbDataSEPInternal.getSelectedRow()!= -1){
+                    try {
+                        bodyWithDeleteRequestInternal();
+                    }catch (Exception ex) {
+                        System.out.println("Notifikasi Bridging Hapus : "+ex);
+                    }
+                }else{
+                    JOptionPane.showMessageDialog(null,"Silahkan pilih dulu data yang mau dihapus..!!");
+                } 
+            }
         }
                        
 }//GEN-LAST:event_BtnHapusActionPerformed
