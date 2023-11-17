@@ -172,7 +172,7 @@ public final class RMPenilaianAwalMedisIGD extends javax.swing.JDialog {
         RPK.setDocument(new batasInput((int)2000).getKata(RPK));
         RPD.setDocument(new batasInput((int)1000).getKata(RPD));
         RPO.setDocument(new batasInput((int)1000).getKata(RPO));
-        Alergi.setDocument(new batasInput((int)50).getKata(Alergi));
+        Alergi.setDocument(new batasInput((int)200).getKata(Alergi));
         GCS.setDocument(new batasInput((byte)10).getKata(GCS));
         TD.setDocument(new batasInput((byte)8).getKata(TD));
         Nadi.setDocument(new batasInput((byte)5).getKata(Nadi));
