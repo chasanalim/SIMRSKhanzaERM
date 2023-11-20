@@ -3363,6 +3363,21 @@ private void KapasitasKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
         } 
     }
     
+    public void isCekRetur() {
+        TCari.requestFocus();
+        BtnSimpan.setEnabled(akses.getobat());
+        BtnHapus.setEnabled(akses.getobat());
+        BtnEdit.setEnabled(akses.getobat());
+        BtnPrint.setEnabled(akses.getobat());
+        if(akses.getkode().equals("Admin Utama")){
+            MnRestore.setEnabled(true);
+            BtnCari.setEnabled(true);
+        }else{
+            MnRestore.setEnabled(false);
+            BtnCari.setEnabled(false);
+        } 
+    }
+    
     public void isBatch(){
         tabMode = new DefaultTableModel(null,new Object[]{
                 "P", "Kode Barang", "Nama Barang", "Kd.Sat Besar", "Nm.Satuan Besar","Isi", "Kd.Sat Kecil", "Nm.Satuan Kecil",

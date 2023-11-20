@@ -1149,6 +1149,7 @@ private void BtnBrgActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:
         }
         form.barang.emptTeks();
         form.barang.isCek();
+        form.barang.isCekRetur();
         if(!norawat.equals("")){
             form.barang.tampil4(norawat);
         }            
