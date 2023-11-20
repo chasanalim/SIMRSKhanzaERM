@@ -7533,7 +7533,8 @@ private void BtnSeek4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
 }//GEN-LAST:event_BtnSeek4ActionPerformed
 
 private void MnKamarInapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MnKamarInapActionPerformed
-        if(tabMode.getRowCount()==0){
+      if(akses.getkode().equals("Admin Utama")){
+            if(tabMode.getRowCount()==0){
             JOptionPane.showMessageDialog(null,"Maaf, table masih kosong...!!!!");
             TNoReg.requestFocus();
         }else if(TPasien.getText().trim().equals("")){
@@ -7560,7 +7561,11 @@ private void MnKamarInapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-F
                     }
                 }
             }
-        }        
+        }  
+        }else{
+           JOptionPane.showMessageDialog(null,"Maaf, Silahkan Mengggunakan Menu Surat Perintah Inap !!!");
+        }     
+          
 }//GEN-LAST:event_MnKamarInapActionPerformed
 
 private void MnRawatJalanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MnRawatJalanActionPerformed
