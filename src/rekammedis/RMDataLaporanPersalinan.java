@@ -430,7 +430,7 @@ public final class RMDataLaporanPersalinan extends javax.swing.JDialog {
         panelGlass9.add(jLabel19);
 
         DTPCari1.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "27-10-2023" }));
+        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "09-11-2023" }));
         DTPCari1.setDisplayFormat("dd-MM-yyyy");
         DTPCari1.setName("DTPCari1"); // NOI18N
         DTPCari1.setOpaque(false);
@@ -444,7 +444,7 @@ public final class RMDataLaporanPersalinan extends javax.swing.JDialog {
         panelGlass9.add(jLabel21);
 
         DTPCari2.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "27-10-2023" }));
+        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "09-11-2023" }));
         DTPCari2.setDisplayFormat("dd-MM-yyyy");
         DTPCari2.setName("DTPCari2"); // NOI18N
         DTPCari2.setOpaque(false);
@@ -540,7 +540,7 @@ public final class RMDataLaporanPersalinan extends javax.swing.JDialog {
         TPasien.setBounds(336, 10, 390, 23);
 
         Tanggal.setForeground(new java.awt.Color(50, 70, 50));
-        Tanggal.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "27-10-2023" }));
+        Tanggal.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "09-11-2023" }));
         Tanggal.setDisplayFormat("dd-MM-yyyy");
         Tanggal.setName("Tanggal"); // NOI18N
         Tanggal.setOpaque(false);
@@ -611,23 +611,28 @@ public final class RMDataLaporanPersalinan extends javax.swing.JDialog {
         jLabel18.setText("Bidan/Dokter :");
         jLabel18.setName("jLabel18"); // NOI18N
         FormInput.add(jLabel18);
-        jLabel18.setBounds(400, 40, 70, 23);
+        jLabel18.setBounds(420, 40, 90, 23);
 
         NIP.setEditable(false);
         NIP.setHighlighter(null);
         NIP.setName("NIP"); // NOI18N
+        NIP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NIPActionPerformed(evt);
+            }
+        });
         NIP.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 NIPKeyPressed(evt);
             }
         });
         FormInput.add(NIP);
-        NIP.setBounds(474, 40, 94, 23);
+        NIP.setBounds(510, 40, 94, 23);
 
         NamaPetugas.setEditable(false);
         NamaPetugas.setName("NamaPetugas"); // NOI18N
         FormInput.add(NamaPetugas);
-        NamaPetugas.setBounds(570, 40, 300, 23);
+        NamaPetugas.setBounds(610, 40, 260, 23);
 
         btnPetugas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/190.png"))); // NOI18N
         btnPetugas.setMnemonic('2');
@@ -1091,10 +1096,10 @@ public final class RMDataLaporanPersalinan extends javax.swing.JDialog {
             param.put("propinsirs",akses.getpropinsirs());
             param.put("kontakrs",akses.getkontakrs());
             param.put("emailrs",akses.getemailrs());   
-            dpjp=Sequel.cariIsi("select dokter.nm_dokter from dpjp_ranap_kebidanan inner join dokter on dpjp_ranap_kebidanan.kd_dokter=dokter.kd_dokter where dpjp_ranap_kebidanan.no_rawat=?",tbObat.getValueAt(tbObat.getSelectedRow(),0).toString());
-            if(dpjp.equals("")){
-                dpjp=Sequel.cariIsi("select dokter.nm_dokter from reg_periksa inner join dokter on reg_periksa.kd_dokter=dokter.kd_dokter where reg_periksa.no_rawat=?",tbObat.getValueAt(tbObat.getSelectedRow(),0).toString());
-            }
+//            dpjp=Sequel.cariIsi("select dokter.nm_dokter from dpjp_ranap_kebidanan inner join dokter on dpjp_ranap_kebidanan.kd_dokter=dokter.kd_dokter where dpjp_ranap_kebidanan.no_rawat=?",tbObat.getValueAt(tbObat.getSelectedRow(),0).toString());
+//            if(dpjp.equals("")){
+           dpjp=Sequel.cariIsi("select dokter.nm_dokter from dpjp_ranap inner join dokter on dpjp_ranap.kd_dokter=dokter.kd_dokter where dpjp_ranap.prioritas='1' and dpjp_ranap.no_rawat=?",tbObat.getValueAt(tbObat.getSelectedRow(),0).toString());
+//            }
             param.put("dpjp",dpjp);   
             param.put("logo",Sequel.cariGambar("select setting.logo from setting")); 
             Valid.MyReportqry("rptLaporanPersalinan.jasper","report","::[ Laporan Persalinan ]::",
@@ -1138,6 +1143,10 @@ public final class RMDataLaporanPersalinan extends javax.swing.JDialog {
     private void Spo2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Spo2KeyPressed
         Valid.pindah(evt,RR,His);
     }//GEN-LAST:event_Spo2KeyPressed
+
+    private void NIPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NIPActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_NIPActionPerformed
 
     /**
     * @param args the command line arguments
@@ -1289,8 +1298,8 @@ public final class RMDataLaporanPersalinan extends javax.swing.JDialog {
         Spo2.setText("");
         His.setText("");
         DJJ.setText("");
-        NIP.setText("");
-        NamaPetugas.setText("");
+//        NIP.setText("");
+//        NamaPetugas.setText("");
         KeadaanUmum.setText("");
         Tanggal.setDate(new Date());
         Nadi.requestFocus();
