@@ -5552,17 +5552,20 @@ public final class DlgRawatInap extends javax.swing.JDialog {
                                 tampilPemeriksaan();
                                 BtnBatalActionPerformed(evt);
                             }else{
-                                if(akses.getkode().equals(KdPeg.getText())){
-                                    Sequel.menyimpan("pemeriksaan_ranap","?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?","Data",20,new String[]{
-                                        TNoRw.getText(),Valid.SetTgl(DTPTgl.getSelectedItem()+""),cmbJam.getSelectedItem()+":"+cmbMnt.getSelectedItem()+":"+cmbDtk.getSelectedItem(),                      
-                                        TSuhu.getText(),TTensi.getText(),TNadi.getText(),TRespirasi.getText(),TTinggi.getText(),TBerat.getText(),SpO2.getText(),TGCS.getText(),
-                                        cmbKesadaran.getSelectedItem().toString(),TKeluhan.getText(),TPemeriksaan.getText(),TAlergi.getText(),
-                                        TPenilaian.getText(),TindakLanjut.getText(),TInstruksi.getText(),TEvaluasi.getText(),KdPeg.getText()
-                                    });
-                                    tampilPemeriksaan();
-                                    BtnBatalActionPerformed(evt);
-                                }else{
-                                    JOptionPane.showMessageDialog(null,"Hanya bisa disimpan oleh dokter/petugas yang bersangkutan..!!");
+                                reply = JOptionPane.showConfirmDialog(rootPane,"Eeiiiiiits, Pastikan Data dan Tanggal Asessmen Sudah Sesuai \n Centang tgl untuk waktu realtime saat ini  ","Konfirmasi",JOptionPane.YES_NO_OPTION);
+                                if (reply == JOptionPane.YES_OPTION) {
+                                    if(akses.getkode().equals(KdPeg.getText())){
+                                        Sequel.menyimpan("pemeriksaan_ranap","?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?","Data",20,new String[]{
+                                            TNoRw.getText(),Valid.SetTgl(DTPTgl.getSelectedItem()+""),cmbJam.getSelectedItem()+":"+cmbMnt.getSelectedItem()+":"+cmbDtk.getSelectedItem(),                      
+                                            TSuhu.getText(),TTensi.getText(),TNadi.getText(),TRespirasi.getText(),TTinggi.getText(),TBerat.getText(),SpO2.getText(),TGCS.getText(),
+                                            cmbKesadaran.getSelectedItem().toString(),TKeluhan.getText(),TPemeriksaan.getText(),TAlergi.getText(),
+                                            TPenilaian.getText(),TindakLanjut.getText(),TInstruksi.getText(),TEvaluasi.getText(),KdPeg.getText()
+                                        });
+                                        tampilPemeriksaan();
+                                        BtnBatalActionPerformed(evt);
+                                    }else{
+                                        JOptionPane.showMessageDialog(null,"Hanya bisa disimpan oleh dokter/petugas yang bersangkutan..!!");
+                                    }
                                 }
                             }
                         }
@@ -6837,20 +6840,23 @@ private void BtnEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST
                                 tampilPemeriksaan();
                                 BtnBatalActionPerformed(evt);
                             }else{
-                                if(akses.getkode().equals(tbPemeriksaan.getValueAt(tbPemeriksaan.getSelectedRow(),6).toString())){
-                                    Sequel.mengedit("pemeriksaan_ranap","no_rawat='"+tbPemeriksaan.getValueAt(tbPemeriksaan.getSelectedRow(),1)+
-                                        "' and tgl_perawatan='"+tbPemeriksaan.getValueAt(tbPemeriksaan.getSelectedRow(),4)+
-                                        "' and jam_rawat='"+tbPemeriksaan.getValueAt(tbPemeriksaan.getSelectedRow(),5)+"'",
-                                        "no_rawat='"+TNoRw.getText()+"',suhu_tubuh='"+TSuhu.getText()+"',tensi='"+TTensi.getText()+"',"+
-                                        "keluhan='"+TKeluhan.getText()+"',pemeriksaan='"+TPemeriksaan.getText()+"',spo2='"+SpO2.getText()+"',"+
-                                        "nadi='"+TNadi.getText()+"',respirasi='"+TRespirasi.getText()+"',tinggi='"+TTinggi.getText()+"',berat='"+TBerat.getText()+"',"+
-                                        "gcs='"+TGCS.getText()+"',kesadaran='"+cmbKesadaran.getSelectedItem()+"',alergi='"+TAlergi.getText()+"',tgl_perawatan='"+Valid.SetTgl(DTPTgl.getSelectedItem()+"")+"',"+
-                                        "jam_rawat='"+cmbJam.getSelectedItem()+":"+cmbMnt.getSelectedItem()+":"+cmbDtk.getSelectedItem()+"',"+
-                                        "rtl='"+TindakLanjut.getText()+"',penilaian='"+TPenilaian.getText()+"',instruksi='"+TInstruksi.getText()+"',evaluasi='"+TEvaluasi.getText()+"'");
-                                    tampilPemeriksaan();
-                                    BtnBatalActionPerformed(evt);
-                                }else{
-                                    JOptionPane.showMessageDialog(null,"Hanya bisa diganti oleh dokter/petugas yang bersangkutan..!!");
+                                reply = JOptionPane.showConfirmDialog(rootPane,"Eeiiiiiits, Pastikan Tanggal Asessmen Sudah Sesuai dengan data yg akan diubah \n Hilangkan Centang tgl untuk waktu menyesuaikan tgl dan waktu","Konfirmasi",JOptionPane.YES_NO_OPTION);
+                                if (reply == JOptionPane.YES_OPTION) {
+                                    if(akses.getkode().equals(tbPemeriksaan.getValueAt(tbPemeriksaan.getSelectedRow(),6).toString())){
+                                        Sequel.mengedit("pemeriksaan_ranap","no_rawat='"+tbPemeriksaan.getValueAt(tbPemeriksaan.getSelectedRow(),1)+
+                                            "' and tgl_perawatan='"+tbPemeriksaan.getValueAt(tbPemeriksaan.getSelectedRow(),4)+
+                                            "' and jam_rawat='"+tbPemeriksaan.getValueAt(tbPemeriksaan.getSelectedRow(),5)+"'",
+                                            "no_rawat='"+TNoRw.getText()+"',suhu_tubuh='"+TSuhu.getText()+"',tensi='"+TTensi.getText()+"',"+
+                                            "keluhan='"+TKeluhan.getText()+"',pemeriksaan='"+TPemeriksaan.getText()+"',spo2='"+SpO2.getText()+"',"+
+                                            "nadi='"+TNadi.getText()+"',respirasi='"+TRespirasi.getText()+"',tinggi='"+TTinggi.getText()+"',berat='"+TBerat.getText()+"',"+
+                                            "gcs='"+TGCS.getText()+"',kesadaran='"+cmbKesadaran.getSelectedItem()+"',alergi='"+TAlergi.getText()+"',tgl_perawatan='"+Valid.SetTgl(DTPTgl.getSelectedItem()+"")+"',"+
+                                            "jam_rawat='"+cmbJam.getSelectedItem()+":"+cmbMnt.getSelectedItem()+":"+cmbDtk.getSelectedItem()+"',"+
+                                            "rtl='"+TindakLanjut.getText()+"',penilaian='"+TPenilaian.getText()+"',instruksi='"+TInstruksi.getText()+"',evaluasi='"+TEvaluasi.getText()+"'");
+                                        tampilPemeriksaan();
+                                        BtnBatalActionPerformed(evt);
+                                    }else{
+                                        JOptionPane.showMessageDialog(null,"Hanya bisa diganti oleh dokter/petugas yang bersangkutan..!!");
+                                    }
                                 }
                             }
                         }else{
