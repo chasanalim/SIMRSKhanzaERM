@@ -2152,7 +2152,7 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
         try{
             File g = new File("klaim.css");            
             BufferedWriter bg = new BufferedWriter(new FileWriter(g));
-            bg.write(".isi td{border: 1px solid ;font: 10px tahoma;height:12px;background: #ffffff;color:#323232;}.isi a{text-decoration:none;color:#8b9b95;padding:0 0 0 0px;font-family: Tahoma;font-size: 10px;} .isi .sep td{border: 0;font: 10px tahoma;height:12px;border: 0;background: #ffffff;color:#323232;} .isi .sepjudul td{border: 0;font: 12px tahoma;height:12.5px;border: 0;background: #ffffff;color:#323232;} .isi .sep_note p{border: 0;padding-bottom:-2px; font: 6px tahoma;height:8px;border: 0;background: #ffffff;color:#323232;} .isi .ttd p{border: 0;padding-bottom:-2px; font-size: 10px tahoma;height:10px;border: 0;background: #ffffff;color:#323232;} .berkas {margin-bottom:20px;} ");
+            bg.write(".isi td{border:0 ;font: 10px tahoma;height:12px;background: #ffffff;color:#323232;}.isi a{text-decoration:none;color:#8b9b95;padding:0 0 0 0px;font-family: Tahoma;font-size: 10px;} .isi .sep td{border: 0;font: 10px tahoma;height:12px;border: 0;background: #ffffff;color:#323232;} .isi .sepjudul td{border: 0;font: 12px tahoma;height:12.5px;border: 0;background: #ffffff;color:#323232;} .isi .sep_note p{border: 0;padding-bottom:-2px; font: 6px tahoma;height:8px;border: 0;background: #ffffff;color:#323232;} .isi .ttd p{border: 0;padding-bottom:-2px; font-size: 10px tahoma;height:10px;border: 0;background: #ffffff;color:#323232;} .berkas {margin-bottom:20px;} ");
             bg.close();
 
             File f = new File("berkasklaim.html");            
@@ -2383,7 +2383,16 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                                     "</td>"+
                                  "</tr>"+
                                 "</table>" +
-                                "<table width='100%' border='0' align='center' height='30' cellspacing='30' class='tbl_form'>"+
+                                "<table width='100%' border='0' style='border-bottom:2px solid;' align='center' height='30' cellspacing='15' class='tbl_form'>"+
+                                 "<tr class='sep'>"+
+                                    "<td valign='top' border='0' width='2%'></td>"+
+                                    "<td valign='top' border='0' width='14%'></td>"+
+                                    "<td valign='top' border='0' width='1%' align='right'></td>"+
+                                    "<td valign='top' border='0' width='36%' align='left'></td>"+
+                                    "<td valign='top' border='0' width='2%'></td>"+
+                                 "</tr>"+
+                                 "</table>" +
+                                "<table width='100%' border='0' align='center' height='30' cellspacing='15' class='tbl_form'>"+
                                  "<tr class='sep'>"+
                                     "<td valign='top' border='0' width='2%'></td>"+
                                     "<td valign='top' border='0' width='14%'></td>"+
