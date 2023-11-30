@@ -76,6 +76,7 @@ import rekammedis.RMHasilPemeriksaanUSG;
 import rekammedis.RMKonselingFarmasi;
 import rekammedis.RMMCU;
 import rekammedis.DlgSBAR;
+import rekammedis.RMBerkasKlaim;
 import rekammedis.RMCatatanADIMEGizi;
 import rekammedis.RMChecklistKriteriaMasukHCU;
 import rekammedis.RMChecklistKriteriaMasukICU;
@@ -1778,6 +1779,7 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
         ScrollMenu = new widget.ScrollPane();
         FormMenu = new widget.PanelBiasa();
         BtnRiwayat = new widget.Button();
+        BtnBerkasKlaim = new widget.Button();
         JudulFarmasi = new widget.Button();
         BtnResepObat = new widget.Button();
         BtnCopyResep = new widget.Button();
@@ -2049,7 +2051,7 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
         panelGlass9.add(jLabel19);
 
         DTPCari1.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "20-11-2023" }));
+        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "23-11-2023" }));
         DTPCari1.setDisplayFormat("dd-MM-yyyy");
         DTPCari1.setName("DTPCari1"); // NOI18N
         DTPCari1.setOpaque(false);
@@ -2063,7 +2065,7 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
         panelGlass9.add(jLabel21);
 
         DTPCari2.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "20-11-2023" }));
+        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "23-11-2023" }));
         DTPCari2.setDisplayFormat("dd-MM-yyyy");
         DTPCari2.setName("DTPCari2"); // NOI18N
         DTPCari2.setOpaque(false);
@@ -4268,7 +4270,7 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
         jLabel23.setBounds(554, 10, 60, 23);
 
         DTPTgl.setForeground(new java.awt.Color(50, 70, 50));
-        DTPTgl.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "20-11-2023" }));
+        DTPTgl.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "23-11-2023" }));
         DTPTgl.setDisplayFormat("dd-MM-yyyy");
         DTPTgl.setName("DTPTgl"); // NOI18N
         DTPTgl.setOpaque(false);
@@ -4383,6 +4385,25 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
             }
         });
         FormMenu.add(BtnRiwayat);
+
+        BtnBerkasKlaim.setBackground(new java.awt.Color(252, 230, 230));
+        BtnBerkasKlaim.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/item.png"))); // NOI18N
+        BtnBerkasKlaim.setText("Berkas Klaim");
+        BtnBerkasKlaim.setFocusPainted(false);
+        BtnBerkasKlaim.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        BtnBerkasKlaim.setGlassColor(new java.awt.Color(255, 255, 255));
+        BtnBerkasKlaim.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        BtnBerkasKlaim.setMargin(new java.awt.Insets(1, 1, 1, 1));
+        BtnBerkasKlaim.setName("BtnBerkasKlaim"); // NOI18N
+        BtnBerkasKlaim.setOpaque(true);
+        BtnBerkasKlaim.setPreferredSize(new java.awt.Dimension(170, 23));
+        BtnBerkasKlaim.setRoundRect(false);
+        BtnBerkasKlaim.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnBerkasKlaimActionPerformed(evt);
+            }
+        });
+        FormMenu.add(BtnBerkasKlaim);
 
         JudulFarmasi.setBackground(new java.awt.Color(252, 230, 230));
         JudulFarmasi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/kanan.png"))); // NOI18N
@@ -10168,6 +10189,21 @@ private void BtnEditKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
         }
     }//GEN-LAST:event_BtnICareBPJSActionPerformed
 
+    private void BtnBerkasKlaimActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnBerkasKlaimActionPerformed
+        if(TNoRw.getText().trim().equals("")){
+            JOptionPane.showMessageDialog(null,"Maaf, Silahkan anda pilih dulu pasien...!!!");
+            TCari.requestFocus();
+        }else{
+            this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+            RMBerkasKlaim resume=new RMBerkasKlaim(null,true);
+            resume.setNoRm(TNoRM.getText(),TPasien.getText(),TNoRw.getText());
+            resume.setSize(internalFrame1.getWidth(),internalFrame1.getHeight());
+            resume.setLocationRelativeTo(internalFrame1);
+            resume.setVisible(true);
+            this.setCursor(Cursor.getDefaultCursor());
+        }
+    }//GEN-LAST:event_BtnBerkasKlaimActionPerformed
+
     /**
     * @param args the command line arguments
     */
@@ -10216,6 +10252,7 @@ private void BtnEditKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
     private widget.Button BtnAwalMedisTHT;
     private widget.Button BtnBatal;
     private widget.Button BtnBerkasDigital;
+    private widget.Button BtnBerkasKlaim;
     private widget.Button BtnCari;
     private widget.Button BtnCatatan;
     private widget.Button BtnCatatanADIMEGizi;
