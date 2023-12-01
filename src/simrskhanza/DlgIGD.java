@@ -7836,9 +7836,6 @@ private void MnLaporanRekapKunjunganBulananPoliActionPerformed(java.awt.event.Ac
             JOptionPane.showMessageDialog(null,"Maaf, Silahkan anda pilih dulu dengan menklik data pada table...!!!");
             tbPetugas.requestFocus();
         }else{
-            if(Sequel.cariInteger("select count(kamar_inap.no_rawat) from kamar_inap where kamar_inap.no_rawat=?",TNoRw.getText())>0){
-                JOptionPane.showMessageDialog(null,"Maaf, Pasien sudah masuk Kamar Inap. Gunakan billing Ranap..!!!");
-            }else {
                 this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
                 DlgPerintahInap form=new DlgPerintahInap(null,false);
                 form.isCek();
@@ -7846,8 +7843,7 @@ private void MnLaporanRekapKunjunganBulananPoliActionPerformed(java.awt.event.Ac
                 form.setLocationRelativeTo(internalFrame1);
                 form.setNoRm(TNoRw.getText(),TNoRM.getText(),TPasien.getText(),TDokter.getText());
                 form.setVisible(true);
-                this.setCursor(Cursor.getDefaultCursor());
-            }
+            
         }
     }//GEN-LAST:event_MnPermintaanRanapActionPerformed
 
@@ -9765,9 +9761,9 @@ private void MnLaporanRekapKunjunganBulananPoliActionPerformed(java.awt.event.Ac
             JOptionPane.showMessageDialog(null,"Maaf, Silahkan anda pilih dulu dengan menklik data pada table...!!!");
             tbPetugas.requestFocus();
         }else{
-            if(Sequel.cariInteger("select count(kamar_inap.no_rawat) from kamar_inap where kamar_inap.no_rawat=?",TNoRw.getText())>0){
-                JOptionPane.showMessageDialog(null,"Maaf, Pasien sudah masuk Kamar Inap. Gunakan billing Ranap..!!!");
-            }else {
+//            if(Sequel.cariInteger("select count(kamar_inap.no_rawat) from kamar_inap where kamar_inap.no_rawat=?",TNoRw.getText())>0){
+//                JOptionPane.showMessageDialog(null,"Maaf, Pasien sudah masuk Kamar Inap. Gunakan billing Ranap..!!!");
+//            }else {
                 this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
                 DlgPerintahInap form=new DlgPerintahInap(null,false);
                 form.isCek();
@@ -9776,7 +9772,7 @@ private void MnLaporanRekapKunjunganBulananPoliActionPerformed(java.awt.event.Ac
                 form.setNoRm(TNoRw.getText(),TNoRM.getText(),TPasien.getText(),TDokter.getText());
                 form.setVisible(true);
                 this.setCursor(Cursor.getDefaultCursor());
-            }
+//            }
         }
     }//GEN-LAST:event_MnSuratPerintahInapActionPerformed
 
