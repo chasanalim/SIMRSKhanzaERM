@@ -1370,7 +1370,7 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
         try{
             File g = new File("klaim.css");            
             BufferedWriter bg = new BufferedWriter(new FileWriter(g));
-            bg.write(".isi td{border:0 ;font: 10px tahoma;height:12px;background: #ffffff;color:#323232;}.isi a{text-decoration:none;color:#8b9b95;padding:0 0 0 0px;font-family: Tahoma;font-size: 10px;} .isi .sep td{border: 0;font: 10px tahoma;height:12px;border: 0;background: #ffffff;color:#323232;} .isi .sbpk td{border: 1px solid #080808;font: 10px tahoma;height:12px;background: #ffffff;color:#323232;} .isi .sepjudul td{border: 0;font: 12px tahoma;height:12.5px;border: 0;background: #ffffff;color:#323232;} .isi .sep_note p{border: 0;padding-bottom:-2px; font: 6px tahoma;height:8px;border: 0;background: #ffffff;color:#323232;} .isi .ttd p{border: 0;padding-bottom:-2px; font-size: 10px tahoma;height:10px;border: 0;background: #ffffff;color:#323232;} .berkas {margin-bottom:20px;} ");
+            bg.write(".isi td{border:0 ;font: 10px tahoma;height:12px;background: #ffffff;color:#323232;}.isi a{text-decoration:none;color:#8b9b95;padding:0 0 0 0px;font-family: Tahoma;font-size: 10px;} .isi .sep td{border: 0;font: 10px tahoma;height:12px;border: 0;background: #ffffff;color:#323232;}  .isi .sep-bold td{border: 0;font: 10px tahoma;height:12px; font-weight:bold;border: 0;background: #ffffff;color:#323232;} .isi .sbpk td{border: 1px solid #080808;font: 10px tahoma;height:12px;background: #ffffff;color:#323232;} .isi .sepjudul td{border: 0;font: 12px tahoma;height:12.5px;border: 0;background: #ffffff;color:#323232;} .isi .sep_note p{border: 0;padding-bottom:-2px; font: 6px tahoma;height:8px;border: 0;background: #ffffff;color:#323232;} .isi .ttd p{border: 0;padding-bottom:-2px; font-size: 10px tahoma;height:10px;border: 0;background: #ffffff;color:#323232;} .berkas {margin-bottom:20px;} ");
             bg.close();
 
             File f = new File("berkasklaim.html");            
@@ -1646,7 +1646,7 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                                     "<td valign='top' border='0' width='2%'></td>"+
                                  "</tr>" +
                                  "</table>" +
-                                "<table width='100%' border='0' style='border-bottom:3px solid #87b5ed;' align='center' height='30' cellspacing='50' class='tbl_form'>"+
+                                "<table width='100%' border='0' style='border-bottom:3px solid #87b5ed;' align='center' height='30' cellspacing='20' class='tbl_form'>"+
                                  "<tr class='sep'>"+
                                     "<td valign='top' border='0' width='2%'></td>"+
                                     "<td valign='top' border='0' width='14%'></td>"+
@@ -1989,22 +1989,9 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                             htmlContent.append(
                                  
                               "<tr class='sepjudul' cellspacing='5'>"+
-                                    "<td valign='top' border='0' width='4%'></td>"+
-                                    "<td valign='top' border='0' align='center'></td>"+
-                                    "<td valign='top' border='0' width='4%'></td>"+
-                                    "<td valign='top' border='0' width='42%' style='font-size:12px;' id='title'>SURAT BUKTI PELAYANAN KESEHATAN (SBPK)</td>"+
-                                    "<td valign='top' border='0' width='8%'> </td>"+
-                                    "<td valign='top' border='0' width='21%'></td>"+
-                                 "</tr>"+
-                                 "<tr class='sep'>"+
-                                    "<td valign='top' border='0' width='2%'></td>"+
-                                    "<td valign='top' border='0' width='14%'></td>"+
-                                    "<td valign='top' border='0' width='1%' align='right'>:</td>"+
-                                    "<td valign='top' border='0' width='36%' align='left'></td>"+
-                                    "<td valign='top' border='0' width='2%'></td>"+
-                                    "<td valign='top' border='0' width='12%'></td>"+
-                                    "<td valign='top' border='0' width='1%' align='right'></td>"+
-                                    "<td valign='top' border='0' width='32%'></td>"+
+                                  
+                                    "<td valign='top' border='0' align='center' width='80%' style='font-size:12px;' id='title'>SURAT BUKTI PELAYANAN KESEHATAN (SBPK)</td>"+
+                            
                                  "</tr>"+
                               "</table>" +
                               "<table width='100%' border='0' align='center' cellpadding='3px' cellspacing='0' class='tbl_form'>"+
@@ -2169,7 +2156,7 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                                     "<td valign='top' border='0' width='2%'></td>"+
                                  "</tr>" +
                                   "</table>" +
-                                "<table width='100%' border='0' align='center' height='30' cellspacing='40' class='tbl_form'>"+
+                                "<table width='100%' border='0' align='center' height='30' cellspacing='30' class='tbl_form'>"+
                                  "<tr class='sep'>"+
                                     "<td valign='top' border='0' width='2%'></td>"+
                                     "<td valign='top' border='0' width='14%'></td>"+
@@ -2178,7 +2165,7 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                                     "<td valign='top' border='0' width='2%'></td>"+
                                  "</tr>" +
                                  "</table>" +
-                                "<table width='100%' border='0' style='border-bottom:3px solid #87b5ed;' align='center' height='30' cellspacing='50' class='tbl_form'>"+
+                                "<table width='100%' border='0' style='border-bottom:3px solid #87b5ed;' align='center' height='30' cellspacing='30' class='tbl_form'>"+
                                  "<tr class='sep'>"+
                                     "<td valign='top' border='0' width='2%'></td>"+
                                     "<td valign='top' border='0' width='14%'></td>"+
@@ -2434,7 +2421,7 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                                     "<td valign='top' border='0' width='2%'></td>"+
                                  "</tr>" +
                                  "</table>" +
-                                "<table width='100%' border='0' style='border-bottom:3px solid #87b5ed;' align='center' height='30' cellspacing='50' class='tbl_form'>"+
+                                "<table width='100%' border='0' style='border-bottom:3px solid #87b5ed;' align='center' height='30' cellspacing='30' class='tbl_form'>"+
                                  "<tr class='sep'>"+
                                     "<td valign='top' border='0' width='2%'></td>"+
                                     "<td valign='top' border='0' width='14%'></td>"+
@@ -2664,7 +2651,7 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                                     "<td valign='top' border='0' width='2%'></td>"+
                                  "</tr>"+
                                 "</table>" +
-                                "<table width='100%' border='0' align='center' height='30' cellspacing='40' class='tbl_form'>"+
+                                "<table width='100%' border='0' align='center' height='30' cellspacing='30' class='tbl_form'>"+
                                  "<tr class='sep'>"+
                                     "<td valign='top' border='0' width='2%'></td>"+
                                     "<td valign='top' border='0' width='14%'></td>"+
@@ -2672,17 +2659,7 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                                     "<td valign='top' border='0' width='36%' align='left'></td>"+
                                     "<td valign='top' border='0' width='2%'></td>"+
                                  "</tr>"+
-                                "</table>" +
-                                "<table width='100%' border='0' align='center' height='30' cellspacing='40' class='tbl_form'>"+
-                                 "<tr class='sep'>"+
-                                    "<td valign='top' border='0' width='2%'></td>"+
-                                    "<td valign='top' border='0' width='14%'></td>"+
-                                    "<td valign='top' border='0' width='1%' align='right'></td>"+
-                                    "<td valign='top' border='0' width='36%' align='left'></td>"+
-                                    "<td valign='top' border='0' width='2%'></td>"+
-                                 "</tr>"+
-                                "</table>" +
-                                
+                                "</table>" +  
                                 "<table width='100%' border='0' style='border-bottom:3px solid #87b5ed;' align='center' height='40' cellspacing='20' class='tbl_form'>"+
                                  "<tr class='sep'>"+
                                     "<td valign='top' border='0' width='2%'></td>"+
@@ -2927,7 +2904,7 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                                     "<td valign='top' border='0' width='2%'></td>"+
                                  "</tr>"+
                                 "</table>" +
-                                "<table width='100%' border='0' align='center' height='30' cellspacing='40' class='tbl_form'>"+
+                                "<table width='100%' border='0' align='center' height='30' cellspacing='20' class='tbl_form'>"+
                                  "<tr class='sep'>"+
                                     "<td valign='top' border='0' width='2%'></td>"+
                                     "<td valign='top' border='0' width='14%'></td>"+
@@ -3094,6 +3071,7 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                                  "</tr>"  
                                     );
                             
+                                    biayaperawatan=rs.getDouble("biaya_reg");
                                  //tindakan dr
                                     try{
                                     rs3=koneksi.prepareStatement(
@@ -3518,7 +3496,7 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                                             htmlContent.append(
                                                     "<tr class='sep'>"+
                                                     "<td valign='top' border='0' width='2%'></td>"+
-                                                    "<td valign='top' border='0' width='24%'>Tambahan</td>"+
+                                                    "<td valign='top' border='0' width='24%'>Tambahan Biaya</td>"+
                                                     "<td valign='top' border='0' width='1%' align='right'>:</td>"+
                                                     "<td valign='top' border='0' width='49%' align='left'>"+rs3.getString("nama_biaya")+"</td>"+
                                                     "<td valign='top' border='0' width='4%'>1.0</td>"+
@@ -3538,98 +3516,92 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                                     }
                                 }
                                 
+                          
+                                // TOTAL TAGIHAN
+                                htmlContent.append(
+                                    "<tr class='sep'>"+
+                                    "<td valign='top' border='0' width='2%'></td>"+
+                                    "<td valign='top' border='0' width='24%'></td>"+
+                                    "<td valign='top' border='0' width='1%' align='right'></td>"+
+                                    "<td valign='top' border='0' width='49%' align='left'></td>"+
+                                    "<td valign='top' border='0' width='4%'></td>"+
+                                    "<td valign='top' border='0' width='20%' align='right' ></td>"+
+                                    "</tr>"+
+                                    "<tr class='sep-bold'>"+
+                                    "<td valign='top' border='0' width='2%'></td>"+
+                                    "<td valign='top' border='0' width='24%'>TOTAL TAGIHAN</td>"+
+                                    "<td valign='top' border='0' width='1%' align='right'></td>"+
+                                    "<td valign='top' border='0' width='49%' align='left'></td>"+
+                                    "<td valign='top' border='0' width='4%'></td>"+
+                                    "<td valign='top' border='0' width='20%' align='right'>"+Valid.SetAngka(biayaperawatan)+"</td>"+
+                                    "</tr>"+
+                                    "<tr class='sep-bold'>"+
+                                    "<td valign='top' border='0' width='2%'></td>"+
+                                    "<td valign='top' border='0' width='24%'>PPN</td>"+
+                                    "<td valign='top' border='0' width='1%' align='right'></td>"+
+                                    "<td valign='top' border='0' width='49%' align='left'></td>"+
+                                    "<td valign='top' border='0' width='4%'></td>"+
+                                    "<td valign='top' border='0' width='20%' align='right'>0</td>"+
+                                    "</tr>"+
+                                    "<tr class='sep-bold'>"+
+                                    "<td valign='top' border='0' width='2%'></td>"+
+                                    "<td valign='top' border='0' width='24%'>TAGIHAN + PPN</td>"+
+                                    "<td valign='top' border='0' width='1%' align='right'></td>"+
+                                    "<td valign='top' border='0' width='49%' align='left'></td>"+
+                                    "<td valign='top' border='0' width='4%'></td>"+
+                                    "<td valign='top' border='0' width='20%' align='right'>"+Valid.SetAngka(biayaperawatan)+"</td>"+
+                                    "</tr>"+
+                                    "<tr class='sep-bold'>"+
+                                    "<td valign='top' border='0' width='2%'></td>"+
+                                    "<td valign='top' border='0' width='24%'>EKSES</td>"+
+                                    "<td valign='top' border='0' width='1%' align='right'></td>"+
+                                    "<td valign='top' border='0' width='49%' align='left'></td>"+
+                                    "<td valign='top' border='0' width='4%'></td>"+
+                                    "<td valign='top' border='0' width='20%' align='right'>0</td>"+
+                                    "</tr>"+
+                                    "<tr class='sep-bold'>"+
+                                    "<td valign='top' border='0' width='2%'></td>"+
+                                    "<td valign='top' border='0' width='24%'>SISA PIUTANG</td>"+
+                                    "<td valign='top' border='0' width='1%' align='right'></td>"+
+                                    "<td valign='top' border='0' width='49%' align='left'></td>"+
+                                    "<td valign='top' border='0' width='4%'></td>"+
+                                    "<td valign='top' border='0' width='20%' align='right'>"+Valid.SetAngka(biayaperawatan)+"</td>"+
+                                    "</tr>"
                                             
+                                 ); 
+                                
+//                               
                                  htmlContent.append(       
                                  
-//                                      "<tr class='sep'>"+
-//                                    "<td valign='top' border='0' width='2%'></td>"+
-//                                    "<td valign='top' border='0' width='24%'>Obat & BHP</td>"+
-//                                    "<td valign='top' border='0' width='1%' align='right'>:</td>"+
-//                                    "<td valign='top' border='0' width='49%' align='left'>"+rs2.getString("tanggal")+" "+rs2.getString("jam")+"</td>"+
-//                                    "<td valign='top' border='0' width='4%'></td>"+
-//                                    "<td valign='top' border='0' width='20%' align='left'></td>"+
-//                                 "</tr>"+
-//                                          
-//                                 "<tr class='sep'>"+
-//                                    "<td valign='top' border='0' width='2%'></td>"+
-//                                    "<td valign='top' border='0' width='24%'>No.RM </td>"+
-//                                    "<td valign='top' border='0' width='1%' align='right'>:</td>"+
-//                                    "<td valign='top' border='0' width='49%' align='left'>"+rs2.getString("no_rkm_medis")+"</td>"+
-//                                    "<td valign='top' border='0' width='4%'></td>"+
-//                                    "<td valign='top' border='0' width='20%' align='left'></td>"+
-//                                 "</tr>"+
-//                                      "<tr class='sep'>"+
-//                                    "<td valign='top' border='0' width='2%'></td>"+
-//                                    "<td valign='top' border='0' width='24%'>Nama Pasien</td>"+
-//                                    "<td valign='top' border='0' width='1%' align='right'>:</td>"+
-//                                    "<td valign='top' border='0' width='49%' align='left'>"+rs2.getString("nm_pasien")+"</td>"+
-//                                    "<td valign='top' border='0' width='4%'></td>"+
-//                                    "<td valign='top' border='0' width='20%' align='left'></td>"+
-//                                 "</tr>"+
-//                                      "<tr class='sep'>"+
-//                                    "<td valign='top' border='0' width='2%'></td>"+
-//                                    "<td valign='top' border='0' width='24%'>Alamat Pasien</td>"+
-//                                    "<td valign='top' border='0' width='1%' align='right'>:</td>"+
-//                                    "<td valign='top' border='0' width='49%' align='left'>"+rs2.getString("almt_pj")+"</td>"+
-//                                    "<td valign='top' border='0' width='4%'></td>"+
-//                                    "<td valign='top' border='0' width='20%' align='left'></td>"+
-//                                 "</tr>"+
-//                                      "<tr class='sep'>"+
-//                                    "<td valign='top' border='0' width='2%'></td>"+
-//                                    "<td valign='top' border='0' width='24%'>Dokter </td>"+
-//                                    "<td valign='top' border='0' width='1%' align='right'>:</td>"+
-//                                    "<td valign='top' border='0' width='49%' align='left'>"+rs2.getString("nm_dokter")+"</td>"+
-//                                    "<td valign='top' border='0' width='4%'></td>"+
-//                                    "<td valign='top' border='0' width='20%' align='left'></td>"+
-//                                 "</tr>"+
                                 "</table>" +
                                 
                                             
-//                                 "<table width='100%' border='0' cellpadding='3px' cellspacing='0' class='tbl_form'>"+
-//                                 "<tr>"+
-//                                    "<td valign='top' border='0' width='2%'></td>"+
-//                                    "<td class='sep_note' valign='top' border='0' style='font-size:6px;' width='58%'>"+
-//                                    "</td>"+
-//                                    "<td valign='top' border='0' style='font-size:10px;' width='10%'>"+
-//                                    "<td class='ttd' valign='top' border='0' style='font-size:10px;' width='30%'>"+
-//                                    "<div> "+
-//                                    "<p> Tanda Verifikasi </p>"+
-//                                    "<p> DPJP/dr. Pemeriksa </p>"+
-//                                    "<img width='70' height='70' src='http://"+koneksiDB.HOSTHYBRIDWEB()+":"+koneksiDB.PORTWEB()+"/"+koneksiDB.HYBRIDWEB()+"/penggajian/temp/"+rs2.getString("kd_dokter")+".png'/>"+
-//                                    "<p>Admin Kasir</p>"+
-//                                    "</div>"+
-//                                            
-//                                    "</td>"+
-//                                 "</tr>"+
-//                                "</table>" +
-                                "<table width='100%' border='0' height='30' cellspacing='10' class='tbl_form'>"+
-                                 "<tr class='sep'>"+
+                                 "<table width='100%' border='0' cellpadding='3px' cellspacing='0' class='tbl_form'>"+
+                                 "<tr>"+
                                     "<td valign='top' border='0' width='2%'></td>"+
-                                    "<td valign='top' border='0' width='14%'></td>"+
-                                    "<td valign='top' border='0' width='1%' align='right'></td>"+
-                                    "<td valign='top' border='0' width='36%' align='left'></td>"+
-                                    "<td valign='top' border='0' width='2%'></td>"+
+                                    "<td class='sep_note' valign='top' border='0' style='font-size:6px;' width='58%'>"+
+                                    "</td>"+
+                                    "<td valign='top' border='0' style='font-size:10px;' width='10%'>"+
+                                    "<td class='ttd' valign='top' border='0' style='font-size:10px;' width='30%'>"+
+                                    "<div> "+
+                                    "<p> Semarang, " +rs2.getString("tanggal")+" "+rs2.getString("jam")+"</p>"+
+                                    "<p> Tanda Verifikasi </p>"+
+                                    "<img width='70' height='70' src='http://"+koneksiDB.HOSTHYBRIDWEB()+":"+koneksiDB.PORTWEB()+"/"+koneksiDB.HYBRIDWEB()+"/penggajian/temp/001.png'/>"+
+                                    "<p>( Admin Kasir )</p>"+
+                                    "</div>"+
+                                    "</td>"+
                                  "</tr>"+
-                                 "</table>" +
-                                "<table width='100%' border='0' align='center' height='30' cellspacing='50' class='tbl_form'>"+
-                                 "<tr class='sep'>"+
-                                    "<td valign='top' border='0' width='2%'></td>"+
-                                    "<td valign='top' border='0' width='14%'></td>"+
-                                    "<td valign='top' border='0' width='1%' align='right'></td>"+
-                                    "<td valign='top' border='0' width='36%' align='left'></td>"+
-                                    "<td valign='top' border='0' width='2%'></td>"+
-                                 "</tr>" +
-                                  "</table>" +
-                                "<table width='100%' border='0' align='center' height='30' cellspacing='50' class='tbl_form'>"+
-                                 "<tr class='sep'>"+
-                                    "<td valign='top' border='0' width='2%'></td>"+
-                                    "<td valign='top' border='0' width='14%'></td>"+
-                                    "<td valign='top' border='0' width='1%' align='right'></td>"+
-                                    "<td valign='top' border='0' width='36%' align='left'></td>"+
-                                    "<td valign='top' border='0' width='2%'></td>"+
-                                 "</tr>" +
-                                  "</table>" +
+                                "</table>" +
                                 "<table width='100%' border='0' align='center' height='30' cellspacing='40' class='tbl_form'>"+
+                                 "<tr class='sep'>"+
+                                    "<td valign='top' border='0' width='2%'></td>"+
+                                    "<td valign='top' border='0' width='14%'></td>"+
+                                    "<td valign='top' border='0' width='1%' align='right'></td>"+
+                                    "<td valign='top' border='0' width='36%' align='left'></td>"+
+                                    "<td valign='top' border='0' width='2%'></td>"+
+                                 "</tr>" +
+                                 "</table>" +
+                                 "<table width='100%' border='0' align='center' height='30' cellspacing='40' class='tbl_form'>"+
                                  "<tr class='sep'>"+
                                     "<td valign='top' border='0' width='2%'></td>"+
                                     "<td valign='top' border='0' width='14%'></td>"+
@@ -3663,57 +3635,11 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                 }
             }
         } catch (Exception e) {
-            System.out.println("Notif SBPK : "+e);
+            System.out.println("Notif Billing : "+e);
         }
     }
 
-    private void menampilkanBerkasDigital(String norawat) {
-        try {
-            if(chkBerkasDigital.isSelected()==true){
-                try{
-                    rs2=koneksi.prepareStatement(
-                        "select master_berkas_digital.nama,berkas_digital_perawatan.lokasi_file "+
-                        "from berkas_digital_perawatan inner join master_berkas_digital "+
-                        "on berkas_digital_perawatan.kode=master_berkas_digital.kode "+
-                        "where berkas_digital_perawatan.no_rawat='"+norawat+"'").executeQuery();
-                    if(rs2.next()){                                    
-                        htmlContent.append(
-                          "<tr class='isi'>"+ 
-                            "<td valign='top' width='2%'></td>"+        
-                            "<td valign='top' width='98%'>"+
-                              "<table width='100%' border='0' align='center' cellpadding='3px' cellspacing='0' class='tbl_form'>"+
-                                 "<tr align='center'>"+
-                                    "<td valign='top' width='4%' bgcolor='#FFFAF8'>No.</td>"+
-                                    "<td valign='top' width='96%' bgcolor='#FFFAF8'>Berkas Digital</td>"+
-                                 "</tr>"
-                        );
-                        rs2.beforeFirst();
-                        w=1;
-                        while(rs2.next()){
-                            htmlContent.append(
-                                 "<tr>"+
-                                    "<td valign='top' align='center'>"+w+"</td>"+
-                                    "<td valign='top'><a href='http://"+koneksiDB.HOSTHYBRIDWEB()+":"+koneksiDB.PORTWEB()+"/"+koneksiDB.HYBRIDWEB()+"/berkasrawat/"+rs2.getString("lokasi_file")+"'>"+rs2.getString("nama").replaceAll("pages/upload/","")+"</a></td>"+
-                                 "</tr>"); 
-                            w++;
-                        }
-                        htmlContent.append(
-                              "</table>"+
-                            "</td>"+
-                          "</tr>");
-                    }                                
-                } catch (Exception e) {
-                    System.out.println("Notifikasi : "+e);
-                } finally{
-                    if(rs2!=null){
-                        rs2.close();
-                    }
-                }
-            }
-        }catch (Exception e) {
-            System.out.println("Notif Berkas Digitaln: "+e);
-        }
-    }
+    
 }
 
     
