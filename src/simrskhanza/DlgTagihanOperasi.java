@@ -629,6 +629,8 @@ public class DlgTagihanOperasi extends javax.swing.JDialog {
         scrollPane2 = new widget.ScrollPane();
         Laporan = new widget.TextArea();
         jLabel10 = new widget.Label();
+        ProsedurOperasi = new widget.TextBox();
+        jLabel11 = new widget.Label();
 
         Kd2.setName("Kd2"); // NOI18N
         Kd2.setPreferredSize(new java.awt.Dimension(207, 23));
@@ -954,7 +956,7 @@ public class DlgTagihanOperasi extends javax.swing.JDialog {
 
         FormInput.setBorder(null);
         FormInput.setName("FormInput"); // NOI18N
-        FormInput.setPreferredSize(new java.awt.Dimension(89, 553));
+        FormInput.setPreferredSize(new java.awt.Dimension(89, 583));
         FormInput.setLayout(null);
 
         label14.setText("Operator 1 :");
@@ -1931,7 +1933,7 @@ public class DlgTagihanOperasi extends javax.swing.JDialog {
         jLabel9.setText("Dikirim Pemeriksaan PA :");
         jLabel9.setName("jLabel9"); // NOI18N
         FormInput.add(jLabel9);
-        jLabel9.setBounds(0, 520, 145, 23);
+        jLabel9.setBounds(0, 550, 145, 23);
 
         DikirimPA.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Ya", "Tidak" }));
         DikirimPA.setName("DikirimPA"); // NOI18N
@@ -1941,7 +1943,7 @@ public class DlgTagihanOperasi extends javax.swing.JDialog {
             }
         });
         FormInput.add(DikirimPA);
-        DikirimPA.setBounds(148, 520, 130, 23);
+        DikirimPA.setBounds(150, 550, 130, 23);
 
         scrollPane2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         scrollPane2.setName("scrollPane2"); // NOI18N
@@ -1953,12 +1955,27 @@ public class DlgTagihanOperasi extends javax.swing.JDialog {
         scrollPane2.setViewportView(Laporan);
 
         FormInput.add(scrollPane2);
-        scrollPane2.setBounds(510, 430, 320, 112);
+        scrollPane2.setBounds(510, 430, 320, 140);
 
         jLabel10.setText("Laporan Operasi :");
         jLabel10.setName("jLabel10"); // NOI18N
         FormInput.add(jLabel10);
         jLabel10.setBounds(406, 430, 101, 23);
+
+        ProsedurOperasi.setHighlighter(null);
+        ProsedurOperasi.setName("ProsedurOperasi"); // NOI18N
+        ProsedurOperasi.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                ProsedurOperasiKeyPressed(evt);
+            }
+        });
+        FormInput.add(ProsedurOperasi);
+        ProsedurOperasi.setBounds(150, 520, 256, 23);
+
+        jLabel11.setText("Prosedur Tindakan Operasi :");
+        jLabel11.setName("jLabel11"); // NOI18N
+        FormInput.add(jLabel11);
+        jLabel11.setBounds(0, 520, 145, 23);
 
         scrollPane1.setViewportView(FormInput);
 
@@ -2807,10 +2824,10 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
                     
                 if(sukses==true){
                     if(!Laporan.getText().equals("")){
-                        if(Sequel.menyimpantf2("laporan_operasi","?,?,?,?,?,?,?,?","laporan operasi",8,new String[]{
+                        if(Sequel.menyimpantf2("laporan_operasi","?,?,?,?,?,?,?,?,?","laporan operasi",9,new String[]{
                                 TNoRw.getText(),Valid.SetTgl(tgl.getSelectedItem()+"")+" "+tgl.getSelectedItem().toString().substring(11,19),PreOp.getText(),
                                 PostOp.getText(),Jaringan.getText(),Valid.SetTgl(tgl2.getSelectedItem()+"")+" "+tgl2.getSelectedItem().toString().substring(11,19),
-                                DikirimPA.getSelectedItem().toString(),Laporan.getText()
+                                DikirimPA.getSelectedItem().toString(),Laporan.getText(),ProsedurOperasi.getText()
                             })==false){
                             sukses=false;
                         }
@@ -2969,6 +2986,10 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
         Valid.pindah(evt,BtnOperator2,BtnAnastesi);
     }//GEN-LAST:event_btnOperator3KeyPressed
 
+    private void ProsedurOperasiKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ProsedurOperasiKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ProsedurOperasiKeyPressed
+
     /**
     * @param args the command line arguments
     */
@@ -3012,6 +3033,7 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     private javax.swing.JPopupMenu Popup;
     private widget.TextBox PostOp;
     private widget.TextBox PreOp;
+    private widget.TextBox ProsedurOperasi;
     private widget.ScrollPane Scroll;
     private widget.ScrollPane Scroll1;
     private widget.TextBox TCari;
@@ -3038,6 +3060,7 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     private widget.Button btndrumum;
     private widget.InternalFrame internalFrame1;
     private widget.Label jLabel10;
+    private widget.Label jLabel11;
     private widget.Label jLabel3;
     private widget.Label jLabel4;
     private widget.Label jLabel5;
