@@ -1323,14 +1323,16 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                     //menampilkan Program Terapi
                     menampilkanProgramTerapi(rs.getString("no_rawat"));
                     
+                    //menampilkan Billing
+                    menampilkanBilling(rs.getString("no_rawat"));
+                    
                     //menampilkan Radiologi
                     menampilkanRadiologi(rs.getString("no_rawat"));
 
                     //menampilkan Lab
                     menampilkanLaboratorium(rs.getString("no_rawat"));
                     
-                    //menampilkan Billing
-                    menampilkanBilling(rs.getString("no_rawat"));
+                    
                     
                     
     
@@ -1375,7 +1377,7 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
         try{
             File g = new File("klaim.css");            
             BufferedWriter bg = new BufferedWriter(new FileWriter(g));
-            bg.write(".isi td{border:0 ;font: 10px tahoma;height:12px;background: #ffffff;color:#323232;}.isi a{text-decoration:none;color:#8b9b95;padding:0 0 0 0px;font-family: Tahoma;font-size: 10px;} .isi .sep td{border: 0;font: 10px tahoma;height:12px;border: 0;background: #ffffff;color:#323232;}  .isi .sep-bold td{border: 0;font: 10px tahoma;height:12px; font-weight:bold;border: 0;background: #ffffff;color:#323232;} .isi .sbpk td{border: 1px solid #080808;font: 10px tahoma;height:12px;background: #ffffff;color:#323232;} .isi .sepjudul td{border: 0;font: 12px tahoma;height:12.5px;border: 0;background: #ffffff;color:#323232;} .isi .sep_note p{border: 0;padding-bottom:-2px; font: 6px tahoma;height:8px;border: 0;background: #ffffff;color:#323232;} .isi .ttd p{border: 0;padding-bottom:-2px; font-size: 10px tahoma;height:10px;border: 0;background: #ffffff;color:#323232;} .berkas {margin-bottom:20px;} ");
+            bg.write(".isi td{border:0 ;font: 10px tahoma;height:12px;background: #ffffff;color:#323232;}.isi a{text-decoration:none;color:#8b9b95;padding:0 0 0 0px;font-family: Tahoma;font-size: 10px;} .isi .sep td{border: 0;font: 10px tahoma;height:12px;border: 0;background: #ffffff;color:#323232;}  .isi .sep-bold td{border: 0;font: 10px tahoma;height:12px; font-weight:bold;border: 0;background: #ffffff;color:#323232;} .isi .sbpk td{border: 1px solid #080808;font: 10px tahoma;height:12px;background: #ffffff;color:#323232;} .isi .sbpk-table td{border-right: 1px solid #080808; border-left: 1px solid #080808; font: 10px tahoma;height:12px;background: #ffffff;color:#323232;} .isi .sepjudul td{border: 0;font: 12px tahoma;height:12.5px;border: 0;background: #ffffff;color:#323232;} .isi .sep_note p{border: 0;padding-bottom:-2px; font: 6px tahoma;height:8px;border: 0;background: #ffffff;color:#323232;} .isi .ttd p{border: 0;padding-bottom:-2px; font-size: 10px tahoma;height:10px;border: 0;background: #ffffff;color:#323232;} .berkas {margin-bottom:20px;} ");
             bg.close();
 
             File f = new File("berkasklaim.html");            
@@ -1954,7 +1956,7 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
             if(chkSBPK.isSelected()==true){
                 try {
                     rs2=koneksi.prepareStatement(
-                        "SELECT bridging_sep.no_sep,bridging_sep.no_rawat,bridging_sep.nomr,bridging_sep.nama_pasien,bridging_sep.tglsep,bridging_sep.tanggal_lahir,bridging_sep.jkel,bridging_sep.no_kartu, reg_periksa.kd_dokter, dokter.nm_dokter,pemeriksaan_ralan.penilaian,pemeriksaan_ralan.rtl, "+
+                        "SELECT bridging_sep.no_sep,bridging_sep.no_rawat,bridging_sep.nomr,bridging_sep.nama_pasien,bridging_sep.tglsep,bridging_sep.tanggal_lahir,bridging_sep.jkel,bridging_sep.no_kartu, reg_periksa.kd_dokter, dokter.nm_dokter,pemeriksaan_ralan.penilaian,pemeriksaan_ralan.rtl,pemeriksaan_ralan.pemeriksaan, "+
                         "IF ( bridging_sep.tujuankunjungan = '0', 'Konsultasi dokter(pertama)', 'Kunjungan Kontrol(ulangan)' ) AS tujuankunjungan,pemeriksaan_ralan.keluhan,concat('suhu : ',pemeriksaan_ralan.suhu_tubuh,', TD : ',pemeriksaan_ralan.tensi,', Nadi : ',pemeriksaan_ralan.nadi) as fisik "+
                         "FROM bridging_sep inner join pemeriksaan_ralan on bridging_sep.no_rawat=pemeriksaan_ralan.no_rawat INNER JOIN reg_periksa on reg_periksa.no_rawat=bridging_sep.no_rawat INNER JOIN dokter on dokter.kd_dokter=reg_periksa.kd_dokter WHERE bridging_sep.jnspelayanan = 2 AND bridging_sep.no_rawat ='"+norawat+"'").executeQuery();
                     if(rs2.next()){
@@ -2075,6 +2077,12 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                                     "<td valign='top' border='0' width='2%'></td>"+
                                     "<td valign='top' border='0' width='11%'></td>"+
                                     "<td valign='top' border='0' width='1%' align='right'></td>"+
+                                    "<td valign='top' border='0' width='66%' align='left'>"+rs2.getString("pemeriksaan").replaceAll("(\r\n|\r|\n|\n\r)","<br>")+"</td>"+
+                                 "</tr>"+
+                                 "<tr class='sep'>"+
+                                    "<td valign='top' border='0' width='2%'></td>"+
+                                    "<td valign='top' border='0' width='11%'></td>"+
+                                    "<td valign='top' border='0' width='1%' align='right'></td>"+
                                     "<td valign='top' border='0' width='66%' align='left'></td>"+
                                  "</tr>"+
                                 "</table>" +
@@ -2134,7 +2142,7 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                                     "</td>"+
                                  "</tr>"+
                                 "</table>" +
-                                "<table width='100%' border='0' height='30' cellspacing='10' class='tbl_form'>"+
+                                "<table width='100%' border='0' height='30' cellspacing='20' class='tbl_form'>"+
                                  "<tr class='sep'>"+
                                     "<td valign='top' border='0' width='2%'></td>"+
                                     "<td valign='top' border='0' width='14%'></td>"+
@@ -2152,7 +2160,7 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                                     "<td valign='top' border='0' width='2%'></td>"+
                                  "</tr>" +
                                   "</table>" +
-                                "<table width='100%' border='0' align='center' height='30' cellspacing='50' class='tbl_form'>"+
+                                "<table width='100%' border='0' align='center' height='30' cellspacing='40' class='tbl_form'>"+
                                  "<tr class='sep'>"+
                                     "<td valign='top' border='0' width='2%'></td>"+
                                     "<td valign='top' border='0' width='14%'></td>"+
@@ -3010,6 +3018,8 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                                     "<td valign='top' border='0' width='32%'></td>"+
                                  "</tr>"+
                               "</table>" +
+                                     
+                               //IDENTITAS
                                "<table width='100%' border='0' align='center' cellpadding='3px' cellspacing='0' class='tbl_form'>"+
                                  "<tr class='sep'>"+
                                     "<td valign='top' border='0' width='2%'></td>"+
@@ -3091,16 +3101,109 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
 //                                    "<td valign='top' border='0' width='1%' align='right'></td>"+
 //                                    "<td valign='top' border='0' width='32%' align='left'></td>"+
 //                                 "</tr>"+       
-                                "</table>" +
+                                "</table>" 
+                            );
+                                
+                                //ISI
                                             
-                                "<table width='100%' border='1' align='center' height='30' cellspacing='0' class='tbl_form'>"+
-                                 "<tr class='sep'>"+
-                                    "<td valign='top' border='0' width='2%'></td>"+
-//                                    "<td valign='top' border='0' width='96%'>"+rs2.getString("hasil").replaceAll("(\r\n|\r|\n|\n\r)","<br>")+"<</td>"+
-                                    "<td valign='top' border='0' width='2%'></td>"+
-                                  "</tr>"+
-                                 "</table>" +
-                                            
+                                try {
+                                    rs4=koneksi.prepareStatement(
+                                         "select periksa_lab.tgl_periksa,periksa_lab.jam from periksa_lab where periksa_lab.kategori='PK' and periksa_lab.no_rawat='"+rs.getString("no_rawat")+"' "+
+                                         "group by concat(periksa_lab.no_rawat,periksa_lab.tgl_periksa,periksa_lab.jam) order by periksa_lab.tgl_periksa,periksa_lab.jam").executeQuery();
+                                    if(rs4.next()){
+                                        rs4.beforeFirst();
+                                        w=1;
+                                        while(rs4.next()){
+                                            try{
+                                                rs5=koneksi.prepareStatement(
+                                                     "select periksa_lab.kd_jenis_prw, "+
+                                                     "jns_perawatan_lab.nm_perawatan,petugas.nama,periksa_lab.biaya,periksa_lab.dokter_perujuk,dokter.nm_dokter "+
+                                                     "from periksa_lab inner join jns_perawatan_lab on periksa_lab.kd_jenis_prw=jns_perawatan_lab.kd_jenis_prw "+
+                                                     "inner join petugas on periksa_lab.nip=petugas.nip inner join dokter on periksa_lab.kd_dokter=dokter.kd_dokter "+
+                                                     "where periksa_lab.kategori='PK' and periksa_lab.no_rawat='"+rs.getString("no_rawat")+"' "+
+                                                     "and periksa_lab.tgl_periksa='"+rs4.getString("tgl_periksa")+"' and periksa_lab.jam='"+rs4.getString("jam")+"'").executeQuery();
+                                                
+                                                while(rs5.next()){
+                                                        htmlContent.append(
+                                                        "<table width='100%' border='1' align='center' cellpadding='3px' cellspacing='0' class='tbl_form'>"+
+                                                            "<tr class='sbpk'>"+
+                                                                   "<td valign='top' align='center' width='25%' bgcolor='#FFFAF8'>Pemeriksaan</td>"+
+                                                                   "<td valign='top' align='center' width='20%' bgcolor='#FFFAF8'>Hasil</td>"+
+                                                                   "<td valign='top' align='center' width='22%' bgcolor='#FFFAF8'>Satuan</td>"+
+                                                                   "<td valign='top' align='center' width='22%' bgcolor='#FFFAF8'>Nilai Rujukan</td>"+
+                                                                   "<td valign='top' align='center' width='11%' bgcolor='#FFFAF8'>Keterangan</td>"+
+                                                            "</tr>"+
+                                                                
+                                                            "<tr class='sbpk-table'>"+
+                                                               "<td valign='top' width='25%' >"+rs5.getString("nm_perawatan")+"</td>"+
+                                                               "<td valign='top' width='20%' ></td>"+
+                                                               "<td valign='top' width='22%' ></td>"+
+                                                               "<td valign='top' width='22%' ></td>"+
+                                                               "<td valign='top' width='11%' ></td>"+
+                                                            "</tr>"
+                                                       ); 
+                                                   
+
+                                           
+
+                                                    try {
+                                                        rs3=koneksi.prepareStatement(
+                                                            "select template_laboratorium.Pemeriksaan, detail_periksa_lab.nilai,"+
+                                                            "template_laboratorium.satuan,detail_periksa_lab.nilai_rujukan,detail_periksa_lab.biaya_item,"+
+                                                            "detail_periksa_lab.keterangan from detail_periksa_lab inner join "+
+                                                            "template_laboratorium on detail_periksa_lab.id_template=template_laboratorium.id_template "+
+                                                            "where detail_periksa_lab.no_rawat='"+rs.getString("no_rawat")+"' and "+
+                                                            "detail_periksa_lab.kd_jenis_prw='"+rs5.getString("kd_jenis_prw")+"' and "+
+                                                            "detail_periksa_lab.tgl_periksa='"+rs4.getString("tgl_periksa")+"' and "+
+                                                            "detail_periksa_lab.jam='"+rs4.getString("jam")+"' order by detail_periksa_lab.kd_jenis_prw,template_laboratorium.urut ").executeQuery();
+                                                        if(rs3.next()){ 
+                                                            rs3.beforeFirst();
+                                                            while(rs3.next()){
+                                                                htmlContent.append(
+                                                                    "<tr class='sbpk-table'>"+
+                                                                       "<td valign='top' width='25%' >"+rs3.getString("Pemeriksaan")+"</td>"+
+                                                                       "<td valign='top' align='center' width='20%' >"+rs3.getString("nilai")+"</td>"+
+                                                                       "<td valign='top' align='center' width='22%' >"+rs3.getString("satuan")+"</td>"+
+                                                                       "<td valign='top' align='center' width='22%' >"+rs3.getString("nilai_rujukan")+"</td>"+
+                                                                       "<td valign='top' align='center' width='11%' >"+rs3.getString("keterangan")+"</td>"+
+                                                 
+                                                                    "</tr>"); 
+                                                         
+                                                            }                                               
+                                                        }
+                                                    } catch (Exception e) {
+                                                        System.out.println("Notifikasi : "+e);
+                                                    } finally{
+                                                        if(rs3!=null){
+                                                            rs3.close();
+                                                        }
+                                                    }
+                                                    s++;
+                                                }  
+                                                w++;
+                                            } catch (Exception e) {
+                                                System.out.println("Notifikasi Lab : "+e);
+                                            } finally{
+                                                if(rs5!=null){
+                                                    rs5.close();
+                                                }
+                                            }
+                                        }
+                                        htmlContent.append(
+                                                      "</table>");
+                                    }
+                                } catch (Exception e) {
+                                    System.out.println("Notif : "+e);
+                                } finally{
+                                    if(rs4!=null){
+                                        rs4.close();
+                                    }
+                                }
+
+                  
+                               htmlContent.append(
+                                 
+                                 //TTD Barcode
                                  "<table width='90%' border='0' align='center' cellpadding='3px' cellspacing='0' class='tbl_form'>"+
                                  "<tr class='sep'>"+
                                     "<td valign='top' width='40%' align='center'></td>"+
@@ -3113,9 +3216,9 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                                     "<td valign='top' width='40%' align='center'>Tanda Verifikasi</td>"+
                                  "</tr>"+
                                  "<tr class='sep'>"+
-                                    "<td valign='top' width='40%' align='center'>Dokter Radiologi</td>"+
+                                    "<td valign='top' width='40%' align='center'>Penanggunng Jawab</td>"+
                                     "<td valign='top' width='20%' align='center'></td>"+
-                                    "<td valign='top' width='40%' align='center'>Petugas Radiologi</td>"+
+                                    "<td valign='top' width='40%' align='center'>Petugas Laboratorium</td>"+
                                  "</tr>"+
                                  "<tr class='sep'>"+
                                     "<td valign='top' width='40%' align='center'>"+
@@ -3169,16 +3272,16 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                                     "<td valign='top' border='0' width='36%' align='left'></td>"+
                                     "<td valign='top' border='0' width='2%'></td>"+
                                  "</tr>"+
-                                "</table>" +
-                                "<table width='100%' border='0' style='border-bottom:3px solid #87b5ed;' align='center' height='40' cellspacing='20' class='tbl_form'>"+
-                                 "<tr class='sep'>"+
-                                    "<td valign='top' border='0' width='2%'></td>"+
-                                    "<td valign='top' border='0' width='14%'></td>"+
-                                    "<td valign='top' border='0' width='1%' align='right'></td>"+
-                                    "<td valign='top' border='0' width='36%' align='left'></td>"+
-                                    "<td valign='top' border='0' width='2%'></td>"+
-                                 "</tr>"+
                                 "</table>" 
+//                                "<table width='100%' border='0' style='border-bottom:3px solid #87b5ed;' align='center' height='40' cellspacing='20' class='tbl_form'>"+
+//                                 "<tr class='sep'>"+
+//                                    "<td valign='top' border='0' width='2%'></td>"+
+//                                    "<td valign='top' border='0' width='14%'></td>"+
+//                                    "<td valign='top' border='0' width='1%' align='right'></td>"+
+//                                    "<td valign='top' border='0' width='36%' align='left'></td>"+
+//                                    "<td valign='top' border='0' width='2%'></td>"+
+//                                 "</tr>"+
+//                                "</table>" 
                             );                                     
                             w++;
                         }
@@ -3195,7 +3298,7 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                 }
             }
         } catch (Exception e) {
-            System.out.println("Notif Pemeriksaan Radiologi : "+e);
+            System.out.println("Notif Pemeriksaan Laborat : "+e);
         }
     }
     
