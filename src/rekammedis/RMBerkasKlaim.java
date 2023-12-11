@@ -1653,7 +1653,7 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                                     "<td valign='top' border='0' width='2%'></td>"+
                                  "</tr>" +
                                  "</table>" +
-                                "<table width='100%' border='0' style='border-bottom:3px solid #87b5ed;' align='center' height='30' cellspacing='20' class='tbl_form'>"+
+                                "<table width='100%' border='0' style='border-bottom:3px solid #87b5ed;' align='center' height='30' cellspacing='40' class='tbl_form'>"+
                                  "<tr class='sep'>"+
                                     "<td valign='top' border='0' width='2%'></td>"+
                                     "<td valign='top' border='0' width='14%'></td>"+
@@ -2169,7 +2169,7 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                                     "<td valign='top' border='0' width='2%'></td>"+
                                  "</tr>" +
                                   "</table>" +
-                                "<table width='100%' border='0' align='center' height='30' cellspacing='30' class='tbl_form'>"+
+                                "<table width='100%' border='0' align='center' height='30' cellspacing='50' class='tbl_form'>"+
                                  "<tr class='sep'>"+
                                     "<td valign='top' border='0' width='2%'></td>"+
                                     "<td valign='top' border='0' width='14%'></td>"+
@@ -2178,7 +2178,7 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                                     "<td valign='top' border='0' width='2%'></td>"+
                                  "</tr>" +
                                  "</table>" +
-                                "<table width='100%' border='0' style='border-bottom:3px solid #87b5ed;' align='center' height='30' cellspacing='30' class='tbl_form'>"+
+                                "<table width='100%' border='0' style='border-bottom:3px solid #87b5ed;' align='center' height='30' cellspacing='50' class='tbl_form'>"+
                                  "<tr class='sep'>"+
                                     "<td valign='top' border='0' width='2%'></td>"+
                                     "<td valign='top' border='0' width='14%'></td>"+
@@ -2908,16 +2908,7 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                                     "<td valign='top' border='0' width='2%'></td>"+
                                  "</tr>"+
                                 "</table>" +
-                                "<table width='100%' border='0' align='center' height='30' cellspacing='40' class='tbl_form'>"+
-                                 "<tr class='sep'>"+
-                                    "<td valign='top' border='0' width='2%'></td>"+
-                                    "<td valign='top' border='0' width='14%'></td>"+
-                                    "<td valign='top' border='0' width='1%' align='right'></td>"+
-                                    "<td valign='top' border='0' width='36%' align='left'></td>"+
-                                    "<td valign='top' border='0' width='2%'></td>"+
-                                 "</tr>"+
-                                "</table>" +
-                                "<table width='100%' border='0' align='center' height='30' cellspacing='20' class='tbl_form'>"+
+                                "<table width='100%' border='0' align='center' height='30' cellspacing='50' class='tbl_form'>"+
                                  "<tr class='sep'>"+
                                     "<td valign='top' border='0' width='2%'></td>"+
                                     "<td valign='top' border='0' width='14%'></td>"+
@@ -3952,6 +3943,24 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                                  "</tr>"+
                                 "</table>" +
                                 "<table width='100%' border='0' align='center' height='30' cellspacing='40' class='tbl_form'>"+
+                                 "<tr class='sep'>"+
+                                    "<td valign='top' border='0' width='2%'></td>"+
+                                    "<td valign='top' border='0' width='14%'></td>"+
+                                    "<td valign='top' border='0' width='1%' align='right'></td>"+
+                                    "<td valign='top' border='0' width='36%' align='left'></td>"+
+                                    "<td valign='top' border='0' width='2%'></td>"+
+                                 "</tr>" +
+                                 "</table>" +
+                                 "<table width='100%' border='0' align='center' height='30' cellspacing='40' class='tbl_form'>"+
+                                 "<tr class='sep'>"+
+                                    "<td valign='top' border='0' width='2%'></td>"+
+                                    "<td valign='top' border='0' width='14%'></td>"+
+                                    "<td valign='top' border='0' width='1%' align='right'></td>"+
+                                    "<td valign='top' border='0' width='36%' align='left'></td>"+
+                                    "<td valign='top' border='0' width='2%'></td>"+
+                                 "</tr>" +
+                                 "</table>" +
+                                 "<table width='100%' border='0' align='center' height='30' cellspacing='40' class='tbl_form'>"+
                                  "<tr class='sep'>"+
                                     "<td valign='top' border='0' width='2%'></td>"+
                                     "<td valign='top' border='0' width='14%'></td>"+
