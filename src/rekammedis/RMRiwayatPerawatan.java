@@ -393,8 +393,8 @@ public final class RMRiwayatPerawatan extends javax.swing.JDialog {
         chkTindakanRalanDokter = new widget.CekBox();
         chkTindakanRalanDokterParamedis = new widget.CekBox();
         chkTindakanRalanParamedis = new widget.CekBox();
+        chkSupri = new widget.CekBox();
         chkAsuhanKeperawatanRanapAnak = new widget.CekBox();
-        chkAsuhanKeperawatanRanapKandungan = new widget.CekBox();
         chkAsuhanKeperawatanRanap = new widget.CekBox();
         chkAsuhanMedisRanapKandungan = new widget.CekBox();
         chkAsuhanMedisRanap = new widget.CekBox();
@@ -419,6 +419,7 @@ public final class RMRiwayatPerawatan extends javax.swing.JDialog {
         chkTransferAntarRuang = new widget.CekBox();
         chkUjiFungsiKFR = new widget.CekBox();
         chkLaporanPersalinan = new widget.CekBox();
+        chkAsuhanKeperawatanRanapKandungan = new widget.CekBox();
         Scroll6 = new widget.ScrollPane();
         LoadHTMLPRMRJ = new widget.editorpane();
         Scroll4 = new widget.ScrollPane();
@@ -677,7 +678,7 @@ public final class RMRiwayatPerawatan extends javax.swing.JDialog {
         FormMenu.setBackground(new java.awt.Color(255, 255, 255));
         FormMenu.setBorder(null);
         FormMenu.setName("FormMenu"); // NOI18N
-        FormMenu.setPreferredSize(new java.awt.Dimension(255, 2842));
+        FormMenu.setPreferredSize(new java.awt.Dimension(255, 2862));
         FormMenu.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 1, 1));
 
         chkSemua.setBackground(new java.awt.Color(204, 204, 204));
@@ -1486,6 +1487,14 @@ public final class RMRiwayatPerawatan extends javax.swing.JDialog {
         chkTindakanRalanParamedis.setPreferredSize(new java.awt.Dimension(245, 22));
         FormMenu.add(chkTindakanRalanParamedis);
 
+        chkSupri.setSelected(true);
+        chkSupri.setText("Ranap - Surat Perintah Inap");
+        chkSupri.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        chkSupri.setName("chkSupri"); // NOI18N
+        chkSupri.setOpaque(false);
+        chkSupri.setPreferredSize(new java.awt.Dimension(245, 22));
+        FormMenu.add(chkSupri);
+
         chkAsuhanKeperawatanRanapAnak.setSelected(true);
         chkAsuhanKeperawatanRanapAnak.setText("Ranap - Asessmen Keperawatan Anak\n");
         chkAsuhanKeperawatanRanapAnak.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -1493,14 +1502,6 @@ public final class RMRiwayatPerawatan extends javax.swing.JDialog {
         chkAsuhanKeperawatanRanapAnak.setOpaque(false);
         chkAsuhanKeperawatanRanapAnak.setPreferredSize(new java.awt.Dimension(245, 22));
         FormMenu.add(chkAsuhanKeperawatanRanapAnak);
-
-        chkAsuhanKeperawatanRanapKandungan.setSelected(true);
-        chkAsuhanKeperawatanRanapKandungan.setText("Ranap - Asessmen Keperawatan Kandungan");
-        chkAsuhanKeperawatanRanapKandungan.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        chkAsuhanKeperawatanRanapKandungan.setName("chkAsuhanKeperawatanRanapKandungan"); // NOI18N
-        chkAsuhanKeperawatanRanapKandungan.setOpaque(false);
-        chkAsuhanKeperawatanRanapKandungan.setPreferredSize(new java.awt.Dimension(245, 22));
-        FormMenu.add(chkAsuhanKeperawatanRanapKandungan);
 
         chkAsuhanKeperawatanRanap.setSelected(true);
         chkAsuhanKeperawatanRanap.setText("Ranap - Asessmen Keperawatan Umum");
@@ -1698,6 +1699,14 @@ public final class RMRiwayatPerawatan extends javax.swing.JDialog {
         chkLaporanPersalinan.setOpaque(false);
         chkLaporanPersalinan.setPreferredSize(new java.awt.Dimension(245, 22));
         FormMenu.add(chkLaporanPersalinan);
+
+        chkAsuhanKeperawatanRanapKandungan.setSelected(true);
+        chkAsuhanKeperawatanRanapKandungan.setText("Ranap - Asessmen Keperawatan Kandungan");
+        chkAsuhanKeperawatanRanapKandungan.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        chkAsuhanKeperawatanRanapKandungan.setName("chkAsuhanKeperawatanRanapKandungan"); // NOI18N
+        chkAsuhanKeperawatanRanapKandungan.setOpaque(false);
+        chkAsuhanKeperawatanRanapKandungan.setPreferredSize(new java.awt.Dimension(245, 22));
+        FormMenu.add(chkAsuhanKeperawatanRanapKandungan);
 
         ScrollMenu.setViewportView(FormMenu);
 
@@ -2701,6 +2710,7 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
     private widget.CekBox chkSkriningNutrisiAnak;
     private widget.CekBox chkSkriningNutrisiDewasa;
     private widget.CekBox chkSkriningNutrisiLansia;
+    private widget.CekBox chkSupri;
     private widget.CekBox chkTambahanBiaya;
     private widget.CekBox chkTimeOutSebelumInsisi;
     private widget.CekBox chkTindakanRalanDokter;
@@ -3174,6 +3184,10 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                     menampilkanHemodialisa(rs.getString("no_rawat"));
                     //menampilkan pemeriksaan Ralan
                     menampilkanPemeriksaanRalan(rs.getString("no_rawat"));
+                    
+                    
+                    // (+) menampilkan Supri
+                    menampilkanSuratPerintahInap(rs.getString("no_rawat"));
                     // (+) menampilkan asuhan keperawatan rawat inap Anak
                     menampilkanAsuhanKeperawatanRawatInapAnak(rs.getString("no_rawat"));
                     //menampilkan asuhan keperawatan rawat inap
@@ -16713,6 +16727,8 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
         }
     }
     
+
+    
     private void menampilkanBerkasDigital(String norawat) {
         try {
             if(chkBerkasDigital.isSelected()==true){
@@ -16929,6 +16945,78 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
             }
         } catch (Exception e) {
             System.out.println("Notif Hemodialisa : "+e);
+        }
+    }
+    
+    private void menampilkanSuratPerintahInap(String norawat) {
+        try {
+            if(chkSupri.isSelected()==true){
+                //triase primer
+                try {
+                    rs2=koneksi.prepareStatement(
+                            "SELECT poliklinik.nm_poli,reg_periksa.no_rkm_medis,pasien.nm_pasien,if(pasien.jk='L','laki-laki','Perempuan') as jk,pasien.tgl_lahir,bangsal.nm_bangsal,"+
+                            "perintah_ranap.diagnosa,perintah_ranap.catatan,dokter.nm_dokter,penjab.png_jawab,petugas.nama,petugas.nip "+
+                            "FROM reg_periksa INNER JOIN pasien on pasien.no_rkm_medis=reg_periksa.no_rkm_medis INNER JOIN perintah_ranap on perintah_ranap.no_rawat=reg_periksa.no_rawat "+
+                            "INNER JOIN dokter on dokter.kd_dokter=perintah_ranap.kd_dpjp INNER JOIN poliklinik on poliklinik.kd_poli=reg_periksa.kd_poli INNER JOIN penjab on penjab.kd_pj=reg_periksa.kd_pj "+
+                            "INNER JOIN kamar on kamar.kd_kamar=perintah_ranap.kd_kamar INNER JOIN bangsal on kamar.kd_bangsal=bangsal.kd_bangsal INNER JOIN petugas on reg_periksa.kd_dokter=petugas.nip "+
+                            "WHERE perintah_ranap.no_rawat ='"+norawat+"'").executeQuery();
+                    if(rs2.next()){
+                        htmlContent.append(
+                            "<tr class='isi'>"+ 
+                            "<td valign='top' width='2%'></td>"+        
+                            "<td valign='top' style='font-weight:bold;' width='18%'>Surat Perintah Inap</td>"+
+                              "<td valign='top' width='1%' align='center'>:</td>"+
+                              "<td valign='top' width='79%'>"+
+                                "<table width='100%' border='0' align='center' cellpadding='3px' cellspacing='0' class='tbl_form'>"+
+                                  "<tr class='isi'>"+
+                                      "<td valign='top'>Dikirm dari Unit</td><td valign='top'>: "+rs2.getString("nm_poli")+"</td>"+
+                                  "</tr>"+
+                                  "<tr class='isi'>"+            
+                                      "<td valign='top'>No Rekam Medis</td><td valign='top'>: "+rs2.getString("no_rkm_medis")+"</td>"+
+                                  "</tr>"+
+                                  "<tr class='isi'>"+
+                                      "<td valign='top'>Nama Pasien</td><td valign='top'>: "+rs2.getString("nm_pasien")+"</td>"+
+                                  "</tr>"+
+                                  "<tr class='isi'>"+
+                                      "<td valign='top'>Jenis Kelamin</td><td valign='top'>: "+rs2.getString("jk")+"</td>"+
+                                  "</tr>"+
+                                  "<tr class='isi'>"+
+                                      "<td valign='top'>Tanggal Lahir</td><td valign='top'>: "+rs2.getString("tgl_lahir")+"</td>"+
+                                  "</tr>"+
+                                    "<tr class='isi'>"+
+                                      "<td valign='top'>Diagnosa kerja</td><td valign='top'>: "+rs2.getString("diagnosa")+"</td>"+
+                                  "</tr>"+
+                                  "<tr class='isi'>"+
+                                      "<td valign='top'>Indikasi Rawat Inap</td><td valign='top'>: "+rs2.getString("catatan")+"</td>"+
+                                  "</tr>"+
+                                  "<tr class='isi'>"+
+                                      "<td valign='top'>DPJP</td><td valign='top'>: "+rs2.getString("nm_dokter")+"</td>"+
+                                  "</tr>"+
+                                  "<tr class='isi'>"+
+                                      "<td valign='top'>Cara Bayar/Asuransi</td><td valign='top'>: "+rs2.getString("png_jawab")+"</td>"+
+                                  "</tr>"
+                                 
+                        );
+
+                        htmlContent.append(
+                                "<tr class='isi'>"+
+                                    "<td valign='middle'>Dokter Jaga IGD /Poliklinik</td>"+
+                                    "<td valign='middle'>"+rs2.getString("nip")+" "+rs2.getString("nama")+"</td>"+
+                                "</tr>"+
+                              "</table>"+
+                            "</td>"+
+                          "</tr>");
+                    }
+                } catch (Exception e) {
+                    System.out.println("Notifikasi Data Triase IGD : "+e);
+                } finally{
+                    if(rs2!=null){
+                        rs2.close();
+                    }
+                }
+            }
+        } catch (Exception e) {
+            System.out.println("Notif Triase IGD : "+e);
         }
     }
     

@@ -526,7 +526,7 @@
                             </Property>
                             <Property name="name" type="java.lang.String" value="FormMenu" noResource="true"/>
                             <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-                              <Dimension value="[255, 2842]"/>
+                              <Dimension value="[255, 2862]"/>
                             </Property>
                           </Properties>
 
@@ -1729,24 +1729,24 @@
                                 </Property>
                               </Properties>
                             </Component>
-                            <Component class="widget.CekBox" name="chkAsuhanKeperawatanRanapAnak">
+                            <Component class="widget.CekBox" name="chkSupri">
                               <Properties>
                                 <Property name="selected" type="boolean" value="true"/>
-                                <Property name="text" type="java.lang.String" value="Ranap - Asessmen Keperawatan Anak&#xa;"/>
+                                <Property name="text" type="java.lang.String" value="Ranap - Surat Perintah Inap"/>
                                 <Property name="horizontalAlignment" type="int" value="2"/>
-                                <Property name="name" type="java.lang.String" value="chkAsuhanKeperawatanRanapAnak" noResource="true"/>
+                                <Property name="name" type="java.lang.String" value="chkSupri" noResource="true"/>
                                 <Property name="opaque" type="boolean" value="false"/>
                                 <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                                   <Dimension value="[245, 22]"/>
                                 </Property>
                               </Properties>
                             </Component>
-                            <Component class="widget.CekBox" name="chkAsuhanKeperawatanRanapKandungan">
+                            <Component class="widget.CekBox" name="chkAsuhanKeperawatanRanapAnak">
                               <Properties>
                                 <Property name="selected" type="boolean" value="true"/>
-                                <Property name="text" type="java.lang.String" value="Ranap - Asessmen Keperawatan Kandungan"/>
+                                <Property name="text" type="java.lang.String" value="Ranap - Asessmen Keperawatan Anak&#xa;"/>
                                 <Property name="horizontalAlignment" type="int" value="2"/>
-                                <Property name="name" type="java.lang.String" value="chkAsuhanKeperawatanRanapKandungan" noResource="true"/>
+                                <Property name="name" type="java.lang.String" value="chkAsuhanKeperawatanRanapAnak" noResource="true"/>
                                 <Property name="opaque" type="boolean" value="false"/>
                                 <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                                   <Dimension value="[245, 22]"/>
@@ -2038,6 +2038,18 @@
                                 <Property name="text" type="java.lang.String" value="VK - Laporan Persalinan"/>
                                 <Property name="horizontalAlignment" type="int" value="2"/>
                                 <Property name="name" type="java.lang.String" value="chkLaporanPersalinan" noResource="true"/>
+                                <Property name="opaque" type="boolean" value="false"/>
+                                <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                                  <Dimension value="[245, 22]"/>
+                                </Property>
+                              </Properties>
+                            </Component>
+                            <Component class="widget.CekBox" name="chkAsuhanKeperawatanRanapKandungan">
+                              <Properties>
+                                <Property name="selected" type="boolean" value="true"/>
+                                <Property name="text" type="java.lang.String" value="Ranap - Asessmen Keperawatan Kandungan"/>
+                                <Property name="horizontalAlignment" type="int" value="2"/>
+                                <Property name="name" type="java.lang.String" value="chkAsuhanKeperawatanRanapKandungan" noResource="true"/>
                                 <Property name="opaque" type="boolean" value="false"/>
                                 <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                                   <Dimension value="[245, 22]"/>
