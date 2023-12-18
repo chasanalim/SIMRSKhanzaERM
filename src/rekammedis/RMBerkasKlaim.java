@@ -173,6 +173,20 @@ public final class RMBerkasKlaim extends javax.swing.JDialog {
               }
             }
         });
+
+        LoadHTMLRiwayatPerawatanRanap.setEditorKit(kit);
+        LoadHTMLRiwayatPerawatanRanap.setDocument(doc);
+        LoadHTMLRiwayatPerawatanRanap.setEditable(false);
+        LoadHTMLRiwayatPerawatanRanap.addHyperlinkListener(e -> {
+            if (HyperlinkEvent.EventType.ACTIVATED.equals(e.getEventType())) {
+              Desktop desktop = Desktop.getDesktop();
+              try {
+                desktop.browse(e.getURL().toURI());
+              } catch (Exception ex) {
+                ex.printStackTrace();
+              }
+            }
+        });
         ChkAccor.setSelected(false);
         isMenu();
     }    
@@ -1015,6 +1029,7 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
             chkSEPRajal.setSelected(true);
 
             chkSBPK.setSelected(true);
+            chkSBPKIGD.setSelected(true);
             chkFormRehabMedis.setSelected(true);
             chkProgramTerapi.setSelected(true);
             chkPemeriksaanRadiologi.setSelected(true);
@@ -1026,6 +1041,7 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
             chkSEPRajal.setSelected(false);
 
             chkSBPK.setSelected(false);
+            chkSBPKIGD.setSelected(false);
             chkFormRehabMedis.setSelected(false);
             chkProgramTerapi.setSelected(false);
             chkPemeriksaanRadiologi.setSelected(false);
@@ -3475,7 +3491,7 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
     
     private void menampilkanLaboratorium(String norawat) {
         try {
-            if(chkPemeriksaanLaborat.isSelected()==true){
+            if((chkPemeriksaanLaborat.isSelected()==true)||(chkPemeriksaanLaboratRanap.isSelected()==true)){
                 try {
                     rs2=koneksi.prepareStatement(
                         "SELECT reg_periksa.no_rawat,reg_periksa.no_rkm_medis,pasien.nm_pasien,pasien.tgl_lahir,reg_periksa.almt_pj,permintaan_lab.noorder,permintaan_lab.tgl_permintaan,permintaan_lab.jam_permintaan, "+
@@ -3629,9 +3645,9 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                                          "select periksa_lab.tgl_periksa,periksa_lab.jam from periksa_lab where periksa_lab.kategori='PK' and periksa_lab.no_rawat='"+rs.getString("no_rawat")+"' "+
                                          "group by concat(periksa_lab.no_rawat,periksa_lab.tgl_periksa,periksa_lab.jam) order by periksa_lab.tgl_periksa,periksa_lab.jam").executeQuery();
                                     if(rs4.next()){
-                                        rs4.beforeFirst();
-                                        w=1;
-                                        while(rs4.next()){
+//                                        rs4.beforeFirst();
+//                                        w=1;
+//                                        while(rs4.next()){
                                             try{
                                                 rs5=koneksi.prepareStatement(
                                                      "select periksa_lab.kd_jenis_prw, "+
@@ -3641,7 +3657,8 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                                                      "where periksa_lab.kategori='PK' and periksa_lab.no_rawat='"+rs.getString("no_rawat")+"' "+
                                                      "and periksa_lab.tgl_periksa='"+rs4.getString("tgl_periksa")+"' and periksa_lab.jam='"+rs4.getString("jam")+"'").executeQuery();
                                                 
-                                                while(rs5.next()){
+                                                //while(rs5.next()){
+                                                    if(rs5.next()){
                                                         htmlContent.append(
                                                         "<table width='100%' border='1' align='center' cellpadding='3px' cellspacing='0' class='tbl_form'>"+
                                                             "<tr class='sbpk'>"+
@@ -3675,8 +3692,9 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                                                             "detail_periksa_lab.tgl_periksa='"+rs4.getString("tgl_periksa")+"' and "+
                                                             "detail_periksa_lab.jam='"+rs4.getString("jam")+"' order by detail_periksa_lab.kd_jenis_prw,template_laboratorium.urut ").executeQuery();
                                                         if(rs3.next()){ 
-                                                            rs3.beforeFirst();
-                                                            while(rs3.next()){
+//                                                            rs3.beforeFirst();
+                                                            //while(rs3.next()){
+                                                            if(rs3.next()){
                                                                 htmlContent.append(
                                                                     "<tr class='sbpk-table'>"+
                                                                        "<td valign='top' width='25%' >"+rs3.getString("Pemeriksaan")+"</td>"+
@@ -3696,7 +3714,7 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                                                             rs3.close();
                                                         }
                                                     }
-                                                    s++;
+//                                                    s++;
                                                 }  
                                                 w++;
                                             } catch (Exception e) {
@@ -3706,7 +3724,7 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                                                     rs5.close();
                                                 }
                                             }
-                                        }
+//                                        }
                                         htmlContent.append(
                                                       "</table>");
                                     }
