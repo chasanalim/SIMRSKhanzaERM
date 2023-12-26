@@ -783,6 +783,7 @@ public final class BPJSDataSEP extends javax.swing.JDialog {
                 if(historiPelayanan.getTable().getSelectedRow()!= -1){         
                     if((historiPelayanan.getTable().getSelectedColumn()==6)||(historiPelayanan.getTable().getSelectedColumn()==7)){
                         NoRujukan.setText(historiPelayanan.getTable().getValueAt(historiPelayanan.getTable().getSelectedRow(),historiPelayanan.getTable().getSelectedColumn()).toString());
+//                        KdPenyakit.setText(historiPelayanan.getTable().getValueAt(skdp2.getTable().getSelectedRow(),8).toString());
                     }
                 }  
                 NoRujukan.requestFocus();
