@@ -747,6 +747,13 @@ public final class BPJSDataSEP extends javax.swing.JDialog {
             public void windowClosed(WindowEvent e) {
                 if(skdp2.getTable().getSelectedRow()!= -1){                   
                     NoSKDP.setText(skdp2.getTable().getValueAt(skdp2.getTable().getSelectedRow(),8).toString());
+                    NoRujukan.setText(skdp2.getTable().getValueAt(skdp2.getTable().getSelectedRow(),8).toString());
+                    Valid.SetTgl(TanggalRujuk,skdp2.getTable().getValueAt(skdp2.getTable().getSelectedRow(),7).toString());
+                    JenisPelayanan.setSelectedIndex(0);
+                    btnDPJPLayanan.setVisible(false);
+                    AsalRujukan.setSelectedIndex(1);
+                    KdPpkRujukan.setText("0173R042");
+                    NmPpkRujukan.setText("RSU BANYUMANIK 2 - KOTA SEMARANG");
                     NoSKDP.requestFocus();
                 }                  
             }
