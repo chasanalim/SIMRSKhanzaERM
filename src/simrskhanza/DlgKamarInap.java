@@ -16509,7 +16509,7 @@ private void MnRujukMasukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-
                "inner join kabupaten on pasien.kd_kab=kabupaten.kd_kab inner join penjab on reg_periksa.kd_pj=penjab.kd_pj "+
                "left join dpjp_ranap on kamar_inap.no_rawat=dpjp_ranap.no_rawat left join dokter on dokter.kd_dokter = dpjp_ranap.kd_dokter "+ 
                "left join titipan_ranap on titipan_ranap.no_rawat=reg_periksa.no_rawat "+ 
-               "left join bridging_sep on reg_periksa.no_rawat = bridging_sep.no_rawat where "+key+" group by kamar_inap.no_rawat "+order );
+               "left join bridging_sep on reg_periksa.no_rawat = bridging_sep.no_rawat where dpjp_ranap.prioritas= 1 and "+key+" group by kamar_inap.no_rawat "+order );
             try {
                 rs=ps.executeQuery();
                 while(rs.next()){
