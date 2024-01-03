@@ -69,7 +69,7 @@ public class DlgBookingRegistrasi extends javax.swing.JDialog {
 
         tabMode=new DefaultTableModel(null,new Object[]{
                 "P","Tgl.Booking","Jam Booking","No.RM","Nama Pasien","Tgl.Periksa","Kode Dokter",
-                "Nama Dokter","Kode Poli","Nama Poli","No.Reg","Nama PJ","Alamat PJ",
+                "Nama Dokter","Kode Poli","Nama Poli","No.Reg","Status","Nama PJ","Alamat PJ",
                 "kelurahanpj","kecamatanpj","kabupatenpj","propinsipj","Hubungan","Bayar",
                 "Tahun","Bulan","Hari","Asal Booking","Status","Kd PJ","Cara Bayar","No.Telp/HP",
                 "Jenis Kunjungan","No.Referensi"
@@ -92,6 +92,7 @@ public class DlgBookingRegistrasi extends javax.swing.JDialog {
                  java.lang.Object.class, java.lang.Object.class, java.lang.Object.class,
                  java.lang.Object.class, java.lang.Object.class, java.lang.Object.class,
                  java.lang.Object.class, java.lang.Object.class, java.lang.Object.class,
+                 java.lang.Object.class,
              };
              @Override
              public Class getColumnClass(int columnIndex) {
@@ -104,15 +105,15 @@ public class DlgBookingRegistrasi extends javax.swing.JDialog {
         tbObat.setPreferredScrollableViewportSize(new Dimension(500,500));
         tbObat.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
 
-        for (i = 0; i < 29; i++) {
+        for (i = 0; i < 30; i++) {
             TableColumn column = tbObat.getColumnModel().getColumn(i);
-            if(i==0){
+            if(i==0){//P
                 column.setPreferredWidth(20);
-            }else if(i==1){
+            }else if(i==1){ //Tgl
                 column.setPreferredWidth(70);
-            }else if(i==2){
+            }else if(i==2){ //Jam
                 column.setPreferredWidth(70);
-            }else if(i==3){
+            }else if(i==3){ //no RM
                 column.setPreferredWidth(50);
             }else if(i==4){
                 column.setPreferredWidth(170);
@@ -131,8 +132,7 @@ public class DlgBookingRegistrasi extends javax.swing.JDialog {
             }else if(i==10){
                 column.setPreferredWidth(40);
             }else if(i==11){
-                column.setMinWidth(0);
-                column.setMaxWidth(0);
+                column.setPreferredWidth(60);
             }else if(i==12){
                 column.setMinWidth(0);
                 column.setMaxWidth(0);
@@ -164,10 +164,13 @@ public class DlgBookingRegistrasi extends javax.swing.JDialog {
                 column.setMinWidth(0);
                 column.setMaxWidth(0);
             }else if(i==22){
-                column.setWidth(70);
+                column.setMinWidth(0);
+                column.setMaxWidth(0);
             }else if(i==23){
                 column.setWidth(70);
             }else if(i==24){
+                column.setWidth(70);
+            }else if(i==25){
                 column.setMinWidth(0);
                 column.setMaxWidth(0);
             }else if(i==26){
@@ -1784,7 +1787,7 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
             ps=koneksi.prepareStatement(
                     "select booking_registrasi.tanggal_booking,booking_registrasi.jam_booking,booking_registrasi.no_rkm_medis, "+
                     "pasien.nm_pasien,booking_registrasi.tanggal_periksa,booking_registrasi.kd_dokter,"+
-                    "dokter.nm_dokter,booking_registrasi.kd_poli,poliklinik.nm_poli,booking_registrasi.no_reg, "+
+                    "dokter.nm_dokter,booking_registrasi.kd_poli,poliklinik.nm_poli,booking_registrasi.no_reg,booking_registrasi.status_poli, "+
                     "pasien.namakeluarga,concat(pasien.alamat,', ',kelurahan.nm_kel,', ',kecamatan.nm_kec,', ',kabupaten.nm_kab) as alamatpj,pasien.kelurahanpj,pasien.kecamatanpj,pasien.no_tlp,"+
                     "pasien.kabupatenpj,pasien.propinsipj,pasien.keluarga,TIMESTAMPDIFF(YEAR, pasien.tgl_lahir, CURDATE()) as tahun, "+
                     "(TIMESTAMPDIFF(MONTH, pasien.tgl_lahir, CURDATE()) - ((TIMESTAMPDIFF(MONTH, pasien.tgl_lahir, CURDATE()) div 12) * 12)) as bulan, "+
@@ -1798,7 +1801,6 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
                     "inner join kelurahan on pasien.kd_kel=kelurahan.kd_kel "+
                     "inner join kecamatan on pasien.kd_kec=kecamatan.kd_kec "+
                     "inner join kabupaten on pasien.kd_kab=kabupaten.kd_kab "+
-//                    "inner join jadwal on jadwal.kd_dokter=booking_registrasi.kd_dokter and jadwal.kd_poli=booking_registrasi.kd_poli "+
                     "left join referensi_mobilejkn_bpjs on referensi_mobilejkn_bpjs.norm=booking_registrasi.no_rkm_medis and referensi_mobilejkn_bpjs.tanggalperiksa=booking_registrasi.tanggal_periksa "+
                     "where "+filter+" GROUP BY booking_registrasi.no_rkm_medis order by booking_registrasi.tanggal_booking,dokter.nm_dokter");
 //            }
@@ -1862,7 +1864,7 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
                     tabMode.addRow(new Object[]{
                         false,rs.getString("tanggal_booking"),rs.getString("jam_booking"),rs.getString("no_rkm_medis"),rs.getString("nm_pasien"),
                         rs.getString("tanggal_periksa"),rs.getString("kd_dokter"),rs.getString("nm_dokter"),
-                        rs.getString("kd_poli"),rs.getString("nm_poli"),rs.getString("no_reg"),
+                        rs.getString("kd_poli"),rs.getString("nm_poli"),rs.getString("no_reg"),rs.getString("status_poli"),
                         rs.getString("namakeluarga"),rs.getString("alamatpj"),rs.getString("kelurahanpj"),
                         rs.getString("kecamatanpj"),rs.getString("kabupatenpj"),rs.getString("propinsipj"),
                         rs.getString("keluarga"),rs.getString("kd_pj"),rs.getString("tahun"),rs.getString("bulan"),
@@ -2013,12 +2015,17 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     }
 
     private void isBooking() {
-        if(Sequel.menyimpantf("booking_registrasi","?,?,?,?,?,?,?,?,?,?,?","Pasien dan Tanggal",11,new String[]{
+        status="Baru";
+        if(Sequel.cariInteger("select count(reg_periksa.no_rkm_medis) from reg_periksa where reg_periksa.no_rkm_medis=? and reg_periksa.kd_poli=?",TNoRM.getText(),KdPoli.getText())>0){
+            status="Lama";
+        }
+        
+        if(Sequel.menyimpantf("booking_registrasi","?,?,?,?,?,?,?,?,?,?,?,?","Pasien dan Tanggal",12,new String[]{
              Valid.SetTgl(TanggalBooking.getSelectedItem()+""),TanggalBooking.getSelectedItem().toString().substring(11,19),TNoRM.getText(),
              Valid.SetTgl(TanggalPeriksa.getSelectedItem()+""),KdDokter.getText(),
              KdPoli.getText(),NoReg.getText(),kdpnj.getText(),"0",
              Valid.SetTgl(TanggalPeriksa.getSelectedItem()+"")+" "+TanggalBooking.getSelectedItem().toString().substring(11,19),
-             "Belum"
+             "Belum",status
            })==true){
             emptTeks();
             tampil();
