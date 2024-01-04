@@ -58,7 +58,7 @@ public final class DlgResepObat extends javax.swing.JDialog {
     public DlgCariDokter dokter=new DlgCariDokter(null,false);
     private DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
     private Date date = new Date();
-    private String now=dateFormat.format(date),lembarobat="",status="",rincianobat="",finger="";
+    private String now=dateFormat.format(date),lembarobat="",status="",rincianobat="",finger="", kamar="", namakamar="";
     private double total=0,jumlahtotal=0;
     private Properties prop = new Properties();
     private DlgCariAturanPakai aturanpakai=new DlgCariAturanPakai(null,false);
@@ -2014,6 +2014,17 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
                 System.out.println("Notif : "+e);
             }
             
+            kamar=Sequel.cariIsi("select ifnull(kd_kamar,'') from kamar_inap where no_rawat='"+TNoRw.getText()+"' order by tgl_masuk desc limit 1");
+            if(!kamar.equals("")){
+                namakamar=kamar+", "+Sequel.cariIsi("select bangsal.nm_bangsal from bangsal inner join kamar on bangsal.kd_bangsal=kamar.kd_bangsal "+
+                        " where kamar.kd_kamar='"+kamar+"' ");            
+                kamar="Kamar";
+            }else if(kamar.equals("")){
+                kamar="Poli";
+                namakamar=Sequel.cariIsi("select poliklinik.nm_poli from poliklinik inner join reg_periksa on poliklinik.kd_poli=reg_periksa.kd_poli "+
+                        "where reg_periksa.no_rawat='"+TNoRw.getText()+"'");
+            }
+                        
             Map<String, Object> param = new HashMap<>();  
             param.put("namars",akses.getnamars());
             param.put("alamatrs",akses.getalamatrs());
@@ -2029,9 +2040,18 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
             param.put("norm",TNoRm.getText());
             param.put("peresep",NmDokter.getText());
             param.put("noresep",NoResep.getText());
-            param.put("poli",Sequel.cariIsi("select poliklinik.nm_poli from poliklinik where poliklinik.kd_poli=?",Sequel.cariIsi("select kd_poli from reg_periksa where no_rawat=?",TNoRw.getText())));   
+            param.put("kamar",kamar);  
+            param.put("poli",namakamar);   
             param.put("jam",cmbJam.getSelectedItem()+":"+cmbMnt.getSelectedItem()+":"+cmbDtk.getSelectedItem());
-            param.put("logo",Sequel.cariGambar("select setting.logo from setting")); 
+            param.put("logo",Sequel.cariGambar("select setting.logo from setting"));
+            
+//            
+//            String status_lanjut= Sequel.cariIsi("select status_lanjut from reg_periksa where no_rawat=?",TNoRw.getText());
+//            if (status_lanjut == "Ralan"){
+//                param.put("poli",Sequel.cariIsi("select poliklinik.nm_poli from poliklinik where poliklinik.kd_poli=?",Sequel.cariIsi("select kd_poli from reg_periksa where no_rawat=?",TNoRw.getText())));   
+//            }else{
+//                param.put("poli",Sequel.cariIsi("select poliklinik.nm_poli from poliklinik where poliklinik.kd_poli=?",Sequel.cariIsi("select kd_poli from reg_periksa where no_rawat=?",TNoRw.getText())));   
+//            }
             
             Valid.MyReportqry("rptLabelDaftarObat.jasper","report","::[ Label Daftar Obat ]::","select * from temporary_resep where temporary_resep.temp37='"+akses.getalamatip()+"' order by temporary_resep.no",param);
             this.setCursor(Cursor.getDefaultCursor());
