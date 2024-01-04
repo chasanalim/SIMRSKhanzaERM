@@ -26,7 +26,7 @@ public class WarnaTableBooking extends DefaultTableCellRenderer {
         } 
        
         
-        if(table.getValueAt(row,22).toString().equals("Mobile JKN")){
+        if(table.getValueAt(row,23).toString().equals("Mobile JKN")){
             component.setBackground(new Color(255,153,204));
             component.setForeground(new Color(50,50,50));
         }
