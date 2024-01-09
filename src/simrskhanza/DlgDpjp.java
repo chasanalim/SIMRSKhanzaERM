@@ -48,7 +48,7 @@ public class DlgDpjp extends javax.swing.JDialog {
     private DlgCariPasien pasien=new DlgCariPasien(null,false);
     private PreparedStatement ps,ps2;
     private ResultSet rs;
-    private int jml=0,i=0,index=0;
+    private int jml=0,i=0,index=0,reply;
     private String[] kode,nama;
     private boolean[] pilih; 
 
@@ -278,6 +278,14 @@ public class DlgDpjp extends javax.swing.JDialog {
         btnTarif = new widget.Button();
         jLabel4 = new widget.Label();
         jLabel5 = new widget.Label();
+        jLabel15 = new widget.Label();
+        jLabel18 = new widget.Label();
+        jLabel20 = new widget.Label();
+        jLabel21 = new widget.Label();
+        jLabel22 = new widget.Label();
+        jLabel23 = new widget.Label();
+        jLabel24 = new widget.Label();
+        jLabel25 = new widget.Label();
         ChkInput = new widget.CekBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -289,7 +297,7 @@ public class DlgDpjp extends javax.swing.JDialog {
             }
         });
 
-        internalFrame1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(240, 245, 235)), "::[ Dokter Penaggung Jawab Pasien Rawat Inap ]::", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(50,50,50))); // NOI18N
+        internalFrame1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(240, 245, 235)), "::[ Dokter Penaggung Jawab Pasien Rawat Inap ]::", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 0, 12), new java.awt.Color(50, 50, 50))); // NOI18N
         internalFrame1.setName("internalFrame1"); // NOI18N
         internalFrame1.setLayout(new java.awt.BorderLayout(1, 1));
 
@@ -452,7 +460,7 @@ public class DlgDpjp extends javax.swing.JDialog {
         panelGlass9.add(jLabel14);
 
         DTPCari1.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "01-05-2019" }));
+        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "04-01-2024" }));
         DTPCari1.setDisplayFormat("dd-MM-yyyy");
         DTPCari1.setName("DTPCari1"); // NOI18N
         DTPCari1.setOpaque(false);
@@ -465,7 +473,7 @@ public class DlgDpjp extends javax.swing.JDialog {
         panelGlass9.add(jLabel19);
 
         DTPCari2.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "01-05-2019" }));
+        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "04-01-2024" }));
         DTPCari2.setDisplayFormat("dd-MM-yyyy");
         DTPCari2.setName("DTPCari2"); // NOI18N
         DTPCari2.setOpaque(false);
@@ -582,10 +590,15 @@ public class DlgDpjp extends javax.swing.JDialog {
         FormInput.add(TPasien);
         TPasien.setBounds(81, 72, 360, 23);
 
-        jLabel13.setText("Dokter :");
+        jLabel13.setBackground(new java.awt.Color(204, 255, 204));
+        jLabel13.setForeground(new java.awt.Color(255, 51, 51));
+        jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel13.setText("     3. Lihat Status");
+        jLabel13.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         jLabel13.setName("jLabel13"); // NOI18N
+        jLabel13.setOpaque(true);
         FormInput.add(jLabel13);
-        jLabel13.setBounds(429, 12, 70, 23);
+        jLabel13.setBounds(910, 110, 370, 20);
 
         Tanggal.setHighlighter(null);
         Tanggal.setName("Tanggal"); // NOI18N
@@ -656,6 +669,79 @@ public class DlgDpjp extends javax.swing.JDialog {
         jLabel5.setName("jLabel5"); // NOI18N
         FormInput.add(jLabel5);
         jLabel5.setBounds(-2, 72, 80, 23);
+
+        jLabel15.setText("Dokter :");
+        jLabel15.setName("jLabel15"); // NOI18N
+        FormInput.add(jLabel15);
+        jLabel15.setBounds(429, 12, 70, 23);
+
+        jLabel18.setBackground(new java.awt.Color(204, 255, 204));
+        jLabel18.setForeground(new java.awt.Color(255, 51, 51));
+        jLabel18.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel18.setText(" Penting :");
+        jLabel18.setName("jLabel18"); // NOI18N
+        jLabel18.setOpaque(true);
+        FormInput.add(jLabel18);
+        jLabel18.setBounds(850, 40, 50, 23);
+
+        jLabel20.setBackground(new java.awt.Color(204, 255, 204));
+        jLabel20.setForeground(new java.awt.Color(255, 51, 51));
+        jLabel20.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel20.setText("  - Jika DPJP Utama Kosong, Surat-Surat Error tidak muncul DPJP");
+        jLabel20.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        jLabel20.setName("jLabel20"); // NOI18N
+        jLabel20.setOpaque(true);
+        FormInput.add(jLabel20);
+        jLabel20.setBounds(910, 30, 370, 20);
+
+        jLabel21.setBackground(new java.awt.Color(204, 255, 204));
+        jLabel21.setForeground(new java.awt.Color(255, 51, 51));
+        jLabel21.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel21.setText("  - Jika Ganti DPJP Utama : ");
+        jLabel21.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        jLabel21.setName("jLabel21"); // NOI18N
+        jLabel21.setOpaque(true);
+        FormInput.add(jLabel21);
+        jLabel21.setBounds(910, 50, 370, 20);
+
+        jLabel22.setBackground(new java.awt.Color(204, 255, 204));
+        jLabel22.setForeground(new java.awt.Color(255, 51, 51));
+        jLabel22.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel22.setText("     1. Hapus Semua DPJP dahulu jika ada, agar urutan sesuai");
+        jLabel22.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        jLabel22.setName("jLabel22"); // NOI18N
+        jLabel22.setOpaque(true);
+        FormInput.add(jLabel22);
+        jLabel22.setBounds(910, 70, 370, 20);
+
+        jLabel23.setBackground(new java.awt.Color(204, 255, 204));
+        jLabel23.setForeground(new java.awt.Color(255, 51, 51));
+        jLabel23.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel23.setText("     2. Input DPJP Baru sesuai urutan");
+        jLabel23.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        jLabel23.setName("jLabel23"); // NOI18N
+        jLabel23.setOpaque(true);
+        FormInput.add(jLabel23);
+        jLabel23.setBounds(910, 90, 370, 20);
+
+        jLabel24.setBackground(new java.awt.Color(204, 255, 204));
+        jLabel24.setForeground(new java.awt.Color(255, 51, 51));
+        jLabel24.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel24.setText("  -  DPJP Utama tidak Boleh Kosong, Jika Kosong Pasien tidak akan Muncul");
+        jLabel24.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        jLabel24.setName("jLabel24"); // NOI18N
+        jLabel24.setOpaque(true);
+        FormInput.add(jLabel24);
+        jLabel24.setBounds(910, 10, 370, 20);
+
+        jLabel25.setBackground(new java.awt.Color(204, 255, 204));
+        jLabel25.setForeground(new java.awt.Color(255, 51, 51));
+        jLabel25.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel25.setText(" Note ");
+        jLabel25.setName("jLabel25"); // NOI18N
+        jLabel25.setOpaque(true);
+        FormInput.add(jLabel25);
+        jLabel25.setBounds(850, 20, 50, 23);
 
         PanelInput.add(FormInput, java.awt.BorderLayout.CENTER);
 
@@ -778,9 +864,20 @@ public class DlgDpjp extends javax.swing.JDialog {
         }else if(!(TPasien.getText().trim().equals(""))){
             for(i=0;i<tbPasien.getRowCount();i++){ 
                 if(tbPasien.getValueAt(i,0).toString().equals("true")){
-                    Sequel.queryu2("delete from dpjp_ranap where no_rawat=? and kd_dokter=?",2,new String[]{
-                        tbPasien.getValueAt(i,2).toString(),tbPasien.getValueAt(i,5).toString()
-                    });
+                    if(tbPasien.getValueAt(i,7).toString().equals("DPJP Utama")){
+                         JOptionPane.showMessageDialog(null,"Warning !!! Data yang akan Anda hapus DPJP Utama");
+                         JOptionPane.showMessageDialog(null,"Sudah baca Note Penting !!!");
+                         reply = JOptionPane.showConfirmDialog(rootPane,"Eeiiiiits, mau Ganti DPJP Utama??? \n Pastikan semua DPJP terhapus dahulu jika Ada","Konfirmasi",JOptionPane.YES_NO_OPTION);
+                            if (reply == JOptionPane.YES_OPTION) {
+                                Sequel.queryu2("delete from dpjp_ranap where no_rawat=? and kd_dokter=?",2,new String[]{
+                                tbPasien.getValueAt(i,2).toString(),tbPasien.getValueAt(i,5).toString()});
+                                JOptionPane.showMessageDialog(null,"Oke terhapus. Pastikan input ulang sesuai urutan");
+                            }
+                    }else{
+                        Sequel.queryu2("delete from dpjp_ranap where no_rawat=? and kd_dokter=?",2,new String[]{
+                            tbPasien.getValueAt(i,2).toString(),tbPasien.getValueAt(i,5).toString()
+                        });
+                    }
                 }
             }
         }
@@ -1013,9 +1110,17 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     private widget.Label jLabel10;
     private widget.Label jLabel13;
     private widget.Label jLabel14;
+    private widget.Label jLabel15;
     private widget.Label jLabel16;
     private widget.Label jLabel17;
+    private widget.Label jLabel18;
     private widget.Label jLabel19;
+    private widget.Label jLabel20;
+    private widget.Label jLabel21;
+    private widget.Label jLabel22;
+    private widget.Label jLabel23;
+    private widget.Label jLabel24;
+    private widget.Label jLabel25;
     private widget.Label jLabel3;
     private widget.Label jLabel4;
     private widget.Label jLabel5;
@@ -1096,6 +1201,32 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
 
     private void isRawat() {
          Sequel.cariIsi("select reg_periksa.no_rkm_medis from reg_periksa where reg_periksa.no_rawat=? ",TNoRM,TNoRw.getText());
+         
+        try {
+            ps=koneksi.prepareStatement(
+                    "select reg_periksa.no_rkm_medis,pasien.nm_pasien,reg_periksa.tgl_registrasi "+
+                    "from reg_periksa "+
+                    "inner join pasien on pasien.no_rkm_medis=reg_periksa.no_rkm_medis "+
+                    "where reg_periksa.no_rawat=? limit 1");
+            try {
+                ps.setString(1,TNoRw.getText());
+                rs=ps.executeQuery();
+                if(rs.next()){
+                    DTPCari1.setDate(rs.getDate("tgl_registrasi"));
+                }
+            } catch (Exception e) {
+                System.out.println("Notif : "+e);
+            } finally{
+                if(rs!=null){
+                    rs.close();
+                }
+                if(ps!=null){
+                    ps.close();
+                }
+            }
+        } catch (Exception e) {
+            System.out.println("Notif : "+e);
+        }
     }
 
     private void isPsien() {
@@ -1118,8 +1249,8 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
         Tanggal.setText(status);
         isRawat();
         isPsien();   
-        DTPCari1.setDate(tgl1);
-        DTPCari2.setDate(tgl2);
+//        DTPCari1.setDate(tgl1);
+//        DTPCari2.setDate(tgl2);
         ChkInput.setSelected(true);
         isForm();
     }
