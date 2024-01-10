@@ -1299,7 +1299,7 @@ public final class RMPenilaianAwalKeperawatanIGD extends javax.swing.JDialog {
         FormInput.add(jLabel80);
         jLabel80.setBounds(510, 700, 60, 23);
 
-        Quality.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Tajam", "Rasa Terbakar", "Tertekan", "Kram", "Tumpul", "Lain-lain" }));
+        Quality.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-", "Tajam", "Rasa Terbakar", "Tertekan", "Kram", "Tumpul", "Lain-lain" }));
         Quality.setName("Quality"); // NOI18N
         Quality.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
