@@ -1686,6 +1686,7 @@ public class frmUtama extends javax.swing.JFrame {
         jSeparator13 = new javax.swing.JPopupMenu.Separator();
         MnRekapHadir9 = new javax.swing.JMenuItem();
         MnRekapHadir6 = new javax.swing.JMenuItem();
+        jMenu5 = new javax.swing.JMenu();
         jMenu4 = new javax.swing.JMenu();
 
         DlgLogin.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -1892,7 +1893,7 @@ public class frmUtama extends javax.swing.JFrame {
 
         tanggal.setEditable(false);
         tanggal.setForeground(new java.awt.Color(50, 70, 50));
-        tanggal.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "09/11/2023" }));
+        tanggal.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "11/01/2024" }));
         tanggal.setDisplayFormat("dd/MM/yyyy");
         tanggal.setName("tanggal"); // NOI18N
         tanggal.setOpaque(false);
@@ -7086,6 +7087,8 @@ public class frmUtama extends javax.swing.JFrame {
         BtnToolJualObat.setMnemonic('j');
         BtnToolJualObat.setText("Farmasi");
         BtnToolJualObat.setToolTipText("Alt+J");
+        BtnToolJualObat.setDisabledIcon(null);
+        BtnToolJualObat.setFocusCycleRoot(true);
         BtnToolJualObat.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         BtnToolJualObat.setIconTextGap(2);
         BtnToolJualObat.setMargin(new java.awt.Insets(0, 0, 0, 0));
@@ -7969,6 +7972,33 @@ public class frmUtama extends javax.swing.JFrame {
         jMenu7.add(MnRekapHadir6);
 
         MenuBar.add(jMenu7);
+
+        jMenu5.setBackground(new java.awt.Color(20, 0, 20));
+        jMenu5.setBorder(null);
+        jMenu5.setForeground(new java.awt.Color(255, 255, 253));
+        jMenu5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/accept.png"))); // NOI18N
+        jMenu5.setMnemonic('G');
+        jMenu5.setText("Form KYC SATU SEHAT");
+        jMenu5.setToolTipText("Alt+G");
+        jMenu5.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        jMenu5.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jMenu5.setName("jMenu5"); // NOI18N
+        jMenu5.setPreferredSize(new java.awt.Dimension(151, 26));
+        jMenu5.addMenuListener(new javax.swing.event.MenuListener() {
+            public void menuCanceled(javax.swing.event.MenuEvent evt) {
+            }
+            public void menuDeselected(javax.swing.event.MenuEvent evt) {
+            }
+            public void menuSelected(javax.swing.event.MenuEvent evt) {
+                jMenu5MenuSelected(evt);
+            }
+        });
+        jMenu5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenu5MouseClicked(evt);
+            }
+        });
+        MenuBar.add(jMenu5);
 
         jMenu4.setBackground(new java.awt.Color(20, 0, 20));
         jMenu4.setBorder(null);
@@ -9150,6 +9180,7 @@ private void MnGantiPasswordBtnLogActionPerformed(java.awt.event.ActionEvent evt
         isTutup();
         DlgJadwal jadwal=new DlgJadwal(this,false);
         jadwal.emptTeks();
+        jadwal.isCek();
         jadwal.setSize(PanelUtama.getWidth(),PanelUtama.getHeight());
         jadwal.setLocationRelativeTo(PanelUtama);
         jadwal.setVisible(true);
@@ -14223,6 +14254,18 @@ private void MnGantiPasswordBtnLogActionPerformed(java.awt.event.ActionEvent evt
         Valid.panggilUrlGC("persetujuanmedis");
         this.setCursor(Cursor.getDefaultCursor());
     }//GEN-LAST:event_MnRekapHadir9ActionPerformed
+
+    private void jMenu5MenuSelected(javax.swing.event.MenuEvent evt) {//GEN-FIRST:event_jMenu5MenuSelected
+         this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+        Valid.panggilUrlGC("kyc-library-php");
+        this.setCursor(Cursor.getDefaultCursor());
+    }//GEN-LAST:event_jMenu5MenuSelected
+
+    private void jMenu5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu5MouseClicked
+          this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+        Valid.panggilUrlGC("kyc-library-php");
+        this.setCursor(Cursor.getDefaultCursor());
+    }//GEN-LAST:event_jMenu5MouseClicked
 
     private void btnKategoriPerpustakaanActionPerformed(java.awt.event.ActionEvent evt) {
         isTutup();
@@ -20990,6 +21033,7 @@ private void MnGantiPasswordBtnLogActionPerformed(java.awt.event.ActionEvent evt
     private javax.swing.JLabel jLabel8;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenu jMenu5;
     private javax.swing.JMenu jMenu6;
     private javax.swing.JMenu jMenu7;
     private javax.swing.JSeparator jSeparator1;
