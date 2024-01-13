@@ -1,0 +1,35 @@
+{"template_hasil_radiologi":[{"NoTemplate":"USG01","NamaPemeriksaan":"USG ECHOCARDIOGRAFI","Template":"HASIL PEMERIKSAAN :
+
+PENGUKURAN: 
+
+                     M-MODE                                                     DOPPLER
+AO		mm	PV AccT		ms
+LA		mm	RVOT VMAX		m/s
+RVDd		mm	E VELOCITY		m/s
+IVSd		mm	A VELOCITY		m/s
+LVIDd		mm	E/A		4.22
+LVPWd		mm	E/e1		
+IVSs		mm	E Desc. Time		ms
+LVIDs		mm	LVOT VMAX		m/s
+LVPWs		mm	TAPSE		mm
+LVEF (Teichz)		%	SV		mL
+LVFS		%	CO		L/mnt
+LVMi		g/m2			
+RWT					
+
+
+DESKRIPSI :
+
+
+ 	
+
+KESIMPULAN :"},{"NoTemplate":"USG02","NamaPemeriksaan":"USG UROLOGI","Template":"HASIL PEMERIKSAAN :
+
+
+
+DESKRIPSI :
+
+
+ 	
+
+KESIMPULAN :"}]}
