@@ -16456,7 +16456,7 @@ private void MnRujukMasukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-
 
      public void tampil() {
         if(R1.isSelected()==true){
-            kmr=" stts_pulang='-' and reg_periksa.status_bayar like '%"+cmbStatusBayar.getSelectedItem().toString().replaceAll("Semua","")+"%' ";
+            kmr=" dpjp_ranap.prioritas=1 and stts_pulang='-' and reg_periksa.status_bayar like '%"+cmbStatusBayar.getSelectedItem().toString().replaceAll("Semua","")+"%' ";
             if(!BangsalCari.getText().equals("")){
                 kmr=" stts_pulang='-' and bangsal.nm_bangsal='"+BangsalCari.getText()+"' and reg_periksa.status_bayar like '%"+cmbStatusBayar.getSelectedItem().toString().replaceAll("Semua","")+"%' ";
             }else if(!CrDokter.getText().equals("")){
@@ -16509,7 +16509,7 @@ private void MnRujukMasukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-
                "inner join kabupaten on pasien.kd_kab=kabupaten.kd_kab inner join penjab on reg_periksa.kd_pj=penjab.kd_pj "+
                "left join dpjp_ranap on kamar_inap.no_rawat=dpjp_ranap.no_rawat left join dokter on dokter.kd_dokter = dpjp_ranap.kd_dokter "+ 
                "left join titipan_ranap on titipan_ranap.no_rawat=reg_periksa.no_rawat "+ 
-               "left join bridging_sep on reg_periksa.no_rawat = bridging_sep.no_rawat where dpjp_ranap.prioritas= 1 and "+key+" group by kamar_inap.no_rawat "+order );
+               "left join bridging_sep on reg_periksa.no_rawat = bridging_sep.no_rawat where "+key+" group by kamar_inap.no_rawat "+order );
             try {
                 rs=ps.executeQuery();
                 while(rs.next()){
