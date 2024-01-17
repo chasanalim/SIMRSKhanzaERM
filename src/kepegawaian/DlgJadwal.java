@@ -1090,8 +1090,9 @@ private void BtnPoliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST
             cmbDtk2.setSelectedItem(tabMode.getValueAt(row,5).toString().substring(6,8));
             TPoli.setText(tabMode.getValueAt(row,6).toString());
             Kuota.setText(Valid.SetAngka(Double.parseDouble(tabMode.getValueAt(row,7).toString())));
-            Keterangan.setText(tabMode.getValueAt(row,8).toString());
             Sequel.cariIsi("select kd_poli from poliklinik where nm_poli='"+tabMode.getValueAt(row,6).toString()+"'",KdPoli);
+            Keterangan.setText(tabMode.getValueAt(row,8).toString());
+//            KdPoli.setText(Sequel.cariIsi("select kd_poli from poliklinik where nm_poli='"+tabMode.getValueAt(row,6).toString()+"'"));
         }
     }
     

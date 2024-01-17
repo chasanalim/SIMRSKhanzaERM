@@ -2062,6 +2062,7 @@ private void ChkJlnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:
         BtnSimpan.setEnabled(akses.getperiksa_radiologi());
         BtnTambahPeriksa.setEnabled(akses.gettarif_radiologi());
         BtnTambahBhp.setEnabled(akses.getipsrs_barang());
+        TCariPeriksa.requestFocus();
     }
     
     private void isForm(){

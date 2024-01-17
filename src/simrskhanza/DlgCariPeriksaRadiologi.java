@@ -1433,12 +1433,25 @@ private void BtnHapusKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_
 }//GEN-LAST:event_BtnHapusKeyPressed
 
 private void tbDokterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbDokterMouseClicked
-    if(tabMode.getRowCount()!=0){
+        if(tabMode.getRowCount()!=0){     
         try {
             getData();
             isPhoto();
             panggilPhoto();
         } catch (java.lang.NullPointerException e) {
+        }
+        
+        if(evt.getClickCount()==1){
+            ChkAccor.setVisible(false);
+            PanelAccor.setPreferredSize(new Dimension(internalFrame1.getWidth()-300,HEIGHT));
+            TabData.setVisible(true);  
+            ChkAccor.setVisible(true);
+           try {
+            getData();
+            panggilPhoto();
+        } catch (java.lang.NullPointerException e) {
+        }
+           
         }
     }
 }//GEN-LAST:event_tbDokterMouseClicked
@@ -1950,7 +1963,7 @@ private void tbDokterKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_
                         "inner join petugas on periksa_radiologi.nip=petugas.nip "+
                         "inner join penjab on reg_periksa.kd_pj=penjab.kd_pj "+
                         "inner join dokter on periksa_radiologi.kd_dokter=dokter.kd_dokter " + 
-                        "inner join permintaan_radiologi on periksa_radiologi.no_rawat=permintaan_radiologi.no_rawat where "+
+                        "left join permintaan_radiologi on periksa_radiologi.no_rawat=permintaan_radiologi.no_rawat where "+
                         "periksa_radiologi.tgl_periksa between ? and ? group by concat(periksa_radiologi.no_rawat,periksa_radiologi.tgl_periksa,periksa_radiologi.jam) "+
                         "order by periksa_radiologi.tgl_periksa desc,periksa_radiologi.jam desc");
             }else{
@@ -1962,7 +1975,7 @@ private void tbDokterKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_
                         "inner join petugas on periksa_radiologi.nip=petugas.nip "+
                         "inner join penjab on reg_periksa.kd_pj=penjab.kd_pj "+
                         "inner join dokter on periksa_radiologi.kd_dokter=dokter.kd_dokter "+
-                        "inner join permintaan_radiologi on periksa_radiologi.no_rawat=permintaan_radiologi.no_rawat where "+
+                        "left join permintaan_radiologi on periksa_radiologi.no_rawat=permintaan_radiologi.no_rawat where "+
                         "periksa_radiologi.tgl_periksa between ? and ? and periksa_radiologi.no_rawat like ? and reg_periksa.no_rkm_medis like ? "+
                         "and petugas.nip like ? and (pasien.nm_pasien like ? or petugas.nama like ? or reg_periksa.no_rkm_medis like ? or penjab.png_jawab like ? ) "+
                         "group by concat(periksa_radiologi.no_rawat,periksa_radiologi.tgl_periksa,periksa_radiologi.jam) "+
