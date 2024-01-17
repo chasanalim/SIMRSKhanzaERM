@@ -115,28 +115,28 @@ public class DlgBookingRegistrasi extends javax.swing.JDialog {
                 column.setPreferredWidth(70);
             }else if(i==3){ //no RM
                 column.setPreferredWidth(50);
-            }else if(i==4){
+            }else if(i==4){ // Nama pasien
                 column.setPreferredWidth(170);
-            }else if(i==5){
+            }else if(i==5){ // tgl periksa
                 column.setPreferredWidth(70);
-            }else if(i==6){
+            }else if(i==6){ //kd dokter
                 column.setMinWidth(0);
                 column.setMaxWidth(0);
-            }else if(i==7){
+            }else if(i==7){ //nm dokter
                 column.setPreferredWidth(170);
-            }else if(i==8){
+            }else if(i==8){ //kd poli
                 column.setMinWidth(0);
                 column.setMaxWidth(0);
-            }else if(i==9){
+            }else if(i==9){ //nm poli
                 column.setPreferredWidth(160);
-            }else if(i==10){
+            }else if(i==10){ //no reg
                 column.setPreferredWidth(40);
-            }else if(i==11){
+            }else if(i==11){ // status
                 column.setPreferredWidth(60);
-            }else if(i==12){
+            }else if(i==12){ //nama pj
                 column.setMinWidth(0);
                 column.setMaxWidth(0);
-            }else if(i==13){
+            }else if(i==13){ // alamatt pj
                 column.setMinWidth(0);
                 column.setMaxWidth(0);
             }else if(i==14){
@@ -1367,32 +1367,32 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
 
     private void BtnEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnEditActionPerformed
         for(i=0;i<tbObat.getRowCount();i++){ 
-            if(tbObat.getValueAt(i,0).toString().equals("true")&&tbObat.getValueAt(i,23).toString().equals("Belum")){
+            if(tbObat.getValueAt(i,0).toString().equals("true")&&tbObat.getValueAt(i,24).toString().equals("Belum")){
                 Sequel.mengedit("pasien","no_rkm_medis=?","umur=CONCAT(CONCAT(CONCAT(TIMESTAMPDIFF(YEAR, tgl_lahir, CURDATE()), ' Th '),CONCAT(TIMESTAMPDIFF(MONTH, tgl_lahir, CURDATE()) - ((TIMESTAMPDIFF(MONTH, tgl_lahir, CURDATE()) div 12) * 12), ' Bl ')),CONCAT(TIMESTAMPDIFF(DAY, DATE_ADD(DATE_ADD(tgl_lahir,INTERVAL TIMESTAMPDIFF(YEAR, tgl_lahir, CURDATE()) YEAR), INTERVAL TIMESTAMPDIFF(MONTH, tgl_lahir, CURDATE()) - ((TIMESTAMPDIFF(MONTH, tgl_lahir, CURDATE()) div 12) * 12) MONTH), CURDATE()), ' Hr'))",1,new String[]{tbObat.getValueAt(i,3).toString()});
                 status=Sequel.cariIsi("select if((select count(no_rkm_medis) from reg_periksa where no_rkm_medis='"+tbObat.getValueAt(i,3).toString()+"' and kd_poli='"+tbObat.getValueAt(i,8).toString()+"')>0,'Lama','Baru' )");
                 no_rawat=Valid.autoNomer3("select ifnull(MAX(CONVERT(RIGHT(no_rawat,6),signed)),0) from reg_periksa where tgl_registrasi='"+tbObat.getValueAt(i,5).toString()+"' ",tbObat.getValueAt(i,5).toString().replace("-","/")+"/",6); 
                 umur="0";
                 sttsumur="Th";
-                if(Double.parseDouble(tbObat.getValueAt(i,19).toString())>0){
-                    umur=""+Double.parseDouble(tbObat.getValueAt(i,19).toString());
+                if(Double.parseDouble(tbObat.getValueAt(i,20).toString())>0){
+                    umur=""+Double.parseDouble(tbObat.getValueAt(i,20).toString());
                     sttsumur="Th";
-                }else if(Double.parseDouble(tbObat.getValueAt(i,19).toString())==0){
-                    if(Double.parseDouble(tbObat.getValueAt(i,20).toString())>0){
-                        umur=""+Double.parseDouble(tbObat.getValueAt(i,20).toString());
-                        sttsumur="Bl";
-                    }else if(Double.parseDouble(tbObat.getValueAt(i,20).toString())==0){
+                }else if(Double.parseDouble(tbObat.getValueAt(i,20).toString())==0){
+                    if(Double.parseDouble(tbObat.getValueAt(i,21).toString())>0){
                         umur=""+Double.parseDouble(tbObat.getValueAt(i,21).toString());
+                        sttsumur="Bl";
+                    }else if(Double.parseDouble(tbObat.getValueAt(i,21).toString())==0){
+                        umur=""+Double.parseDouble(tbObat.getValueAt(i,22).toString());
                         sttsumur="Hr";
                     }
                 }
                 if(Sequel.menyimpantf2("reg_periksa","?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?","No.Rawat",19,new String[]{
                     tbObat.getValueAt(i,10).toString(),no_rawat,tbObat.getValueAt(i,5).toString(),jam(),
                     tbObat.getValueAt(i,6).toString(),tbObat.getValueAt(i,3).toString(),tbObat.getValueAt(i,8).toString(),
-                    tbObat.getValueAt(i,11).toString(),tbObat.getValueAt(i,12).toString()+", "+tbObat.getValueAt(i,13).toString()+
-                    ", "+tbObat.getValueAt(i,14).toString()+", "+tbObat.getValueAt(i,15).toString()+
-                    ", "+tbObat.getValueAt(i,16).toString(),tbObat.getValueAt(i,17).toString(),
+                    tbObat.getValueAt(i,12).toString(),tbObat.getValueAt(i,13).toString()+", "+tbObat.getValueAt(i,14).toString()+
+                    ", "+tbObat.getValueAt(i,15).toString()+", "+tbObat.getValueAt(i,16).toString()+
+                    ", "+tbObat.getValueAt(i,17).toString(),tbObat.getValueAt(i,18).toString(),
                     ""+Sequel.cariIsiAngka("select poliklinik.registrasilama from poliklinik where poliklinik.kd_poli=?",tbObat.getValueAt(i,8).toString()),
-                    "Belum","Lama","Ralan",tbObat.getValueAt(i,18).toString(),umur,sttsumur,"Belum Bayar",status
+                    "Belum","Lama","Ralan",tbObat.getValueAt(i,19).toString(),umur,sttsumur,"Belum Bayar",status
                 })==true){
                     Sequel.mengedit3("skdp_bpjs","no_rkm_medis=? and tanggal_datang=?","status='Sudah Periksa'",2,new String[]{
                         tbObat.getValueAt(i,3).toString(),tbObat.getValueAt(i,5).toString()
@@ -1933,8 +1933,8 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
             KdPoli.setText(tbObat.getValueAt(tbObat.getSelectedRow(),8).toString());
             NmPoli.setText(tbObat.getValueAt(tbObat.getSelectedRow(),9).toString());
             NoReg.setText(tbObat.getValueAt(tbObat.getSelectedRow(),10).toString());
-            kdpnj.setText(tbObat.getValueAt(tbObat.getSelectedRow(),24).toString());
-            nmpnj.setText(tbObat.getValueAt(tbObat.getSelectedRow(),25).toString());
+            kdpnj.setText(tbObat.getValueAt(tbObat.getSelectedRow(),25).toString());
+            nmpnj.setText(tbObat.getValueAt(tbObat.getSelectedRow(),26).toString());
         }
     }
     
