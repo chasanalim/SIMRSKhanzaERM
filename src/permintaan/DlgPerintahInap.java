@@ -1612,6 +1612,52 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
         isForm();
     }
     
+    public void setNoRmRanap(String norwt,String norm,String nama,String namadokter) {
+        NoRw.setText(norwt);
+        NoRM.setText(norm);
+        NmPasien.setText(nama);
+        Dokter.setText(namadokter);
+        CaraBayar.setText(Sequel.cariIsi("select penjab.png_jawab from reg_periksa inner join penjab on penjab.kd_pj=reg_periksa.kd_pj where reg_periksa.no_rawat=?",NoRw.getText()));
+        Poli.setText(Sequel.cariIsi("select poliklinik.nm_poli from reg_periksa inner join poliklinik on poliklinik.kd_poli=reg_periksa.kd_poli where reg_periksa.no_rawat=?",NoRw.getText()));
+        NoTelp.setText(Sequel.cariIsi("select pasien.no_tlp from reg_periksa inner join pasien on pasien.no_rkm_medis=reg_periksa.no_rkm_medis where reg_periksa.no_rawat=?",NoRw.getText()));
+        TCari.setText(norwt);
+        R2.setSelected(true);
+        isRawat();
+        ChkInput.setSelected(false);
+        aktif=false;
+        isForm();
+    }
+    
+    private void isRawat() {
+        Sequel.cariIsi("select reg_periksa.no_rkm_medis from reg_periksa where reg_periksa.no_rawat=? ",NoRM,NoRw.getText());  
+ 
+        try {
+            ps=koneksi.prepareStatement(
+                    "select reg_periksa.no_rkm_medis,pasien.nm_pasien,reg_periksa.tgl_registrasi "+
+                    "from reg_periksa "+
+                    "inner join pasien on pasien.no_rkm_medis=reg_periksa.no_rkm_medis "+
+                    "where reg_periksa.no_rawat=? limit 1");
+            try {
+                ps.setString(1,NoRw.getText());
+                rs=ps.executeQuery();
+                if(rs.next()){
+                    DTPCari1.setDate(rs.getDate("tgl_registrasi"));
+                }
+            } catch (Exception e) {
+                System.out.println("Notif : "+e);
+            } finally{
+                if(rs!=null){
+                    rs.close();
+                }
+                if(ps!=null){
+                    ps.close();
+                }
+            }
+        } catch (Exception e) {
+            System.out.println("Notif : "+e);
+        }
+    }
+    
     private void isForm(){
         if(ChkInput.isSelected()==true){
             ChkInput.setVisible(false);
