@@ -35,7 +35,7 @@ public class InformasiAnalisaKamin extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
 
-        Object[] row={"","",""};
+        Object[] row={"","","",""};
         tabMode=new DefaultTableModel(null,row){
               @Override public boolean isCellEditable(int rowIndex, int colIndex){return false;}
         };
@@ -44,14 +44,16 @@ public class InformasiAnalisaKamin extends javax.swing.JDialog {
         tbDokter.setPreferredScrollableViewportSize(new Dimension(800,800));
         tbDokter.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
 
-        for (i = 0; i < 3; i++) {
+        for (i = 0; i < 4; i++) {
             TableColumn column = tbDokter.getColumnModel().getColumn(i);
             if(i==0){
                 column.setPreferredWidth(250);
             }else if(i==1){
-                column.setPreferredWidth(150);
+                column.setPreferredWidth(200);
             }else if(i==2){
-                column.setPreferredWidth(150);
+                column.setPreferredWidth(100);
+            }else if(i==3){
+                column.setPreferredWidth(250);
             }
         }
         
@@ -374,18 +376,22 @@ private void BtnCariKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
                 ps.setString(1,"%"+kdbangsal.getText()+"%");
                 rs=ps.executeQuery();
                 i=1;
-                tabMode.addRow(new Object[]{"Kondisi kamar saat ini : ","Isi : "+Sequel.cariInteger("select count(kd_bangsal) from kamar where kamar.statusdata='1' and status='ISI'"),"Kosong : "+Sequel.cariInteger("select count(kd_bangsal) from kamar where kamar.statusdata='1' and status='KOSONG'")});
-                tabMode.addRow(new Object[]{"","",""});
+                tabMode.addRow(new Object[]{"Kondisi jumlah kamar saat ini : ","Isi : "+Sequel.cariInteger("select count(kd_bangsal) from kamar where kamar.statusdata='1' and status='ISI'"),"Kosong : "+Sequel.cariInteger("select count(kd_bangsal) from kamar where kamar.statusdata='1' and status='KOSONG'"),"Keterangan"});
+                tabMode.addRow(new Object[]{"","","",""});
                 while(rs.next()){               
-                   tabMode.addRow(new Object[]{i+". Kamar : "+rs.getString("nm_bangsal"),"",""});
+                   tabMode.addRow(new Object[]{i+". Kamar : "+rs.getString("nm_bangsal"),"","",""});
                    tabMode.addRow(new Object[]{"","Isi : "+Sequel.cariInteger("select count(kd_bangsal) from kamar where kamar.statusdata='1' and kd_bangsal=? and status='ISI' ",rs.getString("kd_bangsal"))});
 
-                   ps2=koneksi.prepareStatement("select kd_kamar,trf_kamar,kelas from kamar where kamar.statusdata='1' and kd_bangsal=? and status='ISI'");
+                   ps2=koneksi.prepareStatement("select kamar.kd_kamar,kamar.trf_kamar,kamar.kelas, "+
+                                                 "(SELECT CONCAT(' (',IF( pasien.jk = 'L', 'Pria', 'Wanita' ),') ',pasien.nm_pasien,' (',reg_periksa.umurdaftar,' ',reg_periksa.sttsumur,')') "+
+                                                 "FROM pasien INNER JOIN reg_periksa ON pasien.no_rkm_medis = reg_periksa.no_rkm_medis INNER JOIN kamar_inap ON kamar_inap.no_rawat = reg_periksa.no_rawat "+
+                                                "WHERE kamar_inap.kd_kamar = kamar.kd_kamar  AND kamar_inap.stts_pulang = '-'  LIMIT 1 ) AS keterangan "+
+                                               "from kamar left join kamar_inap on kamar.kd_kamar=kamar_inap.kd_kamar where kamar.statusdata='1' and kamar.kd_bangsal=? and kamar.status='ISI' group by kamar.kd_kamar");
                    try {
                         ps2.setString(1,rs.getString("kd_bangsal"));
                         rs2=ps2.executeQuery();
                         while(rs2.next()){
-                            tabMode.addRow(new Object[]{"",rs2.getString("kd_kamar")+" "+rs2.getString("kelas"),Valid.SetAngka(rs2.getDouble("trf_kamar"))});
+                            tabMode.addRow(new Object[]{"",rs2.getString("kd_kamar")+" ("+rs2.getString("kelas")+")",Valid.SetAngka(rs2.getDouble("trf_kamar")),rs2.getString("keterangan")});
                         }
                    } catch (Exception e) {
                        System.out.println("Notifikasi : "+e);
@@ -400,12 +406,12 @@ private void BtnCariKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
                    
                    tabMode.addRow(new Object[]{"","Kosong : "+Sequel.cariInteger("select count(kd_bangsal) from kamar where kamar.statusdata='1' and kd_bangsal=? and status='KOSONG' ",rs.getString("kd_bangsal")),""});
 
-                   ps3=koneksi.prepareStatement("select kd_kamar,trf_kamar from kamar where kamar.statusdata='1' and kd_bangsal=? and status='KOSONG'");
+                   ps3=koneksi.prepareStatement("select kd_kamar,trf_kamar,kelas from kamar where kamar.statusdata='1' and kd_bangsal=? and status='KOSONG'");
                    try {
                         ps3.setString(1,rs.getString("kd_bangsal"));
                         rs2=ps3.executeQuery();
                         while(rs2.next()){
-                            tabMode.addRow(new Object[]{"",rs2.getString("kd_kamar"),Valid.SetAngka(rs2.getDouble("trf_kamar"))});
+                            tabMode.addRow(new Object[]{"",rs2.getString("kd_kamar")+" ("+rs2.getString("kelas")+")",Valid.SetAngka(rs2.getDouble("trf_kamar"))});
                         } 
                    } catch (Exception e) {
                        System.out.println("Notifikasi : "+e);
