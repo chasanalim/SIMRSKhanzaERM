@@ -89,7 +89,7 @@ public final class DlgKamar extends javax.swing.JDialog {
             if(i==0){
                 column.setPreferredWidth(20);
             }else if(i==1){
-                column.setPreferredWidth(90);
+                column.setPreferredWidth(150);
             }else if(i==2){
                 column.setPreferredWidth(80);
             }else if(i==3){
