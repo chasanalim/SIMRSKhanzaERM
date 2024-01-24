@@ -9361,7 +9361,11 @@ private void MnRujukMasukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-
                                 param.put("kamar",tbKamIn.getValueAt(tbKamIn.getSelectedRow(),7).toString());
                                 param.put("carabayar",tbKamIn.getValueAt(tbKamIn.getSelectedRow(),6).toString());
                                 param.put("emailrs",akses.getemailrs());         
-                                param.put("logo",Sequel.cariGambar("select setting.logo from setting"));   
+                                param.put("logo",Sequel.cariGambar("select setting.logo from setting"));
+                                
+                                
+                                param.put("obat",Sequel.cariIsi("select count(no_rawat) from resep_obat where no_rawat=?",tbKamIn.getValueAt(tbKamIn.getSelectedRow()-1,0).toString()));
+                                
                                 finger=Sequel.cariIsi("select sha1(sidikjari.sidikjari) from sidikjari inner join pegawai on pegawai.id=sidikjari.id where pegawai.nik=100");
                                 param.put("finger","Dikeluarkan di "+akses.getnamars()+", Kabupaten/Kota "+akses.getkabupatenrs()+"\nDitandatangani secara elektronik oleh ADMIN RANAP RSU BANYUMANIK 2"); 
                                 Valid.MyReport("rptSuratPengantarPulang.jasper",param,"::[ Surat Pengantar Pulang ]::"); 
@@ -9399,7 +9403,8 @@ private void MnRujukMasukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-
                         param.put("kamar",tbKamIn.getValueAt(tbKamIn.getSelectedRow(),7).toString());
                         param.put("carabayar",tbKamIn.getValueAt(tbKamIn.getSelectedRow(),6).toString());
                         param.put("emailrs",akses.getemailrs());         
-                        param.put("logo",Sequel.cariGambar("select setting.logo from setting"));   
+                        param.put("logo",Sequel.cariGambar("select setting.logo from setting")); 
+                        param.put("obat",Sequel.cariIsi("select count(no_rawat) from resep_pulang where no_rawat=?",TNoRwCari.getText()));
                         finger=Sequel.cariIsi("select sha1(sidikjari.sidikjari) from sidikjari inner join pegawai on pegawai.id=sidikjari.id where pegawai.nik=100");
                         param.put("finger","Dikeluarkan di "+akses.getnamars()+", Kabupaten/Kota "+akses.getkabupatenrs()+"\nDitandatangani secara elektronik oleh ADMIN RANAP RSU BANYUMANIK 2"); 
                         Valid.MyReport("rptSuratPengantarPulang.jasper",param,"::[ Surat Pengantar Pulang ]::"); 
