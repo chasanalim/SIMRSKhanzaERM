@@ -1278,6 +1278,8 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
                 finger=Sequel.cariIsi("select sha1(sidikjari.sidikjari) from sidikjari inner join pegawai on pegawai.id=sidikjari.id where pegawai.nik=?",KdDokter.getText());
                 param.put("finger","Dikeluarkan di "+akses.getnamars()+", Kabupaten/Kota "+akses.getkabupatenrs()+"\nDitandatangani secara elektronik oleh "+Dokter.getText()+"\nID "+(finger.equals("")?KdDokter.getText():finger)+"\n"+DTPTgl.getSelectedItem());
                 param.put("logo",Sequel.cariGambar("select setting.logo from setting"));
+                param.put("ttd",Sequel.cariIsi("select lokasi_ttd from ttd where nip='"+KdDokter.getText()+"'")); 
+                        
                 Valid.MyReportqry("rptSuratPerintahRawatInap.jasper","report","::[ Surat Perintah Rawat Inap ]::",
                     "select perintah_ranap.no_rawat,reg_periksa.no_rkm_medis,pasien.nm_pasien,pasien.jk,reg_periksa.umurdaftar,reg_periksa.sttsumur,"+
                     "pasien.no_tlp,pasien.tgl_lahir,penjab.png_jawab,poliklinik.nm_poli,dokter.nm_dokter,perintah_ranap.tanggal,perintah_ranap.kd_kamar,kamar.kd_bangsal,"+
