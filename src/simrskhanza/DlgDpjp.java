@@ -869,8 +869,8 @@ public class DlgDpjp extends javax.swing.JDialog {
                          JOptionPane.showMessageDialog(null,"Sudah baca Note Penting !!!");
                          reply = JOptionPane.showConfirmDialog(rootPane,"Eeiiiiits, mau Ganti DPJP Utama??? \n Pastikan semua DPJP terhapus dahulu jika Ada","Konfirmasi",JOptionPane.YES_NO_OPTION);
                             if (reply == JOptionPane.YES_OPTION) {
-                                Sequel.queryu2("delete from dpjp_ranap where no_rawat=? and kd_dokter=?",2,new String[]{
-                                tbPasien.getValueAt(i,2).toString(),tbPasien.getValueAt(i,5).toString()});
+                                Sequel.queryu2("delete from dpjp_ranap where no_rawat=?",1,new String[]{
+                                tbPasien.getValueAt(i,2).toString()});
                                 JOptionPane.showMessageDialog(null,"Oke terhapus. Pastikan input ulang sesuai urutan");
                             }
                     }else{
