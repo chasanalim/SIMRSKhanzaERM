@@ -6336,6 +6336,7 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
                         if(KdPeg.getText().trim().equals("")||TPegawai.getText().trim().equals("")){
                             Valid.textKosong(KdPeg,"Dokter/Paramedis masih kosong...!!");
                         }else{
+                            String penjab =  Sequel.cariIsi("select reg_periksa.kd_pj from reg_periksa where reg_periksa.no_rawat=?",TNoRw.getText());
                             if(akses.getkode().equals("Admin Utama")){
                                 if(Sequel.menyimpantf("pemeriksaan_ralan","?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?","Data",21,new String[]{
                                     TNoRw.getText(),Valid.SetTgl(DTPTgl.getSelectedItem()+""),cmbJam.getSelectedItem()+":"+cmbMnt.getSelectedItem()+":"+cmbDtk.getSelectedItem(),
@@ -6370,7 +6371,13 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
                                     }
                                 }
 //                                Sequel.queryu("delete from antripoli where kd_dokter='"+KdPeg.getText()+"'");
+                                 
                             }
+                            
+//                            if(penjab.equals("BPJ")){
+//                            CetakSEP(TNoRw.getText());
+//                             JOptionPane.showMessageDialog(null,"sukses Otomatis");
+//                            }
                         }
                     }
                     break;
@@ -11132,6 +11139,32 @@ private void BtnEditKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
             FormMenu.setVisible(false);
             ChkAccor.setVisible(true);
         }
+    }
+    
+    public void CetakSEP(String norawat) {
+            this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+            Map<String, Object> param = new HashMap<>();
+            param.put("namars",akses.getnamars());
+            param.put("alamatrs",akses.getalamatrs());
+            param.put("kotars",akses.getkabupatenrs());
+            param.put("propinsirs",akses.getpropinsirs());
+            param.put("kontakrs",akses.getkontakrs());
+            param.put("emailrs",akses.getemailrs());
+            
+            param.put("logo",Sequel.cariGambar("select setting.logo from setting"));
+            param.put("bpjs",Sequel.cariGambar("select bpjs from gambar"));
+            Valid.MyReportqryOtoPrint("rptBridgingSEP4.jasper","report","::[ SEP dan SBPK]::",
+                   "SELECT bridging_sep.no_sep,bridging_sep.nomr,bridging_sep.tglsep,bridging_sep.no_kartu,bridging_sep.nama_pasien,bridging_sep.tanggal_lahir,"+
+                    "bridging_sep.notelep,bridging_sep.nmdpdjp,bridging_sep.nmppkrujukan,bridging_sep.nmdiagnosaawal,bridging_sep.catatan,bridging_sep.peserta,"+
+                    "bridging_sep.jnspelayanan,bridging_sep.flagprosedur,bridging_sep.klsrawat,bridging_sep.klsnaik,bridging_sep.pembiayaan,bridging_sep.nmpolitujuan,"+
+                    "pasien.jk,reg_periksa.tgl_registrasi,reg_periksa.kd_dokter,dokter.nm_dokter,pemeriksaan_ralan.penilaian,pemeriksaan_ralan.rtl,pemeriksaan_ralan.pemeriksaan,"+
+                    "IF( bridging_sep.tujuankunjungan = '0', 'Konsultasi dokter(pertama)', 'Kunjungan Kontrol(ulangan)' ) AS tujuankunjungan,pemeriksaan_ralan.keluhan,"+
+                    "concat( 'suhu : ', pemeriksaan_ralan.suhu_tubuh, ', TD : ', pemeriksaan_ralan.tensi, ', Nadi : ', pemeriksaan_ralan.nadi ) AS fisik "+
+                    "FROM bridging_sep LEFT JOIN pemeriksaan_ralan ON bridging_sep.no_rawat = pemeriksaan_ralan.no_rawat INNER JOIN reg_periksa ON reg_periksa.no_rawat = "+
+                    "bridging_sep.no_rawat INNER JOIN pasien ON pasien.no_rkm_medis = reg_periksa.no_rkm_medis INNER JOIN dokter ON dokter.kd_dokter = reg_periksa.kd_dokter "+
+                    " WHERE bridging_sep.jnspelayanan = 2 and bridging_sep.no_rawat='"+TNoRw.getText()+"' ",param);
+            this.setCursor(Cursor.getDefaultCursor());
+
     }
     
     public void isCek(){
