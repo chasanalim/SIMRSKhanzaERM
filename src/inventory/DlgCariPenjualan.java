@@ -40,8 +40,8 @@ public class DlgCariPenjualan extends javax.swing.JDialog {
     private final DefaultTableModel tabMode;
     private sekuel Sequel=new sekuel();
     private validasi Valid=new validasi();
-    private PreparedStatement ps,ps2,ps3,pscarijual,psdetailjual;
-    private ResultSet rs,rs2,rs3;
+    private PreparedStatement ps,ps2,ps3,pscarijual,psdetailjual,psjml;
+    private ResultSet rs,rs2,rs3,rsjml;
     private Jurnal jur=new Jurnal();
     private Connection koneksi=koneksiDB.condb();
     private riwayatobat Trackobat=new riwayatobat();
@@ -50,7 +50,7 @@ public class DlgCariPenjualan extends javax.swing.JDialog {
     public  DlgCariPetugas petugas=new DlgCariPetugas(null,false);
     public  DlgBarang barang=new DlgBarang(null,false);
     private DecimalFormat df2 = new DecimalFormat("###,###,###,###,###,###,###");    
-    private double besarppn=0,ttljual=0,ttlppn=0,ttlongkir=0,ttldisc=0,ttltambahan=0,ttlembalase=0,ttltuslah=0,ttlsubttl=0,subttljual=0,subttldisc=0,subttlall=0,subttltambahan=0,subttlembalase=0,subttltuslah=0,ttlhpp=0;
+    private double jml=0,besarppn=0,ttljual=0,ttlppn=0,ttlongkir=0,ttldisc=0,ttltambahan=0,ttlembalase=0,ttltuslah=0,ttlsubttl=0,subttljual=0,subttldisc=0,subttlall=0,subttltambahan=0,subttlembalase=0,subttltuslah=0,ttlhpp=0;
     private String totaljual="",notapenjualan="No",verifikasi_penjualan_di_kasir="",statusbayar="",datacari="",
             nofak="",mem="",ptg="",sat="",bar="",tanggal="",Penjualan_Obat="",HPP_Obat_Jual_Bebas="",Persediaan_Obat_Jual_Bebas="";
     private String aktifkanbatch="no",kdrek="";
@@ -433,6 +433,8 @@ public class DlgCariPenjualan extends javax.swing.JDialog {
         label10 = new widget.Label();
         TCari = new widget.TextBox();
         BtnCari = new widget.Button();
+        label12 = new widget.Label();
+        LCount = new widget.Label();
         label9 = new widget.Label();
         LTotal = new widget.Label();
         BtnAll = new widget.Button();
@@ -748,15 +750,26 @@ public class DlgCariPenjualan extends javax.swing.JDialog {
         });
         panelisi1.add(BtnCari);
 
-        label9.setText("Total :");
+        label12.setText("Total Record :");
+        label12.setName("label12"); // NOI18N
+        label12.setPreferredSize(new java.awt.Dimension(100, 30));
+        panelisi1.add(label12);
+
+        LCount.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        LCount.setText("0");
+        LCount.setName("LCount"); // NOI18N
+        LCount.setPreferredSize(new java.awt.Dimension(50, 30));
+        panelisi1.add(LCount);
+
+        label9.setText("Total Billing :");
         label9.setName("label9"); // NOI18N
-        label9.setPreferredSize(new java.awt.Dimension(55, 30));
+        label9.setPreferredSize(new java.awt.Dimension(100, 30));
         panelisi1.add(label9);
 
         LTotal.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         LTotal.setText("0");
         LTotal.setName("LTotal"); // NOI18N
-        LTotal.setPreferredSize(new java.awt.Dimension(155, 30));
+        LTotal.setPreferredSize(new java.awt.Dimension(50, 30));
         panelisi1.add(LTotal);
 
         BtnAll.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/Search-16x16.png"))); // NOI18N
@@ -1706,6 +1719,7 @@ private void ppHapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST
     private widget.Button BtnKeluar;
     private widget.Button BtnPrint;
     private widget.Button BtnSimpan4;
+    private widget.Label LCount;
     private widget.Label LTotal;
     private widget.editorpane LoadHTML1;
     private widget.TextBox NoNota;
@@ -1731,6 +1745,7 @@ private void ppHapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST
     private widget.TextBox kdsat;
     private widget.Label label10;
     private widget.Label label11;
+    private widget.Label label12;
     private widget.Label label13;
     private widget.Label label14;
     private widget.Label label15;
@@ -1757,6 +1772,7 @@ private void ppHapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST
     // End of variables declaration//GEN-END:variables
 
     private void tampil() {
+        
         tanggal="  penjualan.tgl_jual between '"+Valid.SetTgl(Tgl1.getSelectedItem()+"")+"' and '"+Valid.SetTgl(Tgl2.getSelectedItem()+"")+"' ";
         nofak="";mem="";ptg="";sat="";bar="";statusbayar="";datacari="";
         if(!NoNota.getText().equals("")){
@@ -1785,7 +1801,8 @@ private void ppHapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST
                     "bangsal.nm_bangsal like '%"+TCari.getText()+"%' or databarang.nama_brng like '%"+TCari.getText()+"%' or "+
                     "detailjual.kode_sat like '%"+TCari.getText()+"%' or jenis.nama like '%"+TCari.getText()+"%') ";
         }
-
+        
+        jmlpasien();
         Valid.tabelKosong(tabMode);
         try{
             ttljual=0;
@@ -1888,11 +1905,14 @@ private void ppHapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST
                 if(ps!=null){
                     ps.close();
                 }
-            }            
+            }
+            
             LTotal.setText(df2.format(ttljual+ttlppn+ttlongkir));
+            
         }catch(Exception e){
             System.out.println("Notifikasi : "+e);
-        }        
+        } 
+       
     }
     
     public void tampil2(){
@@ -2183,6 +2203,7 @@ private void ppHapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST
                 }
             }
             LTotal.setText(df2.format(ttljual+ttlongkir+ttlppn));
+            jmlpasien();
             if(ttljual>0){
                 totaljual=
                       "<table width='100%' border='0' align='center' cellpadding='3px' cellspacing='0' class='tbl_form'>"+
@@ -2208,6 +2229,67 @@ private void ppHapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST
         this.setCursor(Cursor.getDefaultCursor());
     }
 
+     private void jmlpasien() {
+        tanggal="  penjualan.tgl_jual between '"+Valid.SetTgl(Tgl1.getSelectedItem()+"")+"' and '"+Valid.SetTgl(Tgl2.getSelectedItem()+"")+"' ";
+        nofak="";mem="";ptg="";sat="";bar="";statusbayar="";datacari="";
+        if(!NoNota.getText().equals("")){
+            nofak=" and penjualan.nota_jual='"+NoNota.getText()+"' ";
+        }        
+        if(!nmmem.getText().equals("")){
+            mem=" and penjualan.nm_pasien='"+nmmem.getText()+"' ";
+        }
+        if(!nmptg.getText().equals("")){
+            ptg=" and petugas.nama='"+nmptg.getText()+"' ";
+        }
+        if(!nmsat.getText().equals("")){
+            sat=" and jenis.nama='"+nmsat.getText()+"' ";
+        }
+        if(!nmbar.getText().equals("")){
+            bar=" and databarang.nama_brng='"+nmbar.getText()+"' ";
+        }
+        if(!Status.getSelectedItem().toString().equals("Semua")){
+            statusbayar=" and penjualan.status='"+Status.getSelectedItem().toString()+"' ";
+        }
+        if(!TCari.getText().trim().equals("")){
+            datacari=" and (penjualan.nota_jual like '%"+TCari.getText()+"%' or penjualan.no_rkm_medis like '%"+TCari.getText()+"%' or "+
+                    "penjualan.nm_pasien like '%"+TCari.getText()+"%' or  penjualan.nip like '%"+TCari.getText()+"%' or "+
+                    "petugas.nama like '%"+TCari.getText()+"%' or penjualan.keterangan like '%"+TCari.getText()+"%' or "+
+                    "penjualan.jns_jual like '%"+TCari.getText()+"%' or detailjual.kode_brng like '%"+TCari.getText()+"%' or "+
+                    "bangsal.nm_bangsal like '%"+TCari.getText()+"%' or databarang.nama_brng like '%"+TCari.getText()+"%' or "+
+                    "detailjual.kode_sat like '%"+TCari.getText()+"%' or jenis.nama like '%"+TCari.getText()+"%') ";
+        }
+
+        Valid.tabelKosong(tabMode);
+        try{
+            psjml=koneksi.prepareStatement("select count(penjualan.nota_jual) as jml "+
+                    " from penjualan "+
+                    " where "+tanggal+nofak+mem+ptg+sat+bar+statusbayar+datacari+
+                    " order by penjualan.tgl_jual,penjualan.nota_jual ");
+            try {
+                rsjml=psjml.executeQuery();
+                jml=0;
+                
+                while(rsjml.next()){                    
+                    
+                    jml=rsjml.getDouble("jml");
+                   
+                }    
+            } catch (Exception e) {
+                System.out.println("Notifikasi jumlah: "+e);
+            } finally{
+                if(rsjml!=null){
+                    rsjml.close();
+                }
+                if(psjml!=null){
+                    psjml.close();
+                }
+            }            
+            LCount.setText(df2.format(jml));
+        }catch(Exception e){
+            System.out.println("Notifikasi jml: "+e);
+        }        
+    }
+    
     public void emptTeks() {
         kdbar.setText("");
         nmbar.setText("");
