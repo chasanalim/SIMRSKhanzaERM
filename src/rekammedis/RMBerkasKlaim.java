@@ -1643,9 +1643,7 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                              "</table>"
                     );
                  
-                    htmlContent.append(
-                        "<tr class='isi'><td></td><td colspan='3' align='right'>&nbsp;</tr>"
-                    );
+ 
                     
                 }
                 
@@ -1905,52 +1903,52 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                                     "</td>"+
                                  "</tr>"+
                                 "</table>" + // awal batas garis
-                                "<table width='100%' border='0'  align='center' height='30' cellspacing='50' class='tbl_form'>"+
-                                 "<tr class='sep'>"+
-                                    "<td valign='top' border='0' width='2%'></td>"+
-                                    "<td valign='top' border='0' width='14%'></td>"+
-                                    "<td valign='top' border='0' width='1%' align='right'></td>"+
-                                    "<td valign='top' border='0' width='36%' align='left'></td>"+
-                                    "<td valign='top' border='0' width='2%'></td>"+
-                                 "</tr>"+
-                                 "</table>" +
-                                "<table width='100%' border='0' align='center' height='30' cellspacing='50' class='tbl_form'>"+
-                                 "<tr class='sep'>"+
-                                    "<td valign='top' border='0' width='2%'></td>"+
-                                    "<td valign='top' border='0' width='14%'></td>"+
-                                    "<td valign='top' border='0' width='1%' align='right'></td>"+
-                                    "<td valign='top' border='0' width='36%' align='left'></td>"+
-                                    "<td valign='top' border='0' width='2%'></td>"+
-                                 "</tr>" +
-                                  "</table>" +
-                                "<table width='100%' border='0' align='center' height='30' cellspacing='50' class='tbl_form'>"+
-                                 "<tr class='sep'>"+
-                                    "<td valign='top' border='0' width='2%'></td>"+
-                                    "<td valign='top' border='0' width='14%'></td>"+
-                                    "<td valign='top' border='0' width='1%' align='right'></td>"+
-                                    "<td valign='top' border='0' width='36%' align='left'></td>"+
-                                    "<td valign='top' border='0' width='2%'></td>"+
-                                 "</tr>" +
-                                  "</table>" +
-                                "<table width='100%' border='0' align='center' height='30' cellspacing='50' class='tbl_form'>"+
-                                 "<tr class='sep'>"+
-                                    "<td valign='top' border='0' width='2%'></td>"+
-                                    "<td valign='top' border='0' width='14%'></td>"+
-                                    "<td valign='top' border='0' width='1%' align='right'></td>"+
-                                    "<td valign='top' border='0' width='36%' align='left'></td>"+
-                                    "<td valign='top' border='0' width='2%'></td>"+
-                                 "</tr>" +
-                                  "</table>" +
-                                "<table width='100%' border='0' align='center' height='30' cellspacing='20' class='tbl_form'>"+
-                                 "<tr class='sep'>"+
-                                    "<td valign='top' border='0' width='2%'></td>"+
-                                    "<td valign='top' border='0' width='14%'></td>"+
-                                    "<td valign='top' border='0' width='1%' align='right'></td>"+
-                                    "<td valign='top' border='0' width='36%' align='left'></td>"+
-                                    "<td valign='top' border='0' width='2%'></td>"+
-                                 "</tr>" +
-                                 "</table>" +
-                                "<table width='100%' border='0' style='border-bottom:3px solid #87b5ed;' align='center' height='30' cellspacing='40' class='tbl_form'>"+
+//                                "<table width='100%' border='0'  align='center' height='30' cellspacing='50' class='tbl_form'>"+
+//                                 "<tr class='sep'>"+
+//                                    "<td valign='top' border='0' width='2%'></td>"+
+//                                    "<td valign='top' border='0' width='14%'></td>"+
+//                                    "<td valign='top' border='0' width='1%' align='right'></td>"+
+//                                    "<td valign='top' border='0' width='36%' align='left'></td>"+
+//                                    "<td valign='top' border='0' width='2%'></td>"+
+//                                 "</tr>"+
+//                                 "</table>" +
+//                                "<table width='100%' border='0' align='center' height='30' cellspacing='50' class='tbl_form'>"+
+//                                 "<tr class='sep'>"+
+//                                    "<td valign='top' border='0' width='2%'></td>"+
+//                                    "<td valign='top' border='0' width='14%'></td>"+
+//                                    "<td valign='top' border='0' width='1%' align='right'></td>"+
+//                                    "<td valign='top' border='0' width='36%' align='left'></td>"+
+//                                    "<td valign='top' border='0' width='2%'></td>"+
+//                                 "</tr>" +
+//                                  "</table>" +
+//                                "<table width='100%' border='0' align='center' height='30' cellspacing='50' class='tbl_form'>"+
+//                                 "<tr class='sep'>"+
+//                                    "<td valign='top' border='0' width='2%'></td>"+
+//                                    "<td valign='top' border='0' width='14%'></td>"+
+//                                    "<td valign='top' border='0' width='1%' align='right'></td>"+
+//                                    "<td valign='top' border='0' width='36%' align='left'></td>"+
+//                                    "<td valign='top' border='0' width='2%'></td>"+
+//                                 "</tr>" +
+//                                  "</table>" +
+//                                "<table width='100%' border='0' align='center' height='30' cellspacing='50' class='tbl_form'>"+
+//                                 "<tr class='sep'>"+
+//                                    "<td valign='top' border='0' width='2%'></td>"+
+//                                    "<td valign='top' border='0' width='14%'></td>"+
+//                                    "<td valign='top' border='0' width='1%' align='right'></td>"+
+//                                    "<td valign='top' border='0' width='36%' align='left'></td>"+
+//                                    "<td valign='top' border='0' width='2%'></td>"+
+//                                 "</tr>" +
+//                                  "</table>" +
+//                                "<table width='100%' border='0' align='center' height='30' cellspacing='20' class='tbl_form'>"+
+//                                 "<tr class='sep'>"+
+//                                    "<td valign='top' border='0' width='2%'></td>"+
+//                                    "<td valign='top' border='0' width='14%'></td>"+
+//                                    "<td valign='top' border='0' width='1%' align='right'></td>"+
+//                                    "<td valign='top' border='0' width='36%' align='left'></td>"+
+//                                    "<td valign='top' border='0' width='2%'></td>"+
+//                                 "</tr>" +
+//                                 "</table>" +
+                                "<table width='100%' border='0' style='border-bottom:3px solid #87b5ed;' align='center' height='10' cellspacing='5' class='tbl_form'>"+
                                  "<tr class='sep'>"+
                                     "<td valign='top' border='0' width='2%'></td>"+
                                     "<td valign='top' border='0' width='14%'></td>"+
@@ -2171,6 +2169,7 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                                     "<p> Persetujuan </p>"+
                                     "<p> Pasien/Keluarga Pasien </p>"+
                                     "<img width='70' height='70' src='http://"+koneksiDB.HOSTHYBRIDWEB()+":"+koneksiDB.PORTWEB()+"/"+koneksiDB.HYBRIDWEB()+"/penggajian/temp/"+rs2.getString("nomr")+".png'/>"+
+//                                    "<br><br><br>"+
                                     "<p>"+rs2.getString("nama_pasien")+"</p>"+
                                     
                                     "</div>"+
@@ -2178,51 +2177,51 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                                     "</td>"+
                                  "</tr>"+
                                 "</table>" + // awal batas garis
-                                "<table width='100%' border='0'  align='center' height='30' cellspacing='50' class='tbl_form'>"+
-                                 "<tr class='sep'>"+
-                                    "<td valign='top' border='0' width='2%'></td>"+
-                                    "<td valign='top' border='0' width='14%'></td>"+
-                                    "<td valign='top' border='0' width='1%' align='right'></td>"+
-                                    "<td valign='top' border='0' width='36%' align='left'></td>"+
-                                    "<td valign='top' border='0' width='2%'></td>"+
-                                 "</tr>"+
-                                 "</table>" +
-                                "<table width='100%' border='0' align='center' height='30' cellspacing='50' class='tbl_form'>"+
-                                 "<tr class='sep'>"+
-                                    "<td valign='top' border='0' width='2%'></td>"+
-                                    "<td valign='top' border='0' width='14%'></td>"+
-                                    "<td valign='top' border='0' width='1%' align='right'></td>"+
-                                    "<td valign='top' border='0' width='36%' align='left'></td>"+
-                                    "<td valign='top' border='0' width='2%'></td>"+
-                                 "</tr>" +
-                                  "</table>" +
-                                "<table width='100%' border='0' align='center' height='30' cellspacing='50' class='tbl_form'>"+
-                                 "<tr class='sep'>"+
-                                    "<td valign='top' border='0' width='2%'></td>"+
-                                    "<td valign='top' border='0' width='14%'></td>"+
-                                    "<td valign='top' border='0' width='1%' align='right'></td>"+
-                                    "<td valign='top' border='0' width='36%' align='left'></td>"+
-                                    "<td valign='top' border='0' width='2%'></td>"+
-                                 "</tr>" +
-                                  "</table>" +
-                                "<table width='100%' border='0' align='center' height='30' cellspacing='50' class='tbl_form'>"+
-                                 "<tr class='sep'>"+
-                                    "<td valign='top' border='0' width='2%'></td>"+
-                                    "<td valign='top' border='0' width='14%'></td>"+
-                                    "<td valign='top' border='0' width='1%' align='right'></td>"+
-                                    "<td valign='top' border='0' width='36%' align='left'></td>"+
-                                    "<td valign='top' border='0' width='2%'></td>"+
-                                 "</tr>" +
-                                  "</table>" +
-                                "<table width='100%' border='0' align='center' height='30' cellspacing='20' class='tbl_form'>"+
-                                 "<tr class='sep'>"+
-                                    "<td valign='top' border='0' width='2%'></td>"+
-                                    "<td valign='top' border='0' width='14%'></td>"+
-                                    "<td valign='top' border='0' width='1%' align='right'></td>"+
-                                    "<td valign='top' border='0' width='36%' align='left'></td>"+
-                                    "<td valign='top' border='0' width='2%'></td>"+
-                                 "</tr>" +
-                                 "</table>" +
+//                                "<table width='100%' border='0'  align='center' height='30' cellspacing='50' class='tbl_form'>"+
+//                                 "<tr class='sep'>"+
+//                                    "<td valign='top' border='0' width='2%'></td>"+
+//                                    "<td valign='top' border='0' width='14%'></td>"+
+//                                    "<td valign='top' border='0' width='1%' align='right'></td>"+
+//                                    "<td valign='top' border='0' width='36%' align='left'></td>"+
+//                                    "<td valign='top' border='0' width='2%'></td>"+
+//                                 "</tr>"+
+//                                 "</table>" +
+//                                "<table width='100%' border='0' align='center' height='30' cellspacing='50' class='tbl_form'>"+
+//                                 "<tr class='sep'>"+
+//                                    "<td valign='top' border='0' width='2%'></td>"+
+//                                    "<td valign='top' border='0' width='14%'></td>"+
+//                                    "<td valign='top' border='0' width='1%' align='right'></td>"+
+//                                    "<td valign='top' border='0' width='36%' align='left'></td>"+
+//                                    "<td valign='top' border='0' width='2%'></td>"+
+//                                 "</tr>" +
+//                                  "</table>" +
+//                                "<table width='100%' border='0' align='center' height='30' cellspacing='50' class='tbl_form'>"+
+//                                 "<tr class='sep'>"+
+//                                    "<td valign='top' border='0' width='2%'></td>"+
+//                                    "<td valign='top' border='0' width='14%'></td>"+
+//                                    "<td valign='top' border='0' width='1%' align='right'></td>"+
+//                                    "<td valign='top' border='0' width='36%' align='left'></td>"+
+//                                    "<td valign='top' border='0' width='2%'></td>"+
+//                                 "</tr>" +
+//                                  "</table>" +
+//                                "<table width='100%' border='0' align='center' height='30' cellspacing='50' class='tbl_form'>"+
+//                                 "<tr class='sep'>"+
+//                                    "<td valign='top' border='0' width='2%'></td>"+
+//                                    "<td valign='top' border='0' width='14%'></td>"+
+//                                    "<td valign='top' border='0' width='1%' align='right'></td>"+
+//                                    "<td valign='top' border='0' width='36%' align='left'></td>"+
+//                                    "<td valign='top' border='0' width='2%'></td>"+
+//                                 "</tr>" +
+//                                  "</table>" +
+//                                "<table width='100%' border='0' align='center' height='30' cellspacing='20' class='tbl_form'>"+
+//                                 "<tr class='sep'>"+
+//                                    "<td valign='top' border='0' width='2%'></td>"+
+//                                    "<td valign='top' border='0' width='14%'></td>"+
+//                                    "<td valign='top' border='0' width='1%' align='right'></td>"+
+//                                    "<td valign='top' border='0' width='36%' align='left'></td>"+
+//                                    "<td valign='top' border='0' width='2%'></td>"+
+//                                 "</tr>" +
+//                                 "</table>" +
                                 "<table width='100%' border='0' style='border-bottom:3px solid #87b5ed;' align='center' height='30' cellspacing='50' class='tbl_form'>"+
                                  "<tr class='sep'>"+
                                     "<td valign='top' border='0' width='2%'></td>"+
@@ -2261,6 +2260,9 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                         "IF ( bridging_sep.tujuankunjungan = '0', 'Konsultasi dokter(pertama)', 'Kunjungan Kontrol(ulangan)' ) AS tujuankunjungan,pemeriksaan_ralan.keluhan,concat('suhu : ',pemeriksaan_ralan.suhu_tubuh,', TD : ',pemeriksaan_ralan.tensi,', Nadi : ',pemeriksaan_ralan.nadi) as fisik "+
                         "FROM bridging_sep inner join pemeriksaan_ralan on bridging_sep.no_rawat=pemeriksaan_ralan.no_rawat INNER JOIN reg_periksa on reg_periksa.no_rawat=bridging_sep.no_rawat INNER JOIN dokter on dokter.kd_dokter=reg_periksa.kd_dokter WHERE bridging_sep.jnspelayanan = 2 AND bridging_sep.no_rawat ='"+norawat+"'").executeQuery();
                     if(rs2.next()){
+                        rs2.beforeFirst();
+                        w=1;
+                        while(rs2.next()){
                         htmlContent.append(
                           "<tr class='isi'>"+ 
                             "<td valign='top' width='2%'></td>"+        
@@ -2290,9 +2292,7 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                                     "</td>"+
                                     "</tr>"
                         );
-                        rs2.beforeFirst();
-                        w=1;
-                        while(rs2.next()){
+                        
                             
                             htmlContent.append(
                                  
@@ -2437,49 +2437,52 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                                     "<p> Tanda Verifikasi </p>"+
                                     "<p> DPJP/dr. Pemeriksa </p>"+
                                     "<img width='70' height='70' src='http://"+koneksiDB.HOSTHYBRIDWEB()+":"+koneksiDB.PORTWEB()+"/"+koneksiDB.HYBRIDWEB()+"/penggajian/temp/"+rs2.getString("kd_dokter")+".png'/>"+
+//                                     "<img width='70' height='70' src='http://"+koneksiDB.HOSTHYBRIDWEB()+":"+koneksiDB.PORTWEB()+"/"+koneksiDB.HYBRIDWEB()+"/berkasrawat/pages/upload/"+rs2.getString("kd_dokter")+".png'/>"+
+                                    
+//                                    "<br><br><br>"+
                                     "<p>"+rs2.getString("nm_dokter")+"</p>"+
                                     "</div>"+
                                             
                                     "</td>"+
                                  "</tr>"+
                                 "</table>" +
-                                "<table width='100%' border='0' height='30' cellspacing='20' class='tbl_form'>"+
-                                 "<tr class='sep'>"+
-                                    "<td valign='top' border='0' width='2%'></td>"+
-                                    "<td valign='top' border='0' width='14%'></td>"+
-                                    "<td valign='top' border='0' width='1%' align='right'></td>"+
-                                    "<td valign='top' border='0' width='36%' align='left'></td>"+
-                                    "<td valign='top' border='0' width='2%'></td>"+
-                                 "</tr>"+
-                                 "</table>" +
-                                "<table width='100%' border='0' align='center' height='30' cellspacing='50' class='tbl_form'>"+
-                                 "<tr class='sep'>"+
-                                    "<td valign='top' border='0' width='2%'></td>"+
-                                    "<td valign='top' border='0' width='14%'></td>"+
-                                    "<td valign='top' border='0' width='1%' align='right'></td>"+
-                                    "<td valign='top' border='0' width='36%' align='left'></td>"+
-                                    "<td valign='top' border='0' width='2%'></td>"+
-                                 "</tr>" +
-                                  "</table>" +
-                                "<table width='100%' border='0' align='center' height='30' cellspacing='40' class='tbl_form'>"+
-                                 "<tr class='sep'>"+
-                                    "<td valign='top' border='0' width='2%'></td>"+
-                                    "<td valign='top' border='0' width='14%'></td>"+
-                                    "<td valign='top' border='0' width='1%' align='right'></td>"+
-                                    "<td valign='top' border='0' width='36%' align='left'></td>"+
-                                    "<td valign='top' border='0' width='2%'></td>"+
-                                 "</tr>" +
-                                  "</table>" +
-                                "<table width='100%' border='0' align='center' height='30' cellspacing='50' class='tbl_form'>"+
-                                 "<tr class='sep'>"+
-                                    "<td valign='top' border='0' width='2%'></td>"+
-                                    "<td valign='top' border='0' width='14%'></td>"+
-                                    "<td valign='top' border='0' width='1%' align='right'></td>"+
-                                    "<td valign='top' border='0' width='36%' align='left'></td>"+
-                                    "<td valign='top' border='0' width='2%'></td>"+
-                                 "</tr>" +
-                                 "</table>" +
-                                "<table width='100%' border='0' style='border-bottom:3px solid #87b5ed;' align='center' height='30' cellspacing='50' class='tbl_form'>"+
+//                                "<table width='100%' border='0' height='30' cellspacing='20' class='tbl_form'>"+
+//                                 "<tr class='sep'>"+
+//                                    "<td valign='top' border='0' width='2%'></td>"+
+//                                    "<td valign='top' border='0' width='14%'></td>"+
+//                                    "<td valign='top' border='0' width='1%' align='right'></td>"+
+//                                    "<td valign='top' border='0' width='36%' align='left'></td>"+
+//                                    "<td valign='top' border='0' width='2%'></td>"+
+//                                 "</tr>"+
+//                                 "</table>" +
+//                                "<table width='100%' border='0' align='center' height='30' cellspacing='50' class='tbl_form'>"+
+//                                 "<tr class='sep'>"+
+//                                    "<td valign='top' border='0' width='2%'></td>"+
+//                                    "<td valign='top' border='0' width='14%'></td>"+
+//                                    "<td valign='top' border='0' width='1%' align='right'></td>"+
+//                                    "<td valign='top' border='0' width='36%' align='left'></td>"+
+//                                    "<td valign='top' border='0' width='2%'></td>"+
+//                                 "</tr>" +
+//                                  "</table>" +
+//                                "<table width='100%' border='0' align='center' height='30' cellspacing='40' class='tbl_form'>"+
+//                                 "<tr class='sep'>"+
+//                                    "<td valign='top' border='0' width='2%'></td>"+
+//                                    "<td valign='top' border='0' width='14%'></td>"+
+//                                    "<td valign='top' border='0' width='1%' align='right'></td>"+
+//                                    "<td valign='top' border='0' width='36%' align='left'></td>"+
+//                                    "<td valign='top' border='0' width='2%'></td>"+
+//                                 "</tr>" +
+//                                  "</table>" +
+//                                "<table width='100%' border='0' align='center' height='30' cellspacing='50' class='tbl_form'>"+
+//                                 "<tr class='sep'>"+
+//                                    "<td valign='top' border='0' width='2%'></td>"+
+//                                    "<td valign='top' border='0' width='14%'></td>"+
+//                                    "<td valign='top' border='0' width='1%' align='right'></td>"+
+//                                    "<td valign='top' border='0' width='36%' align='left'></td>"+
+//                                    "<td valign='top' border='0' width='2%'></td>"+
+//                                 "</tr>" +
+//                                 "</table>" +
+                                "<table width='100%' border='0' style='border-bottom:3px solid #87b5ed;' align='center' height='30' cellspacing='10' class='tbl_form'>"+
                                  "<tr class='sep'>"+
                                     "<td valign='top' border='0' width='2%'></td>"+
                                     "<td valign='top' border='0' width='14%'></td>"+
@@ -2696,48 +2699,49 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                                     "<p> Tanda Verifikasi </p>"+
                                     "<p> DPJP/dr. Pemeriksa </p>"+
                                     "<img width='70' height='70' src='http://"+koneksiDB.HOSTHYBRIDWEB()+":"+koneksiDB.PORTWEB()+"/"+koneksiDB.HYBRIDWEB()+"/penggajian/temp/"+rs2.getString("kd_dokter")+".png'/>"+
+//                                    "<br><br><br>" + 
                                     "<p>"+rs2.getString("nm_dokter")+"</p>"+
                                     "</div>"+
                                             
                                     "</td>"+
                                  "</tr>"+
                                 "</table>" +
-                                "<table width='100%' border='0' height='30' cellspacing='20' class='tbl_form'>"+
-                                 "<tr class='sep'>"+
-                                    "<td valign='top' border='0' width='2%'></td>"+
-                                    "<td valign='top' border='0' width='14%'></td>"+
-                                    "<td valign='top' border='0' width='1%' align='right'></td>"+
-                                    "<td valign='top' border='0' width='36%' align='left'></td>"+
-                                    "<td valign='top' border='0' width='2%'></td>"+
-                                 "</tr>"+
-                                 "</table>" +
-                                "<table width='100%' border='0' align='center' height='30' cellspacing='50' class='tbl_form'>"+
-                                 "<tr class='sep'>"+
-                                    "<td valign='top' border='0' width='2%'></td>"+
-                                    "<td valign='top' border='0' width='14%'></td>"+
-                                    "<td valign='top' border='0' width='1%' align='right'></td>"+
-                                    "<td valign='top' border='0' width='36%' align='left'></td>"+
-                                    "<td valign='top' border='0' width='2%'></td>"+
-                                 "</tr>" +
-                                  "</table>" +
-                                "<table width='100%' border='0' align='center' height='30' cellspacing='40' class='tbl_form'>"+
-                                 "<tr class='sep'>"+
-                                    "<td valign='top' border='0' width='2%'></td>"+
-                                    "<td valign='top' border='0' width='14%'></td>"+
-                                    "<td valign='top' border='0' width='1%' align='right'></td>"+
-                                    "<td valign='top' border='0' width='36%' align='left'></td>"+
-                                    "<td valign='top' border='0' width='2%'></td>"+
-                                 "</tr>" +
-                                  "</table>" +
-                                "<table width='100%' border='0' align='center' height='30' cellspacing='50' class='tbl_form'>"+
-                                 "<tr class='sep'>"+
-                                    "<td valign='top' border='0' width='2%'></td>"+
-                                    "<td valign='top' border='0' width='14%'></td>"+
-                                    "<td valign='top' border='0' width='1%' align='right'></td>"+
-                                    "<td valign='top' border='0' width='36%' align='left'></td>"+
-                                    "<td valign='top' border='0' width='2%'></td>"+
-                                 "</tr>" +
-                                 "</table>" +
+//                                "<table width='100%' border='0' height='30' cellspacing='20' class='tbl_form'>"+
+//                                 "<tr class='sep'>"+
+//                                    "<td valign='top' border='0' width='2%'></td>"+
+//                                    "<td valign='top' border='0' width='14%'></td>"+
+//                                    "<td valign='top' border='0' width='1%' align='right'></td>"+
+//                                    "<td valign='top' border='0' width='36%' align='left'></td>"+
+//                                    "<td valign='top' border='0' width='2%'></td>"+
+//                                 "</tr>"+
+//                                 "</table>" +
+//                                "<table width='100%' border='0' align='center' height='30' cellspacing='50' class='tbl_form'>"+
+//                                 "<tr class='sep'>"+
+//                                    "<td valign='top' border='0' width='2%'></td>"+
+//                                    "<td valign='top' border='0' width='14%'></td>"+
+//                                    "<td valign='top' border='0' width='1%' align='right'></td>"+
+//                                    "<td valign='top' border='0' width='36%' align='left'></td>"+
+//                                    "<td valign='top' border='0' width='2%'></td>"+
+//                                 "</tr>" +
+//                                  "</table>" +
+//                                "<table width='100%' border='0' align='center' height='30' cellspacing='40' class='tbl_form'>"+
+//                                 "<tr class='sep'>"+
+//                                    "<td valign='top' border='0' width='2%'></td>"+
+//                                    "<td valign='top' border='0' width='14%'></td>"+
+//                                    "<td valign='top' border='0' width='1%' align='right'></td>"+
+//                                    "<td valign='top' border='0' width='36%' align='left'></td>"+
+//                                    "<td valign='top' border='0' width='2%'></td>"+
+//                                 "</tr>" +
+//                                  "</table>" +
+//                                "<table width='100%' border='0' align='center' height='30' cellspacing='50' class='tbl_form'>"+
+//                                 "<tr class='sep'>"+
+//                                    "<td valign='top' border='0' width='2%'></td>"+
+//                                    "<td valign='top' border='0' width='14%'></td>"+
+//                                    "<td valign='top' border='0' width='1%' align='right'></td>"+
+//                                    "<td valign='top' border='0' width='36%' align='left'></td>"+
+//                                    "<td valign='top' border='0' width='2%'></td>"+
+//                                 "</tr>" +
+//                                 "</table>" +
                                 "<table width='100%' border='0' style='border-bottom:3px solid #87b5ed;' align='center' height='30' cellspacing='50' class='tbl_form'>"+
                                  "<tr class='sep'>"+
                                     "<td valign='top' border='0' width='2%'></td>"+
@@ -2922,6 +2926,7 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                                     "<p> Tanda Verifikasi </p>"+
                                     "<p> Dokter Jaga IGD / Poliklinik </p>"+
                                     "<img width='70' height='70' src='http://"+koneksiDB.HOSTHYBRIDWEB()+":"+koneksiDB.PORTWEB()+"/"+koneksiDB.HYBRIDWEB()+"/penggajian/temp/"+rs2.getString("kd_dokter")+".png'/>"+
+//                                    "<br><br><br>"+ 
                                     "<p>"+rs2.getString("nm_dokter")+"</p>"+
                                     "</div>"+
                                     "</td>"+
@@ -3187,49 +3192,50 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                                     "<p> Tanda Verifikasi </p>"+
                                     "<p> Dokter Sp.KFR</p>"+
                                     "<img width='70' height='70' src='http://"+koneksiDB.HOSTHYBRIDWEB()+":"+koneksiDB.PORTWEB()+"/"+koneksiDB.HYBRIDWEB()+"/penggajian/temp/"+rs2.getString("kd_dokter")+".png'/>"+
-                                    "<p>"+rs2.getString("nm_dokter")+"</p>"+
+//                                    "<br><br><br>" + 
+                                     "<p>"+rs2.getString("nm_dokter")+"</p>"+
                                     "</div>"+
                                             
                                     "</td>"+
                                  "</tr>"+
                                 "</table>" +
-                                "<table width='100%' border='0' height='30' cellspacing='10' class='tbl_form'>"+
-                                 "<tr class='sep'>"+
-                                    "<td valign='top' border='0' width='2%'></td>"+
-                                    "<td valign='top' border='0' width='14%'></td>"+
-                                    "<td valign='top' border='0' width='1%' align='right'></td>"+
-                                    "<td valign='top' border='0' width='36%' align='left'></td>"+
-                                    "<td valign='top' border='0' width='2%'></td>"+
-                                 "</tr>"+
-                                 "</table>" +
-                                "<table width='100%' border='0' align='center' height='30' cellspacing='50' class='tbl_form'>"+
-                                 "<tr class='sep'>"+
-                                    "<td valign='top' border='0' width='2%'></td>"+
-                                    "<td valign='top' border='0' width='14%'></td>"+
-                                    "<td valign='top' border='0' width='1%' align='right'></td>"+
-                                    "<td valign='top' border='0' width='36%' align='left'></td>"+
-                                    "<td valign='top' border='0' width='2%'></td>"+
-                                 "</tr>" +
-                                  "</table>" +
-                                "<table width='100%' border='0' align='center' height='30' cellspacing='50' class='tbl_form'>"+
-                                 "<tr class='sep'>"+
-                                    "<td valign='top' border='0' width='2%'></td>"+
-                                    "<td valign='top' border='0' width='14%'></td>"+
-                                    "<td valign='top' border='0' width='1%' align='right'></td>"+
-                                    "<td valign='top' border='0' width='36%' align='left'></td>"+
-                                    "<td valign='top' border='0' width='2%'></td>"+
-                                 "</tr>" +
-                                  "</table>" +
-                                "<table width='100%' border='0' align='center' height='30' cellspacing='30' class='tbl_form'>"+
-                                 "<tr class='sep'>"+
-                                    "<td valign='top' border='0' width='2%'></td>"+
-                                    "<td valign='top' border='0' width='14%'></td>"+
-                                    "<td valign='top' border='0' width='1%' align='right'></td>"+
-                                    "<td valign='top' border='0' width='36%' align='left'></td>"+
-                                    "<td valign='top' border='0' width='2%'></td>"+
-                                 "</tr>" +
-                                 "</table>" +
-                                "<table width='100%' border='0' style='border-bottom:3px solid #87b5ed;' align='center' height='30' cellspacing='30' class='tbl_form'>"+
+//                                "<table width='100%' border='0' height='30' cellspacing='10' class='tbl_form'>"+
+//                                 "<tr class='sep'>"+
+//                                    "<td valign='top' border='0' width='2%'></td>"+
+//                                    "<td valign='top' border='0' width='14%'></td>"+
+//                                    "<td valign='top' border='0' width='1%' align='right'></td>"+
+//                                    "<td valign='top' border='0' width='36%' align='left'></td>"+
+//                                    "<td valign='top' border='0' width='2%'></td>"+
+//                                 "</tr>"+
+//                                 "</table>" +
+//                                "<table width='100%' border='0' align='center' height='30' cellspacing='50' class='tbl_form'>"+
+//                                 "<tr class='sep'>"+
+//                                    "<td valign='top' border='0' width='2%'></td>"+
+//                                    "<td valign='top' border='0' width='14%'></td>"+
+//                                    "<td valign='top' border='0' width='1%' align='right'></td>"+
+//                                    "<td valign='top' border='0' width='36%' align='left'></td>"+
+//                                    "<td valign='top' border='0' width='2%'></td>"+
+//                                 "</tr>" +
+//                                  "</table>" +
+//                                "<table width='100%' border='0' align='center' height='30' cellspacing='50' class='tbl_form'>"+
+//                                 "<tr class='sep'>"+
+//                                    "<td valign='top' border='0' width='2%'></td>"+
+//                                    "<td valign='top' border='0' width='14%'></td>"+
+//                                    "<td valign='top' border='0' width='1%' align='right'></td>"+
+//                                    "<td valign='top' border='0' width='36%' align='left'></td>"+
+//                                    "<td valign='top' border='0' width='2%'></td>"+
+//                                 "</tr>" +
+//                                  "</table>" +
+//                                "<table width='100%' border='0' align='center' height='30' cellspacing='30' class='tbl_form'>"+
+//                                 "<tr class='sep'>"+
+//                                    "<td valign='top' border='0' width='2%'></td>"+
+//                                    "<td valign='top' border='0' width='14%'></td>"+
+//                                    "<td valign='top' border='0' width='1%' align='right'></td>"+
+//                                    "<td valign='top' border='0' width='36%' align='left'></td>"+
+//                                    "<td valign='top' border='0' width='2%'></td>"+
+//                                 "</tr>" +
+//                                 "</table>" +
+                                "<table width='100%' border='0' style='border-bottom:3px solid #87b5ed;' align='center' height='30' cellspacing='20' class='tbl_form'>"+
                                  "<tr class='sep'>"+
                                     "<td valign='top' border='0' width='2%'></td>"+
                                     "<td valign='top' border='0' width='14%'></td>"+
@@ -3400,6 +3406,7 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                                     "<td valign='top' width='35%' align='center'>"+
                                     "<div> "+
                                     "<img width='70' height='70' src='http://"+koneksiDB.HOSTHYBRIDWEB()+":"+koneksiDB.PORTWEB()+"/"+koneksiDB.HYBRIDWEB()+"/penggajian/temp/"+rs2.getString("nip")+".png'/>"+
+//                                    "<br><br><br>"+
                                     "<p>"+rs2.getString("nama")+"</p>"+
                                     "</div>"+
                                      "</td>"+
@@ -3435,39 +3442,40 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                                     "<p> Tanda Verifikasi </p>"+
                                     "<p> Dokter Sp.KFR</p>"+
                                     "<img width='70' height='70' src='http://"+koneksiDB.HOSTHYBRIDWEB()+":"+koneksiDB.PORTWEB()+"/"+koneksiDB.HYBRIDWEB()+"/penggajian/temp/"+rs2.getString("kd_dokter")+".png'/>"+
+//                                    "<br><br><br>"+ 
                                     "<p>"+rs2.getString("nm_dokter")+"</p>"+
                                     "</div>"+             
                                     "</td>"+
                                  "</tr>"+
                                 "</table>" +
                                 
-                                "<table width='100%' border='0' align='center' height='30' cellspacing='40' class='tbl_form'>"+
-                                 "<tr class='sep'>"+
-                                    "<td valign='top' border='0' width='2%'></td>"+
-                                    "<td valign='top' border='0' width='14%'></td>"+
-                                    "<td valign='top' border='0' width='1%' align='right'></td>"+
-                                    "<td valign='top' border='0' width='36%' align='left'></td>"+
-                                    "<td valign='top' border='0' width='2%'></td>"+
-                                 "</tr>"+
-                                "</table>" +
-                                 "<table width='100%' border='0' align='center' height='30' cellspacing='40' class='tbl_form'>"+
-                                 "<tr class='sep'>"+
-                                    "<td valign='top' border='0' width='2%'></td>"+
-                                    "<td valign='top' border='0' width='14%'></td>"+
-                                    "<td valign='top' border='0' width='1%' align='right'></td>"+
-                                    "<td valign='top' border='0' width='36%' align='left'></td>"+
-                                    "<td valign='top' border='0' width='2%'></td>"+
-                                 "</tr>"+
-                                "</table>" +
-                                "<table width='100%' border='0' align='center' height='30' cellspacing='30' class='tbl_form'>"+
-                                 "<tr class='sep'>"+
-                                    "<td valign='top' border='0' width='2%'></td>"+
-                                    "<td valign='top' border='0' width='14%'></td>"+
-                                    "<td valign='top' border='0' width='1%' align='right'></td>"+
-                                    "<td valign='top' border='0' width='36%' align='left'></td>"+
-                                    "<td valign='top' border='0' width='2%'></td>"+
-                                 "</tr>"+
-                                "</table>" +  
+//                                "<table width='100%' border='0' align='center' height='30' cellspacing='40' class='tbl_form'>"+
+//                                 "<tr class='sep'>"+
+//                                    "<td valign='top' border='0' width='2%'></td>"+
+//                                    "<td valign='top' border='0' width='14%'></td>"+
+//                                    "<td valign='top' border='0' width='1%' align='right'></td>"+
+//                                    "<td valign='top' border='0' width='36%' align='left'></td>"+
+//                                    "<td valign='top' border='0' width='2%'></td>"+
+//                                 "</tr>"+
+//                                "</table>" +
+//                                 "<table width='100%' border='0' align='center' height='30' cellspacing='40' class='tbl_form'>"+
+//                                 "<tr class='sep'>"+
+//                                    "<td valign='top' border='0' width='2%'></td>"+
+//                                    "<td valign='top' border='0' width='14%'></td>"+
+//                                    "<td valign='top' border='0' width='1%' align='right'></td>"+
+//                                    "<td valign='top' border='0' width='36%' align='left'></td>"+
+//                                    "<td valign='top' border='0' width='2%'></td>"+
+//                                 "</tr>"+
+//                                "</table>" +
+//                                "<table width='100%' border='0' align='center' height='30' cellspacing='30' class='tbl_form'>"+
+//                                 "<tr class='sep'>"+
+//                                    "<td valign='top' border='0' width='2%'></td>"+
+//                                    "<td valign='top' border='0' width='14%'></td>"+
+//                                    "<td valign='top' border='0' width='1%' align='right'></td>"+
+//                                    "<td valign='top' border='0' width='36%' align='left'></td>"+
+//                                    "<td valign='top' border='0' width='2%'></td>"+
+//                                 "</tr>"+
+//                                "</table>" +  
                                 "<table width='100%' border='0' style='border-bottom:3px solid #87b5ed;' align='center' height='40' cellspacing='20' class='tbl_form'>"+
                                  "<tr class='sep'>"+
                                     "<td valign='top' border='0' width='2%'></td>"+
@@ -3679,6 +3687,7 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                                     "<td valign='top' width='40%' align='center'>"+
                                     "<div> "+
                                     "<img width='70' height='70' src='http://"+koneksiDB.HOSTHYBRIDWEB()+":"+koneksiDB.PORTWEB()+"/"+koneksiDB.HYBRIDWEB()+"/penggajian/temp/"+rs2.getString("nip")+".png'/>"+
+//                                    "<br><br><br>"+ 
                                     "<p>"+rs2.getString("nama")+"</p>"+
                                     "</div>"+  
                                      "</td>"+
@@ -4009,6 +4018,7 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                                     "<td valign='top' width='40%' align='center'>"+
                                     "<div> "+
                                     "<img width='70' height='70' src='http://"+koneksiDB.HOSTHYBRIDWEB()+":"+koneksiDB.PORTWEB()+"/"+koneksiDB.HYBRIDWEB()+"/penggajian/temp/"+rs2.getString("kd_dokter")+".png'/>"+
+//                                    "<br><br><br>"+
                                     "<p>"+rs2.getString("nm_dokter")+"</p>"+
                                     "</div>"+  
                                     "</td>"+
@@ -4016,6 +4026,7 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                                     "<td valign='top' width='40%' align='center'>"+
                                     "<div> "+
                                     "<img width='70' height='70' src='http://"+koneksiDB.HOSTHYBRIDWEB()+":"+koneksiDB.PORTWEB()+"/"+koneksiDB.HYBRIDWEB()+"/penggajian/temp/"+rs2.getString("nip")+".png'/>"+
+//                                    "<br><br><br>"+ 
                                     "<p>"+rs2.getString("nama")+"</p>"+
                                     "</div>"+  
                                      "</td>"+
@@ -4731,6 +4742,7 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                                     "<p> Semarang, " +rs2.getString("tanggal")+" "+rs2.getString("jam")+"</p>"+
                                     "<p> Tanda Verifikasi </p>"+
                                     "<img width='70' height='70' src='http://"+koneksiDB.HOSTHYBRIDWEB()+":"+koneksiDB.PORTWEB()+"/"+koneksiDB.HYBRIDWEB()+"/penggajian/temp/001.png'/>"+
+//                                    "<br><br><br>"+ 
                                     "<p>( Admin Kasir )</p>"+
                                     "</div>"+
                                     "</td>"+
@@ -4743,42 +4755,42 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                                     "<td valign='top' border='0' width='1%' align='right'></td>"+
                                     "<td valign='top' border='0' width='36%' align='left'></td>"+
                                     "<td valign='top' border='0' width='2%'></td>"+
-                                 "</tr>" +
-                                 "</table>" +
-                                 "<table width='100%' border='0' align='center' height='30' cellspacing='40' class='tbl_form'>"+
-                                 "<tr class='sep'>"+
-                                    "<td valign='top' border='0' width='2%'></td>"+
-                                    "<td valign='top' border='0' width='14%'></td>"+
-                                    "<td valign='top' border='0' width='1%' align='right'></td>"+
-                                    "<td valign='top' border='0' width='36%' align='left'></td>"+
-                                    "<td valign='top' border='0' width='2%'></td>"+
-                                 "</tr>" +
-                                 "</table>" +
-                                 "<table width='100%' border='0' align='center' height='30' cellspacing='40' class='tbl_form'>"+
-                                 "<tr class='sep'>"+
-                                    "<td valign='top' border='0' width='2%'></td>"+
-                                    "<td valign='top' border='0' width='14%'></td>"+
-                                    "<td valign='top' border='0' width='1%' align='right'></td>"+
-                                    "<td valign='top' border='0' width='36%' align='left'></td>"+
-                                    "<td valign='top' border='0' width='2%'></td>"+
-                                 "</tr>" +
-                                 "</table>" +
-                                 "<table width='100%' border='0' align='center' height='30' cellspacing='40' class='tbl_form'>"+
-                                 "<tr class='sep'>"+
-                                    "<td valign='top' border='0' width='2%'></td>"+
-                                    "<td valign='top' border='0' width='14%'></td>"+
-                                    "<td valign='top' border='0' width='1%' align='right'></td>"+
-                                    "<td valign='top' border='0' width='36%' align='left'></td>"+
-                                    "<td valign='top' border='0' width='2%'></td>"+
-                                 "</tr>" +
-                                 "</table>" +
-                                "<table width='100%' border='0' style='border-bottom:3px solid #87b5ed;' align='center' height='30' cellspacing='50' class='tbl_form'>"+
-                                 "<tr class='sep'>"+
-                                    "<td valign='top' border='0' width='2%'></td>"+
-                                    "<td valign='top' border='0' width='14%'></td>"+
-                                    "<td valign='top' border='0' width='1%' align='right'></td>"+
-                                    "<td valign='top' border='0' width='36%' align='left'></td>"+
-                                    "<td valign='top' border='0' width='2%'></td>"+
+//                                 "</tr>" +
+//                                 "</table>" +
+//                                 "<table width='100%' border='0' align='center' height='30' cellspacing='40' class='tbl_form'>"+
+//                                 "<tr class='sep'>"+
+//                                    "<td valign='top' border='0' width='2%'></td>"+
+//                                    "<td valign='top' border='0' width='14%'></td>"+
+//                                    "<td valign='top' border='0' width='1%' align='right'></td>"+
+//                                    "<td valign='top' border='0' width='36%' align='left'></td>"+
+//                                    "<td valign='top' border='0' width='2%'></td>"+
+//                                 "</tr>" +
+//                                 "</table>" +
+//                                 "<table width='100%' border='0' align='center' height='30' cellspacing='40' class='tbl_form'>"+
+//                                 "<tr class='sep'>"+
+//                                    "<td valign='top' border='0' width='2%'></td>"+
+//                                    "<td valign='top' border='0' width='14%'></td>"+
+//                                    "<td valign='top' border='0' width='1%' align='right'></td>"+
+//                                    "<td valign='top' border='0' width='36%' align='left'></td>"+
+//                                    "<td valign='top' border='0' width='2%'></td>"+
+//                                 "</tr>" +
+//                                 "</table>" +
+//                                 "<table width='100%' border='0' align='center' height='30' cellspacing='40' class='tbl_form'>"+
+//                                 "<tr class='sep'>"+
+//                                    "<td valign='top' border='0' width='2%'></td>"+
+//                                    "<td valign='top' border='0' width='14%'></td>"+
+//                                    "<td valign='top' border='0' width='1%' align='right'></td>"+
+//                                    "<td valign='top' border='0' width='36%' align='left'></td>"+
+//                                    "<td valign='top' border='0' width='2%'></td>"+
+//                                 "</tr>" +
+//                                 "</table>" +
+//                                "<table width='100%' border='0' style='border-bottom:3px solid #87b5ed;' align='center' height='30' cellspacing='50' class='tbl_form'>"+
+//                                 "<tr class='sep'>"+
+//                                    "<td valign='top' border='0' width='2%'></td>"+
+//                                    "<td valign='top' border='0' width='14%'></td>"+
+//                                    "<td valign='top' border='0' width='1%' align='right'></td>"+
+//                                    "<td valign='top' border='0' width='36%' align='left'></td>"+
+//                                    "<td valign='top' border='0' width='2%'></td>"+
                                  "</tr>"  
                             );                                     
                             w++;
@@ -5445,6 +5457,7 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                                     "<p> Semarang, " +rs2.getString("tanggal")+" "+rs2.getString("jam")+"</p>"+
                                     "<p> Tanda Verifikasi </p>"+
                                     "<img width='70' height='70' src='http://"+koneksiDB.HOSTHYBRIDWEB()+":"+koneksiDB.PORTWEB()+"/"+koneksiDB.HYBRIDWEB()+"/penggajian/temp/001.png'/>"+
+//                                    "<br><br><br>"+ 
                                     "<p>( Admin Kasir )</p>"+
                                     "</div>"+
                                     "</td>"+
@@ -5466,33 +5479,33 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                                     "<td valign='top' border='0' width='1%' align='right'></td>"+
                                     "<td valign='top' border='0' width='36%' align='left'></td>"+
                                     "<td valign='top' border='0' width='2%'></td>"+
-                                 "</tr>" +
-                                 "</table>" +
-                                 "<table width='100%' border='0' align='center' height='30' cellspacing='40' class='tbl_form'>"+
-                                 "<tr class='sep'>"+
-                                    "<td valign='top' border='0' width='2%'></td>"+
-                                    "<td valign='top' border='0' width='14%'></td>"+
-                                    "<td valign='top' border='0' width='1%' align='right'></td>"+
-                                    "<td valign='top' border='0' width='36%' align='left'></td>"+
-                                    "<td valign='top' border='0' width='2%'></td>"+
-                                 "</tr>" +
-                                 "</table>" +
-                                 "<table width='100%' border='0' align='center' height='30' cellspacing='40' class='tbl_form'>"+
-                                 "<tr class='sep'>"+
-                                    "<td valign='top' border='0' width='2%'></td>"+
-                                    "<td valign='top' border='0' width='14%'></td>"+
-                                    "<td valign='top' border='0' width='1%' align='right'></td>"+
-                                    "<td valign='top' border='0' width='36%' align='left'></td>"+
-                                    "<td valign='top' border='0' width='2%'></td>"+
-                                 "</tr>" +
-                                 "</table>" +
-                                "<table width='100%' border='0' style='border-bottom:3px solid #87b5ed;' align='center' height='30' cellspacing='50' class='tbl_form'>"+
-                                 "<tr class='sep'>"+
-                                    "<td valign='top' border='0' width='2%'></td>"+
-                                    "<td valign='top' border='0' width='14%'></td>"+
-                                    "<td valign='top' border='0' width='1%' align='right'></td>"+
-                                    "<td valign='top' border='0' width='36%' align='left'></td>"+
-                                    "<td valign='top' border='0' width='2%'></td>"+
+//                                 "</tr>" +
+//                                 "</table>" +
+//                                 "<table width='100%' border='0' align='center' height='30' cellspacing='40' class='tbl_form'>"+
+//                                 "<tr class='sep'>"+
+//                                    "<td valign='top' border='0' width='2%'></td>"+
+//                                    "<td valign='top' border='0' width='14%'></td>"+
+//                                    "<td valign='top' border='0' width='1%' align='right'></td>"+
+//                                    "<td valign='top' border='0' width='36%' align='left'></td>"+
+//                                    "<td valign='top' border='0' width='2%'></td>"+
+//                                 "</tr>" +
+//                                 "</table>" +
+//                                 "<table width='100%' border='0' align='center' height='30' cellspacing='40' class='tbl_form'>"+
+//                                 "<tr class='sep'>"+
+//                                    "<td valign='top' border='0' width='2%'></td>"+
+//                                    "<td valign='top' border='0' width='14%'></td>"+
+//                                    "<td valign='top' border='0' width='1%' align='right'></td>"+
+//                                    "<td valign='top' border='0' width='36%' align='left'></td>"+
+//                                    "<td valign='top' border='0' width='2%'></td>"+
+//                                 "</tr>" +
+//                                 "</table>" +
+//                                "<table width='100%' border='0' style='border-bottom:3px solid #87b5ed;' align='center' height='30' cellspacing='50' class='tbl_form'>"+
+//                                 "<tr class='sep'>"+
+//                                    "<td valign='top' border='0' width='2%'></td>"+
+//                                    "<td valign='top' border='0' width='14%'></td>"+
+//                                    "<td valign='top' border='0' width='1%' align='right'></td>"+
+//                                    "<td valign='top' border='0' width='36%' align='left'></td>"+
+//                                    "<td valign='top' border='0' width='2%'></td>"+
                                  "</tr>"  
                             );                                     
                             w++;
