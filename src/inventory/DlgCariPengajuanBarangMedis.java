@@ -191,6 +191,7 @@ public class DlgCariPengajuanBarangMedis extends javax.swing.JDialog {
         ppProsesPengajuan = new javax.swing.JMenuItem();
         ppDisetujui = new javax.swing.JMenuItem();
         ppDitolak = new javax.swing.JMenuItem();
+        ppSurat = new javax.swing.JMenuItem();
         internalFrame1 = new widget.InternalFrame();
         scrollPane1 = new widget.ScrollPane();
         tbDokter = new widget.Table();
@@ -231,7 +232,7 @@ public class DlgCariPengajuanBarangMedis extends javax.swing.JDialog {
 
         ppHapus.setBackground(new java.awt.Color(255, 255, 254));
         ppHapus.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
-        ppHapus.setForeground(new java.awt.Color(50,50,50));
+        ppHapus.setForeground(new java.awt.Color(50, 50, 50));
         ppHapus.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/category.png"))); // NOI18N
         ppHapus.setText("Hapus Pengajuan Barang");
         ppHapus.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -247,7 +248,7 @@ public class DlgCariPengajuanBarangMedis extends javax.swing.JDialog {
 
         ppProsesPengajuan.setBackground(new java.awt.Color(255, 255, 254));
         ppProsesPengajuan.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
-        ppProsesPengajuan.setForeground(new java.awt.Color(50,50,50));
+        ppProsesPengajuan.setForeground(new java.awt.Color(50, 50, 50));
         ppProsesPengajuan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/category.png"))); // NOI18N
         ppProsesPengajuan.setText("Proses Pengajuan");
         ppProsesPengajuan.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -263,7 +264,7 @@ public class DlgCariPengajuanBarangMedis extends javax.swing.JDialog {
 
         ppDisetujui.setBackground(new java.awt.Color(255, 255, 254));
         ppDisetujui.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
-        ppDisetujui.setForeground(new java.awt.Color(50,50,50));
+        ppDisetujui.setForeground(new java.awt.Color(50, 50, 50));
         ppDisetujui.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/category.png"))); // NOI18N
         ppDisetujui.setText("Disetujui");
         ppDisetujui.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -279,7 +280,7 @@ public class DlgCariPengajuanBarangMedis extends javax.swing.JDialog {
 
         ppDitolak.setBackground(new java.awt.Color(255, 255, 254));
         ppDitolak.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
-        ppDitolak.setForeground(new java.awt.Color(50,50,50));
+        ppDitolak.setForeground(new java.awt.Color(50, 50, 50));
         ppDitolak.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/category.png"))); // NOI18N
         ppDitolak.setText("Ditolak");
         ppDitolak.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -293,6 +294,22 @@ public class DlgCariPengajuanBarangMedis extends javax.swing.JDialog {
         });
         jPopupMenu1.add(ppDitolak);
 
+        ppSurat.setBackground(new java.awt.Color(255, 255, 254));
+        ppSurat.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        ppSurat.setForeground(new java.awt.Color(50, 50, 50));
+        ppSurat.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/category.png"))); // NOI18N
+        ppSurat.setText("Surat dan Simpan SP ");
+        ppSurat.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        ppSurat.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        ppSurat.setName("ppSurat"); // NOI18N
+        ppSurat.setPreferredSize(new java.awt.Dimension(200, 25));
+        ppSurat.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ppSuratActionPerformed(evt);
+            }
+        });
+        jPopupMenu1.add(ppSurat);
+
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setUndecorated(true);
         setResizable(false);
@@ -302,7 +319,7 @@ public class DlgCariPengajuanBarangMedis extends javax.swing.JDialog {
             }
         });
 
-        internalFrame1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(240, 245, 235)), "::[ Cari Pengajuan Pengadaan/Pembelian Obat/Alkes/BHP Medis ]::", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(50,50,50))); // NOI18N
+        internalFrame1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(240, 245, 235)), "::[ Cari Pengajuan Pengadaan/Pembelian Obat/Alkes/BHP Medis ]::", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(50, 50, 50))); // NOI18N
         internalFrame1.setName("internalFrame1"); // NOI18N
         internalFrame1.setLayout(new java.awt.BorderLayout(1, 1));
 
@@ -822,15 +839,6 @@ private void ppHapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST
                 JOptionPane.showMessageDialog(null,"Data pengajuan sudah tervalidasi..!!");
             }else{
                 Sequel.queryu("update pengajuan_barang_medis set status='Disetujui' where no_pengajuan=?",tbDokter.getValueAt(tbDokter.getSelectedRow(),1).toString().trim());
-                this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
-                InventorySuratPemesanan aplikasi=new InventorySuratPemesanan(null,false);
-                aplikasi.tampilkan=false;
-                aplikasi.isCek();
-                aplikasi.panggilgetData(tbDokter.getValueAt(tbDokter.getSelectedRow(),1).toString().trim());
-                aplikasi.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
-                aplikasi.setLocationRelativeTo(internalFrame1);
-                aplikasi.setVisible(true);
-                this.setCursor(Cursor.getDefaultCursor());
                 tampil();
             }
         }
@@ -844,6 +852,28 @@ private void ppHapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST
             tampil();
         }
     }//GEN-LAST:event_ppDitolakActionPerformed
+
+    private void ppSuratActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ppSuratActionPerformed
+         if(Sequel.cariInteger("select count(no_pengajuan) from pengajuan_barang_medis where no_pengajuan=?",tbDokter.getValueAt(tbDokter.getSelectedRow(),1).toString().trim())==0){
+            Valid.textKosong(TCari,"pilihan data");
+        }else{
+             if(!tbDokter.getValueAt(tbDokter.getSelectedRow(),2).toString().equals("Disetujui")){
+                JOptionPane.showMessageDialog(null,"Data pengajuan belum disetujui");
+            }else{
+                this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+                InventorySuratPemesanan aplikasi=new InventorySuratPemesanan(null,false);
+                aplikasi.tampilkan=false;
+                aplikasi.isCek();
+                aplikasi.panggilgetData(tbDokter.getValueAt(tbDokter.getSelectedRow(),1).toString().trim());
+                aplikasi.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
+                aplikasi.setLocationRelativeTo(internalFrame1);
+                aplikasi.setVisible(true);
+                this.setCursor(Cursor.getDefaultCursor());
+                tampil();
+             }
+        }
+             
+    }//GEN-LAST:event_ppSuratActionPerformed
 
     /**
     * @param args the command line arguments
@@ -900,6 +930,7 @@ private void ppHapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST
     private javax.swing.JMenuItem ppDitolak;
     private javax.swing.JMenuItem ppHapus;
     private javax.swing.JMenuItem ppProsesPengajuan;
+    private javax.swing.JMenuItem ppSurat;
     private widget.ScrollPane scrollPane1;
     private widget.Table tbDokter;
     // End of variables declaration//GEN-END:variables
