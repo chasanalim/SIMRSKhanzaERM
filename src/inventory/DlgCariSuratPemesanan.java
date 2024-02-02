@@ -1218,17 +1218,118 @@ private void ppHapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST
         if(tbDokter.getValueAt(tbDokter.getSelectedRow(),0).toString().trim().equals("")){
             Valid.textKosong(TCari,"No.Pemesanan");
         }else{
-            DlgCetak.setLocationRelativeTo(internalFrame1);
-            DlgCetak.setVisible(true);
+//            DlgCetak.setLocationRelativeTo(internalFrame1);
+//            DlgCetak.setVisible(true);
+//              BtnPrint5ActionPerformed(null);
+              
+            if(tbDokter.getRowCount()==0){
+            JOptionPane.showMessageDialog(null,"Maaf, data sudah habis...!!!!");
+            TCari.requestFocus();
+            }else if(tbDokter.getRowCount()!=0){
+                this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+                Sequel.queryu("delete from temporary where temp37='"+akses.getalamatip()+"'");
+                try {
+                    ps=koneksi.prepareStatement(
+                        "select date_format(surat_pemesanan_medis.tanggal,'%d/%m/%Y') as tanggal,surat_pemesanan_medis.no_pemesanan, "+
+                        "surat_pemesanan_medis.kode_suplier,datasuplier.nama_suplier, "+
+                        "surat_pemesanan_medis.nip,pegawai.nama,"+
+                        "surat_pemesanan_medis.status,surat_pemesanan_medis.total2,"+
+                        "surat_pemesanan_medis.ppn,surat_pemesanan_medis.meterai,"+
+                        "surat_pemesanan_medis.tagihan from surat_pemesanan_medis "+
+                        "inner join datasuplier inner join pegawai  "+
+                        " inner join detail_surat_pemesanan_medis inner join databarang "+
+                        " inner join kodesatuan inner join jenis inner join industrifarmasi "+
+                        " on detail_surat_pemesanan_medis.kode_brng=databarang.kode_brng "+
+                        " and detail_surat_pemesanan_medis.kode_sat=kodesatuan.kode_sat "+
+                        " and surat_pemesanan_medis.no_pemesanan=detail_surat_pemesanan_medis.no_pemesanan "+
+                        " and surat_pemesanan_medis.kode_suplier=datasuplier.kode_suplier "+
+                        " and databarang.kode_industri=industrifarmasi.kode_industri "+
+                        " and surat_pemesanan_medis.nip=pegawai.nik and databarang.kdjns=jenis.kdjns"+
+                        " where surat_pemesanan_medis.no_pemesanan=? ");
+                    try {
+                        ps.setString(1,tbDokter.getValueAt(tbDokter.getSelectedRow(),0).toString());
+                        rs=ps.executeQuery();
+                        i=0;
+                        if(rs.next()){
+                            Map<String, Object> param = new HashMap<>();
+                            param.put("namars",akses.getnamars());
+                            param.put("alamatrs",akses.getalamatrs());
+                            param.put("kotars",akses.getkabupatenrs());
+                            param.put("propinsirs",akses.getpropinsirs());
+                            param.put("kontakrs",akses.getkontakrs());
+                            param.put("emailrs",akses.getemailrs());
+                            param.put("suplier",rs.getString("nama_suplier"));
+                            param.put("nomorpesan",rs.getString("no_pemesanan"));
+                            param.put("total",Valid.SetAngka(rs.getDouble("total2")));
+                            param.put("ppn",Valid.SetAngka(rs.getDouble("ppn")));
+                            param.put("meterai",Valid.SetAngka(rs.getDouble("meterai")));
+                            param.put("tagihan",Valid.SetAngka(rs.getDouble("tagihan")));
+                            param.put("tanggal",akses.getkabupatenrs()+", "+rs.getString("tanggal"));
+                            param.put("apoteker",Apoteker.getText());
+                            param.put("petugas",rs.getString("nama"));
+                            param.put("kabidkeu",KabidKeu.getText());
+                            param.put("logo",Sequel.cariGambar("select setting.logo from setting"));
+
+                            ps2=koneksi.prepareStatement("select detail_surat_pemesanan_medis.kode_brng,databarang.nama_brng,databarang.kode_sat as satuan2, "+
+                                "detail_surat_pemesanan_medis.kode_sat,kodesatuan.satuan,detail_surat_pemesanan_medis.jumlah,detail_surat_pemesanan_medis.h_pesan, "+
+                                "detail_surat_pemesanan_medis.subtotal,detail_surat_pemesanan_medis.dis,detail_surat_pemesanan_medis.besardis,detail_surat_pemesanan_medis.total,"+
+                                "industrifarmasi.nama_industri,detail_surat_pemesanan_medis.jumlah2 "+
+                                "from detail_surat_pemesanan_medis inner join databarang inner join kodesatuan inner join jenis inner join industrifarmasi "+
+                                " on detail_surat_pemesanan_medis.kode_brng=databarang.kode_brng and databarang.kdjns=jenis.kdjns "+
+                                " and databarang.kode_industri=industrifarmasi.kode_industri and detail_surat_pemesanan_medis.kode_sat=kodesatuan.kode_sat where "+
+                                " detail_surat_pemesanan_medis.no_pemesanan=? order by detail_surat_pemesanan_medis.kode_brng  ");
+                            try {
+                                ps2.setString(1,rs.getString("no_pemesanan"));
+                                rs2=ps2.executeQuery();
+                                while(rs2.next()){
+                                    Sequel.menyimpan(
+                                        "temporary","'"+i+"','"+rs2.getDouble("jumlah")+"','"+rs2.getString("satuan")+"','"+rs2.getString("kode_brng")+"','"+
+                                        rs2.getString("nama_brng")+"','"+rs2.getString("satuan2")+"','"+Valid.SetAngka(rs2.getDouble("h_pesan"))+"','"+
+                                        Valid.SetAngka(rs2.getDouble("subtotal"))+"','"+rs2.getDouble("dis")+"','"+Valid.SetAngka(rs2.getDouble("besardis"))+"','"+
+                                        Valid.SetAngka(rs2.getDouble("total"))+"','','','','','','','','','','','','','','','','','','','','','','','','','','','"+akses.getalamatip()+"'",
+                                        "Transaksi Pemesanan"
+                                    );
+                                    i++;
+                                }                        
+                            } catch (Exception e) {
+                                System.out.println("Notifikasi : "+e);
+                            } finally{
+                                if(rs2!=null){
+                                    rs2.close();
+                                }
+                                if(ps2!=null){
+                                    ps2.close();
+                                }
+                            }
+
+                            Valid.MyReportqry("rptSuratPemesanan.jasper","report","::[ Transaksi Pemesanan Barang ]::","select * from temporary where temporary.temp37='"+akses.getalamatip()+"' order by temporary.no",param);
+                            this.setCursor(Cursor.getDefaultCursor());
+                        }
+                    } catch (Exception e) {
+                        System.out.println("Notif : "+e);
+                    } finally{
+                        if(rs!=null){
+                            rs.close();
+                        }
+                        if(ps!=null){
+                            ps.close();
+                        }
+                    }
+                } catch (Exception e) {
+                    System.out.println("Notif : "+e);
+                }
+            }
         }
     }//GEN-LAST:event_ppSuratPemesananActionPerformed
 
     private void BtnPrint5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnPrint5ActionPerformed
-        if(Apoteker.getText().trim().equals("")){
-            Valid.textKosong(Apoteker,"Apoteker");
-        }else if(KabidKeu.getText().trim().equals("")){
-            Valid.textKosong(KabidKeu,"Kepala Bagian Keuangan");
-        }else if(tbDokter.getRowCount()==0){
+//        if(Apoteker.getText().trim().equals("")){
+//            Valid.textKosong(Apoteker,"Apoteker");
+//        }else if(KabidKeu.getText().trim().equals("")){
+//            Valid.textKosong(KabidKeu,"Kepala Bagian Keuangan");
+//        }else
+            
+        if(tbDokter.getRowCount()==0){
             JOptionPane.showMessageDialog(null,"Maaf, data sudah habis...!!!!");
             TCari.requestFocus();
         }else if(tbDokter.getRowCount()!=0){
