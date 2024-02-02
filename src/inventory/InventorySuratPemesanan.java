@@ -1195,6 +1195,8 @@ private void btnPetugasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FI
         }else{
             int reply = JOptionPane.showConfirmDialog(rootPane,"Eeiiiiiits, udah bener belum data yang mau disimpan..??","Konfirmasi",JOptionPane.YES_NO_OPTION);
             if (reply == JOptionPane.YES_OPTION) {
+                
+                BtnPrintActionPerformed(null);
                 Sequel.AutoComitFalse();
                 sukses=true;
                 if(Sequel.menyimpantf2("surat_pemesanan_medis","?,?,?,?,?,?,?,?,?,?,?","No.Pemesanan",11,new String[]{
@@ -1249,6 +1251,7 @@ private void btnPetugasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FI
                 Sequel.AutoComitTrue();
                 autoNomor();
             }
+            
         }
     }//GEN-LAST:event_BtnSimpanActionPerformed
 
@@ -1261,8 +1264,66 @@ private void btnPetugasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FI
     }//GEN-LAST:event_BtnSimpanKeyPressed
 
     private void BtnPrintActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnPrintActionPerformed
-        DlgCetak.setLocationRelativeTo(internalFrame1);
-        DlgCetak.setVisible(true);
+//        DlgCetak.setLocationRelativeTo(internalFrame1);
+//        DlgCetak.setVisible(true);
+        
+       if(NoPemesanan.getText().trim().equals("")){
+            Valid.textKosong(NoPemesanan,"No.Pemesanan");
+        }else if(nmsup.getText().trim().equals("")){
+            Valid.textKosong(kdsup,"Supplier");
+        }else if(nmptg.getText().trim().equals("")){
+            Valid.textKosong(kdptg,"Petugas");
+        }else if(Meterai.getText().trim().equals("")){
+            Valid.textKosong(Meterai,"Meterai");
+        }else if(tbDokter.getRowCount()==0){
+            JOptionPane.showMessageDialog(null,"Maaf, data sudah habis...!!!!");
+            TCari.requestFocus();
+        }
+//        else if(ttl<=0){
+//            JOptionPane.showMessageDialog(null,"Maaf, Silahkan masukkan pemesanan...!!!!");
+//            tbDokter.requestFocus();
+//        }
+        else if(tbDokter.getRowCount()!=0){
+            this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+            Sequel.queryu("delete from temporary where temp37='"+akses.getalamatip()+"'");
+            row=tabMode.getRowCount();
+            for(i=0;i<row;i++){  
+                if(Valid.SetAngka(tbDokter.getValueAt(i,0).toString())>0){
+                    Sequel.menyimpan("temporary","'"+i+"','"+
+                                tabMode.getValueAt(i,0).toString()+"','"+
+                                tabMode.getValueAt(i,1).toString()+"','"+
+                                tabMode.getValueAt(i,2).toString()+"','"+
+                                tabMode.getValueAt(i,3).toString()+"','"+
+                                tabMode.getValueAt(i,4).toString()+"','"+
+                                Valid.SetAngka(Double.parseDouble(tabMode.getValueAt(i,5).toString()))+"','"+
+                                Valid.SetAngka(Double.parseDouble(tabMode.getValueAt(i,6).toString()))+"','"+
+                                tabMode.getValueAt(i,7).toString()+"','"+
+                                Valid.SetAngka(Double.parseDouble(tabMode.getValueAt(i,8).toString()))+"','"+
+                                Valid.SetAngka(Double.parseDouble(tabMode.getValueAt(i,9).toString()))+"','','','','','','','','','','','','','','','','','','','','','','','','','','','"+akses.getalamatip()+"'","Transaksi Pemesanan"); 
+                }                    
+            }
+            
+            Map<String, Object> param = new HashMap<>();    
+            param.put("namars",akses.getnamars());
+            param.put("alamatrs",akses.getalamatrs());
+            param.put("kotars",akses.getkabupatenrs());
+            param.put("propinsirs",akses.getpropinsirs());
+            param.put("kontakrs",akses.getkontakrs());
+            param.put("emailrs",akses.getemailrs());  
+            param.put("suplier",nmsup.getText());  
+            param.put("nomorpesan",NoPemesanan.getText());  
+            param.put("total",LTotal2.getText());  
+            param.put("ppn",LPpn.getText());  
+            param.put("meterai",Valid.SetAngka(meterai));  
+            param.put("tagihan",LTagiha.getText());  
+            param.put("tanggal",akses.getkabupatenrs()+", "+Tanggal.getSelectedItem());  
+            param.put("apoteker",Apoteker.getText()); 
+            param.put("petugas",nmptg.getText()); 
+            param.put("kabidkeu",KabidKeu.getText()); 
+            param.put("logo",Sequel.cariGambar("select setting.logo from setting")); 
+            Valid.MyReportqry("rptSuratPemesanan.jasper","report","::[ Transaksi Pemesanan Barang ]::","select * from temporary where temporary.temp37='"+akses.getalamatip()+"' order by temporary.no",param);
+            this.setCursor(Cursor.getDefaultCursor());
+        }
     }//GEN-LAST:event_BtnPrintActionPerformed
 
     private void BtnPrintKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BtnPrintKeyPressed
