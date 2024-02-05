@@ -58,7 +58,7 @@ public class DlgCariPengajuanBarangMedis extends javax.swing.JDialog {
             }else if(i==1){
                 column.setPreferredWidth(350);
             }else if(i==2){
-                column.setPreferredWidth(100);
+                column.setPreferredWidth(160);
             }else if(i==3){
                 column.setPreferredWidth(140);
             }else if(i==4){
@@ -825,6 +825,8 @@ private void ppHapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST
     private void ppProsesPengajuanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ppProsesPengajuanActionPerformed
         if(Sequel.cariInteger("select count(no_pengajuan) from pengajuan_barang_medis where no_pengajuan=?",tbDokter.getValueAt(tbDokter.getSelectedRow(),1).toString().trim())==0){
             Valid.textKosong(TCari,"pilihan data");
+        }else if(tbDokter.getValueAt(tbDokter.getSelectedRow(),2).toString().equals("Disetujui")){
+                JOptionPane.showMessageDialog(null,"Data pengajuan sudah Disetujui..!!");
         }else{
             Sequel.queryu("update pengajuan_barang_medis set status='Proses Pengajuan' where no_pengajuan=?",tbDokter.getValueAt(tbDokter.getSelectedRow(),1).toString().trim());
             tampil();
@@ -837,6 +839,8 @@ private void ppHapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST
         }else{
             if(tbDokter.getValueAt(tbDokter.getSelectedRow(),2).toString().equals("Disetujui")){
                 JOptionPane.showMessageDialog(null,"Data pengajuan sudah tervalidasi..!!");
+            }else if(tbDokter.getValueAt(tbDokter.getSelectedRow(),2).toString().equals("Disetujui dan Tersimpan")){
+                JOptionPane.showMessageDialog(null,"Data pengajuan sudah tersimpan dan tervalidasi... !!!");
             }else{
                 Sequel.queryu("update pengajuan_barang_medis set status='Disetujui' where no_pengajuan=?",tbDokter.getValueAt(tbDokter.getSelectedRow(),1).toString().trim());
                 tampil();
@@ -847,6 +851,8 @@ private void ppHapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST
     private void ppDitolakActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ppDitolakActionPerformed
         if(Sequel.cariInteger("select count(no_pengajuan) from pengajuan_barang_medis where no_pengajuan=?",tbDokter.getValueAt(tbDokter.getSelectedRow(),1).toString().trim())==0){
             Valid.textKosong(TCari,"pilihan data");
+        }else if(tbDokter.getValueAt(tbDokter.getSelectedRow(),2).toString().equals("Disetujui dan Tersimpan")){
+                JOptionPane.showMessageDialog(null,"Data pengajuan sudah tersimpan dan tervalidasi... !!!");
         }else{
             Sequel.queryu("update pengajuan_barang_medis set status='Ditolak' where no_pengajuan=?",tbDokter.getValueAt(tbDokter.getSelectedRow(),1).toString().trim());
             tampil();
@@ -857,9 +863,12 @@ private void ppHapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST
          if(Sequel.cariInteger("select count(no_pengajuan) from pengajuan_barang_medis where no_pengajuan=?",tbDokter.getValueAt(tbDokter.getSelectedRow(),1).toString().trim())==0){
             Valid.textKosong(TCari,"pilihan data");
         }else{
-             if(!tbDokter.getValueAt(tbDokter.getSelectedRow(),2).toString().equals("Disetujui")){
-                JOptionPane.showMessageDialog(null,"Data pengajuan belum disetujui");
+            if(!tbDokter.getValueAt(tbDokter.getSelectedRow(),2).toString().contains("Disetujui")){
+                JOptionPane.showMessageDialog(null,"Data pengajuan belum disetujui... !!!");
+            }else if(tbDokter.getValueAt(tbDokter.getSelectedRow(),2).toString().equals("Disetujui dan Tersimpan")){
+                JOptionPane.showMessageDialog(null,"Data pengajuan sudah tersimpan dan tervalidasi... !!!");
             }else{
+                
                 this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
                 InventorySuratPemesanan aplikasi=new InventorySuratPemesanan(null,false);
                 aplikasi.tampilkan=false;
@@ -869,6 +878,9 @@ private void ppHapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST
                 aplikasi.setLocationRelativeTo(internalFrame1);
                 aplikasi.setVisible(true);
                 this.setCursor(Cursor.getDefaultCursor());
+                
+//                Sequel.queryu("update pengajuan_barang_medis set status='Disetujui dan Tersimpan' where no_pengajuan=?",tbDokter.getValueAt(tbDokter.getSelectedRow(),1).toString().trim());
+                
                 tampil();
              }
         }
@@ -935,7 +947,7 @@ private void ppHapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST
     private widget.Table tbDokter;
     // End of variables declaration//GEN-END:variables
 
-    private void tampil() {
+    public void tampil() {
        Valid.tabelKosong(tabMode);
         try{  
             if(NoPermintaan.getText().trim().equals("")&&Status.getSelectedItem().toString().equals("Semua")&&NmPeg.getText().trim().equals("")&&
@@ -1125,9 +1137,13 @@ private void ppHapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST
     }
     
     public void isCek(){
+        
+     if(akses.getjml2()==1){
+       ppHapus.setEnabled(false);
+     }
         TCari.requestFocus();
         BtnPrint.setEnabled(akses.getpengajuan_barang_medis());
-        ppHapus.setEnabled(akses.getpengajuan_barang_medis());
+//        ppHapus.setEnabled(akses.getpengajuan_barang_medis());
         ppDisetujui.setEnabled(akses.getsurat_pemesanan_medis());
         ppProsesPengajuan.setEnabled(akses.getpengajuan_barang_medis());
         ppDitolak.setEnabled(akses.getpengajuan_barang_medis());
