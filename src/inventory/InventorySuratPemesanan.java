@@ -41,6 +41,7 @@ public class InventorySuratPemesanan extends javax.swing.JDialog {
     private ResultSet rs;
     private WarnaTable2 warna=new WarnaTable2();
     private DlgCariPegawai pegawai=new DlgCariPegawai(null,false);
+    private DlgCariPengajuanBarangMedis pengajuan=new DlgCariPengajuanBarangMedis(null,false);
     private InventoryCariSuplier suplier=new InventoryCariSuplier(null,false);
     private DlgCariSuratPemesanan form=new DlgCariSuratPemesanan(null,false);
     private double meterai=0,ttl=0,y=0,w=0,ttldisk=0,sbttl=0,ppn=0;
@@ -52,7 +53,7 @@ public class InventorySuratPemesanan extends javax.swing.JDialog {
     private DlgCariDataKonversi datakonversi=new DlgCariDataKonversi(null,false);
     private File file;
     private FileWriter fileWriter;
-    private String iyem;
+    private String iyem, NoPengajuan="";
     private ObjectMapper mapper = new ObjectMapper();
     private JsonNode root;
     private JsonNode response;
@@ -1032,6 +1033,7 @@ private void btnPetugasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FI
     }//GEN-LAST:event_BtnCariKeyPressed
 
     private void BtnKeluarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnKeluarActionPerformed
+        pengajuan.tampil();
         DlgCetak.dispose();
         pegawai.dispose();
         suplier.dispose();
@@ -1204,6 +1206,8 @@ private void btnPetugasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FI
                     ""+sbttl,""+ttldisk,""+ttl,
                     ""+ppn,""+meterai,""+(ttl+ppn+meterai),"Proses Pesan"
                 })==true){
+                    Sequel.queryu("update pengajuan_barang_medis set status='Disetujui dan Tersimpan' where no_pengajuan=?",NoPengajuan);
+                    pengajuan.tampil();
                     jml=tbDokter.getRowCount();
                     for(i=0;i<jml;i++){
                         try {
@@ -1734,6 +1738,7 @@ private void btnPetugasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FI
     }
     
     public void panggilgetData(String nopengajuan){
+        NoPengajuan = nopengajuan;
         try{
             ps=koneksi.prepareStatement(
                 "select databarang.kode_brng, databarang.nama_brng,detail_pengajuan_barang_medis.kode_sat as satbesar,databarang.kode_sat,"+
