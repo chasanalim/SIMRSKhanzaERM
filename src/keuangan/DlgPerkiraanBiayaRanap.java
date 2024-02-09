@@ -13,6 +13,7 @@ package keuangan;
 
 import fungsi.WarnaPerkiraanRanap;
 import fungsi.WarnaTable;
+import fungsi.WarnaTable2;
 import fungsi.batasInput;
 import fungsi.koneksiDB;
 import fungsi.sekuel;
@@ -57,6 +58,7 @@ public final class DlgPerkiraanBiayaRanap extends javax.swing.JDialog {
     private Connection koneksi=koneksiDB.condb();
     private sekuel Sequel=new sekuel();
     private validasi Valid=new validasi();
+    private WarnaPerkiraanRanap warna=new WarnaPerkiraanRanap();
     private PreparedStatement ps,ps2,pspenyakit;
     private ResultSet rs,rs2;
     private DlgCariBangsal bangsal=new DlgCariBangsal(null,false);
@@ -79,13 +81,13 @@ public final class DlgPerkiraanBiayaRanap extends javax.swing.JDialog {
         setSize(885,674);
 
         tabMode=new DefaultTableModel(null,new Object[]{
-                "No.Rawat","No.RM","Nama Pasien","Kamar/Bangsal","Perujuk","Registrasi","Tindakan","Obt+Emb+Tsl","Retur Obat",
+                "No.Rawat","No.RM","Nama Pasien","Kamar/Bangsal","Cara Bayar","Perujuk","Registrasi","Tindakan","Obt+Emb+Tsl","Retur Obat",
                 "Resep Pulang","Laborat","Radiologi","Potongan","Tambahan","Kamar","Operasi","Harian","Total","Deposit","Kekurangan",
                 "Diagnosa Awal","ICD 10","Perkiraan Tarif","Limit"
             }){
                 @Override public boolean isCellEditable(int rowIndex, int colIndex){
                     boolean a = false;
-                    if ((colIndex==22)||(colIndex==21)) {
+                    if ((colIndex==22)||(colIndex==23)) {
                     a=true;
                 }
                 return a;
@@ -96,7 +98,7 @@ public final class DlgPerkiraanBiayaRanap extends javax.swing.JDialog {
         tbBangsal.setPreferredScrollableViewportSize(new Dimension(500,500));
         tbBangsal.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
 
-        for (i = 0; i < 24; i++) {
+        for (i = 0; i < 25; i++) {
             TableColumn column = tbBangsal.getColumnModel().getColumn(i);
             if(i==0){
                 column.setPreferredWidth(105);
@@ -108,23 +110,29 @@ public final class DlgPerkiraanBiayaRanap extends javax.swing.JDialog {
                 column.setPreferredWidth(150);
             }else if(i==4){
                 column.setPreferredWidth(130);
-            }else if(i==17){
-                column.setPreferredWidth(100);
+            }else if(i==5){
+                column.setPreferredWidth(130);
             }else if(i==18){
                 column.setPreferredWidth(100);
-            }else if(i==20){
+            }else if(i==19){
                 column.setPreferredWidth(100);
             }else if(i==21){
-                column.setPreferredWidth(45);
+                column.setPreferredWidth(100);
             }else if(i==22){
-                column.setPreferredWidth(85);
+                column.setPreferredWidth(45);
             }else if(i==23){
+                column.setPreferredWidth(85);
+            }else if(i==24){
                 column.setPreferredWidth(65);
             }else{
                 column.setPreferredWidth(75);
             }
         }
-        tbBangsal.setDefaultRenderer(Object.class, new WarnaPerkiraanRanap());
+        
+        warna.kolom=22;
+        warna.aturan=23;
+        tbBangsal.setDefaultRenderer(Object.class,warna);
+//        tbBangsal.setDefaultRenderer(Object.class, new WarnaPerkiraanRanap());
         
         tabModeDiagnosa=new DefaultTableModel(null,new Object[]{
             "Kode","Nama Penyakit","Ciri-ciri Penyakit","Keterangan","Ktg.Penyakit","Ciri-ciri Umum"}){
@@ -315,6 +323,8 @@ public final class DlgPerkiraanBiayaRanap extends javax.swing.JDialog {
         BtnCari1 = new widget.Button();
         BtnAll = new widget.Button();
         label10 = new widget.Label();
+        BtnSimpan = new widget.Button();
+        BtnEdit = new widget.Button();
         BtnPrint = new widget.Button();
         BtnKeluar = new widget.Button();
         label18 = new widget.Label();
@@ -538,6 +548,32 @@ public final class DlgPerkiraanBiayaRanap extends javax.swing.JDialog {
         label10.setName("label10"); // NOI18N
         label10.setPreferredSize(new java.awt.Dimension(28, 23));
         panelGlass5.add(label10);
+
+        BtnSimpan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/save-16x16.png"))); // NOI18N
+        BtnSimpan.setMnemonic('T');
+        BtnSimpan.setText("Simpan");
+        BtnSimpan.setToolTipText("Alt+T");
+        BtnSimpan.setName("BtnSimpan"); // NOI18N
+        BtnSimpan.setPreferredSize(new java.awt.Dimension(80, 23));
+        BtnSimpan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnSimpanActionPerformed(evt);
+            }
+        });
+        panelGlass5.add(BtnSimpan);
+
+        BtnEdit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/inventaris.png"))); // NOI18N
+        BtnEdit.setMnemonic('T');
+        BtnEdit.setText("Ganti");
+        BtnEdit.setToolTipText("Alt+T");
+        BtnEdit.setName("BtnEdit"); // NOI18N
+        BtnEdit.setPreferredSize(new java.awt.Dimension(80, 23));
+        BtnEdit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnEditActionPerformed(evt);
+            }
+        });
+        panelGlass5.add(BtnEdit);
 
         BtnPrint.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/b_print.png"))); // NOI18N
         BtnPrint.setMnemonic('T');
@@ -1095,9 +1131,33 @@ private void BtnCari1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_
 
     private void tbBangsalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbBangsalMouseClicked
         if(tbBangsal.getSelectedRow()!= -1){
-            Diagnosa.setText(tbBangsal.getValueAt(tbBangsal.getSelectedRow(),20).toString());
+            Diagnosa.setText(tbBangsal.getValueAt(tbBangsal.getSelectedRow(),21).toString());
         }
     }//GEN-LAST:event_tbBangsalMouseClicked
+
+    private void BtnSimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnSimpanActionPerformed
+        if(tbBangsal.getSelectedRow()!= -1){
+                    if(Sequel.menyimpantf2("perkiraan_biaya_ranap","?,?,?","data",3,new String[]{tbBangsal.getValueAt(tbBangsal.getSelectedRow(),0).toString(),tbBangsal.getValueAt(tbBangsal.getSelectedRow(),22).toString(),tbBangsal.getValueAt(tbBangsal.getSelectedRow(),23).toString()})==true){
+                        tampil();
+                    }else{
+                        JOptionPane.showMessageDialog(null," 1 Silahkan Anda pilih dulu pasien yang mau dimasukkan perkiraannya ...!!");
+                    }
+        }else{
+            JOptionPane.showMessageDialog(null," 2 Silahkan Anda pilih dulu pasien yang mau dimasukkan perkiraannya ...!!");
+        }
+    }//GEN-LAST:event_BtnSimpanActionPerformed
+
+    private void BtnEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnEditActionPerformed
+         if(tbBangsal.getSelectedRow()!= -1){          
+                    if(Sequel.mengedittf("perkiraan_biaya_ranap","no_rawat='"+tbBangsal.getValueAt(tbBangsal.getSelectedRow(),0).toString()+"'"," kd_penyakit='"+tbBangsal.getValueAt(tbBangsal.getSelectedRow(),22).toString()+"',tarif='"+tbBangsal.getValueAt(tbBangsal.getSelectedRow(),23).toString()+" '")==true){
+                        tampil();
+                    }else{
+                        JOptionPane.showMessageDialog(null," 1 Silahkan Anda pilih dulu pasien yang mau dimasukkan perkiraannya ...!!");
+                    }
+        }else{
+            JOptionPane.showMessageDialog(null," 2 Silahkan Anda pilih dulu pasien yang mau dimasukkan perkiraannya ...!!");
+        }
+    }//GEN-LAST:event_BtnEditActionPerformed
 
     /**
     * @param args the command line arguments
@@ -1119,9 +1179,11 @@ private void BtnCari1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_
     private widget.Button BtnAll;
     private widget.Button BtnCari1;
     private widget.Button BtnCariPenyakit;
+    private widget.Button BtnEdit;
     private widget.Button BtnKeluar;
     private widget.Button BtnPrint;
     private widget.Button BtnSeek2;
+    private widget.Button BtnSimpan;
     private widget.CekBox ChkCari;
     public widget.TextBox Diagnosa;
     private javax.swing.JPanel FormCari;
@@ -1159,9 +1221,9 @@ private void BtnCari1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_
         try{      
             ps= koneksi.prepareStatement(
                 "select kamar_inap.no_rawat,reg_periksa.no_rkm_medis,pasien.nm_pasien,bangsal.nm_bangsal,kamar.kd_kamar,reg_periksa.biaya_reg, "+
-                "kamar_inap.diagnosa_awal from kamar_inap inner join reg_periksa inner join pasien inner join bangsal inner join kamar "+
+                "kamar_inap.diagnosa_awal,penjab.png_jawab from kamar_inap inner join reg_periksa inner join pasien inner join bangsal inner join kamar inner join penjab "+
                 "on kamar_inap.no_rawat=reg_periksa.no_rawat and reg_periksa.no_rkm_medis=pasien.no_rkm_medis "+
-                "and kamar_inap.kd_kamar=kamar.kd_kamar and kamar.kd_bangsal=bangsal.kd_bangsal "+
+                "and kamar_inap.kd_kamar=kamar.kd_kamar and kamar.kd_bangsal=bangsal.kd_bangsal and reg_periksa.kd_pj=penjab.kd_pj "+
                 "where kamar_inap.stts_pulang='-' and bangsal.nm_bangsal like ? and kamar_inap.no_rawat like ? or "+
                 "kamar_inap.stts_pulang='-' and bangsal.nm_bangsal like ? and reg_periksa.no_rkm_medis like ? or "+
                 "kamar_inap.stts_pulang='-' and bangsal.nm_bangsal like ? and pasien.nm_pasien like ? or "+
@@ -1333,8 +1395,10 @@ private void BtnCari1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_
                         if(rs2.next()){
                             diag=rs2.getString("kd_penyakit");
                             perkiraantarif=rs2.getDouble("tarif");
-                            if(perkiraantarif<=Jumlah){
-                                pros="Tidak Aman";  
+                            if(perkiraantarif>Jumlah){
+                                pros="Aman";  
+                            }else{
+                                pros="Tidak Aman";
                             }
                         }
                     } catch (Exception e) {
@@ -1349,7 +1413,7 @@ private void BtnCari1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_
                     }
                     
                     tabMode.addRow(new Object[]{
-                        rs.getString("no_rawat"),rs.getString("no_rkm_medis"),rs.getString("nm_pasien"),rs.getString("kd_kamar")+" "+rs.getString("nm_bangsal"),
+                        rs.getString("no_rawat"),rs.getString("no_rkm_medis"),rs.getString("nm_pasien"),rs.getString("kd_kamar")+" "+rs.getString("nm_bangsal"),rs.getString("png_jawab"),
                         Sequel.cariIsi("select perujuk from rujuk_masuk where no_rawat=?",rs.getString("no_rawat")),Valid.SetAngka(Registrasi),
                         Valid.SetAngka(Ranap_Dokter+Ranap_Dokter_Paramedis+Ranap_Paramedis+Ralan_Dokter+Ralan_Dokter_Paramedis+Ralan_Paramedis),
                         Valid.SetAngka(Obat),Valid.SetAngka(Retur_Obat),Valid.SetAngka(Resep_Pulang),Valid.SetAngka(Laborat),Valid.SetAngka(Radiologi),Valid.SetAngka(Potongan),
@@ -1359,7 +1423,7 @@ private void BtnCari1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_
                     all=all+Laborat+Radiologi+Operasi+Obat+Ranap_Dokter+Ranap_Dokter_Paramedis+Ranap_Paramedis+Ralan_Dokter+Ralan_Dokter_Paramedis+Ralan_Paramedis+Tambahan+Potongan+Kamar+Registrasi+Harian+Retur_Obat+Resep_Pulang;
                 }
                 tabMode.addRow(new Object[]{
-                    ">> Total ",":","","","",Valid.SetAngka(ttlRegistrasi),Valid.SetAngka(ttlRanap_Dokter+ttlRanap_Paramedis+ttlRalan_Dokter+ttlRalan_Paramedis),
+                    ">> Total ",":","","","","",Valid.SetAngka(ttlRegistrasi),Valid.SetAngka(ttlRanap_Dokter+ttlRanap_Paramedis+ttlRalan_Dokter+ttlRalan_Paramedis),
                     Valid.SetAngka(ttlObat),Valid.SetAngka(ttlRetur_Obat),Valid.SetAngka(ttlResep_Pulang),Valid.SetAngka(ttlLaborat),Valid.SetAngka(ttlRadiologi),Valid.SetAngka(ttlPotongan),
                     Valid.SetAngka(ttlTambahan),Valid.SetAngka(ttlKamar),Valid.SetAngka(ttlOperasi),Valid.SetAngka(ttlHarian),Valid.SetAngka(all),Valid.SetAngka(ttlDeposit),
                     Valid.SetAngka(ttlDeposit-all),"","","",""
