@@ -554,7 +554,7 @@ public final class DlgPerkiraanBiayaRanap extends javax.swing.JDialog {
         BtnSimpan.setText("Simpan");
         BtnSimpan.setToolTipText("Alt+T");
         BtnSimpan.setName("BtnSimpan"); // NOI18N
-        BtnSimpan.setPreferredSize(new java.awt.Dimension(80, 23));
+        BtnSimpan.setPreferredSize(new java.awt.Dimension(100, 23));
         BtnSimpan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnSimpanActionPerformed(evt);
@@ -1139,6 +1139,7 @@ private void BtnCari1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_
         if(tbBangsal.getSelectedRow()!= -1){
                     if(Sequel.menyimpantf2("perkiraan_biaya_ranap","?,?,?","data",3,new String[]{tbBangsal.getValueAt(tbBangsal.getSelectedRow(),0).toString(),tbBangsal.getValueAt(tbBangsal.getSelectedRow(),22).toString(),tbBangsal.getValueAt(tbBangsal.getSelectedRow(),23).toString()})==true){
                         tampil();
+                        JOptionPane.showMessageDialog(null," Tarif Sukses Disimpan");
                     }else{
                         JOptionPane.showMessageDialog(null," 1 Silahkan Anda pilih dulu pasien yang mau dimasukkan perkiraannya ...!!");
                     }
@@ -1151,6 +1152,7 @@ private void BtnCari1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_
          if(tbBangsal.getSelectedRow()!= -1){          
                     if(Sequel.mengedittf("perkiraan_biaya_ranap","no_rawat='"+tbBangsal.getValueAt(tbBangsal.getSelectedRow(),0).toString()+"'"," kd_penyakit='"+tbBangsal.getValueAt(tbBangsal.getSelectedRow(),22).toString()+"',tarif='"+tbBangsal.getValueAt(tbBangsal.getSelectedRow(),23).toString()+" '")==true){
                         tampil();
+                        JOptionPane.showMessageDialog(null," Tarif Sukses DiGanti");
                     }else{
                         JOptionPane.showMessageDialog(null," 1 Silahkan Anda pilih dulu pasien yang mau dimasukkan perkiraannya ...!!");
                     }

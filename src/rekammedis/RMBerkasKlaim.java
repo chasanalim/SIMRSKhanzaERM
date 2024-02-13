@@ -43,6 +43,7 @@ import javax.swing.text.html.StyleSheet;
 import org.apache.commons.httpclient.HttpClient;
 import org.apache.commons.httpclient.methods.GetMethod;
 import simrskhanza.DlgCariPasien;
+import simrskhanza.DlgRawatJalan;
 
 /**
  *
@@ -62,6 +63,7 @@ public final class RMBerkasKlaim extends javax.swing.JDialog {
     private HttpClient http = new HttpClient();
     private GetMethod get;
     private DlgCariPasien pasien=new DlgCariPasien(null,true);
+    private DlgRawatJalan jalan = new DlgRawatJalan(null,true);
 
     /** Creates new form DlgLhtBiaya
      * @param parent
@@ -215,6 +217,7 @@ public final class RMBerkasKlaim extends javax.swing.JDialog {
         BtnCari1 = new widget.Button();
         label19 = new widget.Label();
         BtnPrint = new widget.Button();
+        BtnDownload = new widget.Button();
         BtnKeluar = new widget.Button();
         TabRawat = new javax.swing.JTabbedPane();
         Scroll1 = new widget.ScrollPane();
@@ -395,6 +398,18 @@ public final class RMBerkasKlaim extends javax.swing.JDialog {
         });
         panelGlass5.add(BtnPrint);
 
+        BtnDownload.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/download24.png"))); // NOI18N
+        BtnDownload.setMnemonic('T');
+        BtnDownload.setToolTipText("Alt+T");
+        BtnDownload.setName("BtnDownload"); // NOI18N
+        BtnDownload.setPreferredSize(new java.awt.Dimension(28, 23));
+        BtnDownload.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnDownloadActionPerformed(evt);
+            }
+        });
+        panelGlass5.add(BtnDownload);
+
         BtnKeluar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/exit.png"))); // NOI18N
         BtnKeluar.setMnemonic('K');
         BtnKeluar.setToolTipText("Alt+K");
@@ -500,11 +515,6 @@ public final class RMBerkasKlaim extends javax.swing.JDialog {
         chkSEPRajal.setName("chkSEPRajal"); // NOI18N
         chkSEPRajal.setOpaque(false);
         chkSEPRajal.setPreferredSize(new java.awt.Dimension(245, 22));
-        chkSEPRajal.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                chkSEPRajalActionPerformed(evt);
-            }
-        });
         FormMenu.add(chkSEPRajal);
 
         chkSBPK.setSelected(true);
@@ -639,11 +649,6 @@ public final class RMBerkasKlaim extends javax.swing.JDialog {
         chkSEPRanap.setName("chkSEPRanap"); // NOI18N
         chkSEPRanap.setOpaque(false);
         chkSEPRanap.setPreferredSize(new java.awt.Dimension(245, 22));
-        chkSEPRanap.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                chkSEPRanapActionPerformed(evt);
-            }
-        });
         FormMenu1.add(chkSEPRanap);
 
         chkSupri.setSelected(true);
@@ -1071,12 +1076,8 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
         }
     }//GEN-LAST:event_NoRawatKeyPressed
 
-    private void chkSEPRajalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkSEPRajalActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_chkSEPRajalActionPerformed
-
     private void ChkAccor1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChkAccor1ActionPerformed
-        // TODO add your handling code here:
+        isMenu();
     }//GEN-LAST:event_ChkAccor1ActionPerformed
 
     private void chkSemuaRanapItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_chkSemuaRanapItemStateChanged
@@ -1097,9 +1098,52 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
         }
     }//GEN-LAST:event_chkSemuaRanapItemStateChanged
 
-    private void chkSEPRanapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkSEPRanapActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_chkSEPRanapActionPerformed
+    private void BtnDownloadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnDownloadActionPerformed
+         if(NoRM.getText().trim().equals("")||NmPasien.getText().equals("")){
+            JOptionPane.showMessageDialog(null,"Pasien masih kosong...!!!");
+        }else{
+            this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+            switch (TabRawat.getSelectedIndex()) {
+                case 0:
+                    if(tabModeRegistrasi.getRowCount()==0){
+                        JOptionPane.showMessageDialog(null,"Maaf, data sudah habis. Tidak ada data yang bisa anda print...!!!!");
+                    }else if(tabModeRegistrasi.getRowCount()!=0){
+                        this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));        
+                        Sequel.queryu("truncate table temporary_resume");
+
+                        for(int i=0;i<tabModeRegistrasi.getRowCount();i++){  
+                            Sequel.menyimpan("temporary_resume","?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?",38,new String[]{
+                                "0",tabModeRegistrasi.getValueAt(i,0).toString(),tabModeRegistrasi.getValueAt(i,1).toString(),tabModeRegistrasi.getValueAt(i,2).toString(),
+                                tabModeRegistrasi.getValueAt(i,3).toString(),tabModeRegistrasi.getValueAt(i,4).toString(),tabModeRegistrasi.getValueAt(i,5).toString(),
+                                tabModeRegistrasi.getValueAt(i,6).toString(),tabModeRegistrasi.getValueAt(i,7).toString(),tabModeRegistrasi.getValueAt(i,8).toString(),
+                                "","","","","","","","","","","","","","","","","","","","","","","","","","","","",""
+                            });
+                        }
+
+                        Map<String, Object> param = new HashMap<>();  
+                            param.put("namars",akses.getnamars());
+                            param.put("alamatrs",akses.getalamatrs());
+                            param.put("kotars",akses.getkabupatenrs());
+                            param.put("propinsirs",akses.getpropinsirs());
+                            param.put("kontakrs",akses.getkontakrs());
+                            param.put("emailrs",akses.getemailrs());   
+                            param.put("logo",Sequel.cariGambar("select setting.logo from setting")); 
+                        Valid.MyReport2("rptRiwayatRegistrasi.jasper","report","::[ Riwayat Registrasi ]::",param);
+                        this.setCursor(Cursor.getDefaultCursor());
+                    }
+                    break;
+                case 1:
+                    jalan.CetakSEP(NoRawat.getText());
+                    break;
+                case 2:
+                    panggilLaporan(LoadHTMLRiwayatPerawatanRanap.getText()); 
+                    break;
+                default:
+                    break;
+            }
+            this.setCursor(Cursor.getDefaultCursor());
+        }
+    }//GEN-LAST:event_BtnDownloadActionPerformed
 
     /**
     * @param args the command line arguments
@@ -1122,6 +1166,7 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
     private widget.TextBox Alamat;
     private widget.TextBox Bahasa;
     private widget.Button BtnCari1;
+    private widget.Button BtnDownload;
     private widget.Button BtnKeluar;
     private widget.Button BtnPasien;
     private widget.Button BtnPrint;
