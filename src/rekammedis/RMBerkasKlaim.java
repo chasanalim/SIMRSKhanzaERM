@@ -2301,7 +2301,7 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
             if(chkSBPK.isSelected()==true){
                 try {
                     rs2=koneksi.prepareStatement(
-                        "SELECT bridging_sep.no_sep,bridging_sep.no_rawat,bridging_sep.nomr,bridging_sep.nama_pasien,bridging_sep.tglsep,bridging_sep.tanggal_lahir,bridging_sep.jkel,bridging_sep.no_kartu, reg_periksa.kd_dokter, dokter.nm_dokter,pemeriksaan_ralan.penilaian,pemeriksaan_ralan.rtl,pemeriksaan_ralan.pemeriksaan, "+
+                        "SELECT bridging_sep.no_sep,bridging_sep.no_rawat,bridging_sep.nomr,bridging_sep.nama_pasien,bridging_sep.tglsep,bridging_sep.tanggal_lahir,bridging_sep.jkel,bridging_sep.no_kartu, reg_periksa.kd_dokter, dokter.nm_dokter,pemeriksaan_ralan.penilaian,pemeriksaan_ralan.rtl,pemeriksaan_ralan.pemeriksaan,pemeriksaan_ralan.instruksi, "+
                         "IF ( bridging_sep.tujuankunjungan = '0', 'Konsultasi dokter(pertama)', 'Kunjungan Kontrol(ulangan)' ) AS tujuankunjungan,pemeriksaan_ralan.keluhan,concat('suhu : ',pemeriksaan_ralan.suhu_tubuh,', TD : ',pemeriksaan_ralan.tensi,', Nadi : ',pemeriksaan_ralan.nadi) as fisik "+
                         "FROM bridging_sep inner join pemeriksaan_ralan on bridging_sep.no_rawat=pemeriksaan_ralan.no_rawat INNER JOIN reg_periksa on reg_periksa.no_rawat=bridging_sep.no_rawat INNER JOIN dokter on dokter.kd_dokter=reg_periksa.kd_dokter WHERE bridging_sep.jnspelayanan = 2 AND bridging_sep.no_rawat ='"+norawat+"'").executeQuery();
                     if(rs2.next()){
@@ -2443,7 +2443,7 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                                     "<td valign='top' width='30%'></td>"+
                                  "</tr>"+
                                             "<tr class='sbpk'>"+
-                                    "<td valign='top' width='70%'>Diagnosa  Tambahan : </td>"+
+                                    "<td valign='top' width='70%'>Diagnosa  Tambahan :  </td>"+
                                     "<td valign='top' width='30%'></td>"+
                                  "</tr>"+
                                             "<tr class='sbpk'>"+
@@ -2462,7 +2462,7 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                                     "<td valign='top' width='30%'></td>"+
                                  "</tr>"+
                                             "<tr class='sbpk'>"+
-                                    "<td valign='top' width='70%'>Prosedur Tambahan : </td>"+
+                                    "<td valign='top' width='70%'>Prosedur Tambahan : "+rs2.getString("instruksi")+" </td>"+
                                     "<td valign='top' width='30%'></td>"+
                                  "</tr>"+
                                             "<tr class='sbpk'>"+

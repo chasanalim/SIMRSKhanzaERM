@@ -1150,7 +1150,7 @@ private void BtnCari1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_
 
     private void BtnEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnEditActionPerformed
          if(tbBangsal.getSelectedRow()!= -1){          
-                    if(Sequel.mengedittf("perkiraan_biaya_ranap","no_rawat='"+tbBangsal.getValueAt(tbBangsal.getSelectedRow(),0).toString()+"'"," kd_penyakit='"+tbBangsal.getValueAt(tbBangsal.getSelectedRow(),22).toString()+"',tarif='"+tbBangsal.getValueAt(tbBangsal.getSelectedRow(),23).toString()+" '")==true){
+                    if(Sequel.mengedittf("perkiraan_biaya_ranap","no_rawat='"+tbBangsal.getValueAt(tbBangsal.getSelectedRow(),0).toString()+"'","kd_penyakit='"+tbBangsal.getValueAt(tbBangsal.getSelectedRow(),22).toString()+"',tarif='"+tbBangsal.getValueAt(tbBangsal.getSelectedRow(),23).toString()+" '")==true){
                         tampil();
                         JOptionPane.showMessageDialog(null," Tarif Sukses DiGanti");
                     }else{
