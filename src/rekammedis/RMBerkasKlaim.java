@@ -1993,7 +1993,7 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
 //                                    "<td valign='top' border='0' width='2%'></td>"+
 //                                 "</tr>" +
 //                                 "</table>" +
-                                "<table width='100%' border='0' style='border-bottom:3px solid #87b5ed;' align='center' height='10' cellspacing='5' class='tbl_form'>"+
+                                "<table width='100%' border='0' style='border-bottom:3px solid #87b5ed;' align='center' height='5' cellspacing='3' class='tbl_form'>"+
                                  "<tr class='sep'>"+
                                     "<td valign='top' border='0' width='2%'></td>"+
                                     "<td valign='top' border='0' width='14%'></td>"+
@@ -2301,9 +2301,19 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
             if(chkSBPK.isSelected()==true){
                 try {
                     rs2=koneksi.prepareStatement(
-                        "SELECT bridging_sep.no_sep,bridging_sep.no_rawat,bridging_sep.nomr,bridging_sep.nama_pasien,bridging_sep.tglsep,bridging_sep.tanggal_lahir,bridging_sep.jkel,bridging_sep.no_kartu, reg_periksa.kd_dokter, dokter.nm_dokter,pemeriksaan_ralan.penilaian,pemeriksaan_ralan.rtl,pemeriksaan_ralan.pemeriksaan,pemeriksaan_ralan.instruksi, "+
-                        "IF ( bridging_sep.tujuankunjungan = '0', 'Konsultasi dokter(pertama)', 'Kunjungan Kontrol(ulangan)' ) AS tujuankunjungan,pemeriksaan_ralan.keluhan,concat('suhu : ',pemeriksaan_ralan.suhu_tubuh,', TD : ',pemeriksaan_ralan.tensi,', Nadi : ',pemeriksaan_ralan.nadi) as fisik "+
-                        "FROM bridging_sep inner join pemeriksaan_ralan on bridging_sep.no_rawat=pemeriksaan_ralan.no_rawat INNER JOIN reg_periksa on reg_periksa.no_rawat=bridging_sep.no_rawat INNER JOIN dokter on dokter.kd_dokter=reg_periksa.kd_dokter WHERE bridging_sep.jnspelayanan = 2 AND bridging_sep.no_rawat ='"+norawat+"'").executeQuery();
+                       "SELECT no_sep,no_rawat,nomr,nama_pasien,tglsep,tanggal_lahir,jkel,no_kartu,kd_dokter,nm_dokter,penilaian,rtl,pemeriksaan, "+
+                        "instruksi,tujuankunjungan,keluhan,fisik,GROUP_CONCAT( obat SEPARATOR ' | ' ) AS group_obat  "+
+                        "FROM ( SELECT bridging_sep.no_sep,bridging_sep.no_rawat,bridging_sep.nomr,bridging_sep.nama_pasien,bridging_sep.tglsep,bridging_sep.tanggal_lahir,bridging_sep.jkel, "+
+                        "bridging_sep.no_kartu,reg_periksa.kd_dokter,dokter.nm_dokter,pemeriksaan_ralan.penilaian,pemeriksaan_ralan.rtl,pemeriksaan_ralan.pemeriksaan,pemeriksaan_ralan.instruksi, "+
+                        "IF( bridging_sep.tujuankunjungan = '0', 'Konsultasi dokter(pertama)', 'Kunjungan Kontrol(ulangan)' ) AS tujuankunjungan,pemeriksaan_ralan.keluhan, "+
+                        "concat( 'suhu : ', pemeriksaan_ralan.suhu_tubuh, ', TD : ', pemeriksaan_ralan.tensi, ', Nadi : ', pemeriksaan_ralan.nadi ) AS fisik, "+
+                        "concat( databarang.nama_brng, ' JUMLAH:(', resep_dokter.jml, ') DOSIS:', resep_dokter.aturan_pakai ) AS obat FROM bridging_sep "+
+                        "INNER JOIN pemeriksaan_ralan ON bridging_sep.no_rawat = pemeriksaan_ralan.no_rawat INNER JOIN reg_periksa ON reg_periksa.no_rawat = bridging_sep.no_rawat "+
+                        "INNER JOIN dokter ON dokter.kd_dokter = reg_periksa.kd_dokter LEFT JOIN resep_obat ON pemeriksaan_ralan.no_rawat = resep_obat.no_rawat "+
+                        "LEFT JOIN resep_dokter ON resep_obat.no_resep = resep_dokter.no_resep LEFT JOIN databarang ON resep_dokter.kode_brng = databarang.kode_brng  "+
+                        "WHERE bridging_sep.jnspelayanan = 2 OR resep_obat.STATUS = 'ralan' ) AS obat "+
+                        "WHERE no_rawat='"+norawat+"' GROUP BY no_rawat ").executeQuery();
+                   
                     if(rs2.next()){
                         rs2.beforeFirst();
                         w=1;
@@ -2442,14 +2452,14 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                                     "<td valign='top' width='70%'>Diagnosa  Utama : "+rs2.getString("penilaian")+"</td>"+
                                     "<td valign='top' width='30%'></td>"+
                                  "</tr>"+
-                                            "<tr class='sbpk'>"+
+                                 "<tr class='sbpk'>"+
                                     "<td valign='top' width='70%'>Diagnosa  Tambahan :  </td>"+
                                     "<td valign='top' width='30%'></td>"+
                                  "</tr>"+
-                                            "<tr class='sbpk'>"+
-                                    "<td valign='top' width='70%'></td>"+
-                                    "<td valign='top' width='30%'></td>"+
-                                 "</tr>"+
+//                                 "<tr class='sbpk'>"+
+//                                    "<td valign='top' width='70%'></td>"+
+//                                    "<td valign='top' width='30%'></td>"+
+//                                 "</tr>"+
                                 "</table>" +
                                             
                                  "<table width='90%' border='0' align='center' cellpadding='3px' cellspacing='0' class='tbl_form'>"+
@@ -2461,12 +2471,12 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                                     "<td valign='top' width='70%'>Prosedur Utama : "+rs2.getString("rtl")+"</td>"+
                                     "<td valign='top' width='30%'></td>"+
                                  "</tr>"+
-                                            "<tr class='sbpk'>"+
+                                 "<tr class='sbpk'>"+
                                     "<td valign='top' width='70%'>Prosedur Tambahan : "+rs2.getString("instruksi")+" </td>"+
                                     "<td valign='top' width='30%'></td>"+
                                  "</tr>"+
                                             "<tr class='sbpk'>"+
-                                    "<td valign='top' width='70%'></td>"+
+                                    "<td valign='top' width='70%'>Prosedur Tambahan : "+rs2.getString("group_obat")+" </td>"+
                                     "<td valign='top' width='30%'></td>"+
                                  "</tr>"+
                                 "</table>" +
