@@ -1133,7 +1133,7 @@ private void BtnSimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
                                 ps2.setString(2,KdDokter.getText());
                                 rs2=ps2.executeQuery();
                                 if(rs2.next()){
-                                    resep="Resep : \n";
+                                    resep="\n Resep : \n";
                                     psresep=koneksi.prepareStatement(
                                            "select databarang.nama_brng,resep_dokter.jml,resep_dokter.aturan_pakai from databarang inner join resep_dokter on databarang.kode_brng=resep_dokter.kode_brng where resep_dokter.no_resep=?");
                                     try {
