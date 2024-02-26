@@ -466,6 +466,7 @@ public final class MasterCariTemplateHasilRadiologi extends javax.swing.JDialog 
     
     public void isCek(){        
         BtnTambah.setEnabled(akses.gettemplate_hasil_radiologi());
-        BtnCari.setEnabled(false);
+        BtnCari.setVisible(false);
+        BtnAllActionPerformed(null);
     }
 }
