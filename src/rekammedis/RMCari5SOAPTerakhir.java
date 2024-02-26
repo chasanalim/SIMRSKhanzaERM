@@ -142,6 +142,11 @@ public final class RMCari5SOAPTerakhir extends javax.swing.JDialog {
 
         tbKamar.setName("tbKamar"); // NOI18N
         tbKamar.setRowHeight(85);
+        tbKamar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tbKamarMouseClicked(evt);
+            }
+        });
         tbKamar.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 tbKamarKeyPressed(evt);
@@ -300,6 +305,14 @@ public final class RMCari5SOAPTerakhir extends javax.swing.JDialog {
             }
         }
     }//GEN-LAST:event_tbKamarKeyPressed
+
+    private void tbKamarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbKamarMouseClicked
+        if(tabMode.getRowCount()!=0){
+            if(evt.getClickCount()==1){
+                dispose();
+            }
+        }
+    }//GEN-LAST:event_tbKamarMouseClicked
 
     /**
     * @param args the command line arguments
