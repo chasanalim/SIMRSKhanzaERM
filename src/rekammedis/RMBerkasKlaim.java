@@ -2839,7 +2839,7 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                         "IF ( bridging_sep.tujuankunjungan = '0', 'Konsultasi dokter(pertama)', 'Kunjungan Kontrol(ulangan)' ) AS tujuankunjungan, "+ 
                         "concat( 'suhu : ', penilaian_medis_ralan_kandungan.suhu, ', TD : ', penilaian_medis_ralan_kandungan.td, ', Nadi : ', penilaian_medis_ralan_kandungan.nadi ) AS fisik  "+
                         "FROM bridging_sep INNER JOIN penilaian_medis_ralan_kandungan ON bridging_sep.no_rawat = penilaian_medis_ralan_kandungan.no_rawat INNER JOIN reg_periksa on reg_periksa.no_rawat=bridging_sep.no_rawat " + 
-                        "INNER JOIN dokter on dokter.kd_dokter=reg_periksa.kd_dokter WHERE bridging_sep.jnspelayanan = 2 AND bridging_sep.no_rawat ='"+norawat+"'").executeQuery();
+                        "INNER JOIN dokter on dokter.kd_dokter=reg_periksa.kd_dokter WHERE bridging_sep.no_rawat ='"+norawat+"'").executeQuery();
                     if(rs2.next()){
                         htmlContent.append(
                           "<tr class='isi'>"+ 
