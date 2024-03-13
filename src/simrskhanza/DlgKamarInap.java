@@ -180,11 +180,7 @@ public class DlgKamarInap extends javax.swing.JDialog {
     private ResultSet rs,rs2,rssetjam,rs3;
     private int i,row=0, pilihan=0;
     private double lama=0,persenbayi=0,hargakamar=0;
-    private double all=0,Laborat=0,Radiologi=0,Operasi=0,Obat=0,Ranap_Dokter=0,Ranap_Paramedis=0,Ranap_Dokter_Paramedis=0,Ralan_Dokter=0,
-             Ralan_Paramedis=0,Ralan_Dokter_Paramedis=0,Tambahan=0,Potongan=0,Kamar=0,Registrasi=0,Harian=0,Retur_Obat=0,Resep_Pulang=0,
-             Deposit=0,Jumlah,ttlLaborat=0,ttlRadiologi=0,ttlOperasi=0,ttlObat=0,ttlRanap_Dokter=0,ttlRanap_Paramedis=0,ttlRalan_Dokter=0,
-             ttlRalan_Paramedis=0,ttlTambahan=0,ttlPotongan=0,ttlKamar=0,ttlRegistrasi=0,ttlHarian=0,ttlRetur_Obat=0,ttlResep_Pulang=0,
-             ttlDeposit,perkiraantarif;
+    private double all=0,Billing=0,ttlBilling,perkiraantarif;
     private String dpjp="",namadokter="",gabungkan="",norawatgabung="",kamaryangdigabung="",dokterranap="",bangsal="",diagnosa_akhir="",namakamar="",umur="0",sttsumur="Th",order="order by bangsal.nm_bangsal,kamar_inap.tgl_masuk,kamar_inap.jam_masuk", pros;
     private String norawatdipilih="",validasicatatan=Sequel.cariIsi("select set_validasi_catatan.tampilkan_catatan from set_validasi_catatan");
     /** Creates new form DlgKamarInap
@@ -6740,7 +6736,7 @@ public class DlgKamarInap extends javax.swing.JDialog {
                     //if(var.getbilling_ranap()==true){
                         MnBillingActionPerformed(null);
                     //}                    
-                }else if(i==3){
+                }else if(i==3||i==28){
                     MnPerkiraanBiayaActionPerformed(null);
                 }else if(i==1){
 //                    if(validasicatatan.equals("Yes")){
@@ -10874,6 +10870,7 @@ private void MnRujukMasukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-
         DlgPerkiraanBiayaRanap resep=new DlgPerkiraanBiayaRanap(null,false);
         resep.isCek();
         resep.tampil();
+        resep.setNoRmRanap(TNoRwCari.getText());
         resep.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
         resep.setLocationRelativeTo(internalFrame1);
         resep.setVisible(true);
@@ -16494,8 +16491,6 @@ private void MnRujukMasukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-
     // End of variables declaration//GEN-END:variables
 
     public void tampil() {
-        
-                
         if(R1.isSelected()==true){
             kmr=" dpjp_ranap.prioritas=1 and stts_pulang='-' and reg_periksa.status_bayar like '%"+cmbStatusBayar.getSelectedItem().toString().replaceAll("Semua","")+"%' ";
             if(!BangsalCari.getText().equals("")){
@@ -16553,83 +16548,23 @@ private void MnRujukMasukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-
                "left join bridging_sep on reg_periksa.no_rawat = bridging_sep.no_rawat where "+key+" group by kamar_inap.no_rawat "+order );
             try {
                 rs=ps.executeQuery();
-                all=0;ttlLaborat=0;ttlRadiologi=0;ttlOperasi=0;ttlObat=0;
-                ttlRanap_Dokter=0;ttlRanap_Paramedis=0;ttlRalan_Dokter=0;
-                ttlRalan_Paramedis=0;ttlTambahan=0;ttlPotongan=0;ttlKamar=0;
-                ttlRegistrasi=0;ttlHarian=0;ttlRetur_Obat=0;ttlResep_Pulang=0;
-                ttlDeposit=0;
                 while(rs.next()){
-                    Registrasi=0;
-                    Registrasi=rs.getDouble("biaya_reg");
-                    ttlRegistrasi=ttlRegistrasi+Registrasi;
-                    
-                    Laborat=0;
-                    Laborat=Sequel.cariIsiAngka("select sum(biaya) from periksa_lab where no_rawat=?",rs.getString("no_rawat"))+Sequel.cariIsiAngka("select sum(biaya_item) from detail_periksa_lab where no_rawat=?",rs.getString("no_rawat"));
-                    ttlLaborat=ttlLaborat+Laborat;
-                    
-                    Radiologi=0;
-                    Radiologi=Sequel.cariIsiAngka("select sum(biaya) from periksa_radiologi where no_rawat=?",rs.getString("no_rawat"));
-                    ttlRadiologi=ttlRadiologi+Radiologi;
-                    
-                    Operasi=0;
-                    Operasi=Sequel.cariIsiAngka("select sum(biayaoperator1+biayaoperator2+biayaoperator3+biayaasisten_operator1+biayaasisten_operator2+biayaasisten_operator3+biayainstrumen+biayadokter_anak+biayaperawaat_resusitas+biayadokter_anestesi+biayaasisten_anestesi+biayaasisten_anestesi2+biayabidan+biayabidan2+biayabidan3+biayaperawat_luar+biayaalat+biayasewaok+akomodasi+bagian_rs+biaya_omloop+biaya_omloop2+biaya_omloop3+biaya_omloop4+biaya_omloop5+biayasarpras+biaya_dokter_pjanak+biaya_dokter_umum) from operasi where no_rawat=?",rs.getString("no_rawat"));
-                    ttlOperasi=ttlOperasi+Operasi;
-                    
-                    Obat=0;
-                    Obat=Sequel.cariIsiAngka("select sum(total) from detail_pemberian_obat where no_rawat=?",rs.getString("no_rawat"))+Sequel.cariIsiAngka("select sum(besar_tagihan) from tagihan_obat_langsung where no_rawat=?",rs.getString("no_rawat"))+Sequel.cariIsiAngka("select sum(hargasatuan*jumlah) from beri_obat_operasi where no_rawat=?",rs.getString("no_rawat"));
-                    ttlObat=ttlObat+Obat;
-                    
-                    Ranap_Dokter=0;
-                    Ranap_Dokter=Sequel.cariIsiAngka("select sum(biaya_rawat) from rawat_inap_dr where no_rawat=?",rs.getString("no_rawat"));
-                    ttlRanap_Dokter=ttlRanap_Dokter+Ranap_Dokter;
-                    
-                    Ranap_Dokter_Paramedis=0;
-                    Ranap_Dokter_Paramedis=Sequel.cariIsiAngka("select sum(biaya_rawat) from rawat_inap_drpr where no_rawat=?",rs.getString("no_rawat"));
-                    ttlRanap_Dokter=ttlRanap_Dokter+Ranap_Dokter_Paramedis;
-                    
-                    Ranap_Paramedis=0;
-                    Ranap_Paramedis=Sequel.cariIsiAngka("select sum(biaya_rawat) from rawat_inap_pr where no_rawat=?",rs.getString("no_rawat"));
-                    ttlRanap_Paramedis=ttlRanap_Paramedis+Ranap_Paramedis;
-                    
-                    Ralan_Dokter=0;
-                    Ralan_Dokter=Sequel.cariIsiAngka("select sum(biaya_rawat) from rawat_jl_dr where no_rawat=?",rs.getString("no_rawat"));
-                    ttlRalan_Dokter=ttlRalan_Dokter+Ralan_Dokter;
-                    
-                    Ralan_Dokter_Paramedis=0;
-                    Ralan_Dokter_Paramedis=Sequel.cariIsiAngka("select sum(biaya_rawat) from rawat_jl_drpr where no_rawat=?",rs.getString("no_rawat"));
-                    ttlRalan_Dokter=ttlRalan_Dokter+Ralan_Dokter_Paramedis;
-                    
-                    Ralan_Paramedis=0;
-                    Ralan_Paramedis=Sequel.cariIsiAngka("select sum(biaya_rawat) from rawat_jl_pr where no_rawat=?",rs.getString("no_rawat"));
-                    ttlRalan_Paramedis=ttlRalan_Paramedis+Ralan_Paramedis;
-                    
-                    Tambahan=0;
-                    Tambahan=Sequel.cariIsiAngka("select sum(besar_biaya) from tambahan_biaya where no_rawat=?",rs.getString("no_rawat"));
-                    ttlTambahan=ttlTambahan+Tambahan;
-                    
-                    Potongan=0;
-                    Potongan=Sequel.cariIsiAngka("select sum(besar_pengurangan) from pengurangan_biaya where no_rawat=?",rs.getString("no_rawat"));
-                    ttlPotongan=ttlPotongan+Potongan;
-                    
-                    Kamar=0;
-                    Kamar=Sequel.cariIsiAngka("select sum(ttl_biaya) from kamar_inap where no_rawat=?",rs.getString("no_rawat"))+Sequel.cariIsiAngka("select sum(biaya_sekali.besar_biaya) from biaya_sekali inner join kamar_inap on kamar_inap.kd_kamar=biaya_sekali.kd_kamar where kamar_inap.no_rawat=?",rs.getString("no_rawat"));
-                    ttlKamar=ttlKamar+Kamar;
-                    
-                    Harian=0;
-                    Harian=Sequel.cariIsiAngka("select sum(biaya_harian.jml*biaya_harian.besar_biaya*kamar_inap.lama) from kamar_inap inner join biaya_harian on kamar_inap.kd_kamar=biaya_harian.kd_kamar where kamar_inap.no_rawat=?",rs.getString("no_rawat"));
-                    ttlHarian=ttlHarian+Harian;
-                    
-                    Retur_Obat=0;
-                    Retur_Obat=(-1)*Sequel.cariIsiAngka("select sum(subtotal) from detreturjual where no_retur_jual like ? ","%"+rs.getString("no_rawat")+"%");
-                    ttlRetur_Obat=ttlRetur_Obat+Retur_Obat;
-                    
-                    Resep_Pulang=0;
-                    Resep_Pulang=Sequel.cariIsiAngka("select sum(total) from resep_pulang where no_rawat=? ",rs.getString("no_rawat"));
-                    ttlResep_Pulang=ttlResep_Pulang+Resep_Pulang;
-                    
-                    
-                    Jumlah=Laborat+Radiologi+Operasi+Obat+Ranap_Dokter+Ranap_Dokter_Paramedis+Ranap_Paramedis+Ralan_Dokter+Ralan_Dokter_Paramedis+Ralan_Paramedis+Tambahan+Potongan+Kamar+Registrasi+Harian+Retur_Obat+Resep_Pulang;
-                    
+                    Billing=0;
+                    if(koneksiDB.BILLINGRANAP().equals("yes")){
+                        Billing=Sequel.cariIsiAngka("select sum(biaya) from periksa_lab where no_rawat=?",rs.getString("no_rawat"))+Sequel.cariIsiAngka("select sum(biaya_item) from detail_periksa_lab where no_rawat=?",rs.getString("no_rawat"))+Sequel.cariIsiAngka("select sum(biaya) from periksa_radiologi where no_rawat=?",rs.getString("no_rawat"))+
+                           Sequel.cariIsiAngka("select sum(biayaoperator1+biayaoperator2+biayaoperator3+biayaasisten_operator1+biayaasisten_operator2+biayaasisten_operator3+biayainstrumen+biayadokter_anak+biayaperawaat_resusitas+biayadokter_anestesi+biayaasisten_anestesi+biayaasisten_anestesi2+biayabidan+biayabidan2+biayabidan3+biayaperawat_luar+biayaalat+biayasewaok+akomodasi+bagian_rs+biaya_omloop+biaya_omloop2+biaya_omloop3+biaya_omloop4+biaya_omloop5+biayasarpras+biaya_dokter_pjanak+biaya_dokter_umum) from operasi where no_rawat=?",rs.getString("no_rawat"))+
+                           rs.getDouble("biaya_reg")+Sequel.cariIsiAngka("select sum(total) from detail_pemberian_obat where no_rawat=?",rs.getString("no_rawat"))+Sequel.cariIsiAngka("select sum(besar_tagihan) from tagihan_obat_langsung where no_rawat=?",rs.getString("no_rawat"))+Sequel.cariIsiAngka("select sum(hargasatuan*jumlah) from beri_obat_operasi where no_rawat=?",rs.getString("no_rawat"))+
+                           Sequel.cariIsiAngka("select sum(biaya_rawat) from rawat_inap_dr where no_rawat=?",rs.getString("no_rawat"))+Sequel.cariIsiAngka("select sum(biaya_rawat) from rawat_inap_drpr where no_rawat=?",rs.getString("no_rawat"))+
+                           Sequel.cariIsiAngka("select sum(biaya_rawat) from rawat_inap_pr where no_rawat=?",rs.getString("no_rawat"))+Sequel.cariIsiAngka("select sum(biaya_rawat) from rawat_jl_dr where no_rawat=?",rs.getString("no_rawat"))+
+                           Sequel.cariIsiAngka("select sum(biaya_rawat) from rawat_jl_drpr where no_rawat=?",rs.getString("no_rawat"))+Sequel.cariIsiAngka("select sum(biaya_rawat) from rawat_jl_pr where no_rawat=?",rs.getString("no_rawat"))+   
+                           Sequel.cariIsiAngka("select sum(besar_biaya) from tambahan_biaya where no_rawat=?",rs.getString("no_rawat"))+Sequel.cariIsiAngka("select sum(besar_pengurangan) from pengurangan_biaya where no_rawat=?",rs.getString("no_rawat"))+        
+                           Sequel.cariIsiAngka("select sum(ttl_biaya) from kamar_inap where no_rawat=?",rs.getString("no_rawat"))+Sequel.cariIsiAngka("select sum(biaya_sekali.besar_biaya) from biaya_sekali inner join kamar_inap on kamar_inap.kd_kamar=biaya_sekali.kd_kamar where kamar_inap.no_rawat=?",rs.getString("no_rawat"))+
+                           Sequel.cariIsiAngka("select sum(biaya_harian.jml*biaya_harian.besar_biaya*kamar_inap.lama) from kamar_inap inner join biaya_harian on kamar_inap.kd_kamar=biaya_harian.kd_kamar where kamar_inap.no_rawat=?",rs.getString("no_rawat"))+
+                           (-1)*Sequel.cariIsiAngka("select sum(subtotal) from detreturjual where no_retur_jual like ? ","%"+rs.getString("no_rawat")+"%")+Sequel.cariIsiAngka("select sum(total) from resep_pulang where no_rawat=? ",rs.getString("no_rawat"));
+                        }else{
+                        LblKlaim.setVisible(false);
+                        Billing=0;
+                    }
                     perkiraantarif=0;
                     pros="Aman";
                     psklaim=koneksi.prepareStatement(
@@ -16639,7 +16574,7 @@ private void MnRujukMasukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-
                         rs3=psklaim.executeQuery();
                         if(rs3.next()){
                             perkiraantarif=rs3.getDouble("tarif");
-                            if(perkiraantarif>Jumlah){
+                            if(perkiraantarif>Billing){
                                 pros="Aman";  
                             }else{
                                 pros="Tidak Aman";
@@ -16662,7 +16597,7 @@ private void MnRujukMasukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-
                         rs.getString("diagnosa_akhir"),rs.getString("tgl_masuk"),rs.getString("jam_masuk"),rs.getString("tgl_keluar"),
                         rs.getString("jam_keluar"),Valid.SetAngka(rs.getDouble("ttl_biaya")),rs.getString("stts_pulang"),
                         rs.getString("lama"),rs.getString("nm_dokter"),rs.getString("kd_kamar"),rs.getString("status_bayar"),rs.getString("agama"),rs.getString("klsrawat").replaceAll("1","Kelas 1").replaceAll("2", "Kelas 2").replaceAll("3", "Kelas 3"),rs.getString("klsnaik").replaceAll("1","1. VVIP").replaceAll("2","2. VIP").
-                        replaceAll("3","3. Kelas I").replaceAll("4","4. Kelas II").replaceAll("5","5. Kelas III").replaceAll("6","6. ICCU").replaceAll("7","7. ICU").replaceAll("8","8. Diatas Kelas 1"),rs.getString("kelas_asli"),rs.getString("jk"),rs.getString("umur"),Valid.SetAngka(Jumlah),Valid.SetAngka(perkiraantarif),pros
+                        replaceAll("3","3. Kelas I").replaceAll("4","4. Kelas II").replaceAll("5","5. Kelas III").replaceAll("6","6. ICCU").replaceAll("7","7. ICU").replaceAll("8","8. Diatas Kelas 1"),rs.getString("kelas_asli"),rs.getString("jk"),rs.getString("umur"),Valid.SetAngka(Billing),Valid.SetAngka(perkiraantarif),pros
                     });
                     psanak=koneksi.prepareStatement(
                         "select pasien.no_rkm_medis,pasien.nm_pasien,pasien.jk,ranap_gabung.no_rawat2,concat(reg_periksa.umurdaftar,' ',reg_periksa.sttsumur)as umur,pasien.no_peserta, "+
@@ -16683,7 +16618,7 @@ private void MnRujukMasukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-
                                 rs3=psklaim.executeQuery();
                                 if(rs3.next()){
                                     perkiraantarif=rs3.getDouble("tarif");
-                                    if(perkiraantarif>Jumlah){
+                                    if(perkiraantarif>Billing){
                                         pros="Aman";  
                                     }else{
                                         pros="Tidak Aman";
