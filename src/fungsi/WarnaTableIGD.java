@@ -29,6 +29,10 @@ public class WarnaTableIGD extends DefaultTableCellRenderer {
         if (table.getValueAt(row, 21).toString().equals("Ranap")){
             component.setBackground(new Color(120, 250, 140));
         }
+        
+        if (table.getValueAt(row, 18).toString().equals("Batal")){
+            component.setBackground(new Color(155, 155, 155));
+        }
         return component;
     }
 
