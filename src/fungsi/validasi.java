@@ -51,6 +51,7 @@ import widget.ComboBox;
 import widget.Tanggal;
 import widget.TextArea;
 import java.io.File;
+import net.sf.jasperreports.engine.JasperPrintManager;
 /**
  *
  * @author Owner
@@ -759,6 +760,61 @@ public final class validasi {
         }
     }
     
+    public void MyReportqryOtoPrint(String reportName, String reportDirName, String judul, String qry, Map parameters) {
+        Properties systemProp = System.getProperties();
+
+        // Ambil current dir
+        String currentDir = systemProp.getProperty("user.dir");
+
+        File dir = new File(currentDir);
+
+        File fileRpt;
+        String fullPath = "";
+        if (dir.isDirectory()) {
+            String[] isiDir = dir.list();
+            for (String iDir : isiDir) {
+                fileRpt = new File(currentDir + File.separatorChar + iDir + File.separatorChar + reportDirName + File.separatorChar + reportName);
+                if (fileRpt.isFile()) { // Cek apakah file RptMaster.jrxml ada
+                    fullPath = fileRpt.toString();
+                    System.out.println("Found Report File at : " + fullPath);
+                } // end if
+            } // end for i
+        } // end if
+
+        try {
+            System.out.println("masuk sini- Otomatis Print");
+            ps = connect.prepareStatement(qry);
+            try {
+                String namafile = "./" + reportDirName + "/" + reportName;
+                rs = ps.executeQuery();
+                JRResultSetDataSource rsdt = new JRResultSetDataSource(rs);
+
+                JasperPrint jasperPrint = JasperFillManager.fillReport(namafile, parameters, rsdt);
+
+                JasperPrintManager.printReport(jasperPrint, false);
+//                JasperViewer jasperViewer = new JasperViewer(jasperPrint, false);
+//                jasperViewer.setTitle(judul);
+//                Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
+//                jasperViewer.setSize(screen.width - 50, screen.height - 50);
+//                jasperViewer.setModalExclusionType(ModalExclusionType.TOOLKIT_EXCLUDE);
+//                jasperViewer.setLocationRelativeTo(null);
+//                jasperViewer.setVisible(true);
+            } catch (Exception rptexcpt) {
+                System.out.println("Report Can't view because : " + rptexcpt);
+                JOptionPane.showMessageDialog(null, "Report Can't view because : " + rptexcpt);
+            } finally {
+                if (rs != null) {
+                    rs.close();
+                }
+                if (ps != null) {
+                    ps.close();
+                }
+            }
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+    
     public void MyReportqrypdf(String reportName,String reportDirName,String judul,String qry,Map parameters){
         Properties systemProp = System.getProperties();
 
@@ -1408,5 +1464,25 @@ public final class validasi {
      */
     public static int milliToDay(long milli) {
         return (int) ((double) milli / (1000 * 24 * 60 * 60));
+    }
+    
+    public void panggilUrlGC(String url){
+        String os = System.getProperty("os.name").toLowerCase();
+        Runtime rt = Runtime.getRuntime();                                
+        try{ 
+            if(os.contains("win")) {
+                rt.exec( "rundll32 url.dll,FileProtocolHandler " + "http://"+koneksiDB.HOSTHYBRIDWEB()+":"+koneksiDB.PORTWEB()+"/"+url);
+            }else if (os.contains("mac")) {
+                rt.exec( "open " + "http://"+koneksiDB.HOSTHYBRIDWEB()+":"+koneksiDB.PORTWEB()+"/"+koneksiDB.HYBRIDWEB()+"/"+url);
+            }else if (os.contains("nix") || os.contains("nux")) {
+                String[] browsers = {"x-www-browser","epiphany", "firefox", "mozilla", "konqueror","chrome","chromium","netscape","opera","links","lynx","midori"};
+                // Build a command string which looks like "browser1 "url" || browser2 "url" ||..."
+                StringBuilder cmd = new StringBuilder();
+                for(i=0; i<browsers.length; i++) cmd.append(i==0  ? "" : " || ").append(browsers[i]).append(" \"").append("http://").append(koneksiDB.HOSTHYBRIDWEB()+":"+koneksiDB.PORTWEB()).append("/").append(url).append( "\" ");
+                rt.exec(new String[] { "sh", "-c", cmd.toString() });
+            } 
+        }catch (Exception e){
+            System.out.println("Notif Browser : "+e);
+        } 
     }
 }

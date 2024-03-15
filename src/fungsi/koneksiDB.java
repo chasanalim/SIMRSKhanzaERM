@@ -117,6 +117,16 @@ public class koneksiDB {
         return var;
     }
     
+    public static String BILLINGRANAP(){
+        try{
+            prop.loadFromXML(new FileInputStream("setting/database.xml"));
+            var=prop.getProperty("BILLINGRANAP");
+        }catch(Exception e){
+            var=""; 
+        }
+        return var;
+    }
+    
     public static String HOSTHYBRIDWEB(){
         try{
             prop.loadFromXML(new FileInputStream("setting/database.xml"));
