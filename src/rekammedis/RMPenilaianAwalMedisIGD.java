@@ -1591,17 +1591,15 @@ public final class RMPenilaianAwalMedisIGD extends javax.swing.JDialog {
                     Radiologi.getText(),Laborat.getText(),Diagnosis.getText(),Tatalaksana.getText(),CaraKeluar.getSelectedItem().toString(),RTL.getText(),Indikasi.getText()
                 })==true){
                     emptTeks();
-                    JOptionPane.showMessageDialog(rootPane, "Proses SImpan Sukses, ");
-                    DlgPerintahInap Supri=new DlgPerintahInap(null,false);
-                    Supri.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
-                    Supri.setLocationRelativeTo(internalFrame1);
-                    Supri.emptTeks();
-                    Supri.setNoRm(TNoRw.getText(),TNoRM.getText(),TPasien.getText(),NmDokter.getText()); 
-                    Supri.isCek();
-                    Supri.setVisible(true);
-                    
-                    
-                    
+                    if(CaraKeluar.getSelectedItem().toString().contains("Rawat Inap")){
+                        DlgPerintahInap Supri=new DlgPerintahInap(null,false);
+                        Supri.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
+                        Supri.setLocationRelativeTo(internalFrame1);
+                        Supri.emptTeks();
+                        Supri.setNoRm(TNoRw.getText(),TNoRM.getText(),TPasien.getText(),NmDokter.getText()); 
+                        Supri.isCek();
+                        Supri.setVisible(true);
+                    }
             }
         }
     
@@ -2431,7 +2429,7 @@ public final class RMPenilaianAwalMedisIGD extends javax.swing.JDialog {
         Laborat.setText("");
         Diagnosis.setText("");
         Tatalaksana.setText("");
-        CaraKeluar.setSelectedIndex(0);
+//        CaraKeluar.setSelectedIndex(0);
         RTL.setText("");
         TglAsuhan.setDate(new Date());
         TabRawat.setSelectedIndex(0);
