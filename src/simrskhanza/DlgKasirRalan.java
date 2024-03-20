@@ -14491,7 +14491,7 @@ private void MnDataPemberianObatActionPerformed(java.awt.event.ActionEvent evt) 
         return BtnKeluar;
     }
     
-    public void isCek(){
+public void isCek(){
         MnRawatJalan1.setEnabled(akses.gettindakan_ralan());
         MnPemberianObat.setEnabled(akses.getberi_obat());
         MnPemberianObat1.setEnabled(akses.getberi_obat());
@@ -14651,6 +14651,8 @@ private void MnDataPemberianObatActionPerformed(java.awt.event.ActionEvent evt) 
 //        MnPenolakanAnjuranMedis.setEnabled(akses.getpenolakan_anjuran_medis());
         MnDokumentasiTindakanESWL.setEnabled(akses.gethasil_tindakan_eswl());
         MnCheckListKriteriaMasukICU.setEnabled(akses.getchecklist_kriteria_masuk_icu());
+        
+        
         
         if(akses.getkode().equals("Admin Utama")){
             MnHapusData.setEnabled(true);
