@@ -1177,6 +1177,7 @@ public class DlgKamarInap extends javax.swing.JDialog {
         DTPCari4 = new widget.Tanggal();
         jLabel37 = new widget.Label();
         cmbStatusBayar = new widget.ComboBox();
+        btnCekKamar = new widget.Button();
         Scroll = new widget.ScrollPane();
         tbKamIn = new widget.Table();
         panelGlass9 = new widget.panelisi();
@@ -5829,7 +5830,7 @@ public class DlgKamarInap extends javax.swing.JDialog {
         R2.setPreferredSize(new java.awt.Dimension(90, 23));
         panelCari.add(R2);
 
-        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "23-02-2024" }));
+        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "19-03-2024" }));
         DTPCari1.setDisplayFormat("dd-MM-yyyy");
         DTPCari1.setName("DTPCari1"); // NOI18N
         DTPCari1.setOpaque(false);
@@ -5852,7 +5853,7 @@ public class DlgKamarInap extends javax.swing.JDialog {
         jLabel22.setPreferredSize(new java.awt.Dimension(25, 23));
         panelCari.add(jLabel22);
 
-        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "23-02-2024" }));
+        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "19-03-2024" }));
         DTPCari2.setDisplayFormat("dd-MM-yyyy");
         DTPCari2.setName("DTPCari2"); // NOI18N
         DTPCari2.setOpaque(false);
@@ -5878,7 +5879,7 @@ public class DlgKamarInap extends javax.swing.JDialog {
         R3.setPreferredSize(new java.awt.Dimension(75, 23));
         panelCari.add(R3);
 
-        DTPCari3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "23-02-2024" }));
+        DTPCari3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "19-03-2024" }));
         DTPCari3.setDisplayFormat("dd-MM-yyyy");
         DTPCari3.setName("DTPCari3"); // NOI18N
         DTPCari3.setOpaque(false);
@@ -5901,7 +5902,7 @@ public class DlgKamarInap extends javax.swing.JDialog {
         jLabel25.setPreferredSize(new java.awt.Dimension(25, 23));
         panelCari.add(jLabel25);
 
-        DTPCari4.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "23-02-2024" }));
+        DTPCari4.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "19-03-2024" }));
         DTPCari4.setDisplayFormat("dd-MM-yyyy");
         DTPCari4.setName("DTPCari4"); // NOI18N
         DTPCari4.setOpaque(false);
@@ -5932,6 +5933,24 @@ public class DlgKamarInap extends javax.swing.JDialog {
             }
         });
         panelCari.add(cmbStatusBayar);
+
+        btnCekKamar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/ranap.png"))); // NOI18N
+        btnCekKamar.setMnemonic('P');
+        btnCekKamar.setText("Kamar");
+        btnCekKamar.setToolTipText("Alt+P");
+        btnCekKamar.setName("btnCekKamar"); // NOI18N
+        btnCekKamar.setPreferredSize(new java.awt.Dimension(100, 30));
+        btnCekKamar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCekKamarActionPerformed(evt);
+            }
+        });
+        btnCekKamar.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                btnCekKamarKeyPressed(evt);
+            }
+        });
+        panelCari.add(btnCekKamar);
 
         PanelCariUtama.add(panelCari, java.awt.BorderLayout.PAGE_START);
 
@@ -16081,6 +16100,20 @@ private void MnRujukMasukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-
         // TODO add your handling code here:
     }//GEN-LAST:event_LblKlaimMouseClicked
 
+    private void btnCekKamarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCekKamarActionPerformed
+        this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+        kamar.isCek();
+        kamar.emptTeks();  
+        kamar.setSize(internalFrame1.getWidth(),internalFrame1.getHeight());
+        kamar.setLocationRelativeTo(internalFrame1);
+        kamar.setVisible(true);
+        this.setCursor(Cursor.getDefaultCursor());
+    }//GEN-LAST:event_btnCekKamarActionPerformed
+
+    private void btnCekKamarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnCekKamarKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCekKamarKeyPressed
+
     /**
     * @param args the command line arguments
     */
@@ -16374,6 +16407,7 @@ private void MnRujukMasukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-
     private javax.swing.JDialog WindowRanapGabung;
     private widget.Button btnBangsalCari;
     private widget.Button btnBayar;
+    private widget.Button btnCekKamar;
     private widget.Button btnDPJP;
     private widget.Button btnDiagnosa;
     private widget.Button btnDokterCari;
@@ -17096,6 +17130,7 @@ private void MnRujukMasukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-
         MnCatatanCekGDS.setEnabled(akses.getcatatan_cek_gds());
         MnChecklistPreOperasi.setEnabled(akses.getchecklist_pre_operasi());
         MnSignInSebelumAnestesi.setEnabled(akses.getsignin_sebelum_anestesi());
+        btnCekKamar.setVisible(akses.getkamar());
         
         if(akses.getkode().equals("Admin Utama")){
             MnHapusDataSalah.setEnabled(true);
