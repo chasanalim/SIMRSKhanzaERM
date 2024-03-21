@@ -2575,7 +2575,7 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                 try {
                     rs2=koneksi.prepareStatement(
                         "SELECT bridging_sep.no_sep,bridging_sep.no_rawat,bridging_sep.nomr,bridging_sep.nama_pasien,bridging_sep.tglsep,bridging_sep.tanggal_lahir,bridging_sep.jkel, "+ 
-                        "bridging_sep.no_kartu, reg_periksa.kd_dokter, dokter.nm_dokter, penilaian_medis_igd.keluhan_utama,penilaian_medis_igd.diagnosis,penilaian_medis_igd.ket_fisik,penilaian_medis_igd.tata, "+
+                        "bridging_sep.no_kartu, reg_periksa.kd_dokter, dokter.nm_dokter, penilaian_medis_igd.keluhan_utama, penilaian_medis_igd.rps,penilaian_medis_igd.diagnosis,penilaian_medis_igd.ket_fisik,penilaian_medis_igd.tata, "+
                         "IF ( bridging_sep.tujuankunjungan = '0', 'Konsultasi dokter(pertama)', 'Kunjungan Kontrol(ulangan)' ) AS tujuankunjungan, "+ 
                         "concat( 'suhu : ', penilaian_medis_igd.suhu, ', TD : ', penilaian_medis_igd.td, ', Nadi : ', penilaian_medis_igd.nadi ) AS fisik  "+
                         "FROM bridging_sep INNER JOIN penilaian_medis_igd ON bridging_sep.no_rawat = penilaian_medis_igd.no_rawat INNER JOIN reg_periksa on reg_periksa.no_rawat=bridging_sep.no_rawat " + 
@@ -2686,7 +2686,7 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                                     "<td valign='top' border='0' width='2%'></td>"+
                                     "<td valign='top' border='0' width='11%'>Anamnesa</td>"+
                                     "<td valign='top' border='0' width='1%' align='right'>:</td>"+
-                                    "<td valign='top' border='0' width='66%' align='left'>"+rs2.getString("keluhan_utama")+"</td>"+
+                                    "<td valign='top' border='0' width='66%' align='left'>"+rs2.getString("keluhan_utama")+", "+rs2.getString("rps")+"</td>"+
                                  "</tr>"+ 
                                  "<tr class='sep'>"+
                                     "<td valign='top' border='0' width='2%'></td>"+
@@ -2835,7 +2835,7 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                 try {
                     rs2=koneksi.prepareStatement(
                         "SELECT bridging_sep.no_sep,bridging_sep.no_rawat,bridging_sep.nomr,bridging_sep.nama_pasien,bridging_sep.tglsep,bridging_sep.tanggal_lahir,bridging_sep.jkel, "+ 
-                        "bridging_sep.no_kartu, reg_periksa.kd_dokter, dokter.nm_dokter, penilaian_medis_ralan_kandungan.keluhan_utama,penilaian_medis_ralan_kandungan.diagnosis,penilaian_medis_ralan_kandungan.ket_fisik,penilaian_medis_ralan_kandungan.tata, "+
+                        "bridging_sep.no_kartu, reg_periksa.kd_dokter, dokter.nm_dokter, penilaian_medis_ralan_kandungan.keluhan_utama, penilaian_medis_igd.rps,penilaian_medis_ralan_kandungan.diagnosis,penilaian_medis_ralan_kandungan.ket_fisik,penilaian_medis_ralan_kandungan.tata, "+
                         "IF ( bridging_sep.tujuankunjungan = '0', 'Konsultasi dokter(pertama)', 'Kunjungan Kontrol(ulangan)' ) AS tujuankunjungan, "+ 
                         "concat( 'suhu : ', penilaian_medis_ralan_kandungan.suhu, ', TD : ', penilaian_medis_ralan_kandungan.td, ', Nadi : ', penilaian_medis_ralan_kandungan.nadi ) AS fisik  "+
                         "FROM bridging_sep INNER JOIN penilaian_medis_ralan_kandungan ON bridging_sep.no_rawat = penilaian_medis_ralan_kandungan.no_rawat INNER JOIN reg_periksa on reg_periksa.no_rawat=bridging_sep.no_rawat " + 
@@ -2946,7 +2946,7 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                                     "<td valign='top' border='0' width='2%'></td>"+
                                     "<td valign='top' border='0' width='11%'>Anamnesa</td>"+
                                     "<td valign='top' border='0' width='1%' align='right'>:</td>"+
-                                    "<td valign='top' border='0' width='66%' align='left'>"+rs2.getString("keluhan_utama")+"</td>"+
+                                    "<td valign='top' border='0' width='66%' align='left'>"+rs2.getString("keluhan_utama")+", "+rs2.getString("rps")+"</td>"+
                                  "</tr>"+ 
                                  "<tr class='sep'>"+
                                     "<td valign='top' border='0' width='2%'></td>"+
