@@ -1603,7 +1603,8 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
         TEvaluasi = new widget.TextArea();
         LingkarPerut = new widget.TextBox();
         Btn5Soap = new widget.Button();
-        BtnKeluar1 = new widget.Button();
+        Btn5SOAP = new widget.Button();
+        BtnICare = new widget.Button();
         internalFrame6 = new widget.InternalFrame();
         Scroll4 = new widget.ScrollPane();
         tbPemeriksaanObstetri = new widget.Table();
@@ -2053,7 +2054,7 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
         panelGlass9.add(jLabel19);
 
         DTPCari1.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "16-02-2024" }));
+        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "21-03-2024" }));
         DTPCari1.setDisplayFormat("dd-MM-yyyy");
         DTPCari1.setName("DTPCari1"); // NOI18N
         DTPCari1.setOpaque(false);
@@ -2067,7 +2068,7 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
         panelGlass9.add(jLabel21);
 
         DTPCari2.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "16-02-2024" }));
+        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "21-03-2024" }));
         DTPCari2.setDisplayFormat("dd-MM-yyyy");
         DTPCari2.setName("DTPCari2"); // NOI18N
         DTPCari2.setOpaque(false);
@@ -2894,28 +2895,41 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
         panelGlass12.add(Btn5Soap);
         Btn5Soap.setBounds(405, 40, 28, 23);
 
-        BtnKeluar1.setBackground(new java.awt.Color(255, 153, 153));
-        BtnKeluar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/file-edit-32x32.png"))); // NOI18N
-        BtnKeluar1.setMnemonic('K');
-        BtnKeluar1.setText("5 SOAP Terakhir");
-        BtnKeluar1.setToolTipText("Alt+K");
-        BtnKeluar1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        BtnKeluar1.setName("BtnKeluar1"); // NOI18N
-        BtnKeluar1.setOpaque(true);
-        BtnKeluar1.setPreferredSize(new java.awt.Dimension(100, 30));
-        BtnKeluar1.setSelected(true);
-        BtnKeluar1.addActionListener(new java.awt.event.ActionListener() {
+        Btn5SOAP.setBackground(new java.awt.Color(255, 153, 153));
+        Btn5SOAP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/file-edit-32x32.png"))); // NOI18N
+        Btn5SOAP.setMnemonic('K');
+        Btn5SOAP.setText("5 SOAP Terakhir");
+        Btn5SOAP.setToolTipText("Alt+K");
+        Btn5SOAP.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        Btn5SOAP.setName("Btn5SOAP"); // NOI18N
+        Btn5SOAP.setOpaque(true);
+        Btn5SOAP.setPreferredSize(new java.awt.Dimension(100, 30));
+        Btn5SOAP.setSelected(true);
+        Btn5SOAP.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnKeluar1ActionPerformed(evt);
+                Btn5SOAPActionPerformed(evt);
             }
         });
-        BtnKeluar1.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                BtnKeluar1KeyPressed(evt);
+        panelGlass12.add(Btn5SOAP);
+        Btn5SOAP.setBounds(920, 40, 180, 30);
+
+        BtnICare.setBackground(new java.awt.Color(153, 255, 153));
+        BtnICare.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/icare.png"))); // NOI18N
+        BtnICare.setMnemonic('K');
+        BtnICare.setText("Riwayat FKTP I Care ");
+        BtnICare.setToolTipText("Alt+K");
+        BtnICare.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        BtnICare.setName("BtnICare"); // NOI18N
+        BtnICare.setOpaque(true);
+        BtnICare.setPreferredSize(new java.awt.Dimension(100, 30));
+        BtnICare.setSelected(true);
+        BtnICare.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnICareActionPerformed(evt);
             }
         });
-        panelGlass12.add(BtnKeluar1);
-        BtnKeluar1.setBounds(930, 50, 170, 30);
+        panelGlass12.add(BtnICare);
+        BtnICare.setBounds(920, 80, 180, 30);
 
         PanelInput.add(panelGlass12, java.awt.BorderLayout.CENTER);
 
@@ -4295,7 +4309,7 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
         jLabel23.setBounds(554, 10, 60, 23);
 
         DTPTgl.setForeground(new java.awt.Color(50, 70, 50));
-        DTPTgl.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "16-02-2024" }));
+        DTPTgl.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "21-03-2024" }));
         DTPTgl.setDisplayFormat("dd-MM-yyyy");
         DTPTgl.setName("DTPTgl"); // NOI18N
         DTPTgl.setOpaque(false);
@@ -10274,7 +10288,7 @@ private void BtnEditKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
         }
     }//GEN-LAST:event_BtnPeriksaRadActionPerformed
 
-    private void BtnKeluar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnKeluar1ActionPerformed
+    private void Btn5SOAPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn5SOAPActionPerformed
         if(TPasien.getText().trim().equals("")||TNoRw.getText().trim().equals("")){
             JOptionPane.showMessageDialog(null,"Maaf, Silahkan anda pilih dulu dengan menklik data pada table...!!!");
             TCari.requestFocus();
@@ -10289,11 +10303,29 @@ private void BtnEditKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
             soapterakhir.setVisible(true);
             this.setCursor(Cursor.getDefaultCursor());
         }
-    }//GEN-LAST:event_BtnKeluar1ActionPerformed
+    }//GEN-LAST:event_Btn5SOAPActionPerformed
 
-    private void BtnKeluar1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BtnKeluar1KeyPressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_BtnKeluar1KeyPressed
+    private void BtnICareActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnICareActionPerformed
+         if(TNoRw.getText().trim().equals("")){
+            JOptionPane.showMessageDialog(null,"Maaf, Silahkan anda pilih dulu pasien...!!!");
+            TCari.requestFocus();
+        }else{
+                this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+                variabel=Sequel.cariIsi("select maping_dokter_dpjpvclaim.kd_dokter_bpjs from maping_dokter_dpjpvclaim where maping_dokter_dpjpvclaim.kd_dokter=?",KdPeg.getText());
+                if(!variabel.equals("")){
+                    akses.setform("DlgReg");
+                    ICareRiwayatPerawatan dlgki=new ICareRiwayatPerawatan(null,false);
+                    dlgki.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
+                    dlgki.setLocationRelativeTo(internalFrame1);
+                    dlgki.setPasien(Sequel.cariIsi("select pasien.no_peserta from pasien where pasien.no_rkm_medis=?",TNoRM.getText()),variabel);
+                    dlgki.tampil();
+                    dlgki.setVisible(true);
+                }else{
+                    JOptionPane.showMessageDialog(null,"Maaf, Dokter tidak terdaftar di mapping dokter BPJS...!!!");
+                }
+                this.setCursor(Cursor.getDefaultCursor());
+        }
+    }//GEN-LAST:event_BtnICareActionPerformed
 
     /**
     * @param args the command line arguments
@@ -10312,6 +10344,7 @@ private void BtnEditKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private widget.Button Btn5SOAP;
     private widget.Button Btn5Soap;
     private widget.Button Btn5Soap1;
     private widget.Button BtnAll;
@@ -10360,12 +10393,12 @@ private void BtnEditKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
     private widget.Button BtnFormFisioterapi;
     private widget.Button BtnHapus;
     private widget.Button BtnHasilPemeriksaanUSG;
+    private widget.Button BtnICare;
     private widget.Button BtnICareBPJS;
     private widget.Button BtnInformasiObat;
     private widget.Button BtnInputObat;
     private widget.Button BtnJadwalOperasi;
     private widget.Button BtnKeluar;
-    private widget.Button BtnKeluar1;
     private widget.Button BtnKonselingFarmasi;
     private widget.Button BtnMedicalCheckUp;
     private widget.Button BtnMonitoringAsuhanGizi;
