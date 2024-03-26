@@ -1083,7 +1083,7 @@ private void CmbCrIsiItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST
         try{     
             ps=koneksi.prepareStatement("select kamar.kd_kamar,kamar.kd_bangsal,bangsal.nm_bangsal, "+
                        "kamar.kelas,kamar.trf_kamar,kamar.status, "+
-                       "(SELECT IF(kamar.STATUS = 'KOSONG','-', GROUP_CONCAT(' (',IF( pasien.jk = 'L', 'Pria', 'Wanita' ),') ',pasien.nm_pasien,' (',reg_periksa.umurdaftar,' ',reg_periksa.sttsumur,')')) "+
+                       "(SELECT GROUP_CONCAT(' (',IF( pasien.jk = 'L', 'Pria', 'Wanita' ),') ',pasien.nm_pasien,' (',reg_periksa.umurdaftar,' ',reg_periksa.sttsumur,')') "+
                        "FROM pasien INNER JOIN reg_periksa ON pasien.no_rkm_medis = reg_periksa.no_rkm_medis INNER JOIN kamar_inap ON kamar_inap.no_rawat = reg_periksa.no_rawat "+
                        "WHERE kamar_inap.kd_kamar = kamar.kd_kamar  AND kamar_inap.stts_pulang = '-' ) AS keterangan "+
                        "from bangsal inner join kamar "+
