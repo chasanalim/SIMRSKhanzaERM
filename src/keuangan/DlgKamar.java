@@ -60,7 +60,7 @@ public final class DlgKamar extends javax.swing.JDialog {
         this.setLocation(10,2);
         setSize(628,674);
         tabMode=new DefaultTableModel(null,new String[]{
-                "P","Nomer Bed","Kode Kamar","Nama Kamar","Kelas","Tarif Kamar","Status Kamar","Keterangan Pasien"
+                "P","Nomer Bed","Kode Kamar","Nama Kamar","Kelas","Tarif Kamar","Status Kamar","Keterangan Pasien","Jumlah Pasien"
             }){
              @Override public boolean isCellEditable(int rowIndex, int colIndex){
                 boolean a = false;
@@ -71,7 +71,7 @@ public final class DlgKamar extends javax.swing.JDialog {
              }
              Class[] types = new Class[] {
                 java.lang.Boolean.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, 
-                java.lang.Object.class, java.lang.Double.class, java.lang.Object.class, java.lang.Object.class
+                java.lang.Object.class, java.lang.Double.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
              };
              @Override
              public Class getColumnClass(int columnIndex) {
@@ -84,7 +84,7 @@ public final class DlgKamar extends javax.swing.JDialog {
         tbKamar.setPreferredScrollableViewportSize(new Dimension(500,500));
         tbKamar.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
 
-        for (i = 0; i < 8; i++) {
+        for (i = 0; i < 9; i++) {
             TableColumn column = tbKamar.getColumnModel().getColumn(i);
             if(i==0){
                 column.setPreferredWidth(20);
@@ -101,7 +101,9 @@ public final class DlgKamar extends javax.swing.JDialog {
             }else if(i==6){
                  column.setPreferredWidth(90);
             }else if(i==7){
-                 column.setPreferredWidth(500);
+                 column.setPreferredWidth(420);
+            }else if(i==8){
+                 column.setPreferredWidth(100);
             }
         }
         tbKamar.setDefaultRenderer(Object.class, new WarnaTableKamar());
@@ -1085,7 +1087,10 @@ private void CmbCrIsiItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST
                        "kamar.kelas,kamar.trf_kamar,kamar.status, "+
                        "(SELECT GROUP_CONCAT(' (',IF( pasien.jk = 'L', 'Pria', 'Wanita' ),') ',pasien.nm_pasien,' (',reg_periksa.umurdaftar,' ',reg_periksa.sttsumur,')') "+
                        "FROM pasien INNER JOIN reg_periksa ON pasien.no_rkm_medis = reg_periksa.no_rkm_medis INNER JOIN kamar_inap ON kamar_inap.no_rawat = reg_periksa.no_rawat "+
-                       "WHERE kamar_inap.kd_kamar = kamar.kd_kamar  AND kamar_inap.stts_pulang = '-' ) AS keterangan "+
+                       "WHERE kamar_inap.kd_kamar = kamar.kd_kamar  AND kamar_inap.stts_pulang = '-' ) AS keterangan, "+
+                       "(SELECT count(pasien.nm_pasien) "+
+                       "FROM pasien INNER JOIN reg_periksa ON pasien.no_rkm_medis = reg_periksa.no_rkm_medis INNER JOIN kamar_inap ON kamar_inap.no_rawat = reg_periksa.no_rawat "+
+                       "WHERE kamar_inap.kd_kamar = kamar.kd_kamar  AND kamar_inap.stts_pulang = '-' ) AS jumlah "+
                        "from bangsal inner join kamar "+
                        "on kamar.kd_bangsal=bangsal.kd_bangsal LEFT JOIN kamar_inap ON kamar_inap.kd_kamar = kamar.kd_kamar where "+
                        "kamar.statusdata='1' and bangsal.nm_bangsal like ? and kamar.status like ? "+
@@ -1112,7 +1117,8 @@ private void CmbCrIsiItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST
                                    rs.getString(4),
                                    rs.getDouble(5),
                                    rs.getString(6),
-                                   rs.getString(7)
+                                   rs.getString(7),
+                                   rs.getString(8)
                     });
                 }
             } catch (Exception e) {

@@ -27,9 +27,9 @@ public class WarnaTableKamar extends DefaultTableCellRenderer {
         if (table.getValueAt(row, 6).toString().equals("ISI")){
             component.setBackground(new Color(195, 240, 195));
         }
-//        if (table.getValueAt(row, 6).toString().equals("ISI")&&table.getValueAt(row, 7).toString().contains(",")){
-//            component.setBackground(new Color(250, 142, 162));
-//        }
+        if (table.getValueAt(row, 8).toString().contains("2") || table.getValueAt(row, 8).toString().contains("3")){
+            component.setBackground(new Color(250, 142, 162));
+        }
         return component;
     }
 
