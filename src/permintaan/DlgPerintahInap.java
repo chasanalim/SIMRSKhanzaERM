@@ -326,6 +326,7 @@ public class DlgPerintahInap extends javax.swing.JDialog {
         ScrollMenu = new widget.ScrollPane();
         FormMenu = new widget.PanelBiasa();
         BtnKamarInap = new widget.Button();
+        BtnRiwayatPasien = new widget.Button();
         BtnSuratPermintaan = new widget.Button();
         BtnSuratPRI = new widget.Button();
 
@@ -577,7 +578,7 @@ public class DlgPerintahInap extends javax.swing.JDialog {
         R2.setPreferredSize(new java.awt.Dimension(165, 23));
         panelCari.add(R2);
 
-        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "10-11-2023" }));
+        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "28-02-2024" }));
         DTPCari1.setDisplayFormat("dd-MM-yyyy");
         DTPCari1.setName("DTPCari1"); // NOI18N
         DTPCari1.setOpaque(false);
@@ -600,7 +601,7 @@ public class DlgPerintahInap extends javax.swing.JDialog {
         jLabel25.setPreferredSize(new java.awt.Dimension(30, 23));
         panelCari.add(jLabel25);
 
-        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "10-11-2023" }));
+        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "28-02-2024" }));
         DTPCari2.setDisplayFormat("dd-MM-yyyy");
         DTPCari2.setName("DTPCari2"); // NOI18N
         DTPCari2.setOpaque(false);
@@ -668,7 +669,7 @@ public class DlgPerintahInap extends javax.swing.JDialog {
         NmPasien.setBounds(288, 10, 480, 23);
 
         DTPTgl.setForeground(new java.awt.Color(50, 70, 50));
-        DTPTgl.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "10-11-2023" }));
+        DTPTgl.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "28-02-2024" }));
         DTPTgl.setDisplayFormat("dd-MM-yyyy");
         DTPTgl.setName("DTPTgl"); // NOI18N
         DTPTgl.setOpaque(false);
@@ -918,6 +919,23 @@ public class DlgPerintahInap extends javax.swing.JDialog {
             }
         });
         FormMenu.add(BtnKamarInap);
+
+        BtnRiwayatPasien.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/item.png"))); // NOI18N
+        BtnRiwayatPasien.setText("Riwayat Perawatan");
+        BtnRiwayatPasien.setFocusPainted(false);
+        BtnRiwayatPasien.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        BtnRiwayatPasien.setGlassColor(new java.awt.Color(255, 255, 255));
+        BtnRiwayatPasien.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        BtnRiwayatPasien.setMargin(new java.awt.Insets(1, 1, 1, 1));
+        BtnRiwayatPasien.setName("BtnRiwayatPasien"); // NOI18N
+        BtnRiwayatPasien.setPreferredSize(new java.awt.Dimension(160, 23));
+        BtnRiwayatPasien.setRoundRect(false);
+        BtnRiwayatPasien.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnRiwayatPasienActionPerformed(evt);
+            }
+        });
+        FormMenu.add(BtnRiwayatPasien);
 
         BtnSuratPermintaan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/item.png"))); // NOI18N
         BtnSuratPermintaan.setText("Surat Perintah Ranap");
@@ -1330,7 +1348,7 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
         }else{
             if(tbObat.getSelectedRow()!= -1){
                 if(Sequel.cariRegistrasi(NoRw.getText())>0){
-                    JOptionPane.showMessageDialog(rootPane,"Data billing sudah terverifikasi..!!");
+                    JOptionPane.showMessageDialog(rootPane,"Data billing sudah terverifikasi..!! \nJika Pasien Program Lanjut Ranap \nSilakan Hubungi Kasir untuk membuka Billing.");
                 }else{
                     this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
                     akses.setstatus(true);
@@ -1371,6 +1389,25 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
         // TODO add your handling code here:
     }//GEN-LAST:event_IndikasiKeyPressed
 
+    private void BtnRiwayatPasienActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnRiwayatPasienActionPerformed
+        if(tabMode.getRowCount()==0){
+            JOptionPane.showMessageDialog(null,"Maaf, table masih kosong...!!!!");
+            TCari.requestFocus();
+        }else{
+            if(tbObat.getSelectedRow()!= -1){
+                this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+                RMRiwayatPerawatan resume=new RMRiwayatPerawatan(null,true);
+                resume.setNoRm(tbObat.getValueAt(tbObat.getSelectedRow(),1).toString(),tbObat.getValueAt(tbObat.getSelectedRow(),2).toString());
+                resume.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
+                resume.setLocationRelativeTo(internalFrame1);
+                resume.setVisible(true);
+                this.setCursor(Cursor.getDefaultCursor());
+            }else{
+                JOptionPane.showMessageDialog(null,"Maaf, silahkan pilih data...!!!!");
+            }
+        }
+    }//GEN-LAST:event_BtnRiwayatPasienActionPerformed
+
     /**
     * @param args the command line arguments
     */
@@ -1396,6 +1433,7 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     private widget.Button BtnKamarInap;
     private widget.Button BtnKeluar;
     private widget.Button BtnPrint;
+    private widget.Button BtnRiwayatPasien;
     private widget.Button BtnSimpan;
     private widget.Button BtnSuratPRI;
     private widget.Button BtnSuratPermintaan;
