@@ -6894,7 +6894,7 @@ public final class DlgKasirRalan extends javax.swing.JDialog {
             if(evt.getClickCount()==1){
                 if(norawatdipilih.equals("")){
                     i=tbKasirRalan.getSelectedColumn();
-                    if(i==3){
+                    if(i==3 || i==0){
                         if(validasicatatan.equals("Yes")){
                             this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
                             LabelCatatan.setText(Sequel.cariIsi("select catatan_pasien.catatan from catatan_pasien where catatan_pasien.no_rkm_medis=?",TNoRMCari.getText()));
