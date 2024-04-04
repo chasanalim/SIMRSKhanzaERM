@@ -1565,6 +1565,8 @@ public final class DlgRawatInap extends javax.swing.JDialog {
         cmbMnt = new widget.ComboBox();
         cmbDtk = new widget.ComboBox();
         ChkJln = new widget.CekBox();
+        LblCatatan = new widget.Label();
+        jLabel41 = new widget.Label();
         PanelAccor = new widget.PanelBiasa();
         ChkAccor = new widget.CekBox();
         ScrollMenu = new widget.ScrollPane();
@@ -4079,10 +4081,10 @@ public final class DlgRawatInap extends javax.swing.JDialog {
         FormInput.setPreferredSize(new java.awt.Dimension(260, 43));
         FormInput.setLayout(null);
 
-        jLabel3.setText("No.Rawat :");
+        jLabel3.setText("Catatan Pasien :");
         jLabel3.setName("jLabel3"); // NOI18N
         FormInput.add(jLabel3);
-        jLabel3.setBounds(0, 10, 70, 23);
+        jLabel3.setBounds(870, 10, 90, 23);
 
         TNoRw.setHighlighter(null);
         TNoRw.setName("TNoRw"); // NOI18N
@@ -4103,13 +4105,13 @@ public final class DlgRawatInap extends javax.swing.JDialog {
         TNoRM.setHighlighter(null);
         TNoRM.setName("TNoRM"); // NOI18N
         FormInput.add(TNoRM);
-        TNoRM.setBounds(201, 10, 80, 23);
+        TNoRM.setBounds(201, 10, 60, 23);
 
         TPasien.setEditable(false);
         TPasien.setHighlighter(null);
         TPasien.setName("TPasien"); // NOI18N
         FormInput.add(TPasien);
-        TPasien.setBounds(283, 10, 260, 23);
+        TPasien.setBounds(265, 10, 260, 23);
 
         DTPTgl.setForeground(new java.awt.Color(50, 70, 50));
         DTPTgl.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "04-03-2024" }));
@@ -4122,12 +4124,12 @@ public final class DlgRawatInap extends javax.swing.JDialog {
             }
         });
         FormInput.add(DTPTgl);
-        DTPTgl.setBounds(617, 10, 90, 23);
+        DTPTgl.setBounds(600, 10, 80, 23);
 
         jLabel18.setText("Tanggal :");
         jLabel18.setName("jLabel18"); // NOI18N
         FormInput.add(jLabel18);
-        jLabel18.setBounds(554, 10, 60, 23);
+        jLabel18.setBounds(540, 10, 60, 23);
 
         cmbJam.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23" }));
         cmbJam.setName("cmbJam"); // NOI18N
@@ -4138,7 +4140,7 @@ public final class DlgRawatInap extends javax.swing.JDialog {
             }
         });
         FormInput.add(cmbJam);
-        cmbJam.setBounds(711, 10, 62, 23);
+        cmbJam.setBounds(680, 10, 50, 23);
 
         cmbMnt.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59" }));
         cmbMnt.setName("cmbMnt"); // NOI18N
@@ -4149,7 +4151,7 @@ public final class DlgRawatInap extends javax.swing.JDialog {
             }
         });
         FormInput.add(cmbMnt);
-        cmbMnt.setBounds(776, 10, 62, 23);
+        cmbMnt.setBounds(730, 10, 50, 23);
 
         cmbDtk.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59" }));
         cmbDtk.setName("cmbDtk"); // NOI18N
@@ -4160,7 +4162,7 @@ public final class DlgRawatInap extends javax.swing.JDialog {
             }
         });
         FormInput.add(cmbDtk);
-        cmbDtk.setBounds(841, 10, 62, 23);
+        cmbDtk.setBounds(780, 10, 50, 23);
 
         ChkJln.setBorder(null);
         ChkJln.setSelected(true);
@@ -4176,7 +4178,22 @@ public final class DlgRawatInap extends javax.swing.JDialog {
             }
         });
         FormInput.add(ChkJln);
-        ChkJln.setBounds(906, 10, 23, 23);
+        ChkJln.setBounds(840, 10, 23, 23);
+
+        LblCatatan.setBackground(new java.awt.Color(255, 204, 204));
+        LblCatatan.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        LblCatatan.setText("Catatan");
+        LblCatatan.setAlignmentX(0.5F);
+        LblCatatan.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        LblCatatan.setName("LblCatatan"); // NOI18N
+        LblCatatan.setOpaque(true);
+        FormInput.add(LblCatatan);
+        LblCatatan.setBounds(970, 5, 340, 30);
+
+        jLabel41.setText("No.Rawat :");
+        jLabel41.setName("jLabel41"); // NOI18N
+        FormInput.add(jLabel41);
+        jLabel41.setBounds(0, 10, 70, 23);
 
         internalFrame1.add(FormInput, java.awt.BorderLayout.PAGE_START);
 
@@ -9962,6 +9979,7 @@ private void BtnEditKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
     private widget.TextBox KdPeg5;
     private widget.TextArea Konsultasi;
     private widget.Label LCount;
+    private widget.Label LblCatatan;
     private javax.swing.JTextField Menejemen;
     private widget.PanelBiasa PanelAccor;
     private javax.swing.JPanel PanelInput1;
@@ -10118,6 +10136,7 @@ private void BtnEditKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
     private widget.Label jLabel39;
     private widget.Label jLabel4;
     private widget.Label jLabel40;
+    private widget.Label jLabel41;
     private widget.Label jLabel42;
     private widget.Label jLabel43;
     private widget.Label jLabel44;
@@ -10653,7 +10672,8 @@ private void BtnEditKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
         }
         Sequel.cariIsi("select dokter.nm_dokter from dokter where dokter.kd_dokter=?",TDokter,KdDok.getText());
         KdDok2.setText(KdDok.getText());
-        TDokter2.setText(TDokter.getText()); 
+        TDokter2.setText(TDokter.getText());
+        LblCatatan.setText(Sequel.cariIsi("select catatan_pasien.catatan from catatan_pasien where catatan_pasien.no_rkm_medis=?",TNoRM.getText()));
         
         //SOAP RANAP
         Sequel.cariIsi("select rps from penilaian_medis_ranap where no_rawat=?",TKeluhan,TNoRw.getText());
